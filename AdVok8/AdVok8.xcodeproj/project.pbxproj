@@ -9,12 +9,26 @@
 /* Begin PBXBuildFile section */
 		5F70ABF4202B1250007E69A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF3202B1250007E69A5 /* main.m */; };
 		5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF6202B1250007E69A5 /* AppDelegate.m */; };
-		5F70ABFA202B1250007E69A5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF9202B1250007E69A5 /* ViewController.m */; };
 		5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F70ABFB202B1250007E69A5 /* Main.storyboard */; };
 		5F70AC00202B1250007E69A5 /* AdVok8.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABFE202B1250007E69A5 /* AdVok8.xcdatamodeld */; };
 		5F70AC02202B1250007E69A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC01202B1250007E69A5 /* Assets.xcassets */; };
 		5F70AC05202B1250007E69A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC03202B1250007E69A5 /* LaunchScreen.storyboard */; };
 		5F70AC10202B1250007E69A5 /* AdVok8Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC0F202B1250007E69A5 /* AdVok8Tests.m */; };
+		5F70AC2C202B14EB007E69A5 /* CommonFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC1C202B14EB007E69A5 /* CommonFunction.m */; };
+		5F70AC2D202B14EB007E69A5 /* LoderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC20202B14EB007E69A5 /* LoderView.m */; };
+		5F70AC2E202B14EB007E69A5 /* LoderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC21202B14EB007E69A5 /* LoderView.xib */; };
+		5F70AC2F202B14EB007E69A5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC24202B14EB007E69A5 /* Reachability.m */; };
+		5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC26202B14EB007E69A5 /* WebServicesCall.m */; };
+		5F70AC35202B1653007E69A5 /* BaseHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC33202B1653007E69A5 /* BaseHomeViewController.m */; };
+		5F70AC36202B1653007E69A5 /* BaseHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC34202B1653007E69A5 /* BaseHomeViewController.xib */; };
+		5F70AC41202B1688007E69A5 /* RearCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC3A202B1688007E69A5 /* RearCell.m */; };
+		5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC3B202B1688007E69A5 /* RearCell.xib */; };
+		5F70AC43202B1688007E69A5 /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC3D202B1688007E69A5 /* RearViewController.m */; };
+		5F70AC44202B1689007E69A5 /* RearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC3E202B1688007E69A5 /* RearViewController.xib */; };
+		5F70AC4A202B1691007E69A5 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC48202B1691007E69A5 /* SplashScreenViewController.m */; };
+		5F70AC4B202B1691007E69A5 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC49202B1691007E69A5 /* SplashScreenViewController.xib */; };
+		5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC54202B2248007E69A5 /* LegislateBaseViewController.m */; };
+		5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC55202B2248007E69A5 /* LegislateBaseViewController.xib */; };
 		C0B37D9E32372768C7120041 /* libPods-AdVok8Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 451D0C401EC04053B7C1ED21 /* libPods-AdVok8Tests.a */; };
 		CB281165DB24598765D2760E /* libPods-AdVok8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E476A4A368847FBC004F191 /* libPods-AdVok8.a */; };
 /* End PBXBuildFile section */
@@ -36,8 +50,6 @@
 		5F70ABF3202B1250007E69A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F70ABF5202B1250007E69A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5F70ABF6202B1250007E69A5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5F70ABF8202B1250007E69A5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		5F70ABF9202B1250007E69A5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		5F70ABFC202B1250007E69A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F70ABFF202B1250007E69A5 /* AdVok8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AdVok8.xcdatamodel; sourceTree = "<group>"; };
 		5F70AC01202B1250007E69A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +58,32 @@
 		5F70AC0B202B1250007E69A5 /* AdVok8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdVok8Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F70AC0F202B1250007E69A5 /* AdVok8Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdVok8Tests.m; sourceTree = "<group>"; };
 		5F70AC11202B1250007E69A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F70AC1B202B14EB007E69A5 /* CommonFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunction.h; sourceTree = "<group>"; };
+		5F70AC1C202B14EB007E69A5 /* CommonFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunction.m; sourceTree = "<group>"; };
+		5F70AC1D202B14EB007E69A5 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		5F70AC1F202B14EB007E69A5 /* LoderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoderView.h; sourceTree = "<group>"; };
+		5F70AC20202B14EB007E69A5 /* LoderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoderView.m; sourceTree = "<group>"; };
+		5F70AC21202B14EB007E69A5 /* LoderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoderView.xib; sourceTree = "<group>"; };
+		5F70AC23202B14EB007E69A5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		5F70AC24202B14EB007E69A5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		5F70AC25202B14EB007E69A5 /* WebServicesCall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServicesCall.h; sourceTree = "<group>"; };
+		5F70AC26202B14EB007E69A5 /* WebServicesCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServicesCall.m; sourceTree = "<group>"; };
+		5F70AC32202B1653007E69A5 /* BaseHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHomeViewController.h; sourceTree = "<group>"; };
+		5F70AC33202B1653007E69A5 /* BaseHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseHomeViewController.m; sourceTree = "<group>"; };
+		5F70AC34202B1653007E69A5 /* BaseHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseHomeViewController.xib; sourceTree = "<group>"; };
+		5F70AC39202B1688007E69A5 /* RearCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearCell.h; sourceTree = "<group>"; };
+		5F70AC3A202B1688007E69A5 /* RearCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearCell.m; sourceTree = "<group>"; };
+		5F70AC3B202B1688007E69A5 /* RearCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearCell.xib; sourceTree = "<group>"; };
+		5F70AC3C202B1688007E69A5 /* RearViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RearViewController.h; sourceTree = "<group>"; };
+		5F70AC3D202B1688007E69A5 /* RearViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RearViewController.m; sourceTree = "<group>"; };
+		5F70AC3E202B1688007E69A5 /* RearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RearViewController.xib; sourceTree = "<group>"; };
+		5F70AC47202B1691007E69A5 /* SplashScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashScreenViewController.h; sourceTree = "<group>"; };
+		5F70AC48202B1691007E69A5 /* SplashScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashScreenViewController.m; sourceTree = "<group>"; };
+		5F70AC49202B1691007E69A5 /* SplashScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
+		5F70AC4C202B1834007E69A5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5F70AC53202B2248007E69A5 /* LegislateBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegislateBaseViewController.h; sourceTree = "<group>"; };
+		5F70AC54202B2248007E69A5 /* LegislateBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegislateBaseViewController.m; sourceTree = "<group>"; };
+		5F70AC55202B2248007E69A5 /* LegislateBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegislateBaseViewController.xib; sourceTree = "<group>"; };
 		7CD644F639A1CDED1AD2871C /* Pods-AdVok8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8.release.xcconfig"; sourceTree = "<group>"; };
 		7E476A4A368847FBC004F191 /* libPods-AdVok8.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdVok8.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD73CAB49F10EB83788EA97 /* Pods-AdVok8Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8Tests/Pods-AdVok8Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -115,10 +153,14 @@
 		5F70ABF1202B1250007E69A5 /* AdVok8 */ = {
 			isa = PBXGroup;
 			children = (
+				5F70AC1A202B14EB007E69A5 /* CommonFiles */,
+				5F70AC27202B14EB007E69A5 /* CommonViews */,
+				5F70AC28202B14EB007E69A5 /* Libraries */,
+				5F70AC29202B14EB007E69A5 /* Models */,
+				5F70AC2A202B14EB007E69A5 /* Resources */,
+				5F70AC2B202B14EB007E69A5 /* ViewControllers */,
 				5F70ABF5202B1250007E69A5 /* AppDelegate.h */,
 				5F70ABF6202B1250007E69A5 /* AppDelegate.m */,
-				5F70ABF8202B1250007E69A5 /* ViewController.h */,
-				5F70ABF9202B1250007E69A5 /* ViewController.m */,
 				5F70ABFB202B1250007E69A5 /* Main.storyboard */,
 				5F70AC01202B1250007E69A5 /* Assets.xcassets */,
 				5F70AC03202B1250007E69A5 /* LaunchScreen.storyboard */,
@@ -133,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				5F70ABF3202B1250007E69A5 /* main.m */,
+				5F70AC4C202B1834007E69A5 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -144,6 +187,129 @@
 				5F70AC11202B1250007E69A5 /* Info.plist */,
 			);
 			path = AdVok8Tests;
+			sourceTree = "<group>";
+		};
+		5F70AC1A202B14EB007E69A5 /* CommonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				5F70AC1B202B14EB007E69A5 /* CommonFunction.h */,
+				5F70AC1C202B14EB007E69A5 /* CommonFunction.m */,
+				5F70AC1D202B14EB007E69A5 /* Constant.h */,
+				5F70AC1E202B14EB007E69A5 /* Loder VIew */,
+				5F70AC22202B14EB007E69A5 /* Reachability */,
+				5F70AC25202B14EB007E69A5 /* WebServicesCall.h */,
+				5F70AC26202B14EB007E69A5 /* WebServicesCall.m */,
+			);
+			path = CommonFiles;
+			sourceTree = "<group>";
+		};
+		5F70AC1E202B14EB007E69A5 /* Loder VIew */ = {
+			isa = PBXGroup;
+			children = (
+				5F70AC1F202B14EB007E69A5 /* LoderView.h */,
+				5F70AC20202B14EB007E69A5 /* LoderView.m */,
+				5F70AC21202B14EB007E69A5 /* LoderView.xib */,
+			);
+			path = "Loder VIew";
+			sourceTree = "<group>";
+		};
+		5F70AC22202B14EB007E69A5 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				5F70AC23202B14EB007E69A5 /* Reachability.h */,
+				5F70AC24202B14EB007E69A5 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		5F70AC27202B14EB007E69A5 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		5F70AC28202B14EB007E69A5 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		5F70AC29202B14EB007E69A5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5F70AC2A202B14EB007E69A5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F70AC2B202B14EB007E69A5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5F70AC4D202B21CD007E69A5 /* LegislateBaseViewController */,
+				5F70AC46202B1691007E69A5 /* SplashScreenViewController */,
+				5F70AC37202B1688007E69A5 /* SideMenu */,
+				5F70AC31202B1631007E69A5 /* BaseHomeViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5F70AC31202B1631007E69A5 /* BaseHomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F70AC32202B1653007E69A5 /* BaseHomeViewController.h */,
+				5F70AC33202B1653007E69A5 /* BaseHomeViewController.m */,
+				5F70AC34202B1653007E69A5 /* BaseHomeViewController.xib */,
+			);
+			path = BaseHomeViewController;
+			sourceTree = "<group>";
+		};
+		5F70AC37202B1688007E69A5 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5F70AC38202B1688007E69A5 /* ReaeCell */,
+				5F70AC3C202B1688007E69A5 /* RearViewController.h */,
+				5F70AC3D202B1688007E69A5 /* RearViewController.m */,
+				5F70AC3E202B1688007E69A5 /* RearViewController.xib */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		5F70AC38202B1688007E69A5 /* ReaeCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F70AC39202B1688007E69A5 /* RearCell.h */,
+				5F70AC3A202B1688007E69A5 /* RearCell.m */,
+				5F70AC3B202B1688007E69A5 /* RearCell.xib */,
+			);
+			path = ReaeCell;
+			sourceTree = "<group>";
+		};
+		5F70AC46202B1691007E69A5 /* SplashScreenViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F70AC47202B1691007E69A5 /* SplashScreenViewController.h */,
+				5F70AC48202B1691007E69A5 /* SplashScreenViewController.m */,
+				5F70AC49202B1691007E69A5 /* SplashScreenViewController.xib */,
+			);
+			path = SplashScreenViewController;
+			sourceTree = "<group>";
+		};
+		5F70AC4D202B21CD007E69A5 /* LegislateBaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F70AC53202B2248007E69A5 /* LegislateBaseViewController.h */,
+				5F70AC54202B2248007E69A5 /* LegislateBaseViewController.m */,
+				5F70AC55202B2248007E69A5 /* LegislateBaseViewController.xib */,
+			);
+			path = LegislateBaseViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +405,12 @@
 				5F70AC05202B1250007E69A5 /* LaunchScreen.storyboard in Resources */,
 				5F70AC02202B1250007E69A5 /* Assets.xcassets in Resources */,
 				5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */,
+				5F70AC44202B1689007E69A5 /* RearViewController.xib in Resources */,
+				5F70AC2E202B14EB007E69A5 /* LoderView.xib in Resources */,
+				5F70AC4B202B1691007E69A5 /* SplashScreenViewController.xib in Resources */,
+				5F70AC36202B1653007E69A5 /* BaseHomeViewController.xib in Resources */,
+				5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */,
+				5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,9 +527,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */,
+				5F70AC41202B1688007E69A5 /* RearCell.m in Sources */,
+				5F70AC4A202B1691007E69A5 /* SplashScreenViewController.m in Sources */,
+				5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */,
 				5F70AC00202B1250007E69A5 /* AdVok8.xcdatamodeld in Sources */,
-				5F70ABFA202B1250007E69A5 /* ViewController.m in Sources */,
+				5F70AC2D202B14EB007E69A5 /* LoderView.m in Sources */,
+				5F70AC43202B1688007E69A5 /* RearViewController.m in Sources */,
 				5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */,
+				5F70AC2C202B14EB007E69A5 /* CommonFunction.m in Sources */,
+				5F70AC2F202B14EB007E69A5 /* Reachability.m in Sources */,
+				5F70AC35202B1653007E69A5 /* BaseHomeViewController.m in Sources */,
 				5F70ABF4202B1250007E69A5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,6 +674,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MK5HXMKD83;
+				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
@@ -507,6 +688,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = MK5HXMKD83;
+				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
@@ -561,6 +743,7 @@
 				5F70AC16202B1250007E69A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F70AC17202B1250007E69A5 /* Build configuration list for PBXNativeTarget "AdVok8Tests" */ = {
 			isa = XCConfigurationList;
@@ -569,6 +752,7 @@
 				5F70AC19202B1250007E69A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
