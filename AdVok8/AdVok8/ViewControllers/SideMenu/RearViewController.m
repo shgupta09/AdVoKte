@@ -26,16 +26,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
      revealController = [self revealViewController];
-    
-//    _viewToClip.layer.cornerRadius = 5;
-//    _viewToClip.layer.masksToBounds = true;
-//    _viewToClip.layer.borderColor = [UIColor whiteColor].CGColor;
-//    _viewToClip.layer.borderWidth = 1;
+
      [_tbl_View registerNib:[UINib nibWithNibName:@"RearCell" bundle:nil]forCellReuseIdentifier:@"RearCell"];
     _tbl_View.rowHeight = UITableViewAutomaticDimension;
     _tbl_View.estimatedRowHeight = 100;
     _tbl_View.multipleTouchEnabled = NO;
     
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        titleArray  = [[NSMutableArray alloc]initWithObjects:@"Logout",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request", nil];
+        titleImageArray = [[NSMutableArray alloc] initWithObjects:@"logout",@"home",@"Notify-1",@"Invite Friend-1",@"rateUs",@"callrequest", nil];
+    }
+    else
+    {
+        titleArray  = [[NSMutableArray alloc]initWithObjects:@"Login",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request", nil];
+        titleImageArray = [[NSMutableArray alloc] initWithObjects:@"Login-1",@"home",@"Notify-1",@"Invite Friend-1",@"rateUs",@"callrequest", nil];
+    }
     //categoryArray = [AwarenessCategory sharedInstance].myDataArray;
     
     // Do any additional setup after loading the view from its nib.
@@ -53,123 +58,72 @@
 #pragma mark- tableView delegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-   
-          return 3;
+    return titleArray.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [UITableViewCell new];
+    RearCell *rearCell = [_tbl_View dequeueReusableCellWithIdentifier:@"RearCell"];
+    
+    rearCell.lbl_title.text = [titleArray objectAtIndex:indexPath.row];
+    rearCell.imgView.image = [UIImage imageNamed:[titleImageArray objectAtIndex:indexPath.row]];
+    
+    rearCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return rearCell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    /*
     [revealController revealToggle:nil];
-     if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]) {
-//    if (indexPath.row<categoryArray.count){
-//        
-//        DoctorListVC* vc ;
-//        vc = [[DoctorListVC alloc] initWithNibName:@"DoctorListVC" bundle:nil];
-//        vc.awarenessObj = [categoryArray objectAtIndex:indexPath.row];
-//        [self.navigationController pushViewController:vc animated:true];
-//    }else{
-        
-        if ([[CommonFunction getValueFromDefaultWithKey:loginuserType] isEqualToString:@"Patient"]) {
-            switch (indexPath.row) {
-                case 0:{
-                    ChooseDependantViewController* vc ;
-                    vc = [[ChooseDependantViewController alloc] initWithNibName:@"ChooseDependantViewController" bundle:nil];
-                    vc.patientID = [CommonFunction getValueFromDefaultWithKey:loginuserId];
-                    vc.classObj = self;
-                    vc.isManageDependants = true;
-                    [self.navigationController pushViewController:vc animated:true];
-                }
-                    break;
-                    
-                case 1:
-                {
-                    ChooseDependantViewController* vc ;
-                    vc = [[ChooseDependantViewController alloc] initWithNibName:@"ChooseDependantViewController" bundle:nil];
-                    vc.patientID = [CommonFunction getValueFromDefaultWithKey:loginuserId];
-                    vc.classObj = self;
-                    vc.isManageDependants = false;
 
-                    [self.navigationController pushViewController:vc animated:true];
-                }
-                    break;
-                case 2:{
-                    PatientHomeVC* vc ;
-                    vc = [[PatientHomeVC alloc] initWithNibName:@"PatientHomeVC" bundle:nil];
-                    [self.navigationController pushViewController:vc animated:true];
-                }
-                    break;
-                case 3:
-                {
-                    
-                }
-                    break;
-
-                
-                case 4:{
-                }
-                    break;
-                case 5:{
-                   }
-                    break;
-
-                default:
-                    break;
+    switch (indexPath.row) {
+        case 0:
+        {
+             if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+             
+             }
+            else
+            {
+                LoginViewController* vc ;
+                vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+                [self.navigationController pushViewController:vc animated:true];
             }
         }
-        */
+            break;
+        case 1:
+        {
+            
+        }
+            break;
+        case 2:
+        {
+            
+        }
+            break;
+        case 3:
+        {
+            
+        }
+            break;
+        case 4:
+        {
+            
+        }
+            break;
+        case 5:
+        {
+            
+        }
+            break;
+        case 6:
+        {
+            
+        }
+            break;
+
+        default:
+            break;
+    }
 }
 
 
-
-- (IBAction)btn_Logout:(id)sender {
-     [revealController revealToggle:nil];
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"LogOutTapped"
-     object:self];
-     
-    /*
-    UIAlertController * alert=   [UIAlertController
-                                                                                    alertControllerWithTitle:@"Logout"
-                                                                                    message:@"Are you sure you want to Logout?"
-                                                                                    preferredStyle:UIAlertControllerStyleAlert];
-                                  
-                                                      UIAlertAction* ok = [UIAlertAction
-                                                                           actionWithTitle:@"OK"
-                                                                           style:UIAlertActionStyleDefault
-                                                                           handler:^(UIAlertAction * action)
-                                                                           {
-                                                                               [revealController revealToggle:nil];
-
-                                                                               [_tbl_View reloadData];
-                                                                               [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:false];
-                                                                               [alert dismissViewControllerAnimated:YES completion:nil];
-                                                                               [[NSNotificationCenter defaultCenter]
-                                                                                postNotificationName:@"LogoutNotification"
-                                                                                object:self];
-                                  
-                                                                           }];
-                                                      UIAlertAction* cancel = [UIAlertAction
-                                                                               actionWithTitle:@"Cancel"
-                                                                               style:UIAlertActionStyleDefault
-                                                                               handler:^(UIAlertAction * action)
-                                                                               {
-                                                                                   [alert dismissViewControllerAnimated:YES completion:nil];
-                                                                                   [[NSNotificationCenter defaultCenter]
-                                                                                    postNotificationName:@"CancelNotification"
-                                                                                    object:self];
-                                                                                   
-                                                                               }];
-                                                      
-                                                      [alert addAction:ok];
-                                                      [alert addAction:cancel];
-                                                      
-                                                      [self presentViewController:alert animated:YES completion:nil];
-*/
-
-}
 
 #pragma mark - add loder
 

@@ -10,5 +10,8 @@
 
 @interface BaseHomeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIView *containerView;
+@property (weak, nonatomic) IBOutlet UIView *containerViewDashboard;
+@property (weak, nonatomic) IBOutlet UIView *vi_activeLegislate;
+@property (weak, nonatomic) IBOutlet UIView *vi_activeDashboard;
 
 @end

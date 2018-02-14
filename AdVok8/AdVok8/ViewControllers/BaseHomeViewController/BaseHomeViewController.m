@@ -22,12 +22,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _containerViewDashboard.hidden = true;
+    _vi_activeDashboard.hidden = true;
+
     LegislateBaseViewController* vc = [[LegislateBaseViewController alloc] initWithNibName:@"LegislateBaseViewController" bundle:nil];
     
     [self addChildViewController:vc];                 // 1
-    vc.view.bounds = _containerView.bounds;                 //2
+    vc.view.frame = _containerView.bounds;
     [_containerView addSubview:vc.view];
     [vc didMoveToParentViewController:self];
+   
+    DashboardBaseViewController* vc1 = [[DashboardBaseViewController alloc] initWithNibName:@"DashboardBaseViewController" bundle:nil];
+    
+    [self addChildViewController:vc1];                 // 1
+    vc1.view.frame = _containerViewDashboard.bounds;
+    [_containerViewDashboard addSubview:vc1.view];
+    [vc1 didMoveToParentViewController:self];
+
+    
+    revealController = [self revealViewController];
+    singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                              action:@selector(handleSingleTap:)];
+
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -38,6 +54,18 @@
 }
 
 #pragma mark - Button Actions
+//The event handling method
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer
+{
+    self.navigationController.navigationBar.userInteractionEnabled = true;
+    if (isOpen){
+        [revealController revealToggle:nil];
+        [tempView removeGestureRecognizer:singleFingerTap];
+        [tempView removeFromSuperview];
+        isOpen = false;
+    }
+    
+}
 
 - (IBAction)revealAction:(id)sender {
     //    self.view.userInteractionEnabled = false;
@@ -64,6 +92,18 @@
 }
 
 - (IBAction)btnLegislate:(id)sender {
+    _containerViewDashboard.hidden = true;
+    _containerView.hidden = false;
+    _vi_activeDashboard.hidden = true;
+    _vi_activeLegislate.hidden = false;
+
+}
+- (IBAction)btnDashboard:(id)sender {
+    _containerViewDashboard.hidden = false;
+    _containerView.hidden = true;
+    _vi_activeDashboard.hidden = false;
+    _vi_activeLegislate.hidden = true;
+
 }
 
 

@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LegislateBaseViewController">
             <connections>
+                <outlet property="containerFeed" destination="qcy-IZ-zw3" id="Ura-c8-UH0"/>
+                <outlet property="containerJournal" destination="gD7-Vr-9LS" id="NHR-2j-hBk"/>
+                <outlet property="containerLibrary" destination="g4v-5z-Fhv" id="krX-WB-WGJ"/>
+                <outlet property="containerPost" destination="UW6-Mm-i01" id="n1z-nw-bWM"/>
+                <outlet property="tabBar" destination="BI8-xY-cvq" id="oIw-F8-e1G"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,32 +24,71 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BI8-xY-cvq">
+                <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BI8-xY-cvq">
                     <rect key="frame" x="0.0" y="618" width="375" height="49"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <items>
-                        <tabBarItem title="Feed" image="FeedTab" id="00R-QD-8Xk">
+                        <tabBarItem tag="1000" title="Feed" image="FeedTab" id="00R-QD-8Xk">
                             <inset key="imageInsets" minX="3" minY="5" maxX="3" maxY="1"/>
                             <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                         </tabBarItem>
-                        <tabBarItem title="Library" image="LibraryTab" id="1cz-w2-HJe">
+                        <tabBarItem tag="1001" title="Library" image="LibraryTab" id="1cz-w2-HJe">
                             <inset key="imageInsets" minX="3" minY="5" maxX="3" maxY="1"/>
                             <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                         </tabBarItem>
-                        <tabBarItem title="Journal" image="JournalTab" id="koL-8k-NfG">
+                        <tabBarItem tag="1002" title="Journal" image="JournalTab" id="koL-8k-NfG">
                             <inset key="imageInsets" minX="3" minY="5" maxX="3" maxY="1"/>
                             <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                         </tabBarItem>
-                        <tabBarItem title="Post" image="PostTab" id="ne0-ry-Maa">
+                        <tabBarItem tag="1003" title="Post" image="PostTab" id="ne0-ry-Maa">
                             <inset key="imageInsets" minX="3" minY="5" maxX="3" maxY="1"/>
                             <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                         </tabBarItem>
                     </items>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="uBp-bC-A0g"/>
+                    </connections>
                 </tabBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcy-IZ-zw3">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4v-5z-Fhv">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gD7-Vr-9LS">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UW6-Mm-i01">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <point key="canvasLocation" x="33" y="63"/>
+            <constraints>
+                <constraint firstItem="qcy-IZ-zw3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6Y8-c1-uRa"/>
+                <constraint firstAttribute="trailing" secondItem="gD7-Vr-9LS" secondAttribute="trailing" id="7s3-UH-zTo"/>
+                <constraint firstItem="g4v-5z-Fhv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8Qj-bU-1Iz"/>
+                <constraint firstItem="gD7-Vr-9LS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Ab6-A7-68U"/>
+                <constraint firstItem="BI8-xY-cvq" firstAttribute="top" secondItem="UW6-Mm-i01" secondAttribute="bottom" id="FQx-cE-wA2"/>
+                <constraint firstItem="UW6-Mm-i01" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Flg-8E-Aao"/>
+                <constraint firstAttribute="bottom" secondItem="BI8-xY-cvq" secondAttribute="bottom" id="GRn-0z-MJB"/>
+                <constraint firstItem="UW6-Mm-i01" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Gvu-Zw-cWZ"/>
+                <constraint firstItem="BI8-xY-cvq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Jal-my-vFf"/>
+                <constraint firstItem="gD7-Vr-9LS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Rh9-6f-H9A"/>
+                <constraint firstItem="BI8-xY-cvq" firstAttribute="top" secondItem="g4v-5z-Fhv" secondAttribute="bottom" id="Sbf-F6-Pvg"/>
+                <constraint firstItem="BI8-xY-cvq" firstAttribute="top" secondItem="qcy-IZ-zw3" secondAttribute="bottom" id="a5R-pb-oc9"/>
+                <constraint firstAttribute="trailing" secondItem="UW6-Mm-i01" secondAttribute="trailing" id="jQN-mM-soS"/>
+                <constraint firstItem="qcy-IZ-zw3" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jZQ-0D-rnh"/>
+                <constraint firstAttribute="trailing" secondItem="qcy-IZ-zw3" secondAttribute="trailing" id="lwZ-JU-KLs"/>
+                <constraint firstAttribute="trailing" secondItem="BI8-xY-cvq" secondAttribute="trailing" id="pRU-nO-X4b"/>
+                <constraint firstAttribute="trailing" secondItem="g4v-5z-Fhv" secondAttribute="trailing" id="t8R-Tn-HQW"/>
+                <constraint firstItem="g4v-5z-Fhv" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tBu-HA-CUk"/>
+                <constraint firstItem="BI8-xY-cvq" firstAttribute="top" secondItem="gD7-Vr-9LS" secondAttribute="bottom" id="u6l-cL-xkQ"/>
+            </constraints>
+            <point key="canvasLocation" x="31.5" y="-80.5"/>
         </view>
     </objects>
     <resources>

@@ -19,5 +19,20 @@
 #import "CommonFunction.h"
 #import "LegislateBaseViewController.h"
 #import "Reachability.h"
+#import "DashboardHomeCollectionViewCell.h"
+#import "DashboardBaseViewController.h"
+#import "FeedViewController.h"
+#import "LibraryViewController.h"
+#import "JournalViewController.h"
+#import "PostViewController.h"
+#import "FeedMainTableViewCell.h"
+#import "PostMainTableViewCell.h"
+#import "RearCell.h"
+#import "Constant.h"
+#import "LoginViewController.h"
 
 #endif /* PrefixHeader_pch */
+
+
+
+

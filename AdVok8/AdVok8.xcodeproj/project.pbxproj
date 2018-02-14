@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F1B9C2D203413F8009503E7 /* DashboardBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C2B203413F8009503E7 /* DashboardBaseViewController.m */; };
+		5F1B9C2E203413F8009503E7 /* DashboardBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C2C203413F8009503E7 /* DashboardBaseViewController.xib */; };
+		5F1B9C33203415B9009503E7 /* DashboardHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C31203415B9009503E7 /* DashboardHomeCollectionViewCell.m */; };
+		5F1B9C34203415B9009503E7 /* DashboardHomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C32203415B9009503E7 /* DashboardHomeCollectionViewCell.xib */; };
+		5F1B9C3C203437F8009503E7 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C3A203437F8009503E7 /* PostViewController.m */; };
+		5F1B9C3D203437F8009503E7 /* PostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C3B203437F8009503E7 /* PostViewController.xib */; };
+		5F1B9C412034381C009503E7 /* JournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C3F2034381C009503E7 /* JournalViewController.m */; };
+		5F1B9C422034381C009503E7 /* JournalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C402034381C009503E7 /* JournalViewController.xib */; };
+		5F1B9C462034383F009503E7 /* LibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C442034383F009503E7 /* LibraryViewController.m */; };
+		5F1B9C472034383F009503E7 /* LibraryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C452034383F009503E7 /* LibraryViewController.xib */; };
+		5F1B9C4B20343889009503E7 /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C4920343889009503E7 /* FeedViewController.m */; };
+		5F1B9C4C20343889009503E7 /* FeedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C4A20343889009503E7 /* FeedViewController.xib */; };
+		5F1B9C572034411C009503E7 /* FeedMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C552034411C009503E7 /* FeedMainTableViewCell.m */; };
+		5F1B9C582034411C009503E7 /* FeedMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C562034411C009503E7 /* FeedMainTableViewCell.xib */; };
+		5F1B9C5D20344A64009503E7 /* PostMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C5B20344A64009503E7 /* PostMainTableViewCell.m */; };
+		5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C5C20344A64009503E7 /* PostMainTableViewCell.xib */; };
+		5F1B9C69203461FE009503E7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C67203461FE009503E7 /* LoginViewController.m */; };
+		5F1B9C6A203461FE009503E7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C68203461FE009503E7 /* LoginViewController.xib */; };
 		5F70ABF4202B1250007E69A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF3202B1250007E69A5 /* main.m */; };
 		5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF6202B1250007E69A5 /* AppDelegate.m */; };
 		5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F70ABFB202B1250007E69A5 /* Main.storyboard */; };
@@ -46,6 +64,34 @@
 /* Begin PBXFileReference section */
 		451D0C401EC04053B7C1ED21 /* libPods-AdVok8Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdVok8Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DB2464D49DD7471880FD048 /* Pods-AdVok8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8.debug.xcconfig"; sourceTree = "<group>"; };
+		5F1B9C2A203413F8009503E7 /* DashboardBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashboardBaseViewController.h; sourceTree = "<group>"; };
+		5F1B9C2B203413F8009503E7 /* DashboardBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DashboardBaseViewController.m; sourceTree = "<group>"; };
+		5F1B9C2C203413F8009503E7 /* DashboardBaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardBaseViewController.xib; sourceTree = "<group>"; };
+		5F1B9C30203415B9009503E7 /* DashboardHomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashboardHomeCollectionViewCell.h; sourceTree = "<group>"; };
+		5F1B9C31203415B9009503E7 /* DashboardHomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DashboardHomeCollectionViewCell.m; sourceTree = "<group>"; };
+		5F1B9C32203415B9009503E7 /* DashboardHomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardHomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		5F1B9C39203437F8009503E7 /* PostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		5F1B9C3A203437F8009503E7 /* PostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		5F1B9C3B203437F8009503E7 /* PostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostViewController.xib; sourceTree = "<group>"; };
+		5F1B9C3E2034381C009503E7 /* JournalViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JournalViewController.h; sourceTree = "<group>"; };
+		5F1B9C3F2034381C009503E7 /* JournalViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JournalViewController.m; sourceTree = "<group>"; };
+		5F1B9C402034381C009503E7 /* JournalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalViewController.xib; sourceTree = "<group>"; };
+		5F1B9C432034383F009503E7 /* LibraryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LibraryViewController.h; sourceTree = "<group>"; };
+		5F1B9C442034383F009503E7 /* LibraryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LibraryViewController.m; sourceTree = "<group>"; };
+		5F1B9C452034383F009503E7 /* LibraryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryViewController.xib; sourceTree = "<group>"; };
+		5F1B9C4820343889009503E7 /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		5F1B9C4920343889009503E7 /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		5F1B9C4A20343889009503E7 /* FeedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedViewController.xib; sourceTree = "<group>"; };
+		5F1B9C542034411C009503E7 /* FeedMainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedMainTableViewCell.h; sourceTree = "<group>"; };
+		5F1B9C552034411C009503E7 /* FeedMainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedMainTableViewCell.m; sourceTree = "<group>"; };
+		5F1B9C562034411C009503E7 /* FeedMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedMainTableViewCell.xib; sourceTree = "<group>"; };
+		5F1B9C5A20344A64009503E7 /* PostMainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostMainTableViewCell.h; sourceTree = "<group>"; };
+		5F1B9C5B20344A64009503E7 /* PostMainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostMainTableViewCell.m; sourceTree = "<group>"; };
+		5F1B9C5C20344A64009503E7 /* PostMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostMainTableViewCell.xib; sourceTree = "<group>"; };
+		5F1B9C64203460A6009503E7 /* Constant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
+		5F1B9C66203461FE009503E7 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		5F1B9C67203461FE009503E7 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		5F1B9C68203461FE009503E7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		5F70ABEF202B1250007E69A5 /* AdVok8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdVok8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F70ABF3202B1250007E69A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F70ABF5202B1250007E69A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -130,6 +176,112 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5F1B9C29203413DD009503E7 /* DashboardBaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9C2A203413F8009503E7 /* DashboardBaseViewController.h */,
+				5F1B9C2B203413F8009503E7 /* DashboardBaseViewController.m */,
+				5F1B9C2C203413F8009503E7 /* DashboardBaseViewController.xib */,
+			);
+			path = DashboardBaseViewController;
+			sourceTree = "<group>";
+		};
+		5F1B9C2F2034156A009503E7 /* DashboardHomeCollevtionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9C30203415B9009503E7 /* DashboardHomeCollectionViewCell.h */,
+				5F1B9C31203415B9009503E7 /* DashboardHomeCollectionViewCell.m */,
+				5F1B9C32203415B9009503E7 /* DashboardHomeCollectionViewCell.xib */,
+			);
+			path = DashboardHomeCollevtionViewCell;
+			sourceTree = "<group>";
+		};
+		5F1B9C3520343725009503E7 /* FeedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9C4820343889009503E7 /* FeedViewController.h */,
+				5F1B9C4920343889009503E7 /* FeedViewController.m */,
+				5F1B9C4A20343889009503E7 /* FeedViewController.xib */,
+			);
+			path = FeedViewController;
+			sourceTree = "<group>";
+		};
+		5F1B9C3620343758009503E7 /* LibraryViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9C432034383F009503E7 /* LibraryViewController.h */,
+				5F1B9C442034383F009503E7 /* LibraryViewController.m */,
+				5F1B9C452034383F009503E7 /* LibraryViewController.xib */,
+			);
+			path = LibraryViewController;
+			sourceTree = "<group>";
+		};
+		5F1B9C3720343765009503E7 /* JournalViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9C3E2034381C009503E7 /* JournalViewController.h */,
+				5F1B9C3F2034381C009503E7 /* JournalViewController.m */,
+				5F1B9C402034381C009503E7 /* JournalViewController.xib */,
+			);
+			path = JournalViewController;
+			sourceTree = "<group>";
+		};
+		5F1B9C3820343774009503E7 /* PostViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9C39203437F8009503E7 /* PostViewController.h */,
+				5F1B9C3A203437F8009503E7 /* PostViewController.m */,
+				5F1B9C3B203437F8009503E7 /* PostViewController.xib */,
+			);
+			path = PostViewController;
+			sourceTree = "<group>";
+		};
+		5F1B9C4D203440BC009503E7 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9C5920344A56009503E7 /* PostMainTableViewCell */,
+				5F1B9C4E203440D1009503E7 /* FeedMainTableViewCell */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		5F1B9C4E203440D1009503E7 /* FeedMainTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9C542034411C009503E7 /* FeedMainTableViewCell.h */,
+				5F1B9C552034411C009503E7 /* FeedMainTableViewCell.m */,
+				5F1B9C562034411C009503E7 /* FeedMainTableViewCell.xib */,
+			);
+			path = FeedMainTableViewCell;
+			sourceTree = "<group>";
+		};
+		5F1B9C5920344A56009503E7 /* PostMainTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9C5A20344A64009503E7 /* PostMainTableViewCell.h */,
+				5F1B9C5B20344A64009503E7 /* PostMainTableViewCell.m */,
+				5F1B9C5C20344A64009503E7 /* PostMainTableViewCell.xib */,
+			);
+			path = PostMainTableViewCell;
+			sourceTree = "<group>";
+		};
+		5F1B9C5F20344F9F009503E7 /* Designables */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Designables;
+			sourceTree = "<group>";
+		};
+		5F1B9C65203461EE009503E7 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9C66203461FE009503E7 /* LoginViewController.h */,
+				5F1B9C67203461FE009503E7 /* LoginViewController.m */,
+				5F1B9C68203461FE009503E7 /* LoginViewController.xib */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
 		5F70ABE6202B1250007E69A5 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +305,7 @@
 		5F70ABF1202B1250007E69A5 /* AdVok8 */ = {
 			isa = PBXGroup;
 			children = (
+				5F1B9C5F20344F9F009503E7 /* Designables */,
 				5F70AC1A202B14EB007E69A5 /* CommonFiles */,
 				5F70AC27202B14EB007E69A5 /* CommonViews */,
 				5F70AC28202B14EB007E69A5 /* Libraries */,
@@ -176,6 +329,7 @@
 			children = (
 				5F70ABF3202B1250007E69A5 /* main.m */,
 				5F70AC4C202B1834007E69A5 /* PrefixHeader.pch */,
+				5F1B9C64203460A6009503E7 /* Constant.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -225,6 +379,8 @@
 		5F70AC27202B14EB007E69A5 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				5F1B9C4D203440BC009503E7 /* TableViewCells */,
+				5F1B9C2F2034156A009503E7 /* DashboardHomeCollevtionViewCell */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -253,6 +409,8 @@
 		5F70AC2B202B14EB007E69A5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5F1B9C65203461EE009503E7 /* LoginViewController */,
+				5F1B9C29203413DD009503E7 /* DashboardBaseViewController */,
 				5F70AC4D202B21CD007E69A5 /* LegislateBaseViewController */,
 				5F70AC46202B1691007E69A5 /* SplashScreenViewController */,
 				5F70AC37202B1688007E69A5 /* SideMenu */,
@@ -305,6 +463,10 @@
 		5F70AC4D202B21CD007E69A5 /* LegislateBaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5F1B9C3820343774009503E7 /* PostViewController */,
+				5F1B9C3720343765009503E7 /* JournalViewController */,
+				5F1B9C3620343758009503E7 /* LibraryViewController */,
+				5F1B9C3520343725009503E7 /* FeedViewController */,
 				5F70AC53202B2248007E69A5 /* LegislateBaseViewController.h */,
 				5F70AC54202B2248007E69A5 /* LegislateBaseViewController.m */,
 				5F70AC55202B2248007E69A5 /* LegislateBaseViewController.xib */,
@@ -403,13 +565,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F70AC05202B1250007E69A5 /* LaunchScreen.storyboard in Resources */,
+				5F1B9C4C20343889009503E7 /* FeedViewController.xib in Resources */,
 				5F70AC02202B1250007E69A5 /* Assets.xcassets in Resources */,
 				5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */,
 				5F70AC44202B1689007E69A5 /* RearViewController.xib in Resources */,
 				5F70AC2E202B14EB007E69A5 /* LoderView.xib in Resources */,
+				5F1B9C582034411C009503E7 /* FeedMainTableViewCell.xib in Resources */,
 				5F70AC4B202B1691007E69A5 /* SplashScreenViewController.xib in Resources */,
+				5F1B9C6A203461FE009503E7 /* LoginViewController.xib in Resources */,
 				5F70AC36202B1653007E69A5 /* BaseHomeViewController.xib in Resources */,
 				5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */,
+				5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */,
+				5F1B9C3D203437F8009503E7 /* PostViewController.xib in Resources */,
+				5F1B9C422034381C009503E7 /* JournalViewController.xib in Resources */,
+				5F1B9C472034383F009503E7 /* LibraryViewController.xib in Resources */,
+				5F1B9C34203415B9009503E7 /* DashboardHomeCollectionViewCell.xib in Resources */,
+				5F1B9C2E203413F8009503E7 /* DashboardBaseViewController.xib in Resources */,
 				5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,18 +698,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1B9C5D20344A64009503E7 /* PostMainTableViewCell.m in Sources */,
 				5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */,
 				5F70AC41202B1688007E69A5 /* RearCell.m in Sources */,
 				5F70AC4A202B1691007E69A5 /* SplashScreenViewController.m in Sources */,
+				5F1B9C2D203413F8009503E7 /* DashboardBaseViewController.m in Sources */,
 				5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */,
+				5F1B9C572034411C009503E7 /* FeedMainTableViewCell.m in Sources */,
 				5F70AC00202B1250007E69A5 /* AdVok8.xcdatamodeld in Sources */,
+				5F1B9C33203415B9009503E7 /* DashboardHomeCollectionViewCell.m in Sources */,
 				5F70AC2D202B14EB007E69A5 /* LoderView.m in Sources */,
 				5F70AC43202B1688007E69A5 /* RearViewController.m in Sources */,
+				5F1B9C69203461FE009503E7 /* LoginViewController.m in Sources */,
 				5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */,
 				5F70AC2C202B14EB007E69A5 /* CommonFunction.m in Sources */,
 				5F70AC2F202B14EB007E69A5 /* Reachability.m in Sources */,
+				5F1B9C462034383F009503E7 /* LibraryViewController.m in Sources */,
+				5F1B9C412034381C009503E7 /* JournalViewController.m in Sources */,
 				5F70AC35202B1653007E69A5 /* BaseHomeViewController.m in Sources */,
 				5F70ABF4202B1250007E69A5 /* main.m in Sources */,
+				5F1B9C4B20343889009503E7 /* FeedViewController.m in Sources */,
+				5F1B9C3C203437F8009503E7 /* PostViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -676,6 +856,7 @@
 				DEVELOPMENT_TEAM = MK5HXMKD83;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -690,6 +871,7 @@
 				DEVELOPMENT_TEAM = MK5HXMKD83;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";

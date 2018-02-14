@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LegislateBaseViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITabBar *tabBar;
+@property (weak, nonatomic) IBOutlet UIView *containerFeed;
+@property (weak, nonatomic) IBOutlet UIView *containerLibrary;
+@property (weak, nonatomic) IBOutlet UIView *containerJournal;
+@property (weak, nonatomic) IBOutlet UIView *containerPost;
 
 @end
