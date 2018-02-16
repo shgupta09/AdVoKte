@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JournalViewController">
             <connections>
+                <outlet property="tblView" destination="X7j-Jj-k4N" id="XWO-ep-1NA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,15 +21,25 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="journa;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6rL-31-tS0">
-                    <rect key="frame" x="159" y="275" width="73" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X7j-Jj-k4N">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="7sE-fE-hOc"/>
+                        <outlet property="delegate" destination="-1" id="Php-2H-qBN"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="X7j-Jj-k4N" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4nw-mx-yGG"/>
+                <constraint firstItem="X7j-Jj-k4N" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="5Hp-mU-kHs"/>
+                <constraint firstItem="X7j-Jj-k4N" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="EnV-Kv-SYl"/>
+                <constraint firstItem="X7j-Jj-k4N" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="MNP-ua-YgK"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="X7j-Jj-k4N" secondAttribute="bottom" id="aHz-Nr-id4"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="X7j-Jj-k4N" secondAttribute="trailing" id="iFd-KF-UV5"/>
+                <constraint firstItem="X7j-Jj-k4N" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="kW3-OJ-3mM"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="24.5" y="52.5"/>
         </view>

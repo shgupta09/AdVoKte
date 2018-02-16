@@ -25,6 +25,14 @@
 		5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C5C20344A64009503E7 /* PostMainTableViewCell.xib */; };
 		5F1B9C69203461FE009503E7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C67203461FE009503E7 /* LoginViewController.m */; };
 		5F1B9C6A203461FE009503E7 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C68203461FE009503E7 /* LoginViewController.xib */; };
+		5F1B9C6D20356753009503E7 /* ADRegistrationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C6C20356753009503E7 /* ADRegistrationModel.m */; };
+		5F1B9C702035687F009503E7 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C6F2035687F009503E7 /* LoginModel.m */; };
+		5F1B9C73203568BD009503E7 /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C72203568BD009503E7 /* SearchModel.m */; };
+		5F1B9C76203568F3009503E7 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C75203568F3009503E7 /* User.m */; };
+		5F1B9C7920356909009503E7 /* Response.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C7820356909009503E7 /* Response.m */; };
+		5F1B9C7E20359131009503E7 /* JournalMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C7C20359131009503E7 /* JournalMainTableViewCell.m */; };
+		5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C7D20359131009503E7 /* JournalMainTableViewCell.xib */; };
+		5F1B9C832035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C822035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m */; };
 		5F70ABF4202B1250007E69A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF3202B1250007E69A5 /* main.m */; };
 		5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF6202B1250007E69A5 /* AppDelegate.m */; };
 		5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F70ABFB202B1250007E69A5 /* Main.storyboard */; };
@@ -92,6 +100,21 @@
 		5F1B9C66203461FE009503E7 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		5F1B9C67203461FE009503E7 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5F1B9C68203461FE009503E7 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		5F1B9C6B20356753009503E7 /* ADRegistrationModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADRegistrationModel.h; sourceTree = "<group>"; };
+		5F1B9C6C20356753009503E7 /* ADRegistrationModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADRegistrationModel.m; sourceTree = "<group>"; };
+		5F1B9C6E2035687F009503E7 /* LoginModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		5F1B9C6F2035687F009503E7 /* LoginModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		5F1B9C71203568BD009503E7 /* SearchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchModel.h; sourceTree = "<group>"; };
+		5F1B9C72203568BD009503E7 /* SearchModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchModel.m; sourceTree = "<group>"; };
+		5F1B9C74203568F3009503E7 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		5F1B9C75203568F3009503E7 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		5F1B9C7720356909009503E7 /* Response.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Response.h; sourceTree = "<group>"; };
+		5F1B9C7820356909009503E7 /* Response.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Response.m; sourceTree = "<group>"; };
+		5F1B9C7B20359131009503E7 /* JournalMainTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JournalMainTableViewCell.h; sourceTree = "<group>"; };
+		5F1B9C7C20359131009503E7 /* JournalMainTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JournalMainTableViewCell.m; sourceTree = "<group>"; };
+		5F1B9C7D20359131009503E7 /* JournalMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalMainTableViewCell.xib; sourceTree = "<group>"; };
+		5F1B9C812035A7D1009503E7 /* TextFieldBaselineWithLeftRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldBaselineWithLeftRight.h; sourceTree = "<group>"; };
+		5F1B9C822035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldBaselineWithLeftRight.m; sourceTree = "<group>"; };
 		5F70ABEF202B1250007E69A5 /* AdVok8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdVok8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F70ABF3202B1250007E69A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F70ABF5202B1250007E69A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -239,6 +262,7 @@
 		5F1B9C4D203440BC009503E7 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				5F1B9C7A20359082009503E7 /* JournalMainTableViewCell */,
 				5F1B9C5920344A56009503E7 /* PostMainTableViewCell */,
 				5F1B9C4E203440D1009503E7 /* FeedMainTableViewCell */,
 			);
@@ -280,6 +304,25 @@
 				5F1B9C68203461FE009503E7 /* LoginViewController.xib */,
 			);
 			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		5F1B9C7A20359082009503E7 /* JournalMainTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9C7B20359131009503E7 /* JournalMainTableViewCell.h */,
+				5F1B9C7C20359131009503E7 /* JournalMainTableViewCell.m */,
+				5F1B9C7D20359131009503E7 /* JournalMainTableViewCell.xib */,
+			);
+			path = JournalMainTableViewCell;
+			sourceTree = "<group>";
+		};
+		5F1B9C802035A7C9009503E7 /* TextFieldWithBaselineAndImage */ = {
+			isa = PBXGroup;
+			children = (
+				5F1B9C812035A7D1009503E7 /* TextFieldBaselineWithLeftRight.h */,
+				5F1B9C822035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m */,
+			);
+			path = TextFieldWithBaselineAndImage;
 			sourceTree = "<group>";
 		};
 		5F70ABE6202B1250007E69A5 = {
@@ -379,6 +422,7 @@
 		5F70AC27202B14EB007E69A5 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				5F1B9C802035A7C9009503E7 /* TextFieldWithBaselineAndImage */,
 				5F1B9C4D203440BC009503E7 /* TableViewCells */,
 				5F1B9C2F2034156A009503E7 /* DashboardHomeCollevtionViewCell */,
 			);
@@ -395,6 +439,16 @@
 		5F70AC29202B14EB007E69A5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5F1B9C6B20356753009503E7 /* ADRegistrationModel.h */,
+				5F1B9C6C20356753009503E7 /* ADRegistrationModel.m */,
+				5F1B9C6E2035687F009503E7 /* LoginModel.h */,
+				5F1B9C6F2035687F009503E7 /* LoginModel.m */,
+				5F1B9C71203568BD009503E7 /* SearchModel.h */,
+				5F1B9C72203568BD009503E7 /* SearchModel.m */,
+				5F1B9C74203568F3009503E7 /* User.h */,
+				5F1B9C75203568F3009503E7 /* User.m */,
+				5F1B9C7720356909009503E7 /* Response.h */,
+				5F1B9C7820356909009503E7 /* Response.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -576,6 +630,7 @@
 				5F70AC36202B1653007E69A5 /* BaseHomeViewController.xib in Resources */,
 				5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */,
 				5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */,
+				5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */,
 				5F1B9C3D203437F8009503E7 /* PostViewController.xib in Resources */,
 				5F1B9C422034381C009503E7 /* JournalViewController.xib in Resources */,
 				5F1B9C472034383F009503E7 /* LibraryViewController.xib in Resources */,
@@ -698,6 +753,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1B9C76203568F3009503E7 /* User.m in Sources */,
 				5F1B9C5D20344A64009503E7 /* PostMainTableViewCell.m in Sources */,
 				5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */,
 				5F70AC41202B1688007E69A5 /* RearCell.m in Sources */,
@@ -705,15 +761,21 @@
 				5F1B9C2D203413F8009503E7 /* DashboardBaseViewController.m in Sources */,
 				5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */,
 				5F1B9C572034411C009503E7 /* FeedMainTableViewCell.m in Sources */,
+				5F1B9C73203568BD009503E7 /* SearchModel.m in Sources */,
 				5F70AC00202B1250007E69A5 /* AdVok8.xcdatamodeld in Sources */,
 				5F1B9C33203415B9009503E7 /* DashboardHomeCollectionViewCell.m in Sources */,
 				5F70AC2D202B14EB007E69A5 /* LoderView.m in Sources */,
+				5F1B9C832035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m in Sources */,
 				5F70AC43202B1688007E69A5 /* RearViewController.m in Sources */,
 				5F1B9C69203461FE009503E7 /* LoginViewController.m in Sources */,
+				5F1B9C7920356909009503E7 /* Response.m in Sources */,
+				5F1B9C702035687F009503E7 /* LoginModel.m in Sources */,
 				5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */,
+				5F1B9C6D20356753009503E7 /* ADRegistrationModel.m in Sources */,
 				5F70AC2C202B14EB007E69A5 /* CommonFunction.m in Sources */,
 				5F70AC2F202B14EB007E69A5 /* Reachability.m in Sources */,
 				5F1B9C462034383F009503E7 /* LibraryViewController.m in Sources */,
+				5F1B9C7E20359131009503E7 /* JournalMainTableViewCell.m in Sources */,
 				5F1B9C412034381C009503E7 /* JournalViewController.m in Sources */,
 				5F70AC35202B1653007E69A5 /* BaseHomeViewController.m in Sources */,
 				5F70ABF4202B1250007E69A5 /* main.m in Sources */,
@@ -856,7 +918,7 @@
 				DEVELOPMENT_TEAM = MK5HXMKD83;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -871,7 +933,7 @@
 				DEVELOPMENT_TEAM = MK5HXMKD83;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -31,6 +31,10 @@
 #import "Constant.h"
 #import "LoginViewController.h"
 
+// Models
+#import "ADRegistrationModel.h"
+#import "JournalMainTableViewCell.h"
+
 #endif /* PrefixHeader_pch */
 
 
