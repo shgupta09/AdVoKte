@@ -30,6 +30,11 @@
 #import "RearCell.h"
 #import "Constant.h"
 #import "LoginViewController.h"
+#import "WebServicesCall.h"
+#import "LoderView.h"
+#import "PostModel.h"
+#import "ChooseTypeViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 // Models
 #import "ADRegistrationModel.h"

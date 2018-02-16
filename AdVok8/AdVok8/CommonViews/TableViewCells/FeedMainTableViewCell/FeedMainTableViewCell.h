@@ -9,5 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @interface FeedMainTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *btnUserImage;
+@property (weak, nonatomic) IBOutlet UILabel *lblUserName;
+@property (weak, nonatomic) IBOutlet UILabel *lblUserType;
+@property (weak, nonatomic) IBOutlet UILabel *lblPostCreatedTime;
+@property (weak, nonatomic) IBOutlet UILabel *lblPostNote;
+@property (weak, nonatomic) IBOutlet UIImageView *lblPostImage;
+@property (weak, nonatomic) IBOutlet UILabel *lblLikes;
+@property (weak, nonatomic) IBOutlet UILabel *lblComments;
+@property (weak, nonatomic) IBOutlet UIButton *btnLike;
+@property (weak, nonatomic) IBOutlet UIButton *btnSave;
+@property (weak, nonatomic) IBOutlet UIButton *btnComment;
+@property (weak, nonatomic) IBOutlet UIButton *btnShare;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_postImageHeight;
 
 @end

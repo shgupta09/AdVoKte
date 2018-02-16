@@ -27,7 +27,7 @@
     [requestManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     requestManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html", nil];
 
-    [requestManager.requestSerializer setValue:@"" forHTTPHeaderField:@"API-KEY"];
+//    [requestManager.requestSerializer setValue:@"" forHTTPHeaderField:@"API-KEY"];
 //    [requestManager.requestSerializer setValue:timeInStr forHTTPHeaderField:@"timestamp"];
         
     if (requiredAuthentication) {

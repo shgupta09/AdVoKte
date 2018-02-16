@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,7 +45,7 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be wise, be curious, be talkative because it's better than living with doubts." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-xp-rPV">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Be wise, be curious, be talkative because it's better than living with doubts." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGA-xp-rPV">
                         <rect key="frame" x="12" y="69" width="292" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
@@ -55,7 +54,7 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nature_143" translatesAutoresizingMaskIntoConstraints="NO" id="QDW-Cj-tHG">
                         <rect key="frame" x="0.0" y="95" width="320" height="159"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="QDW-Cj-tHG" secondAttribute="height" multiplier="289:143" constant="-1.335664335664319" id="p52-gV-fCY"/>
+                            <constraint firstAttribute="height" constant="159" id="cwl-zC-Mo0"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mH-XC-lXe">
@@ -157,7 +156,22 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
-            <point key="canvasLocation" x="25" y="199"/>
+            <connections>
+                <outlet property="btnComment" destination="ypC-cy-DXw" id="mgk-Xi-xKy"/>
+                <outlet property="btnLike" destination="tpP-VX-68q" id="9iJ-es-3bx"/>
+                <outlet property="btnSave" destination="tpP-VX-68q" id="D2C-Kk-cjm"/>
+                <outlet property="btnShare" destination="Qlc-kT-n9w" id="OVw-tp-vKG"/>
+                <outlet property="btnUserImage" destination="xOL-gl-947" id="RAp-aL-phV"/>
+                <outlet property="cons_postImageHeight" destination="cwl-zC-Mo0" id="GDn-nB-N9E"/>
+                <outlet property="lblComments" destination="fG4-ol-nap" id="DvC-Ov-beR"/>
+                <outlet property="lblLikes" destination="7mH-XC-lXe" id="l1Z-vl-gG2"/>
+                <outlet property="lblPostCreatedTime" destination="nPG-7Z-E1r" id="UMi-Vp-c0m"/>
+                <outlet property="lblPostImage" destination="QDW-Cj-tHG" id="0cx-nw-pB4"/>
+                <outlet property="lblPostNote" destination="UGA-xp-rPV" id="i1V-ha-b1U"/>
+                <outlet property="lblUserName" destination="6qd-Nu-vVr" id="38h-QC-ABM"/>
+                <outlet property="lblUserType" destination="CUz-j0-fPB" id="4hg-Pe-zkH"/>
+            </connections>
+            <point key="canvasLocation" x="31" y="99"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -10,6 +10,9 @@
 #define Constant_h
 
 #define isLoggedIn @"isLoggedIn"
+static NSString* const API_BASE_URL = @"http://www.advok8.in/AdvocateAPI.asmx/";
+
+static NSString* const API_GET_ALL_POSTS = @"get_Consult_APK";
 
 
 #endif /* Constant_h */

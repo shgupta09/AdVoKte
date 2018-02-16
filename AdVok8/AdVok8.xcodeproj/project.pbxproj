@@ -33,6 +33,7 @@
 		5F1B9C7E20359131009503E7 /* JournalMainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C7C20359131009503E7 /* JournalMainTableViewCell.m */; };
 		5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C7D20359131009503E7 /* JournalMainTableViewCell.xib */; };
 		5F1B9C832035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C822035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m */; };
+		5F1B9C862036B0C2009503E7 /* PostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C852036B0C2009503E7 /* PostModel.m */; };
 		5F70ABF4202B1250007E69A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF3202B1250007E69A5 /* main.m */; };
 		5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF6202B1250007E69A5 /* AppDelegate.m */; };
 		5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F70ABFB202B1250007E69A5 /* Main.storyboard */; };
@@ -55,6 +56,8 @@
 		5F70AC4B202B1691007E69A5 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC49202B1691007E69A5 /* SplashScreenViewController.xib */; };
 		5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC54202B2248007E69A5 /* LegislateBaseViewController.m */; };
 		5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC55202B2248007E69A5 /* LegislateBaseViewController.xib */; };
+		5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */; };
+		5FC11D022037012A002030BD /* ChooseTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC11D002037012A002030BD /* ChooseTypeViewController.xib */; };
 		C0B37D9E32372768C7120041 /* libPods-AdVok8Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 451D0C401EC04053B7C1ED21 /* libPods-AdVok8Tests.a */; };
 		CB281165DB24598765D2760E /* libPods-AdVok8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E476A4A368847FBC004F191 /* libPods-AdVok8.a */; };
 /* End PBXBuildFile section */
@@ -115,6 +118,8 @@
 		5F1B9C7D20359131009503E7 /* JournalMainTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalMainTableViewCell.xib; sourceTree = "<group>"; };
 		5F1B9C812035A7D1009503E7 /* TextFieldBaselineWithLeftRight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldBaselineWithLeftRight.h; sourceTree = "<group>"; };
 		5F1B9C822035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldBaselineWithLeftRight.m; sourceTree = "<group>"; };
+		5F1B9C842036B0C2009503E7 /* PostModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostModel.h; sourceTree = "<group>"; };
+		5F1B9C852036B0C2009503E7 /* PostModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostModel.m; sourceTree = "<group>"; };
 		5F70ABEF202B1250007E69A5 /* AdVok8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdVok8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F70ABF3202B1250007E69A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F70ABF5202B1250007E69A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -153,6 +158,9 @@
 		5F70AC53202B2248007E69A5 /* LegislateBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegislateBaseViewController.h; sourceTree = "<group>"; };
 		5F70AC54202B2248007E69A5 /* LegislateBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegislateBaseViewController.m; sourceTree = "<group>"; };
 		5F70AC55202B2248007E69A5 /* LegislateBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegislateBaseViewController.xib; sourceTree = "<group>"; };
+		5FC11CFE2037012A002030BD /* ChooseTypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseTypeViewController.h; sourceTree = "<group>"; };
+		5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseTypeViewController.m; sourceTree = "<group>"; };
+		5FC11D002037012A002030BD /* ChooseTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeViewController.xib; sourceTree = "<group>"; };
 		7CD644F639A1CDED1AD2871C /* Pods-AdVok8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8.release.xcconfig"; sourceTree = "<group>"; };
 		7E476A4A368847FBC004F191 /* libPods-AdVok8.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdVok8.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD73CAB49F10EB83788EA97 /* Pods-AdVok8Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8Tests/Pods-AdVok8Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -449,6 +457,8 @@
 				5F1B9C75203568F3009503E7 /* User.m */,
 				5F1B9C7720356909009503E7 /* Response.h */,
 				5F1B9C7820356909009503E7 /* Response.m */,
+				5F1B9C842036B0C2009503E7 /* PostModel.h */,
+				5F1B9C852036B0C2009503E7 /* PostModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -463,6 +473,7 @@
 		5F70AC2B202B14EB007E69A5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5FC11CFC203700EC002030BD /* RegisterModule */,
 				5F1B9C65203461EE009503E7 /* LoginViewController */,
 				5F1B9C29203413DD009503E7 /* DashboardBaseViewController */,
 				5F70AC4D202B21CD007E69A5 /* LegislateBaseViewController */,
@@ -526,6 +537,24 @@
 				5F70AC55202B2248007E69A5 /* LegislateBaseViewController.xib */,
 			);
 			path = LegislateBaseViewController;
+			sourceTree = "<group>";
+		};
+		5FC11CFC203700EC002030BD /* RegisterModule */ = {
+			isa = PBXGroup;
+			children = (
+				5FC11CFD20370100002030BD /* ChooseTypeViewController */,
+			);
+			path = RegisterModule;
+			sourceTree = "<group>";
+		};
+		5FC11CFD20370100002030BD /* ChooseTypeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5FC11CFE2037012A002030BD /* ChooseTypeViewController.h */,
+				5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */,
+				5FC11D002037012A002030BD /* ChooseTypeViewController.xib */,
+			);
+			path = ChooseTypeViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -633,6 +662,7 @@
 				5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */,
 				5F1B9C3D203437F8009503E7 /* PostViewController.xib in Resources */,
 				5F1B9C422034381C009503E7 /* JournalViewController.xib in Resources */,
+				5FC11D022037012A002030BD /* ChooseTypeViewController.xib in Resources */,
 				5F1B9C472034383F009503E7 /* LibraryViewController.xib in Resources */,
 				5F1B9C34203415B9009503E7 /* DashboardHomeCollectionViewCell.xib in Resources */,
 				5F1B9C2E203413F8009503E7 /* DashboardBaseViewController.xib in Resources */,
@@ -756,6 +786,7 @@
 				5F1B9C76203568F3009503E7 /* User.m in Sources */,
 				5F1B9C5D20344A64009503E7 /* PostMainTableViewCell.m in Sources */,
 				5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */,
+				5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */,
 				5F70AC41202B1688007E69A5 /* RearCell.m in Sources */,
 				5F70AC4A202B1691007E69A5 /* SplashScreenViewController.m in Sources */,
 				5F1B9C2D203413F8009503E7 /* DashboardBaseViewController.m in Sources */,
@@ -763,6 +794,7 @@
 				5F1B9C572034411C009503E7 /* FeedMainTableViewCell.m in Sources */,
 				5F1B9C73203568BD009503E7 /* SearchModel.m in Sources */,
 				5F70AC00202B1250007E69A5 /* AdVok8.xcdatamodeld in Sources */,
+				5F1B9C862036B0C2009503E7 /* PostModel.m in Sources */,
 				5F1B9C33203415B9009503E7 /* DashboardHomeCollectionViewCell.m in Sources */,
 				5F70AC2D202B14EB007E69A5 /* LoderView.m in Sources */,
 				5F1B9C832035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m in Sources */,
