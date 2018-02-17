@@ -16,7 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [CommonFunction setNavToController:self title:@"Login" isCrossBusston:true isAddRightButton:false];
+    self.navigationController.navigationBar.hidden = false;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = [CommonFunction colorWithHexString:@"28328C"];
+    
+    [self.navigationController setTitle:@"Login"];
+
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -25,9 +30,16 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma  mark - Button Actions
 - (void)backTapped {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)btnLoginClicked:(id)sender {
+}
+- (IBAction)btnRegister:(id)sender {
+    RegisterStep1ViewController* vc = [[RegisterStep1ViewController alloc] initWithNibName:@"RegisterStep1ViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:true];
+}
 
 @end

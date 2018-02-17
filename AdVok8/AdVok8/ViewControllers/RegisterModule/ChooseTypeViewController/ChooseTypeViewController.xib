@@ -14,6 +14,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChooseTypeViewController">
             <connections>
+                <outlet property="btnAdvocate" destination="frc-dg-o32" id="MJL-z2-96E"/>
+                <outlet property="btnNext" destination="70V-kn-1Ca" id="wpC-NV-45Y"/>
+                <outlet property="btnUser" destination="0gb-EP-Azz" id="LNd-vQ-U05"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,12 +38,16 @@
                         <constraint firstAttribute="width" constant="2" id="SWb-nj-RQt"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-EP-Azz">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gb-EP-Azz">
                     <rect key="frame" x="27" y="137" width="152" height="152"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="0gb-EP-Azz" secondAttribute="height" multiplier="1:1" id="Z7v-Kn-E24"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" backgroundImage="User-1"/>
+                    <state key="selected" backgroundImage="User-filled-1"/>
+                    <connections>
+                        <action selector="btnUserClicked:" destination="-1" eventType="touchUpInside" id="Sys-vo-ekf"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6S-nR-Pxw">
                     <rect key="frame" x="87" y="297" width="32.5" height="18"/>
@@ -48,19 +55,40 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frc-dg-o32">
-                    <rect key="frame" x="196" y="137" width="159" height="152"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="frc-dg-o32" secondAttribute="height" multiplier="1:1" id="lSf-5g-ZGy"/>
-                    </constraints>
-                    <state key="normal" title="Button"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="frc-dg-o32">
+                    <rect key="frame" x="196" y="137" width="152" height="152"/>
+                    <state key="normal" backgroundImage="User-1"/>
+                    <state key="selected" backgroundImage="User-filled-1"/>
+                    <connections>
+                        <action selector="btnAdvocateClciked:" destination="-1" eventType="touchUpInside" id="e6c-Y0-eJG"/>
+                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Advocate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLI-DK-y5F">
-                    <rect key="frame" x="243.5" y="297" width="64.5" height="18"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advocate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLI-DK-y5F">
+                    <rect key="frame" x="240" y="297" width="64.5" height="18"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="70V-kn-1Ca" customClass="DesignableButton">
+                    <rect key="frame" x="75" y="608" width="225" height="39"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="39" id="Y5j-3T-7jr"/>
+                    </constraints>
+                    <state key="normal" title="Next">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="baackgroundColor">
+                            <color key="value" red="0.95178693532943726" green="0.57574349641799927" blue="0.23977765440940857" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnNextClicked:" destination="-1" eventType="touchUpInside" id="aVZ-iU-3YX"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -70,18 +98,27 @@
                 <constraint firstItem="frc-dg-o32" firstAttribute="width" secondItem="frc-dg-o32" secondAttribute="height" multiplier="1:1" id="PdS-3q-zuz"/>
                 <constraint firstItem="1XF-Ya-zKj" firstAttribute="leading" secondItem="0gb-EP-Azz" secondAttribute="trailing" constant="7.5" id="TNu-gI-JDy"/>
                 <constraint firstItem="JLI-DK-y5F" firstAttribute="centerX" secondItem="frc-dg-o32" secondAttribute="centerX" id="Teg-eU-XGW"/>
+                <constraint firstItem="frc-dg-o32" firstAttribute="width" secondItem="0gb-EP-Azz" secondAttribute="width" id="Vn2-V7-GwU"/>
                 <constraint firstItem="JLI-DK-y5F" firstAttribute="top" secondItem="frc-dg-o32" secondAttribute="bottom" constant="8" id="e8g-9R-Wl8"/>
                 <constraint firstItem="frc-dg-o32" firstAttribute="leading" secondItem="1XF-Ya-zKj" secondAttribute="trailing" constant="7.5" id="eEV-eL-4lx"/>
                 <constraint firstItem="XDN-Y1-DWM" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="80" id="hgn-Qx-SDN"/>
+                <constraint firstItem="frc-dg-o32" firstAttribute="centerY" secondItem="0gb-EP-Azz" secondAttribute="centerY" id="i0a-T5-KnH"/>
                 <constraint firstItem="1XF-Ya-zKj" firstAttribute="top" secondItem="XDN-Y1-DWM" secondAttribute="bottom" constant="15.5" id="k7T-EO-2Cg"/>
+                <constraint firstItem="frc-dg-o32" firstAttribute="height" secondItem="0gb-EP-Azz" secondAttribute="height" id="ka7-IJ-E8Y"/>
                 <constraint firstItem="1XF-Ya-zKj" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.3" id="kzi-5Q-2aB"/>
+                <constraint firstItem="70V-kn-1Ca" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.6" id="m8C-ZA-8Bq"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="70V-kn-1Ca" secondAttribute="bottom" constant="20" id="nl4-oe-iWw"/>
                 <constraint firstItem="0gb-EP-Azz" firstAttribute="top" secondItem="1XF-Ya-zKj" secondAttribute="top" id="oSn-nX-HDo"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="frc-dg-o32" secondAttribute="trailing" constant="20" id="on0-uf-8EJ"/>
-                <constraint firstItem="0gb-EP-Azz" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="27" id="uJb-5H-Nyl"/>
+                <constraint firstItem="70V-kn-1Ca" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="pZL-zN-oJV"/>
+                <constraint firstItem="0gb-EP-Azz" firstAttribute="width" secondItem="1XF-Ya-zKj" secondAttribute="height" multiplier="19:25" id="qlv-sW-h96"/>
                 <constraint firstItem="XDN-Y1-DWM" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="uMK-Yp-bIJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="50.5" y="59.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="User-1" width="106" height="106"/>
+        <image name="User-filled-1" width="106" height="106"/>
+    </resources>
 </document>

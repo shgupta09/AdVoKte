@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DesignableButton.h"
 
 @interface ChooseTypeViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *btnAdvocate;
+@property (weak, nonatomic) IBOutlet UIButton *btnUser;
+@property (weak, nonatomic) IBOutlet DesignableButton *btnNext;
 @end

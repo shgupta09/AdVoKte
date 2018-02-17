@@ -58,6 +58,9 @@
 		5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC55202B2248007E69A5 /* LegislateBaseViewController.xib */; };
 		5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */; };
 		5FC11D022037012A002030BD /* ChooseTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC11D002037012A002030BD /* ChooseTypeViewController.xib */; };
+		5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCBA0420381ABC002BFD4A /* DesignableButton.m */; };
+		5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCBA082038223B002BFD4A /* RegisterStep1ViewController.m */; };
+		5FCCBA0B2038223B002BFD4A /* RegisterStep1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCBA092038223B002BFD4A /* RegisterStep1ViewController.xib */; };
 		C0B37D9E32372768C7120041 /* libPods-AdVok8Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 451D0C401EC04053B7C1ED21 /* libPods-AdVok8Tests.a */; };
 		CB281165DB24598765D2760E /* libPods-AdVok8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E476A4A368847FBC004F191 /* libPods-AdVok8.a */; };
 /* End PBXBuildFile section */
@@ -161,6 +164,11 @@
 		5FC11CFE2037012A002030BD /* ChooseTypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseTypeViewController.h; sourceTree = "<group>"; };
 		5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseTypeViewController.m; sourceTree = "<group>"; };
 		5FC11D002037012A002030BD /* ChooseTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeViewController.xib; sourceTree = "<group>"; };
+		5FCCBA0320381ABB002BFD4A /* DesignableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignableButton.h; sourceTree = "<group>"; };
+		5FCCBA0420381ABC002BFD4A /* DesignableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignableButton.m; sourceTree = "<group>"; };
+		5FCCBA072038223B002BFD4A /* RegisterStep1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterStep1ViewController.h; sourceTree = "<group>"; };
+		5FCCBA082038223B002BFD4A /* RegisterStep1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterStep1ViewController.m; sourceTree = "<group>"; };
+		5FCCBA092038223B002BFD4A /* RegisterStep1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterStep1ViewController.xib; sourceTree = "<group>"; };
 		7CD644F639A1CDED1AD2871C /* Pods-AdVok8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8.release.xcconfig"; sourceTree = "<group>"; };
 		7E476A4A368847FBC004F191 /* libPods-AdVok8.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdVok8.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD73CAB49F10EB83788EA97 /* Pods-AdVok8Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8Tests/Pods-AdVok8Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -300,6 +308,8 @@
 		5F1B9C5F20344F9F009503E7 /* Designables */ = {
 			isa = PBXGroup;
 			children = (
+				5FCCBA0320381ABB002BFD4A /* DesignableButton.h */,
+				5FCCBA0420381ABC002BFD4A /* DesignableButton.m */,
 			);
 			path = Designables;
 			sourceTree = "<group>";
@@ -542,6 +552,7 @@
 		5FC11CFC203700EC002030BD /* RegisterModule */ = {
 			isa = PBXGroup;
 			children = (
+				5FCCBA0620382229002BFD4A /* RegisterStep1ViewController */,
 				5FC11CFD20370100002030BD /* ChooseTypeViewController */,
 			);
 			path = RegisterModule;
@@ -555,6 +566,16 @@
 				5FC11D002037012A002030BD /* ChooseTypeViewController.xib */,
 			);
 			path = ChooseTypeViewController;
+			sourceTree = "<group>";
+		};
+		5FCCBA0620382229002BFD4A /* RegisterStep1ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5FCCBA072038223B002BFD4A /* RegisterStep1ViewController.h */,
+				5FCCBA082038223B002BFD4A /* RegisterStep1ViewController.m */,
+				5FCCBA092038223B002BFD4A /* RegisterStep1ViewController.xib */,
+			);
+			path = RegisterStep1ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -649,6 +670,7 @@
 			files = (
 				5F70AC05202B1250007E69A5 /* LaunchScreen.storyboard in Resources */,
 				5F1B9C4C20343889009503E7 /* FeedViewController.xib in Resources */,
+				5FCCBA0B2038223B002BFD4A /* RegisterStep1ViewController.xib in Resources */,
 				5F70AC02202B1250007E69A5 /* Assets.xcassets in Resources */,
 				5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */,
 				5F70AC44202B1689007E69A5 /* RearViewController.xib in Resources */,
@@ -792,6 +814,8 @@
 				5F1B9C2D203413F8009503E7 /* DashboardBaseViewController.m in Sources */,
 				5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */,
 				5F1B9C572034411C009503E7 /* FeedMainTableViewCell.m in Sources */,
+				5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */,
+				5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */,
 				5F1B9C73203568BD009503E7 /* SearchModel.m in Sources */,
 				5F70AC00202B1250007E69A5 /* AdVok8.xcdatamodeld in Sources */,
 				5F1B9C862036B0C2009503E7 /* PostModel.m in Sources */,
@@ -950,7 +974,7 @@
 				DEVELOPMENT_TEAM = MK5HXMKD83;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -965,7 +989,7 @@
 				DEVELOPMENT_TEAM = MK5HXMKD83;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -82,8 +82,12 @@
             else
             {
                 LoginViewController* vc ;
+                
                 vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-                [self.navigationController pushViewController:vc animated:true];
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+//                [self.navigationController pushViewController:vc animated:true];
             }
         }
             break;

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DesignableButton.h"
 @interface LoginViewController : UIViewController
+@property (weak, nonatomic) IBOutlet DesignableButton *btnLogin;
 
 @end

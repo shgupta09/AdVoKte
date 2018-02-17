@@ -17,7 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [CommonFunction setNavToController:self title:@"Register" isCrossBusston:true isAddRightButton:false];
+    [_btnUser setSelected:true];
+    [self.navigationController setTitle:@"Register"];
+    
+//    [CommonFunction setNavToController:self title:@"Register" isCrossBusston:true isAddRightButton:false];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -30,6 +33,19 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - btn Actions
+- (IBAction)btnNextClicked:(id)sender {
+
+}
+
+- (IBAction)btnUserClicked:(id)sender {
+    [_btnUser setSelected:true];
+    [_btnAdvocate setSelected:false];
+}
+- (IBAction)btnAdvocateClciked:(id)sender {
+    [_btnUser setSelected:false];
+    [_btnAdvocate setSelected:true];
+}
 
 
 @end

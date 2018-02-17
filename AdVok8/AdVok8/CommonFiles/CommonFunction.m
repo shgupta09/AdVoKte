@@ -31,7 +31,7 @@
 //    title = [title capitalizedString];
     [viewController.view addSubview:[CommonFunction setStatusBarColor]];
     [viewController.navigationController setNavigationBarHidden:YES animated:NO];
-    UINavigationBar *newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44.0)];
+    UINavigationBar *newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0,40, [UIScreen mainScreen].bounds.size.width, 44.0)];
     newNavBar.barTintColor = [CommonFunction colorWithHexString:@"27328C"];
     newNavBar.translucent = false;
     UINavigationItem *newItem = [[UINavigationItem alloc] init];
@@ -42,8 +42,7 @@
 //
 //    [newNavBar addSubview:backgroundView];
     
-    UILabel* lbNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,(viewController.view.bounds.size.width/2)
-                           -20,[UIScreen mainScreen].bounds.size.width,40)];
+    UILabel* lbNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,30,[UIScreen mainScreen].bounds.size.width,40)];
     lbNavTitle.textAlignment = UITextAlignmentLeft;
     lbNavTitle.text = title;
     lbNavTitle.textColor = [UIColor  whiteColor];

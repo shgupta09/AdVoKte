@@ -45,7 +45,9 @@
 
 - (void)setLeftImage:(UIImage*)leftImage {
     _leftImage = leftImage;
+    self.leftImgView.tintColor = [UIColor orangeColor];
     self.leftImgView.image = leftImage;
+    
 }
 
 
