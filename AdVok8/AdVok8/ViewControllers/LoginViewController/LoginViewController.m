@@ -38,7 +38,7 @@
 - (IBAction)btnLoginClicked:(id)sender {
 }
 - (IBAction)btnRegister:(id)sender {
-    RegisterStep1ViewController* vc = [[RegisterStep1ViewController alloc] initWithNibName:@"RegisterStep1ViewController" bundle:nil];
+    ChooseTypeViewController* vc = [[ChooseTypeViewController alloc] initWithNibName:@"ChooseTypeViewController" bundle:nil];
     [self.navigationController pushViewController:vc animated:true];
 }
 

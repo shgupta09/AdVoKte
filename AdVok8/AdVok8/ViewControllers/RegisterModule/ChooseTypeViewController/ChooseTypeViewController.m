@@ -35,6 +35,15 @@
 
 #pragma mark - btn Actions
 - (IBAction)btnNextClicked:(id)sender {
+    RegisterStep1ViewController* vc = [[RegisterStep1ViewController alloc] initWithNibName:@"RegisterStep1ViewController" bundle:nil];
+    if (_btnUser.state == UIControlStateSelected){
+        vc.userType = @"User";
+    }
+    else
+    {
+        vc.userType = @"Advocate";
+    }
+    [self.navigationController pushViewController:vc animated:true];
 
 }
 

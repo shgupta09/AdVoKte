@@ -38,6 +38,7 @@
 #import "DesignableButton.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "RegisterStep1ViewController.h"
+#import "ADRegistrationModel.h"
 
 // Models
 #import "ADRegistrationModel.h"

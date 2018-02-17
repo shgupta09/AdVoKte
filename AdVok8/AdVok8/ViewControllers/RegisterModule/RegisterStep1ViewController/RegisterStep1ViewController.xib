@@ -13,7 +13,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterStep1ViewController">
             <connections>
+                <outlet property="BtnSendOTP" destination="1Km-uy-6lz" id="VwV-Xe-Vvk"/>
+                <outlet property="cons_txtOTP_height" destination="bcg-Bb-1vp" id="vef-3c-hcQ"/>
                 <outlet property="txtEmailAddress" destination="w0f-X5-PWw" id="bcx-Xa-CJs"/>
+                <outlet property="txtEnterOTP" destination="fr4-ih-CDT" id="f10-L6-JTR"/>
                 <outlet property="txtFirstName" destination="Gs0-Fc-ddZ" id="zt5-1A-eqM"/>
                 <outlet property="txtMobile" destination="fz8-QE-lwG" id="iFk-Sk-Tvf"/>
                 <outlet property="txtPassword" destination="GpG-3e-7yj" id="Ih3-ob-ffE"/>
@@ -29,9 +32,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yf-YH-esu">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="336"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="382"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gs0-Fc-ddZ" customClass="TextFieldBaselineWithLeftRight">
+                                <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gs0-Fc-ddZ" customClass="TextFieldBaselineWithLeftRight">
                                     <rect key="frame" x="16" y="41" width="343" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="HxT-mM-BuM"/>
@@ -42,8 +45,11 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Name-1"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="4xq-cp-w93"/>
+                                    </connections>
                                 </textField>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w0f-X5-PWw" customClass="TextFieldBaselineWithLeftRight">
+                                <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w0f-X5-PWw" customClass="TextFieldBaselineWithLeftRight">
                                     <rect key="frame" x="16" y="94" width="343" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="5ZD-Qe-lVf"/>
@@ -54,20 +60,26 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="email_icon-01-1"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="7IH-Y4-LKu"/>
+                                    </connections>
                                 </textField>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fz8-QE-lwG" customClass="TextFieldBaselineWithLeftRight">
+                                <textField opaque="NO" clipsSubviews="YES" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fz8-QE-lwG" customClass="TextFieldBaselineWithLeftRight">
                                     <rect key="frame" x="16" y="147" width="343" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="wjH-cR-aA7"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Mobile-1"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="soS-ag-t5U"/>
+                                    </connections>
                                 </textField>
-                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GpG-3e-7yj" customClass="TextFieldBaselineWithLeftRight">
+                                <textField opaque="NO" clipsSubviews="YES" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GpG-3e-7yj" customClass="TextFieldBaselineWithLeftRight">
                                     <rect key="frame" x="16" y="200" width="343" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="TGp-56-aYl"/>
@@ -78,9 +90,27 @@
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password-1"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="xXe-YF-ec4"/>
+                                    </connections>
+                                </textField>
+                                <textField opaque="NO" clipsSubviews="YES" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fr4-ih-CDT" customClass="TextFieldBaselineWithLeftRight">
+                                    <rect key="frame" x="16" y="253" width="343" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="bcg-Bb-1vp"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password-1"/>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="G8k-pW-KRa"/>
+                                    </connections>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Km-uy-6lz" customClass="DesignableButton">
-                                    <rect key="frame" x="84" y="260" width="206.5" height="40"/>
+                                    <rect key="frame" x="84" y="306" width="206.5" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="w4N-L9-WjC"/>
                                     </constraints>
@@ -102,10 +132,13 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="fr4-ih-CDT" firstAttribute="top" secondItem="GpG-3e-7yj" secondAttribute="bottom" constant="8" id="0qh-f0-Roe"/>
+                                <constraint firstItem="1Km-uy-6lz" firstAttribute="top" secondItem="fr4-ih-CDT" secondAttribute="bottom" constant="8" id="53v-WK-p4c"/>
                                 <constraint firstItem="w0f-X5-PWw" firstAttribute="trailing" secondItem="Gs0-Fc-ddZ" secondAttribute="trailing" id="5Ce-qk-xgU"/>
                                 <constraint firstItem="1Km-uy-6lz" firstAttribute="centerX" secondItem="w0f-X5-PWw" secondAttribute="centerX" id="7Tg-NE-0I7"/>
-                                <constraint firstItem="1Km-uy-6lz" firstAttribute="top" secondItem="GpG-3e-7yj" secondAttribute="bottom" constant="15" id="Dxe-e8-gKa"/>
                                 <constraint firstAttribute="trailing" secondItem="Gs0-Fc-ddZ" secondAttribute="trailing" constant="16" id="HtC-cG-Fmp"/>
+                                <constraint firstItem="fr4-ih-CDT" firstAttribute="trailing" secondItem="GpG-3e-7yj" secondAttribute="trailing" id="KXQ-ph-WPw"/>
+                                <constraint firstItem="fr4-ih-CDT" firstAttribute="leading" secondItem="GpG-3e-7yj" secondAttribute="leading" id="Ken-n5-50j"/>
                                 <constraint firstItem="fz8-QE-lwG" firstAttribute="leading" secondItem="w0f-X5-PWw" secondAttribute="leading" id="KrU-4u-DrN"/>
                                 <constraint firstItem="fz8-QE-lwG" firstAttribute="trailing" secondItem="w0f-X5-PWw" secondAttribute="trailing" id="NM7-Op-siT"/>
                                 <constraint firstAttribute="bottom" secondItem="1Km-uy-6lz" secondAttribute="bottom" constant="36" id="OKz-WV-D82"/>

@@ -14,6 +14,9 @@
 @property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtEmailAddress;
 @property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtMobile;
 @property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtPassword;
+@property (weak, nonatomic) IBOutlet DesignableButton *BtnSendOTP;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_txtOTP_height;
+@property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtEnterOTP;
 
 @property (weak, nonatomic) NSString* userType;
 @end
