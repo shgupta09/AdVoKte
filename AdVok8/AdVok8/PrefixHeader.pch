@@ -39,6 +39,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "RegisterStep1ViewController.h"
 #import "ADRegistrationModel.h"
+#import "User.h"
 
 // Models
 #import "ADRegistrationModel.h"

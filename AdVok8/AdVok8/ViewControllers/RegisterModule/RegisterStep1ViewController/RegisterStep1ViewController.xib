@@ -34,7 +34,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yf-YH-esu">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="382"/>
                             <subviews>
-                                <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gs0-Fc-ddZ" customClass="TextFieldBaselineWithLeftRight">
+                                <textField opaque="NO" clipsSubviews="YES" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gs0-Fc-ddZ" customClass="TextFieldBaselineWithLeftRight">
                                     <rect key="frame" x="16" y="41" width="343" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="HxT-mM-BuM"/>
@@ -44,12 +44,15 @@
                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Name-1"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maxCharLimit">
+                                            <integer key="value" value="50"/>
+                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
                                         <outlet property="delegate" destination="-1" id="4xq-cp-w93"/>
                                     </connections>
                                 </textField>
-                                <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w0f-X5-PWw" customClass="TextFieldBaselineWithLeftRight">
+                                <textField opaque="NO" clipsSubviews="YES" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w0f-X5-PWw" customClass="TextFieldBaselineWithLeftRight">
                                     <rect key="frame" x="16" y="94" width="343" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="5ZD-Qe-lVf"/>
@@ -59,12 +62,15 @@
                                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="email_icon-01-1"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maxCharLimit">
+                                            <integer key="value" value="50"/>
+                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
                                         <outlet property="delegate" destination="-1" id="7IH-Y4-LKu"/>
                                     </connections>
                                 </textField>
-                                <textField opaque="NO" clipsSubviews="YES" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fz8-QE-lwG" customClass="TextFieldBaselineWithLeftRight">
+                                <textField opaque="NO" clipsSubviews="YES" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fz8-QE-lwG" customClass="TextFieldBaselineWithLeftRight">
                                     <rect key="frame" x="16" y="147" width="343" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="wjH-cR-aA7"/>
@@ -74,6 +80,9 @@
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Mobile-1"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maxCharLimit">
+                                            <integer key="value" value="14"/>
+                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
                                         <outlet property="delegate" destination="-1" id="soS-ag-t5U"/>
@@ -86,15 +95,18 @@
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                    <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="password"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password-1"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maxCharLimit">
+                                            <integer key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
                                         <outlet property="delegate" destination="-1" id="xXe-YF-ec4"/>
                                     </connections>
                                 </textField>
-                                <textField opaque="NO" clipsSubviews="YES" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fr4-ih-CDT" customClass="TextFieldBaselineWithLeftRight">
+                                <textField opaque="NO" clipsSubviews="YES" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="OTP" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fr4-ih-CDT" customClass="TextFieldBaselineWithLeftRight">
                                     <rect key="frame" x="16" y="253" width="343" height="45"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="45" id="bcg-Bb-1vp"/>
@@ -104,6 +116,9 @@
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Password-1"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maxCharLimit">
+                                            <integer key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
                                         <outlet property="delegate" destination="-1" id="G8k-pW-KRa"/>

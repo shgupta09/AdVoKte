@@ -6,15 +6,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/LegislateBaseViewController/JournalViewController/JournalViewController.h"
-            timestampString = "540389592.471453"
+            filePath = "AdVok8/ViewControllers/LoginViewController/LoginViewController.m"
+            timestampString = "540826711.4578511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15">
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "-hitApiToLogin"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -23,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/RegisterModule/RegisterStep1ViewController/RegisterStep1ViewController.m"
-            timestampString = "540586722.6970659"
+            filePath = "AdVok8/ViewControllers/LegislateBaseViewController/FeedViewController/FeedViewController.m"
+            timestampString = "540826711.458438"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "-hitApiToSendOTP"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "-hitApiForAllPosts:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

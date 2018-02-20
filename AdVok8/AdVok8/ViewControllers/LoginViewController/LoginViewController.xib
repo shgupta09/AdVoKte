@@ -14,6 +14,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
                 <outlet property="btnLogin" destination="ddf-Pp-1K4" id="bIJ-vd-clB"/>
+                <outlet property="sc_userType" destination="F1R-if-sEK" id="vom-TL-mxF"/>
+                <outlet property="txtPassword" destination="DAQ-It-CwY" id="vIb-LG-bhe"/>
+                <outlet property="txtUsername" destination="ZS7-8w-ZFk" id="wW3-tC-fFZ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="F1R-if-sEK">
-                    <rect key="frame" x="16" y="40" width="343" height="29"/>
+                    <rect key="frame" x="16" y="84" width="343" height="29"/>
                     <segments>
                         <segment title="USER LOGIN"/>
                         <segment title="ADVOCATE LOGIN"/>
@@ -31,7 +34,7 @@
                     <color key="tintColor" red="0.1529411765" green="0.1960784314" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </segmentedControl>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZS7-8w-ZFk" customClass="TextFieldBaselineWithLeftRight">
-                    <rect key="frame" x="16" y="85" width="343" height="45"/>
+                    <rect key="frame" x="16" y="129" width="343" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="Lxl-Fh-JpE"/>
                     </constraints>
@@ -40,22 +43,28 @@
                     <textInputTraits key="textInputTraits" returnKeyType="next"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Mobile-1"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maxCharLimit">
+                            <integer key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAQ-It-CwY" customClass="TextFieldBaselineWithLeftRight">
-                    <rect key="frame" x="16" y="138" width="343" height="45"/>
+                    <rect key="frame" x="16" y="182" width="343" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="AfP-4I-uio"/>
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="password"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Mobile-1"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="maxCharLimit">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddf-Pp-1K4" customClass="DesignableButton">
-                    <rect key="frame" x="85" y="198" width="206" height="40"/>
+                    <rect key="frame" x="85" y="242" width="206" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="z8n-16-3Vi"/>
                     </constraints>
@@ -75,14 +84,14 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cK-6g-VMR">
-                    <rect key="frame" x="123" y="246" width="129" height="27"/>
+                    <rect key="frame" x="123" y="290" width="129" height="27"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                     <state key="normal" title="FORGOT PASSWORD?">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igS-cC-na7">
-                    <rect key="frame" x="119" y="281" width="137" height="27"/>
+                    <rect key="frame" x="119" y="325" width="137" height="27"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                     <state key="normal" title="YET NOT REGISTERED?">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -100,7 +109,7 @@
                 <constraint firstItem="igS-cC-na7" firstAttribute="top" secondItem="4cK-6g-VMR" secondAttribute="bottom" constant="8" id="Jan-3V-MZ8"/>
                 <constraint firstItem="4cK-6g-VMR" firstAttribute="top" secondItem="ddf-Pp-1K4" secondAttribute="bottom" constant="8" id="TGy-3m-ebT"/>
                 <constraint firstItem="ddf-Pp-1K4" firstAttribute="width" secondItem="DAQ-It-CwY" secondAttribute="width" multiplier="0.6" id="TNq-wi-rPN"/>
-                <constraint firstItem="F1R-if-sEK" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="40" id="V3c-vv-BNy"/>
+                <constraint firstItem="F1R-if-sEK" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="84" id="V3c-vv-BNy"/>
                 <constraint firstItem="ZS7-8w-ZFk" firstAttribute="trailing" secondItem="F1R-if-sEK" secondAttribute="trailing" id="VUa-d9-Zea"/>
                 <constraint firstItem="4cK-6g-VMR" firstAttribute="centerX" secondItem="ddf-Pp-1K4" secondAttribute="centerX" id="X0p-Xm-IBF"/>
                 <constraint firstItem="ZS7-8w-ZFk" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="ZeV-Um-4ze"/>

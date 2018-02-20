@@ -50,22 +50,23 @@
                             <viewLayoutGuide key="safeArea" id="tbf-tz-f3W"/>
                             <items>
                                 <tabBarItem tag="1000" title="Feed" image="FeedTab" id="00R-QD-8Xk">
-                                    <inset key="imageInsets" minX="3" minY="5" maxX="3" maxY="1"/>
+                                    <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                 </tabBarItem>
                                 <tabBarItem tag="1001" title="Library" image="LibraryTab" id="1cz-w2-HJe">
-                                    <inset key="imageInsets" minX="3" minY="5" maxX="3" maxY="1"/>
+                                    <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                 </tabBarItem>
                                 <tabBarItem tag="1002" title="Journal" image="JournalTab" id="koL-8k-NfG">
-                                    <inset key="imageInsets" minX="3" minY="5" maxX="3" maxY="1"/>
+                                    <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                 </tabBarItem>
                                 <tabBarItem tag="1003" title="Post" image="PostTab" id="ne0-ry-Maa">
-                                    <inset key="imageInsets" minX="3" minY="5" maxX="3" maxY="1"/>
+                                    <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                                     <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                 </tabBarItem>
                             </items>
+                            <color key="selectedImageTintColor" red="0.1529411765" green="0.1960784314" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <outlet property="delegate" destination="-1" id="uBp-bC-A0g"/>
                             </connections>
@@ -108,9 +109,9 @@
         </view>
     </objects>
     <resources>
-        <image name="FeedTab" width="48" height="48"/>
-        <image name="JournalTab" width="48" height="48"/>
-        <image name="LibraryTab" width="48" height="48"/>
-        <image name="PostTab" width="48" height="48"/>
+        <image name="FeedTab" width="30" height="30"/>
+        <image name="JournalTab" width="30" height="30"/>
+        <image name="LibraryTab" width="30" height="30"/>
+        <image name="PostTab" width="30" height="30"/>
     </resources>
 </document>

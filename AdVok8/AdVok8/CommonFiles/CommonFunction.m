@@ -94,7 +94,6 @@
 
 
 // For storing the value in default
-
 +(void)storeValueInDefault:(NSString *)valueString andKey:(NSString *)keyString{
     
     [[NSUserDefaults standardUserDefaults]setValue:valueString forKey:keyString];
@@ -119,9 +118,7 @@
 
 // For reteriving the object in default
 +(NSDictionary *)getObjectFromDefaultWithKey:(NSString *)keyString{
-    
     return [[NSUserDefaults standardUserDefaults]objectForKey:keyString];
-    
 }
 
 

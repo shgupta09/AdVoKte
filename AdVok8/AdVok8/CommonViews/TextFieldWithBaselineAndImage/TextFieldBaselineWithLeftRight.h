@@ -12,5 +12,6 @@
 @property (strong,nonatomic) UIImageView* leftImgView;
 @property (strong,nonatomic) UIImageView* rightImgView;
 @property (strong,nonatomic) IBInspectable UIImage* leftImage;
+@property IBInspectable int maxCharLimit;
 
 @end

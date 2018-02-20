@@ -15,7 +15,7 @@
         
         self.delegate = self;
         self.tintColor = [UIColor whiteColor];
-        //self.layer.cornerRadius = self.bounds.size.height/2;
+         //self.layer.cornerRadius = self.bounds.size.height/2;
         self.clipsToBounds = YES;
         self.leftViewMode = UITextFieldViewModeAlways;
 //        self.rightViewMode = UITextFieldViewModeAlways;
@@ -50,7 +50,8 @@
     
 }
 
-
-
+-(void)setMaxCharLimit:(int)maxCharLimit{
+    _maxCharLimit = maxCharLimit;
+}
 
 @end

@@ -27,6 +27,21 @@
     [super viewDidLoad];
      revealController = [self revealViewController];
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveNotification:)
+                                                 name:@"RefreshViews"
+                                               object:nil];
+
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn] == true){
+        NSString* username = [CommonFunction getValueFromDefaultWithKey:@"loginUsername"];
+        _lblNAme.text = username;
+
+    }
+    else
+    {
+        _lblNAme.text = @"Guest";
+    }
+    
      [_tbl_View registerNib:[UINib nibWithNibName:@"RearCell" bundle:nil]forCellReuseIdentifier:@"RearCell"];
     _tbl_View.rowHeight = UITableViewAutomaticDimension;
     _tbl_View.estimatedRowHeight = 100;
@@ -78,6 +93,9 @@
         {
              if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
              
+                 [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:false];
+                 [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshViews" object:nil];
+
              }
             else
             {
@@ -146,14 +164,31 @@
     self.view.userInteractionEnabled = YES;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - Notification
+
+
+-(void)receiveNotification:(NSNotification*) notification{
+    
+    if ([notification.name  isEqual: @"RefreshViews"]) {
+        if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+            _lblNAme.text = [CommonFunction getValueFromDefaultWithKey:@"loginUsername"];
+            titleArray  = [[NSMutableArray alloc]initWithObjects:@"Logout",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request", nil];
+            titleImageArray = [[NSMutableArray alloc] initWithObjects:@"logout",@"home",@"Notify-1",@"Invite Friend-1",@"rateUs",@"callrequest", nil];
+            [_tbl_View reloadData];
+        }
+        else
+        {
+            _lblNAme.text = @"Guest";
+            titleArray  = [[NSMutableArray alloc]initWithObjects:@"Login",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request", nil];
+            titleImageArray = [[NSMutableArray alloc] initWithObjects:@"Login-1",@"home",@"Notify-1",@"Invite Friend-1",@"rateUs",@"callrequest", nil];
+            [_tbl_View reloadData];
+
+        }
+    }
+   
+    
 }
-*/
+
 
 @end

@@ -14,6 +14,9 @@ static NSString* const API_BASE_URL = @"http://www.advok8.in/AdvocateAPI.asmx/";
 
 static NSString* const API_GET_ALL_POSTS = @"get_Consult_APK";
 static NSString* const API_GET_OTP = @"generateOTP";
+static NSString* const API_REGISTER_USER = @"postAdvocateDetailsSignUp";
+static NSString* const API_LOGIN = @"GetLogin";
 
 
 #endif /* Constant_h */
+
