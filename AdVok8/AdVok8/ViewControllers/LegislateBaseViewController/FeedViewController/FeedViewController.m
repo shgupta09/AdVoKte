@@ -8,6 +8,11 @@
 
 #import "FeedViewController.h"
 
+int const like_tag = 1000;
+int const save_tag = 2000;
+int const comment_tag = 3000;
+int const share_tag = 4000;
+
 @interface FeedViewController (){
     UIRefreshControl* refreshControl;
     NSMutableArray* arrData;
@@ -27,8 +32,8 @@
     [_tblView addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
     
-    [self hitApiForAllPosts:@"0"];
-    
+    [self hitApiForAllPostsFromLibrary];
+
     // Do any additional setup after loading the view from its nib.
 }
 -(void)viewDidLayoutSubviews{
@@ -44,7 +49,7 @@
 - (void)refreshTable {
     //TODO: refresh your data
     [refreshControl endRefreshing];
-    [self hitApiForAllPosts:@"0"];
+    [self hitApiForAllPostsFromLibrary];
     
 }
 
@@ -75,6 +80,38 @@
     cell.lblLikes.text = [NSString stringWithFormat:@"%@ likes", data.cntlike ];
     cell.lblComments.text = [NSString stringWithFormat:@"%@ comments",data.cntcmt];
 
+    if ([data.Liked  isEqual: @"TRUE"]){
+        [cell.btnLike setTitle:@"Liked" forState:UIControlStateNormal];
+        cell.btnLike.titleLabel.textColor = [UIColor orangeColor];
+        
+    }
+    else
+    {
+        [cell.btnLike setTitle:@"Like" forState:UIControlStateNormal];
+        cell.btnLike.titleLabel.textColor = [UIColor grayColor];
+        
+    }
+    if ([data.LibStatus  isEqual: @"1"]){
+        [cell.btnSave setTitle:@"Saved" forState:UIControlStateNormal];
+        cell.btnSave.titleLabel.textColor = [UIColor orangeColor];
+        
+    }
+    else
+    {
+        [cell.btnSave setTitle:@"Save" forState:UIControlStateNormal];
+        cell.btnSave.titleLabel.textColor = [UIColor grayColor];
+        
+    }
+
+    cell.btnLike.tag = like_tag+indexPath.row;
+    [cell.btnLike addTarget:self action:@selector(btnLikeTapped:) forControlEvents:UIControlEventTouchUpInside];
+    cell.btnSave.tag = like_tag+indexPath.row;
+    [cell.btnSave addTarget:self action:@selector(btnSaveTapped:) forControlEvents:UIControlEventTouchUpInside];
+    cell.btnComment.tag = like_tag+indexPath.row;
+    [cell.btnComment addTarget:self action:@selector(btnCommentTapped:) forControlEvents:UIControlEventTouchUpInside];
+    cell.btnShare.tag = like_tag+indexPath.row;
+    [cell.btnShare addTarget:self action:@selector(btnShareTapped:) forControlEvents:UIControlEventTouchUpInside];
+
     NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
     paragraph.lineBreakMode = cell.lblPostNote.lineBreakMode;
     NSDictionary *attributes = @{NSFontAttributeName : cell.lblPostNote.font,
@@ -102,11 +139,7 @@
         cell.cons_postImageHeight.constant = 0;
     }
     
-    if (indexPath.row == [arrData count] - 1)
-    {
-        [self hitApiForAllPosts:[NSString stringWithFormat:@"%d", indexPath.row]];
-    }
-    
+   
     return cell;
     
 }
@@ -132,27 +165,188 @@
     }
 }
 
+#pragma mark - Cell button actions
+-(void) btnLikeTapped:(id) sender {
+    UIButton* btnLike = sender;
+    int index = btnLike.tag%like_tag;
+   PostModel* data = [arrData objectAtIndex:index];
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        [self hitApiToLikeAPostWithPostId:data.PostId andIndex: index];
+        
+    }
+    else
+    {
+        LoginViewController* vc ;
+        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        vc.Behaviour = @"Action";
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+        exit(0);
+    }
 
+}
+-(void) btnSaveTapped:(id) sender {
+    UIButton* btnLike = sender;
+    int index = btnLike.tag%like_tag;
+    PostModel* data = [arrData objectAtIndex:index];
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        if ([data.LibStatus  isEqual: @"1"]) {
+            [self hitApiToSaveDeleteAPostWithPostId:data.PostId useractv:@"0" andIndex: index];
+        }
+        else
+        {
+            [self hitApiToSaveDeleteAPostWithPostId:data.PostId useractv:@"1" andIndex: index];
+
+        }
+        
+    }
+    else
+    {
+        LoginViewController* vc ;
+        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        vc.Behaviour = @"Action";
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+        exit(0);
+    }
+
+}
+-(void) btnCommentTapped:(id) sender {
+    
+}
+-(void) btnShareTapped:(id) sender {
+    
+}
 
 #pragma mark - Api Related
--(void)hitApiForAllPosts:(NSString*) startPoint{
+-(void)hitApiToLikeAPostWithPostId:(NSString*)postId andIndex:(int)row{
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+        [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
     
+    [dictRequest setValue:postId forKey:@"PostId"];
+    [parameter setValue:dictRequest forKey:@"_post"];
+    
+    if ([ CommonFunction reachability]) {
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_LIKE_POST]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1){
+                    NSArray *tempArray = [NSArray new];
+                    NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                    tempArray = [json objectForKey:@"_post"];
+                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+                        PostModel *dataObj = [PostModel new];
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            @try {
+                                [dataObj setValue:obj forKey:(NSString *)key];
+                            } @catch (NSException *exception) {
+                                NSLog(exception.description);
+                                //  Handle an exception thrown in the @try block
+                            } @finally {
+                                //  Code that gets executed whether or not an exception is thrown
+                            }
+                        }];
+                        [arrData replaceObjectAtIndex:row withObject:dataObj];
+                    }];
+                    [_tblView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];;
+                }else
+                {
+                    
+                }
+                
+            }
+            
+            
+            
+        }];
+    } else {
+       
+    }
+}
+
+#pragma mark - Api Related
+-(void)hitApiToSaveDeleteAPostWithPostId:(NSString*)postId useractv:(NSString*)useractv andIndex:(int)row{
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+    
+    [dictRequest setValue:postId forKey:@"PostId"];
+    [dictRequest setValue:useractv forKey:@"useractv"];
+    [parameter setValue:dictRequest forKey:@"_post"];
+    
+    if ([ CommonFunction reachability]) {
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_SAVE_DELETE_POST_LIBRARY]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1){
+                    NSArray *tempArray = [NSArray new];
+                    NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                    tempArray = [json objectForKey:@"_post"];
+                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+                        PostModel *dataObj = [PostModel new];
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            @try {
+                                [dataObj setValue:obj forKey:(NSString *)key];
+                            } @catch (NSException *exception) {
+                                NSLog(exception.description);
+                                //  Handle an exception thrown in the @try block
+                            } @finally {
+                                //  Code that gets executed whether or not an exception is thrown
+                            }
+                        }];
+                        [arrData replaceObjectAtIndex:row withObject:dataObj];
+                    }];
+                    [_tblView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];;
+                }else
+                {
+                    
+                }
+                
+            }
+            
+            
+            
+        }];
+    } else {
+        
+    }
+}
+
+
+-(void)hitApiForAllPostsFromLibrary{
     
     NSMutableDictionary *parameter = [NSMutableDictionary new];
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
-    [dictRequest setValue:@"0" forKey:@"UserId"];
-    [dictRequest setValue:@"Feed" forKey:@"postsubtype"];
-    [dictRequest setValue:@"Feed" forKey:@"posttype"];
-    [dictRequest setValue:startPoint forKey:@"StrtPnt"];
-    [dictRequest setValue:[NSString stringWithFormat:@"%d",startPoint.integerValue+20] forKey:@"EndPnt"];
-
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+    }
+    else
+    {
+        [dictRequest setValue:@"0" forKey:@"UserId"];
+    }
+    
     [parameter setValue:dictRequest forKey:@"_post"];
     
     if ([ CommonFunction reachability]) {
         [self addLoder];
         
         //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_ALL_POSTS]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_ALL_POSTS_FROM_LIBRARY]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 if (1) {
                     NSArray *tempArray = [NSArray new];

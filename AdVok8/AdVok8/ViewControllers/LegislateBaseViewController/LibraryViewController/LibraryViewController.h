@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface LibraryViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tblView;
 
 @end

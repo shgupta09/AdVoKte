@@ -158,7 +158,7 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="btnComment" destination="ypC-cy-DXw" id="mgk-Xi-xKy"/>
-                <outlet property="btnLike" destination="tpP-VX-68q" id="9iJ-es-3bx"/>
+                <outlet property="btnLike" destination="9Im-GJ-Pro" id="TtY-Zx-Wnr"/>
                 <outlet property="btnSave" destination="tpP-VX-68q" id="D2C-Kk-cjm"/>
                 <outlet property="btnShare" destination="Qlc-kT-n9w" id="OVw-tp-vKG"/>
                 <outlet property="btnUserImage" destination="xOL-gl-947" id="RAp-aL-phV"/>

@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sc_userType;
 @property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtUsername;
 @property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtPassword;
+@property (weak, nonatomic) NSString *Behaviour;
 
 @end

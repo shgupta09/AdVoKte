@@ -35,6 +35,7 @@
 @property(nonatomic ,strong) NSString *corrAns;
 @property(nonatomic ,strong) NSString *Liked;
 @property(nonatomic ,strong) NSString *data;
+@property(nonatomic ,strong) NSString *LibStatus;
 @property(nonatomic ,strong) NSString *AcceptedSt;
 @property int StrtPnt;
 @property int EndPnt;
