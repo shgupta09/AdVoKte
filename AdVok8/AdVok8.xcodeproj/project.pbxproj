@@ -56,6 +56,8 @@
 		5F70AC4B202B1691007E69A5 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC49202B1691007E69A5 /* SplashScreenViewController.xib */; };
 		5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC54202B2248007E69A5 /* LegislateBaseViewController.m */; };
 		5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC55202B2248007E69A5 /* LegislateBaseViewController.xib */; };
+		5F71B691204D5E7F004229DF /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B68F204D5E7F004229DF /* CommentViewController.m */; };
+		5F71B692204D5E7F004229DF /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F71B690204D5E7F004229DF /* CommentViewController.xib */; };
 		5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */; };
 		5FC11D022037012A002030BD /* ChooseTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC11D002037012A002030BD /* ChooseTypeViewController.xib */; };
 		5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCBA0420381ABC002BFD4A /* DesignableButton.m */; };
@@ -161,6 +163,9 @@
 		5F70AC53202B2248007E69A5 /* LegislateBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegislateBaseViewController.h; sourceTree = "<group>"; };
 		5F70AC54202B2248007E69A5 /* LegislateBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegislateBaseViewController.m; sourceTree = "<group>"; };
 		5F70AC55202B2248007E69A5 /* LegislateBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LegislateBaseViewController.xib; sourceTree = "<group>"; };
+		5F71B68E204D5E7F004229DF /* CommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
+		5F71B68F204D5E7F004229DF /* CommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
+		5F71B690204D5E7F004229DF /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
 		5FC11CFE2037012A002030BD /* ChooseTypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseTypeViewController.h; sourceTree = "<group>"; };
 		5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseTypeViewController.m; sourceTree = "<group>"; };
 		5FC11D002037012A002030BD /* ChooseTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeViewController.xib; sourceTree = "<group>"; };
@@ -538,6 +543,7 @@
 		5F70AC4D202B21CD007E69A5 /* LegislateBaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5F71B68D204D5D94004229DF /* CommentViewController */,
 				5F1B9C3820343774009503E7 /* PostViewController */,
 				5F1B9C3720343765009503E7 /* JournalViewController */,
 				5F1B9C3620343758009503E7 /* LibraryViewController */,
@@ -547,6 +553,16 @@
 				5F70AC55202B2248007E69A5 /* LegislateBaseViewController.xib */,
 			);
 			path = LegislateBaseViewController;
+			sourceTree = "<group>";
+		};
+		5F71B68D204D5D94004229DF /* CommentViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F71B68E204D5E7F004229DF /* CommentViewController.h */,
+				5F71B68F204D5E7F004229DF /* CommentViewController.m */,
+				5F71B690204D5E7F004229DF /* CommentViewController.xib */,
+			);
+			path = CommentViewController;
 			sourceTree = "<group>";
 		};
 		5FC11CFC203700EC002030BD /* RegisterModule */ = {
@@ -680,6 +696,7 @@
 				5F1B9C6A203461FE009503E7 /* LoginViewController.xib in Resources */,
 				5F70AC36202B1653007E69A5 /* BaseHomeViewController.xib in Resources */,
 				5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */,
+				5F71B692204D5E7F004229DF /* CommentViewController.xib in Resources */,
 				5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */,
 				5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */,
 				5F1B9C3D203437F8009503E7 /* PostViewController.xib in Resources */,
@@ -835,6 +852,7 @@
 				5F1B9C412034381C009503E7 /* JournalViewController.m in Sources */,
 				5F70AC35202B1653007E69A5 /* BaseHomeViewController.m in Sources */,
 				5F70ABF4202B1250007E69A5 /* main.m in Sources */,
+				5F71B691204D5E7F004229DF /* CommentViewController.m in Sources */,
 				5F1B9C4B20343889009503E7 /* FeedViewController.m in Sources */,
 				5F1B9C3C203437F8009503E7 /* PostViewController.m in Sources */,
 			);
