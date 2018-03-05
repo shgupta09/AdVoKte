@@ -8,10 +8,6 @@
 
 #import "LibraryViewController.h"
 
-int const like_tag = 1000;
-int const save_tag = 2000;
-int const comment_tag = 3000;
-int const share_tag = 4000;
 
 @interface LibraryViewController ()
 {

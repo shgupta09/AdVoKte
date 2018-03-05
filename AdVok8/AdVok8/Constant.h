@@ -21,6 +21,10 @@ static NSString* const API_GET_OTP = @"generateOTP";
 static NSString* const API_REGISTER_USER = @"postAdvocateDetailsSignUp";
 static NSString* const API_LOGIN = @"GetLogin";
 
+static int const like_tag = 1000;
+static int const save_tag = 2000;
+static int const comment_tag = 3000;
+static int const share_tag = 4000;
 
 #endif /* Constant_h */
 
