@@ -1,25 +1,26 @@
 //
-//  DashboardBaseViewController.m
+//  LawyersCategoryVC.m
 //  AdVok8
 //
-//  Created by Shagun Verma on 14/02/18.
+//  Created by shubham gupta on 3/1/18.
 //  Copyright © 2018 Shagun Verma. All rights reserved.
 //
 
-#import "DashboardBaseViewController.h"
-
-@interface DashboardBaseViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+#import "LawyersCategoryVC.h"
+#import "LawyerListVC.h"
+@interface LawyersCategoryVC ()
 {
     NSArray* arrOptions;
     NSArray* arrImages;
 }
 @end
 
-@implementation DashboardBaseViewController
+@implementation LawyersCategoryVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    [CommonFunction setNavToController:self title:@"Lawyer" isCrossBusston:false isAddRightButton:false];
+    // Do any additional setup after loading the view from its nib.
     arrImages = [[NSArray alloc] initWithObjects:@"CaseTracking.png",@"CaseTracking.png",@"CaseTracking.png",@"Appointment-1.png",@"Me.png", nil];
     arrOptions = [[NSArray alloc] initWithObjects:@"Find Lawyers",@"Case Treacking",@"My Activity",@"Appointment",@"Me", nil];
     [_collectionView registerNib:[UINib nibWithNibName:@"DashboardHomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"DashboardHomeCollectionViewCell"];
@@ -28,6 +29,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void)backTapped{
+    [self.navigationController popViewControllerAnimated:true];
+    
 }
 
 #pragma mark - Collection View Delegates methods
@@ -66,11 +71,11 @@
 {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
-    float cellWidth = screenWidth / 3.0 ; //Replace the divisor with the column count requirement. Make sure to have it in float.
-     DashboardHomeCollectionViewCell *cell = (DashboardHomeCollectionViewCell*)[_collectionView cellForItemAtIndexPath:indexPath];
+    float cellWidth = screenWidth / 2.5 ; //Replace the divisor with the column count requirement. Make sure to have it in float.
+    DashboardHomeCollectionViewCell *cell = (DashboardHomeCollectionViewCell*)[_collectionView cellForItemAtIndexPath:indexPath];
     CGFloat maxLabelWidth = 100;
     cell.lblName.text = [arrOptions objectAtIndex:indexPath.row];
-
+    
     CGSize neededSize = [cell.lblName sizeThatFits:CGSizeMake(maxLabelWidth, CGFLOAT_MAX)];
     
     CGSize size = CGSizeMake(cellWidth, neededSize.height + 10 +cellWidth);
@@ -80,13 +85,10 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row == 0) {
-        LawyersCategoryVC *lawyerVcOBJ = [[LawyersCategoryVC alloc]initWithNibName:@"LawyersCategoryVC" bundle:nil];
+        LawyerListVC *lawyerVcOBJ = [[LawyerListVC alloc]initWithNibName:@"LawyerListVC" bundle:nil];
         [self.navigationController pushViewController:lawyerVcOBJ animated:true];
-    }
     
     
 }
-
 
 @end
