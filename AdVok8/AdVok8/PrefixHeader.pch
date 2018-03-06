@@ -40,6 +40,9 @@
 #import "RegisterStep1ViewController.h"
 #import "ADRegistrationModel.h"
 #import "User.h"
+#import "CommentViewController.h"
+#import "CommentTableViewCell.h"
+#import "CommentLike.h"
 
 // Models
 #import "ADRegistrationModel.h"

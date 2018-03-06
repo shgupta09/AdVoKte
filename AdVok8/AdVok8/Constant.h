@@ -18,6 +18,7 @@ static NSString* const API_GET_ALL_POSTS_FROM_LIBRARY = @"get_LibPosts_APK";
 static NSString* const API_LIKE_POST = @"put_like";
 static NSString* const API_SAVE_DELETE_POST_LIBRARY = @"SaveDeleteLibrary";
 static NSString* const API_FETCH_COMMENTS_FOR_POST = @"get_IndPostComment";
+static NSString* const API_FETCH_POST_FOR_POST_ID = @"get_indConsult";
 static NSString* const API_GET_OTP = @"generateOTP";
 static NSString* const API_REGISTER_USER = @"postAdvocateDetailsSignUp";
 static NSString* const API_LOGIN = @"GetLogin";

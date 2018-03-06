@@ -58,6 +58,9 @@
 		5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC55202B2248007E69A5 /* LegislateBaseViewController.xib */; };
 		5F71B691204D5E7F004229DF /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B68F204D5E7F004229DF /* CommentViewController.m */; };
 		5F71B692204D5E7F004229DF /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F71B690204D5E7F004229DF /* CommentViewController.xib */; };
+		5F71B697204E5BE3004229DF /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B695204E5BE3004229DF /* CommentTableViewCell.m */; };
+		5F71B698204E5BE3004229DF /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F71B696204E5BE3004229DF /* CommentTableViewCell.xib */; };
+		5F71B69B204E6C4C004229DF /* CommentLike.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B69A204E6C4C004229DF /* CommentLike.m */; };
 		5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */; };
 		5FC11D022037012A002030BD /* ChooseTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC11D002037012A002030BD /* ChooseTypeViewController.xib */; };
 		5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCBA0420381ABC002BFD4A /* DesignableButton.m */; };
@@ -166,6 +169,11 @@
 		5F71B68E204D5E7F004229DF /* CommentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentViewController.h; sourceTree = "<group>"; };
 		5F71B68F204D5E7F004229DF /* CommentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentViewController.m; sourceTree = "<group>"; };
 		5F71B690204D5E7F004229DF /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
+		5F71B694204E5BE3004229DF /* CommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		5F71B695204E5BE3004229DF /* CommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		5F71B696204E5BE3004229DF /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
+		5F71B699204E6C4C004229DF /* CommentLike.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentLike.h; sourceTree = "<group>"; };
+		5F71B69A204E6C4C004229DF /* CommentLike.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentLike.m; sourceTree = "<group>"; };
 		5FC11CFE2037012A002030BD /* ChooseTypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseTypeViewController.h; sourceTree = "<group>"; };
 		5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseTypeViewController.m; sourceTree = "<group>"; };
 		5FC11D002037012A002030BD /* ChooseTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeViewController.xib; sourceTree = "<group>"; };
@@ -283,6 +291,7 @@
 		5F1B9C4D203440BC009503E7 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				5F71B693204E5BC9004229DF /* CommentTableViewCell */,
 				5F1B9C7A20359082009503E7 /* JournalMainTableViewCell */,
 				5F1B9C5920344A56009503E7 /* PostMainTableViewCell */,
 				5F1B9C4E203440D1009503E7 /* FeedMainTableViewCell */,
@@ -474,6 +483,8 @@
 				5F1B9C7820356909009503E7 /* Response.m */,
 				5F1B9C842036B0C2009503E7 /* PostModel.h */,
 				5F1B9C852036B0C2009503E7 /* PostModel.m */,
+				5F71B699204E6C4C004229DF /* CommentLike.h */,
+				5F71B69A204E6C4C004229DF /* CommentLike.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -563,6 +574,16 @@
 				5F71B690204D5E7F004229DF /* CommentViewController.xib */,
 			);
 			path = CommentViewController;
+			sourceTree = "<group>";
+		};
+		5F71B693204E5BC9004229DF /* CommentTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F71B694204E5BE3004229DF /* CommentTableViewCell.h */,
+				5F71B695204E5BE3004229DF /* CommentTableViewCell.m */,
+				5F71B696204E5BE3004229DF /* CommentTableViewCell.xib */,
+			);
+			path = CommentTableViewCell;
 			sourceTree = "<group>";
 		};
 		5FC11CFC203700EC002030BD /* RegisterModule */ = {
@@ -695,6 +716,7 @@
 				5F70AC4B202B1691007E69A5 /* SplashScreenViewController.xib in Resources */,
 				5F1B9C6A203461FE009503E7 /* LoginViewController.xib in Resources */,
 				5F70AC36202B1653007E69A5 /* BaseHomeViewController.xib in Resources */,
+				5F71B698204E5BE3004229DF /* CommentTableViewCell.xib in Resources */,
 				5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */,
 				5F71B692204D5E7F004229DF /* CommentViewController.xib in Resources */,
 				5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */,
@@ -823,6 +845,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F1B9C76203568F3009503E7 /* User.m in Sources */,
+				5F71B697204E5BE3004229DF /* CommentTableViewCell.m in Sources */,
 				5F1B9C5D20344A64009503E7 /* PostMainTableViewCell.m in Sources */,
 				5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */,
 				5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */,
@@ -853,6 +876,7 @@
 				5F70AC35202B1653007E69A5 /* BaseHomeViewController.m in Sources */,
 				5F70ABF4202B1250007E69A5 /* main.m in Sources */,
 				5F71B691204D5E7F004229DF /* CommentViewController.m in Sources */,
+				5F71B69B204E6C4C004229DF /* CommentLike.m in Sources */,
 				5F1B9C4B20343889009503E7 /* FeedViewController.m in Sources */,
 				5F1B9C3C203437F8009503E7 /* PostViewController.m in Sources */,
 			);

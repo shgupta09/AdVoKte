@@ -12,5 +12,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtComment;
 @property (weak, nonatomic) IBOutlet UIButton *btnSend;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (weak, nonatomic) NSString *postId;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *const_bottomSpace;
 
 @end
