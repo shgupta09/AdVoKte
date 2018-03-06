@@ -8,10 +8,6 @@
 
 #import "LibraryViewController.h"
 
-int const like_tag = 1000;
-int const save_tag = 2000;
-int const comment_tag = 3000;
-int const share_tag = 4000;
 
 @interface LibraryViewController ()
 {
@@ -23,6 +19,7 @@ int const share_tag = 4000;
 
 @implementation LibraryViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_tblView registerNib:[UINib nibWithNibName:@"FeedMainTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeedMainTableViewCell"];
@@ -31,7 +28,7 @@ int const share_tag = 4000;
     [_tblView addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
     
-    [self hitApiForAllPosts:@"0"];
+    [self hitApiForAllPostsFromLibrary];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -48,7 +45,7 @@ int const share_tag = 4000;
 - (void)refreshTable {
     //TODO: refresh your data
     [refreshControl endRefreshing];
-    [self hitApiForAllPosts:@"0"];
+    [self hitApiForAllPostsFromLibrary];
     
 }
 
@@ -138,10 +135,6 @@ int const share_tag = 4000;
         cell.cons_postImageHeight.constant = 0;
     }
     
-    if (indexPath.row == [arrData count] - 1)
-    {
-        [self hitApiForAllPosts:[NSString stringWithFormat:@"%d", indexPath.row]];
-    }
     
     return cell;
     
@@ -331,8 +324,7 @@ int const share_tag = 4000;
 }
 
 
--(void)hitApiForAllPosts:(NSString*) startPoint{
-    
+-(void)hitApiForAllPostsFromLibrary{
     
     NSMutableDictionary *parameter = [NSMutableDictionary new];
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
@@ -343,18 +335,15 @@ int const share_tag = 4000;
     {
         [dictRequest setValue:@"0" forKey:@"UserId"];
     }
-    [dictRequest setValue:@"Feed" forKey:@"postsubtype"];
-    [dictRequest setValue:@"Feed" forKey:@"posttype"];
-    [dictRequest setValue:startPoint forKey:@"StrtPnt"];
-    [dictRequest setValue:[NSString stringWithFormat:@"%d",startPoint.integerValue+20] forKey:@"EndPnt"];
-    
+    [dictRequest setValue:@"0" forKey:@"PostId"];
+    [dictRequest setValue:@"" forKey:@"useractv"];
     [parameter setValue:dictRequest forKey:@"_post"];
     
     if ([ CommonFunction reachability]) {
         [self addLoder];
         
         //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_ALL_POSTS]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_ALL_POSTS_FROM_LIBRARY]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 if (1) {
                     NSArray *tempArray = [NSArray new];
@@ -412,5 +401,10 @@ int const share_tag = 4000;
     //[loaderView removeFromSuperview];
     self.view.userInteractionEnabled = YES;
 }
+
+
+
+
+
 
 @end
