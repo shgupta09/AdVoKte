@@ -63,6 +63,20 @@
 		5FCCBA0B2038223B002BFD4A /* RegisterStep1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCBA092038223B002BFD4A /* RegisterStep1ViewController.xib */; };
 		C0B37D9E32372768C7120041 /* libPods-AdVok8Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 451D0C401EC04053B7C1ED21 /* libPods-AdVok8Tests.a */; };
 		CB281165DB24598765D2760E /* libPods-AdVok8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E476A4A368847FBC004F191 /* libPods-AdVok8.a */; };
+		D824E9112047ED6A00FB3921 /* LawyersCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D824E90F2047ED6A00FB3921 /* LawyersCategoryVC.m */; };
+		D824E9122047ED6A00FB3921 /* LawyersCategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D824E9102047ED6A00FB3921 /* LawyersCategoryVC.xib */; };
+		D824E91720488D8100FB3921 /* LawyerListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D824E91520488D8100FB3921 /* LawyerListVC.m */; };
+		D824E91820488D8100FB3921 /* LawyerListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D824E91620488D8100FB3921 /* LawyerListVC.xib */; };
+		D824E91D20488E2500FB3921 /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D824E91B20488E2500FB3921 /* ListCell.m */; };
+		D824E91E20488E2500FB3921 /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D824E91C20488E2500FB3921 /* ListCell.xib */; };
+		D86331FF20489231009FF20F /* LeftImageWithLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = D86331FE20489231009FF20F /* LeftImageWithLabel.m */; };
+		D88D7C972049CA9800A78DA8 /* ButtonWithImage.m in Sources */ = {isa = PBXBuildFile; fileRef = D88D7C962049CA9800A78DA8 /* ButtonWithImage.m */; };
+		D8F11A1A204A916D00B89C3C /* SelectedLawyerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F11A18204A916D00B89C3C /* SelectedLawyerVC.m */; };
+		D8F11A1B204A916D00B89C3C /* SelectedLawyerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F11A19204A916D00B89C3C /* SelectedLawyerVC.xib */; };
+		D8F11A20204A943800B89C3C /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F11A1E204A943800B89C3C /* LabelCell.m */; };
+		D8F11A21204A943800B89C3C /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F11A1F204A943800B89C3C /* LabelCell.xib */; };
+		D8F11A26204A949B00B89C3C /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F11A24204A949B00B89C3C /* ProfileCell.m */; };
+		D8F11A27204A949B00B89C3C /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8F11A25204A949B00B89C3C /* ProfileCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +187,28 @@
 		7E476A4A368847FBC004F191 /* libPods-AdVok8.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdVok8.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD73CAB49F10EB83788EA97 /* Pods-AdVok8Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8Tests/Pods-AdVok8Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4D413DFC49D5990184F60D /* Pods-AdVok8Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8Tests/Pods-AdVok8Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D824E90E2047ED6A00FB3921 /* LawyersCategoryVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LawyersCategoryVC.h; sourceTree = "<group>"; };
+		D824E90F2047ED6A00FB3921 /* LawyersCategoryVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LawyersCategoryVC.m; sourceTree = "<group>"; };
+		D824E9102047ED6A00FB3921 /* LawyersCategoryVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LawyersCategoryVC.xib; sourceTree = "<group>"; };
+		D824E91420488D8100FB3921 /* LawyerListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LawyerListVC.h; sourceTree = "<group>"; };
+		D824E91520488D8100FB3921 /* LawyerListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LawyerListVC.m; sourceTree = "<group>"; };
+		D824E91620488D8100FB3921 /* LawyerListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LawyerListVC.xib; sourceTree = "<group>"; };
+		D824E91A20488E2500FB3921 /* ListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
+		D824E91B20488E2500FB3921 /* ListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
+		D824E91C20488E2500FB3921 /* ListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		D86331FD20489231009FF20F /* LeftImageWithLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LeftImageWithLabel.h; sourceTree = "<group>"; };
+		D86331FE20489231009FF20F /* LeftImageWithLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeftImageWithLabel.m; sourceTree = "<group>"; };
+		D88D7C952049CA9800A78DA8 /* ButtonWithImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ButtonWithImage.h; sourceTree = "<group>"; };
+		D88D7C962049CA9800A78DA8 /* ButtonWithImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonWithImage.m; sourceTree = "<group>"; };
+		D8F11A17204A916D00B89C3C /* SelectedLawyerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectedLawyerVC.h; sourceTree = "<group>"; };
+		D8F11A18204A916D00B89C3C /* SelectedLawyerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectedLawyerVC.m; sourceTree = "<group>"; };
+		D8F11A19204A916D00B89C3C /* SelectedLawyerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectedLawyerVC.xib; sourceTree = "<group>"; };
+		D8F11A1D204A943800B89C3C /* LabelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LabelCell.h; sourceTree = "<group>"; };
+		D8F11A1E204A943800B89C3C /* LabelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LabelCell.m; sourceTree = "<group>"; };
+		D8F11A1F204A943800B89C3C /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
+		D8F11A23204A949B00B89C3C /* ProfileCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
+		D8F11A24204A949B00B89C3C /* ProfileCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
+		D8F11A25204A949B00B89C3C /* ProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +346,10 @@
 			children = (
 				5FCCBA0320381ABB002BFD4A /* DesignableButton.h */,
 				5FCCBA0420381ABC002BFD4A /* DesignableButton.m */,
+				D86331FD20489231009FF20F /* LeftImageWithLabel.h */,
+				D86331FE20489231009FF20F /* LeftImageWithLabel.m */,
+				D88D7C952049CA9800A78DA8 /* ButtonWithImage.h */,
+				D88D7C962049CA9800A78DA8 /* ButtonWithImage.m */,
 			);
 			path = Designables;
 			sourceTree = "<group>";
@@ -483,6 +523,9 @@
 		5F70AC2B202B14EB007E69A5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D8F11A16204A911300B89C3C /* SelectedLawyerVC */,
+				D824E91320488D6D00FB3921 /* LawyerList */,
+				D824E90D2047343400FB3921 /* Lawer category */,
 				5FC11CFC203700EC002030BD /* RegisterModule */,
 				5F1B9C65203461EE009503E7 /* LoginViewController */,
 				5F1B9C29203413DD009503E7 /* DashboardBaseViewController */,
@@ -578,6 +621,69 @@
 			path = RegisterStep1ViewController;
 			sourceTree = "<group>";
 		};
+		D824E90D2047343400FB3921 /* Lawer category */ = {
+			isa = PBXGroup;
+			children = (
+				D824E90E2047ED6A00FB3921 /* LawyersCategoryVC.h */,
+				D824E90F2047ED6A00FB3921 /* LawyersCategoryVC.m */,
+				D824E9102047ED6A00FB3921 /* LawyersCategoryVC.xib */,
+			);
+			path = "Lawer category";
+			sourceTree = "<group>";
+		};
+		D824E91320488D6D00FB3921 /* LawyerList */ = {
+			isa = PBXGroup;
+			children = (
+				D824E91920488DFA00FB3921 /* ListCell */,
+				D824E91420488D8100FB3921 /* LawyerListVC.h */,
+				D824E91520488D8100FB3921 /* LawyerListVC.m */,
+				D824E91620488D8100FB3921 /* LawyerListVC.xib */,
+			);
+			path = LawyerList;
+			sourceTree = "<group>";
+		};
+		D824E91920488DFA00FB3921 /* ListCell */ = {
+			isa = PBXGroup;
+			children = (
+				D824E91A20488E2500FB3921 /* ListCell.h */,
+				D824E91B20488E2500FB3921 /* ListCell.m */,
+				D824E91C20488E2500FB3921 /* ListCell.xib */,
+			);
+			path = ListCell;
+			sourceTree = "<group>";
+		};
+		D8F11A16204A911300B89C3C /* SelectedLawyerVC */ = {
+			isa = PBXGroup;
+			children = (
+				D8F11A22204A948A00B89C3C /* ProfileCell */,
+				D8F11A1C204A942100B89C3C /* LabelCell */,
+				D8F11A17204A916D00B89C3C /* SelectedLawyerVC.h */,
+				D8F11A18204A916D00B89C3C /* SelectedLawyerVC.m */,
+				D8F11A19204A916D00B89C3C /* SelectedLawyerVC.xib */,
+			);
+			path = SelectedLawyerVC;
+			sourceTree = "<group>";
+		};
+		D8F11A1C204A942100B89C3C /* LabelCell */ = {
+			isa = PBXGroup;
+			children = (
+				D8F11A1D204A943800B89C3C /* LabelCell.h */,
+				D8F11A1E204A943800B89C3C /* LabelCell.m */,
+				D8F11A1F204A943800B89C3C /* LabelCell.xib */,
+			);
+			path = LabelCell;
+			sourceTree = "<group>";
+		};
+		D8F11A22204A948A00B89C3C /* ProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				D8F11A23204A949B00B89C3C /* ProfileCell.h */,
+				D8F11A24204A949B00B89C3C /* ProfileCell.m */,
+				D8F11A25204A949B00B89C3C /* ProfileCell.xib */,
+			);
+			path = ProfileCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -634,7 +740,7 @@
 					5F70ABEE202B1250007E69A5 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = MK5HXMKD83;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					5F70AC0A202B1250007E69A5 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -669,6 +775,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F70AC05202B1250007E69A5 /* LaunchScreen.storyboard in Resources */,
+				D824E91E20488E2500FB3921 /* ListCell.xib in Resources */,
+				D8F11A1B204A916D00B89C3C /* SelectedLawyerVC.xib in Resources */,
 				5F1B9C4C20343889009503E7 /* FeedViewController.xib in Resources */,
 				5FCCBA0B2038223B002BFD4A /* RegisterStep1ViewController.xib in Resources */,
 				5F70AC02202B1250007E69A5 /* Assets.xcassets in Resources */,
@@ -681,13 +789,17 @@
 				5F70AC36202B1653007E69A5 /* BaseHomeViewController.xib in Resources */,
 				5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */,
 				5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */,
+				D8F11A27204A949B00B89C3C /* ProfileCell.xib in Resources */,
 				5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */,
 				5F1B9C3D203437F8009503E7 /* PostViewController.xib in Resources */,
 				5F1B9C422034381C009503E7 /* JournalViewController.xib in Resources */,
+				D824E9122047ED6A00FB3921 /* LawyersCategoryVC.xib in Resources */,
 				5FC11D022037012A002030BD /* ChooseTypeViewController.xib in Resources */,
 				5F1B9C472034383F009503E7 /* LibraryViewController.xib in Resources */,
+				D824E91820488D8100FB3921 /* LawyerListVC.xib in Resources */,
 				5F1B9C34203415B9009503E7 /* DashboardHomeCollectionViewCell.xib in Resources */,
 				5F1B9C2E203413F8009503E7 /* DashboardBaseViewController.xib in Resources */,
+				D8F11A21204A943800B89C3C /* LabelCell.xib in Resources */,
 				5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -813,11 +925,16 @@
 				5F70AC4A202B1691007E69A5 /* SplashScreenViewController.m in Sources */,
 				5F1B9C2D203413F8009503E7 /* DashboardBaseViewController.m in Sources */,
 				5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */,
+				D824E91D20488E2500FB3921 /* ListCell.m in Sources */,
+				D8F11A26204A949B00B89C3C /* ProfileCell.m in Sources */,
 				5F1B9C572034411C009503E7 /* FeedMainTableViewCell.m in Sources */,
 				5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */,
 				5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */,
 				5F1B9C73203568BD009503E7 /* SearchModel.m in Sources */,
+				D824E9112047ED6A00FB3921 /* LawyersCategoryVC.m in Sources */,
 				5F70AC00202B1250007E69A5 /* AdVok8.xcdatamodeld in Sources */,
+				D8F11A1A204A916D00B89C3C /* SelectedLawyerVC.m in Sources */,
+				D88D7C972049CA9800A78DA8 /* ButtonWithImage.m in Sources */,
 				5F1B9C862036B0C2009503E7 /* PostModel.m in Sources */,
 				5F1B9C33203415B9009503E7 /* DashboardHomeCollectionViewCell.m in Sources */,
 				5F70AC2D202B14EB007E69A5 /* LoderView.m in Sources */,
@@ -830,11 +947,14 @@
 				5F1B9C6D20356753009503E7 /* ADRegistrationModel.m in Sources */,
 				5F70AC2C202B14EB007E69A5 /* CommonFunction.m in Sources */,
 				5F70AC2F202B14EB007E69A5 /* Reachability.m in Sources */,
+				D824E91720488D8100FB3921 /* LawyerListVC.m in Sources */,
 				5F1B9C462034383F009503E7 /* LibraryViewController.m in Sources */,
 				5F1B9C7E20359131009503E7 /* JournalMainTableViewCell.m in Sources */,
 				5F1B9C412034381C009503E7 /* JournalViewController.m in Sources */,
 				5F70AC35202B1653007E69A5 /* BaseHomeViewController.m in Sources */,
 				5F70ABF4202B1250007E69A5 /* main.m in Sources */,
+				D8F11A20204A943800B89C3C /* LabelCell.m in Sources */,
+				D86331FF20489231009FF20F /* LeftImageWithLabel.m in Sources */,
 				5F1B9C4B20343889009503E7 /* FeedViewController.m in Sources */,
 				5F1B9C3C203437F8009503E7 /* PostViewController.m in Sources */,
 			);
@@ -961,6 +1081,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -971,16 +1092,38 @@
 			baseConfigurationReference = 5DB2464D49DD7471880FD048 /* Pods-AdVok8.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = MK5HXMKD83;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_TESTABILITY = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"SDWebImage\"",
+					"-l\"SWRevealViewController\"",
+					"-l\"TPKeyboardAvoiding\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-l\"AFNetworking\"",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7336e540-feb9-484f-8d27-19f26dcd6ecc";
-				PROVISIONING_PROFILE_SPECIFIER = SSCreative_Development;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -989,16 +1132,37 @@
 			baseConfigurationReference = 7CD644F639A1CDED1AD2871C /* Pods-AdVok8.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = MK5HXMKD83;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-l\"SDWebImage\"",
+					"-l\"SWRevealViewController\"",
+					"-l\"TPKeyboardAvoiding\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-l\"AFNetworking\"",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "aabbe5f0-2fe5-4752-9a42-0174048facf9";
-				PROVISIONING_PROFILE_SPECIFIER = SSCreative_Development;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -1012,7 +1176,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative.AdVok8Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdVok8.app/AdVok8";
+				TEST_HOST = "";
 			};
 			name = Debug;
 		};
@@ -1026,7 +1190,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative.AdVok8Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AdVok8.app/AdVok8";
 			};
 			name = Release;
 		};

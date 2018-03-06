@@ -21,13 +21,13 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="1mk-rk-XoX">
-                        <rect key="frame" x="15" y="15" width="74" height="74"/>
+                        <rect key="frame" x="28.5" y="20" width="46.5" height="46.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="1mk-rk-XoX" secondAttribute="height" multiplier="1:1" id="LTf-nr-c5v"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OK1-lE-9Yk">
-                        <rect key="frame" x="15" y="90" width="74" height="19"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="OK1-lE-9Yk">
+                        <rect key="frame" x="15" y="93" width="74" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -35,13 +35,13 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="OK1-lE-9Yk" firstAttribute="leading" secondItem="1mk-rk-XoX" secondAttribute="leading" id="IAm-xg-SiO"/>
-                <constraint firstItem="OK1-lE-9Yk" firstAttribute="trailing" secondItem="1mk-rk-XoX" secondAttribute="trailing" id="OrK-bJ-CYa"/>
-                <constraint firstItem="1mk-rk-XoX" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="o60-yJ-UMY"/>
-                <constraint firstAttribute="bottom" secondItem="OK1-lE-9Yk" secondAttribute="bottom" constant="7" id="o8m-nq-Rwn"/>
-                <constraint firstItem="1mk-rk-XoX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="piX-mE-Bst"/>
-                <constraint firstAttribute="trailing" secondItem="1mk-rk-XoX" secondAttribute="trailing" constant="15" id="sE9-YP-5Vr"/>
-                <constraint firstItem="OK1-lE-9Yk" firstAttribute="top" secondItem="1mk-rk-XoX" secondAttribute="bottom" constant="1" id="sHK-6X-rGN"/>
+                <constraint firstAttribute="trailing" secondItem="OK1-lE-9Yk" secondAttribute="trailing" constant="15" id="24i-vS-myC"/>
+                <constraint firstItem="OK1-lE-9Yk" firstAttribute="centerX" secondItem="1mk-rk-XoX" secondAttribute="centerX" id="9fd-qK-DvE"/>
+                <constraint firstItem="OK1-lE-9Yk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="HcR-gK-l7Z"/>
+                <constraint firstAttribute="bottom" secondItem="OK1-lE-9Yk" secondAttribute="bottom" constant="5" id="VV0-bD-yZO"/>
+                <constraint firstItem="1mk-rk-XoX" firstAttribute="centerY" secondItem="SEy-5g-ep8" secondAttribute="centerY" constant="-15" id="pHB-mf-GBb"/>
+                <constraint firstItem="1mk-rk-XoX" firstAttribute="centerX" secondItem="SEy-5g-ep8" secondAttribute="centerX" id="pMF-5n-ZJq"/>
+                <constraint firstAttribute="trailing" secondItem="1mk-rk-XoX" secondAttribute="trailing" constant="29" id="sE9-YP-5Vr"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="104" height="116"/>

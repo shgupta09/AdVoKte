@@ -22,7 +22,10 @@
     
     SplashScreenViewController* vc;
     vc = [[SplashScreenViewController alloc] initWithNibName:@"SplashScreenViewController" bundle:nil];
-    _window.rootViewController = vc;
+    
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    ((AppDelegate *)[[UIApplication sharedApplication] delegate]).window.rootViewController = nav;
+    _window.rootViewController = nav;
     [self.window makeKeyAndVisible];
     
 

@@ -40,6 +40,10 @@
 #import "RegisterStep1ViewController.h"
 #import "ADRegistrationModel.h"
 #import "User.h"
+#import "LawyersCategoryVC.h"
+
+//CustomClasses
+#import "LeftImageWithLabel.h"
 
 // Models
 #import "ADRegistrationModel.h"
