@@ -40,16 +40,15 @@
 #import "RegisterStep1ViewController.h"
 #import "ADRegistrationModel.h"
 #import "User.h"
-<<<<<<< HEAD
 #import "CommentViewController.h"
 #import "CommentTableViewCell.h"
 #import "CommentLike.h"
-=======
 #import "LawyersCategoryVC.h"
+#import "Specialization.h"
+#import "LawyerCategoryTableViewCell.h"
 
 //CustomClasses
 #import "LeftImageWithLabel.h"
->>>>>>> a358e56fb83be451060c288ef847d2be47a269eb
 
 // Models
 #import "ADRegistrationModel.h"

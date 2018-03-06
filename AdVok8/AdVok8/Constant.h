@@ -11,6 +11,7 @@
 
 #define isLoggedIn @"isLoggedIn"
 static NSString* const API_BASE_URL = @"http://www.advok8.in/AdvocateAPI.asmx/";
+static NSString* const API_CONTENTS_BASE_URL = @"http://www.advok8.in";
 
 // Consult APIS
 static NSString* const API_GET_ALL_POSTS = @"get_Consult_APK";
@@ -23,12 +24,19 @@ static NSString* const API_GET_OTP = @"generateOTP";
 static NSString* const API_REGISTER_USER = @"postAdvocateDetailsSignUp";
 static NSString* const API_LOGIN = @"GetLogin";
 
+
+// Dashoboard APIS
+static NSString* const API_GET_ALL_CATEGORIES = @"Get_AllCategory";
+static NSString* const API_GET_ALL_SPECIALIZATION = @"Get_Specialization";
+static NSString* const API_GET_SUB_CATEGORY = @"Get_Category";
+
 static int const like_tag = 1000;
 static int const save_tag = 2000;
 static int const comment_tag = 3000;
 static int const share_tag = 4000;
 
 #endif /* Constant_h */
+
 
 
 

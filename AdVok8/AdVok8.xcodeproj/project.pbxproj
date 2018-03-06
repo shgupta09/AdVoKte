@@ -61,6 +61,23 @@
 		5F71B697204E5BE3004229DF /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B695204E5BE3004229DF /* CommentTableViewCell.m */; };
 		5F71B698204E5BE3004229DF /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F71B696204E5BE3004229DF /* CommentTableViewCell.xib */; };
 		5F71B69B204E6C4C004229DF /* CommentLike.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B69A204E6C4C004229DF /* CommentLike.m */; };
+		5F71B6A8204E8E76004229DF /* LawyersCategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B69E204E8E76004229DF /* LawyersCategoryVC.m */; };
+		5F71B6A9204E8E76004229DF /* LawyersCategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F71B69F204E8E76004229DF /* LawyersCategoryVC.xib */; };
+		5F71B6AA204E8E76004229DF /* LawyerListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B6A2204E8E76004229DF /* LawyerListVC.m */; };
+		5F71B6AB204E8E76004229DF /* LawyerListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F71B6A3204E8E76004229DF /* LawyerListVC.xib */; };
+		5F71B6AC204E8E76004229DF /* ListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B6A6204E8E76004229DF /* ListCell.m */; };
+		5F71B6AD204E8E76004229DF /* ListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F71B6A7204E8E76004229DF /* ListCell.xib */; };
+		5F71B6BA204E8E87004229DF /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B6B1204E8E87004229DF /* LabelCell.m */; };
+		5F71B6BB204E8E87004229DF /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F71B6B2204E8E87004229DF /* LabelCell.xib */; };
+		5F71B6BC204E8E87004229DF /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B6B5204E8E87004229DF /* ProfileCell.m */; };
+		5F71B6BD204E8E87004229DF /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F71B6B6204E8E87004229DF /* ProfileCell.xib */; };
+		5F71B6BE204E8E87004229DF /* SelectedLawyerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B6B8204E8E87004229DF /* SelectedLawyerVC.m */; };
+		5F71B6BF204E8E87004229DF /* SelectedLawyerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F71B6B9204E8E87004229DF /* SelectedLawyerVC.xib */; };
+		5F71B6C2204E8EA4004229DF /* LeftImageWithLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B6C1204E8EA4004229DF /* LeftImageWithLabel.m */; };
+		5F71B6C5204E8ED1004229DF /* ButtonWithImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B6C3204E8ED0004229DF /* ButtonWithImage.m */; };
+		5F71B6C8204E91C5004229DF /* Specialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B6C7204E91C5004229DF /* Specialization.m */; };
+		5F71B6CD204E9712004229DF /* LawyerCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B6CB204E9712004229DF /* LawyerCategoryTableViewCell.m */; };
+		5F71B6CE204E9712004229DF /* LawyerCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F71B6CC204E9712004229DF /* LawyerCategoryTableViewCell.xib */; };
 		5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */; };
 		5FC11D022037012A002030BD /* ChooseTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC11D002037012A002030BD /* ChooseTypeViewController.xib */; };
 		5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCBA0420381ABC002BFD4A /* DesignableButton.m */; };
@@ -174,6 +191,33 @@
 		5F71B696204E5BE3004229DF /* CommentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
 		5F71B699204E6C4C004229DF /* CommentLike.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentLike.h; sourceTree = "<group>"; };
 		5F71B69A204E6C4C004229DF /* CommentLike.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentLike.m; sourceTree = "<group>"; };
+		5F71B69D204E8E76004229DF /* LawyersCategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LawyersCategoryVC.h; sourceTree = "<group>"; };
+		5F71B69E204E8E76004229DF /* LawyersCategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LawyersCategoryVC.m; sourceTree = "<group>"; };
+		5F71B69F204E8E76004229DF /* LawyersCategoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LawyersCategoryVC.xib; sourceTree = "<group>"; };
+		5F71B6A1204E8E76004229DF /* LawyerListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LawyerListVC.h; sourceTree = "<group>"; };
+		5F71B6A2204E8E76004229DF /* LawyerListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LawyerListVC.m; sourceTree = "<group>"; };
+		5F71B6A3204E8E76004229DF /* LawyerListVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LawyerListVC.xib; sourceTree = "<group>"; };
+		5F71B6A5204E8E76004229DF /* ListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCell.h; sourceTree = "<group>"; };
+		5F71B6A6204E8E76004229DF /* ListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCell.m; sourceTree = "<group>"; };
+		5F71B6A7204E8E76004229DF /* ListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListCell.xib; sourceTree = "<group>"; };
+		5F71B6B0204E8E87004229DF /* LabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCell.h; sourceTree = "<group>"; };
+		5F71B6B1204E8E87004229DF /* LabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCell.m; sourceTree = "<group>"; };
+		5F71B6B2204E8E87004229DF /* LabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
+		5F71B6B4204E8E87004229DF /* ProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
+		5F71B6B5204E8E87004229DF /* ProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
+		5F71B6B6204E8E87004229DF /* ProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
+		5F71B6B7204E8E87004229DF /* SelectedLawyerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedLawyerVC.h; sourceTree = "<group>"; };
+		5F71B6B8204E8E87004229DF /* SelectedLawyerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedLawyerVC.m; sourceTree = "<group>"; };
+		5F71B6B9204E8E87004229DF /* SelectedLawyerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectedLawyerVC.xib; sourceTree = "<group>"; };
+		5F71B6C0204E8EA4004229DF /* LeftImageWithLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftImageWithLabel.h; sourceTree = "<group>"; };
+		5F71B6C1204E8EA4004229DF /* LeftImageWithLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftImageWithLabel.m; sourceTree = "<group>"; };
+		5F71B6C3204E8ED0004229DF /* ButtonWithImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonWithImage.m; sourceTree = "<group>"; };
+		5F71B6C4204E8ED1004229DF /* ButtonWithImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonWithImage.h; sourceTree = "<group>"; };
+		5F71B6C6204E91C5004229DF /* Specialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Specialization.h; sourceTree = "<group>"; };
+		5F71B6C7204E91C5004229DF /* Specialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Specialization.m; sourceTree = "<group>"; };
+		5F71B6CA204E9712004229DF /* LawyerCategoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LawyerCategoryTableViewCell.h; sourceTree = "<group>"; };
+		5F71B6CB204E9712004229DF /* LawyerCategoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LawyerCategoryTableViewCell.m; sourceTree = "<group>"; };
+		5F71B6CC204E9712004229DF /* LawyerCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LawyerCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		5FC11CFE2037012A002030BD /* ChooseTypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseTypeViewController.h; sourceTree = "<group>"; };
 		5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseTypeViewController.m; sourceTree = "<group>"; };
 		5FC11D002037012A002030BD /* ChooseTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeViewController.xib; sourceTree = "<group>"; };
@@ -231,6 +275,9 @@
 		5F1B9C29203413DD009503E7 /* DashboardBaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5F71B6AE204E8E87004229DF /* SelectedLawyerVC */,
+				5F71B69C204E8E76004229DF /* Lawer category */,
+				5F71B6A0204E8E76004229DF /* LawyerList */,
 				5F1B9C2A203413F8009503E7 /* DashboardBaseViewController.h */,
 				5F1B9C2B203413F8009503E7 /* DashboardBaseViewController.m */,
 				5F1B9C2C203413F8009503E7 /* DashboardBaseViewController.xib */,
@@ -322,6 +369,10 @@
 		5F1B9C5F20344F9F009503E7 /* Designables */ = {
 			isa = PBXGroup;
 			children = (
+				5F71B6C4204E8ED1004229DF /* ButtonWithImage.h */,
+				5F71B6C3204E8ED0004229DF /* ButtonWithImage.m */,
+				5F71B6C0204E8EA4004229DF /* LeftImageWithLabel.h */,
+				5F71B6C1204E8EA4004229DF /* LeftImageWithLabel.m */,
 				5FCCBA0320381ABB002BFD4A /* DesignableButton.h */,
 				5FCCBA0420381ABC002BFD4A /* DesignableButton.m */,
 			);
@@ -485,6 +536,8 @@
 				5F1B9C852036B0C2009503E7 /* PostModel.m */,
 				5F71B699204E6C4C004229DF /* CommentLike.h */,
 				5F71B69A204E6C4C004229DF /* CommentLike.m */,
+				5F71B6C6204E91C5004229DF /* Specialization.h */,
+				5F71B6C7204E91C5004229DF /* Specialization.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -584,6 +637,83 @@
 				5F71B696204E5BE3004229DF /* CommentTableViewCell.xib */,
 			);
 			path = CommentTableViewCell;
+			sourceTree = "<group>";
+		};
+		5F71B69C204E8E76004229DF /* Lawer category */ = {
+			isa = PBXGroup;
+			children = (
+				5F71B6C9204E96FC004229DF /* LawyerCategoryTableViewCell */,
+				5F71B69D204E8E76004229DF /* LawyersCategoryVC.h */,
+				5F71B69E204E8E76004229DF /* LawyersCategoryVC.m */,
+				5F71B69F204E8E76004229DF /* LawyersCategoryVC.xib */,
+			);
+			name = "Lawer category";
+			path = "AdVok8/ViewControllers/Lawer category";
+			sourceTree = SOURCE_ROOT;
+		};
+		5F71B6A0204E8E76004229DF /* LawyerList */ = {
+			isa = PBXGroup;
+			children = (
+				5F71B6A1204E8E76004229DF /* LawyerListVC.h */,
+				5F71B6A2204E8E76004229DF /* LawyerListVC.m */,
+				5F71B6A3204E8E76004229DF /* LawyerListVC.xib */,
+				5F71B6A4204E8E76004229DF /* ListCell */,
+			);
+			name = LawyerList;
+			path = AdVok8/ViewControllers/LawyerList;
+			sourceTree = SOURCE_ROOT;
+		};
+		5F71B6A4204E8E76004229DF /* ListCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F71B6A5204E8E76004229DF /* ListCell.h */,
+				5F71B6A6204E8E76004229DF /* ListCell.m */,
+				5F71B6A7204E8E76004229DF /* ListCell.xib */,
+			);
+			path = ListCell;
+			sourceTree = "<group>";
+		};
+		5F71B6AE204E8E87004229DF /* SelectedLawyerVC */ = {
+			isa = PBXGroup;
+			children = (
+				5F71B6AF204E8E87004229DF /* LabelCell */,
+				5F71B6B3204E8E87004229DF /* ProfileCell */,
+				5F71B6B7204E8E87004229DF /* SelectedLawyerVC.h */,
+				5F71B6B8204E8E87004229DF /* SelectedLawyerVC.m */,
+				5F71B6B9204E8E87004229DF /* SelectedLawyerVC.xib */,
+			);
+			name = SelectedLawyerVC;
+			path = AdVok8/ViewControllers/SelectedLawyerVC;
+			sourceTree = SOURCE_ROOT;
+		};
+		5F71B6AF204E8E87004229DF /* LabelCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F71B6B0204E8E87004229DF /* LabelCell.h */,
+				5F71B6B1204E8E87004229DF /* LabelCell.m */,
+				5F71B6B2204E8E87004229DF /* LabelCell.xib */,
+			);
+			path = LabelCell;
+			sourceTree = "<group>";
+		};
+		5F71B6B3204E8E87004229DF /* ProfileCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F71B6B4204E8E87004229DF /* ProfileCell.h */,
+				5F71B6B5204E8E87004229DF /* ProfileCell.m */,
+				5F71B6B6204E8E87004229DF /* ProfileCell.xib */,
+			);
+			path = ProfileCell;
+			sourceTree = "<group>";
+		};
+		5F71B6C9204E96FC004229DF /* LawyerCategoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F71B6CA204E9712004229DF /* LawyerCategoryTableViewCell.h */,
+				5F71B6CB204E9712004229DF /* LawyerCategoryTableViewCell.m */,
+				5F71B6CC204E9712004229DF /* LawyerCategoryTableViewCell.xib */,
+			);
+			path = LawyerCategoryTableViewCell;
 			sourceTree = "<group>";
 		};
 		5FC11CFC203700EC002030BD /* RegisterModule */ = {
@@ -706,25 +836,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F70AC05202B1250007E69A5 /* LaunchScreen.storyboard in Resources */,
+				5F71B6AB204E8E76004229DF /* LawyerListVC.xib in Resources */,
 				5F1B9C4C20343889009503E7 /* FeedViewController.xib in Resources */,
+				5F71B6AD204E8E76004229DF /* ListCell.xib in Resources */,
 				5FCCBA0B2038223B002BFD4A /* RegisterStep1ViewController.xib in Resources */,
 				5F70AC02202B1250007E69A5 /* Assets.xcassets in Resources */,
+				5F71B6BF204E8E87004229DF /* SelectedLawyerVC.xib in Resources */,
+				5F71B6BB204E8E87004229DF /* LabelCell.xib in Resources */,
 				5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */,
 				5F70AC44202B1689007E69A5 /* RearViewController.xib in Resources */,
 				5F70AC2E202B14EB007E69A5 /* LoderView.xib in Resources */,
 				5F1B9C582034411C009503E7 /* FeedMainTableViewCell.xib in Resources */,
 				5F70AC4B202B1691007E69A5 /* SplashScreenViewController.xib in Resources */,
+				5F71B6CE204E9712004229DF /* LawyerCategoryTableViewCell.xib in Resources */,
 				5F1B9C6A203461FE009503E7 /* LoginViewController.xib in Resources */,
 				5F70AC36202B1653007E69A5 /* BaseHomeViewController.xib in Resources */,
 				5F71B698204E5BE3004229DF /* CommentTableViewCell.xib in Resources */,
 				5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */,
 				5F71B692204D5E7F004229DF /* CommentViewController.xib in Resources */,
+				5F71B6BD204E8E87004229DF /* ProfileCell.xib in Resources */,
 				5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */,
 				5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */,
 				5F1B9C3D203437F8009503E7 /* PostViewController.xib in Resources */,
 				5F1B9C422034381C009503E7 /* JournalViewController.xib in Resources */,
 				5FC11D022037012A002030BD /* ChooseTypeViewController.xib in Resources */,
 				5F1B9C472034383F009503E7 /* LibraryViewController.xib in Resources */,
+				5F71B6A9204E8E76004229DF /* LawyersCategoryVC.xib in Resources */,
 				5F1B9C34203415B9009503E7 /* DashboardHomeCollectionViewCell.xib in Resources */,
 				5F1B9C2E203413F8009503E7 /* DashboardBaseViewController.xib in Resources */,
 				5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */,
@@ -847,20 +984,28 @@
 				5F1B9C76203568F3009503E7 /* User.m in Sources */,
 				5F71B697204E5BE3004229DF /* CommentTableViewCell.m in Sources */,
 				5F1B9C5D20344A64009503E7 /* PostMainTableViewCell.m in Sources */,
+				5F71B6C2204E8EA4004229DF /* LeftImageWithLabel.m in Sources */,
 				5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */,
 				5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */,
 				5F70AC41202B1688007E69A5 /* RearCell.m in Sources */,
 				5F70AC4A202B1691007E69A5 /* SplashScreenViewController.m in Sources */,
 				5F1B9C2D203413F8009503E7 /* DashboardBaseViewController.m in Sources */,
 				5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */,
+				5F71B6BC204E8E87004229DF /* ProfileCell.m in Sources */,
+				5F71B6BE204E8E87004229DF /* SelectedLawyerVC.m in Sources */,
 				5F1B9C572034411C009503E7 /* FeedMainTableViewCell.m in Sources */,
+				5F71B6C5204E8ED1004229DF /* ButtonWithImage.m in Sources */,
 				5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */,
 				5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */,
+				5F71B6A8204E8E76004229DF /* LawyersCategoryVC.m in Sources */,
 				5F1B9C73203568BD009503E7 /* SearchModel.m in Sources */,
+				5F71B6C8204E91C5004229DF /* Specialization.m in Sources */,
 				5F70AC00202B1250007E69A5 /* AdVok8.xcdatamodeld in Sources */,
+				5F71B6AA204E8E76004229DF /* LawyerListVC.m in Sources */,
 				5F1B9C862036B0C2009503E7 /* PostModel.m in Sources */,
 				5F1B9C33203415B9009503E7 /* DashboardHomeCollectionViewCell.m in Sources */,
 				5F70AC2D202B14EB007E69A5 /* LoderView.m in Sources */,
+				5F71B6AC204E8E76004229DF /* ListCell.m in Sources */,
 				5F1B9C832035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m in Sources */,
 				5F70AC43202B1688007E69A5 /* RearViewController.m in Sources */,
 				5F1B9C69203461FE009503E7 /* LoginViewController.m in Sources */,
@@ -874,8 +1019,10 @@
 				5F1B9C7E20359131009503E7 /* JournalMainTableViewCell.m in Sources */,
 				5F1B9C412034381C009503E7 /* JournalViewController.m in Sources */,
 				5F70AC35202B1653007E69A5 /* BaseHomeViewController.m in Sources */,
+				5F71B6CD204E9712004229DF /* LawyerCategoryTableViewCell.m in Sources */,
 				5F70ABF4202B1250007E69A5 /* main.m in Sources */,
 				5F71B691204D5E7F004229DF /* CommentViewController.m in Sources */,
+				5F71B6BA204E8E87004229DF /* LabelCell.m in Sources */,
 				5F71B69B204E6C4C004229DF /* CommentLike.m in Sources */,
 				5F1B9C4B20343889009503E7 /* FeedViewController.m in Sources */,
 				5F1B9C3C203437F8009503E7 /* PostViewController.m in Sources */,
