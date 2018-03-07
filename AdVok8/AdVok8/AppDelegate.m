@@ -20,8 +20,8 @@
     
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ProfileVC* vc;
-    vc = [[ProfileVC alloc] initWithNibName:@"ProfileVC" bundle:nil];
+    SplashScreenViewController* vc;
+    vc = [[SplashScreenViewController alloc] initWithNibName:@"SplashScreenViewController" bundle:nil];
     
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
     ((AppDelegate *)[[UIApplication sharedApplication] delegate]).window.rootViewController = nav;
