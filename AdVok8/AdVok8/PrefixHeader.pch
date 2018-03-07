@@ -49,6 +49,10 @@
 #import "CreatePostViewController.h"
 #import "PublishArticleViewController.h"
 
+//TableCells
+#import "ProfileCell2.h"
+
+
 //CustomClasses
 #import "LeftImageWithLabel.h"
 

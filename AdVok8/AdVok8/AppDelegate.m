@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ProfileVC.h"
 @interface AppDelegate ()
 
 @end
@@ -20,8 +20,8 @@
     
     _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    SplashScreenViewController* vc;
-    vc = [[SplashScreenViewController alloc] initWithNibName:@"SplashScreenViewController" bundle:nil];
+    ProfileVC* vc;
+    vc = [[ProfileVC alloc] initWithNibName:@"ProfileVC" bundle:nil];
     
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
     ((AppDelegate *)[[UIApplication sharedApplication] delegate]).window.rootViewController = nav;
