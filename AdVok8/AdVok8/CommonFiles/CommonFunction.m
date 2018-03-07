@@ -36,12 +36,11 @@
     viewController.navigationController.navigationBar.translucent = false;
 
     
-//    UILabel* lbNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,30,[UIScreen mainScreen].bounds.size.width,40)];
-//    lbNavTitle.textAlignment = UITextAlignmentLeft;
-    viewController.navigationController.title = title;
-//    lbNavTitle.textColor = [UIColor  whiteColor];
-//    newItem.titleView = lbNavTitle;
-    
+    UILabel* lbNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,30,[UIScreen mainScreen].bounds.size.width,40)];
+    lbNavTitle.textAlignment = UITextAlignmentLeft;
+    lbNavTitle.text = title;
+    lbNavTitle.textColor = [UIColor  whiteColor];
+    viewController.navigationItem.titleView = lbNavTitle;
     
 //    [[UIBarButtonItem alloc] initWithTitle:@"<"
 //                                     style:UIBarButtonItemStylePlain
@@ -71,7 +70,7 @@
     dashboard.tintColor = [UIColor colorWithRed:233.0f/255.0f green:141.0f/255.0f blue:25.0f/255.0f alpha:1];
     dashboard.tintColor = [UIColor whiteColor];
    
-    viewController.navigationController.navigationItem.leftBarButtonItem = dashboard;
+    viewController.navigationItem.backBarButtonItem = dashboard;
     
     if (isAddButton) {
      

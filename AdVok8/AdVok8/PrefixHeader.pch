@@ -47,6 +47,7 @@
 #import "Specialization.h"
 #import "LawyerCategoryTableViewCell.h"
 #import "CreatePostViewController.h"
+#import "PublishArticleViewController.h"
 
 //CustomClasses
 #import "LeftImageWithLabel.h"

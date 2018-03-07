@@ -8,11 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreatePostViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,UITextViewDelegate>
+@interface PublishArticleViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_txtViewHeight;
 @property (weak, nonatomic) IBOutlet UITextView *txtView;
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewPost;
-@property (weak, nonatomic) NSString *postType;
-@property (weak, nonatomic) IBOutlet UILabel *lblHeading;
 
 @end

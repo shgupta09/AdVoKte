@@ -1,14 +1,14 @@
 //
-//  CreatePostViewController.m
+//  PublishArticleViewController.m
 //  AdVok8
 //
 //  Created by Shagun Verma on 07/03/18.
 //  Copyright © 2018 Shagun Verma. All rights reserved.
 //
 
-#import "CreatePostViewController.h"
+#import "PublishArticleViewController.h"
 
-@interface CreatePostViewController ()
+@interface PublishArticleViewController ()
 {
     UIImagePickerController * picker;
     UIImagePickerControllerSourceType *sourceType;
@@ -16,18 +16,11 @@
 }
 @end
 
-@implementation CreatePostViewController
+@implementation PublishArticleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self setNavToController];
-    if ([_postType isEqualToString:@"Post"]){
-        _lblHeading.text = @"Write your post";
-    }
-    else
-    {
-        _lblHeading.text = @"";
-    }
     picker = [[UIImagePickerController alloc] init];
     
     //    title = [title capitalizedString];
@@ -76,15 +69,8 @@
     anotherButtonPost.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItems = @[anotherButtonPost,anotherButton];
     
-    if ([_postType isEqualToString:@"Post"]){
-        _txtView.text = @"What's on your mind?";
-    }
-    else
-    {
-        _txtView.text = @"Ask a question";
-    }
-    _txtView.textColor = [UIColor lightGrayColor];
-    _txtView.delegate = self;
+//    [self.navigationController.navigationBar setItems:@[newItem]];
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,53 +78,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-#pragma mark - TextView Delegate Methods
-
-- (BOOL) textViewShouldBeginEditing:(UITextView *)textView
-{
-    if ([_postType isEqualToString:@"Post"]){
-        _txtView.text = @"What's on your mind?";
-    }
-    else
-    {
-        _txtView.text = @"Ask a question";
-    }
-    _txtView.textColor = [UIColor blackColor];
-    return YES;
-}
-
--(void) textViewDidChange:(UITextView *)textView
-{
-    
-    if(_txtView.text.length == 0){
-        _txtView.textColor = [UIColor lightGrayColor];
-        if ([_postType isEqualToString:@"Post"]){
-            _txtView.text = @"What's on your mind?";
-        }
-        else
-        {
-            _txtView.text = @"Ask a question";
-        }
-        [_txtView resignFirstResponder];
-    }
-}
-
--(void) textViewShouldEndEditing:(UITextView *)textView
-{
-    
-    if(_txtView.text.length == 0){
-        _txtView.textColor = [UIColor lightGrayColor];
-        if ([_postType isEqualToString:@"Post"]){
-            _txtView.text = @"What's on your mind?";
-        }
-        else
-        {
-            _txtView.text = @"Ask a question";
-        }
-        [_txtView resignFirstResponder];
-    }
-}
 #pragma mark - Button Actions
 - (void)backTapped {
     [self dismissViewControllerAnimated:true completion:nil];
@@ -278,11 +217,13 @@
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
     [dictRequest setValue:_txtView.text forKey:@"PostNote"];
-    [dictRequest setValue:@"Post" forKey:@"posttype"];
+    [dictRequest setValue:@"Post; Article; " forKey:@"posttype"];
     [dictRequest setValue:@"" forKey:@"postsubtype"];
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"TagUserName"];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"ShareId"];
     [dictRequest setValue:@"" forKey:@"PostPic"];
-
+    [dictRequest setValue:@[] forKey:@"Answers"];
+    [dictRequest setValue:@"" forKey:@"corrAns"];
 //    [dictRequest setValue:postId forKey:@"PostId"];
     [parameter setValue:dictRequest forKey:@"_post"];
     
