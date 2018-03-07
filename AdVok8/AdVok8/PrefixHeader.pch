@@ -46,6 +46,7 @@
 #import "LawyersCategoryVC.h"
 #import "Specialization.h"
 #import "LawyerCategoryTableViewCell.h"
+#import "CreatePostViewController.h"
 
 //CustomClasses
 #import "LeftImageWithLabel.h"

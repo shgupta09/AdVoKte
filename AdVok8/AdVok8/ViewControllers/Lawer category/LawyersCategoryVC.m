@@ -21,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [CommonFunction setNavToController:self title:@"Lawyer" isCrossBusston:false isAddRightButton:false];
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [CommonFunction setNavToController:self title:@"Lawyer" isCrossBusston:true isAddRightButton:false];
     // Do any additional setup after loading the view from its nib.
     arrData = [NSMutableArray new];
 

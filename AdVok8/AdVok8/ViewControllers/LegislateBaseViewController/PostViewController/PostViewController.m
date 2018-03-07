@@ -55,7 +55,18 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
+    switch (indexPath.row) {
+        case 0:
+        {
+            CreatePostViewController* vc = [[CreatePostViewController alloc] initWithNibName:@"CreatePostViewController" bundle:nil];
+            UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+            [self.navigationController presentViewController:navCon animated:true completion:nil];
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

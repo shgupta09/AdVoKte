@@ -30,23 +30,17 @@
 +(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross isAddRightButton:(BOOL)isAddButton{
 //    title = [title capitalizedString];
     [viewController.view addSubview:[CommonFunction setStatusBarColor]];
-    [viewController.navigationController setNavigationBarHidden:YES animated:NO];
-    UINavigationBar *newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0,22, [UIScreen mainScreen].bounds.size.width, 44.0)];
-    newNavBar.barTintColor = [CommonFunction colorWithHexString:@"27328C"];
-    newNavBar.translucent = false;
-    UINavigationItem *newItem = [[UINavigationItem alloc] init];
-//    UIImageView *backgroundView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44.0)];
-//    backgroundView.image = [UIImage imageNamed:@"Home_ Title bar graphic"];
-//    backgroundView.image = [UIImage imageNamed:@"Home_ Title bar graphic"];
-//    [newNavBar setBackgroundImage:[UIImage imageNamed:@"Home_ Title bar graphic-1"] forBarMetrics:UIBarMetricsDefault];
-//
-//    [newNavBar addSubview:backgroundView];
+ //   [viewController.navigationController setNavigationBarHidden:YES animated:NO];
+    //UINavigationBar *newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0,22, [UIScreen mainScreen].bounds.size.width, 44.0)];
+    viewController.navigationController.navigationBar.barTintColor = [CommonFunction colorWithHexString:@"27328C"];
+    viewController.navigationController.navigationBar.translucent = false;
+
     
-    UILabel* lbNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,30,[UIScreen mainScreen].bounds.size.width,40)];
-    lbNavTitle.textAlignment = UITextAlignmentLeft;
-    lbNavTitle.text = title;
-    lbNavTitle.textColor = [UIColor  whiteColor];
-    newItem.titleView = lbNavTitle;
+//    UILabel* lbNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,30,[UIScreen mainScreen].bounds.size.width,40)];
+//    lbNavTitle.textAlignment = UITextAlignmentLeft;
+    viewController.navigationController.title = title;
+//    lbNavTitle.textColor = [UIColor  whiteColor];
+//    newItem.titleView = lbNavTitle;
     
     
 //    [[UIBarButtonItem alloc] initWithTitle:@"<"
@@ -77,7 +71,7 @@
     dashboard.tintColor = [UIColor colorWithRed:233.0f/255.0f green:141.0f/255.0f blue:25.0f/255.0f alpha:1];
     dashboard.tintColor = [UIColor whiteColor];
    
-    newItem.leftBarButtonItem = dashboard;
+    viewController.navigationController.navigationItem.leftBarButtonItem = dashboard;
     
     if (isAddButton) {
      
@@ -85,12 +79,13 @@
          initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
          target:viewController action:@selector(addAddress)];
         anotherButton.tintColor = [UIColor whiteColor];
-        newItem.rightBarButtonItem = anotherButton;
+        viewController.navigationController.navigationItem.rightBarButtonItem = anotherButton;
     }
-    [newNavBar setItems:@[newItem]];
-    [viewController.view addSubview:newNavBar];
+//    [newNavBar setItems:@[newItem]];
+//    [viewController.view addSubview:newNavBar];
    
 }
+
 
 
 // For storing the value in default

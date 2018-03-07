@@ -78,6 +78,8 @@
 		5F71B6C8204E91C5004229DF /* Specialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B6C7204E91C5004229DF /* Specialization.m */; };
 		5F71B6CD204E9712004229DF /* LawyerCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B6CB204E9712004229DF /* LawyerCategoryTableViewCell.m */; };
 		5F71B6CE204E9712004229DF /* LawyerCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F71B6CC204E9712004229DF /* LawyerCategoryTableViewCell.xib */; };
+		5F71B6D3204F9934004229DF /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B6D1204F9934004229DF /* CreatePostViewController.m */; };
+		5F71B6D4204F9934004229DF /* CreatePostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F71B6D2204F9934004229DF /* CreatePostViewController.xib */; };
 		5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */; };
 		5FC11D022037012A002030BD /* ChooseTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC11D002037012A002030BD /* ChooseTypeViewController.xib */; };
 		5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCBA0420381ABC002BFD4A /* DesignableButton.m */; };
@@ -218,6 +220,9 @@
 		5F71B6CA204E9712004229DF /* LawyerCategoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LawyerCategoryTableViewCell.h; sourceTree = "<group>"; };
 		5F71B6CB204E9712004229DF /* LawyerCategoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LawyerCategoryTableViewCell.m; sourceTree = "<group>"; };
 		5F71B6CC204E9712004229DF /* LawyerCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LawyerCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		5F71B6D0204F9934004229DF /* CreatePostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreatePostViewController.h; sourceTree = "<group>"; };
+		5F71B6D1204F9934004229DF /* CreatePostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreatePostViewController.m; sourceTree = "<group>"; };
+		5F71B6D2204F9934004229DF /* CreatePostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatePostViewController.xib; sourceTree = "<group>"; };
 		5FC11CFE2037012A002030BD /* ChooseTypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseTypeViewController.h; sourceTree = "<group>"; };
 		5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseTypeViewController.m; sourceTree = "<group>"; };
 		5FC11D002037012A002030BD /* ChooseTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeViewController.xib; sourceTree = "<group>"; };
@@ -607,6 +612,7 @@
 		5F70AC4D202B21CD007E69A5 /* LegislateBaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5F71B6CF204F9904004229DF /* CreatePostViewController */,
 				5F71B68D204D5D94004229DF /* CommentViewController */,
 				5F1B9C3820343774009503E7 /* PostViewController */,
 				5F1B9C3720343765009503E7 /* JournalViewController */,
@@ -714,6 +720,16 @@
 				5F71B6CC204E9712004229DF /* LawyerCategoryTableViewCell.xib */,
 			);
 			path = LawyerCategoryTableViewCell;
+			sourceTree = "<group>";
+		};
+		5F71B6CF204F9904004229DF /* CreatePostViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F71B6D0204F9934004229DF /* CreatePostViewController.h */,
+				5F71B6D1204F9934004229DF /* CreatePostViewController.m */,
+				5F71B6D2204F9934004229DF /* CreatePostViewController.xib */,
+			);
+			path = CreatePostViewController;
 			sourceTree = "<group>";
 		};
 		5FC11CFC203700EC002030BD /* RegisterModule */ = {
@@ -857,6 +873,7 @@
 				5F71B6BD204E8E87004229DF /* ProfileCell.xib in Resources */,
 				5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */,
 				5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */,
+				5F71B6D4204F9934004229DF /* CreatePostViewController.xib in Resources */,
 				5F1B9C3D203437F8009503E7 /* PostViewController.xib in Resources */,
 				5F1B9C422034381C009503E7 /* JournalViewController.xib in Resources */,
 				5FC11D022037012A002030BD /* ChooseTypeViewController.xib in Resources */,
@@ -997,6 +1014,7 @@
 				5F71B6C5204E8ED1004229DF /* ButtonWithImage.m in Sources */,
 				5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */,
 				5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */,
+				5F71B6D3204F9934004229DF /* CreatePostViewController.m in Sources */,
 				5F71B6A8204E8E76004229DF /* LawyersCategoryVC.m in Sources */,
 				5F1B9C73203568BD009503E7 /* SearchModel.m in Sources */,
 				5F71B6C8204E91C5004229DF /* Specialization.m in Sources */,
