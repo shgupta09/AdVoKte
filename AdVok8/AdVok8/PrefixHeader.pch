@@ -48,6 +48,10 @@
 #import "LawyerCategoryTableViewCell.h"
 #import "CreatePostViewController.h"
 
+//TableCells
+#import "ProfileCell2.h"
+
+
 //CustomClasses
 #import "LeftImageWithLabel.h"
 
