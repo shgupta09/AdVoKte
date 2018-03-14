@@ -20,9 +20,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    arrImages = [[NSArray alloc] initWithObjects:@"CaseTracking.png",@"CaseTracking.png",@"CaseTracking.png",@"Appointment-1.png",@"Me.png", nil];
-    arrOptions = [[NSArray alloc] initWithObjects:@"Find Lawyers",@"Case Treacking",@"My Activity",@"Appointment",@"Me", nil];
+    
+    
     [_collectionView registerNib:[UINib nibWithNibName:@"DashboardHomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"DashboardHomeCollectionViewCell"];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    if ([CommonFunction getValueFromDefaultWithKey:@"loginUsertype"] && [[CommonFunction getValueFromDefaultWithKey:@"loginUsertype"]  isEqual:  @"advocate"]){
+        arrImages = [[NSArray alloc] initWithObjects:@"CaseTracking.png",@"CaseTracking.png",@"CaseTracking.png",@"Appointment-1.png",@"Me.png",@"CaseTracking.png",@"CaseTracking.png",@"CaseTracking.png", nil];
+        arrOptions = [[NSArray alloc] initWithObjects:@"Cause List",@"Calendar",@"Task",@"Appointment",@"Me",@"My Activity",@"Display Board",@"Appeal Alert", nil];
+    }
+    else
+    {
+        arrImages = [[NSArray alloc] initWithObjects:@"CaseTracking.png",@"CaseTracking.png",@"CaseTracking.png",@"Appointment-1.png",@"Me.png", nil];
+        arrOptions = [[NSArray alloc] initWithObjects:@"Find Lawyers",@"Case Treacking",@"My Activity",@"Appointment",@"Me", nil];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {

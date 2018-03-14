@@ -48,6 +48,18 @@
     [self.navigationController dismissViewControllerAnimated:true completion:nil];
 }
 
+- (IBAction)decodeButton:(id)sender {
+    
+    if (_sc_userType.selectedSegmentIndex == 0) {
+        _txtUsername.text = @"9560409501";
+        _txtPassword.text = @"123456";
+    } else if(_sc_userType.selectedSegmentIndex == 1) {
+        _txtUsername.text = @"8896292603";
+        _txtPassword.text = @"123456";
+    }
+}
+
+
 - (IBAction)btnLoginClicked:(id)sender {
     NSDictionary *dictForValidation = [self validateData];
     if (![[dictForValidation valueForKey:BoolValueKey] isEqualToString:@"0"]){
@@ -75,11 +87,11 @@
     [dictRequest setValue:_txtUsername.text forKey:@"username"];
     [dictRequest setValue:_txtPassword.text forKey:@"password"];
     if (_sc_userType.selectedSegmentIndex == 0 ) {
-        [dictRequest setValue:@"User" forKey:@"type"];
+        [dictRequest setValue:@"user" forKey:@"type"];
     }
     else
     {
-        [dictRequest setValue:@"Advocate" forKey:@"type"];
+        [dictRequest setValue:@"advocate" forKey:@"type"];
     }
 
     [parameter setValue:dictRequest forKey:@"_user"];
@@ -98,26 +110,50 @@
                 int status = [st intValue];
                 if ( status == 1){
                     
+                    if (_sc_userType.selectedSegmentIndex == 0 ) {
+                        NSDictionary* userData = [[json valueForKey:@"user"] objectAtIndex:0];
+                        
+                        User *dataObj = [User new];
+                        [userData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            @try {
+                                [dataObj setValue:obj forKey:(NSString *)key];
+                            } @catch (NSException *exception) {
+                                NSLog(exception.description);
+                                //  Handle an exception thrown in the @try block
+                            } @finally {
+                                //  Code that gets executed whether or not an exception is thrown
+                            }
+                        }];
+                        
+                        
+                        [CommonFunction storeValueInDefault:dataObj.ContactNo andKey:@"loginUsername"];
+                        [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:1];
+                        [CommonFunction storeValueInDefault:@"user" andKey:@"loginUsertype"];
+                        
+                    }
+                    else
+                    {
+                        NSDictionary* userData = [[json valueForKey:@"_adr"] objectAtIndex:0];
+                        
+                        ADRegistrationModel *dataObj = [ADRegistrationModel new];
+                        [userData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            @try {
+                                [dataObj setValue:obj forKey:(NSString *)key];
+                            } @catch (NSException *exception) {
+                                NSLog(exception.description);
+                                //  Handle an exception thrown in the @try block
+                            } @finally {
+                                //  Code that gets executed whether or not an exception is thrown
+                            }
+                        }];
+                        
+                        
+                        [CommonFunction storeValueInDefault:dataObj.username andKey:@"loginUsername"];
+                        [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:1];
+                       [CommonFunction storeValueInDefault:@"advocate" andKey:@"loginUsertype"];
+                        
+                    }
                     
-                    
-                    NSDictionary* userData = [[json valueForKey:@"user"] objectAtIndex:0];
-                    
-                    User *dataObj = [User new];
-                    [userData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
-                        @try {
-                            [dataObj setValue:obj forKey:(NSString *)key];
-                        } @catch (NSException *exception) {
-                            NSLog(exception.description);
-                            //  Handle an exception thrown in the @try block
-                        } @finally {
-                            //  Code that gets executed whether or not an exception is thrown
-                        }
-                    }];
-
-                 
-                    [CommonFunction storeValueInDefault:dataObj.ContactNo andKey:@"loginUsername"];
-                    [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:1];
-
                     
                     
                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[json valueForKey:@"ErrMsg"] preferredStyle:UIAlertControllerStyleAlert];

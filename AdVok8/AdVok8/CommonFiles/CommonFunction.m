@@ -14,9 +14,15 @@
 {
     //!~`@#$%^&*-+();:={}[],.<>?\\/\"\'
     //NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern:@"^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*$" options:0 error:nil];
-    NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern:@"^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*(?=.[!,@,#,.,$,%,&,*,^])" options:0 error:nil];
-    
-    return [regex numberOfMatchesInString:password options:0 range:NSMakeRange(0, [password length])] > 0;
+//    NSRegularExpression* regex = [[NSRegularExpression alloc] initWithPattern:@"^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z]).*(?=.[!,@,#,.,$,%,&,*,^])" options:0 error:nil];
+    if (password.length<4){
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+//    return [regex numberOfMatchesInString:password options:0 range:NSMakeRange(0, [password length])] > 0;
 }
 +(UIView *)setStatusBarColor{
     UIApplication *app = [UIApplication sharedApplication];

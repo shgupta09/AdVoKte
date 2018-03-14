@@ -41,7 +41,7 @@
     NSAttributedString *attachmentString = [NSAttributedString attributedStringWithAttachment:imageAttachment];
     NSMutableAttributedString *completeText= [[NSMutableAttributedString alloc] initWithString:@""];
     [completeText appendAttributedString:attachmentString];
-    NSMutableAttributedString *textAfterIcon= [[NSMutableAttributedString alloc] initWithString:text];
+    NSMutableAttributedString *textAfterIcon= [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@", text]];
     [completeText appendAttributedString:textAfterIcon];
     self.textAlignment=NSTextAlignmentLeft;
     self.attributedText=completeText;

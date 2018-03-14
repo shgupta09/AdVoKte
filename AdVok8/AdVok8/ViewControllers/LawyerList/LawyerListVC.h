@@ -10,5 +10,6 @@
 
 @interface LawyerListVC : UIViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (weak, nonatomic) NSString *Specialization;
 
 @end

@@ -335,7 +335,7 @@
     {
         [dictRequest setValue:@"0" forKey:@"UserId"];
     }
-    [dictRequest setValue:@"0" forKey:@"useractv"];
+//    [dictRequest setValue:@"0" forKey:@"useractv"];
     [parameter setValue:dictRequest forKey:@"_post"];
     
     if ([ CommonFunction reachability]) {

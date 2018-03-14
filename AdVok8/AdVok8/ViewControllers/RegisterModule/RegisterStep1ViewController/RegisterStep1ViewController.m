@@ -191,23 +191,23 @@
             [validationDict setValue:@"We need a Password" forKey:AlertKey];
         }
         else{
-            [validationDict setValue:@"Incorrect Password. The correct password must have a minimum of 8 characters; with at least one character in upper case and at least one special character or number." forKey:AlertKey];
+            [validationDict setValue:@"Incorrect Password. Password must have minimum 4 characters" forKey:AlertKey];
         }
         
         
     }
     
-    else if(![CommonFunction isValidPassword:[CommonFunction trimString:_txtEnterOTP.text]] ){
-        [validationDict setValue:@"0" forKey:BoolValueKey];
-        if ([CommonFunction trimString:_txtEnterOTP.text].length == 0) {
-            [validationDict setValue:@"We need an OTP" forKey:AlertKey];
-        }
-        else{
-            [validationDict setValue:@"We need an OTP." forKey:AlertKey];
-        }
-        
-        
-    }
+//    else if(![CommonFunction isValidPassword:[CommonFunction trimString:_txtEnterOTP.text]] ){
+//        [validationDict setValue:@"0" forKey:BoolValueKey];
+//        if ([CommonFunction trimString:_txtEnterOTP.text].length == 0) {
+//            [validationDict setValue:@"We need an OTP" forKey:AlertKey];
+//        }
+//        else{
+//            [validationDict setValue:@"We need an OTP." forKey:AlertKey];
+//        }
+//
+//
+//    }
     return validationDict.mutableCopy;
     
 }
@@ -325,9 +325,9 @@
     [dictRequest setValue:_txtMobile.text forKey:@"mobile"];
     [dictRequest setValue:_txtFirstName.text forKey:@"fname"];
     [dictRequest setValue:@"" forKey:@"lname"];
-    [dictRequest setValue:_txtPassword forKey:@"pass"];
+    [dictRequest setValue:_txtPassword.text forKey:@"pass"];
     [dictRequest setValue:_txtEnterOTP.text forKey:@"BarCodeId"];
-    [dictRequest setValue:_txtEmailAddress forKey:@"username"];
+    [dictRequest setValue:_txtEmailAddress.text forKey:@"username"];
 
     [parameter setValue:dictRequest forKey:@"_user"];
     

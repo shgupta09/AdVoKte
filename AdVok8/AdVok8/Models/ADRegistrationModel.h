@@ -34,9 +34,11 @@
 @property(nonatomic ,strong) NSString *DOB;
 @property(nonatomic ,strong) NSString *Dsc;
 @property(nonatomic ,strong) NSString *Education;
+@property(nonatomic ,strong) NSString *Experience;
 @property(nonatomic ,strong) NSString *PA;
 @property(nonatomic ,strong) NSString *Gender;
 @property(nonatomic ,strong) NSString *PSD;
+@property(nonatomic ,strong) NSString *ConsultancyFees;
 
 @end
 

@@ -96,6 +96,10 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
         LawyerListVC *lawyerVcOBJ = [[LawyerListVC alloc]initWithNibName:@"LawyerListVC" bundle:nil];
+    Specialization* obj = [Specialization new];
+    obj = [arrData objectAtIndex:indexPath.row];
+    
+    lawyerVcOBJ.Specialization = obj.name;
         [self.navigationController pushViewController:lawyerVcOBJ animated:true];
     
     

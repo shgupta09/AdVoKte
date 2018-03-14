@@ -73,6 +73,14 @@
     cell.lblUserType.text = data.Details;
     cell.lblPostCreatedTime.text = data.Days;
     cell.lblPostNote.text = data.PostNote;
+    if ([data.ArticleTitle  isEqual: @""]){
+           cell.lblHeading.text = @"";
+    }
+    else
+    {
+        cell.lblHeading.text = data.ArticleTitle;
+    }
+    cell.lblPostNote.text = data.PostNote;
     cell.lblLikes.text = [NSString stringWithFormat:@"%@ likes", data.cntlike ];
     cell.lblComments.text = [NSString stringWithFormat:@"%@ comments",data.cntcmt];
     

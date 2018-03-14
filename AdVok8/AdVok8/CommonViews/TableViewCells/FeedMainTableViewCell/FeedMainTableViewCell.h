@@ -22,5 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnComment;
 @property (weak, nonatomic) IBOutlet UIButton *btnShare;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_postImageHeight;
+@property (weak, nonatomic) IBOutlet UILabel *lblHeading;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_stackview_height;
 
 @end
