@@ -153,7 +153,13 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
+    FeedDetailViewController* vc ;
+    vc = [[FeedDetailViewController alloc] initWithNibName:@"FeedDetailViewController" bundle:nil];
+    PostModel* data = [arrData objectAtIndex:indexPath.row];
+    vc.postId = data.PostId;
+    UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+    [self.navigationController presentViewController:navCon animated:true completion:nil];
+
 }
 
 #pragma mark - Read More

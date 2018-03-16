@@ -48,6 +48,7 @@
 #import "LawyerCategoryTableViewCell.h"
 #import "CreatePostViewController.h"
 #import "PublishArticleViewController.h"
+#import "FeedDetailViewController.h"
 
 //TableCells
 #import "ProfileCell2.h"

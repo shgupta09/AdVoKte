@@ -16,6 +16,8 @@
                 <outlet property="btnLike" destination="VpI-WI-gZd" id="wi5-f1-Qti"/>
                 <outlet property="btnSave" destination="yhi-Jg-6oY" id="xJ3-eW-M0B"/>
                 <outlet property="btnShare" destination="8jA-Qb-FwL" id="2af-zY-ga0"/>
+                <outlet property="stackView" destination="mvI-bn-mHX" id="Hb9-f1-Iet"/>
+                <outlet property="tblView" destination="bWI-Us-Kfy" id="UeK-dd-aui"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

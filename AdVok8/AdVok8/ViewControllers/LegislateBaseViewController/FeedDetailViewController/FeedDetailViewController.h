@@ -14,5 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnSave;
 @property (weak, nonatomic) IBOutlet UIButton *btnComment;
 @property (weak, nonatomic) IBOutlet UIButton *btnShare;
+@property (weak, nonatomic) NSString *postId;
+@property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (weak, nonatomic) IBOutlet UIStackView *stackView;
 
 @end
