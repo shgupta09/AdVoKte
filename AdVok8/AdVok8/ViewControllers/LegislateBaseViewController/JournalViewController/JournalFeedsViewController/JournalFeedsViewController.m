@@ -1,26 +1,37 @@
 //
-//  LibraryViewController.m
+//  JournalFeedsViewController.m
 //  AdVok8
 //
-//  Created by Shagun Verma on 14/02/18.
+//  Created by Shagun Verma on 17/03/18.
 //  Copyright © 2018 Shagun Verma. All rights reserved.
 //
 
-#import "LibraryViewController.h"
+#import "JournalFeedsViewController.h"
 
-
-@interface LibraryViewController ()
-{
+@interface JournalFeedsViewController (){
     UIRefreshControl* refreshControl;
     NSMutableArray* arrData;
     LoderView *loderObj;
+    
 }
+
+
 @end
 
-@implementation LibraryViewController
+@implementation JournalFeedsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.hidden = false;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = [CommonFunction colorWithHexString:@"28328C"];
+    
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cross-1"] style: UIBarButtonItemStyleBordered target:self action:@selector(backTapped)];
+    self.navigationItem.leftBarButtonItem = backButton;
+    
+    [self.navigationController setTitle:@"Login"];
+    
     [_tblView registerNib:[UINib nibWithNibName:@"FeedMainTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeedMainTableViewCell"];
     arrData = [[NSMutableArray alloc ] init];
     refreshControl = [[UIRefreshControl alloc]init];
@@ -209,6 +220,7 @@
         else
         {
             [self hitApiToSaveDeleteAPostWithPostId:data.PostId useractv:@"1" andIndex: index];
+            
         }
         
     }
@@ -271,7 +283,7 @@
                     NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
                     id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                     tempArray = [json objectForKey:@"_post"];
-                    [tempArray enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                         
                         PostModel *dataObj = [PostModel new];
                         [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
@@ -286,7 +298,7 @@
                         }];
                         [arrData replaceObjectAtIndex:row withObject:dataObj];
                     }];
-                    [_tblView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+                    [_tblView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];;
                 }else
                 {
                     
@@ -370,9 +382,10 @@
     {
         [dictRequest setValue:@"0" forKey:@"UserId"];
     }
-  
+    [dictRequest setValue:_postSubType forKey:@"postsubtype"];
+    [dictRequest setValue:@"Article" forKey:@"posttype"];
     [dictRequest setValue:startPoint forKey:@"StrtPnt"];
-    [dictRequest setValue:[NSString stringWithFormat:@"%ld",startPoint.integerValue+20] forKey:@"EndPnt"];
+    [dictRequest setValue:[NSString stringWithFormat:@"%d",startPoint.integerValue+20] forKey:@"EndPnt"];
     
     [parameter setValue:dictRequest forKey:@"_post"];
     
@@ -380,7 +393,7 @@
         [self addLoder];
         
         //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_ALL_POSTS_FROM_LIBRARY]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_ALL_POSTS]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 if (1) {
                     NSArray *tempArray = [NSArray new];
@@ -406,7 +419,6 @@
                     if (tempArray.count!=0){
                         [_tblView reloadData];
                     }
-                    
                 }else
                 {
                     //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
@@ -442,9 +454,14 @@
     self.view.userInteractionEnabled = YES;
 }
 
+#pragma  mark - Button Actions
+- (void)backTapped {
+    [self.navigationController dismissViewControllerAnimated:true completion:nil];
+}
+
+
+
+
 
 @end
-
-
-
 

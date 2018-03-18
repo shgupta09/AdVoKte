@@ -49,6 +49,7 @@
 #import "CreatePostViewController.h"
 #import "PublishArticleViewController.h"
 #import "FeedDetailViewController.h"
+#import "JournalFeedsViewController.h"
 
 //TableCells
 #import "ProfileCell2.h"
