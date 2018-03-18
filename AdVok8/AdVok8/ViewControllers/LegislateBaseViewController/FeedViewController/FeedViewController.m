@@ -406,9 +406,7 @@
                         
                         [arrData addObject:dataObj];
                     }];
-                    if (tempArray.count!=0){
-                        [_tblView reloadData];
-                    }
+                    [_tblView reloadData];
                 }else
                 {
                     //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];

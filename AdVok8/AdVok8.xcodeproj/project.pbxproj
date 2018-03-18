@@ -34,8 +34,6 @@
 		5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C7D20359131009503E7 /* JournalMainTableViewCell.xib */; };
 		5F1B9C832035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C822035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m */; };
 		5F1B9C862036B0C2009503E7 /* PostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C852036B0C2009503E7 /* PostModel.m */; };
-		5F41574B205D7059003D29B4 /* JournalFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F415749205D7059003D29B4 /* JournalFeedsViewController.m */; };
-		5F41574C205D7059003D29B4 /* JournalFeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F41574A205D7059003D29B4 /* JournalFeedsViewController.xib */; };
 		5F70ABF4202B1250007E69A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF3202B1250007E69A5 /* main.m */; };
 		5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF6202B1250007E69A5 /* AppDelegate.m */; };
 		5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F70ABFB202B1250007E69A5 /* Main.storyboard */; };
@@ -158,9 +156,6 @@
 		5F1B9C822035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldBaselineWithLeftRight.m; sourceTree = "<group>"; };
 		5F1B9C842036B0C2009503E7 /* PostModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostModel.h; sourceTree = "<group>"; };
 		5F1B9C852036B0C2009503E7 /* PostModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostModel.m; sourceTree = "<group>"; };
-		5F415748205D7059003D29B4 /* JournalFeedsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JournalFeedsViewController.h; sourceTree = "<group>"; };
-		5F415749205D7059003D29B4 /* JournalFeedsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JournalFeedsViewController.m; sourceTree = "<group>"; };
-		5F41574A205D7059003D29B4 /* JournalFeedsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JournalFeedsViewController.xib; sourceTree = "<group>"; };
 		5F70ABEF202B1250007E69A5 /* AdVok8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdVok8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F70ABF3202B1250007E69A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F70ABF5202B1250007E69A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -352,7 +347,6 @@
 		5F1B9C3720343765009503E7 /* JournalViewController */ = {
 			isa = PBXGroup;
 			children = (
-				5F415747205D7032003D29B4 /* JournalFeedsViewController */,
 				5F1B9C3E2034381C009503E7 /* JournalViewController.h */,
 				5F1B9C3F2034381C009503E7 /* JournalViewController.m */,
 				5F1B9C402034381C009503E7 /* JournalViewController.xib */,
@@ -442,16 +436,6 @@
 				5F1B9C822035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m */,
 			);
 			path = TextFieldWithBaselineAndImage;
-			sourceTree = "<group>";
-		};
-		5F415747205D7032003D29B4 /* JournalFeedsViewController */ = {
-			isa = PBXGroup;
-			children = (
-				5F415748205D7059003D29B4 /* JournalFeedsViewController.h */,
-				5F415749205D7059003D29B4 /* JournalFeedsViewController.m */,
-				5F41574A205D7059003D29B4 /* JournalFeedsViewController.xib */,
-			);
-			path = JournalFeedsViewController;
 			sourceTree = "<group>";
 		};
 		5F70ABE6202B1250007E69A5 = {
@@ -935,7 +919,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F41574C205D7059003D29B4 /* JournalFeedsViewController.xib in Resources */,
 				5F70AC05202B1250007E69A5 /* LaunchScreen.storyboard in Resources */,
 				5F71B6AB204E8E76004229DF /* LawyerListVC.xib in Resources */,
 				5F1B9C4C20343889009503E7 /* FeedViewController.xib in Resources */,
@@ -1091,7 +1074,6 @@
 				5F71B697204E5BE3004229DF /* CommentTableViewCell.m in Sources */,
 				5F71B6D9204FC4FD004229DF /* PublishArticleViewController.m in Sources */,
 				5F1B9C5D20344A64009503E7 /* PostMainTableViewCell.m in Sources */,
-				5F41574B205D7059003D29B4 /* JournalFeedsViewController.m in Sources */,
 				5F71B6C2204E8EA4004229DF /* LeftImageWithLabel.m in Sources */,
 				5FBD2B3B20595C4700D9C10B /* FeedDetailViewController.m in Sources */,
 				5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */,

@@ -19,6 +19,7 @@
 
 @implementation LibraryViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [_tblView registerNib:[UINib nibWithNibName:@"FeedMainTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeedMainTableViewCell"];
@@ -27,7 +28,7 @@
     [_tblView addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
     
-    [self hitApiForAllPosts:@"0"];
+    [self hitApiForAllPostsFromLibrary];
     
     // Do any additional setup after loading the view from its nib.
 }
@@ -44,7 +45,7 @@
 - (void)refreshTable {
     //TODO: refresh your data
     [refreshControl endRefreshing];
-    [self hitApiForAllPosts:@"0"];
+    [self hitApiForAllPostsFromLibrary];
     
 }
 
@@ -71,14 +72,6 @@
     cell.lblUserName.text = data.UserName;
     cell.lblUserType.text = data.Details;
     cell.lblPostCreatedTime.text = data.Days;
-    cell.lblPostNote.text = data.PostNote;
-    if ([data.ArticleTitle  isEqual: @""]){
-        cell.lblHeading.text = @"";
-    }
-    else
-    {
-        cell.lblHeading.text = data.ArticleTitle;
-    }
     cell.lblPostNote.text = data.PostNote;
     cell.lblLikes.text = [NSString stringWithFormat:@"%@ likes", data.cntlike ];
     cell.lblComments.text = [NSString stringWithFormat:@"%@ comments",data.cntcmt];
@@ -142,22 +135,12 @@
         cell.cons_postImageHeight.constant = 0;
     }
     
-    if (indexPath.row == [arrData count] - 1)
-    {
-        [self hitApiForAllPosts:[NSString stringWithFormat:@"%d", indexPath.row]];
-    }
     
     return cell;
     
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    FeedDetailViewController* vc ;
-    vc = [[FeedDetailViewController alloc] initWithNibName:@"FeedDetailViewController" bundle:nil];
-    PostModel* data = [arrData objectAtIndex:indexPath.row];
-    vc.postId = data.PostId;
-    UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
-    [self.navigationController presentViewController:navCon animated:true completion:nil];
     
 }
 
@@ -209,6 +192,7 @@
         else
         {
             [self hitApiToSaveDeleteAPostWithPostId:data.PostId useractv:@"1" andIndex: index];
+            
         }
         
     }
@@ -224,24 +208,6 @@
     
 }
 -(void) btnCommentTapped:(id) sender {
-    UIButton* btnLike = sender;
-    int index = btnLike.tag%like_tag;
-    PostModel* data = [arrData objectAtIndex:index];
-    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
-        CommentViewController* vc ;
-        vc = [[CommentViewController alloc] initWithNibName:@"CommentViewController" bundle:nil];
-        vc.postId = data.PostId;
-        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
-        [self.navigationController presentViewController:navCon animated:true completion:nil];
-    }
-    else
-    {
-        LoginViewController* vc ;
-        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-        vc.Behaviour = @"Action";
-        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
-        [self.navigationController presentViewController:navCon animated:true completion:nil];
-    }
     
 }
 -(void) btnShareTapped:(id) sender {
@@ -271,7 +237,7 @@
                     NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
                     id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                     tempArray = [json objectForKey:@"_post"];
-                    [tempArray enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                         
                         PostModel *dataObj = [PostModel new];
                         [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
@@ -286,7 +252,7 @@
                         }];
                         [arrData replaceObjectAtIndex:row withObject:dataObj];
                     }];
-                    [_tblView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+                    [_tblView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];;
                 }else
                 {
                     
@@ -358,8 +324,7 @@
 }
 
 
--(void)hitApiForAllPosts:(NSString*) startPoint{
-    
+-(void)hitApiForAllPostsFromLibrary{
     
     NSMutableDictionary *parameter = [NSMutableDictionary new];
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
@@ -370,10 +335,7 @@
     {
         [dictRequest setValue:@"0" forKey:@"UserId"];
     }
-  
-    [dictRequest setValue:startPoint forKey:@"StrtPnt"];
-    [dictRequest setValue:[NSString stringWithFormat:@"%ld",startPoint.integerValue+20] forKey:@"EndPnt"];
-    
+//    [dictRequest setValue:@"0" forKey:@"useractv"];
     [parameter setValue:dictRequest forKey:@"_post"];
     
     if ([ CommonFunction reachability]) {
@@ -403,10 +365,7 @@
                         
                         [arrData addObject:dataObj];
                     }];
-                    if (tempArray.count!=0){
-                        [_tblView reloadData];
-                    }
-                    
+                    [_tblView reloadData];
                 }else
                 {
                     //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
@@ -443,8 +402,8 @@
 }
 
 
+
+
+
+
 @end
-
-
-
-

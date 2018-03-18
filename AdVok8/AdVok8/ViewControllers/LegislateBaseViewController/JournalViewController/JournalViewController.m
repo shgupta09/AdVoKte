@@ -52,12 +52,7 @@ NSArray* arrCategories;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    JournalFeedsViewController* vc ;
-    vc = [[JournalFeedsViewController alloc] initWithNibName:@"JournalFeedsViewController" bundle:nil];
-    vc.postSubType = [arrCategories objectAtIndex:indexPath.row];
-    UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
-    [self.navigationController presentViewController:navCon animated:true completion:nil];
-
+    
 }
 
 

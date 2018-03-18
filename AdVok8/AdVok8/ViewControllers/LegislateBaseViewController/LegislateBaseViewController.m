@@ -87,6 +87,7 @@
             _containerLibrary.hidden = false;
             _containerJournal.hidden = true;
             _containerPost.hidden = true;
+
         }
             break;
         case 1002:
@@ -95,6 +96,7 @@
             _containerLibrary.hidden = true;
             _containerJournal.hidden = false;
             _containerPost.hidden = true;
+
         }
             break;
         case 1003:
@@ -103,6 +105,7 @@
             _containerLibrary.hidden = true;
             _containerJournal.hidden = true;
             _containerPost.hidden = false;
+
         }
             break;
 
