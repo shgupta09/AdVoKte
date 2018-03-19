@@ -612,10 +612,8 @@
 				5F71B69A204E6C4C004229DF /* CommentLike.m */,
 				5F71B6C6204E91C5004229DF /* Specialization.h */,
 				5F71B6C7204E91C5004229DF /* Specialization.m */,
-<<<<<<< HEAD
 				5F3645DF205F7EF70041E88C /* DocumentModel.h */,
 				5F3645E0205F7EF70041E88C /* DocumentModel.m */,
-=======
 				9CF77CF9205F84DF00366505 /* Rating.h */,
 				9CF77CFA205F84DF00366505 /* Rating.m */,
 				9CF77CFC205F861600366505 /* Education.h */,
@@ -626,7 +624,6 @@
 				9CF77D03205F86BC00366505 /* Membership.m */,
 				9CF77D08205F87B900366505 /* AdvocatePublicData.h */,
 				9CF77D09205F87B900366505 /* AdvocatePublicData.m */,
->>>>>>> 43ec20e689e00dc91acf0f123751517e8d2e0e80
 			);
 			path = Models;
 			sourceTree = "<group>";
