@@ -377,4 +377,12 @@
     [view addSubview:lbl];
 }
 
+
++(NSString *)checkEmptyString:(NSString *)str{
+    if ([str isEqualToString:@""]) {
+        return @"N/A";
+    }
+    return str;
+}
+
 @end

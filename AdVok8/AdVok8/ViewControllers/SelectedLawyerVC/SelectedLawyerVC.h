@@ -10,5 +10,5 @@
 
 @interface SelectedLawyerVC : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
-
+@property (nonatomic,strong) ADRegistrationModel *obj;
 @end

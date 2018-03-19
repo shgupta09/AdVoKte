@@ -46,6 +46,20 @@
     self.textAlignment=NSTextAlignmentLeft;
     self.attributedText=completeText;
 }
+- (void) boldRange: (NSRange) range {
+    if (![self respondsToSelector:@selector(setAttributedText:)]) {
+        return;
+    }
+    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+    [attributedText setAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:self.font.pointSize]} range:range];
+    
+    self.attributedText = attributedText;
+}
+
+- (void) boldSubstring: (NSString*) substring {
+    NSRange range = [self.text rangeOfString:substring];
+    [self boldRange:range];
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

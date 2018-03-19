@@ -10,6 +10,10 @@
 #define Constant_h
 
 #define isLoggedIn @"isLoggedIn"
+#define LOGINUSER @"loginUsername"
+#define LOGINUSER_TYPE @"loginUsertype"
+#define LOGINUSER_AD @"advocate"
+#define LOGINUSER_UR @"user"
 static NSString* const API_BASE_URL = @"http://www.advok8.in/AdvocateAPI.asmx/";
 static NSString* const API_CONTENTS_BASE_URL = @"http://www.advok8.in";
 
@@ -32,6 +36,7 @@ static NSString* const API_GET_ALL_CATEGORIES = @"Get_AllCategory";
 static NSString* const API_GET_ALL_SPECIALIZATION = @"Get_Specialization_API";
 static NSString* const API_GET_SUB_CATEGORY = @"Get_Category";
 static NSString* const API_GET_ALL_ADVOCATES_FOR = @"search_AdvocateWeb";
+static NSString* const API_ADVOCATE_PUBLICDATA = @"GetAdvocatePublicData";
 
 static int const like_tag = 1000;
 static int const save_tag = 2000;

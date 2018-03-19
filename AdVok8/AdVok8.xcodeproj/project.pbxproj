@@ -98,6 +98,7 @@
 		9CE0102D204FCB0B002A2E81 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE0102C204FCB0B002A2E81 /* QuartzCore.framework */; };
 		C0B37D9E32372768C7120041 /* libPods-AdVok8Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 451D0C401EC04053B7C1ED21 /* libPods-AdVok8Tests.a */; };
 		CB281165DB24598765D2760E /* libPods-AdVok8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E476A4A368847FBC004F191 /* libPods-AdVok8.a */; };
+		D8F44CA5205EA16400B80FCD /* UILabel+Boldify.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F44CA4205EA16400B80FCD /* UILabel+Boldify.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -262,6 +263,8 @@
 		9CE0102C204FCB0B002A2E81 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		ADD73CAB49F10EB83788EA97 /* Pods-AdVok8Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8Tests/Pods-AdVok8Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4D413DFC49D5990184F60D /* Pods-AdVok8Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8Tests/Pods-AdVok8Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D8F44CA3205EA16400B80FCD /* UILabel+Boldify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Boldify.h"; sourceTree = "<group>"; };
+		D8F44CA4205EA16400B80FCD /* UILabel+Boldify.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Boldify.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -477,6 +480,7 @@
 		5F70ABF1202B1250007E69A5 /* AdVok8 */ = {
 			isa = PBXGroup;
 			children = (
+				D8F44C9F205EA08500B80FCD /* Categories */,
 				5F1B9C5F20344F9F009503E7 /* Designables */,
 				5F70AC1A202B14EB007E69A5 /* CommonFiles */,
 				5F70AC27202B14EB007E69A5 /* CommonViews */,
@@ -845,6 +849,15 @@
 			path = ProfileCell;
 			sourceTree = "<group>";
 		};
+		D8F44C9F205EA08500B80FCD /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D8F44CA3205EA16400B80FCD /* UILabel+Boldify.h */,
+				D8F44CA4205EA16400B80FCD /* UILabel+Boldify.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1093,6 +1106,7 @@
 				5F1B9C5D20344A64009503E7 /* PostMainTableViewCell.m in Sources */,
 				5F415751205E3352003D29B4 /* JournalFeedsViewController.m in Sources */,
 				5F71B6C2204E8EA4004229DF /* LeftImageWithLabel.m in Sources */,
+				D8F44CA5205EA16400B80FCD /* UILabel+Boldify.m in Sources */,
 				5FBD2B3B20595C4700D9C10B /* FeedDetailViewController.m in Sources */,
 				5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */,
 				5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */,
