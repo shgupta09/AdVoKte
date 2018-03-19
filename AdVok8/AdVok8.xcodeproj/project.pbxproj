@@ -34,6 +34,7 @@
 		5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C7D20359131009503E7 /* JournalMainTableViewCell.xib */; };
 		5F1B9C832035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C822035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m */; };
 		5F1B9C862036B0C2009503E7 /* PostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C852036B0C2009503E7 /* PostModel.m */; };
+		5F3645E1205F7EF70041E88C /* DocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3645E0205F7EF70041E88C /* DocumentModel.m */; };
 		5F415751205E3352003D29B4 /* JournalFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F41574F205E3352003D29B4 /* JournalFeedsViewController.m */; };
 		5F415752205E3352003D29B4 /* JournalFeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F415750205E3352003D29B4 /* JournalFeedsViewController.xib */; };
 		5F70ABF4202B1250007E69A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF3202B1250007E69A5 /* main.m */; };
@@ -158,6 +159,8 @@
 		5F1B9C822035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldBaselineWithLeftRight.m; sourceTree = "<group>"; };
 		5F1B9C842036B0C2009503E7 /* PostModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostModel.h; sourceTree = "<group>"; };
 		5F1B9C852036B0C2009503E7 /* PostModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostModel.m; sourceTree = "<group>"; };
+		5F3645DF205F7EF70041E88C /* DocumentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DocumentModel.h; sourceTree = "<group>"; };
+		5F3645E0205F7EF70041E88C /* DocumentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocumentModel.m; sourceTree = "<group>"; };
 		5F41574E205E3352003D29B4 /* JournalFeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalFeedsViewController.h; sourceTree = "<group>"; };
 		5F41574F205E3352003D29B4 /* JournalFeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalFeedsViewController.m; sourceTree = "<group>"; };
 		5F415750205E3352003D29B4 /* JournalFeedsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalFeedsViewController.xib; sourceTree = "<group>"; };
@@ -584,6 +587,8 @@
 				5F71B69A204E6C4C004229DF /* CommentLike.m */,
 				5F71B6C6204E91C5004229DF /* Specialization.h */,
 				5F71B6C7204E91C5004229DF /* Specialization.m */,
+				5F3645DF205F7EF70041E88C /* DocumentModel.h */,
+				5F3645E0205F7EF70041E88C /* DocumentModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -900,8 +905,8 @@
 				TargetAttributes = {
 					5F70ABEE202B1250007E69A5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = MK5HXMKD83;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = H7RFM2VSMC;
+						ProvisioningStyle = Automatic;
 					};
 					5F70AC0A202B1250007E69A5 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -1097,6 +1102,7 @@
 				5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */,
 				5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */,
 				5F70AC41202B1688007E69A5 /* RearCell.m in Sources */,
+				5F3645E1205F7EF70041E88C /* DocumentModel.m in Sources */,
 				5F70AC4A202B1691007E69A5 /* SplashScreenViewController.m in Sources */,
 				5F1B9C2D203413F8009503E7 /* DashboardBaseViewController.m in Sources */,
 				5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */,
@@ -1272,17 +1278,18 @@
 			baseConfigurationReference = 5DB2464D49DD7471880FD048 /* Pods-AdVok8.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = MK5HXMKD83;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7RFM2VSMC;
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulab.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7336e540-feb9-484f-8d27-19f26dcd6ecc";
-				PROVISIONING_PROFILE_SPECIFIER = SSCreative_Development;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1291,17 +1298,18 @@
 			baseConfigurationReference = 7CD644F639A1CDED1AD2871C /* Pods-AdVok8.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = MK5HXMKD83;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = H7RFM2VSMC;
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ulab.SSCreative;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "aabbe5f0-2fe5-4752-9a42-0174048facf9";
-				PROVISIONING_PROFILE_SPECIFIER = SSCreative_Development;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

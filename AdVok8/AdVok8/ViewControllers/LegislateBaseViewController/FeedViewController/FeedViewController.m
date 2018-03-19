@@ -30,6 +30,7 @@
     
     [self hitApiForAllPosts:@"0"];
     
+//    [self hit ApitoDelete];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)viewDidLayoutSubviews{
@@ -356,6 +357,73 @@
         }];
     } else {
         
+    }
+}
+
+
+
+-(void)hitApitoDelete{
+    
+    
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+    }
+    else
+    {
+        [dictRequest setValue:@"0" forKey:@"UserId"];
+    }
+    [dictRequest setValue:@"19066" forKey:@"PostId"];
+   
+    [parameter setValue:dictRequest forKey:@"_post"];
+    
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,@"put_Delete"]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                if (1) {
+                    NSArray *tempArray = [NSArray new];
+                    NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                    tempArray = [json objectForKey:@"_post"];
+                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+                        PostModel *dataObj = [PostModel new];
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            @try {
+                                [dataObj setValue:obj forKey:(NSString *)key];
+                            } @catch (NSException *exception) {
+                                NSLog(exception.description);
+                                //  Handle an exception thrown in the @try block
+                            } @finally {
+                                //  Code that gets executed whether or not an exception is thrown
+                            }
+                        }];
+                        
+                        [arrData addObject:dataObj];
+                    }];
+                    if (tempArray.count!=0){
+                        [_tblView reloadData];
+                    }
+                }else
+                {
+                    //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+                    [self removeloder];
+                    //                    [self removeloder];
+                }
+                [self removeloder];
+                
+            }
+            
+            
+            
+        }];
+    } else {
+        [self removeloder];
+        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
     }
 }
 

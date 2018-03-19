@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIView *containerViewDashboard;
 @property (weak, nonatomic) IBOutlet UIView *vi_activeLegislate;
 @property (weak, nonatomic) IBOutlet UIView *vi_activeDashboard;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end

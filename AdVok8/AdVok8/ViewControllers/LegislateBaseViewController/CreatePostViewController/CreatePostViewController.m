@@ -221,9 +221,8 @@
 //    [[AppDelegate getDelegate]showStatusBar];
     
     capturedImage = [self imageToCompress:[info valueForKey:@"UIImagePickerControllerOriginalImage"]];
-    
     [self dismissViewControllerAnimated:YES completion:^{
-        [_imgViewPost setImage:capturedImage];
+        [self uploadImage];
     }];
     
 }
@@ -272,7 +271,63 @@
 //_post.ShareId, _post.TagUserName, _post.PostPic, _post.Answers, _post.corrAns"
 
 //{"UserId":"9560386426","posttype":"Post; Article; Question","postsubtype":"","TagUserId":null,"PostPic":"","ShareId":"","PostNote":"hello users ","TagUserName":"","UserName":null,"Type":null,"PostId":null,"cntlike":null,"cntcmt":null,"useractv":null,"Details":null,"Days":null,"shareuid":null,"sharefname":null,"Answer":null,"Answers":["yes","No","NA"],"corrAns":"1"}
+
 #pragma mark - Api Related
+
+-(void) uploadImage {
+    NSTimeInterval time = ([[NSDate date] timeIntervalSince1970]); // returned as a double
+    long digits = (long)time; // this is the first 10 digits
+    int decimalDigits = (int)(fmod(time, 1) * 1000); // this will get the 3 missing digits
+//    long timestamp = (digits * 1000) + decimalDigits;
+    
+    NSString *timestampString = [NSString stringWithFormat:@"%ld%d",digits ,decimalDigits];
+    UIImage *image = capturedImage;
+    NSData* imagedata = UIImagePNGRepresentation(image);
+    
+    NSString *base64String = [UIImagePNGRepresentation(image)
+                              base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+    [dictRequest setValue:@"0" forKey:@"DocId"];
+    [dictRequest setValue:@"0" forKey:@"AppointId"];
+    [dictRequest setValue:@"0" forKey:@"CaseId"];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UploadedById"];
+    [dictRequest setValue:@"" forKey:@"AttachmentName"];
+    [dictRequest setValue:timestampString forKey:@"viewFilename"];
+    [dictRequest setValue:base64String forKey:@"AttachmentPath"];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
+    [dictRequest setValue:@"png" forKey:@"cty"];
+    [dictRequest setValue:@"userpic" forKey:@"DocumentType"];
+    [dictRequest setValue:false forKey:@"editable"];
+    [dictRequest setValue:[NSString stringWithFormat:@"%d",[imagedata length]] forKey:@"fileSize"];
+
+    //    [dictRequest setValue:postId forKey:@"PostId"];
+    [parameter setValue:dictRequest forKey:@"_dm"];
+    
+    if ([ CommonFunction reachability]) {
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_UPLOAD_FILE]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1){
+                    [_imgViewPost setImage:capturedImage];
+
+                }
+            }
+        }];
+        
+
+    } else {
+
+    }
+}
+
 -(void)hitApiToPost{
     NSMutableDictionary *parameter = [NSMutableDictionary new];
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
@@ -281,6 +336,7 @@
     [dictRequest setValue:@"Post" forKey:@"posttype"];
     [dictRequest setValue:@"" forKey:@"postsubtype"];
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"TagUserName"];
+    [dictRequest setValue:@"Test user" forKey:@"UserName"];
     [dictRequest setValue:@"" forKey:@"PostPic"];
 
 //    [dictRequest setValue:postId forKey:@"PostId"];

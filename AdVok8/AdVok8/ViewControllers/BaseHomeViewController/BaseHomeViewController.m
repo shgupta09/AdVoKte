@@ -8,12 +8,16 @@
 
 #import "BaseHomeViewController.h"
 
-@interface BaseHomeViewController ()
+@interface BaseHomeViewController ()<UISearchBarDelegate>
 {
     SWRevealViewController *revealController;
     BOOL isOpen;
     UIView *tempView;
     UITapGestureRecognizer *singleFingerTap;
+    UISearchBar *searchBar;
+    
+    UISearchDisplayController *searchDisplayController;
+
 }
 @end
 
@@ -21,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    _searchBar.hidden = true;
     
     _containerViewDashboard.hidden = true;
     _vi_activeDashboard.hidden = true;
@@ -45,12 +51,31 @@
                                                               action:@selector(handleSingleTap:)];
 
     
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0,70,320,44)];
+    [searchBar setShowsScopeBar:YES];
+    [searchBar setScopeButtonTitles:[[NSArray alloc] initWithObjects:@"OBJ",@"C", nil]];
+    
+    searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+    searchDisplayController.delegate = self;
+    searchDisplayController.searchResultsDataSource = self;
+    [searchDisplayController setSearchResultsDelegate:self];
+  
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Search bar delegate
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    NSLog(@"test");
+    //NSPredicate *filterPredicate = [NSPredicate predicateWithFormat:@"SELF beginswith[c] %@", searchBar];
+    //newStories = [stories filteredArrayUsingPredicate:filterPredicate];
+    //NSLog(@"newStories %@", newStories);
 }
 
 #pragma mark - Button Actions
@@ -106,6 +131,10 @@
 
 }
 
+
+- (IBAction)btnSearchClciked:(id)sender {
+    _searchBar.hidden = false;
+}
 
 
 @end

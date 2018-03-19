@@ -21,6 +21,7 @@ static NSString* const API_SAVE_DELETE_POST_LIBRARY = @"SaveDeleteLibrary";
 static NSString* const API_FETCH_COMMENTS_FOR_POST = @"get_IndPostComment";
 static NSString* const API_FETCH_POST_FOR_POST_ID = @"get_indConsult";
 static NSString* const API_POST= @"post_Consult";
+static NSString* const API_UPLOAD_FILE= @"UploadFile";
 static NSString* const API_GET_OTP = @"generateOTP";
 static NSString* const API_REGISTER_USER = @"postAdvocateDetailsSignUp";
 static NSString* const API_LOGIN = @"GetLogin";
