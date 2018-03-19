@@ -88,7 +88,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Lawyers"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="lawyer_icon_white"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaR-gZ-NKk" customClass="LeftImageWithLabel">
@@ -174,7 +174,7 @@
     </objects>
     <resources>
         <image name="Divorce-1" width="106" height="106"/>
-        <image name="Lawyers" width="106" height="106"/>
         <image name="dependentsuser" width="512" height="512"/>
+        <image name="lawyer_icon_white" width="64" height="64"/>
     </resources>
 </document>

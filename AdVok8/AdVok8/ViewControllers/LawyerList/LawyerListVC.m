@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [CommonFunction setNavToController:self title:@"Tax Lawyer" isCrossBusston:false isAddRightButton:false];
+    [CommonFunction setNavToController:self title:@"Ldasd" isCrossBusston:false];
     arrData = [NSMutableArray new];
 
     [_tblView registerNib:[UINib nibWithNibName:@"ListCell" bundle:nil]forCellReuseIdentifier:@"ListCell"];

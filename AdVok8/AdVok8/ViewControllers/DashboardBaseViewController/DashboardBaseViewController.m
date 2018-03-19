@@ -32,7 +32,7 @@
     }
     else
     {
-        arrImages = [[NSArray alloc] initWithObjects:@"CaseTracking.png",@"CaseTracking.png",@"CaseTracking.png",@"Appointment-1.png",@"Me.png", nil];
+        arrImages = [[NSArray alloc] initWithObjects:@"find_lawyers_icon",@"case_tracking_icon",@"task_icon",@"appointment_icon",@"Me.png", nil];
         arrOptions = [[NSArray alloc] initWithObjects:@"Find Lawyers",@"Case Treacking",@"My Activity",@"Appointment",@"Me", nil];
     }
 

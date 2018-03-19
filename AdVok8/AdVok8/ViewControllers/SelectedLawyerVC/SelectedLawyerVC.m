@@ -7,6 +7,7 @@
 //
 
 #import "SelectedLawyerVC.h"
+#import "FeedbackVC.h"
 #import "ProfileCell.h"
 #import "LabelCell.h"
 @interface SelectedLawyerVC (){
@@ -21,7 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [CommonFunction setNavToController:self title:@"" isCrossBusston:false isAddRightButton:false];
+    
+    [CommonFunction setNavToController:self title:@"Lawyer" isCrossBusston:false];
     [_tblView registerNib:[UINib nibWithNibName:@"ProfileCell" bundle:nil]forCellReuseIdentifier:@"ProfileCell"];
       [_tblView registerNib:[UINib nibWithNibName:@"LabelCell" bundle:nil]forCellReuseIdentifier:@"LabelCell"];
     _tblView.rowHeight = UITableViewAutomaticDimension;
@@ -382,6 +384,8 @@
 - (IBAction)btnAction_BookNow:(id)sender {
 }
 - (IBAction)btnAction_Feesback:(id)sender {
+    FeedbackVC *vcObj = [[FeedbackVC alloc]initWithNibName:@"FeedbackVC" bundle:nil];
+    [self.navigationController pushViewController:vcObj animated:true];
 }
 
 @end
