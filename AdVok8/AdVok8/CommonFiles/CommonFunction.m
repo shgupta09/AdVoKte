@@ -34,25 +34,21 @@
 }
 
 +(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross isAddRightButton:(BOOL)isAddButton{
-//    title = [title capitalizedString];
+    title = [title capitalizedString];
     [viewController.view addSubview:[CommonFunction setStatusBarColor]];
- //   [viewController.navigationController setNavigationBarHidden:YES animated:NO];
-    //UINavigationBar *newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0,22, [UIScreen mainScreen].bounds.size.width, 44.0)];
+    [viewController.navigationController setNavigationBarHidden:false animated:NO];
     viewController.navigationController.navigationBar.barTintColor = [CommonFunction colorWithHexString:@"27328C"];
     viewController.navigationController.navigationBar.translucent = false;
 
     
-    UILabel* lbNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,30,[UIScreen mainScreen].bounds.size.width,40)];
-    lbNavTitle.textAlignment = UITextAlignmentLeft;
+    UILabel* lbNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,22,[UIScreen mainScreen].bounds.size.width,40)];
+    lbNavTitle.textAlignment = NSTextAlignmentLeft;
     lbNavTitle.text = title;
     lbNavTitle.textColor = [UIColor  whiteColor];
     viewController.navigationItem.titleView = lbNavTitle;
-    
-//    [[UIBarButtonItem alloc] initWithTitle:@"<"
-//                                     style:UIBarButtonItemStylePlain
-//                                    target:viewController
-//                                    action:@selector(backTapped)];
     UIBarButtonItem *dashboard;
+
+    dashboard.tintColor = [UIColor whiteColor];
     if (IsCross){
         UIButton *imageButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 22, 22)];
         
@@ -73,7 +69,7 @@
         dashboard = [[UIBarButtonItem alloc]initWithCustomView:imageButton];
 
     }
-    dashboard.tintColor = [UIColor colorWithRed:233.0f/255.0f green:141.0f/255.0f blue:25.0f/255.0f alpha:1];
+
     dashboard.tintColor = [UIColor whiteColor];
    
     viewController.navigationItem.backBarButtonItem = dashboard;

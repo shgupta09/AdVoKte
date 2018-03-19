@@ -53,15 +53,18 @@
 
 //TableCells
 #import "ProfileCell2.h"
-
+#import "JournalMainTableViewCell.h"
 
 //CustomClasses
 #import "LeftImageWithLabel.h"
 
 // Models
 #import "ADRegistrationModel.h"
-#import "JournalMainTableViewCell.h"
-
+#import "AdvocatePublicData.h"
+#import "Education.h"
+#import "Membership.h"
+#import "Rating.h"
+#import "WorkingExperience.h"
 #endif /* PrefixHeader_pch */
 
 

@@ -43,6 +43,11 @@ static int const save_tag = 2000;
 static int const comment_tag = 3000;
 static int const share_tag = 4000;
 
+//Color
+
+#define Primary_Blue @"27328C"
+#define Bullet @"\u2022"
+
 #endif /* Constant_h */
 
 

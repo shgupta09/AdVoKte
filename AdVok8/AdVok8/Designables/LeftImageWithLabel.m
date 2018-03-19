@@ -31,6 +31,7 @@
 
 
 -(void)setleftImage:(UIImage *)image{
+    
     _leftImage = image;
 }
 -(void)setText:(NSString *)text{

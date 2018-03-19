@@ -96,6 +96,11 @@
 		9CE0102A204FC4C4002A2E81 /* ProfileCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01028204FC4C4002A2E81 /* ProfileCell2.m */; };
 		9CE0102B204FC4C4002A2E81 /* ProfileCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CE01029204FC4C4002A2E81 /* ProfileCell2.xib */; };
 		9CE0102D204FCB0B002A2E81 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CE0102C204FCB0B002A2E81 /* QuartzCore.framework */; };
+		9CF77CFB205F84DF00366505 /* Rating.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF77CFA205F84DF00366505 /* Rating.m */; };
+		9CF77CFE205F861600366505 /* Education.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF77CFD205F861600366505 /* Education.m */; };
+		9CF77D01205F866F00366505 /* WorkingExperience.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF77D00205F866F00366505 /* WorkingExperience.m */; };
+		9CF77D04205F86BC00366505 /* Membership.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF77D03205F86BC00366505 /* Membership.m */; };
+		9CF77D0A205F87B900366505 /* AdvocatePublicData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF77D09205F87B900366505 /* AdvocatePublicData.m */; };
 		C0B37D9E32372768C7120041 /* libPods-AdVok8Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 451D0C401EC04053B7C1ED21 /* libPods-AdVok8Tests.a */; };
 		CB281165DB24598765D2760E /* libPods-AdVok8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E476A4A368847FBC004F191 /* libPods-AdVok8.a */; };
 		D8F44CA5205EA16400B80FCD /* UILabel+Boldify.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F44CA4205EA16400B80FCD /* UILabel+Boldify.m */; };
@@ -261,6 +266,16 @@
 		9CE01028204FC4C4002A2E81 /* ProfileCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileCell2.m; sourceTree = "<group>"; };
 		9CE01029204FC4C4002A2E81 /* ProfileCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCell2.xib; sourceTree = "<group>"; };
 		9CE0102C204FCB0B002A2E81 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9CF77CF9205F84DF00366505 /* Rating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Rating.h; sourceTree = "<group>"; };
+		9CF77CFA205F84DF00366505 /* Rating.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Rating.m; sourceTree = "<group>"; };
+		9CF77CFC205F861600366505 /* Education.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Education.h; sourceTree = "<group>"; };
+		9CF77CFD205F861600366505 /* Education.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Education.m; sourceTree = "<group>"; };
+		9CF77CFF205F866F00366505 /* WorkingExperience.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorkingExperience.h; sourceTree = "<group>"; };
+		9CF77D00205F866F00366505 /* WorkingExperience.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorkingExperience.m; sourceTree = "<group>"; };
+		9CF77D02205F86BC00366505 /* Membership.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Membership.h; sourceTree = "<group>"; };
+		9CF77D03205F86BC00366505 /* Membership.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Membership.m; sourceTree = "<group>"; };
+		9CF77D08205F87B900366505 /* AdvocatePublicData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdvocatePublicData.h; sourceTree = "<group>"; };
+		9CF77D09205F87B900366505 /* AdvocatePublicData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvocatePublicData.m; sourceTree = "<group>"; };
 		ADD73CAB49F10EB83788EA97 /* Pods-AdVok8Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8Tests/Pods-AdVok8Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4D413DFC49D5990184F60D /* Pods-AdVok8Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8Tests/Pods-AdVok8Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D8F44CA3205EA16400B80FCD /* UILabel+Boldify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Boldify.h"; sourceTree = "<group>"; };
@@ -588,6 +603,16 @@
 				5F71B69A204E6C4C004229DF /* CommentLike.m */,
 				5F71B6C6204E91C5004229DF /* Specialization.h */,
 				5F71B6C7204E91C5004229DF /* Specialization.m */,
+				9CF77CF9205F84DF00366505 /* Rating.h */,
+				9CF77CFA205F84DF00366505 /* Rating.m */,
+				9CF77CFC205F861600366505 /* Education.h */,
+				9CF77CFD205F861600366505 /* Education.m */,
+				9CF77CFF205F866F00366505 /* WorkingExperience.h */,
+				9CF77D00205F866F00366505 /* WorkingExperience.m */,
+				9CF77D02205F86BC00366505 /* Membership.h */,
+				9CF77D03205F86BC00366505 /* Membership.m */,
+				9CF77D08205F87B900366505 /* AdvocatePublicData.h */,
+				9CF77D09205F87B900366505 /* AdvocatePublicData.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1105,6 +1130,7 @@
 				5F71B6D9204FC4FD004229DF /* PublishArticleViewController.m in Sources */,
 				5F1B9C5D20344A64009503E7 /* PostMainTableViewCell.m in Sources */,
 				5F415751205E3352003D29B4 /* JournalFeedsViewController.m in Sources */,
+				9CF77D01205F866F00366505 /* WorkingExperience.m in Sources */,
 				5F71B6C2204E8EA4004229DF /* LeftImageWithLabel.m in Sources */,
 				D8F44CA5205EA16400B80FCD /* UILabel+Boldify.m in Sources */,
 				5FBD2B3B20595C4700D9C10B /* FeedDetailViewController.m in Sources */,
@@ -1121,10 +1147,13 @@
 				5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */,
 				5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */,
 				5F71B6D3204F9934004229DF /* CreatePostViewController.m in Sources */,
+				9CF77D0A205F87B900366505 /* AdvocatePublicData.m in Sources */,
 				5F71B6A8204E8E76004229DF /* LawyersCategoryVC.m in Sources */,
 				5F1B9C73203568BD009503E7 /* SearchModel.m in Sources */,
+				9CF77CFB205F84DF00366505 /* Rating.m in Sources */,
 				5F71B6C8204E91C5004229DF /* Specialization.m in Sources */,
 				5F70AC00202B1250007E69A5 /* AdVok8.xcdatamodeld in Sources */,
+				9CF77D04205F86BC00366505 /* Membership.m in Sources */,
 				5F71B6AA204E8E76004229DF /* LawyerListVC.m in Sources */,
 				5F1B9C862036B0C2009503E7 /* PostModel.m in Sources */,
 				5F1B9C33203415B9009503E7 /* DashboardHomeCollectionViewCell.m in Sources */,
@@ -1139,6 +1168,7 @@
 				5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */,
 				5F1B9C6D20356753009503E7 /* ADRegistrationModel.m in Sources */,
 				5F70AC2C202B14EB007E69A5 /* CommonFunction.m in Sources */,
+				9CF77CFE205F861600366505 /* Education.m in Sources */,
 				5F70AC2F202B14EB007E69A5 /* Reachability.m in Sources */,
 				5F1B9C462034383F009503E7 /* LibraryViewController.m in Sources */,
 				5F1B9C7E20359131009503E7 /* JournalMainTableViewCell.m in Sources */,
