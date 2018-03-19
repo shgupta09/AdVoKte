@@ -4,8 +4,9 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
+        <deployment version="4384" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,22 +23,51 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BWP-mR-u6D">
-                    <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="KxN-Rk-H9q"/>
                         <outlet property="delegate" destination="-1" id="BwY-Vj-4xp"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibY-Qx-Qcy">
+                    <rect key="frame" x="0.0" y="623" width="186" height="44"/>
+                    <color key="backgroundColor" red="0.90438944099999996" green="0.56282806399999996" blue="0.18984088299999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="Give Feedback">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnAction_Feesback:" destination="-1" eventType="touchUpInside" id="Szr-8z-OaM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgV-MA-Vq8">
+                    <rect key="frame" x="188.5" y="623" width="186" height="44"/>
+                    <color key="backgroundColor" red="0.90438944101333618" green="0.56282806396484375" blue="0.1898408830165863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" title="BOOK NOW">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnAction_BookNow:" destination="-1" eventType="touchUpInside" id="Uu0-D4-Xnj"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="BWP-mR-u6D" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="DJ1-FK-m0Q"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="BWP-mR-u6D" secondAttribute="trailing" id="hdW-VB-b0X"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="BWP-mR-u6D" secondAttribute="bottom" constant="44" id="lqh-no-JY9"/>
-                <constraint firstItem="BWP-mR-u6D" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="44" id="tgV-50-chs"/>
+                <constraint firstItem="DgV-MA-Vq8" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="6Ln-CG-kLq"/>
+                <constraint firstItem="BWP-mR-u6D" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="DJ1-FK-m0Q"/>
+                <constraint firstAttribute="trailing" secondItem="DgV-MA-Vq8" secondAttribute="trailing" id="H5m-W7-xBK"/>
+                <constraint firstItem="ibY-Qx-Qcy" firstAttribute="width" secondItem="BWP-mR-u6D" secondAttribute="width" multiplier="0.495555" id="KcP-Hy-fgG"/>
+                <constraint firstAttribute="bottom" secondItem="ibY-Qx-Qcy" secondAttribute="bottom" id="SyL-XG-Lml"/>
+                <constraint firstItem="ibY-Qx-Qcy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZDQ-XN-qLc"/>
+                <constraint firstItem="DgV-MA-Vq8" firstAttribute="height" secondItem="ibY-Qx-Qcy" secondAttribute="height" id="gPt-mD-vGx"/>
+                <constraint firstAttribute="trailing" secondItem="BWP-mR-u6D" secondAttribute="trailing" id="hdW-VB-b0X"/>
+                <constraint firstItem="ibY-Qx-Qcy" firstAttribute="top" secondItem="BWP-mR-u6D" secondAttribute="bottom" id="hhT-Ct-03s"/>
+                <constraint firstAttribute="bottom" secondItem="BWP-mR-u6D" secondAttribute="bottom" constant="44" id="lqh-no-JY9"/>
+                <constraint firstItem="DgV-MA-Vq8" firstAttribute="width" secondItem="ibY-Qx-Qcy" secondAttribute="width" id="pP8-l1-HVk"/>
+                <constraint firstItem="BWP-mR-u6D" firstAttribute="top" secondItem="CPz-vO-4wo" secondAttribute="top" constant="-20" id="tgV-50-chs"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <viewLayoutGuide key="safeArea" id="CPz-vO-4wo"/>
+            <point key="canvasLocation" x="16" y="-188"/>
         </view>
     </objects>
 </document>

@@ -21,13 +21,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-    [CommonFunction setNavToController:self title:@"Lawyer" isCrossBusston:true isAddRightButton:false];
+//    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [CommonFunction setNavToController:self title:@"Lawyer" isCrossBusston:false];
+   
     // Do any additional setup after loading the view from its nib.
     arrData = [NSMutableArray new];
 
     [_collectionView registerNib:[UINib nibWithNibName:@"LawyerCategoryTableViewCell" bundle:nil] forCellWithReuseIdentifier:@"LawyerCategoryTableViewCell"];
     [self hitApiToGetAllCategories];
+}
+
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
 }
 
 - (void)didReceiveMemoryWarning {

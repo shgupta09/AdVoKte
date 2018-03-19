@@ -33,62 +33,52 @@
     return statusBarView;
 }
 
-+(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross isAddRightButton:(BOOL)isAddButton{
-//    title = [title capitalizedString];
++(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross{
+    //    title = [title capitalizedString];
     [viewController.view addSubview:[CommonFunction setStatusBarColor]];
- //   [viewController.navigationController setNavigationBarHidden:YES animated:NO];
-    //UINavigationBar *newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0,22, [UIScreen mainScreen].bounds.size.width, 44.0)];
-    viewController.navigationController.navigationBar.barTintColor = [CommonFunction colorWithHexString:@"27328C"];
-    viewController.navigationController.navigationBar.translucent = false;
-
+    [viewController.navigationController setNavigationBarHidden:YES animated:NO];
+    UINavigationBar *newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44.0)];
+    newNavBar.barTintColor = [CommonFunction colorWithHexString:Primary_Blue];
+    newNavBar.translucent = false;
+    UINavigationItem *newItem = [[UINavigationItem alloc] init];
+    UIImageView *backgroundView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44.0)];
+    backgroundView.image = [UIImage imageNamed:@"Home_ Title bar graphic"];
+    //    backgroundView.image = [UIImage imageNamed:@"Home_ Title bar graphic"];
+    //    [newNavBar setBackgroundImage:[UIImage imageNamed:@"Home_ Title bar graphic-1"] forBarMetrics:UIBarMetricsDefault];
+    //
+    //    newNavBar.backgroundColor = [UIColor whiteColor];
+    [newNavBar addSubview:backgroundView];
     
-    UILabel* lbNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,30,[UIScreen mainScreen].bounds.size.width,40)];
-    lbNavTitle.textAlignment = UITextAlignmentLeft;
+    UILabel* lbNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,(viewController.view.bounds.size.width/2)
+                                                                    -20,[UIScreen mainScreen].bounds.size.width,40)];
+    lbNavTitle.textAlignment = NSTextAlignmentLeft;
     lbNavTitle.text = title;
-    lbNavTitle.textColor = [UIColor  whiteColor];
-    viewController.navigationItem.titleView = lbNavTitle;
+    lbNavTitle.textColor = [UIColor whiteColor];
+    newItem.titleView = lbNavTitle;
     
-//    [[UIBarButtonItem alloc] initWithTitle:@"<"
-//                                     style:UIBarButtonItemStylePlain
-//                                    target:viewController
-//                                    action:@selector(backTapped)];
+    
+    //    [[UIBarButtonItem alloc] initWithTitle:@"<"
+    //                                     style:UIBarButtonItemStylePlain
+    //                                    target:viewController
+    //                                    action:@selector(backTapped)];
     UIBarButtonItem *dashboard;
     if (IsCross){
-        UIButton *imageButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 22, 22)];
-        
-        imageButton.tintColor = [UIColor whiteColor];
-        UIImage * image = [UIImage imageNamed:@"backButton"];
-        [imageButton setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-        [imageButton addTarget:viewController action:@selector(backTapped) forControlEvents:UIControlEventAllEvents];
-        
-        dashboard = [[UIBarButtonItem alloc]initWithCustomView:imageButton];
+        dashboard = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"close"] style:UIBarButtonItemStylePlain target:viewController action:@selector(backTapped)];
     }else{
-        UIButton *imageButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 22, 22)];
-        imageButton.tintColor = [UIColor whiteColor];
-        UIImage * image = [UIImage imageNamed:@"backButton"];
-        [imageButton setBackgroundImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-        
-        [imageButton addTarget:viewController action:@selector(backTapped) forControlEvents:UIControlEventAllEvents];
-        
-        dashboard = [[UIBarButtonItem alloc]initWithCustomView:imageButton];
-
+        dashboard = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:viewController action:@selector(backTapped)];
     }
+    
     dashboard.tintColor = [UIColor colorWithRed:233.0f/255.0f green:141.0f/255.0f blue:25.0f/255.0f alpha:1];
     dashboard.tintColor = [UIColor whiteColor];
-   
-    viewController.navigationItem.backBarButtonItem = dashboard;
+    newItem.leftBarButtonItem = dashboard;
+    [newNavBar setItems:@[newItem]];
     
-    if (isAddButton) {
-     
-        UIBarButtonItem *anotherButton =  [[UIBarButtonItem alloc]
-         initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-         target:viewController action:@selector(addAddress)];
-        anotherButton.tintColor = [UIColor whiteColor];
-        viewController.navigationController.navigationItem.rightBarButtonItem = anotherButton;
-    }
-//    [newNavBar setItems:@[newItem]];
-//    [viewController.view addSubview:newNavBar];
-   
+    //    UINavigationController *xyz = [[UINavigationController alloc] initWithRootViewController:<#(nonnull UIViewController *)#>];
+    //    [xyz ]
+    //
+    //    xyz
+    [viewController.view addSubview:newNavBar];
+    
 }
 
 
@@ -375,6 +365,14 @@
     lbl.textAlignment = NSTextAlignmentCenter;
     lbl.tag = 500;
     [view addSubview:lbl];
+}
+
+
++(NSString *)checkEmptyString:(NSString *)str{
+    if ([str isEqualToString:@""]) {
+        return @"N/A";
+    }
+    return str;
 }
 
 @end

@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ProfileCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblName;
+@property (weak, nonatomic) IBOutlet UILabel *lblSepcialization;
 
+@property (weak, nonatomic) IBOutlet UIImageView *img_Profile;
 
 @end

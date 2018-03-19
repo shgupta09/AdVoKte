@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [CommonFunction setNavToController:self title:@"Tax Lawyer" isCrossBusston:false isAddRightButton:false];
+    [CommonFunction setNavToController:self title:@"Ldasd" isCrossBusston:false];
     arrData = [NSMutableArray new];
 
     [_tblView registerNib:[UINib nibWithNibName:@"ListCell" bundle:nil]forCellReuseIdentifier:@"ListCell"];
@@ -42,6 +42,10 @@
     [self.navigationController popViewControllerAnimated:true];
     
 }
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
+}
+
 #pragma mark- tableView delegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -60,10 +64,11 @@
     cell.view.layer.shadowOffset = CGSizeMake( 0, 0);
     cell.view.layer.shadowOpacity = 0.4;
     cell.view.layer.shadowRadius = 4.0;
-    [cell.lblEducation setText:obj.Education];
-    [cell.lblExperience setText:[NSString stringWithFormat:@"%@ Experience",obj.Experience]];
-    [cell.lblSepcialization setText:obj.AOP];
-    [cell.lblLocation setText:obj.City];
+    [cell.lblEducation setText:[CommonFunction checkEmptyString:obj.Education]];
+    [cell.lblExperience setText:[CommonFunction checkEmptyString:[NSString stringWithFormat:@"%@ Experience",obj.Experience]]];
+    [cell.lblSepcialization setText:[CommonFunction checkEmptyString:[NSString stringWithFormat:@"spcialisation: %@",obj.AOP]]];
+    [cell.lblSepcialization boldSubstring:@"spcialisation:"];
+    [cell.lblLocation setText:[CommonFunction checkEmptyString:obj.City]];
     if ([obj.ConsultancyFees  isEqual: @"0.00"]){
         [cell.lblCost setText:@"Free"];
     }
@@ -71,6 +76,8 @@
     {
         [cell.lblCost setText:[NSString stringWithFormat:@"INR %@",obj.ConsultancyFees]];
     }
+//    [cell.img_Profile sd_setImageWithURL:[NSURL URLWithString:obj.profPic]];
+    cell.selectionStyle =UITableViewCellSelectionStyleNone;
     
 //    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:cell.view.bounds];
 //    cell.view.layer.masksToBounds = NO;
@@ -84,6 +91,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     SelectedLawyerVC *lawyerVcOBJ = [[SelectedLawyerVC alloc]initWithNibName:@"SelectedLawyerVC" bundle:nil];
+    lawyerVcOBJ.obj =[arrData objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:lawyerVcOBJ animated:true];
 }
 

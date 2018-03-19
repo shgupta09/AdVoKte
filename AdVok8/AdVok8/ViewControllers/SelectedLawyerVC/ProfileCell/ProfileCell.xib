@@ -70,6 +70,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="img_Profile" destination="v06-PI-ZrF" id="eV4-3h-XFc"/>
+                <outlet property="lblName" destination="cCR-v3-8Os" id="Ohh-z3-AJd"/>
+                <outlet property="lblSepcialization" destination="KyS-sE-h2n" id="Co7-h1-JTq"/>
+            </connections>
+            <point key="canvasLocation" x="-176" y="28"/>
         </tableViewCell>
     </objects>
     <resources>

@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet LeftImageWithLabel *lblSepcialization;
 @property (weak, nonatomic) IBOutlet LeftImageWithLabel *lblLocation;
 @property (weak, nonatomic) IBOutlet LeftImageWithLabel *lblCost;
+@property (weak, nonatomic) IBOutlet UIImageView *img_Profile;
 
 @end
