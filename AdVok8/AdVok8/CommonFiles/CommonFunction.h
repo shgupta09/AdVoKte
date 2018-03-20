@@ -45,4 +45,6 @@
 +(void)addNoDataLabel:(UIView*)view;
 
 +(NSString *)checkEmptyString:(NSString *)str;
+
++(NSString*) getProfilePicURLString:(NSString*) userName;
 @end
