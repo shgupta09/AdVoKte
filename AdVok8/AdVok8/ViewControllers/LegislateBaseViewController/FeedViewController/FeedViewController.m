@@ -13,6 +13,8 @@
     UIRefreshControl* refreshControl;
     NSMutableArray* arrData;
     LoderView *loderObj;
+    UIImageView *imgViewToZoom;
+    UITapGestureRecognizer *cameraGesture;
 
 }
 
@@ -27,7 +29,9 @@
     refreshControl = [[UIRefreshControl alloc]init];
     [_tblView addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
-    
+    cameraGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(removeImage)];
+    [cameraGesture setNumberOfTapsRequired:1];
+
    [self hitApiForAllPosts:@"0"];
     
    // [self hitApitoDelete];
@@ -120,7 +124,9 @@
     [cell.btnComment addTarget:self action:@selector(btnCommentTapped:) forControlEvents:UIControlEventTouchUpInside];
     cell.btnShare.tag = like_tag+indexPath.row;
     [cell.btnShare addTarget:self action:@selector(btnShareTapped:) forControlEvents:UIControlEventTouchUpInside];
-    
+    cell.btnImageToZoom.tag = like_tag+indexPath.row;
+    [cell.btnImageToZoom addTarget:self action:@selector(imageZoomClicked:) forControlEvents:UIControlEventTouchUpInside];
+     
     NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
     paragraph.lineBreakMode = cell.lblPostNote.lineBreakMode;
     NSDictionary *attributes = @{NSFontAttributeName : cell.lblPostNote.font,
@@ -165,6 +171,21 @@
     UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
     [self.navigationController presentViewController:navCon animated:true completion:nil];
 
+}
+
+#pragma mark - tap gesture
+-(void)imageZoomClicked:(UITapGestureRecognizer*) sender{
+    UIButton* btnLike = sender;
+    int index = btnLike.tag%like_tag;
+    PostModel* data = [arrData objectAtIndex:index];
+    imgViewToZoom= [[UIImageView alloc]initWithFrame:self.view.frame];
+    [imgViewToZoom sd_setImageWithURL:[NSURL URLWithString:data.PostPic]];
+    [imgViewToZoom addGestureRecognizer:cameraGesture];
+    imgViewToZoom.userInteractionEnabled = true;
+    [self.view addSubview:imgViewToZoom];
+}
+-(void)removeImage{
+    [imgViewToZoom removeFromSuperview];
 }
 
 #pragma mark - Read More

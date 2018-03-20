@@ -26,5 +26,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_stackview_height;
 @property (weak, nonatomic) IBOutlet UIStackView *stackView;
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewProfilePic;
+@property (weak, nonatomic) IBOutlet UITapGestureRecognizer *tapGesture;
+@property (weak, nonatomic) IBOutlet UIButton *btnImageToZoom;
 
 @end
