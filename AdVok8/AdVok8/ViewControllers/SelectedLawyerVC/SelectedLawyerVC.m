@@ -188,6 +188,7 @@
 
 -(void)hitApiToGetAdvocateData{
     
+    Rating *ratingObj = [Rating new];
     
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
     [dictRequest setValue:_obj.username forKey:@"UserName"];
