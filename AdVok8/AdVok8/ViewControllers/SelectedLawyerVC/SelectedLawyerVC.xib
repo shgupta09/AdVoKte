@@ -32,7 +32,7 @@
                 </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ibY-Qx-Qcy">
                     <rect key="frame" x="0.0" y="623" width="186" height="44"/>
-                    <color key="backgroundColor" red="0.90438944099999996" green="0.56282806399999996" blue="0.18984088299999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.90588235294117647" green="0.56470588235294117" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <state key="normal" title="Give Feedback">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FeedbackVC : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *txtView_Feedback;
 
 @end
