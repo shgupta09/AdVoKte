@@ -74,8 +74,23 @@
     cell.lblUserType.text = data.Details;
     cell.lblPostCreatedTime.text = data.Days;
     cell.lblPostNote.text = data.PostNote;
-//gi    dispatch_async(dispatch_queue, <#^(void)block#>)
-//    [cell.btnUserImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[CommonFunction getProfilePicURLString:data.UserId]]]] forState:UIControlStateNormal];
+   
+    
+    NSURL *imgUrl = [NSURL URLWithString:[CommonFunction getProfilePicURLString:data.UserId]];
+    
+    dispatch_queue_t q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
+    dispatch_async(q, ^{
+        /* Fetch the image from the server... */
+        NSData *data = [NSData dataWithContentsOfURL:imgUrl];
+        UIImage *img = [[UIImage alloc] initWithData:data];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [cell.btnUserImage setBackgroundImage:img forState:UIControlStateNormal];
+            
+        });
+    });
+    
     
     if ([data.ArticleTitle  isEqual: @""]){
            cell.lblHeading.text = @"";
@@ -514,6 +529,7 @@
     //[loaderView removeFromSuperview];
     self.view.userInteractionEnabled = YES;
 }
+
 
 
 

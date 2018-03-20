@@ -25,5 +25,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblHeading;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_stackview_height;
 @property (weak, nonatomic) IBOutlet UIStackView *stackView;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewProfilePic;
 
 @end
