@@ -375,10 +375,11 @@
     return str;
 }
 
-+(NSString*) getProfilePicURLString:(NSString*) userName
++(NSURL*) getProfilePicURLString:(NSString*) userName
 {
     NSString* str = [NSString stringWithFormat:@"https://s3-ap-southeast-2.amazonaws.com/advok8/%@/ProfilePic",userName];
-    return str;
+    
+    return [NSURL URLWithString:str];
 }
 
 

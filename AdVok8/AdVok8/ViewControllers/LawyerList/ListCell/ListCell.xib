@@ -42,14 +42,14 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Divorce-1"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dependentsuser" translatesAutoresizingMaskIntoConstraints="NO" id="aZm-dY-EQf">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dependentsuser" translatesAutoresizingMaskIntoConstraints="NO" id="aZm-dY-EQf">
                                 <rect key="frame" x="208" y="33" width="80" height="81.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="81.5" id="GCS-ma-0na"/>
                                     <constraint firstAttribute="width" constant="80" id="PKK-MT-BcD"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="40"/>
                                     </userDefinedRuntimeAttribute>
