@@ -46,12 +46,5 @@
 
 +(NSString *)checkEmptyString:(NSString *)str;
 
-<<<<<<< HEAD
-+(NSString*) getProfilePicURLString:(NSString*) userName;
-
-+ (void)downloadImageWithURL:(NSURL *)url completionBlock:(void (^)(BOOL succeeded, UIImage *image))completionBlock;
-
-=======
 +(NSURL*) getProfilePicURLString:(NSString*) userName;
->>>>>>> c93f19fe997d991ebd9565fa3478c0728ad6de04
 @end
