@@ -61,6 +61,7 @@
         }
         cell.lblName.text =  [NSString stringWithFormat:@"%@ %@",tempObj.fname,tempObj.lname];
         cell.lblSepcialization.text = [CommonFunction checkEmptyString:[NSString stringWithFormat:@"%@",tempObj.AOP]];
+        [cell.img_Profile sd_setImageWithURL:[CommonFunction getProfilePicURLString:tempObj.username] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
             return cell;
     }else{
         
@@ -385,6 +386,7 @@
 }
 - (IBAction)btnAction_Feesback:(id)sender {
     FeedbackVC *vcObj = [[FeedbackVC alloc]initWithNibName:@"FeedbackVC" bundle:nil];
+    vcObj.obj = _obj;
     [self.navigationController pushViewController:vcObj animated:true];
 }
 

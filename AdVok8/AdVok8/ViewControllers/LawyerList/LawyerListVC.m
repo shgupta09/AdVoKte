@@ -76,7 +76,7 @@
     {
         [cell.lblCost setText:[NSString stringWithFormat:@"INR %@",obj.ConsultancyFees]];
     }
-//    [cell.img_Profile sd_setImageWithURL:[NSURL URLWithString:obj.profPic]];
+   [cell.img_Profile sd_setImageWithURL:[CommonFunction getProfilePicURLString:obj.username] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
     cell.selectionStyle =UITableViewCellSelectionStyleNone;
     
 //    UIBezierPath *shadowPath = [UIBezierPath bezierPathWithRect:cell.view.bounds];

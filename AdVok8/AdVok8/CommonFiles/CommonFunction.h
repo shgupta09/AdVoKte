@@ -46,5 +46,5 @@
 
 +(NSString *)checkEmptyString:(NSString *)str;
 
-+(NSString*) getProfilePicURLString:(NSString*) userName;
++(NSURL*) getProfilePicURLString:(NSString*) userName;
 @end
