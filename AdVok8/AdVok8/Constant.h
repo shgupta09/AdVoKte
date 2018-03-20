@@ -29,6 +29,7 @@ static NSString* const API_UPLOAD_FILE= @"UploadFile";
 static NSString* const API_GET_OTP = @"generateOTP";
 static NSString* const API_REGISTER_USER = @"postAdvocateDetailsSignUp";
 static NSString* const API_LOGIN = @"GetLogin";
+static NSString* const API_PUT_COMMENT = @"put_Comment";
 
 
 

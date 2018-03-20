@@ -74,6 +74,9 @@
     cell.lblUserType.text = data.Details;
     cell.lblPostCreatedTime.text = data.Days;
     cell.lblPostNote.text = data.PostNote;
+//gi    dispatch_async(dispatch_queue, <#^(void)block#>)
+//    [cell.btnUserImage setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[CommonFunction getProfilePicURLString:data.UserId]]]] forState:UIControlStateNormal];
+    
     if ([data.ArticleTitle  isEqual: @""]){
            cell.lblHeading.text = @"";
     }

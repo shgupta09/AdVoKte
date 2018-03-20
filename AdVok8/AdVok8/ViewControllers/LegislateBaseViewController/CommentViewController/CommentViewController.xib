@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CommentViewController">
             <connections>
+                <outlet property="btnPostComment" destination="a0r-J5-rtx" id="meW-AU-VNr"/>
                 <outlet property="btnSend" destination="a0r-J5-rtx" id="1Z2-ug-QyD"/>
                 <outlet property="const_bottomSpace" destination="WC9-0q-9kd" id="A60-RR-vLm"/>
                 <outlet property="tblView" destination="CF1-Ru-b8H" id="yZz-a2-pwA"/>
@@ -41,6 +42,9 @@
                                 <constraint firstAttribute="width" constant="46" id="Bbt-vZ-3tl"/>
                             </constraints>
                             <state key="normal" image="Share Outline-1"/>
+                            <connections>
+                                <action selector="btnPostCommentClicked:" destination="-1" eventType="touchUpInside" id="2Y2-aB-lz5"/>
+                            </connections>
                         </button>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UmV-OF-Mdm">
                             <rect key="frame" x="8" y="5" width="305" height="40"/>

@@ -135,6 +135,54 @@
 
 #pragma mark - API related
 
+
+-(void)hitApiToPostAComment{
+    
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+    }
+    else
+    {
+        [dictRequest setValue:@"0" forKey:@"UserId"];
+    }
+    [dictRequest setValue:_postId forKey:@"PostId"];
+    [dictRequest setValue:_txtComment.text forKey:@"PostNote"];
+    [dictRequest setValue:@"" forKey:@"PostPic"];
+
+    [parameter setValue:dictRequest forKey:@"_post"];
+    
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_PUT_COMMENT]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                if (1) {
+            
+                    [self removeloder];
+                    [self hitApiToGetGetCommentsForPost];
+                    
+                }else
+                {
+                    //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+                    [self removeloder];
+                    //                    [self removeloder];
+                }
+                [self removeloder];
+                
+            }
+            
+            
+            
+        }];
+    } else {
+        [self removeloder];
+        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+    }
+}
+
 -(void)hitApiToGetGetCommentsForPost{
     
     NSMutableDictionary *parameter = [NSMutableDictionary new];
@@ -242,6 +290,8 @@
     [self.navigationController dismissViewControllerAnimated:true completion:nil];
 }
 
+- (IBAction)btnPostCommentClicked:(id)sender {
+}
 
 
 @end

@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property (weak, nonatomic) NSString *postId;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *const_bottomSpace;
+@property (weak, nonatomic) IBOutlet UIButton *btnPostComment;
 
 @end
