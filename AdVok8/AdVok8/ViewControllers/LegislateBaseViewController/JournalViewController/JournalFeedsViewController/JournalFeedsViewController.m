@@ -83,6 +83,8 @@
     cell.lblUserType.text = data.Details;
     cell.lblPostCreatedTime.text = data.Days;
     cell.lblPostNote.text = data.PostNote;
+    [cell.imgViewProfilePic sd_setImageWithURL:[CommonFunction getProfilePicURLString:data.UserId] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
+    
     if ([data.ArticleTitle  isEqual: @""]){
         cell.lblHeading.text = @"";
     }

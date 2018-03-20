@@ -28,9 +28,9 @@
     [_tblView addSubview:refreshControl];
     [refreshControl addTarget:self action:@selector(refreshTable) forControlEvents:UIControlEventValueChanged];
     
-    [self hitApiForAllPosts:@"0"];
+   [self hitApiForAllPosts:@"0"];
     
-//    [self hit ApitoDelete];
+   // [self hitApitoDelete];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)viewDidLayoutSubviews{
@@ -76,21 +76,7 @@
     cell.lblPostNote.text = data.PostNote;
    
     
-    NSURL *imgUrl = [NSURL URLWithString:[CommonFunction getProfilePicURLString:data.UserId]];
-    
-    dispatch_queue_t q = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
-    dispatch_async(q, ^{
-        /* Fetch the image from the server... */
-        NSData *data = [NSData dataWithContentsOfURL:imgUrl];
-        UIImage *img = [[UIImage alloc] initWithData:data];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            [cell.btnUserImage setBackgroundImage:img forState:UIControlStateNormal];
-            
-        });
-    });
-    
+    [cell.imgViewProfilePic sd_setImageWithURL:[CommonFunction getProfilePicURLString:data.UserId] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
     
     if ([data.ArticleTitle  isEqual: @""]){
            cell.lblHeading.text = @"";
@@ -392,7 +378,7 @@
     {
         [dictRequest setValue:@"0" forKey:@"UserId"];
     }
-    [dictRequest setValue:@"19066" forKey:@"PostId"];
+    [dictRequest setValue:@"19103" forKey:@"PostId"];
    
     [parameter setValue:dictRequest forKey:@"_post"];
     

@@ -335,8 +335,7 @@
     [dictRequest setValue:_txtView.text forKey:@"PostNote"];
     [dictRequest setValue:@"Post" forKey:@"posttype"];
     [dictRequest setValue:@"" forKey:@"postsubtype"];
-    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"TagUserName"];
-    [dictRequest setValue:@"Test user" forKey:@"UserName"];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
     [dictRequest setValue:@"" forKey:@"PostPic"];
 
 //    [dictRequest setValue:postId forKey:@"PostId"];
@@ -352,25 +351,16 @@
                 NSNumber* st = [json valueForKey:@"Status"];
                 int status = [st intValue];
                 if ( status == 1){
-                    NSArray *tempArray = [NSArray new];
-                    NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
-                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                    tempArray = [json objectForKey:@"_post"];
-                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                        
-                        PostModel *dataObj = [PostModel new];
-                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
-                            @try {
-                                [dataObj setValue:obj forKey:(NSString *)key];
-                            } @catch (NSException *exception) {
-                                NSLog(exception.description);
-                                //  Handle an exception thrown in the @try block
-                            } @finally {
-                                //  Code that gets executed whether or not an exception is thrown
-                            }
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[json valueForKey:@"ErrMsg"] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction* action){
+                        [self.navigationController dismissViewControllerAnimated:true completion:^{
+                            
+                            
                         }];
-//                        [arrData replaceObjectAtIndex:row withObject:dataObj];
                     }];
+                    [alertController addAction:ok];
+                    [self presentViewController:alertController animated:YES completion:nil];
+            
                 }else
                 {
                     

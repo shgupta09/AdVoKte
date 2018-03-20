@@ -241,24 +241,12 @@
     
 }
 -(IBAction) btnCommentTapped:(id) sender {
-    UIButton* btnLike = sender;
-    int index = btnLike.tag%like_tag;
-    PostModel* data = [arrData objectAtIndex:index];
-    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
-        CommentViewController* vc ;
-        vc = [[CommentViewController alloc] initWithNibName:@"CommentViewController" bundle:nil];
-        vc.postId = data.PostId;
-        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
-        [self.navigationController presentViewController:navCon animated:true completion:nil];
-    }
-    else
-    {
-        LoginViewController* vc ;
-        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-        vc.Behaviour = @"Action";
-        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
-        [self.navigationController presentViewController:navCon animated:true completion:nil];
-    }
+    
+    CommentViewController* vc ;
+    vc = [[CommentViewController alloc] initWithNibName:@"CommentViewController" bundle:nil];
+    vc.postId = _postId;
+    
+    [self.navigationController pushViewController:vc animated:true];
     
 }
 -(IBAction) btnShareTapped:(id) sender {

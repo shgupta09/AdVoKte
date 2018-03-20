@@ -17,5 +17,7 @@
 @property (weak, nonatomic) NSString *postId;
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property (weak, nonatomic) IBOutlet UIStackView *stackView;
+@property (weak, nonatomic) IBOutlet UIView *viewTxtComment;
+@property (weak, nonatomic) IBOutlet UITextField *txtComment;
 
 @end
