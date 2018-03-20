@@ -161,6 +161,7 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="img_Profile" destination="aZm-dY-EQf" id="6Bt-6L-76L"/>
                 <outlet property="lblCost" destination="Ncd-cM-6hD" id="xud-vJ-k33"/>
                 <outlet property="lblEducation" destination="I4F-ku-cEo" id="0Me-D5-6Og"/>
                 <outlet property="lblExperience" destination="3O4-MP-7rJ" id="w4v-ub-5JF"/>

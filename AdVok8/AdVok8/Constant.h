@@ -52,6 +52,11 @@ static int const share_tag = 4000;
 //PlaceHolder
 
 #define PlaceHolder_TextView_Feedbck @"Tip: A great review explains why you are recommending the lawyer and support it with relevant stories which you think will be helpful to the user. Please write a minimum of 100 characters"
+
+
+//ProfilePic
+
+
 #endif /* Constant_h */
 
 
