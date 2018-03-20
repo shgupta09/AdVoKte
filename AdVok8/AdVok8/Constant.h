@@ -39,6 +39,7 @@ static NSString* const API_GET_ALL_SPECIALIZATION = @"Get_Specialization_API";
 static NSString* const API_GET_SUB_CATEGORY = @"Get_Category";
 static NSString* const API_GET_ALL_ADVOCATES_FOR = @"search_AdvocateWeb";
 static NSString* const API_ADVOCATE_PUBLICDATA = @"GetAdvocatePublicData";
+static NSString* const API_RATING = @"InsertUpdateRating";
 
 static int const like_tag = 1000;
 static int const save_tag = 2000;

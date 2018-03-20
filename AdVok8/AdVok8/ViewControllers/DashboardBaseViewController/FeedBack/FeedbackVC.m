@@ -8,7 +8,10 @@
 
 #import "FeedbackVC.h"
 
-@interface FeedbackVC ()
+@interface FeedbackVC (){
+    
+       LoderView *loderObj;
+}
 
 @end
 
@@ -155,15 +158,67 @@
     
 }
 - (IBAction)btnAction_Share:(id)sender {
-    if (![_txtView_Feedback.text isEqualToString:@""] || ![_txtView_Feedback.text isEqualToString:PlaceHolder_TextView_Feedbck] )
+    if (![_txtView_Feedback.text isEqualToString:@""] && ![_txtView_Feedback.text isEqualToString:PlaceHolder_TextView_Feedbck] )
     {
     NSArray *objectsToShare = @[_txtView_Feedback.text, _img_Profile.image];
     UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
     [self presentViewController:activityVC animated:YES completion:nil];
+    }else{
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Please enter some feedback." preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        [self presentViewController:alertController animated:YES completion:nil];
     }
 }
 
 - (IBAction)btnAction_Submit:(id)sender {
+    
+}
+
+
+#pragma mark - API related
+
+-(void)hitApiToGetAdvocateData{
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    [dictRequest setValue:_obj.username forKey:@"objRating"];
+    
+    if ([ CommonFunction reachability]) {
+        //        [self addLoder];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_RATING]  postResponse:dictRequest postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                
+                [self removeloder];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1) {
+                    
+                }
+                
+            }
+        }];
+    } else {
+        [self removeloder];
+        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+    }
+}
+
+
+-(void)addLoder{
+    self.view.userInteractionEnabled = NO;
+    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+    loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
+    loderObj.lbl_title.text = @"Please wait...";
+    [self.view addSubview:loderObj];
+}
+
+-(void)removeloder{
+    //loderObj = nil;
+    [loderObj removeFromSuperview];
+    //[loaderView removeFromSuperview];
+    self.view.userInteractionEnabled = YES;
 }
 
 @end
