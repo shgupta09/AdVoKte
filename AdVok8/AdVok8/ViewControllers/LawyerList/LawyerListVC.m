@@ -22,7 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [CommonFunction setNavToController:self title:@"Ldasd" isCrossBusston:false];
+    [CommonFunction setNavToController:self title:_Specialization isCrossBusston:false];
     arrData = [NSMutableArray new];
 
     [_tblView registerNib:[UINib nibWithNibName:@"ListCell" bundle:nil]forCellReuseIdentifier:@"ListCell"];
@@ -67,7 +67,7 @@
     [cell.lblEducation setText:[CommonFunction checkEmptyString:obj.Education]];
     [cell.lblExperience setText:[CommonFunction checkEmptyString:[NSString stringWithFormat:@"%@ Experience",obj.Experience]]];
     [cell.lblSepcialization setText:[CommonFunction checkEmptyString:[NSString stringWithFormat:@"spcialisation: %@",obj.AOP]]];
-    [cell.lblSepcialization boldSubstring:@"spcialisation:"];
+    [cell.lblSepcialization boldSubstring:@"Specialisation:"];
     [cell.lblLocation setText:[CommonFunction checkEmptyString:obj.City]];
     if ([obj.ConsultancyFees  isEqual: @"0.00"]){
         [cell.lblCost setText:@"Free"];

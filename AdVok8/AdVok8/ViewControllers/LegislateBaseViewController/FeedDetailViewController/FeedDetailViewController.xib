@@ -34,7 +34,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bWI-Us-Kfy">
-                    <rect key="frame" x="0.0" y="20" width="375" height="612"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Rp3-Rx-Zo6"/>
@@ -98,7 +98,7 @@
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="mvI-bn-mHX" secondAttribute="trailing" id="95t-uW-mPz"/>
                 <constraint firstItem="mvI-bn-mHX" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="AGS-Dk-IyG"/>
-                <constraint firstItem="bWI-Us-Kfy" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="F2l-sK-75H"/>
+                <constraint firstItem="bWI-Us-Kfy" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="44" id="F2l-sK-75H"/>
                 <constraint firstItem="mvI-bn-mHX" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="ghg-Zv-PDO"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="bWI-Us-Kfy" secondAttribute="bottom" constant="35" id="jGo-YJ-iUI"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="bWI-Us-Kfy" secondAttribute="trailing" id="jz2-yh-y0s"/>

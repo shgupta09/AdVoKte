@@ -27,15 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.hidden = false;
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = [CommonFunction colorWithHexString:@"28328C"];
-    
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cross-1"] style: UIBarButtonItemStyleBordered target:self action:@selector(backTapped)];
-    self.navigationItem.leftBarButtonItem = backButton;
-    
-    [self.navigationController setTitle:@"Login"];
-    
+    [CommonFunction setNavToController:self title:_postSubType isCrossBusston:false];
+
     [_tblView registerNib:[UINib nibWithNibName:@"FeedMainTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeedMainTableViewCell"];
     arrData = [[NSMutableArray alloc ] init];
     refreshControl = [[UIRefreshControl alloc]init];

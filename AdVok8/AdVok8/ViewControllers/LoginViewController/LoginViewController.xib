@@ -22,11 +22,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="F1R-if-sEK">
-                    <rect key="frame" x="16" y="30" width="343" height="29"/>
+                    <rect key="frame" x="16" y="104" width="343" height="29"/>
                     <segments>
                         <segment title="USER LOGIN"/>
                         <segment title="ADVOCATE LOGIN"/>
@@ -37,7 +37,7 @@
                     </connections>
                 </segmentedControl>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZS7-8w-ZFk" customClass="TextFieldBaselineWithLeftRight">
-                    <rect key="frame" x="16" y="75" width="343" height="45"/>
+                    <rect key="frame" x="16" y="149" width="343" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="Lxl-Fh-JpE"/>
                     </constraints>
@@ -52,7 +52,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DAQ-It-CwY" customClass="TextFieldBaselineWithLeftRight">
-                    <rect key="frame" x="16" y="128" width="343" height="45"/>
+                    <rect key="frame" x="16" y="202" width="343" height="45"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="AfP-4I-uio"/>
                     </constraints>
@@ -67,7 +67,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddf-Pp-1K4" customClass="DesignableButton">
-                    <rect key="frame" x="85" y="188" width="206" height="40"/>
+                    <rect key="frame" x="85" y="262" width="206" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="z8n-16-3Vi"/>
                     </constraints>
@@ -87,14 +87,14 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cK-6g-VMR">
-                    <rect key="frame" x="123" y="236" width="129" height="27"/>
+                    <rect key="frame" x="123" y="310" width="129" height="27"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                     <state key="normal" title="FORGOT PASSWORD?">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igS-cC-na7">
-                    <rect key="frame" x="119" y="271" width="137" height="27"/>
+                    <rect key="frame" x="119" y="345" width="137" height="27"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                     <state key="normal" title="YET NOT REGISTERED?">
                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,19 +112,18 @@
                 <constraint firstItem="igS-cC-na7" firstAttribute="top" secondItem="4cK-6g-VMR" secondAttribute="bottom" constant="8" id="Jan-3V-MZ8"/>
                 <constraint firstItem="4cK-6g-VMR" firstAttribute="top" secondItem="ddf-Pp-1K4" secondAttribute="bottom" constant="8" id="TGy-3m-ebT"/>
                 <constraint firstItem="ddf-Pp-1K4" firstAttribute="width" secondItem="DAQ-It-CwY" secondAttribute="width" multiplier="0.6" id="TNq-wi-rPN"/>
-                <constraint firstItem="F1R-if-sEK" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="30" id="V3c-vv-BNy"/>
+                <constraint firstItem="F1R-if-sEK" firstAttribute="top" secondItem="Fud-aA-8u7" secondAttribute="top" constant="84" id="V3c-vv-BNy"/>
                 <constraint firstItem="ZS7-8w-ZFk" firstAttribute="trailing" secondItem="F1R-if-sEK" secondAttribute="trailing" id="VUa-d9-Zea"/>
                 <constraint firstItem="4cK-6g-VMR" firstAttribute="centerX" secondItem="ddf-Pp-1K4" secondAttribute="centerX" id="X0p-Xm-IBF"/>
-                <constraint firstItem="ZS7-8w-ZFk" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="ZeV-Um-4ze"/>
-                <constraint firstItem="F1R-if-sEK" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="ooz-fC-SRf"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="F1R-if-sEK" secondAttribute="trailing" constant="16" id="tLK-LQ-uOe"/>
+                <constraint firstItem="ZS7-8w-ZFk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="ZeV-Um-4ze"/>
+                <constraint firstItem="F1R-if-sEK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="ooz-fC-SRf"/>
+                <constraint firstAttribute="trailing" secondItem="F1R-if-sEK" secondAttribute="trailing" constant="16" id="tLK-LQ-uOe"/>
                 <constraint firstItem="ddf-Pp-1K4" firstAttribute="top" secondItem="DAQ-It-CwY" secondAttribute="bottom" constant="15" id="wUr-ZI-jet"/>
                 <constraint firstItem="DAQ-It-CwY" firstAttribute="top" secondItem="ZS7-8w-ZFk" secondAttribute="bottom" constant="8" id="xmI-qK-Xtr"/>
-                <constraint firstItem="DAQ-It-CwY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="16" id="yTF-Uf-SIo"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="DAQ-It-CwY" secondAttribute="trailing" constant="16" id="zrk-hN-yyX"/>
+                <constraint firstItem="DAQ-It-CwY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="yTF-Uf-SIo"/>
+                <constraint firstAttribute="trailing" secondItem="DAQ-It-CwY" secondAttribute="trailing" constant="16" id="zrk-hN-yyX"/>
             </constraints>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <viewLayoutGuide key="safeArea" id="Fud-aA-8u7"/>
             <point key="canvasLocation" x="24.5" y="52.5"/>
         </view>
     </objects>

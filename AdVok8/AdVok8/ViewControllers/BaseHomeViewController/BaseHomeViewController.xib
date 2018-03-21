@@ -142,7 +142,7 @@
                 <constraint firstItem="CQB-E4-Hzq" firstAttribute="trailing" secondItem="fXi-dS-ur6" secondAttribute="trailing" id="z6D-SC-82m"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="CQB-E4-Hzq"/>
-            <point key="canvasLocation" x="26.5" y="52.5"/>
+            <point key="canvasLocation" x="18" y="-10"/>
         </view>
     </objects>
     <resources>

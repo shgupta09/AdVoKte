@@ -21,7 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self.navigationController setNavigationBarHidden:NO animated:NO];
+   
+    
     [CommonFunction setNavToController:self title:@"Lawyer" isCrossBusston:false];
    
     // Do any additional setup after loading the view from its nib.
@@ -40,7 +41,7 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)backTapped{
-    [self.navigationController popViewControllerAnimated:true];
+    [self dismissViewControllerAnimated:true completion:nil];
     
 }
 

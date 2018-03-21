@@ -29,7 +29,7 @@
     CGFloat statusBarHeight = app.statusBarFrame.size.height;
     
     UIView *statusBarView =  [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, statusBarHeight)];
-    statusBarView.backgroundColor  =  [UIColor whiteColor];
+    statusBarView.backgroundColor  =  [CommonFunction colorWithHexString:Primary_Blue];
     return statusBarView;
 }
 
@@ -37,8 +37,25 @@
     //    title = [title capitalizedString];
     [viewController.view addSubview:[CommonFunction setStatusBarColor]];
     [viewController.navigationController setNavigationBarHidden:YES animated:NO];
-    UINavigationBar *newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44.0)];
+    
+    UINavigationBar *newNavBar;
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        
+        if(((int)[[UIScreen mainScreen] nativeBounds].size.height)==2436) {
+            if (@available(iOS 11.0, *)) {
+                newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 44, [UIScreen mainScreen].bounds.size.width, 44.0)];
+            } else {
+                // Fallback on earlier versions
+            }
+           
+        }else{
+             newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44.0)];
+        }
+    }
+//    newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44.0)];
     newNavBar.barTintColor = [CommonFunction colorWithHexString:Primary_Blue];
+    newNavBar.barTintColor = [UIColor grayColor];
+
     newNavBar.translucent = false;
     UINavigationItem *newItem = [[UINavigationItem alloc] init];
     UIImageView *backgroundView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44.0)];
@@ -63,9 +80,9 @@
     //                                    action:@selector(backTapped)];
     UIBarButtonItem *dashboard;
     if (IsCross){
-        dashboard = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"close"] style:UIBarButtonItemStylePlain target:viewController action:@selector(backTapped)];
+        dashboard = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"cross-1"] style:UIBarButtonItemStylePlain target:viewController action:@selector(backTapped)];
     }else{
-        dashboard = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"back"] style:UIBarButtonItemStylePlain target:viewController action:@selector(backTapped)];
+        dashboard = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"backButton"] style:UIBarButtonItemStylePlain target:viewController action:@selector(backTapped)];
     }
     
     dashboard.tintColor = [UIColor colorWithRed:233.0f/255.0f green:141.0f/255.0f blue:25.0f/255.0f alpha:1];

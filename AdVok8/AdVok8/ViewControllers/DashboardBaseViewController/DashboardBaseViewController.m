@@ -95,7 +95,8 @@
     
     if (indexPath.row == 0) {
         LawyersCategoryVC *lawyerVcOBJ = [[LawyersCategoryVC alloc]initWithNibName:@"LawyersCategoryVC" bundle:nil];
-        [self.navigationController pushViewController:lawyerVcOBJ animated:true];
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:lawyerVcOBJ];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
     }
     
     

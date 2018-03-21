@@ -20,16 +20,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.hidden = false;
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = [CommonFunction colorWithHexString:@"28328C"];
+   
     _txtUsername.text = @"9643965767";
     _txtPassword.text = @"Admin@123";
     
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cross-1"] style: UIBarButtonItemStyleBordered target:self action:@selector(backTapped)];
-    self.navigationItem.leftBarButtonItem = backButton;
     
-    [self.navigationController setTitle:@"Login"];
+    [CommonFunction setNavToController:self title:@"Login" isCrossBusston:false];
 
     // Do any additional setup after loading the view from its nib.
 }

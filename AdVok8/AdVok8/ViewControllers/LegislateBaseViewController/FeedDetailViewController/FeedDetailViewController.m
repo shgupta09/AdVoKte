@@ -27,15 +27,9 @@
 
     [self hitApiForPostDetail];
 
-    self.navigationController.navigationBar.hidden = false;
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.barTintColor = [CommonFunction colorWithHexString:@"28328C"];
-    
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"cross-1"] style: UIBarButtonItemStyleBordered target:self action:@selector(backTapped)];
-    self.navigationItem.leftBarButtonItem = backButton;
-    
-    [self.navigationController setTitle:@"Feed Detail"];
-    
+
+    [CommonFunction setNavToController:self title:@"Feed Detail" isCrossBusston:false];
+
     [_tblView registerNib:[UINib nibWithNibName:@"CommentTableViewCell" bundle:nil]forCellReuseIdentifier:@"CommentTableViewCell"];
     arrData = [[NSMutableArray alloc ] init];
     

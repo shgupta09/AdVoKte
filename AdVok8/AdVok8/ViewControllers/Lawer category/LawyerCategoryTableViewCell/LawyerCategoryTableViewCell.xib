@@ -21,13 +21,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vU0-mL-ryS">
-                        <rect key="frame" x="6" y="53" width="99" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="6" y="55" width="99" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="uSt-Tq-wZX">
-                        <rect key="frame" x="44.5" y="23" width="22" height="22"/>
+                        <rect key="frame" x="44.5" y="25" width="22" height="22"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="uSt-Tq-wZX" secondAttribute="height" multiplier="1:1" id="pcp-u7-nC4"/>
                         </constraints>
