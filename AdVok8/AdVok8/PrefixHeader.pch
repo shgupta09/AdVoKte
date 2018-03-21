@@ -50,10 +50,12 @@
 #import "PublishArticleViewController.h"
 #import "FeedDetailViewController.h"
 #import "JournalFeedsViewController.h"
+#import "NotificationListViewController.h"
 
 //TableCells
 #import "ProfileCell2.h"
 #import "JournalMainTableViewCell.h"
+#import "NotificationTableViewCell.h"
 
 //CustomClasses
 #import "LeftImageWithLabel.h"
@@ -65,6 +67,8 @@
 #import "Membership.h"
 #import "Rating.h"
 #import "WorkingExperience.h"
+#import "Notification.h"
+
 #endif /* PrefixHeader_pch */
 
 

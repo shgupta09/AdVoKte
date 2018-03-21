@@ -196,11 +196,9 @@
 
 #pragma mark - Cell button actions
 -(IBAction)btnLikeTapped:(id) sender {
-    UIButton* btnLike = sender;
-    int index = btnLike.tag%like_tag;
-    PostModel* data = [arrData objectAtIndex:index];
+    
     if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
-        [self hitApiToLikeAPostWithPostId:data.PostId andIndex: index];
+        [self hitApiToLikeAPostWithPostId:_postId andIndex: index];
         
     }
     else
@@ -210,21 +208,19 @@
         vc.Behaviour = @"Action";
         UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
         [self.navigationController presentViewController:navCon animated:true completion:nil];
-        exit(0);
+        
     }
     
 }
 -(IBAction) btnSaveTapped:(id) sender {
-    UIButton* btnLike = sender;
-    int index = btnLike.tag%like_tag;
-    PostModel* data = [arrData objectAtIndex:index];
+    
     if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
-        if ([data.LibStatus  isEqual: @"1"]) {
-            [self hitApiToSaveDeleteAPostWithPostId:data.PostId useractv:@"0" andIndex: index];
+        if ([postDetails.LibStatus  isEqual: @"1"]) {
+            [self hitApiToSaveDeleteAPostWithPostId:_postId useractv:@"0" andIndex: index];
         }
         else
         {
-            [self hitApiToSaveDeleteAPostWithPostId:data.PostId useractv:@"1" andIndex: index];
+            [self hitApiToSaveDeleteAPostWithPostId:_postId useractv:@"1" andIndex: index];
             
         }
         
@@ -236,7 +232,7 @@
         vc.Behaviour = @"Action";
         UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
         [self.navigationController presentViewController:navCon animated:true completion:nil];
-        exit(0);
+        
     }
     
 }

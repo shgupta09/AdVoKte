@@ -232,7 +232,7 @@
         vc.Behaviour = @"Action";
         UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
         [self.navigationController presentViewController:navCon animated:true completion:nil];
-        exit(0);
+        
     }
     
 }
@@ -258,7 +258,7 @@
         vc.Behaviour = @"Action";
         UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
         [self.navigationController presentViewController:navCon animated:true completion:nil];
-        exit(0);
+        
     }
     
 }

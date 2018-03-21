@@ -25,9 +25,8 @@
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backButton" translatesAutoresizingMaskIntoConstraints="NO" id="r9g-MS-wJ5">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="right_arrow_icon" translatesAutoresizingMaskIntoConstraints="NO" id="r9g-MS-wJ5">
                         <rect key="frame" x="284" y="12" width="20" height="20"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="Hwy-u3-6RJ"/>
                             <constraint firstAttribute="height" constant="20" id="mTi-qv-sHE"/>
@@ -60,6 +59,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="backButton" width="92" height="92"/>
+        <image name="right_arrow_icon" width="65" height="65"/>
     </resources>
 </document>

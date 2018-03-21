@@ -92,6 +92,11 @@
 		5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCBA0420381ABC002BFD4A /* DesignableButton.m */; };
 		5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCBA082038223B002BFD4A /* RegisterStep1ViewController.m */; };
 		5FCCBA0B2038223B002BFD4A /* RegisterStep1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCBA092038223B002BFD4A /* RegisterStep1ViewController.xib */; };
+		5FF9E2CB20617FE500467A0D /* NotificationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E2C920617FE500467A0D /* NotificationListViewController.m */; };
+		5FF9E2CC20617FE500467A0D /* NotificationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF9E2CA20617FE500467A0D /* NotificationListViewController.xib */; };
+		5FF9E2CF2061813500467A0D /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E2CE2061813500467A0D /* Notification.m */; };
+		5FF9E2D42061830B00467A0D /* NotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E2D22061830B00467A0D /* NotificationTableViewCell.m */; };
+		5FF9E2D52061830B00467A0D /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF9E2D32061830B00467A0D /* NotificationTableViewCell.xib */; };
 		9CE01023204FC363002A2E81 /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01021204FC363002A2E81 /* ProfileVC.m */; };
 		9CE01024204FC363002A2E81 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CE01022204FC363002A2E81 /* ProfileVC.xib */; };
 		9CE0102A204FC4C4002A2E81 /* ProfileCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01028204FC4C4002A2E81 /* ProfileCell2.m */; };
@@ -262,6 +267,14 @@
 		5FCCBA072038223B002BFD4A /* RegisterStep1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterStep1ViewController.h; sourceTree = "<group>"; };
 		5FCCBA082038223B002BFD4A /* RegisterStep1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterStep1ViewController.m; sourceTree = "<group>"; };
 		5FCCBA092038223B002BFD4A /* RegisterStep1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterStep1ViewController.xib; sourceTree = "<group>"; };
+		5FF9E2C820617FE500467A0D /* NotificationListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationListViewController.h; sourceTree = "<group>"; };
+		5FF9E2C920617FE500467A0D /* NotificationListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationListViewController.m; sourceTree = "<group>"; };
+		5FF9E2CA20617FE500467A0D /* NotificationListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationListViewController.xib; sourceTree = "<group>"; };
+		5FF9E2CD2061813500467A0D /* Notification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Notification.h; sourceTree = "<group>"; };
+		5FF9E2CE2061813500467A0D /* Notification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Notification.m; sourceTree = "<group>"; };
+		5FF9E2D12061830B00467A0D /* NotificationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationTableViewCell.h; sourceTree = "<group>"; };
+		5FF9E2D22061830B00467A0D /* NotificationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationTableViewCell.m; sourceTree = "<group>"; };
+		5FF9E2D32061830B00467A0D /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		7CD644F639A1CDED1AD2871C /* Pods-AdVok8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8.release.xcconfig"; sourceTree = "<group>"; };
 		7E476A4A368847FBC004F191 /* libPods-AdVok8.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdVok8.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE01020204FC363002A2E81 /* ProfileVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
@@ -624,6 +637,8 @@
 				9CF77D03205F86BC00366505 /* Membership.m */,
 				9CF77D08205F87B900366505 /* AdvocatePublicData.h */,
 				9CF77D09205F87B900366505 /* AdvocatePublicData.m */,
+				5FF9E2CD2061813500467A0D /* Notification.h */,
+				5FF9E2CE2061813500467A0D /* Notification.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -638,6 +653,7 @@
 		5F70AC2B202B14EB007E69A5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5FF9E2C720617FCC00467A0D /* NotificationListViewController */,
 				9CE0101F204FB2A3002A2E81 /* ProfileVC */,
 				5FC11CFC203700EC002030BD /* RegisterModule */,
 				5F1B9C65203461EE009503E7 /* LoginViewController */,
@@ -865,6 +881,27 @@
 			path = RegisterStep1ViewController;
 			sourceTree = "<group>";
 		};
+		5FF9E2C720617FCC00467A0D /* NotificationListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5FF9E2D0206182F400467A0D /* NotificationTableViewCell */,
+				5FF9E2C820617FE500467A0D /* NotificationListViewController.h */,
+				5FF9E2C920617FE500467A0D /* NotificationListViewController.m */,
+				5FF9E2CA20617FE500467A0D /* NotificationListViewController.xib */,
+			);
+			path = NotificationListViewController;
+			sourceTree = "<group>";
+		};
+		5FF9E2D0206182F400467A0D /* NotificationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5FF9E2D12061830B00467A0D /* NotificationTableViewCell.h */,
+				5FF9E2D22061830B00467A0D /* NotificationTableViewCell.m */,
+				5FF9E2D32061830B00467A0D /* NotificationTableViewCell.xib */,
+			);
+			path = NotificationTableViewCell;
+			sourceTree = "<group>";
+		};
 		9CE0101F204FB2A3002A2E81 /* ProfileVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1014,9 +1051,11 @@
 				5F1B9C6A203461FE009503E7 /* LoginViewController.xib in Resources */,
 				5F70AC36202B1653007E69A5 /* BaseHomeViewController.xib in Resources */,
 				5F71B698204E5BE3004229DF /* CommentTableViewCell.xib in Resources */,
+				5FF9E2D52061830B00467A0D /* NotificationTableViewCell.xib in Resources */,
 				5FBD2B3C20595C4700D9C10B /* FeedDetailViewController.xib in Resources */,
 				5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */,
 				5F71B692204D5E7F004229DF /* CommentViewController.xib in Resources */,
+				5FF9E2CC20617FE500467A0D /* NotificationListViewController.xib in Resources */,
 				5F71B6BD204E8E87004229DF /* ProfileCell.xib in Resources */,
 				5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */,
 				5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */,
@@ -1157,6 +1196,7 @@
 				D8F44CA5205EA16400B80FCD /* UILabel+Boldify.m in Sources */,
 				5FBD2B3B20595C4700D9C10B /* FeedDetailViewController.m in Sources */,
 				5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */,
+				5FF9E2D42061830B00467A0D /* NotificationTableViewCell.m in Sources */,
 				5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */,
 				5F70AC41202B1688007E69A5 /* RearCell.m in Sources */,
 				5F3645E1205F7EF70041E88C /* DocumentModel.m in Sources */,
@@ -1165,6 +1205,7 @@
 				5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */,
 				5F71B6BC204E8E87004229DF /* ProfileCell.m in Sources */,
 				5F71B6BE204E8E87004229DF /* SelectedLawyerVC.m in Sources */,
+				5FF9E2CB20617FE500467A0D /* NotificationListViewController.m in Sources */,
 				5F1B9C572034411C009503E7 /* FeedMainTableViewCell.m in Sources */,
 				5F71B6C5204E8ED1004229DF /* ButtonWithImage.m in Sources */,
 				9CF77D14205FD1EF00366505 /* FeedbackVC.m in Sources */,
@@ -1191,6 +1232,7 @@
 				5F1B9C702035687F009503E7 /* LoginModel.m in Sources */,
 				5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */,
 				5F1B9C6D20356753009503E7 /* ADRegistrationModel.m in Sources */,
+				5FF9E2CF2061813500467A0D /* Notification.m in Sources */,
 				5F70AC2C202B14EB007E69A5 /* CommonFunction.m in Sources */,
 				9CF77CFE205F861600366505 /* Education.m in Sources */,
 				5F70AC2F202B14EB007E69A5 /* Reachability.m in Sources */,

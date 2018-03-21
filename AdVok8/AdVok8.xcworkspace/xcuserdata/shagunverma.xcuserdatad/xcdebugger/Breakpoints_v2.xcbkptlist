@@ -9,13 +9,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/LoginViewController/LoginViewController.m"
-            timestampString = "543232401.170189"
+            filePath = "AdVok8/ViewControllers/NotificationListViewController/NotificationListViewController.m"
+            timestampString = "543264779.221789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "-hitApiToLogin"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "-hitApiForAllNotifications"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[NotificationListViewController hitApiForAllNotifications]"
+                  moduleName = "AdVok8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shagunverma/Work/My%20Projects/Freelance%20Work/GitHub/AdVoKte/AdVok8/AdVok8/ViewControllers/NotificationListViewController/NotificationListViewController.m"
+                  timestampString = "543264779.2412241"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "106"
+                  endingLineNumber = "106"
+                  offsetFromSymbolStart = "289">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__59-[NotificationListViewController hitApiForAllNotifications]_block_invoke"
+                  moduleName = "AdVok8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shagunverma/Work/My%20Projects/Freelance%20Work/GitHub/AdVoKte/AdVok8/AdVok8/ViewControllers/NotificationListViewController/NotificationListViewController.m"
+                  timestampString = "543264779.248549"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "107"
+                  endingLineNumber = "107"
+                  offsetFromSymbolStart = "213">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdVok8/ViewControllers/NotificationListViewController/NotificationListViewController.m"
+            timestampString = "543264779.223404"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "-hitApiForAllNotifications"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,12 +73,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/LegislateBaseViewController/FeedDetailViewController/FeedDetailViewController.h"
-            timestampString = "543243410.317283"
+            filePath = "AdVok8/ViewControllers/NotificationListViewController/NotificationListViewController.m"
+            timestampString = "543264779.22382"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24">
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "-hitApiForAllNotifications"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

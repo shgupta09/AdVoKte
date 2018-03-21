@@ -116,7 +116,12 @@
             break;
         case 2:
         {
+            NotificationListViewController* vc ;
             
+            vc = [[NotificationListViewController alloc] initWithNibName:@"NotificationListViewController" bundle:nil];
+            UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+            
+            [self.navigationController presentViewController:navCon animated:true completion:nil];
         }
             break;
         case 3:

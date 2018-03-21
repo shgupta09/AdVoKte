@@ -164,13 +164,27 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    FeedDetailViewController* vc ;
-    vc = [[FeedDetailViewController alloc] initWithNibName:@"FeedDetailViewController" bundle:nil];
-    PostModel* data = [arrData objectAtIndex:indexPath.row];
-    vc.postId = data.PostId;
-    UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
-    [self.navigationController presentViewController:navCon animated:true completion:nil];
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
 
+        FeedDetailViewController* vc ;
+        vc = [[FeedDetailViewController alloc] initWithNibName:@"FeedDetailViewController" bundle:nil];
+        PostModel* data = [arrData objectAtIndex:indexPath.row];
+        vc.postId = data.PostId;
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+
+    }
+    else
+    {
+        LoginViewController* vc ;
+        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        vc.Behaviour = @"Action";
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+        
+    }
+    
+   
 }
 
 #pragma mark - tap gesture
@@ -221,7 +235,7 @@
         vc.Behaviour = @"Action";
         UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
         [self.navigationController presentViewController:navCon animated:true completion:nil];
-        exit(0);
+        
     }
     
 }
@@ -247,7 +261,7 @@
         vc.Behaviour = @"Action";
         UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
         [self.navigationController presentViewController:navCon animated:true completion:nil];
-        exit(0);
+        
     }
     
 }

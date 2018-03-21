@@ -13,6 +13,7 @@
     UIImagePickerController * picker;
     UIImagePickerControllerSourceType *sourceType;
     UIImage *capturedImage;
+    NSString* imageURL;
 }
 @end
 
@@ -30,6 +31,7 @@
     }
     picker = [[UIImagePickerController alloc] init];
     
+    imageURL = @"";
     //    title = [title capitalizedString];
     [self.view addSubview:[CommonFunction setStatusBarColor]];
    
@@ -291,17 +293,16 @@
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
     [dictRequest setValue:@"0" forKey:@"DocId"];
-    [dictRequest setValue:@"0" forKey:@"AppointId"];
-    [dictRequest setValue:@"0" forKey:@"CaseId"];
+
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UploadedById"];
     [dictRequest setValue:@"" forKey:@"AttachmentName"];
-    [dictRequest setValue:timestampString forKey:@"viewFilename"];
+    [dictRequest setValue:[NSString stringWithFormat:@"%s.png","timestampString"] forKey:@"viewFilename"];
     [dictRequest setValue:base64String forKey:@"AttachmentPath"];
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
     [dictRequest setValue:@"png" forKey:@"cty"];
-    [dictRequest setValue:@"userpic" forKey:@"DocumentType"];
+    [dictRequest setValue:@"" forKey:@"DocumentType"];
     [dictRequest setValue:false forKey:@"editable"];
-    [dictRequest setValue:[NSString stringWithFormat:@"%d",[imagedata length]] forKey:@"fileSize"];
+    [dictRequest setValue:[NSString stringWithFormat:@"%lu",(unsigned long)[imagedata length]] forKey:@"fileSize"];
 
     //    [dictRequest setValue:postId forKey:@"PostId"];
     [parameter setValue:dictRequest forKey:@"_dm"];
@@ -316,6 +317,7 @@
                 NSNumber* st = [json valueForKey:@"Status"];
                 int status = [st intValue];
                 if ( status == 1){
+                    imageURL = [json valueForKey:@"URL"];
                     [_imgViewPost setImage:capturedImage];
 
                 }
@@ -336,7 +338,7 @@
     [dictRequest setValue:@"Post" forKey:@"posttype"];
     [dictRequest setValue:@"" forKey:@"postsubtype"];
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
-    [dictRequest setValue:@"" forKey:@"PostPic"];
+    [dictRequest setValue:imageURL forKey:@"PostPic"];
 
 //    [dictRequest setValue:postId forKey:@"PostId"];
     [parameter setValue:dictRequest forKey:@"_post"];

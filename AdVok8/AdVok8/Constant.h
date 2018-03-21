@@ -30,6 +30,7 @@ static NSString* const API_GET_OTP = @"generateOTP";
 static NSString* const API_REGISTER_USER = @"postAdvocateDetailsSignUp";
 static NSString* const API_LOGIN = @"GetLogin";
 static NSString* const API_PUT_COMMENT = @"put_Comment";
+static NSString* const API_GET_ALL_NOTIFICATIONS = @"get_NotificationUser";
 
 
 
