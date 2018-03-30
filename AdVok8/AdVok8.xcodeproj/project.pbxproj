@@ -103,6 +103,8 @@
 		9C70B26C206E0F4200850305 /* CaseListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C70B26A206E0F4200850305 /* CaseListVC.xib */; };
 		9C70B270206E0F5600850305 /* DailyCauseListVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C70B26E206E0F5600850305 /* DailyCauseListVc.m */; };
 		9C70B271206E0F5600850305 /* DailyCauseListVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C70B26F206E0F5600850305 /* DailyCauseListVc.xib */; };
+		9C70B276206E32CA00850305 /* CaseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C70B274206E32CA00850305 /* CaseListCell.m */; };
+		9C70B277206E32CA00850305 /* CaseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C70B275206E32CA00850305 /* CaseListCell.xib */; };
 		9CE01023204FC363002A2E81 /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01021204FC363002A2E81 /* ProfileVC.m */; };
 		9CE01024204FC363002A2E81 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CE01022204FC363002A2E81 /* ProfileVC.xib */; };
 		9CE0102A204FC4C4002A2E81 /* ProfileCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01028204FC4C4002A2E81 /* ProfileCell2.m */; };
@@ -292,6 +294,9 @@
 		9C70B26D206E0F5600850305 /* DailyCauseListVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyCauseListVc.h; sourceTree = "<group>"; };
 		9C70B26E206E0F5600850305 /* DailyCauseListVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyCauseListVc.m; sourceTree = "<group>"; };
 		9C70B26F206E0F5600850305 /* DailyCauseListVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCauseListVc.xib; sourceTree = "<group>"; };
+		9C70B273206E32CA00850305 /* CaseListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaseListCell.h; sourceTree = "<group>"; };
+		9C70B274206E32CA00850305 /* CaseListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseListCell.m; sourceTree = "<group>"; };
+		9C70B275206E32CA00850305 /* CaseListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaseListCell.xib; sourceTree = "<group>"; };
 		9CE01020204FC363002A2E81 /* ProfileVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
 		9CE01021204FC363002A2E81 /* ProfileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
 		9CE01022204FC363002A2E81 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
@@ -1061,6 +1066,7 @@
 		9C70B266206E0F0800850305 /* CaseList */ = {
 			isa = PBXGroup;
 			children = (
+				9C70B272206E32B200850305 /* CaseListCell */,
 				9C70B268206E0F4200850305 /* CaseListVC.h */,
 				9C70B269206E0F4200850305 /* CaseListVC.m */,
 				9C70B26A206E0F4200850305 /* CaseListVC.xib */,
@@ -1076,6 +1082,16 @@
 				9C70B26F206E0F5600850305 /* DailyCauseListVc.xib */,
 			);
 			path = DailyCauseList;
+			sourceTree = "<group>";
+		};
+		9C70B272206E32B200850305 /* CaseListCell */ = {
+			isa = PBXGroup;
+			children = (
+				9C70B273206E32CA00850305 /* CaseListCell.h */,
+				9C70B274206E32CA00850305 /* CaseListCell.m */,
+				9C70B275206E32CA00850305 /* CaseListCell.xib */,
+			);
+			path = CaseListCell;
 			sourceTree = "<group>";
 		};
 		9CE0101F204FB2A3002A2E81 /* ProfileVC */ = {
@@ -1240,6 +1256,7 @@
 				9C70B265206E011700850305 /* CauseBaseVC.xib in Resources */,
 				9C70B26C206E0F4200850305 /* CaseListVC.xib in Resources */,
 				5F71B6D4204F9934004229DF /* CreatePostViewController.xib in Resources */,
+				9C70B277206E32CA00850305 /* CaseListCell.xib in Resources */,
 				9CF77D15205FD1EF00366505 /* FeedbackVC.xib in Resources */,
 				5F1B9C3D203437F8009503E7 /* PostViewController.xib in Resources */,
 				5F1B9C422034381C009503E7 /* JournalViewController.xib in Resources */,
@@ -1388,6 +1405,7 @@
 				5F1B9C572034411C009503E7 /* FeedMainTableViewCell.m in Sources */,
 				5F71B6C5204E8ED1004229DF /* ButtonWithImage.m in Sources */,
 				9CF77D14205FD1EF00366505 /* FeedbackVC.m in Sources */,
+				9C70B276206E32CA00850305 /* CaseListCell.m in Sources */,
 				5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */,
 				9C70B26B206E0F4200850305 /* CaseListVC.m in Sources */,
 				9C70B264206E011700850305 /* CauseBaseVC.m in Sources */,

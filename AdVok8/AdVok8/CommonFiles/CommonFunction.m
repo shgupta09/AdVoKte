@@ -235,10 +235,8 @@
 +(BOOL)reachability
 {
     Reachability  *internetReachable = [Reachability reachabilityForInternetConnection:true];
-    
     // Internet is reachable
-    if([internetReachable currentReachabilityStatus])
-    {
+    if([internetReachable currentReachabilityStatus]){
         return YES;
     }
     else
@@ -247,10 +245,10 @@
     }
     return NO;
 }
+
 +(BOOL)reachabilityForIPV6
 {
     Reachability  *internetReachable = [Reachability reachabilityForInternetConnection:false];
-    
     // Internet is reachable
     if([internetReachable currentReachabilityStatus])
     {
@@ -280,14 +278,11 @@
 }
 
 +(id)checkForNull:(id)tel{
-    if(tel==(id) [NSNull null] || [tel length]==0 || [tel isEqualToString:@""])
-    {
+    if(tel==(id) [NSNull null]  || [tel isEqualToString:@""]){
         return @"";
     }
-    else
-    {
+    else{
         return tel;
-        
     }
     
 }
@@ -330,9 +325,7 @@
 
 +(NSDate *)convertStringToDate:(NSString *)dtrDate{
     
-    
     NSString* substring = @"Dec 5 2012 12:08 PM";
-    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     [dateFormatter setDateFormat:@"MMM d yyyy h:mm a"]; // not 'p' but 'a'
@@ -341,7 +334,7 @@
 }
 
 +(void) setViewBackground:(UIView*) view withImage:(UIImage*) background {
-//    
+   
     view.backgroundColor = [UIColor whiteColor];
     UIGraphicsBeginImageContext(view.frame.size);
     [background drawInRect:view.bounds];
@@ -366,11 +359,6 @@
 }
 
 
-
-
-
-
-
 +(void)addNoDataLabel:(UIView*)view{
 
     UILabel *lbl = [UILabel new];
@@ -392,10 +380,8 @@
     return str;
 }
 
-+(NSURL*) getProfilePicURLString:(NSString*) userName
-{
++(NSURL*) getProfilePicURLString:(NSString*) userName{
     NSString* str = [NSString stringWithFormat:@"https://s3-ap-southeast-2.amazonaws.com/advok8/%@/ProfilePic",userName];
-    
     return [NSURL URLWithString:str];
 }
 
@@ -404,6 +390,17 @@
         return true;
     }
     return false;
+}
+
++(void)setShadowOpacity:(UIView *)view{
+    view.layer.shadowColor = [UIColor blackColor].CGColor;
+    view.layer.shadowOffset = CGSizeMake( 0, 0);
+    view.layer.shadowOpacity = 0.4;
+    view.layer.shadowRadius = 4.0;
+}
+
++(void)setCornerRadius:(UIView *)view Radius:(CGFloat)radius{
+    view.layer.cornerRadius = radius;
 }
 
 @end

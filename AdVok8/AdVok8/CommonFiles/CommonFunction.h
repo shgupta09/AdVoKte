@@ -48,4 +48,6 @@
 
 +(NSURL*) getProfilePicURLString:(NSString*) userName;
 +(BOOL)isadvoK8;
++(void)setShadowOpacity:(UIView *)view;
++(void)setCornerRadius:(UIView *)view Radius:(CGFloat)radius;
 @end

@@ -44,20 +44,21 @@
     secondView.view.frame = _view_Container_Second.bounds;
     [_view_Container_Second addSubview:secondView.view];
     [secondView didMoveToParentViewController:self];
+    _view_Container_Second.hidden = true;
 }
 
 #pragma mark- Btn Actions
 
 - (IBAction)btnAction_First:(id)sender {
-    _view_Container_First.hidden = true;
-    _view_Container_Second.hidden = false;
+    _view_Container_First.hidden = false;
+    _view_Container_Second.hidden = true;
     _view_SecondSelection.hidden = true;
     _view_FirstSelection.hidden = false;
 }
 
 - (IBAction)btnAction_Second:(id)sender {
-    _view_Container_First.hidden = false;
-    _view_Container_Second.hidden = true;
+    _view_Container_First.hidden = true;
+    _view_Container_Second.hidden = false;
     _view_SecondSelection.hidden = false;
     _view_FirstSelection.hidden = true;
 }

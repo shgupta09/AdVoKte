@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CaseListVC : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface CaseListVC : UIViewController<UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *traillinfConstraint;
+@property (weak, nonatomic) IBOutlet UIButton *btn_CancelSearch;
+@property (weak, nonatomic) IBOutlet UITextField *txt_Search;
 
 @end

@@ -60,10 +60,11 @@
     ADRegistrationModel* obj = [ADRegistrationModel new];
     obj = [arrData objectAtIndex:indexPath.row];
     cell.lblName.text = [NSString stringWithFormat:@"%@ %@",obj.fname,obj.lname];
-    cell.view.layer.shadowColor = [UIColor blackColor].CGColor;
-    cell.view.layer.shadowOffset = CGSizeMake( 0, 0);
-    cell.view.layer.shadowOpacity = 0.4;
-    cell.view.layer.shadowRadius = 4.0;
+//    cell.view.layer.shadowColor = [UIColor blackColor].CGColor;
+//    cell.view.layer.shadowOffset = CGSizeMake( 0, 0);
+//    cell.view.layer.shadowOpacity = 0.4;
+//    cell.view.layer.shadowRadius = 4.0;
+    [CommonFunction setShadowOpacity:cell.view];
     [cell.lblEducation setText:[CommonFunction checkEmptyString:obj.Education]];
     [cell.lblExperience setText:[CommonFunction checkEmptyString:[NSString stringWithFormat:@"%@ Experience",obj.Experience]]];
     [cell.lblSepcialization setText:[CommonFunction checkEmptyString:[NSString stringWithFormat:@"spcialisation: %@",obj.AOP]]];
