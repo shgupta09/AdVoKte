@@ -399,5 +399,11 @@
     return [NSURL URLWithString:str];
 }
 
++(BOOL)isadvoK8{
+    if ([[CommonFunction getValueFromDefaultWithKey:@"loginUsertype"]  isEqual:  @"advocate"]&&[CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        return true;
+    }
+    return false;
+}
 
 @end

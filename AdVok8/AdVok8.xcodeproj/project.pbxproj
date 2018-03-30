@@ -97,6 +97,12 @@
 		5FF9E2CF2061813500467A0D /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E2CE2061813500467A0D /* Notification.m */; };
 		5FF9E2D42061830B00467A0D /* NotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E2D22061830B00467A0D /* NotificationTableViewCell.m */; };
 		5FF9E2D52061830B00467A0D /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF9E2D32061830B00467A0D /* NotificationTableViewCell.xib */; };
+		9C70B264206E011700850305 /* CauseBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C70B262206E011700850305 /* CauseBaseVC.m */; };
+		9C70B265206E011700850305 /* CauseBaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C70B263206E011700850305 /* CauseBaseVC.xib */; };
+		9C70B26B206E0F4200850305 /* CaseListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C70B269206E0F4200850305 /* CaseListVC.m */; };
+		9C70B26C206E0F4200850305 /* CaseListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C70B26A206E0F4200850305 /* CaseListVC.xib */; };
+		9C70B270206E0F5600850305 /* DailyCauseListVc.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C70B26E206E0F5600850305 /* DailyCauseListVc.m */; };
+		9C70B271206E0F5600850305 /* DailyCauseListVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C70B26F206E0F5600850305 /* DailyCauseListVc.xib */; };
 		9CE01023204FC363002A2E81 /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01021204FC363002A2E81 /* ProfileVC.m */; };
 		9CE01024204FC363002A2E81 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CE01022204FC363002A2E81 /* ProfileVC.xib */; };
 		9CE0102A204FC4C4002A2E81 /* ProfileCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01028204FC4C4002A2E81 /* ProfileCell2.m */; };
@@ -277,6 +283,15 @@
 		5FF9E2D32061830B00467A0D /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		7CD644F639A1CDED1AD2871C /* Pods-AdVok8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8.release.xcconfig"; sourceTree = "<group>"; };
 		7E476A4A368847FBC004F191 /* libPods-AdVok8.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdVok8.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C70B261206E011700850305 /* CauseBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CauseBaseVC.h; sourceTree = "<group>"; };
+		9C70B262206E011700850305 /* CauseBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CauseBaseVC.m; sourceTree = "<group>"; };
+		9C70B263206E011700850305 /* CauseBaseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CauseBaseVC.xib; sourceTree = "<group>"; };
+		9C70B268206E0F4200850305 /* CaseListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaseListVC.h; sourceTree = "<group>"; };
+		9C70B269206E0F4200850305 /* CaseListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseListVC.m; sourceTree = "<group>"; };
+		9C70B26A206E0F4200850305 /* CaseListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaseListVC.xib; sourceTree = "<group>"; };
+		9C70B26D206E0F5600850305 /* DailyCauseListVc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyCauseListVc.h; sourceTree = "<group>"; };
+		9C70B26E206E0F5600850305 /* DailyCauseListVc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyCauseListVc.m; sourceTree = "<group>"; };
+		9C70B26F206E0F5600850305 /* DailyCauseListVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCauseListVc.xib; sourceTree = "<group>"; };
 		9CE01020204FC363002A2E81 /* ProfileVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
 		9CE01021204FC363002A2E81 /* ProfileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
 		9CE01022204FC363002A2E81 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
@@ -653,6 +668,7 @@
 		5F70AC2B202B14EB007E69A5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9C70B250206E00D700850305 /* Advok8_VC */,
 				5FF9E2C720617FCC00467A0D /* NotificationListViewController */,
 				9CE0101F204FB2A3002A2E81 /* ProfileVC */,
 				5FC11CFC203700EC002030BD /* RegisterModule */,
@@ -902,6 +918,166 @@
 			path = NotificationTableViewCell;
 			sourceTree = "<group>";
 		};
+		9C70B250206E00D700850305 /* Advok8_VC */ = {
+			isa = PBXGroup;
+			children = (
+				9C70B251206E00D700850305 /* Appeal Alert */,
+				9C70B253206E00D700850305 /* Appointment */,
+				9C70B256206E00D700850305 /* Calender */,
+				9C70B258206E00D700850305 /* CauseList */,
+				9C70B25D206E00D700850305 /* Task */,
+			);
+			path = Advok8_VC;
+			sourceTree = "<group>";
+		};
+		9C70B251206E00D700850305 /* Appeal Alert */ = {
+			isa = PBXGroup;
+			children = (
+				9C70B252206E00D700850305 /* New Appeal  */,
+			);
+			path = "Appeal Alert";
+			sourceTree = "<group>";
+		};
+		9C70B252206E00D700850305 /* New Appeal  */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Appeal ";
+			sourceTree = "<group>";
+		};
+		9C70B253206E00D700850305 /* Appointment */ = {
+			isa = PBXGroup;
+			children = (
+				9C70B254206E00D700850305 /* Detail Appoinment */,
+				9C70B255206E00D700850305 /* Update Appoinment */,
+			);
+			path = Appointment;
+			sourceTree = "<group>";
+		};
+		9C70B254206E00D700850305 /* Detail Appoinment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Detail Appoinment";
+			sourceTree = "<group>";
+		};
+		9C70B255206E00D700850305 /* Update Appoinment */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Update Appoinment";
+			sourceTree = "<group>";
+		};
+		9C70B256206E00D700850305 /* Calender */ = {
+			isa = PBXGroup;
+			children = (
+				9C70B257206E00D700850305 /* Create Task */,
+			);
+			path = Calender;
+			sourceTree = "<group>";
+		};
+		9C70B257206E00D700850305 /* Create Task */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Create Task";
+			sourceTree = "<group>";
+		};
+		9C70B258206E00D700850305 /* CauseList */ = {
+			isa = PBXGroup;
+			children = (
+				9C70B260206E010100850305 /* BaseVC */,
+				9C70B259206E00D700850305 /* CaseList */,
+				9C70B25C206E00D700850305 /* DailyCauseList */,
+			);
+			path = CauseList;
+			sourceTree = "<group>";
+		};
+		9C70B259206E00D700850305 /* CaseList */ = {
+			isa = PBXGroup;
+			children = (
+				9C70B266206E0F0800850305 /* CaseList */,
+				9C70B25A206E00D700850305 /* Case Detail */,
+				9C70B25B206E00D700850305 /* New Case */,
+			);
+			path = CaseList;
+			sourceTree = "<group>";
+		};
+		9C70B25A206E00D700850305 /* Case Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Case Detail";
+			sourceTree = "<group>";
+		};
+		9C70B25B206E00D700850305 /* New Case */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Case";
+			sourceTree = "<group>";
+		};
+		9C70B25C206E00D700850305 /* DailyCauseList */ = {
+			isa = PBXGroup;
+			children = (
+				9C70B267206E0F2E00850305 /* DailyCauseList */,
+			);
+			path = DailyCauseList;
+			sourceTree = "<group>";
+		};
+		9C70B25D206E00D700850305 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				9C70B25E206E00D700850305 /* Detail Task */,
+				9C70B25F206E00D700850305 /* New Task */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		9C70B25E206E00D700850305 /* Detail Task */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Detail Task";
+			sourceTree = "<group>";
+		};
+		9C70B25F206E00D700850305 /* New Task */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Task";
+			sourceTree = "<group>";
+		};
+		9C70B260206E010100850305 /* BaseVC */ = {
+			isa = PBXGroup;
+			children = (
+				9C70B261206E011700850305 /* CauseBaseVC.h */,
+				9C70B262206E011700850305 /* CauseBaseVC.m */,
+				9C70B263206E011700850305 /* CauseBaseVC.xib */,
+			);
+			path = BaseVC;
+			sourceTree = "<group>";
+		};
+		9C70B266206E0F0800850305 /* CaseList */ = {
+			isa = PBXGroup;
+			children = (
+				9C70B268206E0F4200850305 /* CaseListVC.h */,
+				9C70B269206E0F4200850305 /* CaseListVC.m */,
+				9C70B26A206E0F4200850305 /* CaseListVC.xib */,
+			);
+			path = CaseList;
+			sourceTree = "<group>";
+		};
+		9C70B267206E0F2E00850305 /* DailyCauseList */ = {
+			isa = PBXGroup;
+			children = (
+				9C70B26D206E0F5600850305 /* DailyCauseListVc.h */,
+				9C70B26E206E0F5600850305 /* DailyCauseListVc.m */,
+				9C70B26F206E0F5600850305 /* DailyCauseListVc.xib */,
+			);
+			path = DailyCauseList;
+			sourceTree = "<group>";
+		};
 		9CE0101F204FB2A3002A2E81 /* ProfileVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1041,6 +1217,7 @@
 				5F71B6BF204E8E87004229DF /* SelectedLawyerVC.xib in Resources */,
 				5F71B6BB204E8E87004229DF /* LabelCell.xib in Resources */,
 				9CE01024204FC363002A2E81 /* ProfileVC.xib in Resources */,
+				9C70B271206E0F5600850305 /* DailyCauseListVc.xib in Resources */,
 				5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */,
 				5F70AC44202B1689007E69A5 /* RearViewController.xib in Resources */,
 				5F70AC2E202B14EB007E69A5 /* LoderView.xib in Resources */,
@@ -1060,6 +1237,8 @@
 				5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */,
 				5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */,
 				5F71B6DA204FC4FD004229DF /* PublishArticleViewController.xib in Resources */,
+				9C70B265206E011700850305 /* CauseBaseVC.xib in Resources */,
+				9C70B26C206E0F4200850305 /* CaseListVC.xib in Resources */,
 				5F71B6D4204F9934004229DF /* CreatePostViewController.xib in Resources */,
 				9CF77D15205FD1EF00366505 /* FeedbackVC.xib in Resources */,
 				5F1B9C3D203437F8009503E7 /* PostViewController.xib in Resources */,
@@ -1210,6 +1389,8 @@
 				5F71B6C5204E8ED1004229DF /* ButtonWithImage.m in Sources */,
 				9CF77D14205FD1EF00366505 /* FeedbackVC.m in Sources */,
 				5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */,
+				9C70B26B206E0F4200850305 /* CaseListVC.m in Sources */,
+				9C70B264206E011700850305 /* CauseBaseVC.m in Sources */,
 				5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */,
 				5F71B6D3204F9934004229DF /* CreatePostViewController.m in Sources */,
 				9CF77D0A205F87B900366505 /* AdvocatePublicData.m in Sources */,
@@ -1219,6 +1400,7 @@
 				5F71B6C8204E91C5004229DF /* Specialization.m in Sources */,
 				5F70AC00202B1250007E69A5 /* AdVok8.xcdatamodeld in Sources */,
 				9CF77D04205F86BC00366505 /* Membership.m in Sources */,
+				9C70B270206E0F5600850305 /* DailyCauseListVc.m in Sources */,
 				5F71B6AA204E8E76004229DF /* LawyerListVC.m in Sources */,
 				5F1B9C862036B0C2009503E7 /* PostModel.m in Sources */,
 				5F1B9C33203415B9009503E7 /* DashboardHomeCollectionViewCell.m in Sources */,

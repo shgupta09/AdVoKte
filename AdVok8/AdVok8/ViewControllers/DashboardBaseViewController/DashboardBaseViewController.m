@@ -7,7 +7,7 @@
 //
 
 #import "DashboardBaseViewController.h"
-
+#import "CauseBaseVC.h"
 @interface DashboardBaseViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 {
     NSArray* arrOptions;
@@ -19,14 +19,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
-    
-    
     [_collectionView registerNib:[UINib nibWithNibName:@"DashboardHomeCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"DashboardHomeCollectionViewCell"];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveNotification:)
+                                                 name:@"RefreshViews"
+                                               object:nil];
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    if ([CommonFunction getValueFromDefaultWithKey:@"loginUsertype"] && [[CommonFunction getValueFromDefaultWithKey:@"loginUsertype"]  isEqual:  @"advocate"]){
+-(void)setData{
+    if ([CommonFunction isadvoK8]){
         arrImages = [[NSArray alloc] initWithObjects:@"CaseTracking.png",@"CaseTracking.png",@"CaseTracking.png",@"Appointment-1.png",@"Me.png",@"CaseTracking.png",@"CaseTracking.png",@"CaseTracking.png", nil];
         arrOptions = [[NSArray alloc] initWithObjects:@"Cause List",@"Calendar",@"Task",@"Appointment",@"Me",@"My Activity",@"Display Board",@"Appeal Alert", nil];
     }
@@ -35,8 +36,24 @@
         arrImages = [[NSArray alloc] initWithObjects:@"find_lawyers_icon",@"case_tracking_icon",@"task_icon",@"appointment_icon",@"Me.png", nil];
         arrOptions = [[NSArray alloc] initWithObjects:@"Find Lawyers",@"Case Treacking",@"My Activity",@"Appointment",@"Me", nil];
     }
-
+    [_collectionView reloadData];
 }
+#pragma mark - Notification
+
+
+-(void)receiveNotification:(NSNotification*) notification{
+    
+    if ([notification.name  isEqual: @"RefreshViews"]) {
+        [self setData];
+    }
+    
+    
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [self setData];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -92,14 +109,31 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    if (indexPath.row == 0) {
-        LawyersCategoryVC *lawyerVcOBJ = [[LawyersCategoryVC alloc]initWithNibName:@"LawyersCategoryVC" bundle:nil];
-        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:lawyerVcOBJ];
-        [self.navigationController presentViewController:navCon animated:true completion:nil];
+    if ([CommonFunction isadvoK8]){
+        switch (indexPath.row) {
+            case 0:{
+                CauseBaseVC *causeOBJ = [[CauseBaseVC alloc]initWithNibName:@"CauseBaseVC" bundle:nil];
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:causeOBJ];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }else{
+        switch (indexPath.row) {
+            case 0:{
+                LawyersCategoryVC *lawyerVcOBJ = [[LawyersCategoryVC alloc]initWithNibName:@"LawyersCategoryVC" bundle:nil];
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:lawyerVcOBJ];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
+                break;
+                
+            default:
+                break;
+        }
     }
-    
-    
 }
 
 

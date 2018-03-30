@@ -27,7 +27,6 @@
     [super viewDidLoad];
     
     _searchBar.hidden = true;
-    
     _containerViewDashboard.hidden = true;
     _vi_activeDashboard.hidden = true;
 

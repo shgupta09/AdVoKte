@@ -14,6 +14,7 @@
 #define LOGINUSER_TYPE @"loginUsertype"
 #define LOGINUSER_AD @"advocate"
 #define LOGINUSER_UR @"user"
+
 static NSString* const API_BASE_URL = @"http://www.advok8.in/AdvocateAPI.asmx/";
 static NSString* const API_CONTENTS_BASE_URL = @"http://www.advok8.in";
 

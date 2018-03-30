@@ -54,6 +54,13 @@
                             <rect key="frame" x="57" y="39" width="130" height="5"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ei-qh-w0U">
+                            <rect key="frame" x="188" y="39" width="131" height="5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="5" id="QU1-Qr-8yY"/>
+                            </constraints>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXS-Eg-WFw">
                             <rect key="frame" x="188" y="0.0" width="131" height="40"/>
                             <constraints>
@@ -97,13 +104,16 @@
                         <constraint firstItem="Jgz-aL-wVN" firstAttribute="width" secondItem="oXS-Eg-WFw" secondAttribute="width" constant="-1" id="SCc-qY-uUR"/>
                         <constraint firstItem="Jgz-aL-wVN" firstAttribute="leading" secondItem="kmS-jd-DVm" secondAttribute="trailing" constant="8" id="Xct-1l-Ngj"/>
                         <constraint firstItem="1HQ-oG-auD" firstAttribute="top" secondItem="Jgz-aL-wVN" secondAttribute="bottom" constant="-1" id="YFQ-Sr-bIg"/>
+                        <constraint firstItem="5Ei-qh-w0U" firstAttribute="leading" secondItem="oXS-Eg-WFw" secondAttribute="leading" id="Yrx-dw-lCX"/>
                         <constraint firstItem="kmS-jd-DVm" firstAttribute="leading" secondItem="fXi-dS-ur6" secondAttribute="leading" constant="8" id="dIc-He-pqQ"/>
                         <constraint firstItem="1HQ-oG-auD" firstAttribute="leading" secondItem="Jgz-aL-wVN" secondAttribute="leading" id="eGy-6a-2Ic"/>
                         <constraint firstItem="M8k-WY-dgX" firstAttribute="leading" secondItem="fXi-dS-ur6" secondAttribute="leading" id="fNv-Ym-RiH"/>
                         <constraint firstItem="GN9-Ea-Pp5" firstAttribute="leading" secondItem="oXS-Eg-WFw" secondAttribute="trailing" constant="17" id="ged-Cb-d33"/>
                         <constraint firstItem="oXS-Eg-WFw" firstAttribute="leading" secondItem="Jgz-aL-wVN" secondAttribute="trailing" constant="1" id="iCS-lA-wYc"/>
                         <constraint firstAttribute="trailing" secondItem="GN9-Ea-Pp5" secondAttribute="trailing" constant="18" id="jI3-uG-Q6T"/>
+                        <constraint firstItem="5Ei-qh-w0U" firstAttribute="trailing" secondItem="oXS-Eg-WFw" secondAttribute="trailing" id="pPK-nf-OZf"/>
                         <constraint firstItem="kmS-jd-DVm" firstAttribute="top" secondItem="fXi-dS-ur6" secondAttribute="top" constant="3" id="qaY-fu-y3E"/>
+                        <constraint firstItem="5Ei-qh-w0U" firstAttribute="top" secondItem="oXS-Eg-WFw" secondAttribute="bottom" constant="-1" id="sQ6-lF-Rao"/>
                         <constraint firstItem="1HQ-oG-auD" firstAttribute="trailing" secondItem="Jgz-aL-wVN" secondAttribute="trailing" id="uFp-yE-E77"/>
                         <constraint firstAttribute="height" constant="44" id="uRa-sH-Q1I"/>
                         <constraint firstAttribute="bottom" secondItem="M8k-WY-dgX" secondAttribute="bottom" constant="-6" id="vuZ-K9-qKD"/>
@@ -113,10 +123,6 @@
                     <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" red="0.96862745100000003" green="0.64313725489999995" blue="0.1176470588" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ei-qh-w0U">
-                    <rect key="frame" x="188" y="59" width="131" height="5"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Imr-Q0-M08" userLabel="DashboardContainer">
                     <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -124,16 +130,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="5Ei-qh-w0U" firstAttribute="top" secondItem="oXS-Eg-WFw" secondAttribute="bottom" constant="-1" id="8LF-bR-Ukz"/>
                 <constraint firstItem="fXi-dS-ur6" firstAttribute="leading" secondItem="CQB-E4-Hzq" secondAttribute="leading" id="F62-zv-bSy"/>
                 <constraint firstItem="Ldd-vz-OzZ" firstAttribute="top" secondItem="fXi-dS-ur6" secondAttribute="bottom" id="KJ5-BM-XYI"/>
-                <constraint firstItem="5Ei-qh-w0U" firstAttribute="leading" secondItem="oXS-Eg-WFw" secondAttribute="leading" id="QkN-GP-NQF"/>
                 <constraint firstItem="Imr-Q0-M08" firstAttribute="top" secondItem="fXi-dS-ur6" secondAttribute="bottom" id="Tyx-Bk-qpC"/>
                 <constraint firstAttribute="trailing" secondItem="Ldd-vz-OzZ" secondAttribute="trailing" id="WQs-mK-l3J"/>
                 <constraint firstItem="Ldd-vz-OzZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WYs-Aq-Tn7"/>
                 <constraint firstItem="Imr-Q0-M08" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Why-eC-I9J"/>
-                <constraint firstItem="Ldd-vz-OzZ" firstAttribute="top" secondItem="5Ei-qh-w0U" secondAttribute="bottom" id="YZz-TC-Lhk"/>
-                <constraint firstItem="5Ei-qh-w0U" firstAttribute="trailing" secondItem="oXS-Eg-WFw" secondAttribute="trailing" id="cE2-sZ-ILX"/>
                 <constraint firstAttribute="bottom" secondItem="Imr-Q0-M08" secondAttribute="bottom" id="gSy-xf-Jez"/>
                 <constraint firstAttribute="bottom" secondItem="Ldd-vz-OzZ" secondAttribute="bottom" id="mXe-Ze-P5v"/>
                 <constraint firstItem="fXi-dS-ur6" firstAttribute="top" secondItem="CQB-E4-Hzq" secondAttribute="top" priority="999" id="tyO-6g-s2g"/>

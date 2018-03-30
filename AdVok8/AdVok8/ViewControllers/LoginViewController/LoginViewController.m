@@ -121,10 +121,10 @@
                             }
                         }];
                         
-                        
-                        [CommonFunction storeValueInDefault:dataObj.ContactNo andKey:LOGINUSER];
-                        [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:1];
                         [CommonFunction storeValueInDefault:LOGINUSER_UR andKey:LOGINUSER_TYPE];
+                        [CommonFunction storeValueInDefault:dataObj.ContactNo andKey:LOGINUSER];
+                        [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:true];
+                       
                         
                     }
                     else
@@ -145,7 +145,7 @@
                         
                         
                         [CommonFunction storeValueInDefault:dataObj.username andKey:LOGINUSER];
-                        [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:1];
+                        [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:true];
                        [CommonFunction storeValueInDefault:LOGINUSER_AD andKey:LOGINUSER_TYPE];
                         
                     }

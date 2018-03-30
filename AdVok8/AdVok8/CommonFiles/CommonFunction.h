@@ -47,4 +47,5 @@
 +(NSString *)checkEmptyString:(NSString *)str;
 
 +(NSURL*) getProfilePicURLString:(NSString*) userName;
++(BOOL)isadvoK8;
 @end
