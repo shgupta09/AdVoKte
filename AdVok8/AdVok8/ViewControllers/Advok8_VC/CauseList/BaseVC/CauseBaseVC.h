@@ -13,5 +13,5 @@
 @property (weak, nonatomic) IBOutlet UIView *view_Container_Second;
 @property (weak, nonatomic) IBOutlet UIView *view_FirstSelection;
 @property (weak, nonatomic) IBOutlet UIView *view_SecondSelection;
-
+@property (nonatomic) BOOL isFirstSelected;
 @end

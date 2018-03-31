@@ -16,20 +16,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_tbl_View registerNib:[UINib nibWithNibName:@"FeedMainTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeedMainTableViewCell"];
-     [_tbl_View registerNib:[UINib nibWithNibName:@"ProfileCell2" bundle:nil]forCellReuseIdentifier:@"ProfileCell2"];
-    _tbl_View.rowHeight = UITableViewAutomaticDimension;
-    _tbl_View.estimatedRowHeight = 100;
-    _tbl_View.multipleTouchEnabled = NO;
+    [self setUpData];
+    
     // Do any additional setup after loading the view from its nib.
 }
-
+-(void)setUpData{
+    [CommonFunction setNavToController:self title:@"My Activity" isCrossBusston:false];
+    [self setUpTableView];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma mark- tableView delegate
+-(void)backTapped{
+    [self dismissViewControllerAnimated:true completion:nil];
+    
+}
 
+
+#pragma mark- tableView delegate
+-(void)setUpTableView{
+    [_tbl_View registerNib:[UINib nibWithNibName:@"FeedMainTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeedMainTableViewCell"];
+    [_tbl_View registerNib:[UINib nibWithNibName:@"ProfileCell2" bundle:nil]forCellReuseIdentifier:@"ProfileCell2"];
+    _tbl_View.rowHeight = UITableViewAutomaticDimension;
+    _tbl_View.estimatedRowHeight = 100;
+    _tbl_View.multipleTouchEnabled = NO;
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 2;
 }

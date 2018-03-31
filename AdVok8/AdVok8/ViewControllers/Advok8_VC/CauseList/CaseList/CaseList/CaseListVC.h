@@ -13,5 +13,4 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *traillinfConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *btn_CancelSearch;
 @property (weak, nonatomic) IBOutlet UITextField *txt_Search;
-
 @end

@@ -51,6 +51,7 @@
 #import "FeedDetailViewController.h"
 #import "JournalFeedsViewController.h"
 #import "NotificationListViewController.h"
+#import "ProfileVC.h"
 
 //TableCells
 #import "ProfileCell2.h"

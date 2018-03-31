@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DailyCauseListVc : UIViewController
-
+@interface DailyCauseListVc : UIViewController<UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIPickerViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (weak, nonatomic) IBOutlet UITextField *txt_Search;
 @end

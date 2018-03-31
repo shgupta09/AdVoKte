@@ -30,9 +30,8 @@
 
 #pragma mark- other methods
 -(void)setUpDataContainer{
-    _view_SecondSelection.hidden = true;
-    _view_FirstSelection.hidden = false;
-    
+    [CommonFunction setCornerRadius:_view_FirstSelection Radius:2];
+    [CommonFunction setCornerRadius:_view_SecondSelection Radius:2];
     DailyCauseListVc* firstView = [[DailyCauseListVc alloc] initWithNibName:@"DailyCauseListVc" bundle:nil];
     [self addChildViewController:firstView];                 // 1
     firstView.view.frame = _view_Container_First.bounds;
@@ -44,25 +43,34 @@
     secondView.view.frame = _view_Container_Second.bounds;
     [_view_Container_Second addSubview:secondView.view];
     [secondView didMoveToParentViewController:self];
-    _view_Container_Second.hidden = true;
+    if (_isFirstSelected) {
+        [self firstSelected];
+    }else{
+        [self secondSelected];
+    }
 }
 
 #pragma mark- Btn Actions
 
 - (IBAction)btnAction_First:(id)sender {
+    [self firstSelected];
+}
+
+- (IBAction)btnAction_Second:(id)sender {
+    [self secondSelected];
+}
+-(void)firstSelected{
     _view_Container_First.hidden = false;
     _view_Container_Second.hidden = true;
     _view_SecondSelection.hidden = true;
     _view_FirstSelection.hidden = false;
 }
-
-- (IBAction)btnAction_Second:(id)sender {
+-(void)secondSelected{
     _view_Container_First.hidden = true;
     _view_Container_Second.hidden = false;
     _view_SecondSelection.hidden = false;
     _view_FirstSelection.hidden = true;
 }
-
 
 - (IBAction)btnAction_Back:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];

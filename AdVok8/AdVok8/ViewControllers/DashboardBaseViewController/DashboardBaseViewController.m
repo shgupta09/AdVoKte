@@ -8,6 +8,7 @@
 
 #import "DashboardBaseViewController.h"
 #import "CauseBaseVC.h"
+#import "TaskListVC.h"
 @interface DashboardBaseViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 {
     NSArray* arrOptions;
@@ -28,8 +29,8 @@
 
 -(void)setData{
     if ([CommonFunction isadvoK8]){
-        arrImages = [[NSArray alloc] initWithObjects:@"CaseTracking.png",@"CaseTracking.png",@"CaseTracking.png",@"Appointment-1.png",@"Me.png",@"CaseTracking.png",@"CaseTracking.png",@"CaseTracking.png", nil];
-        arrOptions = [[NSArray alloc] initWithObjects:@"Cause List",@"Calendar",@"Task",@"Appointment",@"Me",@"My Activity",@"Display Board",@"Appeal Alert", nil];
+        arrImages = [[NSArray alloc] initWithObjects:@"CaseTracking.png",@"CaseTracking.png",@"CaseTracking.png",@"CaseTracking.png",@"Appointment-1.png",@"Me.png",@"CaseTracking.png",@"CaseTracking.png",@"CaseTracking.png", nil];
+        arrOptions = [[NSArray alloc] initWithObjects:@"Cause List",@"Matters",@"Calendar",@"Task",@"Appointment",@"Me",@"My Activity",@"Display Board",@"Appeal Alert", nil];
     }
     else
     {
@@ -113,7 +114,26 @@
         switch (indexPath.row) {
             case 0:{
                 CauseBaseVC *causeOBJ = [[CauseBaseVC alloc]initWithNibName:@"CauseBaseVC" bundle:nil];
+                causeOBJ.isFirstSelected = true;
                 UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:causeOBJ];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
+                break;
+            case 1:{
+                CauseBaseVC *causeOBJ = [[CauseBaseVC alloc]initWithNibName:@"CauseBaseVC" bundle:nil];
+                causeOBJ.isFirstSelected = false;
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:causeOBJ];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
+                break;
+            case 3:{
+                TaskListVC *taskObj = [[TaskListVC alloc]initWithNibName:@"TaskListVC" bundle:nil];
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:taskObj];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
+            case 5:{
+                ProfileVC *profileObj = [[ProfileVC alloc]initWithNibName:@"ProfileVC" bundle:nil];
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:profileObj];
                 [self.navigationController presentViewController:navCon animated:true completion:nil];
             }
                 break;

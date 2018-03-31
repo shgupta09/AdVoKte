@@ -8,6 +8,7 @@
 
 #import "CaseListVC.h"
 #import "CaseListCell.h"
+#import "CasePageVC.h"
 @interface CaseListVC ()
 
 @end
@@ -21,7 +22,9 @@
 }
 
 -(void)setUpData{
+    
     [self setUpTableView];
+    [self hideConcelButton:true];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,7 +37,7 @@
     if (textField.text.length == 1 && [string isEqualToString:@""]) {
         [self hideConcelButton:true];
     }else{
-       
+        [self hideConcelButton:false];
     }
     return true;
 }
@@ -73,6 +76,11 @@
     [CommonFunction setCornerRadius:cell.view Radius:5.0];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    CasePageVC *caseOBJ = [[CasePageVC alloc]initWithNibName:@"CasePageVC" bundle:nil];
+    caseOBJ.isFromDailyCauseList = false;
+    [self.navigationController pushViewController:caseOBJ animated:true];
 }
 
 #pragma mark- Btn Actions

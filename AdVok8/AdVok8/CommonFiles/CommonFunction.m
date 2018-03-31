@@ -54,7 +54,7 @@
     }
 //    newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44.0)];
     newNavBar.barTintColor = [CommonFunction colorWithHexString:Primary_Blue];
-    newNavBar.barTintColor = [UIColor grayColor];
+//    newNavBar.barTintColor = [UIColor grayColor];
 
     newNavBar.translucent = false;
     UINavigationItem *newItem = [[UINavigationItem alloc] init];

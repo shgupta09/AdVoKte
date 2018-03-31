@@ -11,74 +11,50 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>Pods-AdVok8.xcscheme</key>
+		<key>FZAccordionTableView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
-		<key>Pods-AdVok8Tests.xcscheme</key>
+		<key>Pods-AdVok8.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
-		<key>SDWebImage.xcscheme</key>
+		<key>Pods-AdVok8Tests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>3</integer>
 		</dict>
-		<key>SWRevealViewController.xcscheme</key>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
-		<key>TPKeyboardAvoiding.xcscheme</key>
+		<key>SWRevealViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>TPKeyboardAvoiding.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict>
-		<key>0ECFD3A15C06694CBA310351929F15EF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3B97A3DB18CEA3B000917AE386E5234E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B46F3E2C3CA9DF4A355B8A3726539182</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B61C4145550CD0554F160354359894BE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BB01D4663B87D84A79ADE4A5578B173F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C95C45974D77E3E41FE9D2A80E093179</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-	</dict>
+	<dict/>
 </dict>
 </plist>
