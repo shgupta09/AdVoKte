@@ -52,6 +52,8 @@
 #import "JournalFeedsViewController.h"
 #import "NotificationListViewController.h"
 #import "ProfileVC.h"
+//Categories
+//#import "NSLayoutConstraint+Multiplier.h"
 
 //TableCells
 #import "ProfileCell2.h"
@@ -60,6 +62,7 @@
 
 //CustomClasses
 #import "LeftImageWithLabel.h"
+#import "TextFieldFooter.h"
 
 // Models
 #import "ADRegistrationModel.h"

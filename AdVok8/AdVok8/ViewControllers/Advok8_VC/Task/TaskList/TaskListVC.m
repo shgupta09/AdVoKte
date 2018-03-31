@@ -8,6 +8,8 @@
 
 #import "TaskListVC.h"
 #import "TaskListCell.h"
+#import "CreateTaskVC.h"
+#import "TaskDetailVC.h"
 @interface TaskListVC ()
 
 @end
@@ -57,5 +59,19 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    TaskDetailVC *createTaskObj = [[TaskDetailVC alloc]initWithNibName:@"TaskDetailVC" bundle:nil];
+    [self.navigationController pushViewController:createTaskObj animated:true];
+}
+
+#pragma mark - btn Action
+
+- (IBAction)btnAction_Add_Task:(id)sender {
+    CreateTaskVC *createTaskObj = [[CreateTaskVC alloc]initWithNibName:@"CreateTaskVC" bundle:nil];
+    createTaskObj.isCreateTask = true;
+    [self.navigationController pushViewController:createTaskObj animated:true];
+}
+
 
 @end
