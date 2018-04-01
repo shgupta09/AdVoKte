@@ -53,7 +53,7 @@
 #import "NotificationListViewController.h"
 #import "ProfileVC.h"
 //Categories
-//#import "NSLayoutConstraint+Multiplier.h"
+#import "NSLayoutConstraint+Multiplier.h"
 
 //TableCells
 #import "ProfileCell2.h"

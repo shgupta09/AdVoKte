@@ -98,6 +98,78 @@
     
 }
 
++(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross rightNavArray:(NSArray *)rightArray{
+    //    title = [title capitalizedString];
+    [viewController.view addSubview:[CommonFunction setStatusBarColor]];
+    [viewController.navigationController setNavigationBarHidden:YES animated:NO];
+    
+    UINavigationBar *newNavBar;
+    if([[UIDevice currentDevice]userInterfaceIdiom]==UIUserInterfaceIdiomPhone) {
+        
+        if(((int)[[UIScreen mainScreen] nativeBounds].size.height)==2436) {
+            if (@available(iOS 11.0, *)) {
+                newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 44, [UIScreen mainScreen].bounds.size.width, 44.0)];
+            } else {
+                // Fallback on earlier versions
+            }
+            
+        }else{
+            newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44.0)];
+        }
+    }
+    //    newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44.0)];
+    newNavBar.barTintColor = [CommonFunction colorWithHexString:Primary_Blue];
+    newNavBar.translucent = false;
+    UINavigationItem *newItem = [[UINavigationItem alloc] init];
+    UIImageView *backgroundView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44.0)];
+    backgroundView.image = [UIImage imageNamed:@"Home_ Title bar graphic"];
+
+    [newNavBar addSubview:backgroundView];
+    
+    UILabel* lbNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,(viewController.view.bounds.size.width/2)
+                                                                    -20,[UIScreen mainScreen].bounds.size.width,40)];
+    lbNavTitle.textAlignment = NSTextAlignmentLeft;
+    lbNavTitle.text = title;
+    lbNavTitle.textColor = [UIColor whiteColor];
+    newItem.titleView = lbNavTitle;
+    
+    
+    //    [[UIBarButtonItem alloc] initWithTitle:@"<"
+    //                                     style:UIBarButtonItemStylePlain
+    //                                    target:viewController
+    //                                    action:@selector(backTapped)];
+    UIBarButtonItem *dashboard;
+    if (IsCross){
+        dashboard = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"cross-1"] style:UIBarButtonItemStylePlain target:viewController action:@selector(backTapped)];
+        
+    }else{
+        dashboard = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"backButton"] style:UIBarButtonItemStylePlain target:viewController action:@selector(backTapped)];
+    }
+    
+//    dashboard.tintColor = [UIColor colorWithRed:233.0f/255.0f green:141.0f/255.0f blue:25.0f/255.0f alpha:1];
+    dashboard.tintColor = [UIColor whiteColor];
+    newItem.leftBarButtonItem = dashboard;
+    NSMutableArray *rightItemArray = [NSMutableArray new];
+    if (rightArray!= nil) {
+        for (int i = 0; i<rightArray.count; i++) {
+            dashboard = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"cross-1"] style:UIBarButtonItemStylePlain target:viewController action:@selector(rightBarAction:)];
+            dashboard.tintColor = [UIColor whiteColor];
+            dashboard.tag = i;
+            [rightItemArray addObject:dashboard];
+        }
+          newItem.rightBarButtonItems = rightItemArray;
+    }
+  
+
+    [newNavBar setItems:@[newItem]];
+    
+    //    UINavigationController *xyz = [[UINavigationController alloc] initWithRootViewController:<#(nonnull UIViewController *)#>];
+    //    [xyz ]
+    //
+    //    xyz
+    [viewController.view addSubview:newNavBar];
+    
+}
 
 
 // For storing the value in default

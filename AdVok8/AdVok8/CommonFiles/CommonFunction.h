@@ -50,4 +50,5 @@
 +(BOOL)isadvoK8;
 +(void)setShadowOpacity:(UIView *)view;
 +(void)setCornerRadius:(UIView *)view Radius:(CGFloat)radius;
++(void)setNavToController:(UIViewController *)viewController title:(NSString *)title isCrossBusston:(BOOL)IsCross rightNavArray:(NSArray *)rightArray;
 @end

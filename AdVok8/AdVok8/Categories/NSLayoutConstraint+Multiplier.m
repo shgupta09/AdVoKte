@@ -20,7 +20,7 @@
     newConstraint.active = true;
     
     [NSLayoutConstraint activateConstraints:[NSArray arrayWithObjects:newConstraint, nil]];
-    //NSLayoutConstraint.activateConstraints([newConstraint])
+//    NSLayoutConstraint.activateConstraiznts([newConstraint])
     return newConstraint;
 }
 @end

@@ -34,6 +34,7 @@
 }
 -(void)setUpData{
     if (_isCreateTask) {
+        
         [CommonFunction setNavToController:self title:@"Create Task" isCrossBusston:false];
         [_btn_Save_Update setTitle:@"Save" forState:UIControlStateNormal];
         [self setDefaultDate];
@@ -46,6 +47,8 @@
     }else{
         [CommonFunction setNavToController:self title:@"Update Task" isCrossBusston:false];
          [_btn_Save_Update setTitle:@"Update" forState:UIControlStateNormal];
+        [self setDefaultDate];
+
     }
 }
 
@@ -71,16 +74,19 @@
 - (IBAction)btnAction_AllDay:(id)sender {
     if (((UISwitch *)sender).isOn) {
         [self hideData:true];
-//        [_widthConstraint updateMultiplier:1];
-//        [_txt_StartDate updateFrame:_lbl_Description.frame.size.width];
-//        [_txt_EndDate updateFrame:_lbl_Description.frame.size.width];
+        
+       _widthConstraint2 = [_widthConstraint2 updateMultiplier:1.0];
+       _widthConstraint3 = [_widthConstraint3 updateMultiplier:1.0];
+
     }else{
         [self hideData:false];
-//        [_widthConstraint updateMultiplier:.5];
-//        [_txt_StartDate updateFrame:_lbl_Description.frame.size.width];
-//        [_txt_EndDate updateFrame:_lbl_Description.frame.size.width];
+       _widthConstraint2 = [_widthConstraint2 updateMultiplier:.5];
+       _widthConstraint3 = [_widthConstraint3 updateMultiplier:.5];
+
     }
-    
+    [self.view setNeedsUpdateConstraints];
+    [self.view updateConstraints];
+    [self.view layoutSubviews];
 }
 
 - (IBAction)btnAction_Date:(id)sender {

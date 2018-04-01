@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UISwitch *btn_AllDay;
 @property (weak, nonatomic) IBOutlet TextFieldFooter *txt_Location;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint3;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint2;
 
 @property (weak, nonatomic) IBOutlet UILabel *lbl_StartTime;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_EndTime;

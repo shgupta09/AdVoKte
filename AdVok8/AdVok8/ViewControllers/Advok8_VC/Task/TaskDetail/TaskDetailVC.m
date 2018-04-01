@@ -7,6 +7,7 @@
 //
 
 #import "TaskDetailVC.h"
+#import "CreateTaskVC.h"
 
 @interface TaskDetailVC ()
 
@@ -20,7 +21,8 @@
     // Do any additional setup after loading the view from its nib.
 }
 -(void)setUpData{
-    [CommonFunction setNavToController:self title:@"Task" isCrossBusston:false];
+    NSArray *ar = [[NSArray alloc]initWithObjects:@"ds",@"sd", nil];
+    [CommonFunction setNavToController:self title:@"Task" isCrossBusston:false rightNavArray:ar];
 }
 -(void)backTapped{
     [self.navigationController popViewControllerAnimated:true];
@@ -30,7 +32,13 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)rightBarAction:(id)sender{
+    if (((UIBarButtonItem *)sender).tag == 0) {
+        CreateTaskVC *createTaskObj = [[CreateTaskVC alloc]initWithNibName:@"CreateTaskVC" bundle:nil];
+        createTaskObj.isCreateTask = false;
+        [self.navigationController pushViewController:createTaskObj animated:true];
+    }
+}
 /*
 #pragma mark - Navigation
 
