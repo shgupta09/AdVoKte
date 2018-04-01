@@ -52,12 +52,9 @@
 #import "JournalFeedsViewController.h"
 #import "NotificationListViewController.h"
 #import "ProfileVC.h"
-<<<<<<< HEAD
 #import "CalendarViewController.h"
-=======
 //Categories
 //#import "NSLayoutConstraint+Multiplier.h"
->>>>>>> 55543ecf0f6d95ee2d7530e452de01e728eda7c1
 
 //TableCells
 #import "ProfileCell2.h"
