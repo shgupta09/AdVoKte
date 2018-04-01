@@ -126,6 +126,14 @@
                 [self.navigationController presentViewController:navCon animated:true completion:nil];
             }
                 break;
+                
+            case 2:
+            {
+                CalendarViewController *vc = [[CalendarViewController alloc]initWithNibName:@"CalendarViewController" bundle:nil];
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
+                break;
             case 3:{
                 TaskListVC *taskObj = [[TaskListVC alloc]initWithNibName:@"TaskListVC" bundle:nil];
                 UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:taskObj];
