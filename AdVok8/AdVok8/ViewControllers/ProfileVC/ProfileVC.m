@@ -29,7 +29,12 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)backTapped{
-    [self dismissViewControllerAnimated:true completion:nil];
+    if (_isFromMyActivity) {
+        [self.navigationController popViewControllerAnimated:true];
+    }else{
+        [self dismissViewControllerAnimated:true completion:nil];
+    }
+    
     
 }
 

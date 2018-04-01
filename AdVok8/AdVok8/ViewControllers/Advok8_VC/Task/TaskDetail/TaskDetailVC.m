@@ -20,6 +20,8 @@
     [self setUpData];
     // Do any additional setup after loading the view from its nib.
 }
+
+#pragma mark- Navigation
 -(void)setUpData{
     NSArray *ar = [[NSArray alloc]initWithObjects:@"ds",@"sd", nil];
     [CommonFunction setNavToController:self title:@"Task" isCrossBusston:false rightNavArray:ar];

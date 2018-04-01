@@ -10,6 +10,8 @@
 #import "CauseBaseVC.h"
 #import "TaskListVC.h"
 #import "AppealAlertVC.h"
+#import "AppoinmentList_VC.h"
+#import "Me_VC.h"
 @interface DashboardBaseViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 {
     NSArray* arrOptions;
@@ -140,8 +142,21 @@
                 UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:taskObj];
                 [self.navigationController presentViewController:navCon animated:true completion:nil];
             }
+                
+            case 4:{
+                AppoinmentList_VC *profileObj = [[AppoinmentList_VC alloc]initWithNibName:@"AppoinmentList_VC" bundle:nil];
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:profileObj];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
             case 5:{
+                Me_VC *profileObj = [[Me_VC alloc]initWithNibName:@"Me_VC" bundle:nil];
+                
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:profileObj];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
+            case 6:{
                 ProfileVC *profileObj = [[ProfileVC alloc]initWithNibName:@"ProfileVC" bundle:nil];
+                profileObj.isFromMyActivity = false;
                 UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:profileObj];
                 [self.navigationController presentViewController:navCon animated:true completion:nil];
             }

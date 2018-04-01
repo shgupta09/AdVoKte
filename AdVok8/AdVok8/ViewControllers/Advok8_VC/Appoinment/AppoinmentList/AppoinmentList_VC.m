@@ -1,20 +1,19 @@
 //
-//  TaskListVC.m
+//  AppoinmentList_VC.m
 //  AdVok8
 //
-//  Created by shubham gupta on 3/31/18.
+//  Created by shubham gupta on 4/2/18.
 //  Copyright © 2018 Shagun Verma. All rights reserved.
 //
 
-#import "TaskListVC.h"
+#import "AppoinmentList_VC.h"
 #import "TaskListCell.h"
-#import "CreateTaskVC.h"
-#import "TaskDetailVC.h"
-@interface TaskListVC ()
+#import "AppoinmentDetailVC.h"
+@interface AppoinmentList_VC ()
 
 @end
 
-@implementation TaskListVC
+@implementation AppoinmentList_VC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,9 +26,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 #pragma mark- Navigation
 -(void)setUpData{
-    [CommonFunction setNavToController:self title:@"Task List" isCrossBusston:false];
+    [CommonFunction setNavToController:self title:@"Appoinment" isCrossBusston:false];
     [self setUpTableView];
 }
 -(void)backTapped{
@@ -55,7 +55,7 @@
     if (cell == nil) {
         cell = [[TaskListCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"TaskListCell"];
     }
-    cell.imgView_Profile.hidden = true;
+    cell.imgView_Profile.hidden = FALSE;
     [CommonFunction setShadowOpacity:cell.view];
     [CommonFunction setCornerRadius:cell.view Radius:5.0];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -63,15 +63,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    TaskDetailVC *createTaskObj = [[TaskDetailVC alloc]initWithNibName:@"TaskDetailVC" bundle:nil];
-    [self.navigationController pushViewController:createTaskObj animated:true];
-}
-
-#pragma mark - btn Action
-
-- (IBAction)btnAction_Add_Task:(id)sender {
-    CreateTaskVC *createTaskObj = [[CreateTaskVC alloc]initWithNibName:@"CreateTaskVC" bundle:nil];
-    createTaskObj.isCreateTask = true;
+    AppoinmentDetailVC *createTaskObj = [[AppoinmentDetailVC alloc]initWithNibName:@"AppoinmentDetailVC" bundle:nil];
     [self.navigationController pushViewController:createTaskObj animated:true];
 }
 

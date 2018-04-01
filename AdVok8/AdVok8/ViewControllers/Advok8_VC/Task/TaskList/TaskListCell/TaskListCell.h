@@ -10,6 +10,7 @@
 
 @interface TaskListCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIView *view;
+@property (weak, nonatomic) IBOutlet UIImageView *imgView_Profile;
 
 
 @end

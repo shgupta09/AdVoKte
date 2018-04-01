@@ -158,6 +158,12 @@
 		D8FAAF89207127E40084DE28 /* AppealAlertCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FAAF87207127E40084DE28 /* AppealAlertCell.xib */; };
 		D8FAAF8E2071414F0084DE28 /* AppAppealVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FAAF8C2071414F0084DE28 /* AppAppealVC.m */; };
 		D8FAAF8F2071414F0084DE28 /* AppAppealVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FAAF8D2071414F0084DE28 /* AppAppealVC.xib */; };
+		D8FAAF94207157E20084DE28 /* Me_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FAAF92207157E20084DE28 /* Me_VC.m */; };
+		D8FAAF95207157E20084DE28 /* Me_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FAAF93207157E20084DE28 /* Me_VC.xib */; };
+		D8FAAF9E2071601F0084DE28 /* AppoinmentList_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FAAF9C2071601F0084DE28 /* AppoinmentList_VC.m */; };
+		D8FAAF9F2071601F0084DE28 /* AppoinmentList_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FAAF9D2071601F0084DE28 /* AppoinmentList_VC.xib */; };
+		D8FAAFA4207165250084DE28 /* AppoinmentDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FAAFA2207165250084DE28 /* AppoinmentDetailVC.m */; };
+		D8FAAFA5207165250084DE28 /* AppoinmentDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FAAFA3207165250084DE28 /* AppoinmentDetailVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -423,6 +429,15 @@
 		D8FAAF8B2071414F0084DE28 /* AppAppealVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppAppealVC.h; sourceTree = "<group>"; };
 		D8FAAF8C2071414F0084DE28 /* AppAppealVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppAppealVC.m; sourceTree = "<group>"; };
 		D8FAAF8D2071414F0084DE28 /* AppAppealVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppAppealVC.xib; sourceTree = "<group>"; };
+		D8FAAF91207157E20084DE28 /* Me_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Me_VC.h; sourceTree = "<group>"; };
+		D8FAAF92207157E20084DE28 /* Me_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Me_VC.m; sourceTree = "<group>"; };
+		D8FAAF93207157E20084DE28 /* Me_VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Me_VC.xib; sourceTree = "<group>"; };
+		D8FAAF9B2071601F0084DE28 /* AppoinmentList_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppoinmentList_VC.h; sourceTree = "<group>"; };
+		D8FAAF9C2071601F0084DE28 /* AppoinmentList_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppoinmentList_VC.m; sourceTree = "<group>"; };
+		D8FAAF9D2071601F0084DE28 /* AppoinmentList_VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppoinmentList_VC.xib; sourceTree = "<group>"; };
+		D8FAAFA1207165250084DE28 /* AppoinmentDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailVC.h; sourceTree = "<group>"; };
+		D8FAAFA2207165250084DE28 /* AppoinmentDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppoinmentDetailVC.m; sourceTree = "<group>"; };
+		D8FAAFA3207165250084DE28 /* AppoinmentDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppoinmentDetailVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1068,36 +1083,13 @@
 		9C70B250206E00D700850305 /* Advok8_VC */ = {
 			isa = PBXGroup;
 			children = (
+				D8FAAF9620715EC60084DE28 /* Appoinment */,
 				D8FAAF7D2071250B0084DE28 /* Appeal Alert */,
 				5F96B718206FE8C4003CD72F /* CalendarViewController */,
 				D8C3C275206F731D0089A3CC /* Task */,
-				9C70B253206E00D700850305 /* Appointment */,
 				9C70B258206E00D700850305 /* CauseList */,
 			);
 			path = Advok8_VC;
-			sourceTree = "<group>";
-		};
-		9C70B253206E00D700850305 /* Appointment */ = {
-			isa = PBXGroup;
-			children = (
-				9C70B254206E00D700850305 /* Detail Appoinment */,
-				9C70B255206E00D700850305 /* Update Appoinment */,
-			);
-			path = Appointment;
-			sourceTree = "<group>";
-		};
-		9C70B254206E00D700850305 /* Detail Appoinment */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Detail Appoinment";
-			sourceTree = "<group>";
-		};
-		9C70B255206E00D700850305 /* Update Appoinment */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Update Appoinment";
 			sourceTree = "<group>";
 		};
 		9C70B258206E00D700850305 /* CauseList */ = {
@@ -1342,6 +1334,7 @@
 		D8FAAF7D2071250B0084DE28 /* Appeal Alert */ = {
 			isa = PBXGroup;
 			children = (
+				D8FAAF90207157D40084DE28 /* ME_VC */,
 				D8FAAF8A2071413B0084DE28 /* AddAppeal */,
 				D8FAAF7E207125190084DE28 /* Appeal Alert List */,
 			);
@@ -1377,6 +1370,45 @@
 				D8FAAF8D2071414F0084DE28 /* AppAppealVC.xib */,
 			);
 			path = AddAppeal;
+			sourceTree = "<group>";
+		};
+		D8FAAF90207157D40084DE28 /* ME_VC */ = {
+			isa = PBXGroup;
+			children = (
+				D8FAAF91207157E20084DE28 /* Me_VC.h */,
+				D8FAAF92207157E20084DE28 /* Me_VC.m */,
+				D8FAAF93207157E20084DE28 /* Me_VC.xib */,
+			);
+			path = ME_VC;
+			sourceTree = "<group>";
+		};
+		D8FAAF9620715EC60084DE28 /* Appoinment */ = {
+			isa = PBXGroup;
+			children = (
+				D8FAAFA0207165140084DE28 /* AppoinmentDetail */,
+				D8FAAF9720715ED80084DE28 /* AppoinmentList */,
+			);
+			path = Appoinment;
+			sourceTree = "<group>";
+		};
+		D8FAAF9720715ED80084DE28 /* AppoinmentList */ = {
+			isa = PBXGroup;
+			children = (
+				D8FAAF9B2071601F0084DE28 /* AppoinmentList_VC.h */,
+				D8FAAF9C2071601F0084DE28 /* AppoinmentList_VC.m */,
+				D8FAAF9D2071601F0084DE28 /* AppoinmentList_VC.xib */,
+			);
+			path = AppoinmentList;
+			sourceTree = "<group>";
+		};
+		D8FAAFA0207165140084DE28 /* AppoinmentDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D8FAAFA1207165250084DE28 /* AppoinmentDetailVC.h */,
+				D8FAAFA2207165250084DE28 /* AppoinmentDetailVC.m */,
+				D8FAAFA3207165250084DE28 /* AppoinmentDetailVC.xib */,
+			);
+			path = AppoinmentDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1469,6 +1501,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8FAAFA5207165250084DE28 /* AppoinmentDetailVC.xib in Resources */,
 				5F415752205E3352003D29B4 /* JournalFeedsViewController.xib in Resources */,
 				5F70AC05202B1250007E69A5 /* LaunchScreen.storyboard in Resources */,
 				5F71B6AB204E8E76004229DF /* LawyerListVC.xib in Resources */,
@@ -1497,8 +1530,10 @@
 				5FF9E2D52061830B00467A0D /* NotificationTableViewCell.xib in Resources */,
 				5FBD2B3C20595C4700D9C10B /* FeedDetailViewController.xib in Resources */,
 				5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */,
+				D8FAAF95207157E20084DE28 /* Me_VC.xib in Resources */,
 				5F96B71D206FE8D3003CD72F /* CalendarViewController.xib in Resources */,
 				D8FAAF83207125900084DE28 /* AppealAlertVC.xib in Resources */,
+				D8FAAF9F2071601F0084DE28 /* AppoinmentList_VC.xib in Resources */,
 				5F71B692204D5E7F004229DF /* CommentViewController.xib in Resources */,
 				D8C3C2A4206FBBFE0089A3CC /* CreateTaskVC.xib in Resources */,
 				5FF9E2CC20617FE500467A0D /* NotificationListViewController.xib in Resources */,
@@ -1651,6 +1686,7 @@
 				9CF77D01205F866F00366505 /* WorkingExperience.m in Sources */,
 				5F71B6C2204E8EA4004229DF /* LeftImageWithLabel.m in Sources */,
 				D8C3C298206FB14F0089A3CC /* DateCaell.m in Sources */,
+				D8FAAFA4207165250084DE28 /* AppoinmentDetailVC.m in Sources */,
 				D8F44CA5205EA16400B80FCD /* UILabel+Boldify.m in Sources */,
 				D8C3C286206FA2960089A3CC /* CasePageVC.m in Sources */,
 				5FBD2B3B20595C4700D9C10B /* FeedDetailViewController.m in Sources */,
@@ -1664,6 +1700,7 @@
 				5F1B9C2D203413F8009503E7 /* DashboardBaseViewController.m in Sources */,
 				5F96B768206FE9F0003CD72F /* JTCalendarContentView.m in Sources */,
 				5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */,
+				D8FAAF9E2071601F0084DE28 /* AppoinmentList_VC.m in Sources */,
 				5F71B6BC204E8E87004229DF /* ProfileCell.m in Sources */,
 				5F71B6BE204E8E87004229DF /* SelectedLawyerVC.m in Sources */,
 				5FF9E2CB20617FE500467A0D /* NotificationListViewController.m in Sources */,
@@ -1729,6 +1766,7 @@
 				5F71B6BA204E8E87004229DF /* LabelCell.m in Sources */,
 				5F71B69B204E6C4C004229DF /* CommentLike.m in Sources */,
 				5F1B9C4B20343889009503E7 /* FeedViewController.m in Sources */,
+				D8FAAF94207157E20084DE28 /* Me_VC.m in Sources */,
 				D8C3C2A8206FBEA80089A3CC /* TextFieldFooter.m in Sources */,
 				D8FAAF8E2071414F0084DE28 /* AppAppealVC.m in Sources */,
 				5F1B9C3C203437F8009503E7 /* PostViewController.m in Sources */,

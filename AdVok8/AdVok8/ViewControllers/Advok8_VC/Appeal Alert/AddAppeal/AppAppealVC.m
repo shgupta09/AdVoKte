@@ -25,6 +25,8 @@
        [self setUpData];
     // Do any additional setup after loading the view from its nib.
 }
+
+#pragma mark- Navigation
 -(void)setUpData{
         [CommonFunction setNavToController:self title:@"Appeal alert" isCrossBusston:false];
         [self setDefaultDate];

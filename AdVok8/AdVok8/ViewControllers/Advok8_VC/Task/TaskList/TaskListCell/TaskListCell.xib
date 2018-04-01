@@ -60,17 +60,32 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="lawyer_icon_white"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="rateUs"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dependentsuser" translatesAutoresizingMaskIntoConstraints="NO" id="VwY-q1-oxK">
+                                <rect key="frame" x="230" y="21" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Dbp-tW-YlW"/>
+                                    <constraint firstAttribute="height" constant="60" id="cml-X9-Ws8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Evt-bs-d9v" firstAttribute="leading" secondItem="AnA-d9-Fx6" secondAttribute="leading" id="1Pu-K1-bzd"/>
                             <constraint firstItem="h8x-uG-1t2" firstAttribute="leading" secondItem="Rag-Mm-ZPK" secondAttribute="leading" constant="10" id="3Dc-oa-Act"/>
+                            <constraint firstAttribute="trailing" secondItem="VwY-q1-oxK" secondAttribute="trailing" constant="10" id="90u-GT-Esp"/>
                             <constraint firstItem="gsg-eg-4aj" firstAttribute="leading" secondItem="Evt-bs-d9v" secondAttribute="leading" id="9vM-2g-zPy"/>
                             <constraint firstItem="gsg-eg-4aj" firstAttribute="trailing" secondItem="Evt-bs-d9v" secondAttribute="trailing" id="IFf-RP-4Eh"/>
                             <constraint firstItem="Evt-bs-d9v" firstAttribute="top" secondItem="gsg-eg-4aj" secondAttribute="bottom" constant="5" id="JVu-CN-sZs"/>
+                            <constraint firstItem="VwY-q1-oxK" firstAttribute="centerY" secondItem="Rag-Mm-ZPK" secondAttribute="centerY" id="JbH-la-A1y"/>
                             <constraint firstItem="gsg-eg-4aj" firstAttribute="top" secondItem="h8x-uG-1t2" secondAttribute="bottom" constant="5" id="LtA-fj-ft2"/>
                             <constraint firstItem="h8x-uG-1t2" firstAttribute="leading" secondItem="gsg-eg-4aj" secondAttribute="leading" id="YSz-Nv-iZe"/>
                             <constraint firstItem="Evt-bs-d9v" firstAttribute="trailing" secondItem="AnA-d9-Fx6" secondAttribute="trailing" id="af3-gD-rXP"/>
@@ -100,12 +115,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="imgView_Profile" destination="VwY-q1-oxK" id="ufU-3f-58X"/>
                 <outlet property="view" destination="aqK-TQ-n69" id="OR2-fi-DC0"/>
             </connections>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Divorce-1" width="106" height="106"/>
-        <image name="lawyer_icon_white" width="64" height="64"/>
+        <image name="dependentsuser" width="512" height="512"/>
+        <image name="rateUs" width="106" height="106"/>
     </resources>
 </document>
