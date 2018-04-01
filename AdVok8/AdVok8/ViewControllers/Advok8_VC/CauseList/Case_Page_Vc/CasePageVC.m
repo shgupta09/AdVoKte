@@ -66,7 +66,6 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
 
 -(void)backTapped{
     [self.navigationController popViewControllerAnimated:true];
-    
 }
 
 #pragma mark- TblView

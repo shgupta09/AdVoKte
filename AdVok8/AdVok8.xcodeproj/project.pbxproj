@@ -145,6 +145,12 @@
 		D8C3C299206FB14F0089A3CC /* DateCaell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C3C297206FB14F0089A3CC /* DateCaell.xib */; };
 		D8C3C29D206FB1D10089A3CC /* CaseListCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C29B206FB1D10089A3CC /* CaseListCell2.m */; };
 		D8C3C29E206FB1D10089A3CC /* CaseListCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C3C29C206FB1D10089A3CC /* CaseListCell2.xib */; };
+		D8C3C2A3206FBBFE0089A3CC /* CreateTaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C2A1206FBBFE0089A3CC /* CreateTaskVC.m */; };
+		D8C3C2A4206FBBFE0089A3CC /* CreateTaskVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C3C2A2206FBBFE0089A3CC /* CreateTaskVC.xib */; };
+		D8C3C2A8206FBEA80089A3CC /* TextFieldFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C2A7206FBEA80089A3CC /* TextFieldFooter.m */; };
+		D8C3C2AB207012600089A3CC /* NSLayoutConstraint+Multiplier.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C2AA207012600089A3CC /* NSLayoutConstraint+Multiplier.m */; };
+		D8C3C2B0207022970089A3CC /* TaskDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C2AE207022970089A3CC /* TaskDetailVC.m */; };
+		D8C3C2B1207022970089A3CC /* TaskDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C3C2AF207022970089A3CC /* TaskDetailVC.xib */; };
 		D8F44CA5205EA16400B80FCD /* UILabel+Boldify.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F44CA4205EA16400B80FCD /* UILabel+Boldify.m */; };
 /* End PBXBuildFile section */
 
@@ -390,6 +396,16 @@
 		D8C3C29A206FB1D10089A3CC /* CaseListCell2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaseListCell2.h; sourceTree = "<group>"; };
 		D8C3C29B206FB1D10089A3CC /* CaseListCell2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseListCell2.m; sourceTree = "<group>"; };
 		D8C3C29C206FB1D10089A3CC /* CaseListCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaseListCell2.xib; sourceTree = "<group>"; };
+		D8C3C2A0206FBBFE0089A3CC /* CreateTaskVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateTaskVC.h; sourceTree = "<group>"; };
+		D8C3C2A1206FBBFE0089A3CC /* CreateTaskVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateTaskVC.m; sourceTree = "<group>"; };
+		D8C3C2A2206FBBFE0089A3CC /* CreateTaskVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateTaskVC.xib; sourceTree = "<group>"; };
+		D8C3C2A6206FBEA80089A3CC /* TextFieldFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldFooter.h; sourceTree = "<group>"; };
+		D8C3C2A7206FBEA80089A3CC /* TextFieldFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFieldFooter.m; sourceTree = "<group>"; };
+		D8C3C2A9207012600089A3CC /* NSLayoutConstraint+Multiplier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+Multiplier.h"; sourceTree = "<group>"; };
+		D8C3C2AA207012600089A3CC /* NSLayoutConstraint+Multiplier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+Multiplier.m"; sourceTree = "<group>"; };
+		D8C3C2AD207022970089A3CC /* TaskDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaskDetailVC.h; sourceTree = "<group>"; };
+		D8C3C2AE207022970089A3CC /* TaskDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaskDetailVC.m; sourceTree = "<group>"; };
+		D8C3C2AF207022970089A3CC /* TaskDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskDetailVC.xib; sourceTree = "<group>"; };
 		D8F44CA3205EA16400B80FCD /* UILabel+Boldify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Boldify.h"; sourceTree = "<group>"; };
 		D8F44CA4205EA16400B80FCD /* UILabel+Boldify.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Boldify.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -683,6 +699,7 @@
 		5F70AC27202B14EB007E69A5 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				D8C3C2A5206FBE800089A3CC /* TextFieldViewSeparater */,
 				5F1B9C802035A7C9009503E7 /* TextFieldWithBaselineAndImage */,
 				5F1B9C4D203440BC009503E7 /* TableViewCells */,
 				5F1B9C2F2034156A009503E7 /* DashboardHomeCollevtionViewCell */,
@@ -1211,6 +1228,8 @@
 		D8C3C275206F731D0089A3CC /* Task */ = {
 			isa = PBXGroup;
 			children = (
+				D8C3C2AC2070227B0089A3CC /* TaskDetail */,
+				D8C3C29F206FBBE90089A3CC /* CreateTask */,
 				D8C3C276206F73410089A3CC /* TaskList */,
 			);
 			path = Task;
@@ -1280,11 +1299,42 @@
 			path = CaseListCell;
 			sourceTree = "<group>";
 		};
+		D8C3C29F206FBBE90089A3CC /* CreateTask */ = {
+			isa = PBXGroup;
+			children = (
+				D8C3C2A0206FBBFE0089A3CC /* CreateTaskVC.h */,
+				D8C3C2A1206FBBFE0089A3CC /* CreateTaskVC.m */,
+				D8C3C2A2206FBBFE0089A3CC /* CreateTaskVC.xib */,
+			);
+			path = CreateTask;
+			sourceTree = "<group>";
+		};
+		D8C3C2A5206FBE800089A3CC /* TextFieldViewSeparater */ = {
+			isa = PBXGroup;
+			children = (
+				D8C3C2A6206FBEA80089A3CC /* TextFieldFooter.h */,
+				D8C3C2A7206FBEA80089A3CC /* TextFieldFooter.m */,
+			);
+			path = TextFieldViewSeparater;
+			sourceTree = "<group>";
+		};
+		D8C3C2AC2070227B0089A3CC /* TaskDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D8C3C2AD207022970089A3CC /* TaskDetailVC.h */,
+				D8C3C2AE207022970089A3CC /* TaskDetailVC.m */,
+				D8C3C2AF207022970089A3CC /* TaskDetailVC.xib */,
+			);
+			path = TaskDetail;
+			sourceTree = "<group>";
+		};
 		D8F44C9F205EA08500B80FCD /* Categories */ = {
 			isa = PBXGroup;
 			children = (
 				D8F44CA3205EA16400B80FCD /* UILabel+Boldify.h */,
 				D8F44CA4205EA16400B80FCD /* UILabel+Boldify.m */,
+				D8C3C2A9207012600089A3CC /* NSLayoutConstraint+Multiplier.h */,
+				D8C3C2AA207012600089A3CC /* NSLayoutConstraint+Multiplier.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1383,6 +1433,7 @@
 				5F70AC05202B1250007E69A5 /* LaunchScreen.storyboard in Resources */,
 				5F71B6AB204E8E76004229DF /* LawyerListVC.xib in Resources */,
 				5F1B9C4C20343889009503E7 /* FeedViewController.xib in Resources */,
+				D8C3C2B1207022970089A3CC /* TaskDetailVC.xib in Resources */,
 				D8C3C29E206FB1D10089A3CC /* CaseListCell2.xib in Resources */,
 				5F71B6AD204E8E76004229DF /* ListCell.xib in Resources */,
 				5FCCBA0B2038223B002BFD4A /* RegisterStep1ViewController.xib in Resources */,
@@ -1407,6 +1458,7 @@
 				5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */,
 				5F96B71D206FE8D3003CD72F /* CalendarViewController.xib in Resources */,
 				5F71B692204D5E7F004229DF /* CommentViewController.xib in Resources */,
+				D8C3C2A4206FBBFE0089A3CC /* CreateTaskVC.xib in Resources */,
 				5FF9E2CC20617FE500467A0D /* NotificationListViewController.xib in Resources */,
 				5F71B6BD204E8E87004229DF /* ProfileCell.xib in Resources */,
 				5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */,
@@ -1576,6 +1628,7 @@
 				5F1B9C572034411C009503E7 /* FeedMainTableViewCell.m in Sources */,
 				5F96B76D206FE9F0003CD72F /* JTCalendarMenuMonthView.m in Sources */,
 				5F71B6C5204E8ED1004229DF /* ButtonWithImage.m in Sources */,
+				D8C3C2B0207022970089A3CC /* TaskDetailVC.m in Sources */,
 				9CF77D14205FD1EF00366505 /* FeedbackVC.m in Sources */,
 				9C70B276206E32CA00850305 /* CaseListCell.m in Sources */,
 				5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */,
@@ -1606,6 +1659,7 @@
 				5F70AC43202B1688007E69A5 /* RearViewController.m in Sources */,
 				5F1B9C69203461FE009503E7 /* LoginViewController.m in Sources */,
 				5F1B9C7920356909009503E7 /* Response.m in Sources */,
+				D8C3C2AB207012600089A3CC /* NSLayoutConstraint+Multiplier.m in Sources */,
 				5F1B9C702035687F009503E7 /* LoginModel.m in Sources */,
 				5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */,
 				5F1B9C6D20356753009503E7 /* ADRegistrationModel.m in Sources */,
@@ -1622,6 +1676,7 @@
 				5F96B770206FE9F0003CD72F /* JTCalendarMonthWeekDaysView.m in Sources */,
 				5F96B766206FE9F0003CD72F /* JTCalendar.m in Sources */,
 				9CE01023204FC363002A2E81 /* ProfileVC.m in Sources */,
+				D8C3C2A3206FBBFE0089A3CC /* CreateTaskVC.m in Sources */,
 				5F70ABF4202B1250007E69A5 /* main.m in Sources */,
 				5F71B691204D5E7F004229DF /* CommentViewController.m in Sources */,
 				D8C3C273206F69080089A3CC /* DailyCauseListCell.m in Sources */,
@@ -1629,6 +1684,7 @@
 				5F71B6BA204E8E87004229DF /* LabelCell.m in Sources */,
 				5F71B69B204E6C4C004229DF /* CommentLike.m in Sources */,
 				5F1B9C4B20343889009503E7 /* FeedViewController.m in Sources */,
+				D8C3C2A8206FBEA80089A3CC /* TextFieldFooter.m in Sources */,
 				5F1B9C3C203437F8009503E7 /* PostViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

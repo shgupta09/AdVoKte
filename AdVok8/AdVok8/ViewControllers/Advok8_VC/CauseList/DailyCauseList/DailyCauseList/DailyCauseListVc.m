@@ -74,9 +74,16 @@
     caseOBJ.isFromDailyCauseList = true;
     [self.navigationController pushViewController:caseOBJ animated:true];
 }
+
+
+
 #pragma mark- Date Picker
 
 
+//Resign Responder
+-(void)resignResponder{
+    [viewOverPicker removeFromSuperview];
+}
 // Set the default date
 -(void)setDefaultDate{
     

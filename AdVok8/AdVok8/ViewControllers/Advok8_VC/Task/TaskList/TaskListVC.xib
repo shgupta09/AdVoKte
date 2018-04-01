@@ -29,13 +29,35 @@
                         <outlet property="delegate" destination="-1" id="IDX-ga-0Q7"/>
                     </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYB-0H-SY8">
+                    <rect key="frame" x="305" y="597" width="50" height="50"/>
+                    <color key="backgroundColor" red="0.90438944099999996" green="0.56282806399999996" blue="0.18984088299999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="Lkf-Iy-vAz"/>
+                        <constraint firstAttribute="height" constant="50" id="cJ6-yn-9an"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnAction_Add_Task:" destination="-1" eventType="touchUpInside" id="sk4-Vo-Xtd"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="gYB-0H-SY8" secondAttribute="bottom" constant="20" id="GxY-yw-z4P"/>
                 <constraint firstItem="Aj7-Pt-A28" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="NEZ-Ec-9U9"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Aj7-Pt-A28" secondAttribute="bottom" id="ggn-By-pYX"/>
                 <constraint firstItem="Aj7-Pt-A28" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="oLS-fp-PlC"/>
                 <constraint firstAttribute="trailing" secondItem="Aj7-Pt-A28" secondAttribute="trailing" id="pVV-T5-YuJ"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="gYB-0H-SY8" secondAttribute="trailing" constant="20" id="vi3-6U-yaz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
         </view>
