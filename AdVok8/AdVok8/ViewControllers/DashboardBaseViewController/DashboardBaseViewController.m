@@ -9,6 +9,7 @@
 #import "DashboardBaseViewController.h"
 #import "CauseBaseVC.h"
 #import "TaskListVC.h"
+#import "AppealAlertVC.h"
 @interface DashboardBaseViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 {
     NSArray* arrOptions;
@@ -145,7 +146,11 @@
                 [self.navigationController presentViewController:navCon animated:true completion:nil];
             }
                 break;
-                
+            case 8:{
+                AppealAlertVC *appealObj = [[AppealAlertVC alloc]initWithNibName:@"AppealAlertVC" bundle:nil];
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:appealObj];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
             default:
                 break;
         }

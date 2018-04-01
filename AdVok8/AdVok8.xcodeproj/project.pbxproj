@@ -152,6 +152,12 @@
 		D8C3C2B0207022970089A3CC /* TaskDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C2AE207022970089A3CC /* TaskDetailVC.m */; };
 		D8C3C2B1207022970089A3CC /* TaskDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C3C2AF207022970089A3CC /* TaskDetailVC.xib */; };
 		D8F44CA5205EA16400B80FCD /* UILabel+Boldify.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F44CA4205EA16400B80FCD /* UILabel+Boldify.m */; };
+		D8FAAF82207125900084DE28 /* AppealAlertVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FAAF80207125900084DE28 /* AppealAlertVC.m */; };
+		D8FAAF83207125900084DE28 /* AppealAlertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FAAF81207125900084DE28 /* AppealAlertVC.xib */; };
+		D8FAAF88207127E40084DE28 /* AppealAlertCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FAAF86207127E40084DE28 /* AppealAlertCell.m */; };
+		D8FAAF89207127E40084DE28 /* AppealAlertCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FAAF87207127E40084DE28 /* AppealAlertCell.xib */; };
+		D8FAAF8E2071414F0084DE28 /* AppAppealVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FAAF8C2071414F0084DE28 /* AppAppealVC.m */; };
+		D8FAAF8F2071414F0084DE28 /* AppAppealVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FAAF8D2071414F0084DE28 /* AppAppealVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -408,6 +414,15 @@
 		D8C3C2AF207022970089A3CC /* TaskDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskDetailVC.xib; sourceTree = "<group>"; };
 		D8F44CA3205EA16400B80FCD /* UILabel+Boldify.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Boldify.h"; sourceTree = "<group>"; };
 		D8F44CA4205EA16400B80FCD /* UILabel+Boldify.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Boldify.m"; sourceTree = "<group>"; };
+		D8FAAF7F207125900084DE28 /* AppealAlertVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppealAlertVC.h; sourceTree = "<group>"; };
+		D8FAAF80207125900084DE28 /* AppealAlertVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppealAlertVC.m; sourceTree = "<group>"; };
+		D8FAAF81207125900084DE28 /* AppealAlertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppealAlertVC.xib; sourceTree = "<group>"; };
+		D8FAAF85207127E40084DE28 /* AppealAlertCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppealAlertCell.h; sourceTree = "<group>"; };
+		D8FAAF86207127E40084DE28 /* AppealAlertCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppealAlertCell.m; sourceTree = "<group>"; };
+		D8FAAF87207127E40084DE28 /* AppealAlertCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppealAlertCell.xib; sourceTree = "<group>"; };
+		D8FAAF8B2071414F0084DE28 /* AppAppealVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppAppealVC.h; sourceTree = "<group>"; };
+		D8FAAF8C2071414F0084DE28 /* AppAppealVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppAppealVC.m; sourceTree = "<group>"; };
+		D8FAAF8D2071414F0084DE28 /* AppAppealVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppAppealVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1053,28 +1068,13 @@
 		9C70B250206E00D700850305 /* Advok8_VC */ = {
 			isa = PBXGroup;
 			children = (
+				D8FAAF7D2071250B0084DE28 /* Appeal Alert */,
 				5F96B718206FE8C4003CD72F /* CalendarViewController */,
 				D8C3C275206F731D0089A3CC /* Task */,
-				9C70B251206E00D700850305 /* Appeal Alert */,
 				9C70B253206E00D700850305 /* Appointment */,
 				9C70B258206E00D700850305 /* CauseList */,
 			);
 			path = Advok8_VC;
-			sourceTree = "<group>";
-		};
-		9C70B251206E00D700850305 /* Appeal Alert */ = {
-			isa = PBXGroup;
-			children = (
-				9C70B252206E00D700850305 /* New Appeal  */,
-			);
-			path = "Appeal Alert";
-			sourceTree = "<group>";
-		};
-		9C70B252206E00D700850305 /* New Appeal  */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Appeal ";
 			sourceTree = "<group>";
 		};
 		9C70B253206E00D700850305 /* Appointment */ = {
@@ -1339,6 +1339,46 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
+		D8FAAF7D2071250B0084DE28 /* Appeal Alert */ = {
+			isa = PBXGroup;
+			children = (
+				D8FAAF8A2071413B0084DE28 /* AddAppeal */,
+				D8FAAF7E207125190084DE28 /* Appeal Alert List */,
+			);
+			path = "Appeal Alert";
+			sourceTree = "<group>";
+		};
+		D8FAAF7E207125190084DE28 /* Appeal Alert List */ = {
+			isa = PBXGroup;
+			children = (
+				D8FAAF84207127B80084DE28 /* Appeal Alert Cell */,
+				D8FAAF7F207125900084DE28 /* AppealAlertVC.h */,
+				D8FAAF80207125900084DE28 /* AppealAlertVC.m */,
+				D8FAAF81207125900084DE28 /* AppealAlertVC.xib */,
+			);
+			path = "Appeal Alert List";
+			sourceTree = "<group>";
+		};
+		D8FAAF84207127B80084DE28 /* Appeal Alert Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D8FAAF85207127E40084DE28 /* AppealAlertCell.h */,
+				D8FAAF86207127E40084DE28 /* AppealAlertCell.m */,
+				D8FAAF87207127E40084DE28 /* AppealAlertCell.xib */,
+			);
+			path = "Appeal Alert Cell";
+			sourceTree = "<group>";
+		};
+		D8FAAF8A2071413B0084DE28 /* AddAppeal */ = {
+			isa = PBXGroup;
+			children = (
+				D8FAAF8B2071414F0084DE28 /* AppAppealVC.h */,
+				D8FAAF8C2071414F0084DE28 /* AppAppealVC.m */,
+				D8FAAF8D2071414F0084DE28 /* AppAppealVC.xib */,
+			);
+			path = AddAppeal;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1442,6 +1482,7 @@
 				5F71B6BB204E8E87004229DF /* LabelCell.xib in Resources */,
 				9CE01024204FC363002A2E81 /* ProfileVC.xib in Resources */,
 				9C70B271206E0F5600850305 /* DailyCauseListVc.xib in Resources */,
+				D8FAAF8F2071414F0084DE28 /* AppAppealVC.xib in Resources */,
 				5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */,
 				5F70AC44202B1689007E69A5 /* RearViewController.xib in Resources */,
 				5F70AC2E202B14EB007E69A5 /* LoderView.xib in Resources */,
@@ -1457,6 +1498,7 @@
 				5FBD2B3C20595C4700D9C10B /* FeedDetailViewController.xib in Resources */,
 				5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */,
 				5F96B71D206FE8D3003CD72F /* CalendarViewController.xib in Resources */,
+				D8FAAF83207125900084DE28 /* AppealAlertVC.xib in Resources */,
 				5F71B692204D5E7F004229DF /* CommentViewController.xib in Resources */,
 				D8C3C2A4206FBBFE0089A3CC /* CreateTaskVC.xib in Resources */,
 				5FF9E2CC20617FE500467A0D /* NotificationListViewController.xib in Resources */,
@@ -1471,6 +1513,7 @@
 				9CF77D15205FD1EF00366505 /* FeedbackVC.xib in Resources */,
 				D8C3C299206FB14F0089A3CC /* DateCaell.xib in Resources */,
 				5F1B9C3D203437F8009503E7 /* PostViewController.xib in Resources */,
+				D8FAAF89207127E40084DE28 /* AppealAlertCell.xib in Resources */,
 				5F1B9C422034381C009503E7 /* JournalViewController.xib in Resources */,
 				5FC11D022037012A002030BD /* ChooseTypeViewController.xib in Resources */,
 				5F1B9C472034383F009503E7 /* LibraryViewController.xib in Resources */,
@@ -1635,6 +1678,7 @@
 				9C70B26B206E0F4200850305 /* CaseListVC.m in Sources */,
 				9C70B264206E011700850305 /* CauseBaseVC.m in Sources */,
 				5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */,
+				D8FAAF88207127E40084DE28 /* AppealAlertCell.m in Sources */,
 				5F71B6D3204F9934004229DF /* CreatePostViewController.m in Sources */,
 				9CF77D0A205F87B900366505 /* AdvocatePublicData.m in Sources */,
 				5F71B6A8204E8E76004229DF /* LawyersCategoryVC.m in Sources */,
@@ -1666,6 +1710,7 @@
 				5FF9E2CF2061813500467A0D /* Notification.m in Sources */,
 				5F96B772206FE9F0003CD72F /* JTCircleView.m in Sources */,
 				5F70AC2C202B14EB007E69A5 /* CommonFunction.m in Sources */,
+				D8FAAF82207125900084DE28 /* AppealAlertVC.m in Sources */,
 				9CF77CFE205F861600366505 /* Education.m in Sources */,
 				5F70AC2F202B14EB007E69A5 /* Reachability.m in Sources */,
 				5F1B9C462034383F009503E7 /* LibraryViewController.m in Sources */,
@@ -1685,6 +1730,7 @@
 				5F71B69B204E6C4C004229DF /* CommentLike.m in Sources */,
 				5F1B9C4B20343889009503E7 /* FeedViewController.m in Sources */,
 				D8C3C2A8206FBEA80089A3CC /* TextFieldFooter.m in Sources */,
+				D8FAAF8E2071414F0084DE28 /* AppAppealVC.m in Sources */,
 				5F1B9C3C203437F8009503E7 /* PostViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
