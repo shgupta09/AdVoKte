@@ -34,7 +34,7 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
 -(void)setUpData{
     
     if (_isFromDailyCauseList) {
-        _topConstraint.constant = 192;
+        _topConstraint.constant = 190;
         _view_DailyCause.hidden = false;
         _view_Case.hidden = true;
         [CommonFunction setShadowOpacity:_view_DailyCause];
