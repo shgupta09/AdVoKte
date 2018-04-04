@@ -29,7 +29,8 @@
     CGFloat statusBarHeight = app.statusBarFrame.size.height;
     
     UIView *statusBarView =  [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, statusBarHeight)];
-    statusBarView.backgroundColor  =  [CommonFunction colorWithHexString:Primary_Blue];
+//    statusBarView.backgroundColor  =  [CommonFunction colorWithHexString:Primary_Blue];
+     statusBarView.backgroundColor  =  [UIColor whiteColor];
     return statusBarView;
 }
 
@@ -60,12 +61,7 @@
     UINavigationItem *newItem = [[UINavigationItem alloc] init];
     UIImageView *backgroundView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 44.0)];
     backgroundView.image = [UIImage imageNamed:@"Home_ Title bar graphic"];
-    //    backgroundView.image = [UIImage imageNamed:@"Home_ Title bar graphic"];
-    //    [newNavBar setBackgroundImage:[UIImage imageNamed:@"Home_ Title bar graphic-1"] forBarMetrics:UIBarMetricsDefault];
-    //
-    //    newNavBar.backgroundColor = [UIColor whiteColor];
     [newNavBar addSubview:backgroundView];
-    
     UILabel* lbNavTitle = [[UILabel alloc] initWithFrame:CGRectMake(0,(viewController.view.bounds.size.width/2)
                                                                     -20,[UIScreen mainScreen].bounds.size.width,40)];
     lbNavTitle.textAlignment = NSTextAlignmentLeft;

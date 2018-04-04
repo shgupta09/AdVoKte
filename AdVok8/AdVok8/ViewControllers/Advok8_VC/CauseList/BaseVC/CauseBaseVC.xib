@@ -131,7 +131,7 @@
                 <constraint firstAttribute="bottom" secondItem="dE2-fX-6ct" secondAttribute="bottom" id="g7x-3q-rZb"/>
                 <constraint firstItem="ymj-Jh-eXL" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="gbD-h2-jeH"/>
                 <constraint firstItem="ymj-Jh-eXL" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="i6z-XX-sM1"/>
-                <constraint firstItem="WBm-4i-c7T" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="rxT-Ac-aLZ"/>
+                <constraint firstItem="WBm-4i-c7T" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="rxT-Ac-aLZ"/>
                 <constraint firstItem="ymj-Jh-eXL" firstAttribute="top" secondItem="WBm-4i-c7T" secondAttribute="bottom" id="vSO-A0-Mj5"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
