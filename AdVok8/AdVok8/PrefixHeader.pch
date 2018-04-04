@@ -53,6 +53,9 @@
 #import "NotificationListViewController.h"
 #import "ProfileVC.h"
 #import "CalendarViewController.h"
+#import "AppointmentListTableViewCell.h"
+#import "AppointmentListViewController.h"
+
 //Categories
 #import "NSLayoutConstraint+Multiplier.h"
 

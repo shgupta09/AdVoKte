@@ -19,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
+    [CommonFunction setNavToController:self title:@"Case Page" isCrossBusston:false];
+
     [_tblView registerNib:[UINib nibWithNibName:@"FeedMainTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeedMainTableViewCell"];
     arrData = [[NSMutableArray alloc ] init];
     
@@ -95,9 +98,9 @@
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
     
     
-    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"username"];
     
-    [parameter setValue:dictRequest forKey:@"_user"];
+    [parameter setValue:dictRequest forKey:@"_User"];
     
     if ([ CommonFunction reachability]) {
         [self addLoder];
@@ -174,6 +177,9 @@
 }
 
 
+-(void)backTapped{
+    [self dismissViewControllerAnimated:true completion:nil];
+}
 
 
 @end

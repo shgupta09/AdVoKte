@@ -99,6 +99,11 @@
 		5F96B772206FE9F0003CD72F /* JTCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F96B765206FE9F0003CD72F /* JTCircleView.m */; };
 		5F96B778207541CC003CD72F /* SearchPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F96B776207541CC003CD72F /* SearchPostTableViewCell.m */; };
 		5F96B779207541CC003CD72F /* SearchPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F96B777207541CC003CD72F /* SearchPostTableViewCell.xib */; };
+		5F96B77E20755994003CD72F /* AppointmentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F96B77C20755994003CD72F /* AppointmentListViewController.m */; };
+		5F96B77F20755994003CD72F /* AppointmentListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F96B77D20755994003CD72F /* AppointmentListViewController.xib */; };
+		5F96B78420755A49003CD72F /* AppointmentListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F96B78220755A49003CD72F /* AppointmentListTableViewCell.m */; };
+		5F96B78520755A49003CD72F /* AppointmentListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F96B78320755A49003CD72F /* AppointmentListTableViewCell.xib */; };
+		5F96B78820755E34003CD72F /* Appointment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F96B78720755E34003CD72F /* Appointment.m */; };
 		5FBD2B3B20595C4700D9C10B /* FeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD2B3920595C4700D9C10B /* FeedDetailViewController.m */; };
 		5FBD2B3C20595C4700D9C10B /* FeedDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FBD2B3A20595C4700D9C10B /* FeedDetailViewController.xib */; };
 		5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */; };
@@ -337,6 +342,14 @@
 		5F96B775207541CC003CD72F /* SearchPostTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchPostTableViewCell.h; sourceTree = "<group>"; };
 		5F96B776207541CC003CD72F /* SearchPostTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchPostTableViewCell.m; sourceTree = "<group>"; };
 		5F96B777207541CC003CD72F /* SearchPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPostTableViewCell.xib; sourceTree = "<group>"; };
+		5F96B77B20755994003CD72F /* AppointmentListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppointmentListViewController.h; sourceTree = "<group>"; };
+		5F96B77C20755994003CD72F /* AppointmentListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentListViewController.m; sourceTree = "<group>"; };
+		5F96B77D20755994003CD72F /* AppointmentListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentListViewController.xib; sourceTree = "<group>"; };
+		5F96B78120755A49003CD72F /* AppointmentListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppointmentListTableViewCell.h; sourceTree = "<group>"; };
+		5F96B78220755A49003CD72F /* AppointmentListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppointmentListTableViewCell.m; sourceTree = "<group>"; };
+		5F96B78320755A49003CD72F /* AppointmentListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentListTableViewCell.xib; sourceTree = "<group>"; };
+		5F96B78620755E34003CD72F /* Appointment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Appointment.h; sourceTree = "<group>"; };
+		5F96B78720755E34003CD72F /* Appointment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Appointment.m; sourceTree = "<group>"; };
 		5FBD2B3820595C4700D9C10B /* FeedDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedDetailViewController.h; sourceTree = "<group>"; };
 		5FBD2B3920595C4700D9C10B /* FeedDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedDetailViewController.m; sourceTree = "<group>"; };
 		5FBD2B3A20595C4700D9C10B /* FeedDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailViewController.xib; sourceTree = "<group>"; };
@@ -490,6 +503,7 @@
 		5F1B9C29203413DD009503E7 /* DashboardBaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5F96B77A20755979003CD72F /* AppointmentListViewController */,
 				9CF77D0B205FCFDC00366505 /* FeedBack */,
 				5F71B6AE204E8E87004229DF /* SelectedLawyerVC */,
 				5F71B69C204E8E76004229DF /* Lawer category */,
@@ -776,6 +790,8 @@
 				9CF77D09205F87B900366505 /* AdvocatePublicData.m */,
 				5FF9E2CD2061813500467A0D /* Notification.h */,
 				5FF9E2CE2061813500467A0D /* Notification.m */,
+				5F96B78620755E34003CD72F /* Appointment.h */,
+				5F96B78720755E34003CD72F /* Appointment.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1034,6 +1050,27 @@
 				5F96B777207541CC003CD72F /* SearchPostTableViewCell.xib */,
 			);
 			path = SearchPostTableViewCell;
+			sourceTree = "<group>";
+		};
+		5F96B77A20755979003CD72F /* AppointmentListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F96B78020755A29003CD72F /* AppointmentListTableViewCell */,
+				5F96B77B20755994003CD72F /* AppointmentListViewController.h */,
+				5F96B77C20755994003CD72F /* AppointmentListViewController.m */,
+				5F96B77D20755994003CD72F /* AppointmentListViewController.xib */,
+			);
+			path = AppointmentListViewController;
+			sourceTree = "<group>";
+		};
+		5F96B78020755A29003CD72F /* AppointmentListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F96B78120755A49003CD72F /* AppointmentListTableViewCell.h */,
+				5F96B78220755A49003CD72F /* AppointmentListTableViewCell.m */,
+				5F96B78320755A49003CD72F /* AppointmentListTableViewCell.xib */,
+			);
+			path = AppointmentListTableViewCell;
 			sourceTree = "<group>";
 		};
 		5FBD2B3720595C0E00D9C10B /* FeedDetailViewController */ = {
@@ -1557,6 +1594,7 @@
 				5F71B6BD204E8E87004229DF /* ProfileCell.xib in Resources */,
 				5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */,
 				5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */,
+				5F96B78520755A49003CD72F /* AppointmentListTableViewCell.xib in Resources */,
 				5F71B6DA204FC4FD004229DF /* PublishArticleViewController.xib in Resources */,
 				9C70B265206E011700850305 /* CauseBaseVC.xib in Resources */,
 				9C70B26C206E0F4200850305 /* CaseListVC.xib in Resources */,
@@ -1576,6 +1614,7 @@
 				5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */,
 				D8C3C274206F69080089A3CC /* DailyCauseListCell.xib in Resources */,
 				D8C3C28C206FA3B40089A3CC /* AccordionHeaderView.xib in Resources */,
+				5F96B77F20755994003CD72F /* AppointmentListViewController.xib in Resources */,
 				D8C3C287206FA2960089A3CC /* CasePageVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1694,6 +1733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F1B9C76203568F3009503E7 /* User.m in Sources */,
+				5F96B78820755E34003CD72F /* Appointment.m in Sources */,
 				5F96B76F206FE9F0003CD72F /* JTCalendarMonthView.m in Sources */,
 				5F71B697204E5BE3004229DF /* CommentTableViewCell.m in Sources */,
 				5F71B6D9204FC4FD004229DF /* PublishArticleViewController.m in Sources */,
@@ -1756,11 +1796,13 @@
 				5F96B76A206FE9F0003CD72F /* JTCalendarDayView.m in Sources */,
 				5F1B9C832035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m in Sources */,
 				5F70AC43202B1688007E69A5 /* RearViewController.m in Sources */,
+				5F96B78420755A49003CD72F /* AppointmentListTableViewCell.m in Sources */,
 				5F1B9C69203461FE009503E7 /* LoginViewController.m in Sources */,
 				5F1B9C7920356909009503E7 /* Response.m in Sources */,
 				D8C3C2AB207012600089A3CC /* NSLayoutConstraint+Multiplier.m in Sources */,
 				5F1B9C702035687F009503E7 /* LoginModel.m in Sources */,
 				5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */,
+				5F96B77E20755994003CD72F /* AppointmentListViewController.m in Sources */,
 				5F1B9C6D20356753009503E7 /* ADRegistrationModel.m in Sources */,
 				5FF9E2CF2061813500467A0D /* Notification.m in Sources */,
 				5F96B772206FE9F0003CD72F /* JTCircleView.m in Sources */,
