@@ -97,6 +97,8 @@
 		5F96B770206FE9F0003CD72F /* JTCalendarMonthWeekDaysView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F96B75F206FE9F0003CD72F /* JTCalendarMonthWeekDaysView.m */; };
 		5F96B771206FE9F0003CD72F /* JTCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F96B763206FE9F0003CD72F /* JTCalendarWeekView.m */; };
 		5F96B772206FE9F0003CD72F /* JTCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F96B765206FE9F0003CD72F /* JTCircleView.m */; };
+		5F96B778207541CC003CD72F /* SearchPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F96B776207541CC003CD72F /* SearchPostTableViewCell.m */; };
+		5F96B779207541CC003CD72F /* SearchPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F96B777207541CC003CD72F /* SearchPostTableViewCell.xib */; };
 		5FBD2B3B20595C4700D9C10B /* FeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD2B3920595C4700D9C10B /* FeedDetailViewController.m */; };
 		5FBD2B3C20595C4700D9C10B /* FeedDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FBD2B3A20595C4700D9C10B /* FeedDetailViewController.xib */; };
 		5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */; };
@@ -332,6 +334,9 @@
 		5F96B763206FE9F0003CD72F /* JTCalendarWeekView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCalendarWeekView.m; sourceTree = "<group>"; };
 		5F96B764206FE9F0003CD72F /* JTCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTCircleView.h; sourceTree = "<group>"; };
 		5F96B765206FE9F0003CD72F /* JTCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTCircleView.m; sourceTree = "<group>"; };
+		5F96B775207541CC003CD72F /* SearchPostTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchPostTableViewCell.h; sourceTree = "<group>"; };
+		5F96B776207541CC003CD72F /* SearchPostTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchPostTableViewCell.m; sourceTree = "<group>"; };
+		5F96B777207541CC003CD72F /* SearchPostTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchPostTableViewCell.xib; sourceTree = "<group>"; };
 		5FBD2B3820595C4700D9C10B /* FeedDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedDetailViewController.h; sourceTree = "<group>"; };
 		5FBD2B3920595C4700D9C10B /* FeedDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedDetailViewController.m; sourceTree = "<group>"; };
 		5FBD2B3A20595C4700D9C10B /* FeedDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailViewController.xib; sourceTree = "<group>"; };
@@ -550,6 +555,7 @@
 		5F1B9C4D203440BC009503E7 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				5F96B774207541B3003CD72F /* SearchPostTableViewCell */,
 				9CE01025204FC4A9002A2E81 /* ProfileCell */,
 				5F71B693204E5BC9004229DF /* CommentTableViewCell */,
 				5F1B9C7A20359082009503E7 /* JournalMainTableViewCell */,
@@ -1018,6 +1024,16 @@
 				5F96B765206FE9F0003CD72F /* JTCircleView.m */,
 			);
 			path = JTCalendar;
+			sourceTree = "<group>";
+		};
+		5F96B774207541B3003CD72F /* SearchPostTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F96B775207541CC003CD72F /* SearchPostTableViewCell.h */,
+				5F96B776207541CC003CD72F /* SearchPostTableViewCell.m */,
+				5F96B777207541CC003CD72F /* SearchPostTableViewCell.xib */,
+			);
+			path = SearchPostTableViewCell;
 			sourceTree = "<group>";
 		};
 		5FBD2B3720595C0E00D9C10B /* FeedDetailViewController */ = {
@@ -1512,6 +1528,7 @@
 				5FCCBA0B2038223B002BFD4A /* RegisterStep1ViewController.xib in Resources */,
 				5F70AC02202B1250007E69A5 /* Assets.xcassets in Resources */,
 				5F71B6BF204E8E87004229DF /* SelectedLawyerVC.xib in Resources */,
+				5F96B779207541CC003CD72F /* SearchPostTableViewCell.xib in Resources */,
 				5F71B6BB204E8E87004229DF /* LabelCell.xib in Resources */,
 				9CE01024204FC363002A2E81 /* ProfileVC.xib in Resources */,
 				9C70B271206E0F5600850305 /* DailyCauseListVc.xib in Resources */,
@@ -1713,6 +1730,7 @@
 				9C70B276206E32CA00850305 /* CaseListCell.m in Sources */,
 				5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */,
 				9C70B26B206E0F4200850305 /* CaseListVC.m in Sources */,
+				5F96B778207541CC003CD72F /* SearchPostTableViewCell.m in Sources */,
 				9C70B264206E011700850305 /* CauseBaseVC.m in Sources */,
 				5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */,
 				D8FAAF88207127E40084DE28 /* AppealAlertCell.m in Sources */,

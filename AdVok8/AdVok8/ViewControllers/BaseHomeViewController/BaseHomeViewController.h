@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cont_bottomToSuperview;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_tblHeight;
+@property (weak, nonatomic) IBOutlet UIButton *btnSearchContent;
 
 @end
