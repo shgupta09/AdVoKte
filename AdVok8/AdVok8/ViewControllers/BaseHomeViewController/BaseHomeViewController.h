@@ -14,5 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIView *vi_activeLegislate;
 @property (weak, nonatomic) IBOutlet UIView *vi_activeDashboard;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cont_bottomToSuperview;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_tblHeight;
 
 @end

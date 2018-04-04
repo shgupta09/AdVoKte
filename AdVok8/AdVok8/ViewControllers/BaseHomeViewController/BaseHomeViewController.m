@@ -132,7 +132,8 @@
 
 
 - (IBAction)btnSearchClciked:(id)sender {
-//    _searchBar.hidden = false;
+
+    _searchBar.hidden = false;
 }
 
 
