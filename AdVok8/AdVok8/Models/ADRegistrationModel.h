@@ -81,6 +81,5 @@
 @property(nonatomic ,strong) NSString *Experiencedata;
 @property(nonatomic ,strong) NSString *latitude;
 @property(nonatomic ,strong) NSString *longlatitude;
-@property(nonatomic ,strong) NSString *QuestionStatus;
 @end
 

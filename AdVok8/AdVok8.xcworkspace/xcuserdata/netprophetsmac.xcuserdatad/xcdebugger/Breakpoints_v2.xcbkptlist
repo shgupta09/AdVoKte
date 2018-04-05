@@ -4,17 +4,43 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "1">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/User/SelectedLawyerVC/SelectedLawyerVC.m"
-            timestampString = "544514870.745567"
+            filePath = "AdVok8/ViewControllers/LawyerList/LawyerListVC.m"
+            timestampString = "544094021.35817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdVok8/ViewControllers/SelectedLawyerVC/SelectedLawyerVC.m"
+            timestampString = "543229816.098731"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
@@ -25,24 +51,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/User/SelectedLawyerVC/SelectedLawyerVC.m"
-            timestampString = "544514870.745641"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "-tableView:numberOfRowsInSection:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/User/SelectedLawyerVC/SelectedLawyerVC.m"
-            timestampString = "544514870.745693"
+            filePath = "AdVok8/ViewControllers/SelectedLawyerVC/SelectedLawyerVC.m"
+            timestampString = "543229816.099305"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
@@ -57,49 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/User/LawyerList/LawyerListVC.m"
-            timestampString = "544514215.330599"
+            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/FeedBack/FeedbackVC.m"
+            timestampString = "543229816.099394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.SymbolicBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            symbolName = ""
-            moduleName = "">
-            <Locations>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/User/SelectedLawyerVC/SelectedLawyerVC.m"
-            timestampString = "544514870.745765"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "-btnAction_Share:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -109,13 +83,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/User/SelectedLawyerVC/SelectedLawyerVC.m"
-            timestampString = "544514870.7458121"
+            filePath = "AdVok8/ViewControllers/LoginViewController/LoginViewController.m"
+            timestampString = "544094021.358309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "-viewDidLayoutSubviews"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "-hitApiToLogin"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -125,13 +99,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/User/SelectedLawyerVC/SelectedLawyerVC.m"
-            timestampString = "544514870.745856"
+            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/DashboardBaseViewController.m"
+            timestampString = "544094021.358368"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
-            landmarkName = "-hitApiToGetAdvocateData"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -141,13 +115,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/User/LawyerList/LawyerListVC.m"
-            timestampString = "544514593.2564991"
+            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/DashboardBaseViewController.m"
+            timestampString = "544094021.358422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -157,13 +131,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/User/SelectedLawyerVC/SelectedLawyerVC.m"
-            timestampString = "544514870.745916"
+            filePath = "AdVok8/ViewControllers/LoginViewController/LoginViewController.m"
+            timestampString = "544094021.358472"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "-backTapped"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "-hitApiToLogin"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -173,45 +147,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/User/SelectedLawyerVC/SelectedLawyerVC.m"
-            timestampString = "544514870.745962"
+            filePath = "AdVok8/ViewControllers/LoginViewController/LoginViewController.m"
+            timestampString = "544094021.358515"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/User/SelectedLawyerVC/SelectedLawyerVC.m"
-            timestampString = "544514870.746007"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/DashboardBaseViewController/User/SelectedLawyerVC/SelectedLawyerVC.m"
-            timestampString = "544514870.746051"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "-hitApiToLogin"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

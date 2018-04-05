@@ -384,7 +384,6 @@
 #pragma mark- Btn Actions
 
 - (IBAction)btnAction_BookNow:(id)sender {
-    
 }
 - (IBAction)btnAction_Feesback:(id)sender {
     FeedbackVC *vcObj = [[FeedbackVC alloc]initWithNibName:@"FeedbackVC" bundle:nil];
