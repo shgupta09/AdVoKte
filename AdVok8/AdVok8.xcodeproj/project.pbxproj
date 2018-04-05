@@ -37,6 +37,14 @@
 		5F3645E1205F7EF70041E88C /* DocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3645E0205F7EF70041E88C /* DocumentModel.m */; };
 		5F415751205E3352003D29B4 /* JournalFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F41574F205E3352003D29B4 /* JournalFeedsViewController.m */; };
 		5F415752205E3352003D29B4 /* JournalFeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F415750205E3352003D29B4 /* JournalFeedsViewController.xib */; };
+		5F58FC4B20769085009C5D9C /* SelectSlotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F58FC4920769085009C5D9C /* SelectSlotViewController.m */; };
+		5F58FC4C20769085009C5D9C /* SelectSlotViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F58FC4A20769085009C5D9C /* SelectSlotViewController.xib */; };
+		5F58FC51207693B8009C5D9C /* SlotCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F58FC4F207693B8009C5D9C /* SlotCollectionViewCell.m */; };
+		5F58FC52207693B8009C5D9C /* SlotCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F58FC50207693B8009C5D9C /* SlotCollectionViewCell.xib */; };
+		5F58FC582076A59F009C5D9C /* CasePageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F58FC562076A59F009C5D9C /* CasePageListViewController.m */; };
+		5F58FC592076A59F009C5D9C /* CasePageListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F58FC572076A59F009C5D9C /* CasePageListViewController.xib */; };
+		5F58FC642076A7A1009C5D9C /* AddNewCaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F58FC622076A7A1009C5D9C /* AddNewCaseViewController.m */; };
+		5F58FC652076A7A1009C5D9C /* AddNewCaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F58FC632076A7A1009C5D9C /* AddNewCaseViewController.xib */; };
 		5F70ABF4202B1250007E69A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF3202B1250007E69A5 /* main.m */; };
 		5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF6202B1250007E69A5 /* AppDelegate.m */; };
 		5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F70ABFB202B1250007E69A5 /* Main.storyboard */; };
@@ -236,6 +244,18 @@
 		5F41574E205E3352003D29B4 /* JournalFeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalFeedsViewController.h; sourceTree = "<group>"; };
 		5F41574F205E3352003D29B4 /* JournalFeedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalFeedsViewController.m; sourceTree = "<group>"; };
 		5F415750205E3352003D29B4 /* JournalFeedsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JournalFeedsViewController.xib; sourceTree = "<group>"; };
+		5F58FC4820769085009C5D9C /* SelectSlotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectSlotViewController.h; sourceTree = "<group>"; };
+		5F58FC4920769085009C5D9C /* SelectSlotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectSlotViewController.m; sourceTree = "<group>"; };
+		5F58FC4A20769085009C5D9C /* SelectSlotViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectSlotViewController.xib; sourceTree = "<group>"; };
+		5F58FC4E207693B8009C5D9C /* SlotCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SlotCollectionViewCell.h; sourceTree = "<group>"; };
+		5F58FC4F207693B8009C5D9C /* SlotCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlotCollectionViewCell.m; sourceTree = "<group>"; };
+		5F58FC50207693B8009C5D9C /* SlotCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlotCollectionViewCell.xib; sourceTree = "<group>"; };
+		5F58FC552076A59F009C5D9C /* CasePageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CasePageListViewController.h; sourceTree = "<group>"; };
+		5F58FC562076A59F009C5D9C /* CasePageListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CasePageListViewController.m; sourceTree = "<group>"; };
+		5F58FC572076A59F009C5D9C /* CasePageListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CasePageListViewController.xib; sourceTree = "<group>"; };
+		5F58FC612076A7A1009C5D9C /* AddNewCaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddNewCaseViewController.h; sourceTree = "<group>"; };
+		5F58FC622076A7A1009C5D9C /* AddNewCaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddNewCaseViewController.m; sourceTree = "<group>"; };
+		5F58FC632076A7A1009C5D9C /* AddNewCaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewCaseViewController.xib; sourceTree = "<group>"; };
 		5F70ABEF202B1250007E69A5 /* AdVok8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdVok8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F70ABF3202B1250007E69A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F70ABF5202B1250007E69A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -503,6 +523,8 @@
 		5F1B9C29203413DD009503E7 /* DashboardBaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5F58FC532076A56B009C5D9C /* TrackYourCase */,
+				5F58FC4720769064009C5D9C /* SelectSlotViewController */,
 				5F96B77A20755979003CD72F /* AppointmentListViewController */,
 				9CF77D0B205FCFDC00366505 /* FeedBack */,
 				5F71B6AE204E8E87004229DF /* SelectedLawyerVC */,
@@ -649,6 +671,56 @@
 				5F415750205E3352003D29B4 /* JournalFeedsViewController.xib */,
 			);
 			path = JournalFeedsViewController;
+			sourceTree = "<group>";
+		};
+		5F58FC4720769064009C5D9C /* SelectSlotViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F58FC4D207693A1009C5D9C /* SlotCollectionViewCell */,
+				5F58FC4820769085009C5D9C /* SelectSlotViewController.h */,
+				5F58FC4920769085009C5D9C /* SelectSlotViewController.m */,
+				5F58FC4A20769085009C5D9C /* SelectSlotViewController.xib */,
+			);
+			path = SelectSlotViewController;
+			sourceTree = "<group>";
+		};
+		5F58FC4D207693A1009C5D9C /* SlotCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5F58FC4E207693B8009C5D9C /* SlotCollectionViewCell.h */,
+				5F58FC4F207693B8009C5D9C /* SlotCollectionViewCell.m */,
+				5F58FC50207693B8009C5D9C /* SlotCollectionViewCell.xib */,
+			);
+			path = SlotCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		5F58FC532076A56B009C5D9C /* TrackYourCase */ = {
+			isa = PBXGroup;
+			children = (
+				5F58FC602076A78C009C5D9C /* AddNewCaseViewController */,
+				5F58FC542076A587009C5D9C /* CasePageListViewController */,
+			);
+			path = TrackYourCase;
+			sourceTree = "<group>";
+		};
+		5F58FC542076A587009C5D9C /* CasePageListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F58FC552076A59F009C5D9C /* CasePageListViewController.h */,
+				5F58FC562076A59F009C5D9C /* CasePageListViewController.m */,
+				5F58FC572076A59F009C5D9C /* CasePageListViewController.xib */,
+			);
+			path = CasePageListViewController;
+			sourceTree = "<group>";
+		};
+		5F58FC602076A78C009C5D9C /* AddNewCaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F58FC612076A7A1009C5D9C /* AddNewCaseViewController.h */,
+				5F58FC622076A7A1009C5D9C /* AddNewCaseViewController.m */,
+				5F58FC632076A7A1009C5D9C /* AddNewCaseViewController.xib */,
+			);
+			path = AddNewCaseViewController;
 			sourceTree = "<group>";
 		};
 		5F70ABE6202B1250007E69A5 = {
@@ -1567,6 +1639,7 @@
 				5F71B6BF204E8E87004229DF /* SelectedLawyerVC.xib in Resources */,
 				5F96B779207541CC003CD72F /* SearchPostTableViewCell.xib in Resources */,
 				5F71B6BB204E8E87004229DF /* LabelCell.xib in Resources */,
+				5F58FC652076A7A1009C5D9C /* AddNewCaseViewController.xib in Resources */,
 				9CE01024204FC363002A2E81 /* ProfileVC.xib in Resources */,
 				9C70B271206E0F5600850305 /* DailyCauseListVc.xib in Resources */,
 				D8FAAF8F2071414F0084DE28 /* AppAppealVC.xib in Resources */,
@@ -1574,6 +1647,7 @@
 				5F70AC44202B1689007E69A5 /* RearViewController.xib in Resources */,
 				5F70AC2E202B14EB007E69A5 /* LoderView.xib in Resources */,
 				5F1B9C582034411C009503E7 /* FeedMainTableViewCell.xib in Resources */,
+				5F58FC52207693B8009C5D9C /* SlotCollectionViewCell.xib in Resources */,
 				5F70AC4B202B1691007E69A5 /* SplashScreenViewController.xib in Resources */,
 				5F71B6CE204E9712004229DF /* LawyerCategoryTableViewCell.xib in Resources */,
 				9CE0102B204FC4C4002A2E81 /* ProfileCell2.xib in Resources */,
@@ -1593,6 +1667,7 @@
 				5FF9E2CC20617FE500467A0D /* NotificationListViewController.xib in Resources */,
 				5F71B6BD204E8E87004229DF /* ProfileCell.xib in Resources */,
 				5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */,
+				5F58FC592076A59F009C5D9C /* CasePageListViewController.xib in Resources */,
 				5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */,
 				5F96B78520755A49003CD72F /* AppointmentListTableViewCell.xib in Resources */,
 				5F71B6DA204FC4FD004229DF /* PublishArticleViewController.xib in Resources */,
@@ -1613,6 +1688,7 @@
 				5F1B9C2E203413F8009503E7 /* DashboardBaseViewController.xib in Resources */,
 				5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */,
 				D8C3C274206F69080089A3CC /* DailyCauseListCell.xib in Resources */,
+				5F58FC4C20769085009C5D9C /* SelectSlotViewController.xib in Resources */,
 				D8C3C28C206FA3B40089A3CC /* AccordionHeaderView.xib in Resources */,
 				5F96B77F20755994003CD72F /* AppointmentListViewController.xib in Resources */,
 				D8C3C287206FA2960089A3CC /* CasePageVC.xib in Resources */,
@@ -1732,14 +1808,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F58FC51207693B8009C5D9C /* SlotCollectionViewCell.m in Sources */,
 				5F1B9C76203568F3009503E7 /* User.m in Sources */,
 				5F96B78820755E34003CD72F /* Appointment.m in Sources */,
 				5F96B76F206FE9F0003CD72F /* JTCalendarMonthView.m in Sources */,
 				5F71B697204E5BE3004229DF /* CommentTableViewCell.m in Sources */,
 				5F71B6D9204FC4FD004229DF /* PublishArticleViewController.m in Sources */,
 				D8C3C27A206F73560089A3CC /* TaskListVC.m in Sources */,
+				5F58FC582076A59F009C5D9C /* CasePageListViewController.m in Sources */,
 				5F1B9C5D20344A64009503E7 /* PostMainTableViewCell.m in Sources */,
 				5F415751205E3352003D29B4 /* JournalFeedsViewController.m in Sources */,
+				5F58FC642076A7A1009C5D9C /* AddNewCaseViewController.m in Sources */,
 				9CF77D01205F866F00366505 /* WorkingExperience.m in Sources */,
 				5F71B6C2204E8EA4004229DF /* LeftImageWithLabel.m in Sources */,
 				D8C3C298206FB14F0089A3CC /* DateCaell.m in Sources */,
@@ -1756,6 +1835,7 @@
 				D8C3C29D206FB1D10089A3CC /* CaseListCell2.m in Sources */,
 				5F1B9C2D203413F8009503E7 /* DashboardBaseViewController.m in Sources */,
 				5F96B768206FE9F0003CD72F /* JTCalendarContentView.m in Sources */,
+				5F58FC4B20769085009C5D9C /* SelectSlotViewController.m in Sources */,
 				5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */,
 				D8FAAF9E2071601F0084DE28 /* AppoinmentList_VC.m in Sources */,
 				5F71B6BC204E8E87004229DF /* ProfileCell.m in Sources */,

@@ -55,6 +55,10 @@
 #import "CalendarViewController.h"
 #import "AppointmentListTableViewCell.h"
 #import "AppointmentListViewController.h"
+#import "SlotCollectionViewCell.h"
+#import "SelectSlotViewController.h"
+#import "AddNewCaseViewController.h"
+#import "CasePageListViewController.h"
 
 //Categories
 #import "NSLayoutConstraint+Multiplier.h"

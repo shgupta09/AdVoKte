@@ -384,6 +384,11 @@
 #pragma mark- Btn Actions
 
 - (IBAction)btnAction_BookNow:(id)sender {
+    
+    SelectSlotViewController *vcObj = [[SelectSlotViewController alloc]initWithNibName:@"SelectSlotViewController" bundle:nil];
+    vcObj.obj = _obj;
+    [self.navigationController pushViewController:vcObj animated:true];
+
 }
 - (IBAction)btnAction_Feesback:(id)sender {
     FeedbackVC *vcObj = [[FeedbackVC alloc]initWithNibName:@"FeedbackVC" bundle:nil];

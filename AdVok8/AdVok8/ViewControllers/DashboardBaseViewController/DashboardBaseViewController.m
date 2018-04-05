@@ -177,7 +177,22 @@
                 [self.navigationController presentViewController:navCon animated:true completion:nil];
             }
                 break;
+               
+            case 1:{
+                CasePageListViewController *vc = [[CasePageListViewController alloc]initWithNibName:@"CasePageListViewController" bundle:nil];
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+
+            }
+                break;
+            case 2:
+            {
+                ProfileVC *profileObj = [[ProfileVC alloc]initWithNibName:@"ProfileVC" bundle:nil];
+                profileObj.isFromMyActivity = true;
+                [self.navigationController pushViewController:profileObj animated:true];
                 
+            }
+                break;
             case 3:{
                 AppointmentListViewController *vc = [[AppointmentListViewController alloc]initWithNibName:@"AppointmentListViewController" bundle:nil];
                 UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
@@ -185,6 +200,7 @@
             }
                 break;
                 
+            
             default:
                 break;
         }
