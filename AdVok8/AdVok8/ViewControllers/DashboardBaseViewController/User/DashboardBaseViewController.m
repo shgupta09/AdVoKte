@@ -178,6 +178,13 @@
             }
                 break;
                 
+            case 3:{
+                AppointmentListViewController *vc = [[AppointmentListViewController alloc]initWithNibName:@"AppointmentListViewController" bundle:nil];
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
+                break;
+                
             default:
                 break;
         }

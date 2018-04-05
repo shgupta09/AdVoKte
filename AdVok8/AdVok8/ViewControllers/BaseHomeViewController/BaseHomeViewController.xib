@@ -12,9 +12,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseHomeViewController">
             <connections>
+                <outlet property="btnSearchContent" destination="c0o-M0-tPh" id="95W-ga-gDI"/>
+                <outlet property="cons_tblHeight" destination="vww-rL-hrw" id="N7W-Mv-2rj"/>
+                <outlet property="cont_bottomToSuperview" destination="Bom-Vf-PAQ" id="Snj-9T-20o"/>
                 <outlet property="containerView" destination="Ldd-vz-OzZ" id="aha-hr-dFR"/>
                 <outlet property="containerViewDashboard" destination="Imr-Q0-M08" id="YLj-DU-kf6"/>
                 <outlet property="searchBar" destination="M8k-WY-dgX" id="ha9-Ob-WHj"/>
+                <outlet property="tblView" destination="QTn-Ep-LOM" id="A6b-ka-eZA"/>
                 <outlet property="vi_activeDashboard" destination="5Ei-qh-w0U" id="bOs-SB-7aY"/>
                 <outlet property="vi_activeLegislate" destination="1HQ-oG-auD" id="QCe-yK-UOb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -73,7 +77,7 @@
                                 <action selector="btnDashboard:" destination="-1" eventType="touchUpInside" id="oCb-pw-8Ug"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GN9-Ea-Pp5">
+                        <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GN9-Ea-Pp5">
                             <rect key="frame" x="336" y="10" width="21" height="23"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="23" id="Btr-9l-oZb"/>
@@ -127,27 +131,63 @@
                     <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QTn-Ep-LOM">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="603" id="vww-rL-hrw"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="gbE-c1-fzU"/>
+                        <outlet property="delegate" destination="-1" id="JbF-D6-hKZ"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0o-M0-tPh">
+                    <rect key="frame" x="15" y="558" width="45" height="45"/>
+                    <color key="backgroundColor" red="0.95178693530000003" green="0.5757434964" blue="0.23977765440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="4jx-Ey-Egs"/>
+                        <constraint firstAttribute="height" constant="45" id="ciy-RL-wyL"/>
+                    </constraints>
+                    <state key="normal" image="Search-1"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="btnSearchClciked:" destination="-1" eventType="touchUpInside" id="aSH-u2-p6O"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="QTn-Ep-LOM" firstAttribute="top" secondItem="CQB-E4-Hzq" secondAttribute="top" constant="44" id="1HT-bJ-6in"/>
+                <constraint firstItem="CQB-E4-Hzq" firstAttribute="bottom" secondItem="QTn-Ep-LOM" secondAttribute="bottom" id="Bom-Vf-PAQ"/>
                 <constraint firstItem="fXi-dS-ur6" firstAttribute="leading" secondItem="CQB-E4-Hzq" secondAttribute="leading" id="F62-zv-bSy"/>
+                <constraint firstItem="CQB-E4-Hzq" firstAttribute="bottom" secondItem="c0o-M0-tPh" secondAttribute="bottom" constant="64" id="HiY-gM-hVB"/>
                 <constraint firstItem="Ldd-vz-OzZ" firstAttribute="top" secondItem="fXi-dS-ur6" secondAttribute="bottom" id="KJ5-BM-XYI"/>
                 <constraint firstItem="Imr-Q0-M08" firstAttribute="top" secondItem="fXi-dS-ur6" secondAttribute="bottom" id="Tyx-Bk-qpC"/>
                 <constraint firstAttribute="trailing" secondItem="Ldd-vz-OzZ" secondAttribute="trailing" id="WQs-mK-l3J"/>
                 <constraint firstItem="Ldd-vz-OzZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WYs-Aq-Tn7"/>
                 <constraint firstItem="Imr-Q0-M08" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Why-eC-I9J"/>
+                <constraint firstItem="QTn-Ep-LOM" firstAttribute="trailing" secondItem="CQB-E4-Hzq" secondAttribute="trailing" id="c3J-NC-dcg"/>
+                <constraint firstItem="c0o-M0-tPh" firstAttribute="leading" secondItem="CQB-E4-Hzq" secondAttribute="leading" constant="15" id="dLH-8e-cyR"/>
                 <constraint firstAttribute="bottom" secondItem="Imr-Q0-M08" secondAttribute="bottom" id="gSy-xf-Jez"/>
                 <constraint firstAttribute="bottom" secondItem="Ldd-vz-OzZ" secondAttribute="bottom" id="mXe-Ze-P5v"/>
+                <constraint firstItem="QTn-Ep-LOM" firstAttribute="leading" secondItem="CQB-E4-Hzq" secondAttribute="leading" id="tAT-zc-Ydb"/>
                 <constraint firstItem="fXi-dS-ur6" firstAttribute="top" secondItem="CQB-E4-Hzq" secondAttribute="top" priority="999" id="tyO-6g-s2g"/>
                 <constraint firstAttribute="trailing" secondItem="Imr-Q0-M08" secondAttribute="trailing" id="yLp-uX-hOU"/>
                 <constraint firstItem="fXi-dS-ur6" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="yT5-K7-mTf"/>
                 <constraint firstItem="CQB-E4-Hzq" firstAttribute="trailing" secondItem="fXi-dS-ur6" secondAttribute="trailing" id="z6D-SC-82m"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="CQB-E4-Hzq"/>
-            <point key="canvasLocation" x="18" y="-10"/>
+            <point key="canvasLocation" x="130" y="57"/>
         </view>
     </objects>
     <resources>
+        <image name="Search-1" width="106" height="106"/>
         <image name="menu" width="92" height="92"/>
         <image name="search" width="129" height="135"/>
     </resources>
