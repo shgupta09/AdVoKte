@@ -29,13 +29,13 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidLoad];
-    
+
     sleep(1);
     RearViewController *rearViewController = [[RearViewController alloc]initWithNibName:@"RearViewController" bundle:nil];
     SWRevealViewController *mainRevealController;
     BaseHomeViewController *frontViewController = [[BaseHomeViewController alloc]initWithNibName:@"BaseHomeViewController" bundle:nil];
         mainRevealController = [[SWRevealViewController alloc]initWithRearViewController:rearViewController frontViewController:frontViewController];
-   
+
     mainRevealController.delegate = self;
     mainRevealController.view.backgroundColor = [UIColor clearColor];
     mainRevealController.frontViewShadowRadius = 0;
@@ -45,7 +45,7 @@
     nav.navigationBarHidden = true;
     ((AppDelegate *)[[UIApplication sharedApplication] delegate]).window.rootViewController = nav;
 
-    
+
     
 }
 

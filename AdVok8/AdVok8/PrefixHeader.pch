@@ -59,6 +59,7 @@
 #import "SelectSlotViewController.h"
 #import "AddNewCaseViewController.h"
 #import "CasePageListViewController.h"
+#import "ConfirmAppointmentViewController.h"
 
 //Categories
 #import "NSLayoutConstraint+Multiplier.h"

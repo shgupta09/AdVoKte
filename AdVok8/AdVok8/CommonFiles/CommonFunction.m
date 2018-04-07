@@ -396,8 +396,20 @@
     NSString* substring = @"Dec 5 2012 12:08 PM";
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-    [dateFormatter setDateFormat:@"MMM d yyyy h:mm a"]; // not 'p' but 'a'
+    [dateFormatter setDateFormat:@"MMM d yyyy h:mm a EEEE"]; // not 'p' but 'a'
     NSDate *dateFromString = [dateFormatter dateFromString:substring];
+    return dateFromString;
+}
+
++(NSDate *)convertTimeToDate:(NSString *)dtrDate{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"hh:mm a"]; // not 'p' but 'a'
+    [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+
+    NSDate *dateFromString = [dateFormatter dateFromString:dtrDate];
+    NSTimeInterval timeZoneSeconds = [[NSTimeZone localTimeZone] secondsFromGMT];
+    dateFromString = [dateFromString dateByAddingTimeInterval:timeZoneSeconds];
     return dateFromString;
 }
 

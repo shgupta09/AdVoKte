@@ -45,6 +45,8 @@
 		5F58FC592076A59F009C5D9C /* CasePageListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F58FC572076A59F009C5D9C /* CasePageListViewController.xib */; };
 		5F58FC642076A7A1009C5D9C /* AddNewCaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F58FC622076A7A1009C5D9C /* AddNewCaseViewController.m */; };
 		5F58FC652076A7A1009C5D9C /* AddNewCaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F58FC632076A7A1009C5D9C /* AddNewCaseViewController.xib */; };
+		5F58FC6A2078A124009C5D9C /* ConfirmAppointmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F58FC682078A124009C5D9C /* ConfirmAppointmentViewController.m */; };
+		5F58FC6B2078A124009C5D9C /* ConfirmAppointmentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F58FC692078A124009C5D9C /* ConfirmAppointmentViewController.xib */; };
 		5F70ABF4202B1250007E69A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF3202B1250007E69A5 /* main.m */; };
 		5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70ABF6202B1250007E69A5 /* AppDelegate.m */; };
 		5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F70ABFB202B1250007E69A5 /* Main.storyboard */; };
@@ -256,6 +258,9 @@
 		5F58FC612076A7A1009C5D9C /* AddNewCaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddNewCaseViewController.h; sourceTree = "<group>"; };
 		5F58FC622076A7A1009C5D9C /* AddNewCaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddNewCaseViewController.m; sourceTree = "<group>"; };
 		5F58FC632076A7A1009C5D9C /* AddNewCaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddNewCaseViewController.xib; sourceTree = "<group>"; };
+		5F58FC672078A124009C5D9C /* ConfirmAppointmentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfirmAppointmentViewController.h; sourceTree = "<group>"; };
+		5F58FC682078A124009C5D9C /* ConfirmAppointmentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfirmAppointmentViewController.m; sourceTree = "<group>"; };
+		5F58FC692078A124009C5D9C /* ConfirmAppointmentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmAppointmentViewController.xib; sourceTree = "<group>"; };
 		5F70ABEF202B1250007E69A5 /* AdVok8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdVok8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F70ABF3202B1250007E69A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F70ABF5202B1250007E69A5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -523,6 +528,7 @@
 		5F1B9C29203413DD009503E7 /* DashboardBaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5F58FC662078A113009C5D9C /* ConfirmAppointmentViewController */,
 				5F58FC532076A56B009C5D9C /* TrackYourCase */,
 				5F58FC4720769064009C5D9C /* SelectSlotViewController */,
 				5F96B77A20755979003CD72F /* AppointmentListViewController */,
@@ -721,6 +727,16 @@
 				5F58FC632076A7A1009C5D9C /* AddNewCaseViewController.xib */,
 			);
 			path = AddNewCaseViewController;
+			sourceTree = "<group>";
+		};
+		5F58FC662078A113009C5D9C /* ConfirmAppointmentViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F58FC672078A124009C5D9C /* ConfirmAppointmentViewController.h */,
+				5F58FC682078A124009C5D9C /* ConfirmAppointmentViewController.m */,
+				5F58FC692078A124009C5D9C /* ConfirmAppointmentViewController.xib */,
+			);
+			path = ConfirmAppointmentViewController;
 			sourceTree = "<group>";
 		};
 		5F70ABE6202B1250007E69A5 = {
@@ -1631,6 +1647,7 @@
 				5F70AC05202B1250007E69A5 /* LaunchScreen.storyboard in Resources */,
 				5F71B6AB204E8E76004229DF /* LawyerListVC.xib in Resources */,
 				5F1B9C4C20343889009503E7 /* FeedViewController.xib in Resources */,
+				5F58FC6B2078A124009C5D9C /* ConfirmAppointmentViewController.xib in Resources */,
 				D8C3C2B1207022970089A3CC /* TaskDetailVC.xib in Resources */,
 				D8C3C29E206FB1D10089A3CC /* CaseListCell2.xib in Resources */,
 				5F71B6AD204E8E76004229DF /* ListCell.xib in Resources */,
@@ -1843,6 +1860,7 @@
 				5FF9E2CB20617FE500467A0D /* NotificationListViewController.m in Sources */,
 				5F96B771206FE9F0003CD72F /* JTCalendarWeekView.m in Sources */,
 				5F1B9C572034411C009503E7 /* FeedMainTableViewCell.m in Sources */,
+				5F58FC6A2078A124009C5D9C /* ConfirmAppointmentViewController.m in Sources */,
 				5F96B76D206FE9F0003CD72F /* JTCalendarMenuMonthView.m in Sources */,
 				5F71B6C5204E8ED1004229DF /* ButtonWithImage.m in Sources */,
 				D8C3C2B0207022970089A3CC /* TaskDetailVC.m in Sources */,

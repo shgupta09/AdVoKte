@@ -22,10 +22,51 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [CommonFunction setNavToController:self title:@"Appointment" isCrossBusston:false];
+
+    [_collectionView registerNib:[UINib nibWithNibName:@"SlotCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"SlotCollectionViewCell"];
+
+    
     NSString* dayTime = _obj.DayTime;
     
+    NSString* strDays = [[dayTime componentsSeparatedByString:@"#"] objectAtIndex:0];
+    NSArray* arrDays = [strDays componentsSeparatedByString:@", "];
+    
+    NSString* strTime = [[dayTime componentsSeparatedByString:@"#"] objectAtIndex:1];
     
     
+    NSDate *now = [CommonFunction convertTimeToDate: [[strTime componentsSeparatedByString:@"-"] objectAtIndex:0]];
+    NSDate *end = [CommonFunction convertTimeToDate: [[strTime componentsSeparatedByString:@"-"] objectAtIndex:1]];
+    NSCalendar *cal = [NSCalendar currentCalendar];
+    // get minute and hour from now
+    NSDateComponents *nowComponents = [cal components:NSCalendarUnitHour | NSCalendarUnitMinute fromDate: now];
+    NSDateComponents *endComponents = [cal components:NSCalendarUnitHour | NSCalendarUnitMinute fromDate: end];
+    NSDate *currentDate;
+    // if current minutes is not exactly 0 or 30 get back to the past half hour
+    
+        currentDate = now;
+    
+    arrTime = [NSMutableArray array];
+    // loop and add 30 minutes until the end time (10:30 pm) is reached
+    while ( nowComponents.hour != [[[[[strTime componentsSeparatedByString:@"-"] objectAtIndex:1] componentsSeparatedByString:@":"] objectAtIndex:0] integerValue]) {
+        currentDate = [cal dateByAddingUnit:NSCalendarUnitMinute value: 30 toDate: currentDate options: NSCalendarMatchNextTime];
+        
+        // Convert to new Date Format
+        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"hh:mm"];
+        [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+        NSString *newDate = [dateFormatter stringFromDate:currentDate];
+        
+        nowComponents = [cal components:NSCalendarUnitHour | NSCalendarUnitMinute fromDate: currentDate];
+        
+        [arrTime addObject:newDate];
+        
+        
+    }
+    
+    
+    [_collectionView reloadData];
+  
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -47,7 +88,7 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 8;
+    return arrTime.count;
 }
 
 
@@ -55,13 +96,8 @@
     
     SlotCollectionViewCell *cell = (SlotCollectionViewCell*)[_collectionView dequeueReusableCellWithReuseIdentifier:@"SlotCollectionViewCell" forIndexPath:indexPath];
     
-    Specialization* obj = [Specialization new];
-    
-    cell.lblTime.text = obj.name;
-    
-    //    [[cell.contentView layer] addSublayer:layering];
-    //    [[cell.contentView layer] setMask:layering];
-    
+    cell.lblTime.text = [arrTime objectAtIndex:indexPath.item];
+        
     return cell;
     
 }
@@ -72,7 +108,7 @@
 {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
-    float cellWidth = screenWidth / 2.5 ; //Replace the divisor with the column count requirement. Make sure to have it in float.
+    float cellWidth = screenWidth / 5 ; //Replace the divisor with the column count requirement. Make sure to have it in float.
     LawyerCategoryTableViewCell *cell = (LawyerCategoryTableViewCell*)[_collectionView cellForItemAtIndexPath:indexPath];
     CGFloat maxLabelWidth = 100;
     Specialization* obj = [Specialization new];
@@ -80,13 +116,15 @@
     cell.lblName.text = obj.name;
     CGSize neededSize = [cell.lblName sizeThatFits:CGSizeMake(maxLabelWidth, CGFLOAT_MAX)];
     
-    CGSize size = CGSizeMake(cellWidth, neededSize.height + 10 + 80);
+    CGSize size = CGSizeMake(cellWidth, neededSize.height + 10 +60);
     
     return size;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
+    ConfirmAppointmentViewController* vc = [[ConfirmAppointmentViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:true];
     
 }
 
