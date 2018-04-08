@@ -102,67 +102,43 @@
                     <rect key="frame" x="0.0" y="214" width="375" height="413"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyk-hk-o5A">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="354"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="245"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGh-VR-Q6n">
-                                    <rect key="frame" x="10" y="10" width="355" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a ttile to your event" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q0k-en-FOo" customClass="TextFieldFooter">
-                                    <rect key="frame" x="10" y="46" width="355" height="30"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q0k-en-FOo" customClass="TextFieldFooter">
+                                    <rect key="frame" x="10" y="20" width="350" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="47g-ii-f9T"/>
+                                        <constraint firstAttribute="height" constant="40" id="47g-ii-f9T"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Matter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDz-qA-h4p">
-                                    <rect key="frame" x="10" y="96" width="355" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a matter for your event" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UG0-UA-BL8" customClass="TextFieldFooter">
-                                    <rect key="frame" x="10" y="132" width="355" height="30"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UG0-UA-BL8" customClass="TextFieldFooter">
+                                    <rect key="frame" x="10" y="75" width="350" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="YUa-S2-X0g"/>
+                                        <constraint firstAttribute="height" constant="40" id="YUa-S2-X0g"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-EO-iVe">
-                                    <rect key="frame" x="10" y="182" width="355" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a location to your event" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KWg-Lz-QFV" customClass="TextFieldFooter">
-                                    <rect key="frame" x="10" y="218" width="355" height="30"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KWg-Lz-QFV" customClass="TextFieldFooter">
+                                    <rect key="frame" x="10" y="130" width="350" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="OA8-dj-yNa"/>
+                                        <constraint firstAttribute="height" constant="40" id="OA8-dj-yNa"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6m-z9-OlN">
-                                    <rect key="frame" x="10" y="268" width="355" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a description to your event" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbi-dn-gfT" customClass="TextFieldFooter">
-                                    <rect key="frame" x="10" y="304" width="355" height="30"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xbi-dn-gfT" customClass="TextFieldFooter">
+                                    <rect key="frame" x="10" y="185" width="350" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="g3i-OU-hiL"/>
+                                        <constraint firstAttribute="height" constant="40" id="g3i-OU-hiL"/>
                                     </constraints>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -171,32 +147,20 @@
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="trailing" secondItem="nGh-VR-Q6n" secondAttribute="trailing" constant="10" id="1tW-R6-HRM"/>
-                                <constraint firstItem="BDz-qA-h4p" firstAttribute="top" secondItem="Q0k-en-FOo" secondAttribute="bottom" constant="20" id="2tq-lg-hwH"/>
-                                <constraint firstItem="Y6m-z9-OlN" firstAttribute="trailing" secondItem="KWg-Lz-QFV" secondAttribute="trailing" id="4Dd-Fz-V2w"/>
-                                <constraint firstItem="nGh-VR-Q6n" firstAttribute="leading" secondItem="oyk-hk-o5A" secondAttribute="leading" constant="10" id="4ct-co-EWt"/>
-                                <constraint firstItem="Y6m-z9-OlN" firstAttribute="leading" secondItem="KWg-Lz-QFV" secondAttribute="leading" id="Cu1-t2-aFB"/>
-                                <constraint firstItem="Y6m-z9-OlN" firstAttribute="top" secondItem="KWg-Lz-QFV" secondAttribute="bottom" constant="20" id="DMt-Oc-MiI"/>
-                                <constraint firstItem="Q0k-en-FOo" firstAttribute="trailing" secondItem="nGh-VR-Q6n" secondAttribute="trailing" id="HsK-up-u14"/>
-                                <constraint firstItem="xbi-dn-gfT" firstAttribute="leading" secondItem="Y6m-z9-OlN" secondAttribute="leading" id="JYC-hU-tI2"/>
-                                <constraint firstItem="gqh-EO-iVe" firstAttribute="leading" secondItem="UG0-UA-BL8" secondAttribute="leading" id="JYj-tm-zgm"/>
-                                <constraint firstItem="gqh-EO-iVe" firstAttribute="trailing" secondItem="UG0-UA-BL8" secondAttribute="trailing" id="Qqo-Xa-wm7"/>
-                                <constraint firstItem="KWg-Lz-QFV" firstAttribute="trailing" secondItem="gqh-EO-iVe" secondAttribute="trailing" id="Vbx-NU-kJb"/>
-                                <constraint firstItem="BDz-qA-h4p" firstAttribute="trailing" secondItem="Q0k-en-FOo" secondAttribute="trailing" id="Ymi-jX-HoG"/>
-                                <constraint firstItem="BDz-qA-h4p" firstAttribute="leading" secondItem="Q0k-en-FOo" secondAttribute="leading" id="bFi-XX-bDa"/>
-                                <constraint firstItem="UG0-UA-BL8" firstAttribute="top" secondItem="BDz-qA-h4p" secondAttribute="bottom" constant="15" id="eDl-RN-ftO"/>
+                                <constraint firstItem="xbi-dn-gfT" firstAttribute="trailing" secondItem="KWg-Lz-QFV" secondAttribute="trailing" id="0zo-eH-rT0"/>
+                                <constraint firstItem="KWg-Lz-QFV" firstAttribute="trailing" secondItem="UG0-UA-BL8" secondAttribute="trailing" id="4OM-P0-gJc"/>
+                                <constraint firstItem="UG0-UA-BL8" firstAttribute="top" secondItem="Q0k-en-FOo" secondAttribute="bottom" constant="15" id="GMm-dT-E3K"/>
+                                <constraint firstItem="Q0k-en-FOo" firstAttribute="leading" secondItem="oyk-hk-o5A" secondAttribute="leading" constant="10" id="J6B-fa-evZ"/>
+                                <constraint firstAttribute="trailing" secondItem="Q0k-en-FOo" secondAttribute="trailing" constant="15" id="NVl-Ng-4Ip"/>
+                                <constraint firstItem="xbi-dn-gfT" firstAttribute="leading" secondItem="KWg-Lz-QFV" secondAttribute="leading" id="OLt-IU-iPS"/>
+                                <constraint firstItem="Q0k-en-FOo" firstAttribute="top" secondItem="oyk-hk-o5A" secondAttribute="top" constant="20" id="R5q-PS-fnd"/>
+                                <constraint firstItem="KWg-Lz-QFV" firstAttribute="leading" secondItem="UG0-UA-BL8" secondAttribute="leading" id="Vfs-X6-1Sy"/>
+                                <constraint firstItem="xbi-dn-gfT" firstAttribute="top" secondItem="KWg-Lz-QFV" secondAttribute="bottom" constant="15" id="csG-nG-DMh"/>
                                 <constraint firstAttribute="bottom" secondItem="xbi-dn-gfT" secondAttribute="bottom" constant="20" id="ffD-C8-QOR"/>
-                                <constraint firstItem="KWg-Lz-QFV" firstAttribute="leading" secondItem="gqh-EO-iVe" secondAttribute="leading" id="gHd-9a-eyO"/>
-                                <constraint firstItem="UG0-UA-BL8" firstAttribute="leading" secondItem="BDz-qA-h4p" secondAttribute="leading" id="hxz-A9-97R"/>
-                                <constraint firstItem="UG0-UA-BL8" firstAttribute="trailing" secondItem="BDz-qA-h4p" secondAttribute="trailing" id="jtB-rS-DZH"/>
-                                <constraint firstItem="xbi-dn-gfT" firstAttribute="trailing" secondItem="Y6m-z9-OlN" secondAttribute="trailing" id="k2K-Zy-4zj"/>
-                                <constraint firstItem="Q0k-en-FOo" firstAttribute="leading" secondItem="nGh-VR-Q6n" secondAttribute="leading" id="k2T-RU-YdA"/>
-                                <constraint firstItem="xbi-dn-gfT" firstAttribute="top" secondItem="Y6m-z9-OlN" secondAttribute="bottom" constant="15" id="ktP-TG-Fg4"/>
-                                <constraint firstItem="gqh-EO-iVe" firstAttribute="top" secondItem="UG0-UA-BL8" secondAttribute="bottom" constant="20" id="o3T-rQ-LtK"/>
-                                <constraint firstItem="KWg-Lz-QFV" firstAttribute="top" secondItem="gqh-EO-iVe" secondAttribute="bottom" constant="15" id="rIR-uq-mqm"/>
-                                <constraint firstItem="nGh-VR-Q6n" firstAttribute="top" secondItem="oyk-hk-o5A" secondAttribute="top" constant="10" id="u8y-Fa-mqR"/>
-                                <constraint firstItem="Q0k-en-FOo" firstAttribute="top" secondItem="nGh-VR-Q6n" secondAttribute="bottom" constant="15" id="wMI-r6-fag"/>
-                                <constraint firstAttribute="height" constant="354" id="x3K-3w-rUc"/>
+                                <constraint firstItem="UG0-UA-BL8" firstAttribute="trailing" secondItem="Q0k-en-FOo" secondAttribute="trailing" id="lDe-c3-c0f"/>
+                                <constraint firstAttribute="height" constant="245" id="le2-qx-jeQ"/>
+                                <constraint firstItem="UG0-UA-BL8" firstAttribute="leading" secondItem="Q0k-en-FOo" secondAttribute="leading" id="txI-Yd-Mdp"/>
+                                <constraint firstItem="KWg-Lz-QFV" firstAttribute="top" secondItem="UG0-UA-BL8" secondAttribute="bottom" constant="15" id="wHb-eV-heF"/>
                             </constraints>
                         </view>
                     </subviews>

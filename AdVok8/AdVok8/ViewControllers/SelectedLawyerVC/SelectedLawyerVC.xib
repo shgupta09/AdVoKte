@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BWP-mR-u6D">
-                    <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="KxN-Rk-H9q"/>
@@ -64,7 +64,7 @@
                 <constraint firstItem="ibY-Qx-Qcy" firstAttribute="top" secondItem="BWP-mR-u6D" secondAttribute="bottom" id="hhT-Ct-03s"/>
                 <constraint firstAttribute="bottom" secondItem="BWP-mR-u6D" secondAttribute="bottom" constant="44" id="lqh-no-JY9"/>
                 <constraint firstItem="DgV-MA-Vq8" firstAttribute="width" secondItem="ibY-Qx-Qcy" secondAttribute="width" id="pP8-l1-HVk"/>
-                <constraint firstItem="BWP-mR-u6D" firstAttribute="top" secondItem="CPz-vO-4wo" secondAttribute="top" id="tgV-50-chs"/>
+                <constraint firstItem="BWP-mR-u6D" firstAttribute="top" secondItem="CPz-vO-4wo" secondAttribute="top" constant="44" id="tgV-50-chs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="CPz-vO-4wo"/>
             <point key="canvasLocation" x="16" y="-188"/>

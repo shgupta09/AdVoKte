@@ -10,5 +10,9 @@
 
 @interface ProfileCell2 : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *imgView_Profile;
+@property (weak, nonatomic) IBOutlet UILabel *lblUserName;
+@property (weak, nonatomic) IBOutlet UILabel *lblSubtitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblCountFollowers;
+@property (weak, nonatomic) IBOutlet UILabel *lblCountFollowing;
 @property (weak, nonatomic) IBOutlet UIImageView *imgView_Background;
 @end
