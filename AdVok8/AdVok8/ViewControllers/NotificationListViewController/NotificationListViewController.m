@@ -22,7 +22,7 @@
    
     [CommonFunction setNavToController:self title:@"Case Page" isCrossBusston:false];
 
-    [_tblView registerNib:[UINib nibWithNibName:@"FeedMainTableViewCell" bundle:nil]forCellReuseIdentifier:@"FeedMainTableViewCell"];
+    [_tblView registerNib:[UINib nibWithNibName:@"NotificationTableViewCell" bundle:nil]forCellReuseIdentifier:@"NotificationTableViewCell"];
     arrData = [[NSMutableArray alloc ] init];
     
     [self hitApiForAllNotifications];
@@ -60,7 +60,7 @@
     Notification* data = [Notification new];
     data = [arrData objectAtIndex:indexPath.row];
     
-    cell.lblHeading.text = data.UserName;
+    cell.lblHeading.text = data.message;
     [cell.imgViewProfilePic sd_setImageWithURL:[CommonFunction getProfilePicURLString:data.UserID]];
     
     return cell;
@@ -68,26 +68,12 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
-        
         FeedDetailViewController* vc ;
         vc = [[FeedDetailViewController alloc] initWithNibName:@"FeedDetailViewController" bundle:nil];
-        PostModel* data = [arrData objectAtIndex:indexPath.row];
-        vc.postId = data.PostId;
+        Notification* data = [arrData objectAtIndex:indexPath.row];
+        vc.postId = data.PostID;
         UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
         [self.navigationController presentViewController:navCon animated:true completion:nil];
-        
-    }
-    else
-    {
-        LoginViewController* vc ;
-        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-        vc.Behaviour = @"Action";
-        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
-        [self.navigationController presentViewController:navCon animated:true completion:nil];
-        
-    }
-    
     
 }
 
@@ -99,6 +85,7 @@
     
     
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"username"];
+    [dictRequest setValue:@"1" forKey:@"allnot"];
     
     [parameter setValue:dictRequest forKey:@"_User"];
     
@@ -118,7 +105,7 @@
                     NSArray *tempArray = [NSArray new];
                     NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
                     id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                    tempArray = [json objectForKey:@"_post"];
+                    tempArray = [json objectForKey:@"_Note"];
                     [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                         
                         Notification *dataObj = [Notification new];
@@ -135,9 +122,8 @@
                         
                         [arrData addObject:dataObj];
                     }];
-                    if (tempArray.count!=0){
-                        [_tblView reloadData];
-                    }
+                    [_tblView reloadData];
+                    
                 }else
                 {
                     //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
