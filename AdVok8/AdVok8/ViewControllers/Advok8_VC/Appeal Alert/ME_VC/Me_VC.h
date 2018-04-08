@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface Me_VC : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *lblUsername;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewProfilePic;
+@property (weak, nonatomic) IBOutlet UILabel *lblSubtitle;
 
 @end

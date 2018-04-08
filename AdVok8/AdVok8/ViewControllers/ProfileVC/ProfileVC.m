@@ -286,8 +286,6 @@
     {
         [dictRequest setValue:@"0" forKey:@"UserId"];
     }
-    [dictRequest setValue:@"Feed" forKey:@"postsubtype"];
-    [dictRequest setValue:@"Feed" forKey:@"posttype"];
     [dictRequest setValue:startPoint forKey:@"StrtPnt"];
     [dictRequest setValue:[NSString stringWithFormat:@"%d",startPoint.integerValue+20] forKey:@"EndPnt"];
     
@@ -299,7 +297,7 @@
         [self addLoder];
         
         //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_ALL_POSTS]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_POSTS_FOR_USER]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
                 id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];

@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpData];
+    
+    _lblUsername.text = [CommonFunction getValueFromDefaultWithKey:@"loginUsername"];
+    [_imgViewProfilePic sd_setImageWithURL:[CommonFunction getProfilePicURLString:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"]] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
     // Do any additional setup after loading the view from its nib.
 }
 #pragma mark- Navigation

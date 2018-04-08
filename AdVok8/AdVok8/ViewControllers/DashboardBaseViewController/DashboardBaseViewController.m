@@ -200,7 +200,14 @@
             }
                 break;
                 
-            
+            case 4:{
+                Me_VC *profileObj = [[Me_VC alloc]initWithNibName:@"Me_VC" bundle:nil];
+                
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:profileObj];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+
+            }
+                break;
             default:
                 break;
         }
