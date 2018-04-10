@@ -58,13 +58,13 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjJ-T1-Sv7">
-                        <rect key="frame" x="41" y="148.5" width="26" height="25.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XjJ-T1-Sv7">
+                        <rect key="frame" x="47.5" y="148.5" width="13.5" height="25.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rap-zP-ycJ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rap-zP-ycJ">
                         <rect key="frame" x="260" y="148.5" width="13" height="25.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -82,18 +82,31 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXP-Mk-X7m">
+                        <rect key="frame" x="17" y="148.5" width="73" height="56.5"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3m0-s3-Ja9">
+                        <rect key="frame" x="230" y="148.5" width="73" height="56.5"/>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="jXP-Mk-X7m" firstAttribute="trailing" secondItem="JeH-p4-sji" secondAttribute="trailing" id="00Y-WA-pcb"/>
+                    <constraint firstItem="3m0-s3-Ja9" firstAttribute="bottom" secondItem="NXv-E7-v77" secondAttribute="bottom" id="0W8-YR-pEi"/>
+                    <constraint firstItem="jXP-Mk-X7m" firstAttribute="leading" secondItem="JeH-p4-sji" secondAttribute="leading" id="14f-rw-gcE"/>
                     <constraint firstItem="Rap-zP-ycJ" firstAttribute="centerX" secondItem="NXv-E7-v77" secondAttribute="centerX" id="6EZ-Cu-dc3"/>
+                    <constraint firstItem="3m0-s3-Ja9" firstAttribute="trailing" secondItem="NXv-E7-v77" secondAttribute="trailing" id="6aW-MB-E1h"/>
                     <constraint firstAttribute="trailing" secondItem="urP-cf-iBj" secondAttribute="trailing" id="9Ku-QE-tB5"/>
                     <constraint firstItem="JeH-p4-sji" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="1:3" id="AHT-XN-qnN"/>
                     <constraint firstItem="urP-cf-iBj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="DPf-QL-ndT"/>
                     <constraint firstItem="JeH-p4-sji" firstAttribute="top" secondItem="XjJ-T1-Sv7" secondAttribute="bottom" constant="10" id="DQU-Cc-HUI"/>
                     <constraint firstItem="oJH-Ao-W0v" firstAttribute="top" secondItem="kfV-By-fXM" secondAttribute="bottom" constant="15" id="GrU-W7-nhX"/>
                     <constraint firstItem="JeH-p4-sji" firstAttribute="bottom" secondItem="oJH-Ao-W0v" secondAttribute="bottom" id="GyW-OS-Vpy"/>
+                    <constraint firstItem="3m0-s3-Ja9" firstAttribute="leading" secondItem="NXv-E7-v77" secondAttribute="leading" id="H2V-9Y-Jmg"/>
+                    <constraint firstItem="3m0-s3-Ja9" firstAttribute="top" secondItem="Rap-zP-ycJ" secondAttribute="top" id="TgP-KE-ypZ"/>
                     <constraint firstAttribute="bottom" secondItem="oJH-Ao-W0v" secondAttribute="bottom" constant="8" id="UQr-Sx-0wa"/>
                     <constraint firstItem="NXv-E7-v77" firstAttribute="bottom" secondItem="oJH-Ao-W0v" secondAttribute="bottom" id="VBr-go-yEe"/>
                     <constraint firstItem="XjJ-T1-Sv7" firstAttribute="centerX" secondItem="JeH-p4-sji" secondAttribute="centerX" id="WbA-jr-alM"/>
+                    <constraint firstItem="jXP-Mk-X7m" firstAttribute="bottom" secondItem="JeH-p4-sji" secondAttribute="bottom" id="Y7C-Tc-fIa"/>
                     <constraint firstItem="jSe-Gv-0QJ" firstAttribute="centerX" secondItem="bx9-FG-qB9" secondAttribute="centerX" id="bBQ-oG-EKL"/>
                     <constraint firstItem="bx9-FG-qB9" firstAttribute="top" secondItem="jSe-Gv-0QJ" secondAttribute="bottom" constant="10" id="cVH-3b-ict"/>
                     <constraint firstItem="kfV-By-fXM" firstAttribute="top" secondItem="bx9-FG-qB9" secondAttribute="bottom" constant="15" id="dDR-ud-BtR"/>
@@ -102,6 +115,7 @@
                     <constraint firstItem="NXv-E7-v77" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" multiplier="5:3" id="jcd-93-xGI"/>
                     <constraint firstItem="oJH-Ao-W0v" firstAttribute="centerX" secondItem="kfV-By-fXM" secondAttribute="centerX" id="k7J-c2-qcj"/>
                     <constraint firstItem="NXv-E7-v77" firstAttribute="top" secondItem="Rap-zP-ycJ" secondAttribute="bottom" constant="10" id="kkd-Yr-Kfb"/>
+                    <constraint firstItem="jXP-Mk-X7m" firstAttribute="top" secondItem="XjJ-T1-Sv7" secondAttribute="top" id="lPb-yh-RVV"/>
                     <constraint firstItem="kfV-By-fXM" firstAttribute="centerX" secondItem="urP-cf-iBj" secondAttribute="centerX" id="lwS-V9-xHZ"/>
                     <constraint firstItem="kfV-By-fXM" firstAttribute="bottom" secondItem="urP-cf-iBj" secondAttribute="bottom" constant="20" id="vP8-lB-JDx"/>
                 </constraints>
@@ -109,6 +123,8 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
+                <outlet property="btnFollowers" destination="jXP-Mk-X7m" id="vJc-1J-rdI"/>
+                <outlet property="btnFollowing" destination="3m0-s3-Ja9" id="Mdm-oV-IwK"/>
                 <outlet property="imgView_Background" destination="urP-cf-iBj" id="VwX-l4-OcC"/>
                 <outlet property="imgView_Profile" destination="kfV-By-fXM" id="759-Fe-2TM"/>
                 <outlet property="lblCountFollowers" destination="XjJ-T1-Sv7" id="PA7-eL-FZ9"/>

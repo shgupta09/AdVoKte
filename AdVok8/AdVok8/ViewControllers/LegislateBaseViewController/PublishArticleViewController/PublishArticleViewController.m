@@ -8,11 +8,15 @@
 
 #import "PublishArticleViewController.h"
 
-@interface PublishArticleViewController ()
+@interface PublishArticleViewController ()<UIPickerViewDelegate,UITableViewDataSource,UITextFieldDelegate,UIPickerViewDataSource>
 {
     UIImagePickerController * picker;
     UIImagePickerControllerSourceType *sourceType;
     UIImage *capturedImage;
+    UIPickerView* pickerCategory;
+    NSMutableArray* arrCategory;
+    NSString* imageURL;
+
 }
 @end
 
@@ -23,6 +27,35 @@
 //    [self setNavToController];
     picker = [[UIImagePickerController alloc] init];
     
+    arrCategory = [[NSMutableArray alloc] initWithObjects:@"Tax",@"Criminal",@"Civil",@"Marriage",@"Divorce",@"Company",@"Constitutional",@"Immigration",@"Trademark",@"Human Rights",@"Media and Entertainment",@"Sports",@"Environment",@"Consumer",@"Industrial and Labour",@"Insurance",@"Family",@"Arbitration",@"Property",@"Traffic and Accident",@"Document Drafting",@"Cheque Bounce", nil];
+    
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    
+    UIToolbar *toolBar= [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 44)];
+    [toolBar setBarStyle:UIBarStyleDefault];
+    UIBarButtonItem *flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
+    
+    UIBarButtonItem *barButtonDone = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(doneClicked)];
+    toolBar.items = @[flex, barButtonDone];
+    barButtonDone.tintColor = [UIColor blackColor];
+    
+    pickerCategory = [[UIPickerView alloc] initWithFrame:CGRectMake(0, toolBar.frame.size.height, screenWidth, 200)];
+    pickerCategory.delegate = self;
+    pickerCategory.dataSource = self;
+    pickerCategory.showsSelectionIndicator = YES;
+    
+    
+    UIView *inputView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, toolBar.frame.size.height + pickerCategory.frame.size.height)];
+    inputView.backgroundColor = [UIColor clearColor];
+    [inputView addSubview:pickerCategory];
+    [inputView addSubview:toolBar];
+    
+    _txtCategory.inputView = inputView;
+
+
     //    title = [title capitalizedString];
     [self.view addSubview:[CommonFunction setStatusBarColor]];
    
@@ -76,6 +109,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+
+
+
+- (void)doneClicked {
+    [_txtCategory resignFirstResponder];
 }
 
 #pragma mark - Button Actions
@@ -157,12 +198,11 @@
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-//    [[AppDelegate getDelegate]showStatusBar];
+    //    [[AppDelegate getDelegate]showStatusBar];
     
     capturedImage = [self imageToCompress:[info valueForKey:@"UIImagePickerControllerOriginalImage"]];
-    
     [self dismissViewControllerAnimated:YES completion:^{
-        [_imgViewPost setImage:capturedImage];
+        [self uploadImage];
     }];
     
 }
@@ -212,18 +252,75 @@
 
 //{"UserId":"9560386426","posttype":"Post; Article; Question","postsubtype":"","TagUserId":null,"PostPic":"","ShareId":"","PostNote":"hello users ","TagUserName":"","UserName":null,"Type":null,"PostId":null,"cntlike":null,"cntcmt":null,"useractv":null,"Details":null,"Days":null,"shareuid":null,"sharefname":null,"Answer":null,"Answers":["yes","No","NA"],"corrAns":"1"}
 #pragma mark - Api Related
+
+#pragma mark - Api Related
+
+-(void) uploadImage {
+    NSTimeInterval time = ([[NSDate date] timeIntervalSince1970]); // returned as a double
+    long digits = (long)time; // this is the first 10 digits
+    int decimalDigits = (int)(fmod(time, 1) * 1000); // this will get the 3 missing digits
+    //    long timestamp = (digits * 1000) + decimalDigits;
+    
+    NSString *timestampString = [NSString stringWithFormat:@"%ld%d",digits ,decimalDigits];
+    UIImage *image = capturedImage;
+    NSData* imagedata = UIImagePNGRepresentation(image);
+    
+    NSString *base64String = [UIImagePNGRepresentation(image)
+                              base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+    [dictRequest setValue:@"0" forKey:@"DocId"];
+    
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UploadedById"];
+    [dictRequest setValue:@"" forKey:@"AttachmentName"];
+    [dictRequest setValue:[NSString stringWithFormat:@"%s.png","timestampString"] forKey:@"viewFilename"];
+    [dictRequest setValue:base64String forKey:@"AttachmentPath"];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
+    [dictRequest setValue:@"png" forKey:@"cty"];
+    [dictRequest setValue:@"" forKey:@"DocumentType"];
+    [dictRequest setValue:false forKey:@"editable"];
+    [dictRequest setValue:[NSString stringWithFormat:@"%lu",(unsigned long)[imagedata length]] forKey:@"fileSize"];
+    
+    //    [dictRequest setValue:postId forKey:@"PostId"];
+    [parameter setValue:dictRequest forKey:@"_dm"];
+    
+    if ([ CommonFunction reachability]) {
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_UPLOAD_FILE]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1){
+                    imageURL = [json valueForKey:@"URL"];
+                    [_imgViewPost setImage:capturedImage];
+                    
+                }
+            }
+        }];
+        
+        
+    } else {
+        
+    }
+}
+
 -(void)hitApiToPost{
     NSMutableDictionary *parameter = [NSMutableDictionary new];
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
     [dictRequest setValue:_txtView.text forKey:@"PostNote"];
-    [dictRequest setValue:@"Post; Article; " forKey:@"posttype"];
-    [dictRequest setValue:@"" forKey:@"postsubtype"];
+    [dictRequest setValue:@"Article" forKey:@"posttype"];
+    [dictRequest setValue:_txtCategory.text forKey:@"postsubtype"];
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"TagUserName"];
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"ShareId"];
-    [dictRequest setValue:@"" forKey:@"PostPic"];
-    [dictRequest setValue:@[] forKey:@"Answers"];
-    [dictRequest setValue:@"" forKey:@"corrAns"];
+    [dictRequest setValue:imageURL forKey:@"PostPic"];
+    [dictRequest setValue:self.txtArticleTitle.text forKey:@"ArticleTitle"];
+    
 //    [dictRequest setValue:postId forKey:@"PostId"];
     [parameter setValue:dictRequest forKey:@"_post"];
     
@@ -256,11 +353,13 @@
                         }];
 //                        [arrData replaceObjectAtIndex:row withObject:dataObj];
                     }];
+                    
                 }else
                 {
                     
                 }
-                
+                [self dismissViewControllerAnimated:true completion:nil];
+
             }
             
             
@@ -271,5 +370,40 @@
     }
 }
 
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    return true;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return true;
+}
+
+
+
+
+#pragma mark PickerView Delegate
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+// Total rows in our component.
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return [arrCategory count];
+}
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
+    NSString *title;
+    title=[arrCategory objectAtIndex:row];
+    return title;
+}
+
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    self.txtCategory.text = [arrCategory objectAtIndex:row] ;
+}
 
 @end

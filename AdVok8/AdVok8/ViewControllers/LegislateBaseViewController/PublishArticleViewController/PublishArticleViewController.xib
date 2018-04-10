@@ -14,6 +14,8 @@
             <connections>
                 <outlet property="cons_txtViewHeight" destination="QnY-f0-os2" id="pKl-tt-p6G"/>
                 <outlet property="imgViewPost" destination="ZoU-MZ-yuW" id="uEz-gT-9ZB"/>
+                <outlet property="txtArticleTitle" destination="qqJ-vA-045" id="H0Y-ZF-5bQ"/>
+                <outlet property="txtCategory" destination="AFa-gQ-5ng" id="qGk-dm-4Ob"/>
                 <outlet property="txtView" destination="YKY-wa-EHV" id="oIB-sm-Etv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,16 +29,16 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
                         <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="umu-mN-PYC">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="343"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="492"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nQ7-FR-6ZM">
-                                    <rect key="frame" x="8" y="8" width="71" height="18"/>
+                                    <rect key="frame" x="8" y="138" width="71" height="18"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YKY-wa-EHV">
-                                    <rect key="frame" x="8" y="34" width="359" height="113"/>
+                                    <rect key="frame" x="8" y="164" width="359" height="113"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="113" id="QnY-f0-os2"/>
@@ -46,19 +48,67 @@
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 </textView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZoU-MZ-yuW">
-                                    <rect key="frame" x="8" y="155" width="359" height="170"/>
+                                    <rect key="frame" x="8" y="280" width="359" height="170"/>
                                 </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select you category for post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYI-R1-Dg7">
+                                    <rect key="frame" x="8" y="8" width="183" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Select Category" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AFa-gQ-5ng" customClass="TextFieldFooter">
+                                    <rect key="frame" x="8" y="33" width="359" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="eJE-Ab-1aV"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maxCharLimit">
+                                            <integer key="value" value="100"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="sIH-eQ-MVO"/>
+                                    </connections>
+                                </textField>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Article Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qqJ-vA-045" customClass="TextFieldFooter">
+                                    <rect key="frame" x="8" y="83" width="359" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="N7g-A2-K1T"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="maxCharLimit">
+                                            <integer key="value" value="400"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="cS9-zy-qpn"/>
+                                    </connections>
+                                </textField>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
+                                <constraint firstItem="oYI-R1-Dg7" firstAttribute="leading" secondItem="umu-mN-PYC" secondAttribute="leading" constant="8" id="12e-wq-ydw"/>
                                 <constraint firstAttribute="trailing" secondItem="ZoU-MZ-yuW" secondAttribute="trailing" constant="8" id="Arj-j9-tBy"/>
+                                <constraint firstAttribute="trailing" secondItem="qqJ-vA-045" secondAttribute="trailing" constant="8" id="DAH-c9-9ku"/>
+                                <constraint firstItem="oYI-R1-Dg7" firstAttribute="top" secondItem="umu-mN-PYC" secondAttribute="top" constant="8" id="Efa-Nd-Zc6"/>
                                 <constraint firstItem="nQ7-FR-6ZM" firstAttribute="leading" secondItem="umu-mN-PYC" secondAttribute="leading" constant="8" id="GbS-Sv-wT3"/>
+                                <constraint firstItem="AFa-gQ-5ng" firstAttribute="top" secondItem="oYI-R1-Dg7" secondAttribute="bottom" constant="8" id="Hbz-0G-9WQ"/>
+                                <constraint firstItem="qqJ-vA-045" firstAttribute="top" secondItem="AFa-gQ-5ng" secondAttribute="bottom" constant="10" id="KFl-qA-x1S"/>
+                                <constraint firstItem="nQ7-FR-6ZM" firstAttribute="top" secondItem="qqJ-vA-045" secondAttribute="bottom" constant="15" id="L8j-xa-d2a"/>
                                 <constraint firstItem="ZoU-MZ-yuW" firstAttribute="top" secondItem="YKY-wa-EHV" secondAttribute="bottom" constant="8" id="MO3-Nm-Om5"/>
-                                <constraint firstItem="nQ7-FR-6ZM" firstAttribute="top" secondItem="umu-mN-PYC" secondAttribute="top" constant="8" id="QWk-X4-IPP"/>
+                                <constraint firstItem="AFa-gQ-5ng" firstAttribute="leading" secondItem="umu-mN-PYC" secondAttribute="leading" constant="8" id="TSl-Ni-kCj"/>
+                                <constraint firstItem="qqJ-vA-045" firstAttribute="leading" secondItem="umu-mN-PYC" secondAttribute="leading" constant="8" id="UCg-zS-RiL"/>
                                 <constraint firstItem="YKY-wa-EHV" firstAttribute="leading" secondItem="umu-mN-PYC" secondAttribute="leading" constant="8" id="Xdz-iu-PXt"/>
                                 <constraint firstItem="YKY-wa-EHV" firstAttribute="top" secondItem="nQ7-FR-6ZM" secondAttribute="bottom" constant="8" id="e1X-He-s3g"/>
                                 <constraint firstAttribute="bottom" secondItem="ZoU-MZ-yuW" secondAttribute="bottom" constant="18" id="fue-zH-7eo"/>
                                 <constraint firstAttribute="trailing" secondItem="YKY-wa-EHV" secondAttribute="trailing" constant="8" id="iu0-fD-drV"/>
+                                <constraint firstAttribute="trailing" secondItem="AFa-gQ-5ng" secondAttribute="trailing" constant="8" id="l8x-AP-EZK"/>
                                 <constraint firstItem="ZoU-MZ-yuW" firstAttribute="leading" secondItem="umu-mN-PYC" secondAttribute="leading" constant="8" id="mFW-qK-aG0"/>
                             </constraints>
                         </view>

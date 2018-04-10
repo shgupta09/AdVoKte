@@ -15,4 +15,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblCountFollowers;
 @property (weak, nonatomic) IBOutlet UILabel *lblCountFollowing;
 @property (weak, nonatomic) IBOutlet UIImageView *imgView_Background;
+@property (weak, nonatomic) IBOutlet UIButton *btnFollowers;
+@property (weak, nonatomic) IBOutlet UIButton *btnFollowing;
+
+
+
 @end

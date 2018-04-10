@@ -27,7 +27,7 @@
     
 //    [self hitApiForAllPosts:@"0"];
     
-    // [self hitApitoDelete];
+     [self hitApiToGetAllAppointment];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)viewDidLayoutSubviews{
@@ -46,8 +46,7 @@
 
 #pragma mark- Table Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-//    return arrData.count;
-    return 4;
+    return arrData.count;
 }
 
 
@@ -62,28 +61,15 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-//    PostModel* data = [PostModel new];
-//    data = [arrData objectAtIndex:indexPath.row];
-//
-//    cell.lblUserName.text = data.UserName;
-//    cell.lblUserType.text = data.Details;
-//    cell.lblPostCreatedTime.text = data.Days;
-//    cell.lblPostNote.text = data.PostNote;
-//
-//
-//    [cell.imgViewProfilePic sd_setImageWithURL:[CommonFunction getProfilePicURLString:data.UserId] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
-//
-//    if ([data.ArticleTitle  isEqual: @""]){
-//        cell.lblHeading.text = @"";
-//    }
-//    else
-//    {
-//        cell.lblHeading.text = data.ArticleTitle;
-//    }
-//    cell.lblPostNote.text = data.PostNote;
-//    cell.lblLikes.text = [NSString stringWithFormat:@"%@ likes", data.cntlike ];
-//    cell.lblComments.text = [NSString stringWithFormat:@"%@ comments",data.cntcmt];
-//
+    Case* data = [Case new];
+    data = [arrData objectAtIndex:indexPath.row];
+
+    cell.lblUserName.text = data.PetitionerName;
+    cell.lblDate.text = data.upcominghearingDate;
+    cell.lblTime.text = data.upcominghearingDate;
+    cell.lblStatus.text = data.st;
+
+
     return cell;
     
 }
@@ -91,6 +77,72 @@
     
 }
 //
+
+
+#pragma mark - API related
+
+-(void)hitApiToGetAllAppointment{
+    
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    
+    NSMutableDictionary* dict = [NSMutableDictionary new];
+    [dict setValue:@"" forKey:@"advid"];
+    [dict setValue:@"Pending" forKey:@"st"];
+    
+    [parameter setObject:dict forKey:@"_case"];
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_ALL_CASE_LIST]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                
+                [self removeloder];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1) {
+                    NSArray *tempArray = [NSArray new];
+                    NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                    tempArray = [json objectForKey:@"_special"];
+                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+                        Case *dataObj = [Case new];
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            @try {
+                                [dataObj setValue:obj forKey:(NSString *)key];
+                                
+                            } @catch (NSException *exception) {
+                                NSLog(exception.description);
+                                //  Handle an exception thrown in the @try block
+                            } @finally {
+                                //  Code that gets executed whether or not an exception is thrown
+                            }
+                        }];
+                        
+                        [arrData addObject:dataObj];
+                    }];
+                    [_tblView reloadData];
+                }else
+                {
+                    //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+                    [self removeloder];
+                    //                    [self removeloder];
+                }
+                [self removeloder];
+                
+            }
+            
+            
+            
+        }];
+    } else {
+        [self removeloder];
+        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+    }
+}
 
 
 -(void)addLoder{

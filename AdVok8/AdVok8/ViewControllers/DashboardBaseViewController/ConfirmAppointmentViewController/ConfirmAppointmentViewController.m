@@ -27,4 +27,9 @@
 }
 
 
+-(void)backTapped{
+    [self.navigationController popViewControllerAnimated:true];
+    
+}
+
 @end

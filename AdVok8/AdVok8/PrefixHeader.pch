@@ -81,6 +81,7 @@
 #import "Rating.h"
 #import "WorkingExperience.h"
 #import "Notification.h"
+#import "Case.h"
 
 #endif /* PrefixHeader_pch */
 

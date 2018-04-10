@@ -34,6 +34,7 @@ static NSString* const API_PUT_COMMENT = @"put_Comment";
 static NSString* const API_GET_ALL_NOTIFICATIONS = @"get_NotificationUser";
 static NSString* const API_SEARCH_USERS = @"search_users";
 static NSString* const API_GET_POSTS_FOR_USER = @"get_Posts_APK";
+static NSString* const API_GET_ALL_CASE_LIST = @"get_caselist";
 
 
 

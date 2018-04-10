@@ -34,6 +34,7 @@
 		5F1B9C7F20359131009503E7 /* JournalMainTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C7D20359131009503E7 /* JournalMainTableViewCell.xib */; };
 		5F1B9C832035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C822035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m */; };
 		5F1B9C862036B0C2009503E7 /* PostModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C852036B0C2009503E7 /* PostModel.m */; };
+		5F356EDC207D4ED7001EA9DF /* Case.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F356EDB207D4ED7001EA9DF /* Case.m */; };
 		5F3645E1205F7EF70041E88C /* DocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F3645E0205F7EF70041E88C /* DocumentModel.m */; };
 		5F415751205E3352003D29B4 /* JournalFeedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F41574F205E3352003D29B4 /* JournalFeedsViewController.m */; };
 		5F415752205E3352003D29B4 /* JournalFeedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F415750205E3352003D29B4 /* JournalFeedsViewController.xib */; };
@@ -241,6 +242,8 @@
 		5F1B9C822035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldBaselineWithLeftRight.m; sourceTree = "<group>"; };
 		5F1B9C842036B0C2009503E7 /* PostModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostModel.h; sourceTree = "<group>"; };
 		5F1B9C852036B0C2009503E7 /* PostModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostModel.m; sourceTree = "<group>"; };
+		5F356EDA207D4ED7001EA9DF /* Case.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Case.h; sourceTree = "<group>"; };
+		5F356EDB207D4ED7001EA9DF /* Case.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Case.m; sourceTree = "<group>"; };
 		5F3645DF205F7EF70041E88C /* DocumentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DocumentModel.h; sourceTree = "<group>"; };
 		5F3645E0205F7EF70041E88C /* DocumentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocumentModel.m; sourceTree = "<group>"; };
 		5F41574E205E3352003D29B4 /* JournalFeedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalFeedsViewController.h; sourceTree = "<group>"; };
@@ -880,6 +883,8 @@
 				5FF9E2CE2061813500467A0D /* Notification.m */,
 				5F96B78620755E34003CD72F /* Appointment.h */,
 				5F96B78720755E34003CD72F /* Appointment.m */,
+				5F356EDA207D4ED7001EA9DF /* Case.h */,
+				5F356EDB207D4ED7001EA9DF /* Case.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1838,6 +1843,7 @@
 				5F58FC642076A7A1009C5D9C /* AddNewCaseViewController.m in Sources */,
 				9CF77D01205F866F00366505 /* WorkingExperience.m in Sources */,
 				5F71B6C2204E8EA4004229DF /* LeftImageWithLabel.m in Sources */,
+				5F356EDC207D4ED7001EA9DF /* Case.m in Sources */,
 				D8C3C298206FB14F0089A3CC /* DateCaell.m in Sources */,
 				D8FAAFA4207165250084DE28 /* AppoinmentDetailVC.m in Sources */,
 				D8F44CA5205EA16400B80FCD /* UILabel+Boldify.m in Sources */,

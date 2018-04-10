@@ -19,10 +19,10 @@
                 <rect key="frame" x="0.0" y="0.0" width="73" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8JT-bT-gg7">
-                        <rect key="frame" x="17.5" y="16" width="37.5" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="8JT-bT-gg7">
+                        <rect key="frame" x="14" y="16" width="45" height="18"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="37.5" id="I5Q-A0-MCF"/>
+                            <constraint firstAttribute="width" constant="45" id="I5Q-A0-MCF"/>
                             <constraint firstAttribute="height" constant="18" id="gS5-Zy-cRh"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -43,8 +43,6 @@
                 <constraint firstAttribute="trailing" secondItem="cqJ-nE-nK0" secondAttribute="trailing" id="0XU-qu-bqf"/>
                 <constraint firstItem="cqJ-nE-nK0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="7.5" id="5TB-bx-Eo0"/>
                 <constraint firstItem="SEy-5g-ep8" firstAttribute="bottom" secondItem="8JT-bT-gg7" secondAttribute="bottom" constant="16" id="D2h-rU-FyZ"/>
-                <constraint firstItem="SEy-5g-ep8" firstAttribute="trailing" secondItem="8JT-bT-gg7" secondAttribute="trailing" constant="18" id="Fjv-tb-7Zn"/>
-                <constraint firstItem="8JT-bT-gg7" firstAttribute="leading" secondItem="SEy-5g-ep8" secondAttribute="leading" constant="17.5" id="Ihj-9T-7Sf"/>
                 <constraint firstItem="8JT-bT-gg7" firstAttribute="centerX" secondItem="SEy-5g-ep8" secondAttribute="centerX" id="Pfv-X0-b5n"/>
                 <constraint firstAttribute="bottom" secondItem="cqJ-nE-nK0" secondAttribute="bottom" constant="7.5" id="keo-dT-GxX"/>
                 <constraint firstItem="8JT-bT-gg7" firstAttribute="top" secondItem="SEy-5g-ep8" secondAttribute="top" constant="16" id="ml9-2O-J2O"/>
