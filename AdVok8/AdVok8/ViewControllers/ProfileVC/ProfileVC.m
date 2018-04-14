@@ -126,24 +126,25 @@
         
         if ([data.Liked  isEqual: @"TRUE"]){
             [cell.btnLike setTitle:@"Liked" forState:UIControlStateNormal];
-            cell.btnLike.titleLabel.textColor = [UIColor orangeColor];
-            
+            [cell.btnLike setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal] ;
+
         }
         else
         {
             [cell.btnLike setTitle:@"Like" forState:UIControlStateNormal];
-            cell.btnLike.titleLabel.textColor = [UIColor grayColor];
+            [cell.btnLike setTitleColor:[UIColor grayColor] forState:UIControlStateNormal] ;
+
             
         }
         if ([data.LibStatus  isEqual: @"1"]){
             [cell.btnSave setTitle:@"Saved" forState:UIControlStateNormal];
-            cell.btnSave.titleLabel.textColor = [UIColor orangeColor];
-            
+            [cell.btnSave setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal] ;
+
         }
         else
         {
             [cell.btnSave setTitle:@"Save" forState:UIControlStateNormal];
-            cell.btnSave.titleLabel.textColor = [UIColor grayColor];
+            [cell.btnSave setTitleColor:[UIColor grayColor] forState:UIControlStateNormal] ;
             
         }
         

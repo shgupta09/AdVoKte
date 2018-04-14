@@ -91,13 +91,14 @@
 
     if ([data.Liked  isEqual: @"TRUE"]){
         [cell.btnLike setTitle:@"Liked" forState:UIControlStateNormal];
-        cell.btnLike.titleLabel.textColor = [UIColor orangeColor];
-        
+        [cell.btnLike setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal] ;
+
     }
     else
     {
         [cell.btnLike setTitle:@"Like" forState:UIControlStateNormal];
-        cell.btnLike.titleLabel.textColor = [UIColor grayColor];
+                [cell.btnLike setTitleColor:[UIColor grayColor] forState:UIControlStateNormal] ;
+
         
     }
     

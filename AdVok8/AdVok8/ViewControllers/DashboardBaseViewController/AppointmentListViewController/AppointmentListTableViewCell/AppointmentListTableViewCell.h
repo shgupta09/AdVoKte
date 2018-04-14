@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet LeftImageWithLabel *lblDate;
 @property (weak, nonatomic) IBOutlet LeftImageWithLabel *lblTime;
 @property (weak, nonatomic) IBOutlet LeftImageWithLabel *lblStatus;
+@property (weak, nonatomic) IBOutlet UIView *viContainer;
 
 @end

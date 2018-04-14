@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    
+    _viContainer.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     // Initialization code
 }
 

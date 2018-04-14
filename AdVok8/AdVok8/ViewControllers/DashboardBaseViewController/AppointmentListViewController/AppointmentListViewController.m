@@ -92,7 +92,7 @@
     [parameter setObject:dict forKey:@"_user"];
     
     NSString* apiHitName = @"";
-    if ([[CommonFunction getValueFromDefaultWithKey:@"loginUsertype"]  isEqual:  @"advocate"]&&[CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+    if ([[CommonFunction getValueFromDefaultWithKey:@"loginUsertype"]  isEqual:@"advocate"]&&[CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
         apiHitName = @"get_AdvocateAppointment";
         NSMutableDictionary* dict = [NSMutableDictionary new];
         [dict setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"username"];
@@ -154,8 +154,6 @@
                 [self removeloder];
                 
             }
-            
-            
             
         }];
     } else {

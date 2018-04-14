@@ -93,25 +93,29 @@
         
         if ([data.Liked  isEqual: @"TRUE"]){
             [_btnLike setTitle:@"Liked" forState:UIControlStateNormal];
-            _btnLike.titleLabel.textColor = [UIColor orangeColor];
-            
+            [cell.btnLike setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal] ;
+            [_btnLike setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal] ;
         }
         else
         {
             [_btnLike setTitle:@"Like" forState:UIControlStateNormal];
-            _btnLike.titleLabel.textColor = [UIColor grayColor];
-            
+            [cell.btnLike setTitleColor:[UIColor grayColor] forState:UIControlStateNormal] ;
+            [_btnLike setTitleColor:[UIColor grayColor] forState:UIControlStateNormal] ;
+
+
         }
         if ([data.LibStatus  isEqual: @"1"]){
             [_btnSave setTitle:@"Saved" forState:UIControlStateNormal];
-            _btnSave.titleLabel.textColor = [UIColor orangeColor];
-            
+            [cell.btnSave setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal] ;
+            [_btnSave setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal] ;
+
         }
         else
         {
             [_btnSave setTitle:@"Save" forState:UIControlStateNormal];
-            _btnSave.titleLabel.textColor = [UIColor grayColor];
-            
+            [cell.btnSave setTitleColor:[UIColor grayColor] forState:UIControlStateNormal] ;
+            [_btnSave setTitleColor:[UIColor grayColor] forState:UIControlStateNormal] ;
+
         }
         
         
@@ -148,17 +152,19 @@
      
      cell.lblTimeAgo.text = [NSString stringWithFormat:@"%@ ago",data.Days];
      cell.lblComment.text = data.PostNote;
+     if (![data._cmtlikes isKindOfClass:[NSNull class]])
      cell.lblCountLikes.text = [NSString stringWithFormat:@"%lu",(unsigned long)data._cmtlikes.count];
      
      if ([data.Liked  isEqual: @"TRUE"]){
          [cell.btnLike setTitle:@"Liked" forState:UIControlStateNormal];
-         cell.btnLike.titleLabel.textColor = [UIColor orangeColor];
-         
+         [cell.btnLike setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal] ;
+
      }
      else
      {
          [cell.btnLike setTitle:@"Like" forState:UIControlStateNormal];
-         cell.btnLike.titleLabel.textColor = [UIColor grayColor];
+                 [cell.btnLike setTitleColor:[UIColor grayColor] forState:UIControlStateNormal] ;
+
          
      }
      
@@ -192,7 +198,7 @@
 -(IBAction)btnLikeTapped:(id) sender {
     
     if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
-        [self hitApiToLikeAPostWithPostId:_postId andIndex: index];
+        [self hitApiToLikeAPostWithPostId:_postId];
         
     }
     else
@@ -247,7 +253,7 @@
 
 
 #pragma mark - Api Related
--(void)hitApiToLikeAPostWithPostId:(NSString*)postId andIndex:(int)row{
+-(void)hitApiToLikeAPostWithPostId:(NSString*)postId{
     NSMutableDictionary *parameter = [NSMutableDictionary new];
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
@@ -282,9 +288,12 @@
                                 //  Code that gets executed whether or not an exception is thrown
                             }
                         }];
-                        [arrData replaceObjectAtIndex:row withObject:dataObj];
+                        [arrData removeAllObjects];
+                        postDetails = dataObj;
+                        [arrData addObject:dataObj];
+                        
                     }];
-                    [_tblView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];;
+                    [_tblView reloadData];;
                 }else
                 {
                     
@@ -337,9 +346,14 @@
                                 //  Code that gets executed whether or not an exception is thrown
                             }
                         }];
-                        [arrData replaceObjectAtIndex:row withObject:dataObj];
+
+                        [arrData removeAllObjects];
+                        postDetails = dataObj;
+
+                        [arrData addObject:dataObj];
+
                     }];
-                    [_tblView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];;
+                    [_tblView reloadData];
                 }else
                 {
                     
