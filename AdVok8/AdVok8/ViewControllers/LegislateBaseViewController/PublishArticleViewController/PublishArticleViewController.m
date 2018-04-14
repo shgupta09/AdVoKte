@@ -317,9 +317,8 @@
     [dictRequest setValue:@"Article" forKey:@"posttype"];
     [dictRequest setValue:_txtCategory.text forKey:@"postsubtype"];
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"TagUserName"];
-    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"ShareId"];
     [dictRequest setValue:imageURL forKey:@"PostPic"];
-    [dictRequest setValue:self.txtArticleTitle.text forKey:@"ArticleTitle"];
+    [dictRequest setValue:@"My first Article" forKey:@"ArticleTitle"];
     
 //    [dictRequest setValue:postId forKey:@"PostId"];
     [parameter setValue:dictRequest forKey:@"_post"];

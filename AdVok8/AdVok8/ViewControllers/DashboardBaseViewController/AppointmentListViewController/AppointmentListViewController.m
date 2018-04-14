@@ -86,10 +86,10 @@
     NSMutableDictionary *parameter = [NSMutableDictionary new];
     
     NSMutableDictionary* dict = [NSMutableDictionary new];
-    [dict setValue:@"" forKey:@"advid"];
-    [dict setValue:@"Pending" forKey:@"st"];
+    [dict setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
+    [dict setValue:@"User" forKey:@"type"];
     
-    [parameter setObject:dict forKey:@"_case"];
+    [parameter setObject:dict forKey:@"_user"];
     if ([ CommonFunction reachability]) {
         [self addLoder];
         
