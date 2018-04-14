@@ -10,5 +10,9 @@
 
 @interface AppealAlertCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIView *view;
+@property (weak, nonatomic) IBOutlet UILabel *lbltopLeft;
+@property (weak, nonatomic) IBOutlet UILabel *lblBottomLeft;
+@property (weak, nonatomic) IBOutlet UILabel *lblBottomRight;
+@property (weak, nonatomic) IBOutlet UIButton *btnDelete;
 
 @end

@@ -10,4 +10,11 @@
 
 @interface AppoinmentDetailVC : UIViewController
 
+@property (nonatomic, strong) Appointment* data;
+@property (weak, nonatomic) IBOutlet UILabel *lblUsername;
+@property (weak, nonatomic) IBOutlet UILabel *lblDate;
+@property (weak, nonatomic) IBOutlet UILabel *lblTime;
+@property (weak, nonatomic) IBOutlet UILabel *lblDescription;
+@property (weak, nonatomic) IBOutlet UILabel *lblStatus;
+
 @end

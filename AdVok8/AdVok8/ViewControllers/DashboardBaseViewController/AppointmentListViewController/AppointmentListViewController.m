@@ -76,8 +76,9 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([_fromDashboard isEqualToString:@"Advocate"]){
-        AppoinmentDetailVC *createTaskObj = [[AppoinmentDetailVC alloc]initWithNibName:@"AppoinmentDetailVC" bundle:nil];
-        [self.navigationController pushViewController:createTaskObj animated:true];
+        AppoinmentDetailVC *vc = [[AppoinmentDetailVC alloc]initWithNibName:@"AppoinmentDetailVC" bundle:nil];
+        vc.data = [arrData objectAtIndex:indexPath.row];;
+        [self.navigationController pushViewController:vc animated:true];
     }
     else
     {
