@@ -150,6 +150,14 @@
 		9CF77D15205FD1EF00366505 /* FeedbackVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CF77D13205FD1EF00366505 /* FeedbackVC.xib */; };
 		C0B37D9E32372768C7120041 /* libPods-AdVok8Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 451D0C401EC04053B7C1ED21 /* libPods-AdVok8Tests.a */; };
 		CB281165DB24598765D2760E /* libPods-AdVok8.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E476A4A368847FBC004F191 /* libPods-AdVok8.a */; };
+		D804D60C2082855A00766DF3 /* Edit_UserProfile_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = D804D5FF2082855900766DF3 /* Edit_UserProfile_VC.m */; };
+		D804D60D2082855A00766DF3 /* Edit_UserProfile_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D804D6002082855900766DF3 /* Edit_UserProfile_VC.xib */; };
+		D804D60E2082855A00766DF3 /* User_Header.m in Sources */ = {isa = PBXBuildFile; fileRef = D804D6032082855900766DF3 /* User_Header.m */; };
+		D804D60F2082855A00766DF3 /* User_Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = D804D6042082855900766DF3 /* User_Header.xib */; };
+		D804D6102082855A00766DF3 /* User_Profile_Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = D804D6072082855900766DF3 /* User_Profile_Cell.m */; };
+		D804D6112082855A00766DF3 /* User_Profile_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D804D6082082855900766DF3 /* User_Profile_Cell.xib */; };
+		D804D6122082855A00766DF3 /* User_Profile_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = D804D60A2082855900766DF3 /* User_Profile_VC.m */; };
+		D804D6132082855A00766DF3 /* User_Profile_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D804D60B2082855900766DF3 /* User_Profile_VC.xib */; };
 		D8C3C273206F69080089A3CC /* DailyCauseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C271206F69080089A3CC /* DailyCauseListCell.m */; };
 		D8C3C274206F69080089A3CC /* DailyCauseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C3C272206F69080089A3CC /* DailyCauseListCell.xib */; };
 		D8C3C27A206F73560089A3CC /* TaskListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C278206F73560089A3CC /* TaskListVC.m */; };
@@ -434,6 +442,18 @@
 		9CF77D13205FD1EF00366505 /* FeedbackVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedbackVC.xib; sourceTree = "<group>"; };
 		ADD73CAB49F10EB83788EA97 /* Pods-AdVok8Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8Tests/Pods-AdVok8Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4D413DFC49D5990184F60D /* Pods-AdVok8Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8Tests/Pods-AdVok8Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D804D5FE2082855900766DF3 /* Edit_UserProfile_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Edit_UserProfile_VC.h; sourceTree = "<group>"; };
+		D804D5FF2082855900766DF3 /* Edit_UserProfile_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Edit_UserProfile_VC.m; sourceTree = "<group>"; };
+		D804D6002082855900766DF3 /* Edit_UserProfile_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Edit_UserProfile_VC.xib; sourceTree = "<group>"; };
+		D804D6022082855900766DF3 /* User_Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User_Header.h; sourceTree = "<group>"; };
+		D804D6032082855900766DF3 /* User_Header.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User_Header.m; sourceTree = "<group>"; };
+		D804D6042082855900766DF3 /* User_Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = User_Header.xib; sourceTree = "<group>"; };
+		D804D6062082855900766DF3 /* User_Profile_Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User_Profile_Cell.h; sourceTree = "<group>"; };
+		D804D6072082855900766DF3 /* User_Profile_Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User_Profile_Cell.m; sourceTree = "<group>"; };
+		D804D6082082855900766DF3 /* User_Profile_Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = User_Profile_Cell.xib; sourceTree = "<group>"; };
+		D804D6092082855900766DF3 /* User_Profile_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User_Profile_VC.h; sourceTree = "<group>"; };
+		D804D60A2082855900766DF3 /* User_Profile_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User_Profile_VC.m; sourceTree = "<group>"; };
+		D804D60B2082855900766DF3 /* User_Profile_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = User_Profile_VC.xib; sourceTree = "<group>"; };
 		D8C3C270206F69080089A3CC /* DailyCauseListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyCauseListCell.h; sourceTree = "<group>"; };
 		D8C3C271206F69080089A3CC /* DailyCauseListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyCauseListCell.m; sourceTree = "<group>"; };
 		D8C3C272206F69080089A3CC /* DailyCauseListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCauseListCell.xib; sourceTree = "<group>"; };
@@ -899,6 +919,7 @@
 		5F70AC2B202B14EB007E69A5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D804D5FC2082855900766DF3 /* Profile_USer_Detail */,
 				9C70B250206E00D700850305 /* Advok8_VC */,
 				5FF9E2C720617FCC00467A0D /* NotificationListViewController */,
 				9CE0101F204FB2A3002A2E81 /* ProfileVC */,
@@ -1353,6 +1374,49 @@
 			path = FeedBack;
 			sourceTree = "<group>";
 		};
+		D804D5FC2082855900766DF3 /* Profile_USer_Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D804D5FD2082855900766DF3 /* Edit_User_Profile */,
+				D804D6012082855900766DF3 /* SectionHeader_User */,
+				D804D6052082855900766DF3 /* User_Profile_Cell */,
+				D804D6092082855900766DF3 /* User_Profile_VC.h */,
+				D804D60A2082855900766DF3 /* User_Profile_VC.m */,
+				D804D60B2082855900766DF3 /* User_Profile_VC.xib */,
+			);
+			path = Profile_USer_Detail;
+			sourceTree = "<group>";
+		};
+		D804D5FD2082855900766DF3 /* Edit_User_Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D804D5FE2082855900766DF3 /* Edit_UserProfile_VC.h */,
+				D804D5FF2082855900766DF3 /* Edit_UserProfile_VC.m */,
+				D804D6002082855900766DF3 /* Edit_UserProfile_VC.xib */,
+			);
+			path = Edit_User_Profile;
+			sourceTree = "<group>";
+		};
+		D804D6012082855900766DF3 /* SectionHeader_User */ = {
+			isa = PBXGroup;
+			children = (
+				D804D6022082855900766DF3 /* User_Header.h */,
+				D804D6032082855900766DF3 /* User_Header.m */,
+				D804D6042082855900766DF3 /* User_Header.xib */,
+			);
+			path = SectionHeader_User;
+			sourceTree = "<group>";
+		};
+		D804D6052082855900766DF3 /* User_Profile_Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D804D6062082855900766DF3 /* User_Profile_Cell.h */,
+				D804D6072082855900766DF3 /* User_Profile_Cell.m */,
+				D804D6082082855900766DF3 /* User_Profile_Cell.xib */,
+			);
+			path = User_Profile_Cell;
+			sourceTree = "<group>";
+		};
 		D8C3C26F206F687F0089A3CC /* DailyCauseListCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1639,10 +1703,12 @@
 				D8FAAFA5207165250084DE28 /* AppoinmentDetailVC.xib in Resources */,
 				5F415752205E3352003D29B4 /* JournalFeedsViewController.xib in Resources */,
 				5F70AC05202B1250007E69A5 /* LaunchScreen.storyboard in Resources */,
+				D804D6132082855A00766DF3 /* User_Profile_VC.xib in Resources */,
 				5F71B6AB204E8E76004229DF /* LawyerListVC.xib in Resources */,
 				5F1B9C4C20343889009503E7 /* FeedViewController.xib in Resources */,
 				5F58FC6B2078A124009C5D9C /* ConfirmAppointmentViewController.xib in Resources */,
 				D8C3C2B1207022970089A3CC /* TaskDetailVC.xib in Resources */,
+				D804D60D2082855A00766DF3 /* Edit_UserProfile_VC.xib in Resources */,
 				D8C3C29E206FB1D10089A3CC /* CaseListCell2.xib in Resources */,
 				5F71B6AD204E8E76004229DF /* ListCell.xib in Resources */,
 				5FCCBA0B2038223B002BFD4A /* RegisterStep1ViewController.xib in Resources */,
@@ -1668,6 +1734,7 @@
 				D8C3C27B206F73560089A3CC /* TaskListVC.xib in Resources */,
 				5FF9E2D52061830B00467A0D /* NotificationTableViewCell.xib in Resources */,
 				5FBD2B3C20595C4700D9C10B /* FeedDetailViewController.xib in Resources */,
+				D804D6112082855A00766DF3 /* User_Profile_Cell.xib in Resources */,
 				5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */,
 				D8FAAF95207157E20084DE28 /* Me_VC.xib in Resources */,
 				5F96B71D206FE8D3003CD72F /* CalendarViewController.xib in Resources */,
@@ -1682,6 +1749,7 @@
 				5F96B78520755A49003CD72F /* AppointmentListTableViewCell.xib in Resources */,
 				5F71B6DA204FC4FD004229DF /* PublishArticleViewController.xib in Resources */,
 				9C70B265206E011700850305 /* CauseBaseVC.xib in Resources */,
+				D804D60F2082855A00766DF3 /* User_Header.xib in Resources */,
 				9C70B26C206E0F4200850305 /* CaseListVC.xib in Resources */,
 				5F71B6D4204F9934004229DF /* CreatePostViewController.xib in Resources */,
 				9C70B277206E32CA00850305 /* CaseListCell.xib in Resources */,
@@ -1845,6 +1913,7 @@
 				5F3645E1205F7EF70041E88C /* DocumentModel.m in Sources */,
 				5F70AC4A202B1691007E69A5 /* SplashScreenViewController.m in Sources */,
 				D8C3C29D206FB1D10089A3CC /* CaseListCell2.m in Sources */,
+				D804D6122082855A00766DF3 /* User_Profile_VC.m in Sources */,
 				5F1B9C2D203413F8009503E7 /* DashboardBaseViewController.m in Sources */,
 				5F96B768206FE9F0003CD72F /* JTCalendarContentView.m in Sources */,
 				5F58FC4B20769085009C5D9C /* SelectSlotViewController.m in Sources */,
@@ -1879,6 +1948,7 @@
 				5F96B767206FE9F0003CD72F /* JTCalendarAppearance.m in Sources */,
 				5F71B6AA204E8E76004229DF /* LawyerListVC.m in Sources */,
 				5F1B9C862036B0C2009503E7 /* PostModel.m in Sources */,
+				D804D60E2082855A00766DF3 /* User_Header.m in Sources */,
 				5F1B9C33203415B9009503E7 /* DashboardHomeCollectionViewCell.m in Sources */,
 				5F96B71C206FE8D3003CD72F /* CalendarViewController.m in Sources */,
 				D8C3C280206F73F90089A3CC /* TaskListCell.m in Sources */,
@@ -1910,8 +1980,10 @@
 				5F96B770206FE9F0003CD72F /* JTCalendarMonthWeekDaysView.m in Sources */,
 				5F96B766206FE9F0003CD72F /* JTCalendar.m in Sources */,
 				9CE01023204FC363002A2E81 /* ProfileVC.m in Sources */,
+				D804D6102082855A00766DF3 /* User_Profile_Cell.m in Sources */,
 				D8C3C2A3206FBBFE0089A3CC /* CreateTaskVC.m in Sources */,
 				5F70ABF4202B1250007E69A5 /* main.m in Sources */,
+				D804D60C2082855A00766DF3 /* Edit_UserProfile_VC.m in Sources */,
 				5F71B691204D5E7F004229DF /* CommentViewController.m in Sources */,
 				D8C3C273206F69080089A3CC /* DailyCauseListCell.m in Sources */,
 				D8C3C28D206FA3B40089A3CC /* AccordionHeaderView.m in Sources */,

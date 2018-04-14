@@ -7,7 +7,7 @@
 //
 
 #import "Me_VC.h"
-
+#import "User_Profile_VC.h"ha
 @interface Me_VC ()
 
 @end
@@ -40,6 +40,12 @@
 #pragma mark - BtnAction
 
 - (IBAction)btnAction_ViewProfile:(id)sender {
+    if ([CommonFunction isadvoK8]) {
+        
+    }else{
+        User_Profile_VC *profileObj = [[User_Profile_VC alloc]initWithNibName:@"User_Profile_VC" bundle:nil];
+        [self.navigationController pushViewController:profileObj animated:true];
+    }
     
 }
 - (IBAction)btnAction_MyActivity:(id)sender {
