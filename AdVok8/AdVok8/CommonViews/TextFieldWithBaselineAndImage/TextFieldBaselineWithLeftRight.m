@@ -14,7 +14,7 @@
     if (self = [super initWithCoder:aDecoder]) {
         
         self.delegate = self;
-        self.tintColor = [UIColor whiteColor];
+        self.tintColor = [UIColor darkGrayColor];
          //self.layer.cornerRadius = self.bounds.size.height/2;
         self.clipsToBounds = YES;
         self.leftViewMode = UITextFieldViewModeAlways;

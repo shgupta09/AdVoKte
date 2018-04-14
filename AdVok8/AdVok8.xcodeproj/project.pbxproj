@@ -178,8 +178,6 @@
 		D8FAAF8F2071414F0084DE28 /* AppAppealVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FAAF8D2071414F0084DE28 /* AppAppealVC.xib */; };
 		D8FAAF94207157E20084DE28 /* Me_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FAAF92207157E20084DE28 /* Me_VC.m */; };
 		D8FAAF95207157E20084DE28 /* Me_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FAAF93207157E20084DE28 /* Me_VC.xib */; };
-		D8FAAF9E2071601F0084DE28 /* AppoinmentList_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FAAF9C2071601F0084DE28 /* AppoinmentList_VC.m */; };
-		D8FAAF9F2071601F0084DE28 /* AppoinmentList_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FAAF9D2071601F0084DE28 /* AppoinmentList_VC.xib */; };
 		D8FAAFA4207165250084DE28 /* AppoinmentDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FAAFA2207165250084DE28 /* AppoinmentDetailVC.m */; };
 		D8FAAFA5207165250084DE28 /* AppoinmentDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FAAFA3207165250084DE28 /* AppoinmentDetailVC.xib */; };
 /* End PBXBuildFile section */
@@ -478,9 +476,6 @@
 		D8FAAF91207157E20084DE28 /* Me_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Me_VC.h; sourceTree = "<group>"; };
 		D8FAAF92207157E20084DE28 /* Me_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Me_VC.m; sourceTree = "<group>"; };
 		D8FAAF93207157E20084DE28 /* Me_VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Me_VC.xib; sourceTree = "<group>"; };
-		D8FAAF9B2071601F0084DE28 /* AppoinmentList_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppoinmentList_VC.h; sourceTree = "<group>"; };
-		D8FAAF9C2071601F0084DE28 /* AppoinmentList_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppoinmentList_VC.m; sourceTree = "<group>"; };
-		D8FAAF9D2071601F0084DE28 /* AppoinmentList_VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppoinmentList_VC.xib; sourceTree = "<group>"; };
 		D8FAAFA1207165250084DE28 /* AppoinmentDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailVC.h; sourceTree = "<group>"; };
 		D8FAAFA2207165250084DE28 /* AppoinmentDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppoinmentDetailVC.m; sourceTree = "<group>"; };
 		D8FAAFA3207165250084DE28 /* AppoinmentDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppoinmentDetailVC.xib; sourceTree = "<group>"; };
@@ -1532,19 +1527,8 @@
 			isa = PBXGroup;
 			children = (
 				D8FAAFA0207165140084DE28 /* AppoinmentDetail */,
-				D8FAAF9720715ED80084DE28 /* AppoinmentList */,
 			);
 			path = Appoinment;
-			sourceTree = "<group>";
-		};
-		D8FAAF9720715ED80084DE28 /* AppoinmentList */ = {
-			isa = PBXGroup;
-			children = (
-				D8FAAF9B2071601F0084DE28 /* AppoinmentList_VC.h */,
-				D8FAAF9C2071601F0084DE28 /* AppoinmentList_VC.m */,
-				D8FAAF9D2071601F0084DE28 /* AppoinmentList_VC.xib */,
-			);
-			path = AppoinmentList;
 			sourceTree = "<group>";
 		};
 		D8FAAFA0207165140084DE28 /* AppoinmentDetail */ = {
@@ -1683,7 +1667,6 @@
 				D8FAAF95207157E20084DE28 /* Me_VC.xib in Resources */,
 				5F96B71D206FE8D3003CD72F /* CalendarViewController.xib in Resources */,
 				D8FAAF83207125900084DE28 /* AppealAlertVC.xib in Resources */,
-				D8FAAF9F2071601F0084DE28 /* AppoinmentList_VC.xib in Resources */,
 				5F71B692204D5E7F004229DF /* CommentViewController.xib in Resources */,
 				D8C3C2A4206FBBFE0089A3CC /* CreateTaskVC.xib in Resources */,
 				5FF9E2CC20617FE500467A0D /* NotificationListViewController.xib in Resources */,
@@ -1860,7 +1843,6 @@
 				5F96B768206FE9F0003CD72F /* JTCalendarContentView.m in Sources */,
 				5F58FC4B20769085009C5D9C /* SelectSlotViewController.m in Sources */,
 				5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */,
-				D8FAAF9E2071601F0084DE28 /* AppoinmentList_VC.m in Sources */,
 				5F71B6BC204E8E87004229DF /* ProfileCell.m in Sources */,
 				5F71B6BE204E8E87004229DF /* SelectedLawyerVC.m in Sources */,
 				5FF9E2CB20617FE500467A0D /* NotificationListViewController.m in Sources */,

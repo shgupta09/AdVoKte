@@ -10,5 +10,6 @@
 
 @interface AppointmentListViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (strong, nonatomic) NSString* fromDashboard;
 
 @end

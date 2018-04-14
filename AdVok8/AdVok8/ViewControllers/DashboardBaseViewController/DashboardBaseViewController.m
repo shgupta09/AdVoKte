@@ -10,7 +10,6 @@
 #import "CauseBaseVC.h"
 #import "TaskListVC.h"
 #import "AppealAlertVC.h"
-#import "AppoinmentList_VC.h"
 #import "Me_VC.h"
 @interface DashboardBaseViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 {
@@ -144,8 +143,9 @@
             }
                 
             case 4:{
-                AppoinmentList_VC *profileObj = [[AppoinmentList_VC alloc]initWithNibName:@"AppoinmentList_VC" bundle:nil];
-                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:profileObj];
+                AppointmentListViewController *vc = [[AppointmentListViewController alloc]initWithNibName:@"AppointmentListViewController" bundle:nil];
+                vc.fromDashboard = @"Advocate";
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
                 [self.navigationController presentViewController:navCon animated:true completion:nil];
             }
             case 5:{
@@ -195,6 +195,7 @@
                 break;
             case 3:{
                 AppointmentListViewController *vc = [[AppointmentListViewController alloc]initWithNibName:@"AppointmentListViewController" bundle:nil];
+                vc.fromDashboard = @"User";
                 UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
                 [self.navigationController presentViewController:navCon animated:true completion:nil];
             }
