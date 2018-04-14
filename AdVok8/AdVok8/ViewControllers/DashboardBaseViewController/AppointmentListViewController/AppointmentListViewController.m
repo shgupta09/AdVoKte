@@ -61,13 +61,13 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    Case* data = [Case new];
+    Appointment* data = [Appointment new];
     data = [arrData objectAtIndex:indexPath.row];
 
-    cell.lblUserName.text = data.PetitionerName;
-    cell.lblDate.text = data.upcominghearingDate;
-    cell.lblTime.text = data.upcominghearingDate;
-    cell.lblStatus.text = data.st;
+    cell.lblUserName.text = data.fname;
+    cell.lblDate.text = data.date;
+    cell.lblTime.text = data.time;
+    cell.lblStatus.text = data.Status;
 
 
     return cell;
@@ -87,14 +87,34 @@
     
     NSMutableDictionary* dict = [NSMutableDictionary new];
     [dict setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
-    [dict setValue:@"User" forKey:@"type"];
+    [dict setValue:@"history" forKey:@"type"];
     
     [parameter setObject:dict forKey:@"_user"];
+    
+    NSString* apiHitName = @"";
+    if ([[CommonFunction getValueFromDefaultWithKey:@"loginUsertype"]  isEqual:  @"advocate"]&&[CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        apiHitName = @"get_AdvocateAppointment";
+        NSMutableDictionary* dict = [NSMutableDictionary new];
+        [dict setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"username"];
+        
+        [parameter setObject:dict forKey:@"_adv"];
+    }
+    else
+    {
+        apiHitName = API_GET_ALL_APPOINTMENTS_USER;
+        NSMutableDictionary* dict = [NSMutableDictionary new];
+        [dict setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
+        [dict setValue:@"history" forKey:@"type"];
+        
+        [parameter setObject:dict forKey:@"_user"];
+
+    }
+    
     if ([ CommonFunction reachability]) {
         [self addLoder];
         
         //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_ALL_CASE_LIST]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,apiHitName]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
                 id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -106,10 +126,10 @@
                     NSArray *tempArray = [NSArray new];
                     NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
                     id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                    tempArray = [json objectForKey:@"_special"];
+                       tempArray = [json objectForKey:@"app"];
                     [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                         
-                        Case *dataObj = [Case new];
+                        Appointment *dataObj = [Appointment new];
                         [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
                             @try {
                                 [dataObj setValue:obj forKey:(NSString *)key];

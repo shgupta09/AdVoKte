@@ -84,7 +84,7 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [[headerDataArray objectAtIndex:section] count];
+    return [(NSMutableArray*)[headerDataArray objectAtIndex:section] count];
 //    return 5;
 }
 

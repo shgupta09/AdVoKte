@@ -82,6 +82,7 @@
 #import "WorkingExperience.h"
 #import "Notification.h"
 #import "Case.h"
+#import "Appointment.h"
 
 #endif /* PrefixHeader_pch */
 
