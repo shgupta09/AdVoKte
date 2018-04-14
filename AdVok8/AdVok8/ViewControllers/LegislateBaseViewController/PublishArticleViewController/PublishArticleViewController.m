@@ -316,9 +316,10 @@
     [dictRequest setValue:_txtView.text forKey:@"PostNote"];
     [dictRequest setValue:@"Article" forKey:@"posttype"];
     [dictRequest setValue:_txtCategory.text forKey:@"postsubtype"];
-    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"TagUserName"];
     [dictRequest setValue:imageURL forKey:@"PostPic"];
     [dictRequest setValue:@"My first Article" forKey:@"ArticleTitle"];
+    [dictRequest setValue:0 forKey:@"StrtPnt"];
+    [dictRequest setValue:0 forKey:@"EndPnt"];
     
 //    [dictRequest setValue:postId forKey:@"PostId"];
     [parameter setValue:dictRequest forKey:@"_post"];

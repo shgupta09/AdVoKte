@@ -34,7 +34,7 @@
 
    [self hitApiForAllPosts:@"0"];
     
-   // [self hitApitoDelete];
+//    [self hitApitoDelete];
     // Do any additional setup after loading the view from its nib.
 }
 -(void)viewDidLayoutSubviews{
@@ -413,7 +413,7 @@
     {
         [dictRequest setValue:@"0" forKey:@"UserId"];
     }
-    [dictRequest setValue:@"19103" forKey:@"PostId"];
+    [dictRequest setValue:@"20219" forKey:@"PostId"];
    
     [parameter setValue:dictRequest forKey:@"_post"];
     
