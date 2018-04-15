@@ -15,6 +15,9 @@
     NSMutableArray* arrTime;
     UISwipeGestureRecognizer * swiperight;
     UISwipeGestureRecognizer * swipeleft;
+    NSDate* selectedDate;
+    NSString* dayName;
+    NSString* dateString;
 }
 @end
 
@@ -22,6 +25,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    selectedDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    dayName = [dateFormatter stringFromDate:selectedDate];
+    
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    dateString = [dateFormatter stringFromDate:selectedDate];
+    
+    _lblDay.text = dayName;
+    _lblDate.text = [NSString stringWithFormat:@"%@", dateString];
+    
     
     [CommonFunction setNavToController:self title:@"Appointment" isCrossBusston:false];
 
@@ -84,11 +99,49 @@
 #pragma mark - Swipe handlers
 -(void)swipeleft:(UISwipeGestureRecognizer*)gestureRecognizer
 {
+    // get minute and hour from now
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.day = 1;
+    
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    NSDate *nextDate = [theCalendar dateByAddingComponents:dayComponent toDate:selectedDate options:0];
+    
+    selectedDate = nextDate;
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    dayName = [dateFormatter stringFromDate:selectedDate];
+    
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    dateString = [dateFormatter stringFromDate:selectedDate];
+
+    _lblDay.text = dayName;
+    _lblDate.text = [NSString stringWithFormat:@"%@", dateString];
+    NSLog(@"nextDate: %@ ...", nextDate);
     //Do what you want here
 }
 
 -(void)swiperight:(UISwipeGestureRecognizer*)gestureRecognizer
 {
+    // get minute and hour from now
+    NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
+    dayComponent.day = -1;
+    
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    NSDate *nextDate = [theCalendar dateByAddingComponents:dayComponent toDate:selectedDate options:0];
+    
+    selectedDate = nextDate;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEEE"];
+    dayName = [dateFormatter stringFromDate:selectedDate];
+    
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    dateString = [dateFormatter stringFromDate:selectedDate];
+
+    _lblDay.text = dayName;
+    _lblDate.text = [NSString stringWithFormat:@"%@", dateString];
+    NSLog(@"nextDate: %@ ...", nextDate);
     //Do what you want here
 }
 
@@ -141,6 +194,8 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     
     ConfirmAppointmentViewController* vc = [[ConfirmAppointmentViewController alloc] init];
+    vc.dayString = dateString;
+    vc.dateString = [arrTime objectAtIndex:indexPath.item];
     [self.navigationController pushViewController:vc animated:true];
     
 }
