@@ -35,6 +35,11 @@
 #pragma mark- Navigation
 -(void)setUpData{
     [CommonFunction setNavToController:self title:@"Update Profile" isCrossBusston:false];
+    self.txt_name.text = _userObj.FirstName;
+    self.txt_Number.text = _userObj.ContactNo;
+    self.txt_AlterNumbr.text = _userObj.AlternateContactNo;
+    self.txt_email.text = _userObj.EmailId;
+    self.txt_gender.text = _userObj.Gender;
     [self setDefaultDate];
 }
 

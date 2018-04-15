@@ -349,7 +349,7 @@
                         
                         PostModel *dataObj = [PostModel new];
                         [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
-                            @try {
+                             @try {
                                 [dataObj setValue:obj forKey:(NSString *)key];
                             } @catch (NSException *exception) {
                                 NSLog(exception.description);

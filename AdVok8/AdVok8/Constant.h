@@ -41,6 +41,10 @@ static NSString* const API_Delete_APPEAL_ALERT = @"deleteAppealAlert";
 static NSString* const API_GET_ALL_Court = @"getcourtMaster";
 
 static NSString* const API_PUT_SHARE = @"put_Share";
+<<<<<<< HEAD
+=======
+static NSString* const API_GET_USER_DETAILS = @"GetUserDetail";
+>>>>>>> 22a03295e011d1ef7a3b29bec7f2532376534292
 
 
 
