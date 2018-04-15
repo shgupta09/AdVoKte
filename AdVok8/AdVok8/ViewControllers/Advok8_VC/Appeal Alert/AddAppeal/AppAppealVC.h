@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppAppealVC : UIViewController
+@interface AppAppealVC : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet TextFieldFooter *txt_DateOfJudgement;
 @property (weak, nonatomic) IBOutlet TextFieldFooter *txt_Fourm;
 @property (weak, nonatomic) IBOutlet TextFieldFooter *txt_CaseNo;

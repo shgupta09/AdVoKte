@@ -10,5 +10,5 @@
 
 @interface RegCaseType : NSObject
 @property int CaseTypeId;//, value-0
-@property(nonatomic ,strong) NSString *CaseTypeName;
+@property(nonatomic ,strong) NSString *CaseType;
 @end

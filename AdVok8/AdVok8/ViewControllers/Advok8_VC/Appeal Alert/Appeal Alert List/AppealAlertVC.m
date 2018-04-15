@@ -26,8 +26,13 @@
     [self setUpData];
     arrData = [[NSMutableArray alloc ] init];
 
-    [self hitApiToGetAllAppealAlert];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self hitApiToGetAllAppealAlert];
+
 }
 
 -(void)viewDidLayoutSubviews{

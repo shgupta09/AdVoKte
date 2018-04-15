@@ -14,6 +14,8 @@
 #define LOGINUSER_TYPE @"loginUsertype"
 #define LOGINUSER_AD @"advocate"
 #define LOGINUSER_UR @"user"
+#define BoolValueKey @"BoolValue"
+#define AlertKey @"Alert"
 
 static NSString* const API_BASE_URL = @"http://www.advok8.in/AdvocateAPI.asmx/";
 static NSString* const API_CONTENTS_BASE_URL = @"http://www.advok8.in";
@@ -38,13 +40,13 @@ static NSString* const API_GET_ALL_APPOINTMENTS_USER = @"get_UserAppointment";
 static NSString* const API_GET_ALL_APPOINTMENTS_ADVOCATE = @"get_AdvocateAppointment";
 static NSString* const API_GET_ALL_APPEAL_ALERTS = @"getAppealAlert";
 static NSString* const API_Delete_APPEAL_ALERT = @"deleteAppealAlert";
-static NSString* const API_GET_ALL_Court = @"getcourtMaster";
+static NSString* const API_Insert_APPEAL_ALERT = @"insertAppealAlert";
 
+static NSString* const API_GET_ALL_Court = @"getcourtMaster";
+static NSString* const API_GET_ALL_CaseType = @"getCasetypeMaster";
 static NSString* const API_PUT_SHARE = @"put_Share";
-<<<<<<< HEAD
-=======
 static NSString* const API_GET_USER_DETAILS = @"GetUserDetail";
->>>>>>> 22a03295e011d1ef7a3b29bec7f2532376534292
+
 
 
 
