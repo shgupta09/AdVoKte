@@ -2,4 +2,118 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdVok8/ViewControllers/Profile_USer_Detail/User_Profile_VC.m"
+            timestampString = "545476386.224097"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "-hitApiToGetData"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[User_Profile_VC hitApiToGetData]"
+                  moduleName = "AdVok8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shagunverma/Work/My%20Projects/Freelance%20Work/GitHub/AdVoKte/AdVok8/AdVok8/ViewControllers/Profile_USer_Detail/User_Profile_VC.m"
+                  timestampString = "545474180.265928"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "232"
+                  endingLineNumber = "232"
+                  offsetFromSymbolStart = "282">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[User_Profile_VC hitApiToGetData]_block_invoke"
+                  moduleName = "AdVok8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shagunverma/Work/My%20Projects/Freelance%20Work/GitHub/AdVoKte/AdVok8/AdVok8/ViewControllers/Profile_USer_Detail/User_Profile_VC.m"
+                  timestampString = "545474180.269246"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "233"
+                  endingLineNumber = "233"
+                  offsetFromSymbolStart = "213">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdVok8/ViewControllers/Profile_USer_Detail/User_Profile_VC.m"
+            timestampString = "545476386.224528"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "-hitApiToGetData"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdVok8/ViewControllers/Profile_USer_Detail/User_Profile_VC.m"
+            timestampString = "545476386.224606"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
+            landmarkName = "-hitApiToGetData"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[User_Profile_VC hitApiToGetData]_block_invoke_2"
+                  moduleName = "AdVok8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shagunverma/Work/My%20Projects/Freelance%20Work/GitHub/AdVoKte/AdVok8/AdVok8/ViewControllers/Profile_USer_Detail/User_Profile_VC.m"
+                  timestampString = "545474203.533354"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "248"
+                  endingLineNumber = "248"
+                  offsetFromSymbolStart = "137">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__34-[User_Profile_VC hitApiToGetData]_block_invoke_3"
+                  moduleName = "AdVok8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shagunverma/Work/My%20Projects/Freelance%20Work/GitHub/AdVoKte/AdVok8/AdVok8/ViewControllers/Profile_USer_Detail/User_Profile_VC.m"
+                  timestampString = "545474203.536656"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "249"
+                  endingLineNumber = "249"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

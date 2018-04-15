@@ -38,6 +38,7 @@ static NSString* const API_GET_ALL_APPOINTMENTS_USER = @"get_UserAppointment";
 static NSString* const API_GET_ALL_APPOINTMENTS_ADVOCATE = @"get_AdvocateAppointment";
 static NSString* const API_GET_ALL_APPEAL_ALERTS = @"getAppealAlert";
 static NSString* const API_PUT_SHARE = @"put_Share";
+static NSString* const API_GET_USER_DETAILS = @"GetUserDetail";
 
 
 

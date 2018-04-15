@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *txt_AlterNumbr;
 @property (weak, nonatomic) IBOutlet UITextField *txt_Number;
 @property (weak, nonatomic) IBOutlet UITextField *txt_name;
+@property (weak, nonatomic) User* userObj;
 
 @end
