@@ -247,6 +247,18 @@
 }
 -(IBAction) btnShareTapped:(id) sender {
     
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        [self sharePost];
+    }
+    else
+    {
+        LoginViewController* vc ;
+        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        vc.Behaviour = @"Action";
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+    }
+    
 }
 
 
@@ -529,6 +541,54 @@
     }
 }
 
+
+
+-(void)hitApiToShare{
+    
+    
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+    
+    [dictRequest setValue:_postId forKey:@"PostId"];
+    
+    [parameter setValue:dictRequest forKey:@"_post"];
+    
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_PUT_SHARE]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1) {
+                    //ALERT Shared Successfully
+                    [self removeloder];
+                    
+                    
+                }else
+                {
+                    //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+                    [self removeloder];
+                    //                    [self removeloder];
+                }
+                [self removeloder];
+                
+            }
+            
+            
+            
+        }];
+    } else {
+        [self removeloder];
+        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+    }
+}
+
+
 -(void)addLoder{
     self.view.userInteractionEnabled = NO;
     //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
@@ -542,6 +602,83 @@
     [loderObj removeFromSuperview];
     //[loaderView removeFromSuperview];
     self.view.userInteractionEnabled = YES;
+}
+
+
+-(void) sharePost {
+    UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Share post via"
+                                                                  message:@""
+                                                           preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction* yesButton = [UIAlertAction actionWithTitle:@"Share via apps"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction * action)
+                                {
+                                    /** What we write here???????? **/
+                                    CGRect myRect = [_tblView rectForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];//example 0,1,indexPath
+                                    
+                                    UIImage *img = [self cropImage:[self screenshot] rect:myRect];
+                                    
+                                    NSString *textToShare = @"https://play.google.com/store/apps/details?id=com.advok8";
+                                    UIImage * image = img;
+                                    
+                                    NSArray *objectsToShare = @[textToShare, image];
+                                    
+                                    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+                                    
+                                    
+                                    [self presentViewController:activityVC animated:YES completion:nil];
+                                    
+                                    NSLog(@"fdsv");
+                                    // call method whatever u need
+                                }];
+    
+    UIAlertAction* noButton = [UIAlertAction actionWithTitle:@"Advok8 Share"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * action)
+                               {
+                                   /** What we write here???????? **/
+                                   // call method whatever u need
+                                   [self hitApiToShare];
+                               }];
+    
+    UIAlertAction* canceloButton = [UIAlertAction actionWithTitle:@"Cancel"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action)
+                                    {
+                                        /** What we write here???????? **/
+                                        // call method whatever u need
+                                        [self hitApiToShare];
+                                    }];
+    
+    
+    [alert addAction:yesButton];
+    [alert addAction:noButton];
+    [alert addAction:canceloButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(UIImage *)cropImage:(UIImage *)image rect:(CGRect)cropRect
+{
+    CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], cropRect);
+    UIImage *img = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    return img;
+}
+
+- (UIImage *) screenshot {
+    
+    CGSize size = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    
+    CGRect rec = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height); //set the frame
+    [self.view drawViewHierarchyInRect:rec afterScreenUpdates:YES];
+    
+    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 
