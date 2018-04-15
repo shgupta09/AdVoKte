@@ -158,6 +158,8 @@
 		D804D6112082855A00766DF3 /* User_Profile_Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D804D6082082855900766DF3 /* User_Profile_Cell.xib */; };
 		D804D6122082855A00766DF3 /* User_Profile_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = D804D60A2082855900766DF3 /* User_Profile_VC.m */; };
 		D804D6132082855A00766DF3 /* User_Profile_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D804D60B2082855900766DF3 /* User_Profile_VC.xib */; };
+		D804D6162083344D00766DF3 /* RegCaseCourt.m in Sources */ = {isa = PBXBuildFile; fileRef = D804D6152083344D00766DF3 /* RegCaseCourt.m */; };
+		D804D6192083395A00766DF3 /* RegCaseType.m in Sources */ = {isa = PBXBuildFile; fileRef = D804D6182083395A00766DF3 /* RegCaseType.m */; };
 		D8C3C273206F69080089A3CC /* DailyCauseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C271206F69080089A3CC /* DailyCauseListCell.m */; };
 		D8C3C274206F69080089A3CC /* DailyCauseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C3C272206F69080089A3CC /* DailyCauseListCell.xib */; };
 		D8C3C27A206F73560089A3CC /* TaskListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C278206F73560089A3CC /* TaskListVC.m */; };
@@ -454,6 +456,10 @@
 		D804D6092082855900766DF3 /* User_Profile_VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User_Profile_VC.h; sourceTree = "<group>"; };
 		D804D60A2082855900766DF3 /* User_Profile_VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User_Profile_VC.m; sourceTree = "<group>"; };
 		D804D60B2082855900766DF3 /* User_Profile_VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = User_Profile_VC.xib; sourceTree = "<group>"; };
+		D804D6142083344D00766DF3 /* RegCaseCourt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegCaseCourt.h; sourceTree = "<group>"; };
+		D804D6152083344D00766DF3 /* RegCaseCourt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegCaseCourt.m; sourceTree = "<group>"; };
+		D804D6172083395A00766DF3 /* RegCaseType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegCaseType.h; sourceTree = "<group>"; };
+		D804D6182083395A00766DF3 /* RegCaseType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegCaseType.m; sourceTree = "<group>"; };
 		D8C3C270206F69080089A3CC /* DailyCauseListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyCauseListCell.h; sourceTree = "<group>"; };
 		D8C3C271206F69080089A3CC /* DailyCauseListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyCauseListCell.m; sourceTree = "<group>"; };
 		D8C3C272206F69080089A3CC /* DailyCauseListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCauseListCell.xib; sourceTree = "<group>"; };
@@ -905,6 +911,10 @@
 				5F356EDB207D4ED7001EA9DF /* Case.m */,
 				5FF9A91F208203E800C042C9 /* AppealAlert.h */,
 				5FF9A920208203E800C042C9 /* AppealAlert.m */,
+				D804D6142083344D00766DF3 /* RegCaseCourt.h */,
+				D804D6152083344D00766DF3 /* RegCaseCourt.m */,
+				D804D6172083395A00766DF3 /* RegCaseType.h */,
+				D804D6182083395A00766DF3 /* RegCaseType.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1939,6 +1949,7 @@
 				9CF77D0A205F87B900366505 /* AdvocatePublicData.m in Sources */,
 				5F71B6A8204E8E76004229DF /* LawyersCategoryVC.m in Sources */,
 				5F1B9C73203568BD009503E7 /* SearchModel.m in Sources */,
+				D804D6162083344D00766DF3 /* RegCaseCourt.m in Sources */,
 				9CF77CFB205F84DF00366505 /* Rating.m in Sources */,
 				5F71B6C8204E91C5004229DF /* Specialization.m in Sources */,
 				5F96B76E206FE9F0003CD72F /* JTCalendarMenuView.m in Sources */,
@@ -1985,6 +1996,7 @@
 				5F70ABF4202B1250007E69A5 /* main.m in Sources */,
 				D804D60C2082855A00766DF3 /* Edit_UserProfile_VC.m in Sources */,
 				5F71B691204D5E7F004229DF /* CommentViewController.m in Sources */,
+				D804D6192083395A00766DF3 /* RegCaseType.m in Sources */,
 				D8C3C273206F69080089A3CC /* DailyCauseListCell.m in Sources */,
 				D8C3C28D206FA3B40089A3CC /* AccordionHeaderView.m in Sources */,
 				5F71B6BA204E8E87004229DF /* LabelCell.m in Sources */,

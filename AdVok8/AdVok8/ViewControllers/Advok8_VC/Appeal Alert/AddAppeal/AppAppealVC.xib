@@ -12,7 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppAppealVC">
             <connections>
+                <outlet property="txt_CaseNo" destination="OHO-tS-xDs" id="e0f-aS-jIM"/>
+                <outlet property="txt_CaseType" destination="8IS-Qo-miq" id="jYf-2j-lRX"/>
+                <outlet property="txt_CaseYear" destination="b75-Xc-3XL" id="lcP-iF-zMq"/>
+                <outlet property="txt_CourtName" destination="puv-vE-pib" id="Cej-Ak-j4a"/>
                 <outlet property="txt_DateOfJudgement" destination="HUT-Ru-nag" id="3rM-tC-wUL"/>
+                <outlet property="txt_Fourm" destination="zd2-nB-SyE" id="Dvt-En-7f9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,7 +33,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aV2-Uo-Hub">
-                                    <rect key="frame" x="0.0" y="-20" width="375" height="603"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fourm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cY-lv-WVl">
                                             <rect key="frame" x="10" y="10" width="355" height="21"/>
@@ -36,7 +41,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Supreme Court" placeholder="Add a ttile to your event" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zd2-nB-SyE" customClass="TextFieldFooter">
+                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Supreme Court" placeholder="Add a ttile to your event" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zd2-nB-SyE" customClass="TextFieldFooter">
                                             <rect key="frame" x="10" y="46" width="355" height="30"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -78,7 +83,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Case Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fm-Dd-dSN">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Court Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fm-Dd-dSN">
                                             <rect key="frame" x="10" y="268" width="355" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -97,6 +102,9 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ht-jH-WUw">
                                             <rect key="frame" x="10" y="304" width="355" height="30"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="btnAcion_picker:" destination="-1" eventType="touchUpInside" id="RiC-62-5YT"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Case type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3A-Nb-C6i">
                                             <rect key="frame" x="10" y="354" width="355" height="21"/>
@@ -117,6 +125,9 @@
                                         <button opaque="NO" clearsContextBeforeDrawing="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voi-ww-Wmt">
                                             <rect key="frame" x="10" y="390" width="355" height="30"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="btnAcion_picker:" destination="-1" eventType="touchUpInside" id="EiJ-SS-tVg"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lFm-JP-iZy">
                                             <rect key="frame" x="112.5" y="543" width="150" height="40"/>
@@ -219,7 +230,7 @@
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="aV2-Uo-Hub" secondAttribute="bottom" id="6eO-Re-Jxy"/>
                                 <constraint firstItem="aV2-Uo-Hub" firstAttribute="leading" secondItem="giF-cG-PiZ" secondAttribute="leading" id="MVD-gu-g5j"/>
-                                <constraint firstItem="aV2-Uo-Hub" firstAttribute="top" secondItem="giF-cG-PiZ" secondAttribute="top" constant="-20" id="bh8-sl-uf4"/>
+                                <constraint firstItem="aV2-Uo-Hub" firstAttribute="top" secondItem="giF-cG-PiZ" secondAttribute="top" id="bh8-sl-uf4"/>
                                 <constraint firstAttribute="trailing" secondItem="aV2-Uo-Hub" secondAttribute="trailing" id="c8A-vN-gQR"/>
                             </constraints>
                         </scrollView>
@@ -237,7 +248,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="W1n-PP-byS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="2dh-HO-i1R"/>
+                <constraint firstItem="W1n-PP-byS" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="44" id="2dh-HO-i1R"/>
                 <constraint firstAttribute="trailing" secondItem="W1n-PP-byS" secondAttribute="trailing" id="4xR-mj-k8B"/>
                 <constraint firstItem="W1n-PP-byS" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="5IH-ac-Uvi"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="W1n-PP-byS" secondAttribute="bottom" id="p0y-Zq-aFH"/>

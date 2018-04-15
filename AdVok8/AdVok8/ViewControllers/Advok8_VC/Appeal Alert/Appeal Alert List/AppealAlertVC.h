@@ -10,5 +10,6 @@
 
 @interface AppealAlertVC : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_NoData;
 
 @end

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppealAlertVC">
             <connections>
+                <outlet property="lbl_NoData" destination="lCk-1e-jsF" id="M8A-Kq-ZdH"/>
                 <outlet property="tblView" destination="bM9-xh-Rk2" id="rPk-hx-iOW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -49,6 +50,12 @@
                         <action selector="btnAction_Add_Task:" destination="-1" eventType="touchUpInside" id="II6-rA-hNm"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCk-1e-jsF">
+                    <rect key="frame" x="157.5" y="355" width="60.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -56,6 +63,8 @@
                 <constraint firstItem="bM9-xh-Rk2" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="44" id="CzW-IB-PHz"/>
                 <constraint firstAttribute="trailing" secondItem="bM9-xh-Rk2" secondAttribute="trailing" id="P91-CN-Jmk"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="9i6-9r-WiW" secondAttribute="trailing" constant="20" id="WVI-DE-Elw"/>
+                <constraint firstItem="lCk-1e-jsF" firstAttribute="centerX" secondItem="bM9-xh-Rk2" secondAttribute="centerX" id="ZC1-4Z-Jfw"/>
+                <constraint firstItem="lCk-1e-jsF" firstAttribute="centerY" secondItem="bM9-xh-Rk2" secondAttribute="centerY" id="umW-dY-WwE"/>
                 <constraint firstItem="bM9-xh-Rk2" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="zXO-As-v9B"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="bM9-xh-Rk2" secondAttribute="bottom" id="zw4-VG-dl7"/>
             </constraints>

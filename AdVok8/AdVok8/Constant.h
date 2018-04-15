@@ -37,8 +37,17 @@ static NSString* const API_GET_POSTS_FOR_USER = @"get_Posts_APK";
 static NSString* const API_GET_ALL_APPOINTMENTS_USER = @"get_UserAppointment";
 static NSString* const API_GET_ALL_APPOINTMENTS_ADVOCATE = @"get_AdvocateAppointment";
 static NSString* const API_GET_ALL_APPEAL_ALERTS = @"getAppealAlert";
+<<<<<<< HEAD
+static NSString* const API_Delete_APPEAL_ALERT = @"deleteAppealAlert";
+static NSString* const API_GET_ALL_Court = @"getcourtMaster";
+
+=======
 static NSString* const API_PUT_SHARE = @"put_Share";
+<<<<<<< HEAD
 static NSString* const API_GET_USER_DETAILS = @"GetUserDetail";
+=======
+>>>>>>> 0f01d4152cf4ee47cbd074949912019b29a95ece
+>>>>>>> da8cefab2654728780ba7229611a29941980203e
 
 
 

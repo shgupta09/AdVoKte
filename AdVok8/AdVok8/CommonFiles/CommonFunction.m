@@ -48,7 +48,6 @@
             } else {
                 // Fallback on earlier versions
             }
-           
         }else{
              newNavBar = [[UINavigationBar alloc] initWithFrame:CGRectMake(0, 20, [UIScreen mainScreen].bounds.size.width, 44.0)];
         }
