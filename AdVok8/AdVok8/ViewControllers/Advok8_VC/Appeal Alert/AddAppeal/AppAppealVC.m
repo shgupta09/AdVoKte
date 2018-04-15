@@ -8,6 +8,7 @@
 
 #import "AppAppealVC.h"
 #import "RegCaseCourt.h"
+#import "RegCaseType.h"
 @interface AppAppealVC (){
     UIDatePicker* pickerForDate;
     NSDate *startDate;
@@ -19,6 +20,8 @@
     NSMutableArray *caseTypeArray;
     UIPickerView *pickerObj;
     NSArray *pickerArray;
+    RegCaseCourt *selectedCourt;
+    RegCaseType *selectedType;
 }
 
 @end
@@ -338,14 +341,15 @@
     UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     
 
-    UITextField *txtView=[[UITextField alloc]initWithFrame:CGRectMake(0, 0 , toolBar.frame.size.width-50, toolBar.frame.size.height)];
-    txtView.backgroundColor =[UIColor  redColor];
+    UITextField *txtView=[[UITextField alloc]initWithFrame:CGRectMake(0, 0 , toolBar.frame.size.width-doneButton.width-50, toolBar.frame.size.height)];
+    txtView.backgroundColor =[UIColor  clearColor];
+    txtView.tintColor = [UIColor whiteColor];
     txtView.placeholder=@"Search";
     txtView.tag = tagForPicker;
     UIBarButtonItem *textFieldItem = [[UIBarButtonItem alloc] initWithCustomView:txtView];
 
     NSArray *toolbarItems = [NSArray arrayWithObjects:
-                             space,doneButton,space,textFieldItem, nil];
+                             space,textFieldItem,space,doneButton, nil];
     pickerObj.hidden = false;
     [toolBar setItems:toolbarItems];
     [viewOverPicker addSubview:toolBar];
@@ -370,9 +374,10 @@ numberOfRowsInComponent:(NSInteger)component{
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:
 (NSInteger)row inComponent:(NSInteger)component{
     if (pickerView.tag == 0) {
-        _txt_CourtName.text = ((RegCaseCourt *)[pickerArray objectAtIndex:row]).CourtName;
+        selectedCourt = [pickerArray objectAtIndex:row];
+        _txt_CourtName.text = selectedCourt.CourtName;
     }else{
-        
+        selectedType = [pickerArray objectAtIndex:row];
     }
 }
 
