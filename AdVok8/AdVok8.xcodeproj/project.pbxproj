@@ -67,7 +67,6 @@
 		5F70AC43202B1688007E69A5 /* RearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC3D202B1688007E69A5 /* RearViewController.m */; };
 		5F70AC44202B1689007E69A5 /* RearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC3E202B1688007E69A5 /* RearViewController.xib */; };
 		5F70AC4A202B1691007E69A5 /* SplashScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC48202B1691007E69A5 /* SplashScreenViewController.m */; };
-		5F70AC4B202B1691007E69A5 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC49202B1691007E69A5 /* SplashScreenViewController.xib */; };
 		5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F70AC54202B2248007E69A5 /* LegislateBaseViewController.m */; };
 		5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC55202B2248007E69A5 /* LegislateBaseViewController.xib */; };
 		5F71B691204D5E7F004229DF /* CommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F71B68F204D5E7F004229DF /* CommentViewController.m */; };
@@ -160,6 +159,9 @@
 		D804D6132082855A00766DF3 /* User_Profile_VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D804D60B2082855900766DF3 /* User_Profile_VC.xib */; };
 		D804D6162083344D00766DF3 /* RegCaseCourt.m in Sources */ = {isa = PBXBuildFile; fileRef = D804D6152083344D00766DF3 /* RegCaseCourt.m */; };
 		D804D6192083395A00766DF3 /* RegCaseType.m in Sources */ = {isa = PBXBuildFile; fileRef = D804D6182083395A00766DF3 /* RegCaseType.m */; };
+		D804D61B2083DC1900766DF3 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC49202B1691007E69A5 /* SplashScreenViewController.xib */; };
+		D804D6202083DF4B00766DF3 /* Update_AppointmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D804D61E2083DF4B00766DF3 /* Update_AppointmentVC.m */; };
+		D804D6212083DF4B00766DF3 /* Update_AppointmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D804D61F2083DF4B00766DF3 /* Update_AppointmentVC.xib */; };
 		D8C3C273206F69080089A3CC /* DailyCauseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C271206F69080089A3CC /* DailyCauseListCell.m */; };
 		D8C3C274206F69080089A3CC /* DailyCauseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C3C272206F69080089A3CC /* DailyCauseListCell.xib */; };
 		D8C3C27A206F73560089A3CC /* TaskListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C278206F73560089A3CC /* TaskListVC.m */; };
@@ -460,6 +462,9 @@
 		D804D6152083344D00766DF3 /* RegCaseCourt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegCaseCourt.m; sourceTree = "<group>"; };
 		D804D6172083395A00766DF3 /* RegCaseType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegCaseType.h; sourceTree = "<group>"; };
 		D804D6182083395A00766DF3 /* RegCaseType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegCaseType.m; sourceTree = "<group>"; };
+		D804D61D2083DF4B00766DF3 /* Update_AppointmentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Update_AppointmentVC.h; sourceTree = "<group>"; };
+		D804D61E2083DF4B00766DF3 /* Update_AppointmentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Update_AppointmentVC.m; sourceTree = "<group>"; };
+		D804D61F2083DF4B00766DF3 /* Update_AppointmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Update_AppointmentVC.xib; sourceTree = "<group>"; };
 		D8C3C270206F69080089A3CC /* DailyCauseListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyCauseListCell.h; sourceTree = "<group>"; };
 		D8C3C271206F69080089A3CC /* DailyCauseListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyCauseListCell.m; sourceTree = "<group>"; };
 		D8C3C272206F69080089A3CC /* DailyCauseListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCauseListCell.xib; sourceTree = "<group>"; };
@@ -1427,6 +1432,16 @@
 			path = User_Profile_Cell;
 			sourceTree = "<group>";
 		};
+		D804D61C2083DF3100766DF3 /* Update Appointment */ = {
+			isa = PBXGroup;
+			children = (
+				D804D61D2083DF4B00766DF3 /* Update_AppointmentVC.h */,
+				D804D61E2083DF4B00766DF3 /* Update_AppointmentVC.m */,
+				D804D61F2083DF4B00766DF3 /* Update_AppointmentVC.xib */,
+			);
+			path = "Update Appointment";
+			sourceTree = "<group>";
+		};
 		D8C3C26F206F687F0089A3CC /* DailyCauseListCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1605,6 +1620,7 @@
 		D8FAAF9620715EC60084DE28 /* Appoinment */ = {
 			isa = PBXGroup;
 			children = (
+				D804D61C2083DF3100766DF3 /* Update Appointment */,
 				D8FAAFA0207165140084DE28 /* AppoinmentDetail */,
 			);
 			path = Appoinment;
@@ -1723,6 +1739,7 @@
 				5F71B6AD204E8E76004229DF /* ListCell.xib in Resources */,
 				5FCCBA0B2038223B002BFD4A /* RegisterStep1ViewController.xib in Resources */,
 				5F70AC02202B1250007E69A5 /* Assets.xcassets in Resources */,
+				D804D61B2083DC1900766DF3 /* SplashScreenViewController.xib in Resources */,
 				5F71B6BF204E8E87004229DF /* SelectedLawyerVC.xib in Resources */,
 				5F96B779207541CC003CD72F /* SearchPostTableViewCell.xib in Resources */,
 				5F71B6BB204E8E87004229DF /* LabelCell.xib in Resources */,
@@ -1735,9 +1752,9 @@
 				5F70AC2E202B14EB007E69A5 /* LoderView.xib in Resources */,
 				5F1B9C582034411C009503E7 /* FeedMainTableViewCell.xib in Resources */,
 				5F58FC52207693B8009C5D9C /* SlotCollectionViewCell.xib in Resources */,
-				5F70AC4B202B1691007E69A5 /* SplashScreenViewController.xib in Resources */,
 				5F71B6CE204E9712004229DF /* LawyerCategoryTableViewCell.xib in Resources */,
 				9CE0102B204FC4C4002A2E81 /* ProfileCell2.xib in Resources */,
+				D804D6212083DF4B00766DF3 /* Update_AppointmentVC.xib in Resources */,
 				5F1B9C6A203461FE009503E7 /* LoginViewController.xib in Resources */,
 				5F70AC36202B1653007E69A5 /* BaseHomeViewController.xib in Resources */,
 				5F71B698204E5BE3004229DF /* CommentTableViewCell.xib in Resources */,
@@ -1912,6 +1929,7 @@
 				5F356EDC207D4ED7001EA9DF /* Case.m in Sources */,
 				D8C3C298206FB14F0089A3CC /* DateCaell.m in Sources */,
 				D8FAAFA4207165250084DE28 /* AppoinmentDetailVC.m in Sources */,
+				D804D6202083DF4B00766DF3 /* Update_AppointmentVC.m in Sources */,
 				D8F44CA5205EA16400B80FCD /* UILabel+Boldify.m in Sources */,
 				D8C3C286206FA2960089A3CC /* CasePageVC.m in Sources */,
 				5FBD2B3B20595C4700D9C10B /* FeedDetailViewController.m in Sources */,

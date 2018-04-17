@@ -1,11 +1,12 @@
 //
-//  AppoinmentDetailVC.m
+//  Update_AppointmentVC.m
 //  AdVok8
 //
 //  Created by shubham gupta on 4/2/18.
 //  Copyright © 2018 Shagun Verma. All rights reserved.
 //
 
+#import "Update_AppointmentVC.h"
 #import "AppoinmentDetailVC.h"
 
 @interface AppoinmentDetailVC ()
@@ -29,13 +30,6 @@
 -(void)setUpData{
    
     [CommonFunction setNavToController:self title:@"Appoinment" isCrossBusston:false];
-    
-    _lblUsername.text = [NSString stringWithFormat:@"%@ %@",_data.fname,_data.lname];
-    _lblDate.text = _data.date;
-    _lblTime.text = _data.time;
-    _lblDescription.text = _data.desc;
-    _lblStatus.text = _data.Status;
-    
 }
 -(void)backTapped{
     [self.navigationController popViewControllerAnimated:true];
@@ -44,6 +38,9 @@
 #pragma mark - btnAction
 
 - (IBAction)btnAction_Udate:(id)sender {
+    Update_AppointmentVC *vc = [[Update_AppointmentVC alloc]initWithNibName:@"Update_AppointmentVC" bundle:nil];
+    vc.data = _data;
+    [self.navigationController pushViewController:vc animated:true];
 }
 
 
