@@ -13,6 +13,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmAppointmentViewController">
             <connections>
+                <outlet property="lblDate" destination="vxb-fJ-oU7" id="iAv-xi-RHN"/>
+                <outlet property="lblDayName" destination="ZiQ-PV-fwz" id="XyF-Ck-mmW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

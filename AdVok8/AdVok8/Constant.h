@@ -46,7 +46,10 @@ static NSString* const API_GET_ALL_Court = @"getcourtMaster";
 static NSString* const API_GET_ALL_CaseType = @"getCasetypeMaster";
 static NSString* const API_PUT_SHARE = @"put_Share";
 static NSString* const API_GET_USER_DETAILS = @"GetUserDetail";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 018c14f7a6ab05f740502be2bb32edcc3bd3a5ac
 
 
 

@@ -18,6 +18,8 @@
     [super viewDidLoad];
     [CommonFunction setNavToController:self title:@"Confirm Appointment" isCrossBusston:false];
 
+    _lblDate.text = _dateString;
+    _lblDayName.text = _dayString;
     // Do any additional setup after loading the view from its nib.
 }
 

@@ -10,4 +10,9 @@
 
 @interface ConfirmAppointmentViewController : UIViewController
 
+@property (nonatomic, strong) NSString* dayString;
+@property (nonatomic, strong) NSString* dateString;
+@property (weak, nonatomic) IBOutlet LeftImageWithLabel *lblDayName;
+@property (weak, nonatomic) IBOutlet LeftImageWithLabel *lblDate;
+
 @end

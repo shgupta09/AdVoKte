@@ -14,6 +14,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectSlotViewController">
             <connections>
                 <outlet property="collectionView" destination="D8w-3Y-mCV" id="SeK-aR-TrE"/>
+                <outlet property="lblDate" destination="b8C-XW-f5w" id="eCG-aa-bpv"/>
+                <outlet property="lblDay" destination="cZN-dn-Ojd" id="x0r-hd-4Wz"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
