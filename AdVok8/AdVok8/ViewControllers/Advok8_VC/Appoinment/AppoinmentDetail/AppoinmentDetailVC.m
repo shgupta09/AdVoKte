@@ -30,6 +30,11 @@
 -(void)setUpData{
    
     [CommonFunction setNavToController:self title:@"Appoinment" isCrossBusston:false];
+    _lblUsername.text = [NSString stringWithFormat:@"%@ %@",_data.fname,_data.lname];
+    _lblDate.text = _data.date;
+    _lblTime.text = _data.time;
+    _lblStatus.text = _data.Status;
+    _lblDescription.text = _data.desc;
 }
 -(void)backTapped{
     [self.navigationController popViewControllerAnimated:true];

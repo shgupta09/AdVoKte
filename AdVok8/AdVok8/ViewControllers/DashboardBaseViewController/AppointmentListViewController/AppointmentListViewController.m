@@ -65,7 +65,7 @@
     Appointment* data = [Appointment new];
     data = [arrData objectAtIndex:indexPath.row];
 
-    cell.lblUserName.text = data.fname;
+    cell.lblUserName.text = [NSString stringWithFormat:@"%@ %@",data.fname,data.lname];
     cell.lblDate.text = data.date;
     cell.lblTime.text = data.time;
     cell.lblStatus.text = data.Status;
