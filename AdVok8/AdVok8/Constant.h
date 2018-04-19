@@ -46,6 +46,7 @@ static NSString* const API_GET_ALL_Court = @"getcourtMaster";
 static NSString* const API_GET_ALL_CaseType = @"getCasetypeMaster";
 static NSString* const API_PUT_SHARE = @"put_Share";
 static NSString* const API_GET_USER_DETAILS = @"GetUserDetail";
+static NSString* const API_GET_TASK_LIST = @"getEvent";
 
 
 

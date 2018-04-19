@@ -122,6 +122,7 @@
 		5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCBA082038223B002BFD4A /* RegisterStep1ViewController.m */; };
 		5FCCBA0B2038223B002BFD4A /* RegisterStep1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCBA092038223B002BFD4A /* RegisterStep1ViewController.xib */; };
 		5FF9A921208203E800C042C9 /* AppealAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9A920208203E800C042C9 /* AppealAlert.m */; };
+		5FF9A9242089199400C042C9 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9A9232089199400C042C9 /* Event.m */; };
 		5FF9E2CB20617FE500467A0D /* NotificationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E2C920617FE500467A0D /* NotificationListViewController.m */; };
 		5FF9E2CC20617FE500467A0D /* NotificationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF9E2CA20617FE500467A0D /* NotificationListViewController.xib */; };
 		5FF9E2CF2061813500467A0D /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E2CE2061813500467A0D /* Notification.m */; };
@@ -402,6 +403,8 @@
 		5FCCBA092038223B002BFD4A /* RegisterStep1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterStep1ViewController.xib; sourceTree = "<group>"; };
 		5FF9A91F208203E800C042C9 /* AppealAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppealAlert.h; sourceTree = "<group>"; };
 		5FF9A920208203E800C042C9 /* AppealAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppealAlert.m; sourceTree = "<group>"; };
+		5FF9A9222089199400C042C9 /* Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		5FF9A9232089199400C042C9 /* Event.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		5FF9E2C820617FE500467A0D /* NotificationListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationListViewController.h; sourceTree = "<group>"; };
 		5FF9E2C920617FE500467A0D /* NotificationListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationListViewController.m; sourceTree = "<group>"; };
 		5FF9E2CA20617FE500467A0D /* NotificationListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationListViewController.xib; sourceTree = "<group>"; };
@@ -920,6 +923,8 @@
 				D804D6152083344D00766DF3 /* RegCaseCourt.m */,
 				D804D6172083395A00766DF3 /* RegCaseType.h */,
 				D804D6182083395A00766DF3 /* RegCaseType.m */,
+				5FF9A9222089199400C042C9 /* Event.h */,
+				5FF9A9232089199400C042C9 /* Event.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1933,6 +1938,7 @@
 				D8F44CA5205EA16400B80FCD /* UILabel+Boldify.m in Sources */,
 				D8C3C286206FA2960089A3CC /* CasePageVC.m in Sources */,
 				5FBD2B3B20595C4700D9C10B /* FeedDetailViewController.m in Sources */,
+				5FF9A9242089199400C042C9 /* Event.m in Sources */,
 				5FF9A921208203E800C042C9 /* AppealAlert.m in Sources */,
 				5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */,
 				5FF9E2D42061830B00467A0D /* NotificationTableViewCell.m in Sources */,

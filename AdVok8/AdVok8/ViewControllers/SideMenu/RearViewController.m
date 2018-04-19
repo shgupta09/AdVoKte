@@ -116,16 +116,38 @@
             break;
         case 2:
         {
-            NotificationListViewController* vc ;
+            if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+
+                NotificationListViewController* vc ;
+                
+                vc = [[NotificationListViewController alloc] initWithNibName:@"NotificationListViewController" bundle:nil];
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+                
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+                
+            }
+            else
+            {
+                LoginViewController* vc ;
+                vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+                vc.Behaviour = @"Action";
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
             
-            vc = [[NotificationListViewController alloc] initWithNibName:@"NotificationListViewController" bundle:nil];
-            UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
-            
-            [self.navigationController presentViewController:navCon animated:true completion:nil];
         }
             break;
         case 3:
         {
+            
+            NSString *textToShare = @"https://play.google.com/store/apps/details?id=com.advok8";
+            
+            NSArray *objectsToShare = @[textToShare];
+            
+            UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+            
+            
+            [self presentViewController:activityVC animated:YES completion:nil];
             
         }
             break;

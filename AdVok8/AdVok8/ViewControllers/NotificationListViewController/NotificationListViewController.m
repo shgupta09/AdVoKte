@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
-    [CommonFunction setNavToController:self title:@"Case Page" isCrossBusston:false];
+    [CommonFunction setNavToController:self title:@"Notifications" isCrossBusston:false];
 
     [_tblView registerNib:[UINib nibWithNibName:@"NotificationTableViewCell" bundle:nil]forCellReuseIdentifier:@"NotificationTableViewCell"];
     arrData = [[NSMutableArray alloc ] init];

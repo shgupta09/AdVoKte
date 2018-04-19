@@ -12,5 +12,9 @@
 @property (weak, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UIImageView *imgView_Profile;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblHeading;
+@property (weak, nonatomic) IBOutlet LeftImageWithLabel *lblDateRange;
+@property (weak, nonatomic) IBOutlet LeftImageWithLabel *lblTimeRange;
+@property (weak, nonatomic) IBOutlet LeftImageWithLabel *lblRange;
 
 @end
