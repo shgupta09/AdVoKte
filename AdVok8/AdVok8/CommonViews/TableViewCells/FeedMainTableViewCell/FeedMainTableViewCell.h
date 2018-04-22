@@ -28,5 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgViewProfilePic;
 @property (weak, nonatomic) IBOutlet UITapGestureRecognizer *tapGesture;
 @property (weak, nonatomic) IBOutlet UIButton *btnImageToZoom;
+@property (weak, nonatomic) IBOutlet UIButton *btnLikes;
+@property (weak, nonatomic) IBOutlet UIButton *btnComments;
 
 @end

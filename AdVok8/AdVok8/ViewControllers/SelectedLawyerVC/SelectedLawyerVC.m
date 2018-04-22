@@ -82,8 +82,8 @@
         switch (indexPath.row) {
             case 1:{
                 [cell.lbl_first setText:tempObj.Experience];
-                UIImage *image = [UIImage imageNamed:@"Criminal-1"];
-                cell.imgViewFirst.image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                UIImage *image = [UIImage imageNamed:@"tempEnxperience.png"];
+                cell.imgViewFirst.image = image;
                 cell.imgViewFirst.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
             }
                 break;
@@ -103,40 +103,40 @@
                 {
                     [cell.lbl_Third setText:[NSString stringWithFormat:@"INR %@",tempObj.ConsultancyFees]];
                 }
-                UIImage *image1 = [UIImage imageNamed:@"Criminal-1"];
-                cell.imgViewFirst.image = [image1 imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                UIImage *image1 = [UIImage imageNamed:@"tempFees.png"];
+                cell.imgViewFirst.image = image1;
                 cell.imgViewFirst.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
-                UIImage *image2 = [UIImage imageNamed:@"Criminal-1"];
-                cell.imgViewSecond.image = [image2 imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                UIImage *image2 = [UIImage imageNamed:@"tempFees.png"];
+                cell.imgViewSecond.image = image2;
                 cell.imgViewSecond.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
             }
                 break;
             case 3:{
                 [cell.lbl_first setText:[NSString stringWithFormat:@"Appointment Day\n%@",[CommonFunction checkEmptyString:tempObj.Dsc]]];
-                UIImage *image1 = [UIImage imageNamed:@"Criminal-1"];
-                cell.imgViewFirst.image = [image1 imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                UIImage *image1 = [UIImage imageNamed:@"tempApptDay.png"];
+                cell.imgViewFirst.image = image1;
                 cell.imgViewFirst.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
                 
             }
                 break;
             case 4:{
-                [cell.lbl_first setText:[CommonFunction checkEmptyString:tempObj.DayTime]];
-                UIImage *image1 = [UIImage imageNamed:@"Criminal-1"];
-                cell.imgViewFirst.image = [image1 imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                [cell.lbl_first setText:[CommonFunction checkEmptyString:[[tempObj.DayTime componentsSeparatedByString:@"#"] objectAtIndex:0]]];
+                UIImage *image1 = [UIImage imageNamed:@"tempApptDay.png"];
+                cell.imgViewFirst.image = image1;
                 cell.imgViewFirst.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
             }
                 break;
             case 5:{
                 [cell.lbl_first setText:[CommonFunction checkEmptyString:tempObj.Education]];
-                UIImage *image1 = [UIImage imageNamed:@"Criminal-1"];
-                cell.imgViewFirst.image = [image1 imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                UIImage *image1 = [UIImage imageNamed:@"tempProfile.png"];
+                cell.imgViewFirst.image = image1;
                 cell.imgViewFirst.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
             }
                 break;
             case 6:{
                 [cell.lbl_first setText:[CommonFunction checkEmptyString:tempObj.OffAddline]];
-                UIImage *image1 = [UIImage imageNamed:@"Criminal-1"];
-                cell.imgViewFirst.image = [image1 imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                UIImage *image1 = [UIImage imageNamed:@"tempHome.png"];
+                cell.imgViewFirst.image = image1;
                 cell.imgViewFirst.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
             }
                 break;
@@ -154,16 +154,15 @@
                     [cell.lbl_first setText:[NSString stringWithFormat:@"Services:\n %@",[CommonFunction checkEmptyString:tempObj.SecAOP]]];
                 }
                
-                UIImage *image1 = [UIImage imageNamed:@"Criminal-1"];
-                cell.imgViewFirst.image = [image1 imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-                cell.imgViewFirst.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
+                UIImage *image1 = [UIImage imageNamed:@"tempServices.png"];
+                cell.imgViewFirst.image = image1;
                 
             }
                 break;
             case 8:{
                 [cell.lbl_first setText:[NSString stringWithFormat:@"FEEDBACK\n%@",[CommonFunction checkEmptyString:@""]]];
-                UIImage *image1 = [UIImage imageNamed:@"Criminal-1"];
-                cell.imgViewFirst.image = [image1 imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+                UIImage *image1 = [UIImage imageNamed:@"tempServices.png"];
+                cell.imgViewFirst.image = image1;
                 cell.imgViewFirst.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
                 cell.separatorView1.hidden = true;
             }
@@ -359,10 +358,16 @@
                 [self removeloder];
 
             }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
         }];
     } else {
         [self removeloder];
-        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
     }
 }
 

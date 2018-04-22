@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event.h"
 
 @interface CreateTaskVC : UIViewController
 @property(nonatomic) BOOL isCreateTask;
@@ -33,4 +34,5 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
 
+@property (strong, nonatomic) Event* eventObj;
 @end

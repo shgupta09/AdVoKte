@@ -14,6 +14,7 @@
     UIImagePickerControllerSourceType *sourceType;
     UIImage *capturedImage;
     NSString* imageURL;
+    LoderView *loderObj;
 }
 @end
 
@@ -94,6 +95,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
+}
 
 #pragma mark - TextView Delegate Methods
 
@@ -321,6 +326,17 @@
                     [_imgViewPost setImage:capturedImage];
 
                 }
+                else
+                {
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+
+                }
+            }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
             }
         }];
         
@@ -365,11 +381,17 @@
             
                 }else
                 {
-                    
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+
                 }
                 
             }
-            
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
             
             
         }];
@@ -377,6 +399,26 @@
         
     }
 }
+
+
+
+
+-(void)addLoder{
+    self.view.userInteractionEnabled = NO;
+    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+    loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
+    loderObj.lbl_title.text = @"Please wait...";
+    [self.view addSubview:loderObj];
+}
+
+-(void)removeloder{
+    //loderObj = nil;
+    [loderObj removeFromSuperview];
+    //[loaderView removeFromSuperview];
+    self.view.userInteractionEnabled = YES;
+}
+
+
 
 
 @end

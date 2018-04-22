@@ -125,7 +125,9 @@
     [cell.btnShare addTarget:self action:@selector(btnShareTapped:) forControlEvents:UIControlEventTouchUpInside];
     cell.btnImageToZoom.tag = like_tag+indexPath.row;
     [cell.btnImageToZoom addTarget:self action:@selector(imageZoomClicked:) forControlEvents:UIControlEventTouchUpInside];
-   
+    cell.btnLikes.tag = like_tag+indexPath.row;
+    [cell.btnLikes addTarget:self action:@selector(NoofLikesClicked::) forControlEvents:UIControlEventTouchUpInside];
+
     NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
     paragraph.lineBreakMode = cell.lblPostNote.lineBreakMode;
     NSDictionary *attributes = @{NSFontAttributeName : cell.lblPostNote.font,
@@ -205,6 +207,31 @@
 }
 
 #pragma mark - Cell button actions
+
+-(void) NoofLikesClicked:(id) sender {
+    UIButton* btnLike = sender;
+    int index = btnLike.tag%like_tag;
+    PostModel* data = [arrData objectAtIndex:index];
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        NoOfLikesViewController* vc ;
+        vc = [[NoOfLikesViewController alloc] initWithNibName:@"NoOfLikesViewController" bundle:nil];
+        vc.postId = data.PostId;
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+        
+    }
+    else
+    {
+        LoginViewController* vc ;
+        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        vc.Behaviour = @"Action";
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+        
+    }
+    
+}
+
 -(void) btnLikeTapped:(id) sender {
     UIButton* btnLike = sender;
     int index = btnLike.tag%like_tag;
@@ -330,16 +357,22 @@
                     [_tblView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
                 }else
                 {
-                    
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+
                 }
+                
+            }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
                 
             }
             
             
-            
         }];
     } else {
-        
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
     }
 }
 
@@ -385,8 +418,15 @@
                     [_tblView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];;
                 }else
                 {
-                    
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+
                 }
+                
+            }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
                 
             }
             
@@ -458,12 +498,18 @@
                 
             }
             
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
             
             
         }];
     } else {
         [self removeloder];
-        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
     }
 }
 
@@ -505,12 +551,18 @@
                 
             }
             
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
             
             
         }];
     } else {
         [self removeloder];
-        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
     }
 }
 

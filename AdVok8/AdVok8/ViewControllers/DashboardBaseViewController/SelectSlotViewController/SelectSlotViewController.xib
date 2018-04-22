@@ -14,8 +14,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectSlotViewController">
             <connections>
                 <outlet property="collectionView" destination="D8w-3Y-mCV" id="SeK-aR-TrE"/>
+                <outlet property="imgViewProfile" destination="jJg-O7-lDH" id="vj0-ht-TY3"/>
                 <outlet property="lblDate" destination="b8C-XW-f5w" id="eCG-aa-bpv"/>
                 <outlet property="lblDay" destination="cZN-dn-Ojd" id="x0r-hd-4Wz"/>
+                <outlet property="lblLawyertype" destination="oXw-dl-EMM" id="DUl-wI-O1D"/>
+                <outlet property="lblUsername" destination="c95-oT-C6b" id="Fhd-96-UuH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -16,7 +16,7 @@
     UIPickerView* pickerCategory;
     NSMutableArray* arrCategory;
     NSString* imageURL;
-
+    LoderView * loderObj;
 }
 @end
 
@@ -112,6 +112,9 @@
 }
 
 
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
+}
 
 
 
@@ -300,6 +303,17 @@
                     [_imgViewPost setImage:capturedImage];
                     
                 }
+                else
+                {
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+
+                }
+            }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
             }
         }];
         
@@ -356,12 +370,18 @@
                     
                 }else
                 {
-                    
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+
                 }
                 [self dismissViewControllerAnimated:true completion:nil];
 
             }
-            
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
             
             
         }];
@@ -405,5 +425,24 @@
 {
     self.txtCategory.text = [arrCategory objectAtIndex:row] ;
 }
+
+
+
+-(void)addLoder{
+    self.view.userInteractionEnabled = NO;
+    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+    loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
+    loderObj.lbl_title.text = @"Please wait...";
+    [self.view addSubview:loderObj];
+}
+
+-(void)removeloder{
+    //loderObj = nil;
+    [loderObj removeFromSuperview];
+    //[loaderView removeFromSuperview];
+    self.view.userInteractionEnabled = YES;
+}
+
+
 
 @end

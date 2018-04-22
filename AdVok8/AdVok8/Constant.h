@@ -47,6 +47,10 @@ static NSString* const API_GET_ALL_CaseType = @"getCasetypeMaster";
 static NSString* const API_PUT_SHARE = @"put_Share";
 static NSString* const API_GET_USER_DETAILS = @"GetUserDetail";
 static NSString* const API_GET_TASK_LIST = @"getEvent";
+static NSString* const API_GET_LIKE_LIST = @"get_IndPostLikes";
+static NSString* const API_BOOK_APPOINTMENT = @"BookAppointment";
+static NSString* const API_DELETE_EVENT = @"DeleteEvent";
+static NSString* const API_INSERT_UPDATE_EVENT = @"insertupdateEvent";
 
 
 
@@ -73,7 +77,7 @@ static int const share_tag = 4000;
 
 #define PlaceHolder_TextView_Feedbck @"Tip: A great review explains why you are recommending the lawyer and support it with relevant stories which you think will be helpful to the user. Please write a minimum of 100 characters"
 
-
+#define NO_INTERNET_MESSAGE @"No Network Connectivity"
 //ProfilePic
 
 

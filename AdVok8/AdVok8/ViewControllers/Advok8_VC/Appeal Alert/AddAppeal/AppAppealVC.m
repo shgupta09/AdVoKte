@@ -220,12 +220,16 @@
 
             }else{
                 [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+
             }
 
         }];
     } else {
         [self removeloder];
-        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+        
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
     }
 }
 #pragma mark - API related
@@ -264,12 +268,16 @@
                 [self removeloder];
             }else{
                 [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+
             }
             
         }];
     } else {
         [self removeloder];
-        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+        
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
     }
 }
 
@@ -310,12 +318,16 @@
                 [self removeloder];
             }else{
                 [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+
             }
             
         }];
     } else {
         [self removeloder];
-        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+        
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
     }
 }
 #pragma mark - Loder

@@ -147,7 +147,7 @@
     NSMutableArray *rightItemArray = [NSMutableArray new];
     if (rightArray!= nil) {
         for (int i = 0; i<rightArray.count; i++) {
-            dashboard = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"cross-1"] style:UIBarButtonItemStylePlain target:viewController action:@selector(rightBarAction:)];
+            dashboard = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:[rightArray objectAtIndex:i]] style:UIBarButtonItemStylePlain target:viewController action:@selector(rightBarAction:)];
             dashboard.tintColor = [UIColor whiteColor];
             dashboard.tag = i;
             [rightItemArray addObject:dashboard];
@@ -396,9 +396,20 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     [dateFormatter setDateFormat:@"MMM d yyyy h:mm a EEEE"]; // not 'p' but 'a'
-    NSDate *dateFromString = [dateFormatter dateFromString:substring];
+    NSDate *dateFromString = [dateFormatter dateFromString:dtrDate];
     return dateFromString;
 }
+
+
++(NSDate *)convertStringddMMYYYYToDate:(NSString *)dtrDate{
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"]; // not 'p' but 'a'
+    NSDate *dateFromString = [dateFormatter dateFromString:dtrDate];
+    return dateFromString;
+}
+
 
 +(NSDate *)convertTimeToDate:(NSString *)dtrDate{
     
@@ -481,5 +492,25 @@
 +(void)setCornerRadius:(UIView *)view Radius:(CGFloat)radius{
     view.layer.cornerRadius = radius;
 }
+
++ (NSUserDefaults *) defaults {
+    return [NSUserDefaults standardUserDefaults];
+}
+
++ (void) persistObj:(id)value forKey:(NSString *)key {
+    [self.defaults setObject:value  forKey:key];
+    [self.defaults synchronize];
+}
+
++ (void) persistObjAsData:(id)encodableObject forKey:(NSString *)key {
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:encodableObject];
+    [self persistObj:data forKey:key];
+}
+
++ (id) objectFromDataWithKey:(NSString*)key {
+    NSData *data = [self.defaults objectForKey:key];
+    return [NSKeyedUnarchiver unarchiveObjectWithData:data];
+}
+
 
 @end

@@ -156,6 +156,8 @@
         [cell.btnComment addTarget:self action:@selector(btnCommentTapped:) forControlEvents:UIControlEventTouchUpInside];
         cell.btnShare.tag = like_tag+indexPath.row-1;
         [cell.btnShare addTarget:self action:@selector(btnShareTapped:) forControlEvents:UIControlEventTouchUpInside];
+        cell.btnLikes.tag = like_tag+indexPath.row-1;
+        [cell.btnLikes addTarget:self action:@selector(NoofLikesClicked:) forControlEvents:UIControlEventTouchUpInside];
         cell.btnImageToZoom.tag = like_tag+indexPath.row-1;
         [cell.btnImageToZoom addTarget:self action:@selector(imageZoomClicked:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -200,22 +202,302 @@
 }
 
 
-#pragma mark - API related methods
+#pragma mark - Cell button actions
+
+-(void) NoofLikesClicked:(id) sender {
+    UIButton* btnLike = sender;
+    int index = btnLike.tag%like_tag;
+    PostModel* data = [arrData objectAtIndex:index];
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        NoOfLikesViewController* vc ;
+        vc = [[NoOfLikesViewController alloc] initWithNibName:@"NoOfLikesViewController" bundle:nil];
+        vc.postId = data.PostId;
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+        
+    }
+    else
+    {
+        LoginViewController* vc ;
+        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        vc.Behaviour = @"Action";
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+        
+    }
+    
+}
+
+-(void) btnLikeTapped:(id) sender {
+    UIButton* btnLike = sender;
+    int index = btnLike.tag%like_tag;
+    PostModel* data = [arrData objectAtIndex:index];
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        [self hitApiToLikeAPostWithPostId:data.PostId andIndex: index];
+        
+    }
+    else
+    {
+        LoginViewController* vc ;
+        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        vc.Behaviour = @"Action";
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+        
+    }
+    
+}
+-(void) btnSaveTapped:(id) sender {
+    UIButton* btnLike = sender;
+    int index = btnLike.tag%like_tag;
+    PostModel* data = [arrData objectAtIndex:index];
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        if ([data.LibStatus  isEqual: @"1"]) {
+            [self hitApiToSaveDeleteAPostWithPostId:data.PostId useractv:@"0" andIndex: index];
+        }
+        else
+        {
+            [self hitApiToSaveDeleteAPostWithPostId:data.PostId useractv:@"1" andIndex: index];
+        }
+        
+    }
+    else
+    {
+        LoginViewController* vc ;
+        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        vc.Behaviour = @"Action";
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+        
+    }
+    
+}
+-(void) btnCommentTapped:(id) sender {
+    UIButton* btnLike = sender;
+    int index = btnLike.tag%like_tag;
+    PostModel* data = [arrData objectAtIndex:index];
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        CommentViewController* vc ;
+        vc = [[CommentViewController alloc] initWithNibName:@"CommentViewController" bundle:nil];
+        vc.postId = data.PostId;
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+    }
+    else
+    {
+        LoginViewController* vc ;
+        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        vc.Behaviour = @"Action";
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+    }
+    
+}
+-(void) btnShareTapped:(id) sender {
+    
+    UIButton* btnLike = sender;
+    int index = btnLike.tag%like_tag;
+    PostModel* data = [arrData objectAtIndex:index];
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        [self sharePostWithIndex:index];
+    }
+    else
+    {
+        LoginViewController* vc ;
+        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        vc.Behaviour = @"Action";
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+    }
+    
+}
+
+#pragma mark - Handlers
+- (void)refreshTable {
+    //TODO: refresh your data
+    [refreshControl endRefreshing];
+    [self hitApiForAllPosts:@"0"];
+    
+}
+
+
+#pragma mark - tap gesture
+-(void)imageZoomClicked:(UITapGestureRecognizer*) sender{
+    UIButton* btnLike = sender;
+    int index = btnLike.tag%like_tag;
+    PostModel* data = [arrData objectAtIndex:index];
+    imgViewToZoom= [[UIImageView alloc]initWithFrame:self.view.frame];
+    [imgViewToZoom sd_setImageWithURL:[NSURL URLWithString:data.PostPic]];
+    [imgViewToZoom addGestureRecognizer:cameraGesture];
+    imgViewToZoom.userInteractionEnabled = true;
+    [self.view addSubview:imgViewToZoom];
+}
+-(void)removeImage{
+    [imgViewToZoom removeFromSuperview];
+}
+
+#pragma mark - Read More
+
+- (void)addReadMoreStringToUILabel:(UILabel*)label withString:(NSString*)stringText
+{
+    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
+    paragraph.lineBreakMode = label.lineBreakMode;
+    NSDictionary *attributes = @{NSFontAttributeName : label.font,
+                                 NSParagraphStyleAttributeName : paragraph};
+    CGSize constrainedSize = CGSizeMake(label.bounds.size.width, NSIntegerMax);
+    CGRect rect = [label.text boundingRectWithSize:constrainedSize
+                                           options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                        attributes:attributes context:nil];
+    if (rect.size.height > label.bounds.size.height) {
+        NSLog(@"TOO MUCH");
+    }
+}
+
+
+#pragma mark - Api Related
+-(void)hitApiToLikeAPostWithPostId:(NSString*)postId andIndex:(int)row{
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+    
+    [dictRequest setValue:postId forKey:@"PostId"];
+    [parameter setValue:dictRequest forKey:@"_post"];
+    
+    if ([ CommonFunction reachability]) {
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_LIKE_POST]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1){
+                    NSArray *tempArray = [NSArray new];
+                    NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                    tempArray = [json objectForKey:@"_post"];
+                    [tempArray enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+                        PostModel *dataObj = [PostModel new];
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            @try {
+                                [dataObj setValue:obj forKey:(NSString *)key];
+                            } @catch (NSException *exception) {
+                                NSLog(exception.description);
+                                //  Handle an exception thrown in the @try block
+                            } @finally {
+                                //  Code that gets executed whether or not an exception is thrown
+                            }
+                        }];
+                        [arrData replaceObjectAtIndex:row withObject:dataObj];
+                    }];
+                    [_tbl_View reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+                }else
+                {
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+                    
+                }
+                
+            }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
+            
+            
+        }];
+    } else {
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+    }
+}
+
+#pragma mark - Api Related
+-(void)hitApiToSaveDeleteAPostWithPostId:(NSString*)postId useractv:(NSString*)useractv andIndex:(int)row{
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+    
+    [dictRequest setValue:postId forKey:@"PostId"];
+    [dictRequest setValue:useractv forKey:@"useractv"];
+    [parameter setValue:dictRequest forKey:@"_post"];
+    
+    if ([ CommonFunction reachability]) {
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_SAVE_DELETE_POST_LIBRARY]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1){
+                    NSArray *tempArray = [NSArray new];
+                    NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                    tempArray = [json objectForKey:@"_post"];
+                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+                        PostModel *dataObj = [PostModel new];
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            @try {
+                                [dataObj setValue:obj forKey:(NSString *)key];
+                            } @catch (NSException *exception) {
+                                NSLog(exception.description);
+                                //  Handle an exception thrown in the @try block
+                            } @finally {
+                                //  Code that gets executed whether or not an exception is thrown
+                            }
+                        }];
+                        [arrData replaceObjectAtIndex:row withObject:dataObj];
+                    }];
+                    [_tbl_View reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];;
+                }else
+                {
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+                    
+                }
+                
+            }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
+            
+            
+            
+        }];
+    } else {
+        
+    }
+}
+
+
 -(void)hitApiForUserDetails{
     
     NSMutableDictionary *parameter = [NSMutableDictionary new];
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
-    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
-        [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+    
+
+    if (_isOther && _userId !=nil) {
+            [dictRequest setValue:_userId forKey:@"UserId"];
+       
     }
     else
     {
-        [dictRequest setValue:@"0" forKey:@"UserId"];
+        if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+            [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+        }
+        else
+        {
+            [dictRequest setValue:@"0" forKey:@"UserId"];
+        }
     }
-//    [dictRequest setValue:@"0" forKey:@"PostId"];
-//    [dictRequest setValue:@"Feed" forKey:@"posttype"];
-//    [dictRequest setValue:startPoint forKey:@"StrtPnt"];
-//    [dictRequest setValue:[NSString stringWithFormat:@"%d",startPoint.integerValue+20] forKey:@"EndPnt"];
+    
     
     [parameter setValue:dictRequest forKey:@"_post"];
     
@@ -264,13 +546,19 @@
                 [self removeloder];
                 
             }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+
+            }
             
             
             
         }];
     } else {
         [self removeloder];
-        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
     }
 }
 
@@ -280,13 +568,22 @@
     
     NSMutableDictionary *parameter = [NSMutableDictionary new];
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
-    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
-        [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+   
+    if (_isOther && _userId !=nil) {
+        [dictRequest setValue:_userId forKey:@"UserId"];
+        
     }
     else
     {
-        [dictRequest setValue:@"0" forKey:@"UserId"];
+        if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+            [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+        }
+        else
+        {
+            [dictRequest setValue:@"0" forKey:@"UserId"];
+        }
     }
+    
     [dictRequest setValue:startPoint forKey:@"StrtPnt"];
     [dictRequest setValue:[NSString stringWithFormat:@"%d",startPoint.integerValue+20] forKey:@"EndPnt"];
     
@@ -338,16 +635,153 @@
                 [self removeloder];
                 
             }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+
+            }
             
             
             
         }];
     } else {
         [self removeloder];
-        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
     }
 }
 
+
+-(void)hitApiToShareWithPostId:(NSString*)postId{
+    
+    
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserId"];
+    
+    [dictRequest setValue:postId forKey:@"PostId"];
+    
+    [parameter setValue:dictRequest forKey:@"_post"];
+    
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_PUT_SHARE]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1) {
+                    //ALERT Shared Successfully
+                    [self removeloder];
+                    
+                    
+                }else
+                {
+                    //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+                    [self removeloder];
+                    //                    [self removeloder];
+                }
+                [self removeloder];
+                
+            }
+            
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
+            
+            
+        }];
+    } else {
+        [self removeloder];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+    }
+}
+
+
+
+-(void) sharePostWithIndex:(int) row {
+    UIAlertController * alert=[UIAlertController alertControllerWithTitle:@"Share post via"
+                                                                  message:@""
+                                                           preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction* yesButton = [UIAlertAction actionWithTitle:@"Share via apps"
+                                                        style:UIAlertActionStyleDefault
+                                                      handler:^(UIAlertAction * action)
+                                {
+                                    /** What we write here???????? **/
+                                    CGRect myRect = [_tbl_View rectForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];//example 0,1,indexPath
+                                    
+                                    UIImage *img = [self cropImage:[self screenshot] rect:myRect];
+                                    
+                                    NSString *textToShare = @"https://play.google.com/store/apps/details?id=com.advok8";
+                                    UIImage * image = img;
+                                    
+                                    NSArray *objectsToShare = @[textToShare, image];
+                                    
+                                    UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+                                    
+                                    
+                                    [self presentViewController:activityVC animated:YES completion:nil];
+                                    
+                                    NSLog(@"fdsv");
+                                    // call method whatever u need
+                                }];
+    
+    UIAlertAction* noButton = [UIAlertAction actionWithTitle:@"Advok8 Share"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:^(UIAlertAction * action)
+                               {
+                                   /** What we write here???????? **/
+                                   // call method whatever u need
+                                   PostModel* data = [arrData objectAtIndex:row];
+                                   [self hitApiToShareWithPostId:data.PostId];
+                               }];
+    
+    UIAlertAction* canceloButton = [UIAlertAction actionWithTitle:@"Cancel"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action)
+                                    {
+                                        /** What we write here???????? **/
+                                        // call method whatever u need
+                                        PostModel* data = [arrData objectAtIndex:row];
+                                        [self hitApiToShareWithPostId:data.PostId];
+                                    }];
+    
+    
+    [alert addAction:yesButton];
+    [alert addAction:noButton];
+    [alert addAction:canceloButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(UIImage *)cropImage:(UIImage *)image rect:(CGRect)cropRect
+{
+    CGImageRef imageRef = CGImageCreateWithImageInRect([image CGImage], cropRect);
+    UIImage *img = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    return img;
+}
+
+- (UIImage *) screenshot {
+    
+    CGSize size = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    
+    CGRect rec = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height); //set the frame
+    [self.view drawViewHierarchyInRect:rec afterScreenUpdates:YES];
+    
+    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 
 
 -(void)addLoder{

@@ -41,11 +41,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMV-ld-2DZ">
                     <rect key="frame" x="0.0" y="64" width="375" height="662"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjW-PZ-QT1">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjW-PZ-QT1" customClass="TPKeyboardAvoidingScrollView">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="662"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RqV-3P-gr4">
-                                    <rect key="frame" x="0.0" y="-20" width="375" height="638"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="638"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4mJ-Pm-FBg">
                                             <rect key="frame" x="10" y="10" width="355" height="21"/>
@@ -325,7 +325,7 @@
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="RqV-3P-gr4" secondAttribute="trailing" id="Axq-nD-xN3"/>
                                 <constraint firstItem="RqV-3P-gr4" firstAttribute="leading" secondItem="mjW-PZ-QT1" secondAttribute="leading" id="CkW-XY-BXj"/>
-                                <constraint firstItem="RqV-3P-gr4" firstAttribute="top" secondItem="mjW-PZ-QT1" secondAttribute="top" constant="-20" id="Xsk-Kh-RN2"/>
+                                <constraint firstItem="RqV-3P-gr4" firstAttribute="top" secondItem="mjW-PZ-QT1" secondAttribute="top" id="Xsk-Kh-RN2"/>
                                 <constraint firstAttribute="bottom" secondItem="RqV-3P-gr4" secondAttribute="bottom" id="ojF-am-LxJ"/>
                             </constraints>
                         </scrollView>

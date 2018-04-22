@@ -117,9 +117,7 @@
         case 2:
         {
             if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
-
                 NotificationListViewController* vc ;
-                
                 vc = [[NotificationListViewController alloc] initWithNibName:@"NotificationListViewController" bundle:nil];
                 UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
                 
@@ -139,13 +137,9 @@
             break;
         case 3:
         {
-            
             NSString *textToShare = @"https://play.google.com/store/apps/details?id=com.advok8";
-            
             NSArray *objectsToShare = @[textToShare];
-            
             UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
-            
             
             [self presentViewController:activityVC animated:YES completion:nil];
             

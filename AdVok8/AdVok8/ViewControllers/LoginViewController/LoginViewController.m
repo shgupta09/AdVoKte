@@ -124,7 +124,7 @@
                         [CommonFunction storeValueInDefault:LOGINUSER_UR andKey:LOGINUSER_TYPE];
                         [CommonFunction storeValueInDefault:dataObj.ContactNo andKey:LOGINUSER];
                         [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:true];
-                       
+                        [CommonFunction persistObjAsData:dataObj forKey:@"userData"];
                         
                     }
                     else
@@ -166,24 +166,26 @@
                     
                 }else
                 {
-                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[json valueForKey:@"ErrMsg"] preferredStyle:UIAlertControllerStyleAlert];
-                    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-                    [alertController addAction:ok];
-                    [self presentViewController:alertController animated:YES completion:nil];
-                    //                    [self removeloder];
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+
                     
                 }
                 
                 [self removeloder];
                 
             }
-            
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
             
             
         }];
     } else {
         [self removeloder];
-        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
     }
 }
 

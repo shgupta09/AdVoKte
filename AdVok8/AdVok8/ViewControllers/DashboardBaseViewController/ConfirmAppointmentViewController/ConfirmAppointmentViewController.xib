@@ -13,8 +13,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmAppointmentViewController">
             <connections>
+                <outlet property="imgViewProfile" destination="wRL-ue-U0t" id="YDK-VD-Eok"/>
                 <outlet property="lblDate" destination="vxb-fJ-oU7" id="iAv-xi-RHN"/>
                 <outlet property="lblDayName" destination="ZiQ-PV-fwz" id="XyF-Ck-mmW"/>
+                <outlet property="lblLawyerName" destination="QvE-qD-8t6" id="rlH-1N-4q6"/>
+                <outlet property="lblSubtitle" destination="8Yh-50-5Ug" id="MZu-jE-z4g"/>
+                <outlet property="txtDescription" destination="xbi-dn-gfT" id="1Nx-uX-LQZ"/>
+                <outlet property="txtEmail" destination="UG0-UA-BL8" id="3e5-dg-bRU"/>
+                <outlet property="txtMobile" destination="KWg-Lz-QFV" id="nGV-oV-ecL"/>
+                <outlet property="txtName" destination="Q0k-en-FOo" id="xML-6i-8Tf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -39,8 +46,8 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="shubham gupta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvE-qD-8t6">
-                            <rect key="frame" x="112" y="24" width="128" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QvE-qD-8t6">
+                            <rect key="frame" x="112" y="34.5" width="0.0" height="0.0"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -49,8 +56,8 @@
                                 <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Divorce-1"/>
                             </userDefinedRuntimeAttributes>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Criminal Lawyer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yh-50-5Ug">
-                            <rect key="frame" x="112" y="50" width="128" height="17"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yh-50-5Ug">
+                            <rect key="frame" x="112" y="39.5" width="0.0" height="0.0"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -182,6 +189,9 @@
                     <state key="normal" title="Done">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="btnDoneclicked:" destination="-1" eventType="touchUpInside" id="WwZ-UT-FTS"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

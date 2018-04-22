@@ -123,6 +123,11 @@
 		5FCCBA0B2038223B002BFD4A /* RegisterStep1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCBA092038223B002BFD4A /* RegisterStep1ViewController.xib */; };
 		5FF9A921208203E800C042C9 /* AppealAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9A920208203E800C042C9 /* AppealAlert.m */; };
 		5FF9A9242089199400C042C9 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9A9232089199400C042C9 /* Event.m */; };
+		5FF9A928208AFDA200C042C9 /* FadeAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9A927208AFDA200C042C9 /* FadeAlert.m */; };
+		5FF9A92D208B0C3800C042C9 /* NoOfLikesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9A92B208B0C3800C042C9 /* NoOfLikesViewController.m */; };
+		5FF9A92E208B0C3800C042C9 /* NoOfLikesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF9A92C208B0C3800C042C9 /* NoOfLikesViewController.xib */; };
+		5FF9A933208B0D6B00C042C9 /* NoOfLikesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9A931208B0D6B00C042C9 /* NoOfLikesTableViewCell.m */; };
+		5FF9A934208B0D6B00C042C9 /* NoOfLikesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF9A932208B0D6B00C042C9 /* NoOfLikesTableViewCell.xib */; };
 		5FF9E2CB20617FE500467A0D /* NotificationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E2C920617FE500467A0D /* NotificationListViewController.m */; };
 		5FF9E2CC20617FE500467A0D /* NotificationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF9E2CA20617FE500467A0D /* NotificationListViewController.xib */; };
 		5FF9E2CF2061813500467A0D /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E2CE2061813500467A0D /* Notification.m */; };
@@ -405,6 +410,14 @@
 		5FF9A920208203E800C042C9 /* AppealAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppealAlert.m; sourceTree = "<group>"; };
 		5FF9A9222089199400C042C9 /* Event.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		5FF9A9232089199400C042C9 /* Event.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		5FF9A926208AFDA200C042C9 /* FadeAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FadeAlert.h; sourceTree = "<group>"; };
+		5FF9A927208AFDA200C042C9 /* FadeAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FadeAlert.m; sourceTree = "<group>"; };
+		5FF9A92A208B0C3800C042C9 /* NoOfLikesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoOfLikesViewController.h; sourceTree = "<group>"; };
+		5FF9A92B208B0C3800C042C9 /* NoOfLikesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoOfLikesViewController.m; sourceTree = "<group>"; };
+		5FF9A92C208B0C3800C042C9 /* NoOfLikesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoOfLikesViewController.xib; sourceTree = "<group>"; };
+		5FF9A930208B0D6B00C042C9 /* NoOfLikesTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoOfLikesTableViewCell.h; sourceTree = "<group>"; };
+		5FF9A931208B0D6B00C042C9 /* NoOfLikesTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoOfLikesTableViewCell.m; sourceTree = "<group>"; };
+		5FF9A932208B0D6B00C042C9 /* NoOfLikesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoOfLikesTableViewCell.xib; sourceTree = "<group>"; };
 		5FF9E2C820617FE500467A0D /* NotificationListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationListViewController.h; sourceTree = "<group>"; };
 		5FF9E2C920617FE500467A0D /* NotificationListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationListViewController.m; sourceTree = "<group>"; };
 		5FF9E2CA20617FE500467A0D /* NotificationListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationListViewController.xib; sourceTree = "<group>"; };
@@ -872,6 +885,7 @@
 		5F70AC27202B14EB007E69A5 /* CommonViews */ = {
 			isa = PBXGroup;
 			children = (
+				5FF9A925208AFD8E00C042C9 /* FadeAlert */,
 				D8C3C2A5206FBE800089A3CC /* TextFieldViewSeparater */,
 				5F1B9C802035A7C9009503E7 /* TextFieldWithBaselineAndImage */,
 				5F1B9C4D203440BC009503E7 /* TableViewCells */,
@@ -998,6 +1012,7 @@
 		5F70AC4D202B21CD007E69A5 /* LegislateBaseViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5FF9A929208B0C2600C042C9 /* NoOfLikesViewController */,
 				5FBD2B3720595C0E00D9C10B /* FeedDetailViewController */,
 				5F71B6D5204FC4FD004229DF /* PublishArticleViewController */,
 				5F71B6CF204F9904004229DF /* CreatePostViewController */,
@@ -1244,6 +1259,36 @@
 				5FCCBA092038223B002BFD4A /* RegisterStep1ViewController.xib */,
 			);
 			path = RegisterStep1ViewController;
+			sourceTree = "<group>";
+		};
+		5FF9A925208AFD8E00C042C9 /* FadeAlert */ = {
+			isa = PBXGroup;
+			children = (
+				5FF9A926208AFDA200C042C9 /* FadeAlert.h */,
+				5FF9A927208AFDA200C042C9 /* FadeAlert.m */,
+			);
+			path = FadeAlert;
+			sourceTree = "<group>";
+		};
+		5FF9A929208B0C2600C042C9 /* NoOfLikesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5FF9A92F208B0D5700C042C9 /* NoOfLikesTableViewCell */,
+				5FF9A92A208B0C3800C042C9 /* NoOfLikesViewController.h */,
+				5FF9A92B208B0C3800C042C9 /* NoOfLikesViewController.m */,
+				5FF9A92C208B0C3800C042C9 /* NoOfLikesViewController.xib */,
+			);
+			path = NoOfLikesViewController;
+			sourceTree = "<group>";
+		};
+		5FF9A92F208B0D5700C042C9 /* NoOfLikesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5FF9A930208B0D6B00C042C9 /* NoOfLikesTableViewCell.h */,
+				5FF9A931208B0D6B00C042C9 /* NoOfLikesTableViewCell.m */,
+				5FF9A932208B0D6B00C042C9 /* NoOfLikesTableViewCell.xib */,
+			);
+			path = NoOfLikesTableViewCell;
 			sourceTree = "<group>";
 		};
 		5FF9E2C720617FCC00467A0D /* NotificationListViewController */ = {
@@ -1696,7 +1741,7 @@
 				TargetAttributes = {
 					5F70ABEE202B1250007E69A5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = MK5HXMKD83;
+						DevelopmentTeam = T8K8DUMCC9;
 						ProvisioningStyle = Automatic;
 					};
 					5F70AC0A202B1250007E69A5 = {
@@ -1784,6 +1829,7 @@
 				D804D60F2082855A00766DF3 /* User_Header.xib in Resources */,
 				9C70B26C206E0F4200850305 /* CaseListVC.xib in Resources */,
 				5F71B6D4204F9934004229DF /* CreatePostViewController.xib in Resources */,
+				5FF9A92E208B0C3800C042C9 /* NoOfLikesViewController.xib in Resources */,
 				9C70B277206E32CA00850305 /* CaseListCell.xib in Resources */,
 				9CF77D15205FD1EF00366505 /* FeedbackVC.xib in Resources */,
 				D8C3C299206FB14F0089A3CC /* DateCaell.xib in Resources */,
@@ -1797,6 +1843,7 @@
 				D8C3C281206F73F90089A3CC /* TaskListCell.xib in Resources */,
 				5F1B9C2E203413F8009503E7 /* DashboardBaseViewController.xib in Resources */,
 				5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */,
+				5FF9A934208B0D6B00C042C9 /* NoOfLikesTableViewCell.xib in Resources */,
 				D8C3C274206F69080089A3CC /* DailyCauseListCell.xib in Resources */,
 				5F58FC4C20769085009C5D9C /* SelectSlotViewController.xib in Resources */,
 				D8C3C28C206FA3B40089A3CC /* AccordionHeaderView.xib in Resources */,
@@ -1975,6 +2022,7 @@
 				5F1B9C73203568BD009503E7 /* SearchModel.m in Sources */,
 				D804D6162083344D00766DF3 /* RegCaseCourt.m in Sources */,
 				9CF77CFB205F84DF00366505 /* Rating.m in Sources */,
+				5FF9A92D208B0C3800C042C9 /* NoOfLikesViewController.m in Sources */,
 				5F71B6C8204E91C5004229DF /* Specialization.m in Sources */,
 				5F96B76E206FE9F0003CD72F /* JTCalendarMenuView.m in Sources */,
 				5F70AC00202B1250007E69A5 /* AdVok8.xcdatamodeld in Sources */,
@@ -1996,6 +2044,7 @@
 				5F96B78420755A49003CD72F /* AppointmentListTableViewCell.m in Sources */,
 				5F1B9C69203461FE009503E7 /* LoginViewController.m in Sources */,
 				5F1B9C7920356909009503E7 /* Response.m in Sources */,
+				5FF9A928208AFDA200C042C9 /* FadeAlert.m in Sources */,
 				D8C3C2AB207012600089A3CC /* NSLayoutConstraint+Multiplier.m in Sources */,
 				5F1B9C702035687F009503E7 /* LoginModel.m in Sources */,
 				5F70ABF7202B1250007E69A5 /* AppDelegate.m in Sources */,
@@ -2013,6 +2062,7 @@
 				5F70AC35202B1653007E69A5 /* BaseHomeViewController.m in Sources */,
 				5F71B6CD204E9712004229DF /* LawyerCategoryTableViewCell.m in Sources */,
 				5F96B770206FE9F0003CD72F /* JTCalendarMonthWeekDaysView.m in Sources */,
+				5FF9A933208B0D6B00C042C9 /* NoOfLikesTableViewCell.m in Sources */,
 				5F96B766206FE9F0003CD72F /* JTCalendar.m in Sources */,
 				9CE01023204FC363002A2E81 /* ProfileVC.m in Sources */,
 				D804D6102082855A00766DF3 /* User_Profile_Cell.m in Sources */,
@@ -2166,13 +2216,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MK5HXMKD83;
+				DEVELOPMENT_TEAM = T8K8DUMCC9;
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advok8.Advok8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2186,13 +2236,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MK5HXMKD83;
+				DEVELOPMENT_TEAM = T8K8DUMCC9;
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.npglobal.SSCreative;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advok8.Advok8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -9,9 +9,15 @@
 #import "FeedbackVC.h"
 
 @interface FeedbackVC (){
-    
        LoderView *loderObj;
+    NSString* currentRating;
+    NSString* ans1;
+    NSString* ans2;
+    NSString* ans3;
+    NSString* ans4;
+    NSString* ans5;
 }
+
 
 @end
 
@@ -25,6 +31,12 @@
     _txtView_Feedback.delegate = self;
     _lblName.text =  [NSString stringWithFormat:@"%@ %@",_obj.fname,_obj.lname];
   [_img_Profile sd_setImageWithURL:[CommonFunction getProfilePicURLString:_obj.username] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
+    currentRating = @"0";
+    ans1 = @"no";
+    ans2 = @"no";
+    ans3 = @"no";
+    ans4 = @"no";
+    ans5 = @"no";
     // Do any additional setup after loading the view from its nib.
 }
 -(void)backTapped{
@@ -35,7 +47,11 @@
 #pragma mark- TextView Delegate
 - (BOOL) textViewShouldBeginEditing:(UITextView *)textView
 {
-    _txtView_Feedback.text = @"";
+//    _txtView_Feedback.text = @"";
+    if ([_txtView_Feedback.text isEqualToString:PlaceHolder_TextView_Feedbck]){
+        _txtView_Feedback.text = @"";
+    }
+    
     _txtView_Feedback.textColor = [UIColor blackColor];
     return YES;
 }
@@ -51,14 +67,25 @@
 }
 
 -(void) textViewShouldEndEditing:(UITextView *)textView
-{
-    
+{    
     if(_txtView_Feedback.text.length == 0){
         _txtView_Feedback.textColor = [UIColor lightGrayColor];
         _txtView_Feedback.text = PlaceHolder_TextView_Feedbck;
         [_txtView_Feedback resignFirstResponder];
     }
 }
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -72,25 +99,33 @@
     [_btn3 setSelected:false];
     [_btn4 setSelected:false];
     [_btn5 setSelected:false];
-    
+    currentRating = @"0";
     switch (((UIButton *)sender).tag) {
         case 0:
              [_btn1 setSelected:true];
+            currentRating = @"1";
+
             break;
         case 1:
             [_btn1 setSelected:true];
             [_btn2 setSelected:true];
+            currentRating = @"2";
+
             break;
         case 2:
             [_btn1 setSelected:true];
             [_btn2 setSelected:true];
             [_btn3 setSelected:true];
+            currentRating = @"3";
+
             break;
         case 3:
             [_btn1 setSelected:true];
             [_btn2 setSelected:true];
             [_btn3 setSelected:true];
             [_btn4 setSelected:true];
+            currentRating = @"4";
+
             break;
         case 4:
             [_btn1 setSelected:true];
@@ -98,6 +133,8 @@
             [_btn3 setSelected:true];
             [_btn4 setSelected:true];
             [_btn5 setSelected:true];
+            currentRating = @"5";
+
             break;
         default:
             break;
@@ -122,36 +159,46 @@
         case 0:
             if (_btn8.isSelected == true) {
                  [_btn8 setSelected:false];
+                ans1 = @"no";
             }else{
                 [_btn8 setSelected:true];
+                ans1 = @"yes";
             }
             break;
         case 1:
             if (_btn9.isSelected == true) {
                  [_btn9 setSelected:false];
+                ans2 = @"no";
             }else{
                 [_btn9 setSelected:true];
+                ans2 = @"yes";
             }
             break;
         case 2:
             if (_btn10.isSelected == true) {
                  [_btn10 setSelected:false];
+                ans3 = @"no";
             }else{
                 [_btn10 setSelected:true];
+                ans3 = @"yes";
             }
             break;
         case 3:
             if (_btn11.isSelected == true) {
                 [_btn11 setSelected:false];
+                ans4 = @"no";
             }else{
                 [_btn11 setSelected:true];
+                ans4 = @"yes";
             }
             break;
         case 4:
             if (_btn12.isSelected == true) {
                  [_btn12 setSelected:false];
+                ans5 = @"no";
             }else{
                 [_btn12 setSelected:true];
+                ans5 = @"yes";
             }
             break;
     }
@@ -173,15 +220,30 @@
 }
 
 - (IBAction)btnAction_Submit:(id)sender {
-    
+    [self hitApiToGiveFeedbackRating];
 }
 
 
 #pragma mark - API related
+//{"objRating":{"RatingId":"0","RatingFor":"8896292603","UserType":"advocate","UserRating":"5","AdminRating":"2","Feedback":"test","CreatedBy":"9560409501","Ans1":"yes","Ans3":"yes"}}
+-(void)hitApiToGiveFeedbackRating{
+    NSMutableDictionary* parameter = [NSMutableDictionary new];
 
--(void)hitApiToGetAdvocateData{
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
-    [dictRequest setValue:_obj.username forKey:@"objRating"];
+    [dictRequest setValue:_obj.username forKey:@"RatingId"];
+    [dictRequest setValue:_obj.username forKey:@"RatingFor"];
+    [dictRequest setValue:@"advocate" forKey:@"UserType"];
+    [dictRequest setValue:currentRating forKey:@"UserRating"];
+    [dictRequest setValue:@"5" forKey:@"AdminRating"];
+    [dictRequest setValue:_txtView_Feedback.text forKey:@"Feedback"];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"CreatedBy"];
+    [dictRequest setValue:ans1 forKey:@"Ans1"];
+    [dictRequest setValue:ans2 forKey:@"Ans2"];
+    [dictRequest setValue:ans3 forKey:@"Ans3"];
+    [dictRequest setValue:ans4 forKey:@"Ans4"];
+    [dictRequest setValue:ans5 forKey:@"Ans5"];
+
+    [parameter setObject:dictRequest forKey:@"objRating"];
     
     if ([ CommonFunction reachability]) {
         //        [self addLoder];
@@ -198,10 +260,16 @@
                 }
                 
             }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
         }];
     } else {
         [self removeloder];
-        //        [self addAlertWithTitle:AlertKey andMessage:Network_Issue_Message isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
     }
 }
 

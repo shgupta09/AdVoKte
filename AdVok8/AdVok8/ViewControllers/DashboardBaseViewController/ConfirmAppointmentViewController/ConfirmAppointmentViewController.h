@@ -14,5 +14,13 @@
 @property (nonatomic, strong) NSString* dateString;
 @property (weak, nonatomic) IBOutlet LeftImageWithLabel *lblDayName;
 @property (weak, nonatomic) IBOutlet LeftImageWithLabel *lblDate;
+@property (nonatomic,strong) ADRegistrationModel *obj;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewProfile;
+@property (weak, nonatomic) IBOutlet UILabel *lblLawyerName;
+@property (weak, nonatomic) IBOutlet UILabel *lblSubtitle;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtName;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtEmail;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtMobile;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtDescription;
 
 @end

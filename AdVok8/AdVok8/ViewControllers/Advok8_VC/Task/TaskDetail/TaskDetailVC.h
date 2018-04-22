@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Event.h"
 @interface TaskDetailVC : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *lblTaskName;
+@property (weak, nonatomic) IBOutlet UILabel *lblMatter;
+@property (weak, nonatomic) IBOutlet UILabel *lblLocation;
+@property (weak, nonatomic) IBOutlet UILabel *lblDescription;
+@property (weak, nonatomic) IBOutlet UILabel *lblStartDate;
+@property (weak, nonatomic) IBOutlet UILabel *lblEndDate;
+@property (weak, nonatomic) IBOutlet UILabel *lblTime;
+@property (strong, nonatomic) Event* eventObj;
 
 @end

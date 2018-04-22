@@ -144,18 +144,12 @@
                 </tableView>
                 <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0o-M0-tPh">
                     <rect key="frame" x="15" y="558" width="45" height="45"/>
-                    <color key="backgroundColor" red="0.95178693530000003" green="0.5757434964" blue="0.23977765440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="45" id="4jx-Ey-Egs"/>
                         <constraint firstAttribute="height" constant="45" id="ciy-RL-wyL"/>
                     </constraints>
-                    <state key="normal" image="Search-1"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="20"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                    </userDefinedRuntimeAttributes>
+                    <state key="normal" image="ic_search_feed"/>
                     <connections>
                         <action selector="btnSearchClciked:" destination="-1" eventType="touchUpInside" id="aSH-u2-p6O"/>
                     </connections>
@@ -187,7 +181,7 @@
         </view>
     </objects>
     <resources>
-        <image name="Search-1" width="106" height="106"/>
+        <image name="ic_search_feed" width="85" height="85"/>
         <image name="menu" width="92" height="92"/>
         <image name="search" width="129" height="135"/>
     </resources>

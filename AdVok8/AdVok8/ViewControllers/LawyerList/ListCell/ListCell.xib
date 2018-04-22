@@ -70,7 +70,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Divorce-1"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="tempBrief"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4F-ku-cEo" customClass="LeftImageWithLabel">
@@ -79,7 +79,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Divorce-1"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="tempEdu"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="256" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eag-8w-hoV" customClass="LeftImageWithLabel">
@@ -88,7 +88,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="lawyer_icon_white"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="tempspec"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaR-gZ-NKk" customClass="LeftImageWithLabel">
@@ -97,7 +97,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Divorce-1"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="tempLoc"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ncd-cM-6hD" customClass="LeftImageWithLabel">
@@ -106,7 +106,7 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="Divorce-1"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="tempSala"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
@@ -176,6 +176,10 @@
     <resources>
         <image name="Divorce-1" width="106" height="106"/>
         <image name="dependentsuser" width="512" height="512"/>
-        <image name="lawyer_icon_white" width="64" height="64"/>
+        <image name="tempBrief" width="47" height="39"/>
+        <image name="tempEdu" width="47" height="41"/>
+        <image name="tempLoc" width="37" height="42"/>
+        <image name="tempSala" width="49" height="38"/>
+        <image name="tempspec" width="47" height="41"/>
     </resources>
 </document>

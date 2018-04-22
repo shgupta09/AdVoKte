@@ -26,17 +26,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    [_imgViewProfile sd_setImageWithURL:[CommonFunction getProfilePicURLString:_obj.username]];
+    
     selectedDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"EEEE"];
     dayName = [dateFormatter stringFromDate:selectedDate];
     
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
     dateString = [dateFormatter stringFromDate:selectedDate];
     
     _lblDay.text = dayName;
     _lblDate.text = [NSString stringWithFormat:@"%@", dateString];
     
+    _lblUsername.text = [NSString stringWithFormat:@"%@ %@", _obj.fname,_obj.lname];
+    _lblLawyertype.text = _obj.AOP;
     
     [CommonFunction setNavToController:self title:@"Appointment" isCrossBusston:false];
 
@@ -112,7 +117,7 @@
     [dateFormatter setDateFormat:@"EEEE"];
     dayName = [dateFormatter stringFromDate:selectedDate];
     
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
     dateString = [dateFormatter stringFromDate:selectedDate];
 
     _lblDay.text = dayName;
@@ -136,7 +141,7 @@
     [dateFormatter setDateFormat:@"EEEE"];
     dayName = [dateFormatter stringFromDate:selectedDate];
     
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
     dateString = [dateFormatter stringFromDate:selectedDate];
 
     _lblDay.text = dayName;
@@ -196,6 +201,7 @@
     ConfirmAppointmentViewController* vc = [[ConfirmAppointmentViewController alloc] init];
     vc.dayString = dateString;
     vc.dateString = [arrTime objectAtIndex:indexPath.item];
+    vc.obj = _obj;
     [self.navigationController pushViewController:vc animated:true];
     
 }

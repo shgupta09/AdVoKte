@@ -54,4 +54,9 @@
 
 +(NSDate *)convertTimeToDate:(NSString *)dtrDate;
 
++ (NSUserDefaults *) defaults;
++ (void) persistObj:(id)value forKey:(NSString *)key;
++ (void) persistObjAsData:(id)encodableObject forKey:(NSString *)key;
++ (id) objectFromDataWithKey:(NSString*)key;
++(NSDate *)convertStringddMMYYYYToDate:(NSString *)dtrDate;
 @end

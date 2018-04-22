@@ -15,5 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *lblDay;
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
+@property (weak, nonatomic) IBOutlet UILabel *lblUsername;
+@property (weak, nonatomic) IBOutlet UIImageView *imgViewProfile;
+@property (weak, nonatomic) IBOutlet UILabel *lblLawyertype;
 
 @end

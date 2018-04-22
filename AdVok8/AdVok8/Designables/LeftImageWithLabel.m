@@ -36,7 +36,7 @@
 }
 -(void)setText:(NSString *)text{
     NSTextAttachment *imageAttachment = [[NSTextAttachment alloc] init];
-    imageAttachment.image = [_leftImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    imageAttachment.image = _leftImage;
     CGFloat imageOffsetY = -5.0;
     imageAttachment.bounds = CGRectMake(0, imageOffsetY, 20 , 20);
     NSAttributedString *attachmentString = [NSAttributedString attributedStringWithAttachment:imageAttachment];

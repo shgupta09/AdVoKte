@@ -151,13 +151,13 @@
                 UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
                 [self.navigationController presentViewController:navCon animated:true completion:nil];
             }
-            case 2:{
+            case 6:{
                 Me_VC *profileObj = [[Me_VC alloc]initWithNibName:@"Me_VC" bundle:nil];
                 
                 UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:profileObj];
                 [self.navigationController presentViewController:navCon animated:true completion:nil];
             }
-            case 6:{
+            case 2:{
                 ProfileVC *profileObj = [[ProfileVC alloc]initWithNibName:@"ProfileVC" bundle:nil];
                 profileObj.isFromMyActivity = false;
                 UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:profileObj];

@@ -84,6 +84,10 @@
 #import "Case.h"
 #import "Appointment.h"
 
+#import "FadeAlert.h"
+#import "NoOfLikesTableViewCell.h"
+#import "NoOfLikesViewController.h"
+
 #endif /* PrefixHeader_pch */
 
 

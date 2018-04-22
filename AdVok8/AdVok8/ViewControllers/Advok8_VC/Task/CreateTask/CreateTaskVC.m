@@ -20,7 +20,8 @@
     NSDate *endTimeDate;
     UIView *viewOverPicker;
     UIToolbar *toolBar;
-    
+    LoderView *loderObj;
+
 }
 
 @end
@@ -47,8 +48,8 @@
     }else{
         [CommonFunction setNavToController:self title:@"Update Task" isCrossBusston:false];
          [_btn_Save_Update setTitle:@"Update" forState:UIControlStateNormal];
-        [self setDefaultDate];
-
+//        [self setDefaultDate];
+        [self prefillData];
     }
 }
 
@@ -60,7 +61,27 @@
     [self.navigationController popViewControllerAnimated:true];
 }
 
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
+}
+
+
 #pragma mark- other Methods
+-(void)prefillData{
+    _txt_title.text = _eventObj.EventName;
+    _txt_Matter.text = _eventObj.Matter;
+    _txt_Location.text = _eventObj.Location;
+    _txt_Description.text = _eventObj.Description;
+    [_btn_AllDay setOn:false];
+    _txt_StartDate.text = _eventObj.StartAt;
+    _txt_startTime.text = _eventObj.StartTime;
+    _txt_EndDate.text = _eventObj.EndAt;
+    _txt_endTime.text = _eventObj.EndTime;
+ 
+    startDate = [CommonFunction convertStringddMMYYYYToDate:_eventObj.StartAt];
+    endDate = [CommonFunction convertStringddMMYYYYToDate:_eventObj.EndAt];
+}
+
 -(void)hideData:(BOOL)state{
     _txt_startTime.hidden = state;
     _txt_endTime.hidden = state;
@@ -93,7 +114,7 @@
     [self showDatePicker:sender];
 }
 - (IBAction)btnAction_Save:(id)sender {
-    
+    [self hitApiToInsertUpdateAppointment];
 }
 #pragma mark- Date Picker
 
@@ -106,7 +127,7 @@
 -(void)setDefaultDate{
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd/MM/YYYY"];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
     // or @"yyyy-MM-dd hh:mm:ss a" if you prefer the time with AM/PM
     startDateString = [dateFormatter stringFromDate:[NSDate date]];
     startDate = [NSDate date];
@@ -183,7 +204,7 @@
             
             //self.myLabel.text = [dateFormatter stringFromDate:[dueDatePickerView date]];
             NSLog(@"Picked the date %@", [dateFormatter stringFromDate:[sender date]]);
-            [dateFormatter setDateFormat:@"dd/MM/YYYY"];
+            [dateFormatter setDateFormat:@"dd/MM/yyyy"];
             if (sender.tag == 0) {
                 
                 startDateString = [dateFormatter stringFromDate:[sender date]];
@@ -219,4 +240,99 @@
             break;
     }
 }
+
+
+#pragma mark - Api Related
+-(void)hitApiToInsertUpdateAppointment{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    NSDate *date = [dateFormatter dateFromString:_txt_StartDate.text];
+    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+    NSString* strStart = [dateFormatter stringFromDate:date];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    date = [dateFormatter dateFromString:_txt_EndDate.text];
+    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+    NSString* strEnd = [dateFormatter stringFromDate:date];
+    
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    if (_isCreateTask){
+        [dictRequest setValue:@"0" forKey:@"EventId"];
+    }
+    else
+    {
+        [dictRequest setValue:[NSString stringWithFormat:@"%d", _eventObj.EventId] forKey:@"EventId"];
+    }
+    if (_btn_AllDay.isOn){
+        [dictRequest setValue:@"true" forKey:@"AllDay"];
+    }
+    else
+    {
+        [dictRequest setValue:@"false" forKey:@"AllDay"];
+    }
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
+    [dictRequest setValue:@"10" forKey:@"Attendees"];
+    [dictRequest setValue:_txt_title.text forKey:@"EventName"];
+    [dictRequest setValue:_txt_Description.text forKey:@"Description"];
+    [dictRequest setValue:_txt_Matter.text forKey:@"Matter"];
+    [dictRequest setValue:strStart forKey:@"StartAt"];
+    [dictRequest setValue:strEnd forKey:@"EndAt"];
+    [dictRequest setValue:_txt_startTime.text forKey:@"StartTime"];
+    [dictRequest setValue:_txt_endTime.text forKey:@"EndTime"];
+    [dictRequest setValue:_txt_Location.text forKey:@"Location"];
+
+    [parameter setValue:dictRequest forKey:@"objEvent"];
+    
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_INSERT_UPDATE_EVENT]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1){
+                    [self.navigationController dismissViewControllerAnimated:true completion:nil];
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+                }else
+                {
+                    
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+                    
+                }
+                
+            }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
+            
+            
+            [self removeloder];
+        }];
+    } else {
+        
+        [self removeloder];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+    }
+}
+
+-(void)addLoder{
+    self.view.userInteractionEnabled = NO;
+    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+    loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
+    loderObj.lbl_title.text = @"Please wait...";
+    [self.view addSubview:loderObj];
+}
+
+-(void)removeloder{
+    //loderObj = nil;
+    [loderObj removeFromSuperview];
+    //[loaderView removeFromSuperview];
+    self.view.userInteractionEnabled = YES;
+}
+
 @end
