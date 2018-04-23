@@ -23,6 +23,10 @@
     NSArray *pickerArray;
     RegCaseCourt *selectedCourt;
     RegCaseType *selectedType;
+    CGSize keyboardSize;
+    BOOL isKeyBoardShown;
+
+    
 }
 
 @end
@@ -37,7 +41,9 @@
 
 #pragma mark- Navigation
 -(void)setUpData{
+        isKeyBoardShown = false;
         [CommonFunction setNavToController:self title:@"Appeal alert" isCrossBusston:false];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
         [self setDefaultDate];
         [self hitApiToGetAllCourt];
 }
@@ -53,7 +59,41 @@
     loderObj.frame = self.view.frame;
 }
 
+
+#pragma mark - keyboard movements
+
+- (void)keyboardWillShow:(NSNotification *)notification{
+    isKeyBoardShown = true;
+    keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    [UIView animateWithDuration:0.2
+                     animations:^{
+                         if (isKeyBoardShown) {
+                             viewOverPicker.frame = CGRectMake(viewOverPicker.frame.origin.x, viewOverPicker.frame.origin.y-keyboardSize.height, viewOverPicker.frame.size.width, viewOverPicker.frame.size.height);
+                             [viewOverPicker reloadInputViews];
+                         }
+                     }];
+    if(((int)[[UIScreen mainScreen] nativeBounds].size.height)==2436) {
+        if (@available(iOS 11.0, *)) {
+        } else {
+            // Fallback on earlier versions
+            
+        }
+    }else{
+    }
+}
+-(void)keyboardWillHide:(NSNotification *)notification
+{
+    isKeyBoardShown = false;
+    
+}
 #pragma mark - text Field
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    if (textField.tag == 104) {
+        pickerObj.frame = CGRectMake(pickerObj.frame.origin.x,self.view.frame.size.height - 150-keyboardSize.height , pickerObj.frame.size.width, 50);
+    }
+}
+
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     NSMutableString * str = [textField.text mutableCopy];
     [str replaceCharactersInRange:range withString:string];
@@ -168,7 +208,7 @@
             [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
             dateToSend = [dateFormatter stringFromDate:[sender date]];
             if (sender.tag == 3) {
-                
+    
                 startDateString = [dateFormatter stringFromDate:[sender date]];
                 startDate = sender.date;
                 _txt_DateOfJudgement.text = startDateString;
@@ -349,6 +389,7 @@
 #pragma mark - Picker View Data source
 // Add picker View
 -(void)addPickerViewWithTag:(NSInteger)tagForPicker{
+    [CommonFunction resignFirstResponderOfAView:self.view];
     pickerObj = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 150)];
     pickerObj.delegate = self;
     pickerObj.dataSource = self;
@@ -387,6 +428,7 @@
     txtView.textColor = [UIColor whiteColor];
     txtView.placeholder=@"Search";
     txtView.tag = tagForPicker;
+     txtView.returnKeyType = UIReturnKeyDone;
     UIBarButtonItem *textFieldItem = [[UIBarButtonItem alloc] initWithCustomView:txtView];
 
     NSArray *toolbarItems = [NSArray arrayWithObjects:

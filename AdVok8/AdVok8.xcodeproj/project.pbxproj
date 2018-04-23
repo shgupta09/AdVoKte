@@ -133,6 +133,8 @@
 		5FF9E2CF2061813500467A0D /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E2CE2061813500467A0D /* Notification.m */; };
 		5FF9E2D42061830B00467A0D /* NotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E2D22061830B00467A0D /* NotificationTableViewCell.m */; };
 		5FF9E2D52061830B00467A0D /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF9E2D32061830B00467A0D /* NotificationTableViewCell.xib */; };
+		9C31B7B2208E0D340010A062 /* CasePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C31B7B0208E0D340010A062 /* CasePageCell.m */; };
+		9C31B7B3208E0D340010A062 /* CasePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C31B7B1208E0D340010A062 /* CasePageCell.xib */; };
 		9C70B264206E011700850305 /* CauseBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C70B262206E011700850305 /* CauseBaseVC.m */; };
 		9C70B265206E011700850305 /* CauseBaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C70B263206E011700850305 /* CauseBaseVC.xib */; };
 		9C70B26B206E0F4200850305 /* CaseListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C70B269206E0F4200850305 /* CaseListVC.m */; };
@@ -428,6 +430,9 @@
 		5FF9E2D32061830B00467A0D /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		7CD644F639A1CDED1AD2871C /* Pods-AdVok8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8.release.xcconfig"; sourceTree = "<group>"; };
 		7E476A4A368847FBC004F191 /* libPods-AdVok8.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdVok8.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C31B7AF208E0D340010A062 /* CasePageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CasePageCell.h; sourceTree = "<group>"; };
+		9C31B7B0208E0D340010A062 /* CasePageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CasePageCell.m; sourceTree = "<group>"; };
+		9C31B7B1208E0D340010A062 /* CasePageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CasePageCell.xib; sourceTree = "<group>"; };
 		9C70B261206E011700850305 /* CauseBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CauseBaseVC.h; sourceTree = "<group>"; };
 		9C70B262206E011700850305 /* CauseBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CauseBaseVC.m; sourceTree = "<group>"; };
 		9C70B263206E011700850305 /* CauseBaseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CauseBaseVC.xib; sourceTree = "<group>"; };
@@ -760,6 +765,7 @@
 		5F58FC542076A587009C5D9C /* CasePageListViewController */ = {
 			isa = PBXGroup;
 			children = (
+				9C31B7AE208E0D1E0010A062 /* CasePageCell */,
 				5F58FC552076A59F009C5D9C /* CasePageListViewController.h */,
 				5F58FC562076A59F009C5D9C /* CasePageListViewController.m */,
 				5F58FC572076A59F009C5D9C /* CasePageListViewController.xib */,
@@ -1312,6 +1318,16 @@
 			path = NotificationTableViewCell;
 			sourceTree = "<group>";
 		};
+		9C31B7AE208E0D1E0010A062 /* CasePageCell */ = {
+			isa = PBXGroup;
+			children = (
+				9C31B7AF208E0D340010A062 /* CasePageCell.h */,
+				9C31B7B0208E0D340010A062 /* CasePageCell.m */,
+				9C31B7B1208E0D340010A062 /* CasePageCell.xib */,
+			);
+			path = CasePageCell;
+			sourceTree = "<group>";
+		};
 		9C70B250206E00D700850305 /* Advok8_VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1816,6 +1832,7 @@
 				D8FAAF95207157E20084DE28 /* Me_VC.xib in Resources */,
 				5F96B71D206FE8D3003CD72F /* CalendarViewController.xib in Resources */,
 				D8FAAF83207125900084DE28 /* AppealAlertVC.xib in Resources */,
+				9C31B7B3208E0D340010A062 /* CasePageCell.xib in Resources */,
 				5F71B692204D5E7F004229DF /* CommentViewController.xib in Resources */,
 				D8C3C2A4206FBBFE0089A3CC /* CreateTaskVC.xib in Resources */,
 				5FF9E2CC20617FE500467A0D /* NotificationListViewController.xib in Resources */,
@@ -2059,6 +2076,7 @@
 				5F1B9C462034383F009503E7 /* LibraryViewController.m in Sources */,
 				5F1B9C7E20359131009503E7 /* JournalMainTableViewCell.m in Sources */,
 				5F1B9C412034381C009503E7 /* JournalViewController.m in Sources */,
+				9C31B7B2208E0D340010A062 /* CasePageCell.m in Sources */,
 				5F70AC35202B1653007E69A5 /* BaseHomeViewController.m in Sources */,
 				5F71B6CD204E9712004229DF /* LawyerCategoryTableViewCell.m in Sources */,
 				5F96B770206FE9F0003CD72F /* JTCalendarMonthWeekDaysView.m in Sources */,

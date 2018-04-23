@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CasePageListViewController : UIViewController
-
+@interface CasePageListViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_NoData;
 @end

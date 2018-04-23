@@ -41,7 +41,7 @@ static NSString* const API_GET_ALL_APPOINTMENTS_ADVOCATE = @"get_AdvocateAppoint
 static NSString* const API_GET_ALL_APPEAL_ALERTS = @"getAppealAlert";
 static NSString* const API_Delete_APPEAL_ALERT = @"deleteAppealAlert";
 static NSString* const API_Insert_APPEAL_ALERT = @"insertAppealAlert";
-
+static NSString* const API_TO_GET_CASES = @"GetCauseListWithCase";
 static NSString* const API_GET_ALL_Court = @"getcourtMaster";
 static NSString* const API_GET_ALL_CaseType = @"getCasetypeMaster";
 static NSString* const API_PUT_SHARE = @"put_Share";

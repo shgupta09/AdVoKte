@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpData];
-    arrData = [[NSMutableArray alloc ] init];
+    
 
     // Do any additional setup after loading the view from its nib.
 }
@@ -44,6 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)setUpData{
+    arrData = [[NSMutableArray alloc ] init];
     [CommonFunction setNavToController:self title:@"Appeal Alert" isCrossBusston:false];
     [self setUpTableView];
 }
@@ -96,7 +97,6 @@
         [self hitApiTodeleteAppealAlert:((UIButton *)sender).tag];
     }];
     UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
-
     [alertController addAction:ok];
     [alertController addAction:cancel];
     [self presentViewController:alertController animated:YES completion:nil];
@@ -230,7 +230,7 @@
         [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
     }
 }
-
+#pragma mark- Loder
 -(void)addLoder{
     self.view.userInteractionEnabled = NO;
     //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];

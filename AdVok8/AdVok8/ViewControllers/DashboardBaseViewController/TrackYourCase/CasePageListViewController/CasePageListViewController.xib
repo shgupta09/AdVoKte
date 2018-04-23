@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CasePageListViewController">
             <connections>
+                <outlet property="lbl_NoData" destination="Ab6-2M-kY6" id="P7b-AE-8BF"/>
+                <outlet property="tblView" destination="agg-6g-aLk" id="kgB-PD-AdP"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +25,17 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="agg-6g-aLk">
                     <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="IZX-JU-oyg"/>
+                        <outlet property="delegate" destination="-1" id="jfN-OJ-fQw"/>
+                    </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ab6-2M-kY6">
+                    <rect key="frame" x="157.5" y="355" width="60.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zU-xa-1TP">
                     <rect key="frame" x="329" y="617" width="30" height="30"/>
                     <state key="normal" title="Add"/>
@@ -35,13 +47,16 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="1zU-xa-1TP" secondAttribute="bottom" constant="20" id="BRH-2T-Xca"/>
+                <constraint firstItem="Ab6-2M-kY6" firstAttribute="centerY" secondItem="agg-6g-aLk" secondAttribute="centerY" id="GbV-cC-2fa"/>
                 <constraint firstItem="agg-6g-aLk" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="P6X-xI-3f4"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="1zU-xa-1TP" secondAttribute="trailing" constant="16" id="clJ-Ql-9ed"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="agg-6g-aLk" secondAttribute="trailing" id="daL-E0-6qK"/>
                 <constraint firstItem="agg-6g-aLk" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="44" id="ewz-ZL-zo2"/>
+                <constraint firstItem="Ab6-2M-kY6" firstAttribute="centerX" secondItem="agg-6g-aLk" secondAttribute="centerX" id="nyy-rc-sJI"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="agg-6g-aLk" secondAttribute="bottom" id="xto-vi-RCW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-349" y="-21"/>
         </view>
     </objects>
 </document>
