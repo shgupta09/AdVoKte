@@ -40,7 +40,7 @@
     else
     {
         arrImages = [[NSArray alloc] initWithObjects:@"find_lawyers_icon",@"case_tracking_icon",@"task_icon",@"appointment_icon",@"Me.png", nil];
-        arrOptions = [[NSArray alloc] initWithObjects:@"Find Lawyers",@"Case Treacking",@"My Activity",@"Appointment",@"Me", nil];
+        arrOptions = [[NSArray alloc] initWithObjects:@"Find Lawyers",@"Case Tracking",@"My Activity",@"Appointment",@"Me", nil];
     }
     [_collectionView reloadData];
 }

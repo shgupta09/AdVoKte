@@ -66,7 +66,8 @@
     _tblView.estimatedRowHeight = 30;
     _tblView.multipleTouchEnabled = NO;
     
-  
+    _tblView.delegate = self;
+    _tblView.dataSource = self;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -154,6 +155,7 @@
                     NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
                     id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                     tempArray = [json objectForKey:@"_post"];
+                    [arrData removeAllObjects];
                     [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                         
                         PostModel *dataObj = [PostModel new];
