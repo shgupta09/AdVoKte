@@ -16,7 +16,7 @@
     NSString *currentDateString;
     UIView *viewOverPicker;
     UIToolbar *toolBar;
-
+ 
 
 }
 @end
@@ -29,7 +29,9 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+
 -(void)setUpData{
+   
     [self setUpTableView];
     [self setDefaultDate];
 }
@@ -60,6 +62,7 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DailyCauseListCell *cell = [_tblView dequeueReusableCellWithIdentifier:@"DailyCauseListCell"];
+    
     if (cell == nil) {
         cell = [[DailyCauseListCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"DailyCauseListCell"];
     }

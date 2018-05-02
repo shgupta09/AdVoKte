@@ -160,6 +160,7 @@
 		D804D61B2083DC1900766DF3 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC49202B1691007E69A5 /* SplashScreenViewController.xib */; };
 		D804D6202083DF4B00766DF3 /* Update_AppointmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D804D61E2083DF4B00766DF3 /* Update_AppointmentVC.m */; };
 		D804D6212083DF4B00766DF3 /* Update_AppointmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D804D61F2083DF4B00766DF3 /* Update_AppointmentVC.xib */; };
+		D896CF6C209A34DE00443585 /* CaseList.m in Sources */ = {isa = PBXBuildFile; fileRef = D896CF6B209A34DE00443585 /* CaseList.m */; };
 		D8C3C273206F69080089A3CC /* DailyCauseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C271206F69080089A3CC /* DailyCauseListCell.m */; };
 		D8C3C274206F69080089A3CC /* DailyCauseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C3C272206F69080089A3CC /* DailyCauseListCell.xib */; };
 		D8C3C27A206F73560089A3CC /* TaskListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C278206F73560089A3CC /* TaskListVC.m */; };
@@ -455,6 +456,8 @@
 		D804D61D2083DF4B00766DF3 /* Update_AppointmentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Update_AppointmentVC.h; sourceTree = "<group>"; };
 		D804D61E2083DF4B00766DF3 /* Update_AppointmentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Update_AppointmentVC.m; sourceTree = "<group>"; };
 		D804D61F2083DF4B00766DF3 /* Update_AppointmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Update_AppointmentVC.xib; sourceTree = "<group>"; };
+		D896CF6A209A34DE00443585 /* CaseList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaseList.h; sourceTree = "<group>"; };
+		D896CF6B209A34DE00443585 /* CaseList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseList.m; sourceTree = "<group>"; };
 		D8C3C270206F69080089A3CC /* DailyCauseListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyCauseListCell.h; sourceTree = "<group>"; };
 		D8C3C271206F69080089A3CC /* DailyCauseListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyCauseListCell.m; sourceTree = "<group>"; };
 		D8C3C272206F69080089A3CC /* DailyCauseListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCauseListCell.xib; sourceTree = "<group>"; };
@@ -914,6 +917,8 @@
 				D804D6182083395A00766DF3 /* RegCaseType.m */,
 				5FF9A9222089199400C042C9 /* Event.h */,
 				5FF9A9232089199400C042C9 /* Event.m */,
+				D896CF6A209A34DE00443585 /* CaseList.h */,
+				D896CF6B209A34DE00443585 /* CaseList.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1937,6 +1942,7 @@
 				5F356EDC207D4ED7001EA9DF /* Case.m in Sources */,
 				D8C3C298206FB14F0089A3CC /* DateCaell.m in Sources */,
 				D8FAAFA4207165250084DE28 /* AppoinmentDetailVC.m in Sources */,
+				D896CF6C209A34DE00443585 /* CaseList.m in Sources */,
 				D804D6202083DF4B00766DF3 /* Update_AppointmentVC.m in Sources */,
 				D8F44CA5205EA16400B80FCD /* UILabel+Boldify.m in Sources */,
 				D8C3C286206FA2960089A3CC /* CasePageVC.m in Sources */,
