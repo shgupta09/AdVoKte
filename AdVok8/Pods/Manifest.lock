@@ -21,6 +21,7 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - FZAccordionTableView (0.2.3)
+  - JTCalendar (2.2.1)
   - SDWebImage (4.2.2):
     - SDWebImage/Core (= 4.2.2)
   - SDWebImage/Core (4.2.2)
@@ -30,6 +31,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 2.5.0)
   - FZAccordionTableView (~> 0.2)
+  - JTCalendar (~> 2.0)
   - SDWebImage (~> 4.1)
   - SWRevealViewController (~> 2.3)
   - TPKeyboardAvoiding (~> 1.3)
@@ -37,10 +39,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
   FZAccordionTableView: e64f49c71c32d750feda14025b088bcd25d1a71f
+  JTCalendar: be9e781229c6e539d9b71267560410886cd65cfb
   SDWebImage: 89a9d32cd520bbb46eb14e541d5109b3564af198
   SWRevealViewController: 6d3fd97f70112fd7cef9de14df4260eacce4c63a
   TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
 
-PODFILE CHECKSUM: cd9b2b90f75b06da79613ac1b740080e3301e08b
+PODFILE CHECKSUM: 0da8d102c1916c0597511ee938f9c6150d3a1f7f
 
 COCOAPODS: 1.3.1
