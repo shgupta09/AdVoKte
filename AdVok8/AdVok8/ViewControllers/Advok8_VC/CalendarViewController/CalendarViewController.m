@@ -11,11 +11,16 @@
 
 @interface CalendarViewController ()<UIAlertViewDelegate>
 {
-    int count;
-    UIButton* testButton;
-    NSString* currentSelectedDate;
-    NSMutableArray* queryData;
+    NSMutableArray *_eventsByDate;
     
+    NSDate *_todayDate;
+    NSDate *_minDate;
+    NSDate *_maxDate;
+    
+    NSDate *_dateSelected;
+    NSMutableArray* arrData;
+    NSMutableArray* arrTableData;
+    LoderView* loderObj;
 }
 
 @end
@@ -23,37 +28,27 @@
 @implementation CalendarViewController
 
 - (void)viewDidLoad {
-    count = 0;
     [super viewDidLoad];
     
+    arrData = [NSMutableArray new];
+    arrTableData = [NSMutableArray new];
+
     self.navigationController.title = @"Calendar";
     
-    testButton = [[UIButton alloc ]  init];
-    self.calendar = [JTCalendar new];
-    // Do any additional setup after loading the view.
+    _calendarManager = [JTCalendarManager new];
+    _calendarManager.delegate = self;
     
-    {
-        self.calendar.calendarAppearance.calendar.firstWeekday = 2; // Sunday == 1, Saturday == 7
-        self.calendar.calendarAppearance.dayCircleRatio = 9. / 10.;
-        self.calendar.calendarAppearance.ratioContentMenu = 1.;
-    }
+    // Generate random events sort by date using a dateformatter for the demonstration
+//    [self createRandomEvents];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:@"Calendar View Appear" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:@"AddEvent" object:nil];
+    // Create a min and max date for limit the calendar, optional
+    [self createMinAndMaxDate];
     
-    self.calendarMenuView.backgroundColor = [UIColor whiteColor];
-    
-    [self.calendar setMenuMonthsView:self.calendarMenuView];
-    [self.calendar setContentView:self.calendarContentView];
-    [self.calendar setDataSource:self];
-    
-//    UIGraphicsBeginImageContext(self.view.frame.size);
-//    [THEME_BACKGROUND drawInRect:self.view.bounds];
-//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//
-//    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-    
+    [_calendarManager setMenuView:_calendarMenuView];
+    [_calendarManager setContentView:_calendarContentView];
+    [_calendarManager setDate:_todayDate];
+
+    [self hitApiToGetAllCalendarData];
     [self refreshData];
 }
 - (void) viewWillAppear:(BOOL)animated {
@@ -64,6 +59,10 @@
     [self.tblEvents reloadData];
     
 }
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -72,140 +71,288 @@
     [super viewDidAppear:animated];
     
     self.navigationController.navigationBar.hidden = NO;
-    [self.calendar reloadData]; // Must be call in viewDidAppear
+    [self.calendarManager reload]; // Must be call in viewDidAppear
 }
 -(void) refreshData {
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    format.dateFormat = @"dd-MMM-yyyy";
-    NSDateFormatter *formatForDB = [[NSDateFormatter alloc] init];
-    formatForDB.dateFormat = @"yyyy-MM-dd";
-    currentSelectedDate =[formatForDB stringFromDate:[NSDate date]];
-    self.lblDate.text = [NSString stringWithFormat:@"%@",[format stringFromDate:[NSDate date]]];
-    
-    
-    self.tblEvents.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-//    queryData =[db getAllClientQueriesByDate:[formatForDB stringFromDate:[NSDate date]]];
-    [self.tblEvents reloadData];
+//    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+//    format.dateFormat = @"dd-MMM-yyyy";
+//    NSDateFormatter *formatForDB = [[NSDateFormatter alloc] init];
+//    formatForDB.dateFormat = @"yyyy-MM-dd";
+//    currentSelectedDate =[formatForDB stringFromDate:[NSDate date]];
+//    self.lblDate.text = [NSString stringWithFormat:@"%@",[format stringFromDate:[NSDate date]]];
+//
+//
+//    self.tblEvents.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+////    queryData =[db getAllClientQueriesByDate:[formatForDB stringFromDate:[NSDate date]]];
+//    [self.tblEvents reloadData];
     
 }
+
 #pragma mark - Buttons callback
 
-- (IBAction)didGoTodayTouch{
-    [self.calendar setCurrentDate:[NSDate date]];
-}
-- (IBAction)didChangeModeTouch{
-    self.calendar.calendarAppearance.isWeekMode = !self.calendar.calendarAppearance.isWeekMode;
-    
-    [self transitionExample];
+- (IBAction)didGoTodayTouch
+{
+    [_calendarManager setDate:_todayDate];
 }
 
-#pragma mark - JTCalendarDataSource
-- (int)calendarHaveEvent:(JTCalendar *)calendar date:(NSDate *)date{
-    NSDateFormatter *formatForDB = [[NSDateFormatter alloc] init];
-    formatForDB.dateFormat = @"yyyy-MM-dd";
-    NSString* testDate =[formatForDB stringFromDate:date];
-    int countForQueries;
-    countForQueries = 2;
-    int noToShowOnDate = 1;
-    int countFormMultiDate = 1;
+- (IBAction)didChangeModeTouch
+{
+    _calendarManager.settings.weekModeEnabled = !_calendarManager.settings.weekModeEnabled;
+    [_calendarManager reload];
     
-    if (countForQueries>0) {
-        return noToShowOnDate;
-    }
-    else if (countForQueries == -1)
-    {
-        JTCalendarDayView* dv = [[JTCalendarDayView alloc ] init];
-        dv.calendarManager = calendar;
-        dv.date = date;
-        [dv setEventFinalView:testDate];
-        return (noToShowOnDate* -1);
-    }
-    else if (countFormMultiDate>0)
-    {
-        JTCalendarDayView* dv = [[JTCalendarDayView alloc ] init];
-        dv.calendarManager = calendar;
-        dv.date = date;
-        [dv setEventFinalView:testDate];
-        return (countFormMultiDate* -1);
-    }
-    
-    else
-    {
-        return noToShowOnDate;
-    }
-    /*
-     int countForQueries;
-     countForQueries = [db isQueryPresentForDate:testDate];
-     int noToShowOnDate = [db countQueriesPresentForDateWithCount:testDate];
-     
-     if (countForQueries == -1)
-     {
-     JTCalendarDayView* dv = [[JTCalendarDayView alloc ] init];
-     dv.calendarManager = calendar;
-     dv.date = date;
-     [dv setEventFinalView:testDate];
-     return noToShowOnDate;
-     }
-     else
-     {
-     if (noToShowOnDate>0) {
-     JTCalendarDayView* dv = [[JTCalendarDayView alloc ] init];
-     dv.calendarManager = calendar;
-     dv.date = date;
-     [dv setQueryView:testDate];
-     return noToShowOnDate;
-     }
-     else
-     return noToShowOnDate;
-     }
-     
-     */
-}
-- (void)calendarDidDateSelected:(JTCalendar *)calendar date:(NSDate *)date{
-    NSTimeInterval secondsInEightHours = 5.5 * 60 * 60;
-    NSDate *dateIST = [date dateByAddingTimeInterval:secondsInEightHours];
-    NSDateFormatter *format = [[NSDateFormatter alloc] init];
-    format.dateFormat = @"dd-MMM-yyyy";
-    NSDateFormatter *formatForDB = [[NSDateFormatter alloc] init];
-    formatForDB.dateFormat = @"yyyy-MM-dd";
-    currentSelectedDate =[formatForDB stringFromDate:dateIST];
-    self.lblDate.text = [NSString stringWithFormat:@"%@",[format stringFromDate:dateIST]];
-    
-//    queryData = [db getAllClientQueriesByDate:currentSelectedDate];
-    [self.tblEvents reloadData];
-}
-
-#pragma mark - Transition examples
-
-- (void)transitionExample {
     CGFloat newHeight = 300;
-    if(self.calendar.calendarAppearance.isWeekMode){
-        newHeight = 75.;
+    if(_calendarManager.settings.weekModeEnabled){
+        newHeight = 85.;
     }
     
-    [UIView animateWithDuration:.5
-                     animations:^{
-                         self.calendarContentViewHeight.constant = newHeight;
-                         [self.view layoutIfNeeded];
-                     }];
-    
-    [UIView animateWithDuration:.25
-                     animations:^{
-                         self.calendarContentView.layer.opacity = 0;
-                     }
-                     completion:^(BOOL finished) {
-                         [self.calendar reloadAppearance];
-                         
-                         [UIView animateWithDuration:.25
-                                          animations:^{
-                                              self.calendarContentView.layer.opacity = 1;
-                                          }];
-                     }];
+    self.calendarContentViewHeight.constant = newHeight;
+    [self.view layoutIfNeeded];
 }
+
+#pragma mark - CalendarManager delegate
+
+// Exemple of implementation of prepareDayView method
+// Used to customize the appearance of dayView
+- (void)calendar:(JTCalendarManager *)calendar prepareDayView:(JTCalendarDayView *)dayView
+{
+    // Today
+    if([_calendarManager.dateHelper date:[NSDate date] isTheSameDayThan:dayView.date]){
+        dayView.circleView.hidden = NO;
+        dayView.circleView.backgroundColor = [UIColor blueColor];
+        dayView.dotView.backgroundColor = [UIColor whiteColor];
+        dayView.textLabel.textColor = [UIColor whiteColor];
+    }
+    // Selected date
+    else if(_dateSelected && [_calendarManager.dateHelper date:_dateSelected isTheSameDayThan:dayView.date]){
+        dayView.circleView.hidden = NO;
+        dayView.circleView.backgroundColor = [UIColor redColor];
+        dayView.dotView.backgroundColor = [UIColor whiteColor];
+        dayView.textLabel.textColor = [UIColor whiteColor];
+    }
+    // Other month
+    else if(![_calendarManager.dateHelper date:_calendarContentView.date isTheSameMonthThan:dayView.date]){
+        dayView.circleView.hidden = YES;
+        dayView.dotView.backgroundColor = [UIColor redColor];
+        dayView.textLabel.textColor = [UIColor lightGrayColor];
+    }
+    // Another day of the current month
+    else{
+        dayView.circleView.hidden = YES;
+        dayView.dotView.backgroundColor = [UIColor redColor];
+        dayView.textLabel.textColor = [UIColor blackColor];
+    }
+    
+    if([self haveEventForDay:dayView.date]){
+        dayView.dotView.hidden = NO;
+    }
+    else{
+        dayView.dotView.hidden = YES;
+    }
+}
+
+- (void)calendar:(JTCalendarManager *)calendar didTouchDayView:(JTCalendarDayView *)dayView
+{
+    _dateSelected = dayView.date;
+    
+    NSDateFormatter *dateFormat1 = [[NSDateFormatter alloc] init];
+    
+    [dateFormat1 setDateFormat:@"dd/MM/yyyy"];
+    
+    NSString *strDate = [dateFormat1  stringFromDate:dayView.date];// string with yyyy-MM-dd format
+    
+    [arrTableData removeAllObjects];
+    
+    for (Case* caseObj in arrData){
+        if ([strDate isEqualToString:caseObj.lld] || [strDate isEqualToString:caseObj.upcominghearingDate]){
+            [arrTableData addObject:caseObj];
+            
+        }
+    }
+    [_tblEvents reloadData];
+    
+    // Animation for the circleView
+    dayView.circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
+    [UIView transitionWithView:dayView
+                      duration:.3
+                       options:0
+                    animations:^{
+                        dayView.circleView.transform = CGAffineTransformIdentity;
+                        [_calendarManager reload];
+                    } completion:nil];
+    
+    
+    // Don't change page in week mode because block the selection of days in first and last weeks of the month
+    if(_calendarManager.settings.weekModeEnabled){
+        return;
+    }
+    
+    // Load the previous or next page if touch a day from another month
+    
+    if(![_calendarManager.dateHelper date:_calendarContentView.date isTheSameMonthThan:dayView.date]){
+        if([_calendarContentView.date compare:dayView.date] == NSOrderedAscending){
+            [_calendarContentView loadNextPageWithAnimation];
+        }
+        else{
+            [_calendarContentView loadPreviousPageWithAnimation];
+        }
+    }
+}
+
+#pragma mark - CalendarManager delegate - Page mangement
+
+// Used to limit the date for the calendar, optional
+- (BOOL)calendar:(JTCalendarManager *)calendar canDisplayPageWithDate:(NSDate *)date
+{
+    return [_calendarManager.dateHelper date:date isEqualOrAfter:_minDate andEqualOrBefore:_maxDate];
+}
+
+- (void)calendarDidLoadNextPage:(JTCalendarManager *)calendar
+{
+    //    NSLog(@"Next page loaded");
+}
+
+- (void)calendarDidLoadPreviousPage:(JTCalendarManager *)calendar
+{
+    //    NSLog(@"Previous page loaded");
+}
+
+#pragma mark - Fake data
+
+- (void)createMinAndMaxDate
+{
+    _todayDate = [NSDate date];
+    
+    // Min date will be 2 month before today
+    _minDate = [_calendarManager.dateHelper addToDate:_todayDate months:-2];
+    
+    // Max date will be 2 month after today
+    _maxDate = [_calendarManager.dateHelper addToDate:_todayDate months:2];
+}
+
+// Used only to have a key for _eventsByDate
+- (NSDateFormatter *)dateFormatter
+{
+    static NSDateFormatter *dateFormatter;
+    if(!dateFormatter){
+        dateFormatter = [NSDateFormatter new];
+        dateFormatter.dateFormat = @"dd-MM-yyyy";
+    }
+    
+    return dateFormatter;
+}
+
+- (BOOL)haveEventForDay:(NSDate *)date
+{
+    NSDateFormatter *dateFormat1 = [[NSDateFormatter alloc] init];
+    
+    [dateFormat1 setDateFormat:@"dd/MM/yyyy"];
+    
+    NSString *strDate = [dateFormat1  stringFromDate:date];// string with yyyy-MM-dd format
+    
+    
+    
+    if([_eventsByDate containsObject:strDate]){
+        return YES;
+    }
+    
+    return NO;
+    
+}
+
+- (void)createRandomEvents
+{
+    _eventsByDate = [NSMutableArray new];
+    [_eventsByDate removeAllObjects];
+    int i = 0;
+    for(Case* obj in arrData){
+        // Generate 30 random dates between now and 60 days later
+        
+        [_eventsByDate addObject:obj.upcominghearingDate];
+        [_eventsByDate addObject:obj.lld];
+        i++;
+    }
+}
+
+
+#pragma mark - API related
+
+-(void)hitApiToGetAllCalendarData{
+    
+    
+    NSMutableDictionary* dict = [NSMutableDictionary new];
+    [dict setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"Username"];
+    
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_ADVOCATE_CALENDAR]  postResponse:dict postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                
+                [self removeloder];
+                
+                    NSArray *tempArray = [NSArray new];
+                    tempArray = [json objectForKey:@"caseList"];
+                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+                        Case *dataObj = [Case new];
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            @try {
+                                [dataObj setValue:obj forKey:(NSString *)key];
+                                
+                            } @catch (NSException *exception) {
+                                NSLog(exception.description);
+                                //  Handle an exception thrown in the @try block
+                            } @finally {
+                                //  Code that gets executed whether or not an exception is thrown
+                            }
+                        }];
+                        
+                        [arrData addObject:dataObj];
+                    }];
+                [self createRandomEvents];
+                    [_calendarManager reload];
+                
+                [self removeloder];
+                
+            }
+            else
+            {
+                [self  removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
+            
+        }];
+    } else {
+        [self removeloder];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+    }
+}
+
+
+-(void)addLoder{
+    self.view.userInteractionEnabled = NO;
+    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+    loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
+    loderObj.lbl_title.text = @"Please wait...";
+    [self.view addSubview:loderObj];
+}
+
+-(void)removeloder{
+    //loderObj = nil;
+    [loderObj removeFromSuperview];
+    //[loaderView removeFromSuperview];
+    self.view.userInteractionEnabled = YES;
+}
+
+
 
 #pragma mark - Table view Delegate Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if (queryData.count)
+    if (arrTableData.count)
     {
         [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         self.tblEvents.backgroundView = nil;
@@ -244,6 +391,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
+    Case* caseObj = [arrTableData objectAtIndex:indexPath.row];
     cell.accessoryView = nil;
     cell.textLabel.text = @"hello";
     cell.backgroundColor = [UIColor clearColor];
@@ -259,7 +407,7 @@
 -(void) recieveNotification:(NSNotification*) notification {
     
     if ([[notification name] isEqualToString:@"Calendar View Appear"]) {
-        [self.calendar reloadData];
+        [self.calendarManager reload];
     }
     else if([[notification name] isEqualToString:@"AddEvent"])
     {

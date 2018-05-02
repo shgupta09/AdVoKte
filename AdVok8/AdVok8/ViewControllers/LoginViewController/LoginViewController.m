@@ -47,11 +47,11 @@
 - (IBAction)decodeButton:(id)sender {
     
     if (_sc_userType.selectedSegmentIndex == 0) {
-    //    _txtUsername.text = @"9560409501";
-      //  _txtPassword.text = @"123456";
+        _txtUsername.text = @"9560409501";
+        _txtPassword.text = @"123456";
     } else if(_sc_userType.selectedSegmentIndex == 1) {
-        //_txtUsername.text = @"8896292603";
-    //    _txtPassword.text = @"123456";
+        _txtUsername.text = @"8896292603";
+        _txtPassword.text = @"123456";
     }
 }
 
