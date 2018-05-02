@@ -44,9 +44,14 @@
 #pragma mark- TectField
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    NSMutableString * str = [textField.text mutableCopy];
+    [str replaceCharactersInRange:range withString:string];
     if (textField.text.length == 1 && [string isEqualToString:@""]) {
         [self hideConcelButton:true];
+        tblArray = arrData;
+        [_tblView reloadData];
     }else{
+        [self search:str];
         [self hideConcelButton:false];
     }
     return true;
@@ -57,6 +62,8 @@
     if (isHide) {
         _btn_CancelSearch.hidden = true;
         _traillinfConstraint.constant = 10;
+        tblArray = arrData;
+        [_tblView reloadData];  
     }else{
         _btn_CancelSearch.hidden = false;
         _traillinfConstraint.constant = 50;
@@ -106,6 +113,8 @@
 #pragma mark- Btn Actions
 
 - (IBAction)btnAction_Cross:(id)sender {
+    tblArray = arrData;
+    [_tblView reloadData];
     _txt_Search.text = @"";
 }
 #pragma mark - API related
@@ -191,5 +200,18 @@
     [loderObj removeFromSuperview];
     //[loaderView removeFromSuperview];
     self.view.userInteractionEnabled = YES;
+}
+
+-(void)search:(NSString *)string{
+    NSMutableArray *tempArray = [NSMutableArray new];
+    [arrData enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CaseList *dataObj = (CaseList *)obj;
+        if ([[dataObj.CourtName lowercaseString] containsString:string]||[[dataObj.CaseTypeName lowercaseString] containsString:string]||[[dataObj.caseyear lowercaseString] containsString:string]||[[dataObj.PetitionerName lowercaseString] containsString:string]||[[dataObj.rnm lowercaseString] containsString:string]) {
+            [tempArray addObject:dataObj];
+        }
+        tblArray = tempArray;
+        [_tblView reloadData];
+    }];
+    
 }
 @end
