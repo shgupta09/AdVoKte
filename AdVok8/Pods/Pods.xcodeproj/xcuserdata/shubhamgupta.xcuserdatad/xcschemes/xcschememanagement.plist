@@ -18,6 +18,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>JTCalendar.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>Pods-AdVok8.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -56,6 +61,21 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0BE4A16FFDEF8D8F814E3AE6A2577F6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1DE7D5C2AD2628E4A8E2BCA0B6F70A05</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>38A483B9B8A25DFACB2D8B69DDAE1A64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>540EDC8C13666E2EBCE1DC3AB792A676</key>
 		<dict>
 			<key>primary</key>
@@ -81,12 +101,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>AE13F78D9918D6339DA2B02A00538F96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B61C4145550CD0554F160354359894BE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C95C45974D77E3E41FE9D2A80E093179</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D05FE140ACFB4AFB644537F7DFBC845F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

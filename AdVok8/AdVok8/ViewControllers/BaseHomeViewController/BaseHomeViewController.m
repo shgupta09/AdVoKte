@@ -27,6 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addlocalNotification];
+//    [self hitApiToaddCallRequest];
     arrData = [NSMutableArray new];
     _searchBar.hidden = true;
     _tblView.hidden = true;
@@ -71,6 +73,9 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewDidLayoutSubviews{
+    _popUpView.frame = self.view.frame;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -130,6 +135,56 @@
 }
 
 
+#pragma mark - HIt APi
+
+-(void)hitApiToaddCallRequest{
+    
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    [dictRequest setValue:_txtFirstName.text forKey:@"name"];
+    [dictRequest setValue:_txtMobile.text forKey:@"mobile"];
+//    [dictRequest setValue:@"shgupta09@gmail.com" forKey:@"email"];
+    [dictRequest setValue:@"Call Testing" forKey:@"subject"];
+    [dictRequest setValue:_txtEnquiry.text forKey:@"Message"];
+    [parameter setValue:dictRequest forKey:@"objContact"];
+    
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_Call_Request]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1) {
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+                    [_popUpView removeFromSuperview];
+                    [self removeloder];
+                    
+                }else
+                {
+                    //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+                    [self removeloder];
+                    //                    [self removeloder];
+                }
+                [self removeloder];
+            }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
+            
+        }];
+    } else {
+        [self removeloder];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+    }
+}
 
 -(void)hitApiToSearchUsers:(NSString*) username{
     
@@ -259,6 +314,21 @@
     }
     
 }
+- (IBAction)btnAction_CancelRequest:(id)sender {
+    [_popUpView removeFromSuperview];
+}
+- (IBAction)btnAction_SenRequest:(id)sender {
+    NSDictionary *dictForValidation = [self validateData];
+    if (![[dictForValidation valueForKey:BoolValueKey] isEqualToString:@"0"]){
+        [self hitApiToaddCallRequest];
+    }
+    else{
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[dictForValidation valueForKey:AlertKey] preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+        [alertController addAction:ok];
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
+}
 
 - (IBAction)revealAction:(id)sender {
     //    self.view.userInteractionEnabled = false;
@@ -332,8 +402,63 @@
     //[loaderView removeFromSuperview];
     self.view.userInteractionEnabled = YES;
 }
+#pragma mark - Local Notification
 
+-(void)addlocalNotification{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveTestNotification:)
+                                                 name:@"CallREQUEST"
+                                               object:nil];
+}
 
+- (void) receiveTestNotification:(NSNotification *) notification
+{
+    // [notification name] should always be @"TestNotification"
+    // unless you use this method for observation of other notifications
+    // as well.
+    
+    if ([[notification name] isEqualToString:@"CallREQUEST"]){
+        _popUpView.frame = self.view.frame;
+        [self.view addSubview:_popUpView];
+    }
+    
+}
 
+-(void)notificationReceived{
+   
+}
+#pragma mark - Other Methods
+
+-(NSDictionary *)validateData{
+    NSMutableDictionary *validationDict = [[NSMutableDictionary alloc] init];
+    [validationDict setValue:@"1" forKey:BoolValueKey];
+    if (![CommonFunction validateName:_txtFirstName.text]){
+        [validationDict setValue:@"0" forKey:BoolValueKey];
+        if ([CommonFunction trimString:_txtFirstName.text].length == 0){
+            [validationDict setValue:@"We need a First Name" forKey:AlertKey];
+        }else{
+            [validationDict setValue:@"Oops! It seems that this is not a valid First Name." forKey:AlertKey];
+        }
+        
+    }
+    else if(![CommonFunction validateMobile:_txtMobile.text]){
+        [validationDict setValue:@"0" forKey:BoolValueKey];
+        if ([CommonFunction trimString:_txtMobile.text].length == 0) {
+            [validationDict setValue:@"We need a Mobile Number" forKey:AlertKey];
+        }
+        else{
+            [validationDict setValue:@"Oops! It seems that this is not a valid Mobile Number." forKey:AlertKey];
+        }
+        
+    }  else if(_txtEnquiry.text.length == 0){
+        [validationDict setValue:@"0" forKey:BoolValueKey];
+            [validationDict setValue:@"We need an enquiry" forKey:AlertKey];
+        
+    }
+
+  
+    return validationDict.mutableCopy;
+    
+}
 
 @end

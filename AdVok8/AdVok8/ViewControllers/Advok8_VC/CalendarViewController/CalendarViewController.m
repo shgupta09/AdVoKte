@@ -558,8 +558,11 @@
             }
         }else if ([((CalenderModel *)obj).type isEqualToString:Event_List_Data_Calender]){
             if ([((Event *)((CalenderModel *)obj).eventObj).StartAt isEqualToString:selectedDate]) {
-                [arrTableData addObject:obj];
-            }
+//                if ([self getBoolFromDate:selectedDate startDate:((Event *)((CalenderModel *)obj).eventObj).StartAt andEndDate:((Event *)((CalenderModel *)obj).eventObj).EndAt]) {
+                    [arrTableData addObject:obj];
+                }
+//            }
+            
           
         }else if ([((CalenderModel *)obj).type isEqualToString:Case_List_Data_Calender]){
             if ([((CaseList *)((CalenderModel *)obj).caseObj).lld isEqualToString:selectedDate]) {
@@ -567,8 +570,31 @@
             }
         }
     }];
-    
     [_tblEvents reloadData];
 }
 
+-(BOOL)getBoolFromDate:(NSString *)dateCompareString startDate:(NSString *)startDateString andEndDate:(NSString *)endDateString{
+    NSDateFormatter *dateform=[[NSDateFormatter alloc]init];
+    [dateform setDateStyle:NSDateFormatterLongStyle];
+    [dateform setTimeStyle:NSDateFormatterShortStyle];
+    [dateform setDateFormat:@"dd/MM/YYYY"];
+    NSDate *dateToCompare=[dateform dateFromString:dateCompareString];
+    NSDate *startDate=[dateform dateFromString:startDateString];
+    NSDate *endDate=[dateform dateFromString:endDateString];
+    
+    
+    NSComparisonResult result1;
+    NSComparisonResult result2;
+    //has three possible values: NSOrderedSame,NSOrderedDescending, NSOrderedAscending
+//    result = [today compare:newDate]; // comparing two dates
+
+    result1 = [startDate compare:dateToCompare]; // comparing two dates
+    result2 = [dateToCompare compare:endDate]; // comparing two dates
+    if((result1==NSOrderedAscending || result1 == NSOrderedSame)&&(result2==NSOrderedDescending || result2 == NSOrderedSame) ){
+//        NSLog(@"today is less");
+        return true;
+    }
+    else
+    return false;
+}
 @end
