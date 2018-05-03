@@ -33,7 +33,9 @@
 //        self.rightView = rightpaddingView;
         
         self.backgroundColor = [UIColor clearColor];
-        self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+        if (self.placeholder){
+            self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+        }
         self.textColor = [UIColor darkGrayColor];
         
         UIView* baseLine = [[UIView alloc] initWithFrame:CGRectMake(0, self.bounds.size.height-1, self.bounds.size.width, 1)];
