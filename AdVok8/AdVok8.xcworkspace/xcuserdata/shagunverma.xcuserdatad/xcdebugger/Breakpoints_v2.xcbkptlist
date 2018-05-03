@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdVok8/ViewControllers/Advok8_VC/CalendarViewController/CalendarViewController.m"
-            timestampString = "546979278.194506"
+            timestampString = "547006723.6568331"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "236"
-            endingLineNumber = "236"
-            landmarkName = "-haveEventForDay:"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "-calendar:didTouchDayView:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -8,6 +8,7 @@
 
 #import "CalendarViewController.h"
 #import "JTCalendarDayView.h"
+#import "CreateTaskVC.h"
 
 @interface CalendarViewController ()<UIAlertViewDelegate>
 {
@@ -30,6 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [CommonFunction setNavToController:self title:@"Update Profile" isCrossBusston:false];
+
     arrData = [NSMutableArray new];
     arrTableData = [NSMutableArray new];
 
@@ -50,6 +53,9 @@
 
     [self hitApiToGetAllCalendarData];
     [self refreshData];
+    
+    [_tblEvents registerNib:[UINib nibWithNibName:@"CalendarListViewCell" bundle:nil]forCellReuseIdentifier:@"CalendarListViewCell"];
+    
 }
 - (void) viewWillAppear:(BOOL)animated {
     UIView* footer =[[UIView alloc] initWithFrame:CGRectZero];
@@ -162,7 +168,7 @@
     
     [arrTableData removeAllObjects];
     
-    for (Case* caseObj in arrData){
+    for (CaseList* caseObj in arrData){
         if ([strDate isEqualToString:caseObj.lld] || [strDate isEqualToString:caseObj.upcominghearingDate]){
             [arrTableData addObject:caseObj];
             
@@ -264,7 +270,7 @@
     _eventsByDate = [NSMutableArray new];
     [_eventsByDate removeAllObjects];
     int i = 0;
-    for(Case* obj in arrData){
+    for(CaseList* obj in arrData){
         // Generate 30 random dates between now and 60 days later
         
         [_eventsByDate addObject:obj.upcominghearingDate];
@@ -297,7 +303,7 @@
                     tempArray = [json objectForKey:@"caseList"];
                     [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                         
-                        Case *dataObj = [Case new];
+                        CaseList *dataObj = [CaseList new];
                         [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
                             @try {
                                 [dataObj setValue:obj forKey:(NSString *)key];
@@ -356,7 +362,7 @@
     {
         [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         self.tblEvents.backgroundView = nil;
-        return 2;
+        return arrTableData.count;
     }
     else
     {
@@ -374,28 +380,28 @@
         [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         self.tblEvents.backgroundView = messageLabel;
         self.tblEvents.backgroundColor = [UIColor clearColor];
-        return 2;
+        return 0;
     }
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString *CellIdentifier = @"MyIdentifier";
+   CalendarListViewCell*  cell = [tableView dequeueReusableCellWithIdentifier:@"CalendarListViewCell"];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.textLabel.backgroundColor = [UIColor clearColor];
-        tableView.separatorStyle=UITableViewCellSeparatorStyleSingleLine;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (cell == nil) {
+        cell = [[CalendarListViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CalendarListViewCell"];
     }
     
-    Case* caseObj = [arrTableData objectAtIndex:indexPath.row];
-    cell.accessoryView = nil;
-    cell.textLabel.text = @"hello";
-    cell.backgroundColor = [UIColor clearColor];
+    CaseList* caseObj = [arrTableData objectAtIndex:indexPath.row];
     
+    cell.lblTopRight.text = caseObj.CaseTypeName;
+    cell.lblTopLeft.text = caseObj.CourtName;
+    cell.lblHeading.text = [NSString stringWithFormat:@"%@ vs %@",caseObj.PetitionerName,caseObj.RespondantName];
+    cell.lblSubtitle.text = @"Regitrar Court";
+    cell.lblCourt.text = @"Court:";
+    cell.lblItem.text = @"Item:";
+    cell.lblType.text = @"C.List" ;
+
     return cell;
 }
 
@@ -447,5 +453,10 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"LoadPreviousMonth" object:nil];
 }
 
+- (IBAction)btnCreateTaskClicked:(id)sender {
+    CreateTaskVC* vc = [[CreateTaskVC alloc] initWithNibName:@"CreateTaskVC" bundle:nil];
+    [self.navigationController pushViewController:vc animated:true];
+    
+}
 
 @end

@@ -138,6 +138,9 @@
                         <constraint firstAttribute="height" constant="30" id="70m-Df-37b"/>
                     </constraints>
                     <state key="normal" title="Create Task"/>
+                    <connections>
+                        <action selector="btnCreateTaskClicked:" destination="-1" eventType="touchUpInside" id="aYZ-Iv-QQ7"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

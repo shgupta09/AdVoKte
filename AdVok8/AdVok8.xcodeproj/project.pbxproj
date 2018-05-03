@@ -106,6 +106,8 @@
 		5F96B78820755E34003CD72F /* Appointment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F96B78720755E34003CD72F /* Appointment.m */; };
 		5FBD2B3B20595C4700D9C10B /* FeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD2B3920595C4700D9C10B /* FeedDetailViewController.m */; };
 		5FBD2B3C20595C4700D9C10B /* FeedDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FBD2B3A20595C4700D9C10B /* FeedDetailViewController.xib */; };
+		5FBE6232209A498800AD2215 /* CalendarListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE6230209A498800AD2215 /* CalendarListViewCell.m */; };
+		5FBE6233209A498800AD2215 /* CalendarListViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FBE6231209A498800AD2215 /* CalendarListViewCell.xib */; };
 		5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */; };
 		5FC11D022037012A002030BD /* ChooseTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC11D002037012A002030BD /* ChooseTypeViewController.xib */; };
 		5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCBA0420381ABC002BFD4A /* DesignableButton.m */; };
@@ -370,6 +372,9 @@
 		5FBD2B3820595C4700D9C10B /* FeedDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedDetailViewController.h; sourceTree = "<group>"; };
 		5FBD2B3920595C4700D9C10B /* FeedDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedDetailViewController.m; sourceTree = "<group>"; };
 		5FBD2B3A20595C4700D9C10B /* FeedDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailViewController.xib; sourceTree = "<group>"; };
+		5FBE622F209A498800AD2215 /* CalendarListViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalendarListViewCell.h; sourceTree = "<group>"; };
+		5FBE6230209A498800AD2215 /* CalendarListViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalendarListViewCell.m; sourceTree = "<group>"; };
+		5FBE6231209A498800AD2215 /* CalendarListViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarListViewCell.xib; sourceTree = "<group>"; };
 		5FC11CFE2037012A002030BD /* ChooseTypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseTypeViewController.h; sourceTree = "<group>"; };
 		5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseTypeViewController.m; sourceTree = "<group>"; };
 		5FC11D002037012A002030BD /* ChooseTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeViewController.xib; sourceTree = "<group>"; };
@@ -1128,6 +1133,7 @@
 		5F96B718206FE8C4003CD72F /* CalendarViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5FBE622E209A497400AD2215 /* CalendarListViewCell */,
 				5F96B719206FE8D3003CD72F /* CalendarViewController.h */,
 				5F96B71A206FE8D3003CD72F /* CalendarViewController.m */,
 				5F96B71B206FE8D3003CD72F /* CalendarViewController.xib */,
@@ -1181,6 +1187,16 @@
 				5FBD2B3A20595C4700D9C10B /* FeedDetailViewController.xib */,
 			);
 			path = FeedDetailViewController;
+			sourceTree = "<group>";
+		};
+		5FBE622E209A497400AD2215 /* CalendarListViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5FBE622F209A498800AD2215 /* CalendarListViewCell.h */,
+				5FBE6230209A498800AD2215 /* CalendarListViewCell.m */,
+				5FBE6231209A498800AD2215 /* CalendarListViewCell.xib */,
+			);
+			path = CalendarListViewCell;
 			sourceTree = "<group>";
 		};
 		5FC11CFC203700EC002030BD /* RegisterModule */ = {
@@ -1781,6 +1797,7 @@
 				5F71B692204D5E7F004229DF /* CommentViewController.xib in Resources */,
 				D8C3C2A4206FBBFE0089A3CC /* CreateTaskVC.xib in Resources */,
 				5FF9E2CC20617FE500467A0D /* NotificationListViewController.xib in Resources */,
+				5FBE6233209A498800AD2215 /* CalendarListViewCell.xib in Resources */,
 				5F71B6BD204E8E87004229DF /* ProfileCell.xib in Resources */,
 				5F1B9C5E20344A64009503E7 /* PostMainTableViewCell.xib in Resources */,
 				5F58FC592076A59F009C5D9C /* CasePageListViewController.xib in Resources */,
@@ -1985,6 +2002,7 @@
 				5F71B6C8204E91C5004229DF /* Specialization.m in Sources */,
 				5F70AC00202B1250007E69A5 /* AdVok8.xcdatamodeld in Sources */,
 				9CF77D04205F86BC00366505 /* Membership.m in Sources */,
+				5FBE6232209A498800AD2215 /* CalendarListViewCell.m in Sources */,
 				9C70B270206E0F5600850305 /* DailyCauseListVc.m in Sources */,
 				5F71B6AA204E8E76004229DF /* LawyerListVC.m in Sources */,
 				5F1B9C862036B0C2009503E7 /* PostModel.m in Sources */,
