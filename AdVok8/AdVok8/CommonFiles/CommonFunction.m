@@ -351,7 +351,7 @@
     else{
         return tel;
     }
-    
+//    return @"";
 }
 
 +(NSString *)ConvertDateTime:(NSString *)dateStr andTime:(NSString *)time{

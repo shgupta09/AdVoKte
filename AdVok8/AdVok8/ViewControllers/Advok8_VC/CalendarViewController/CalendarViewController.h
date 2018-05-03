@@ -21,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblDate;
 @property (weak, nonatomic) IBOutlet UITableView *tblEvents;
 @property (weak, nonatomic) IBOutlet UIButton *btnAdd;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_Nodata;
 
 @end

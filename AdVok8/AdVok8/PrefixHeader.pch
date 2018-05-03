@@ -11,7 +11,9 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-
+#import "Event.h"
+#import "CauseListModel.h"
+#import "TaskDetailVC.h"
 #import "SplashScreenViewController.h"
 #import "RearViewController.h"
 #import "SWRevealViewController.h"

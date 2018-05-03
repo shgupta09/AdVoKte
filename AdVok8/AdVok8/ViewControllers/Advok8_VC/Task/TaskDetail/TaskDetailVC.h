@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Event.h"
 @interface TaskDetailVC : UIViewController
+@property (nonatomic ,strong)UIViewController *fromViewController;
+
 @property (weak, nonatomic) IBOutlet UILabel *lblTaskName;
 @property (weak, nonatomic) IBOutlet UILabel *lblMatter;
 @property (weak, nonatomic) IBOutlet UILabel *lblLocation;

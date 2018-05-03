@@ -99,6 +99,8 @@
 }
 // Show the date picker
 -(void)showDatePicker{
+    [CommonFunction resignFirstResponderOfAView:self.view];
+
     pickerForDate = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 150)];
     pickerForDate.datePickerMode = UIDatePickerModeDate;
         [pickerForDate setDate:currentDate];

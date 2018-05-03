@@ -16,5 +16,5 @@
 @property (nonatomic) BOOL isFromDailyCauseList;
 @property (weak, nonatomic) IBOutlet UIView *view_DailyCause;
 @property (weak, nonatomic) IBOutlet UIView *view_Case;
-
+@property (strong , nonatomic) CaseList *dataObj ;
 @end

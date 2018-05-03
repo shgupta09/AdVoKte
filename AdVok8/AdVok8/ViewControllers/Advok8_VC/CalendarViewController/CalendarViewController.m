@@ -9,6 +9,7 @@
 #import "CalendarViewController.h"
 #import "JTCalendarDayView.h"
 #import "CreateTaskVC.h"
+#import "CalenderModel.h"
 
 @interface CalendarViewController ()<UIAlertViewDelegate>
 {
@@ -31,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [CommonFunction setNavToController:self title:@"Update Profile" isCrossBusston:false];
+    [CommonFunction setNavToController:self title:@"Calender" isCrossBusston:false];
 
     arrData = [NSMutableArray new];
     arrTableData = [NSMutableArray new];
@@ -50,11 +51,22 @@
     [_calendarManager setMenuView:_calendarMenuView];
     [_calendarManager setContentView:_calendarContentView];
     [_calendarManager setDate:_todayDate];
-
-    [self hitApiToGetAllCalendarData];
+    [self setUpTableView];
     [self refreshData];
     
+    
+}
+
+
+-(void)setUpTableView{
     [_tblEvents registerNib:[UINib nibWithNibName:@"CalendarListViewCell" bundle:nil]forCellReuseIdentifier:@"CalendarListViewCell"];
+    _tblEvents.rowHeight = UITableViewAutomaticDimension;
+    _tblEvents.estimatedRowHeight = 100;
+    _tblEvents.multipleTouchEnabled = NO;
+}
+
+-(void)backTapped{
+    [self dismissViewControllerAnimated:true completion:nil];
     
 }
 - (void) viewWillAppear:(BOOL)animated {
@@ -62,6 +74,7 @@
     footer.backgroundColor = [UIColor clearColor];
     self.tblEvents.tableFooterView =footer;
     self.tblEvents.backgroundColor = [UIColor clearColor];
+    [self hitApiToGetAllCalendarData];
     [self.tblEvents reloadData];
     
 }
@@ -166,15 +179,7 @@
     
     NSString *strDate = [dateFormat1  stringFromDate:dayView.date];// string with yyyy-MM-dd format
     
-    [arrTableData removeAllObjects];
-    
-    for (CaseList* caseObj in arrData){
-        if ([strDate isEqualToString:caseObj.lld] || [strDate isEqualToString:caseObj.upcominghearingDate]){
-            [arrTableData addObject:caseObj];
-            
-        }
-    }
-    [_tblEvents reloadData];
+    [self setDataInTableArrayOnselectedDate:strDate];
     
     // Animation for the circleView
     dayView.circleView.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.1, 0.1);
@@ -229,10 +234,10 @@
     _todayDate = [NSDate date];
     
     // Min date will be 2 month before today
-    _minDate = [_calendarManager.dateHelper addToDate:_todayDate months:-2];
+    _minDate = [_calendarManager.dateHelper addToDate:_todayDate months:-12];
     
     // Max date will be 2 month after today
-    _maxDate = [_calendarManager.dateHelper addToDate:_todayDate months:2];
+    _maxDate = [_calendarManager.dateHelper addToDate:_todayDate months:12];
 }
 
 // Used only to have a key for _eventsByDate
@@ -270,12 +275,18 @@
     _eventsByDate = [NSMutableArray new];
     [_eventsByDate removeAllObjects];
     int i = 0;
-    for(CaseList* obj in arrData){
+    for(CalenderModel* obj in arrData){
         // Generate 30 random dates between now and 60 days later
-        
-        [_eventsByDate addObject:obj.upcominghearingDate];
-        [_eventsByDate addObject:obj.lld];
-        i++;
+        if ([obj.type isEqualToString:Cause_List_Data_Calender]) {
+                    [_eventsByDate addObject:((CauseListModel *)((CalenderModel *)obj).causeObj).HearingDate];
+                 i++;
+        }else if ([obj.type isEqualToString:Event_List_Data_Calender]){
+            [_eventsByDate addObject:((Event *)((CalenderModel *)obj).eventObj).StartAt];
+                 i++;
+        }else if ([obj.type isEqualToString:Case_List_Data_Calender]){
+//            [_eventsByDate addObject:((CaseList *)((CalenderModel *)obj).caseObj).lld];
+        }
+   
     }
 }
 
@@ -298,15 +309,15 @@
                 id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                 
                 [self removeloder];
-                
+                 arrData = [NSMutableArray new];
                     NSArray *tempArray = [NSArray new];
-                    tempArray = [json objectForKey:@"caseList"];
+                    tempArray = [json objectForKey:@"CauseListData"];
                     [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                         
-                        CaseList *dataObj = [CaseList new];
-                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                        CauseListModel *dataObj = [CauseListModel new];
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj1, BOOL *stop){
                             @try {
-                                [dataObj setValue:obj forKey:(NSString *)key];
+                                [dataObj setValue:obj1 forKey:(NSString *)key];
                                 
                             } @catch (NSException *exception) {
                                 NSLog(exception.description);
@@ -315,12 +326,63 @@
                                 //  Code that gets executed whether or not an exception is thrown
                             }
                         }];
-                        
-                        [arrData addObject:dataObj];
+                        CalenderModel *calenderObj = [CalenderModel new];
+                        calenderObj.type = Cause_List_Data_Calender;
+                        calenderObj.causeObj = dataObj;
+                        [arrData addObject:calenderObj];
                     }];
+                tempArray = [json objectForKey:@"caseList"];
+                [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    
+                    CaseList *dataObj = [CaseList new];
+                    [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj1, BOOL *stop){
+                        @try {
+                            [dataObj setValue:obj1 forKey:(NSString *)key];
+                            
+                        } @catch (NSException *exception) {
+                            NSLog(exception.description);
+                            //  Handle an exception thrown in the @try block
+                        } @finally {
+                            //  Code that gets executed whether or not an exception is thrown
+                        }
+                    }];
+                    CalenderModel *calenderObj = [CalenderModel new];
+                    calenderObj.type = Case_List_Data_Calender;
+                    calenderObj.caseObj = dataObj;
+                    [arrData addObject:calenderObj];
+                }];
+            
+                tempArray = [json objectForKey:@"EventList"];
+                [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    
+                    Event *dataObj = [Event new];
+                    [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj1, BOOL *stop){
+                        @try {
+                            [dataObj setValue:obj1 forKey:(NSString *)key];
+                            
+                        } @catch (NSException *exception) {
+                            NSLog(exception.description);
+                            //  Handle an exception thrown in the @try block
+                        } @finally {
+                            //  Code that gets executed whether or not an exception is thrown
+                        }
+                    }];
+                    CalenderModel *calenderObj = [CalenderModel new];
+                    calenderObj.type = Event_List_Data_Calender;
+                    calenderObj.eventObj = dataObj;
+                    [arrData addObject:calenderObj];
+                }];
+
                 [self createRandomEvents];
-                    [_calendarManager reload];
+                NSDateFormatter *dateFormat1 = [[NSDateFormatter alloc] init];
                 
+                [dateFormat1 setDateFormat:@"dd/MM/yyyy"];
+                
+                NSString *strDate = [dateFormat1  stringFromDate:[NSDate date]];// string with yyyy-MM-dd format
+                
+                [self setDataInTableArrayOnselectedDate:strDate];
+                [_calendarManager reload];
+                [_tblEvents reloadData];
                 [self removeloder];
                 
             }
@@ -362,24 +424,13 @@
     {
         [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         self.tblEvents.backgroundView = nil;
+        _lbl_Nodata.hidden = true;
         return arrTableData.count;
     }
     else
     {
         // Display a message when the table is empty
-        UILabel *messageLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-        
-        messageLabel.text = @"";
-        messageLabel.textColor = [UIColor darkGrayColor];
-        messageLabel.numberOfLines = 0;
-        messageLabel.backgroundColor = [UIColor clearColor];
-        messageLabel.textAlignment = NSTextAlignmentCenter;
-        messageLabel.textColor = [UIColor blackColor];
-        messageLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
-        [messageLabel sizeToFit];
-        [tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-        self.tblEvents.backgroundView = messageLabel;
-        self.tblEvents.backgroundColor = [UIColor clearColor];
+        _lbl_Nodata.hidden = false;
         return 0;
     }
     
@@ -391,23 +442,59 @@
     if (cell == nil) {
         cell = [[CalendarListViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"CalendarListViewCell"];
     }
-    
-    CaseList* caseObj = [arrTableData objectAtIndex:indexPath.row];
-    
-    cell.lblTopRight.text = caseObj.CaseTypeName;
-    cell.lblTopLeft.text = caseObj.CourtName;
-    cell.lblHeading.text = [NSString stringWithFormat:@"%@ vs %@",caseObj.PetitionerName,caseObj.RespondantName];
-    cell.lblSubtitle.text = @"Regitrar Court";
-    cell.lblCourt.text = @"Court:";
-    cell.lblItem.text = @"Item:";
-    cell.lblType.text = @"C.List" ;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    CalenderModel *obj = [arrTableData objectAtIndex:indexPath.row];
+        if ([((CalenderModel *)obj).type isEqualToString:Cause_List_Data_Calender]) {
+            
+            CauseListModel *tempObj = ((CalenderModel *)obj).causeObj;
+                cell.lblTopRight.text = [NSString stringWithFormat:@"%@ %d/%d",tempObj.CaseType,tempObj.CaseNo,tempObj.CaseYear];
+                cell.lblTopLeft.text = tempObj.CourtName;
+                cell.lblHeading.text = [NSString stringWithFormat:@"%@ vs %@",tempObj.PetitionerName,tempObj.RespondentName];
+                cell.lblSubtitle.text = tempObj.BenchName;
+                cell.lblCourt.text = [NSString stringWithFormat:@"Court: %d",tempObj.CourtNo];
+                cell.lblItem.text = [NSString stringWithFormat:@"Item: %@",tempObj.CaseSeqNo];
+                cell.lblType.text = @"C.List" ;
+        }else if ([((CalenderModel *)obj).type isEqualToString:Event_List_Data_Calender]){
+              Event *tempObj = ((CalenderModel *)obj).eventObj;
+                cell.lblTopRight.text = @"";
+                cell.lblTopLeft.text = tempObj.EventName;
+                cell.lblHeading.text = tempObj.StartAt;
+                cell.lblSubtitle.text = @"";
+                cell.lblCourt.text = @"";
+                cell.lblItem.text = @"";
+                cell.lblType.text = @"Task" ;
+            
+        }else if ([((CalenderModel *)obj).type isEqualToString:Case_List_Data_Calender]){
+            CaseList *tempObj = ((CalenderModel *)obj).caseObj;
 
+//                cell.lblTopRight.text = tempObj.CaseTypeName;
+//                cell.lblTopLeft.text = tempObj.CourtName;
+//                cell.lblHeading.text = [NSString stringWithFormat:@"%@ vs %@",tempObj.PetitionerName,tempObj.RespondantName];
+//                cell.lblSubtitle.text = tempObj.BenchName;
+//                cell.lblCourt.text = [NSString stringWithFormat:@"Court: %d",tempObj.CourtNo];
+//                cell.lblItem.text = [NSString stringWithFormat:@"Item: %@",tempObj.CaseSeqNo];
+//                cell.lblType.text = @"C.List" ;
+        }
+   
+    
+
+    [CommonFunction setShadowOpacity:cell.view];
+    [CommonFunction setCornerRadius:cell.view Radius:5.0];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-  
-    
+   CalenderModel *obj = [arrTableData objectAtIndex:indexPath.row];
+    if ([((CalenderModel *)obj).type isEqualToString:Cause_List_Data_Calender]) {
+        
+    }else if ([((CalenderModel *)obj).type isEqualToString:Event_List_Data_Calender]){
+        TaskDetailVC *createTaskObj = [[TaskDetailVC alloc]initWithNibName:@"TaskDetailVC" bundle:nil];
+        createTaskObj.eventObj = obj.eventObj;
+        createTaskObj.fromViewController = self;
+        [self.navigationController pushViewController:createTaskObj animated:true];
+    }else if ([((CalenderModel *)obj).type isEqualToString:Case_List_Data_Calender]){
+        
+    }
 }
 
 -(void) recieveNotification:(NSNotification*) notification {
@@ -455,8 +542,33 @@
 
 - (IBAction)btnCreateTaskClicked:(id)sender {
     CreateTaskVC* vc = [[CreateTaskVC alloc] initWithNibName:@"CreateTaskVC" bundle:nil];
+    vc.isCreateTask = true;
+    vc.fromViewController  = self;
     [self.navigationController pushViewController:vc animated:true];
     
+}
+
+-(void)setDataInTableArrayOnselectedDate:(NSString *)selectedDate{
+    [arrTableData removeAllObjects];
+    
+    [arrData enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([((CalenderModel *)obj).type isEqualToString:Cause_List_Data_Calender]) {
+            if ([((CauseListModel *)((CalenderModel *)obj).causeObj).HearingDate isEqualToString:selectedDate]) {
+                [arrTableData addObject:obj];
+            }
+        }else if ([((CalenderModel *)obj).type isEqualToString:Event_List_Data_Calender]){
+            if ([((Event *)((CalenderModel *)obj).eventObj).StartAt isEqualToString:selectedDate]) {
+                [arrTableData addObject:obj];
+            }
+          
+        }else if ([((CalenderModel *)obj).type isEqualToString:Case_List_Data_Calender]){
+            if ([((CaseList *)((CalenderModel *)obj).caseObj).lld isEqualToString:selectedDate]) {
+//                [arrTableData addObject:obj];
+            }
+        }
+    }];
+    
+    [_tblEvents reloadData];
 }
 
 @end

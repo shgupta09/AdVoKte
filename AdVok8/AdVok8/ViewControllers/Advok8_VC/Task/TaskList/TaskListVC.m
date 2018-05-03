@@ -27,6 +27,11 @@
     [self setUpData];
     // Do any additional setup after loading the view from its nib.
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self hitApiToGetAllTaskList];
+
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -41,8 +46,6 @@
 -(void)setUpData{
     [CommonFunction setNavToController:self title:@"Task List" isCrossBusston:false];
     arrData = [[NSMutableArray alloc ] init];
-
-    [self hitApiToGetAllTaskList];
     [self setUpTableView];
 }
 -(void)backTapped{
@@ -84,6 +87,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     TaskDetailVC *createTaskObj = [[TaskDetailVC alloc]initWithNibName:@"TaskDetailVC" bundle:nil];
+    createTaskObj.fromViewController = self;
     createTaskObj.eventObj = [arrData objectAtIndex:indexPath.row];;
     [self.navigationController pushViewController:createTaskObj animated:true];
 }
@@ -93,6 +97,7 @@
 - (IBAction)btnAction_Add_Task:(id)sender {
     CreateTaskVC *createTaskObj = [[CreateTaskVC alloc]initWithNibName:@"CreateTaskVC" bundle:nil];
     createTaskObj.isCreateTask = true;
+    createTaskObj.fromViewController  = self;
     [self.navigationController pushViewController:createTaskObj animated:true];
 }
 
@@ -117,6 +122,8 @@
                 NSNumber* st = [json valueForKey:@"status"];
                 int status = [st intValue];
                 if ( status == 1) {
+                    arrData = [[NSMutableArray alloc ] init];
+
                     NSArray *tempArray = [NSArray new];
                     NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
                     id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];

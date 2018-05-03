@@ -10,6 +10,8 @@
 #import "Event.h"
 
 @interface CreateTaskVC : UIViewController
+
+@property (nonatomic ,strong)UIViewController *fromViewController;
 @property(nonatomic) BOOL isCreateTask;
 @property (weak, nonatomic) IBOutlet TextFieldFooter *txt_title;
 @property (weak, nonatomic) IBOutlet TextFieldFooter *txt_Matter;

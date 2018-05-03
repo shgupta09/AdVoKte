@@ -10,7 +10,7 @@
 
 @interface Event : NSObject
 
-@property int EventId;
+@property (nonatomic)int EventId;
 @property(nonatomic ,strong) NSString *UserName;
 @property(nonatomic ,strong) NSString *EventName;
 @property(nonatomic ,strong) NSString *Matter;

@@ -135,6 +135,8 @@
 		9C70B271206E0F5600850305 /* DailyCauseListVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C70B26F206E0F5600850305 /* DailyCauseListVc.xib */; };
 		9C70B276206E32CA00850305 /* CaseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C70B274206E32CA00850305 /* CaseListCell.m */; };
 		9C70B277206E32CA00850305 /* CaseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C70B275206E32CA00850305 /* CaseListCell.xib */; };
+		9CCD0539209AE6370031F6F1 /* CalenderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCD0538209AE6370031F6F1 /* CalenderModel.m */; };
+		9CCD053C209AEBD30031F6F1 /* CauseListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CCD053B209AEBD30031F6F1 /* CauseListModel.m */; };
 		9CE01023204FC363002A2E81 /* ProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01021204FC363002A2E81 /* ProfileVC.m */; };
 		9CE01024204FC363002A2E81 /* ProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CE01022204FC363002A2E81 /* ProfileVC.xib */; };
 		9CE0102A204FC4C4002A2E81 /* ProfileCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE01028204FC4C4002A2E81 /* ProfileCell2.m */; };
@@ -420,6 +422,10 @@
 		9C70B273206E32CA00850305 /* CaseListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaseListCell.h; sourceTree = "<group>"; };
 		9C70B274206E32CA00850305 /* CaseListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseListCell.m; sourceTree = "<group>"; };
 		9C70B275206E32CA00850305 /* CaseListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaseListCell.xib; sourceTree = "<group>"; };
+		9CCD0537209AE6370031F6F1 /* CalenderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalenderModel.h; sourceTree = "<group>"; };
+		9CCD0538209AE6370031F6F1 /* CalenderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalenderModel.m; sourceTree = "<group>"; };
+		9CCD053A209AEBD30031F6F1 /* CauseListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CauseListModel.h; sourceTree = "<group>"; };
+		9CCD053B209AEBD30031F6F1 /* CauseListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CauseListModel.m; sourceTree = "<group>"; };
 		9CE01020204FC363002A2E81 /* ProfileVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileVC.h; sourceTree = "<group>"; };
 		9CE01021204FC363002A2E81 /* ProfileVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileVC.m; sourceTree = "<group>"; };
 		9CE01022204FC363002A2E81 /* ProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileVC.xib; sourceTree = "<group>"; };
@@ -924,6 +930,10 @@
 				5FF9A9232089199400C042C9 /* Event.m */,
 				D896CF6A209A34DE00443585 /* CaseList.h */,
 				D896CF6B209A34DE00443585 /* CaseList.m */,
+				9CCD0537209AE6370031F6F1 /* CalenderModel.h */,
+				9CCD0538209AE6370031F6F1 /* CalenderModel.m */,
+				9CCD053A209AEBD30031F6F1 /* CauseListModel.h */,
+				9CCD053B209AEBD30031F6F1 /* CauseListModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2007,6 +2017,7 @@
 				5F71B6AA204E8E76004229DF /* LawyerListVC.m in Sources */,
 				5F1B9C862036B0C2009503E7 /* PostModel.m in Sources */,
 				D804D60E2082855A00766DF3 /* User_Header.m in Sources */,
+				9CCD053C209AEBD30031F6F1 /* CauseListModel.m in Sources */,
 				5F1B9C33203415B9009503E7 /* DashboardHomeCollectionViewCell.m in Sources */,
 				5F96B71C206FE8D3003CD72F /* CalendarViewController.m in Sources */,
 				D8C3C280206F73F90089A3CC /* TaskListCell.m in Sources */,
@@ -2034,6 +2045,7 @@
 				5F1B9C412034381C009503E7 /* JournalViewController.m in Sources */,
 				9C31B7B2208E0D340010A062 /* CasePageCell.m in Sources */,
 				5F70AC35202B1653007E69A5 /* BaseHomeViewController.m in Sources */,
+				9CCD0539209AE6370031F6F1 /* CalenderModel.m in Sources */,
 				5F71B6CD204E9712004229DF /* LawyerCategoryTableViewCell.m in Sources */,
 				5FF9A933208B0D6B00C042C9 /* NoOfLikesTableViewCell.m in Sources */,
 				9CE01023204FC363002A2E81 /* ProfileVC.m in Sources */,

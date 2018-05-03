@@ -17,6 +17,11 @@
 #define BoolValueKey @"BoolValue"
 #define AlertKey @"Alert"
 
+#define Cause_List_Data_Calender @"CauseListData"
+#define Event_List_Data_Calender @"EventList"
+#define Case_List_Data_Calender @"caseList"
+
+
 static NSString* const API_BASE_URL = @"http://www.advok8.in/AdvocateAPI.asmx/";
 static NSString* const API_CONTENTS_BASE_URL = @"http://www.advok8.in";
 
@@ -53,7 +58,7 @@ static NSString* const API_DELETE_EVENT = @"DeleteEvent";
 static NSString* const API_INSERT_UPDATE_EVENT = @"insertupdateEvent";
 static NSString* const API_GET_ADVOCATE_CALENDAR = @"GetAdvDashboardCalendar";
 static NSString* const API_GET_CASELIST = @"getcaseData";
-
+static NSString* const API_GET_CauseListWithCase = @"GetCauseListWithCase";
 
 
 

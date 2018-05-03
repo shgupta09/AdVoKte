@@ -146,6 +146,7 @@
 }
 // Show the date picker
 -(void)showDatePicker:(id)sender{
+    [CommonFunction resignFirstResponderOfAView:self.view];
     pickerForDate = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 150)];
     pickerForDate.tag = ((UIButton *)sender).tag;
     if (pickerForDate.tag == 0) {
@@ -280,7 +281,6 @@
     [dictRequest setValue:_txt_startTime.text forKey:@"StartTime"];
     [dictRequest setValue:_txt_endTime.text forKey:@"EndTime"];
     [dictRequest setValue:_txt_Location.text forKey:@"Location"];
-
     [parameter setValue:dictRequest forKey:@"objEvent"];
     
     if ([ CommonFunction reachability]) {
@@ -292,8 +292,8 @@
                 id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                 NSNumber* st = [json valueForKey:@"Status"];
                 int status = [st intValue];
-                if ( status == 1){
-                    [self.navigationController dismissViewControllerAnimated:true completion:nil];
+                if ( status == 1 || status == 2){
+                    [self.navigationController popToViewController:_fromViewController animated:true];
                     [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
                 }else
                 {

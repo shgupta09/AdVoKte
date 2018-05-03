@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblItem;
 @property (weak, nonatomic) IBOutlet UILabel *lblType;
 
+@property (weak, nonatomic) IBOutlet UIView *view;
 @property (weak, nonatomic) IBOutlet UILabel *lblTopRight;
 @end

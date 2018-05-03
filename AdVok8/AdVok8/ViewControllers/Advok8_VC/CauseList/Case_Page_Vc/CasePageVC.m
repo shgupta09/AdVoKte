@@ -15,6 +15,8 @@
     NSMutableArray *headerDataArray;
     NSMutableArray *headerArray;
     NSMutableArray *tempArray;
+    LoderView *loderObj;
+
 }
 @end
 static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
@@ -26,7 +28,9 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
     [self setUpData];
     // Do any additional setup after loading the view from its nib.
 }
-
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -45,6 +49,7 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
         _topConstraint.constant = 166;
         [CommonFunction setShadowOpacity:_view_Case];
         [CommonFunction setCornerRadius:_view_Case Radius:5];
+        [self hitApiToGetAllCaseList];
     }
     [CommonFunction setNavToController:self title:@"Case Page" isCrossBusston:false];
     [self setHeaderDataArray];
@@ -177,6 +182,90 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
 
 - (void)tableView:(FZAccordionTableView *)tableView didCloseSection:(NSInteger)section withHeader:(UITableViewHeaderFooterView *)header {
     
+}
+
+#pragma mark - API related
+
+-(void)hitApiToGetAllCaseList{
+    
+    
+    NSMutableDictionary* dict = [NSMutableDictionary new];
+    [dict setValue:[CommonFunction getValueFromDefaultWithKey:LOGINUSER] forKey:@"UserName"];
+    [dict setValue:[NSString stringWithFormat:@"%d",_dataObj.caseId] forKey:@"CaseId"];
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_CauseListWithCase]  postResponse:dict postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                
+                [self removeloder];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1) {
+//                    NSArray *tempArray = [NSArray new];
+//                    NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+//                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//                    tempArray = [json objectForKey:@"CaseList"];
+//                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//
+//                        CaseList *dataObj = [CaseList new];
+//                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+//                            @try {
+//                                [dataObj setValue:[CommonFunction checkForNull:obj] forKey:(NSString *)key];
+//
+//                            } @catch (NSException *exception) {
+//                                NSLog(exception.description);
+//                                //  Handle an exception thrown in the @try block
+//                            } @finally {
+//                                //  Code that gets executed whether or not an exception is thrown
+//                            }
+//                        }];
+//
+//                        [arrData addObject:dataObj];
+//                    }];
+//                    tblArray = arrData;
+//
+//                    [_tblView reloadData];
+                }else
+                {
+                    //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+                    [self removeloder];
+                    //                    [self removeloder];
+                }
+                [self removeloder];
+                
+            }
+            else
+            {
+                [self  removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
+            
+        }];
+    } else {
+        [self removeloder];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+    }
+}
+
+
+-(void)addLoder{
+    self.view.userInteractionEnabled = NO;
+    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+    loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
+    loderObj.lbl_title.text = @"Please wait...";
+    [self.view addSubview:loderObj];
+}
+
+-(void)removeloder{
+    //loderObj = nil;
+    [loderObj removeFromSuperview];
+    //[loaderView removeFromSuperview];
+    self.view.userInteractionEnabled = YES;
 }
 
 

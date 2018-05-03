@@ -106,6 +106,8 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     CasePageVC *caseOBJ = [[CasePageVC alloc]initWithNibName:@"CasePageVC" bundle:nil];
+     CaseList *dataObj  = [tblArray objectAtIndex:indexPath.row];
+    caseOBJ.dataObj = dataObj;
     caseOBJ.isFromDailyCauseList = false;
     [self.navigationController pushViewController:caseOBJ animated:true];
 }
@@ -116,6 +118,10 @@
     tblArray = arrData;
     [_tblView reloadData];
     _txt_Search.text = @"";
+}
+- (IBAction)btnAction_Add_Case:(id)sender {
+//    AppAppealVC *createTaskObj = [[AppAppealVC alloc]initWithNibName:@"AppAppealVC" bundle:nil];
+//    [self.navigationController pushViewController:createTaskObj animated:true];
 }
 #pragma mark - API related
 

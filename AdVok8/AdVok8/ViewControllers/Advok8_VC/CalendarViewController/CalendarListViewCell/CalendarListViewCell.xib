@@ -57,15 +57,24 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sT-u7-ZRr">
-                                <rect key="frame" x="256.5" y="73" width="35.5" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sT-u7-ZRr">
+                                <rect key="frame" x="242" y="73" width="50" height="17"/>
                                 <color key="backgroundColor" red="0.074509803920000006" green="0.55294117649999996" blue="0.45882352939999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="adF-uy-jvW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Mb0-o1-YHo" firstAttribute="top" secondItem="0Dy-pF-SCf" secondAttribute="bottom" constant="5" id="6DB-BQ-HfQ"/>
                             <constraint firstItem="bKO-4r-AAC" firstAttribute="top" secondItem="VQd-BA-IUM" secondAttribute="bottom" constant="5" id="7dC-O1-QAX"/>
@@ -102,8 +111,9 @@
                 <outlet property="lblItem" destination="qYu-VA-252" id="WFe-cA-9AY"/>
                 <outlet property="lblSubtitle" destination="0Dy-pF-SCf" id="mHk-cy-oaF"/>
                 <outlet property="lblTopLeft" destination="VQd-BA-IUM" id="rUp-xf-dni"/>
-                <outlet property="lblTopRight" destination="VQd-BA-IUM" id="MwW-l3-gbC"/>
+                <outlet property="lblTopRight" destination="szi-FF-FER" id="4yl-Wc-3qA"/>
                 <outlet property="lblType" destination="2sT-u7-ZRr" id="eVE-wf-MZq"/>
+                <outlet property="view" destination="uOy-9U-hNl" id="Kgz-UH-dGH"/>
             </connections>
             <point key="canvasLocation" x="34" y="105"/>
         </tableViewCell>

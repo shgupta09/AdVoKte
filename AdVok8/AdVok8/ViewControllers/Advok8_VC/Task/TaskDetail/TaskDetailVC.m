@@ -53,6 +53,8 @@
         CreateTaskVC *createTaskObj = [[CreateTaskVC alloc]initWithNibName:@"CreateTaskVC" bundle:nil];
         createTaskObj.isCreateTask = false;
         createTaskObj.eventObj = _eventObj;
+        createTaskObj.fromViewController  = _fromViewController;
+        
         [self.navigationController pushViewController:createTaskObj animated:true];
     }
     else if (((UIBarButtonItem *)sender).tag == 1) {
