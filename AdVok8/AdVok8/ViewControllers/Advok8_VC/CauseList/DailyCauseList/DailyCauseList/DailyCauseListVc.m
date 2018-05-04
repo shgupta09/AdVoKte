@@ -91,6 +91,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     CasePageVC *caseOBJ = [[CasePageVC alloc]initWithNibName:@"CasePageVC" bundle:nil];
     caseOBJ.isFromDailyCauseList = true;
+    caseOBJ.causeListObj = [arrTableData objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:caseOBJ animated:true];
 }
 

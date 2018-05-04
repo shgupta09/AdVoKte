@@ -41,12 +41,28 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
         _topConstraint.constant = 190;
         _view_DailyCause.hidden = false;
         _view_Case.hidden = true;
+        
+        _lbl2.text = [NSString stringWithFormat:@"%@ %d/%d",_causeListObj.CaseType,_causeListObj.CaseNo,_causeListObj.CaseYear];
+        _lbl1.text = _causeListObj.CourtName;
+        _lbl3.text = [NSString stringWithFormat:@"%@ vs %@",_causeListObj.PetitionerName,_causeListObj.RespondentName];
+        _lbl4.text = _causeListObj.BenchName;
+        _lbl5.text = [NSString stringWithFormat:@"Court: %d   Item: %@",_causeListObj.CourtNo,_causeListObj.CaseSeqNo];
+        
         [CommonFunction setShadowOpacity:_view_DailyCause];
         [CommonFunction setCornerRadius:_view_DailyCause Radius:5];
     }else{
         _view_DailyCause.hidden = true;
         _view_Case.hidden = false;
         _topConstraint.constant = 166;
+        
+        
+        _lblC1.text = _dataObj.CourtName;
+        _lblC2.text = [NSString stringWithFormat:@"%@ %d/%@",_dataObj.CaseTypeName,_dataObj.caseId,_dataObj.caseyear];
+        if ([_dataObj.PetitionerName isEqualToString:@""]||[_dataObj.rnm isEqualToString:@""]) {
+            _lblC3.text = @"";
+        }else{
+            _lblC3.text = [NSString stringWithFormat:@"%@ Vs %@",_dataObj.PetitionerName,_dataObj.rnm];
+        }
         [CommonFunction setShadowOpacity:_view_Case];
         [CommonFunction setCornerRadius:_view_Case Radius:5];
         [self hitApiToGetAllCaseList];
