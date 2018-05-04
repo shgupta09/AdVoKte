@@ -91,6 +91,11 @@
 #import "NoOfLikesViewController.h"
 #import "CalendarListViewCell.h"
 #import "CaseList.h"
+
+#import "AdvocateProfileTabViewController.h"
+#import "AdvocateAvailabilityTabViewController.h"
+#import "AdvocateAchievementTabViewController.h"
+#import "AdvocateProfileContainerViewController.h"
 #endif /* PrefixHeader_pch */
 
 
