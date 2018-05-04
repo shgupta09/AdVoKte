@@ -73,7 +73,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "-setUpData"
+            landmarkName = "-didReceiveMemoryWarning"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -672,7 +672,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdVok8/ViewControllers/Advok8_VC/CauseList/DailyCauseList/DailyCauseList/DailyCauseListVc.m"
-            timestampString = "547100896.192616"
+            timestampString = "547101088.2163399"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "191"
