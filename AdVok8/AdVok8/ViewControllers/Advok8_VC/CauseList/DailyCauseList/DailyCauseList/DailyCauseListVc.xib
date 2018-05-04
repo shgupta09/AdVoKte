@@ -13,6 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DailyCauseListVc">
             <connections>
+                <outlet property="lbl_NoData" destination="YXj-gA-n95" id="dEh-1V-07B"/>
                 <outlet property="tblView" destination="5tV-9B-fsi" id="gCz-0t-s8Q"/>
                 <outlet property="txt_Search" destination="vY2-vO-eJW" id="PTY-rQ-JdW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -59,6 +60,12 @@
                         <action selector="btnAction_calender:" destination="-1" eventType="touchUpInside" id="RJp-L7-lxA"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No cause list found for selected date!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXj-gA-n95">
+                    <rect key="frame" x="44.5" y="109.5" width="285.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
@@ -75,7 +82,9 @@
                 <constraint firstItem="DRc-Tr-NDc" firstAttribute="centerX" secondItem="vY2-vO-eJW" secondAttribute="centerX" id="S06-3c-aFA"/>
                 <constraint firstItem="vY2-vO-eJW" firstAttribute="leading" secondItem="r3G-Y1-9pJ" secondAttribute="trailing" constant="5" id="Ue5-Gd-U0T"/>
                 <constraint firstItem="r3G-Y1-9pJ" firstAttribute="centerY" secondItem="vY2-vO-eJW" secondAttribute="centerY" id="ZnY-NF-vFs"/>
+                <constraint firstItem="YXj-gA-n95" firstAttribute="centerX" secondItem="5tV-9B-fsi" secondAttribute="centerX" id="bOS-1g-hM7"/>
                 <constraint firstItem="5tV-9B-fsi" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="haM-3z-Zhc"/>
+                <constraint firstItem="5tV-9B-fsi" firstAttribute="top" secondItem="YXj-gA-n95" secondAttribute="bottom" constant="-60" id="lo7-on-Cc5"/>
                 <constraint firstItem="5tV-9B-fsi" firstAttribute="top" secondItem="vY2-vO-eJW" secondAttribute="bottom" constant="8" id="mEP-M9-aNJ"/>
                 <constraint firstItem="5tV-9B-fsi" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="sK0-Ca-TTJ"/>
                 <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="vY2-vO-eJW" secondAttribute="trailing" constant="10" id="y6r-Hx-oiX"/>

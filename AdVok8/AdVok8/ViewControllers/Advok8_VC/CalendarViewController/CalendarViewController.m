@@ -400,7 +400,7 @@
     }
 }
 
-
+#pragma mark - Loder
 -(void)addLoder{
     self.view.userInteractionEnabled = NO;
     //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
