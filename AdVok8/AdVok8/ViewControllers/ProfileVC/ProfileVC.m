@@ -85,8 +85,8 @@
        
             cell.lblUserName.text = objUser.UserName;
             cell.lblSubtitle.text = objUser.Details;
-            cell.lblCountFollowers.text = objUser.cntlike;
-            cell.lblCountFollowing.text = objUser.cntcmt;
+            cell.lblCountFollowers.text = objUser.cntcmt;
+            cell.lblCountFollowing.text = objUser.cntlike;
             [cell.imgView_Profile sd_setImageWithURL:[CommonFunction getProfilePicURLString:objUser.UserId] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
 
         }
