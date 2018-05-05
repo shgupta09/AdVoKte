@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RearViewController">
             <connections>
+                <outlet property="imgView" destination="Sra-5g-A3d" id="aZN-H0-XFV"/>
                 <outlet property="lblNAme" destination="CSM-Eb-mzZ" id="bE8-Os-Oav"/>
                 <outlet property="tbl_View" destination="Rpy-Ky-1kD" id="rIA-pM-Cd8"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

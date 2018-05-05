@@ -32,15 +32,6 @@
                                                  name:@"RefreshViews"
                                                object:nil];
 
-    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn] == true){
-        NSString* username = [CommonFunction getValueFromDefaultWithKey:@"loginUsername"];
-        _lblNAme.text = username;
-
-    }
-    else
-    {
-        _lblNAme.text = @"Guest";
-    }
     
      [_tbl_View registerNib:[UINib nibWithNibName:@"RearCell" bundle:nil]forCellReuseIdentifier:@"RearCell"];
     _tbl_View.rowHeight = UITableViewAutomaticDimension;
@@ -61,6 +52,16 @@
     // Do any additional setup after loading the view from its nib.
 }
 -(void)viewWillAppear:(BOOL)animated{
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn] == true){
+        NSString* username = [CommonFunction getValueFromDefaultWithKey:@"loginUsername"];
+        _lblNAme.text = [CommonFunction getValueFromDefaultWithKey:@"DisplayName"];
+        [_imgView sd_setImageWithURL:[CommonFunction getProfilePicURLString:username] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
+    }
+    else
+    {
+        _lblNAme.text = @"Guest";
+        _imgView.image = [UIImage imageNamed:@"dependentsuser"];
+    }
     
 }
 -(void)viewDidLayoutSubviews{
@@ -200,7 +201,16 @@
     
     if ([notification.name  isEqual: @"RefreshViews"]) {
         if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
-            _lblNAme.text = [CommonFunction getValueFromDefaultWithKey:@"loginUsername"];
+            if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn] == true){
+                NSString* username = [CommonFunction getValueFromDefaultWithKey:@"loginUsername"];
+                _lblNAme.text = [CommonFunction getValueFromDefaultWithKey:@"DisplayName"];
+                [_imgView sd_setImageWithURL:[CommonFunction getProfilePicURLString:username] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
+            }
+            else
+            {
+                _lblNAme.text = @"Guest";
+                _imgView.image = [UIImage imageNamed:@"dependentsuser"];
+            }
             titleArray  = [[NSMutableArray alloc]initWithObjects:@"Logout",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request", nil];
             titleImageArray = [[NSMutableArray alloc] initWithObjects:@"logout",@"home",@"Notify-1",@"Invite Friend-1",@"rateUs",@"callrequest", nil];
             [_tbl_View reloadData];

@@ -125,7 +125,7 @@
                         [CommonFunction storeValueInDefault:dataObj.ContactNo andKey:LOGINUSER];
                         [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:true];
                         [CommonFunction persistObjAsData:dataObj forKey:@"userData"];
-                        
+                        [CommonFunction storeValueInDefault:[NSString stringWithFormat:@"%@",dataObj.FirstName] andKey:@"DisplayName"];
                     }
                     else
                     {
@@ -148,6 +148,7 @@
                         [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:true];
                         [CommonFunction storeValueInDefault:LOGINUSER_AD andKey:LOGINUSER_TYPE];
                         [CommonFunction storeValueInDefault:dataObj.PractiseArea andKey:@"PractiseArea"];
+                        [CommonFunction storeValueInDefault:[NSString stringWithFormat:@"%@ %@",dataObj.fname,dataObj.lname] andKey:@"DisplayName"];
                         
                     }
                     
