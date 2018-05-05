@@ -146,7 +146,8 @@
                         
                         [CommonFunction storeValueInDefault:dataObj.username andKey:LOGINUSER];
                         [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:true];
-                       [CommonFunction storeValueInDefault:LOGINUSER_AD andKey:LOGINUSER_TYPE];
+                        [CommonFunction storeValueInDefault:LOGINUSER_AD andKey:LOGINUSER_TYPE];
+                        [CommonFunction storeValueInDefault:dataObj.PractiseArea andKey:@"PractiseArea"];
                         
                     }
                     

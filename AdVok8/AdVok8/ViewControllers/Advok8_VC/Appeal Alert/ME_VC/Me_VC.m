@@ -7,7 +7,7 @@
 //
 
 #import "Me_VC.h"
-#import "User_Profile_VC.h"ha
+#import "User_Profile_VC.h"
 @interface Me_VC ()
 
 @end
@@ -18,7 +18,25 @@
     [super viewDidLoad];
     [self setUpData];
     
-    _lblUsername.text = [CommonFunction getValueFromDefaultWithKey:@"loginUsername"];
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        if ([CommonFunction isadvoK8]) {
+            _lblUsername.text = [CommonFunction getValueFromDefaultWithKey:@"loginUsername"];
+            _lblSubtitle.text = [CommonFunction getValueFromDefaultWithKey:@"PractiseArea"];
+            
+        }
+        else
+        {
+            _lblUsername.text = [CommonFunction getValueFromDefaultWithKey:@"loginUsername"];
+            _lblSubtitle.text = @"";
+        }
+    }
+    else
+    {
+        _lblUsername.text = @"Guest User";
+        _lblSubtitle.text = @"";
+
+    }
+    
     [_imgViewProfilePic sd_setImageWithURL:[CommonFunction getProfilePicURLString:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"]] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
     // Do any additional setup after loading the view from its nib.
 }

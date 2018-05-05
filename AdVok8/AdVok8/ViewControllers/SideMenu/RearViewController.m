@@ -137,7 +137,7 @@
             break;
         case 3:
         {
-            NSString *textToShare = @"https://play.google.com/store/apps/details?id=com.advok8";
+            NSString *textToShare = @"Android app : https://play.google.com/store/apps/details?id=com.advok8  and find iOS app on app store : https://itunes.apple.com/us/app/advok8/id1375029911?ls=1&mt=8";
             NSArray *objectsToShare = @[textToShare];
             UIActivityViewController *activityVC = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
             
@@ -147,14 +147,20 @@
             break;
         case 4:
         {
-            
+            NSString *str = @"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1375029911";
+            if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
+                str = @"itms-apps://itunes.apple.com/app/idyourAppIDHere";
+            }
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
         }
             break;
         case 5:
         {
             [[NSNotificationCenter defaultCenter]
              postNotificationName:@"CallREQUEST"
-             object:self];        }
+             object:self];
+            
+        }
             break;
         case 6:
         {

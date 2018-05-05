@@ -55,34 +55,47 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    switch (indexPath.row) {
-        case 0:
-        {
-            CreatePostViewController* vc = [[CreatePostViewController alloc] initWithNibName:@"CreatePostViewController" bundle:nil];
-            vc.postType = @"Post";
-            UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
-            [self.navigationController presentViewController:navCon animated:true completion:nil];
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        switch (indexPath.row) {
+            case 0:
+            {
+                CreatePostViewController* vc = [[CreatePostViewController alloc] initWithNibName:@"CreatePostViewController" bundle:nil];
+                vc.postType = @"Post";
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
+                break;
+            case 1:
+            {
+                PublishArticleViewController* vc = [[PublishArticleViewController alloc] initWithNibName:@"PublishArticleViewController" bundle:nil];
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
+                break;
+            case 2:
+            {
+                CreatePostViewController* vc = [[CreatePostViewController alloc] initWithNibName:@"CreatePostViewController" bundle:nil];
+                vc.postType = @"Question";
+                UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+                [self.navigationController presentViewController:navCon animated:true completion:nil];
+            }
+                break;
+                
+            default:
+                break;
         }
-            break;
-        case 1:
-        {
-            PublishArticleViewController* vc = [[PublishArticleViewController alloc] initWithNibName:@"PublishArticleViewController" bundle:nil];
-            UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
-            [self.navigationController presentViewController:navCon animated:true completion:nil];
-        }
-            break;
-        case 2:
-        {
-            CreatePostViewController* vc = [[CreatePostViewController alloc] initWithNibName:@"CreatePostViewController" bundle:nil];
-            vc.postType = @"Question";
-            UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
-            [self.navigationController presentViewController:navCon animated:true completion:nil];
-        }
-            break;
-
-        default:
-            break;
     }
+    else
+    {
+        LoginViewController* vc ;
+        vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        vc.Behaviour = @"Action";
+        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+        [self.navigationController presentViewController:navCon animated:true completion:nil];
+        
+    }
+    
+    
 }
 
 @end
