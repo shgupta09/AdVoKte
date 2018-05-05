@@ -38,15 +38,14 @@
                         <outlet property="delegate" destination="-1" id="Y6K-bP-iiO"/>
                     </connections>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fG-Fu-EOh">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fG-Fu-EOh">
                     <rect key="frame" x="300" y="592" width="50" height="50"/>
-                    <color key="backgroundColor" red="0.90438944099999996" green="0.56282806399999996" blue="0.18984088299999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="ag1-vU-ks0"/>
                         <constraint firstAttribute="height" constant="50" id="iz1-Ve-Lw4"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
-                    <state key="normal" title="+">
+                    <state key="normal" image="ic_edit">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -75,5 +74,6 @@
     </objects>
     <resources>
         <image name="dependentsuser" width="512" height="512"/>
+        <image name="ic_edit" width="48" height="48"/>
     </resources>
 </document>
