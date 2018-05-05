@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+extern ADRegistrationModel* global_advocate_profileObj;
+
+
 @interface AdvocateProfileContainerViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *btnProfile;
 @property (weak, nonatomic) IBOutlet UIButton *btnAvailability;

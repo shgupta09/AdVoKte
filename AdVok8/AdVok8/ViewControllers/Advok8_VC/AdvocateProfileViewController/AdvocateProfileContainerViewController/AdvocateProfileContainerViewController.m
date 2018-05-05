@@ -11,14 +11,17 @@
 #import "AdvocateAvailabilityTabViewController.h"
 #import "AdvocateAchievementTabViewController.h"
 
+
 @interface AdvocateProfileContainerViewController ()
 {
     NSString* currentTabName;
-
+    LoderView* loderObj;
+    
 }
 @end
 
 @implementation AdvocateProfileContainerViewController
+ADRegistrationModel* global_advocate_profileObj;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +31,8 @@
    
     self.cons_activeTab.constant = -self.btnProfile.bounds.size.width;
     
+    [self hitApiToGetAdvocateData];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -36,8 +41,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
+}
 
-
+-(void)backTapped{
+    [self.navigationController popViewControllerAnimated:true];
+    
+}
 
 -(void) resetTabs {
    
@@ -67,8 +78,6 @@
                 
             [userInfo setValue:[AdvocateAvailabilityTabViewController new] forKey:@"ActiveViewController"];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"notification_Switch_To_Availability" object:self userInfo:userInfo];
-            
-            
         }
             break;
         case 102:
@@ -83,6 +92,90 @@
         default:
             break;
     }
+}
+
+
+#pragma mark - API related
+
+-(void)hitApiToGetAdvocateData{
+    
+    Rating *ratingObj = [Rating new];
+    
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
+    NSMutableDictionary* parameter = [NSMutableDictionary new];
+
+    [parameter setObject:dictRequest forKey:@"_user"];
+    
+    if ([ CommonFunction reachability]) {
+        //        [self addLoder];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_ADVOCATE_PROFILE]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                
+                [self removeloder];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1) {
+                    //Details Data
+                    NSDictionary* userData = [[json valueForKey:@"_adr"] objectAtIndex:0];
+                    
+                    ADRegistrationModel *dataObj = [ADRegistrationModel new];
+                    [userData enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                        @try {
+                            [dataObj setValue:obj forKey:(NSString *)key];
+                        } @catch (NSException *exception) {
+                            NSLog(exception.description);
+                            //  Handle an exception thrown in the @try block
+                        } @finally {
+                            //  Code that gets executed whether or not an exception is thrown
+                        }
+                    }];
+                    
+                    global_advocate_profileObj = dataObj;
+                    
+                    [[NSNotificationCenter defaultCenter] postNotificationName:@"Refresh_Profile_Availability_Data" object:nil];
+
+                    
+                }else
+                {
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[json valueForKey:@"ErrMsg"] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                    [alertController addAction:ok];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                    [self removeloder];
+                }
+                [self removeloder];
+                
+            }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
+        }];
+    } else {
+        [self removeloder];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+    }
+}
+
+
+-(void)addLoder{
+    self.view.userInteractionEnabled = NO;
+    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+    loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
+    loderObj.lbl_title.text = @"Please wait...";
+    [self.view addSubview:loderObj];
+}
+
+-(void)removeloder{
+    //loderObj = nil;
+    [loderObj removeFromSuperview];
+    //[loaderView removeFromSuperview];
+    self.view.userInteractionEnabled = YES;
 }
 
 @end

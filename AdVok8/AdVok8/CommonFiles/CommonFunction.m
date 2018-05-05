@@ -464,7 +464,7 @@
 
 
 +(NSString *)checkEmptyString:(NSString *)str{
-    if ([str isEqualToString:@""]) {
+    if ([str isKindOfClass:[NSNull class]] || [str isEqualToString:@""]) {
         return @"N/A";
     }
     return str;

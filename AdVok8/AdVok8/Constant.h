@@ -56,10 +56,11 @@ static NSString* const API_GET_LIKE_LIST = @"get_IndPostLikes";
 static NSString* const API_BOOK_APPOINTMENT = @"BookAppointment";
 static NSString* const API_DELETE_EVENT = @"DeleteEvent";
 static NSString* const API_INSERT_UPDATE_EVENT = @"insertupdateEvent";
-static NSString* const API_GET_ADVOCATE_CALENDAR = @"GetAdvDashboardCalendar";
+static NSString* const API_GET_ADVOCATE_CALENDAR = @"GetAdvDashboard";
 static NSString* const API_GET_CASELIST = @"getcaseData";
 static NSString* const API_GET_CauseListWithCase = @"GetCauseListWithCase";
 static NSString* const API_Call_Request = @"callrequest";
+static NSString* const API_GET_ADVOCATE_PROFILE = @"get_Advocate";
 
 
 

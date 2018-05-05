@@ -9,11 +9,12 @@
 #import "AdvocateAvailabilityTabViewController.h"
 #import "AdvocAvailabilityTableViewCell.h"
 
-@interface AdvocateAvailabilityTabViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,UITableViewDelegate,UITableViewDataSource>
+@interface AdvocateAvailabilityTabViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
     UIPickerView * picker;
     NSMutableArray* arrAdvocatetypes;
     AdvocAvailabilityTableViewCell* advocAvailabilityTableViewCell;
+    ADRegistrationModel* advocate_profileObj_Updated;
 }
 
 @end
@@ -25,7 +26,7 @@
     [super viewDidLoad];
     
     
-    //        [[NSNotificationCenter defaultCenter] removeObserver:self name:notification_refreshMCARequest_profileData object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshProfileData) name:@"Refresh_Profile_Availability_Data" object:nil];
     //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshProfileData) name:notification_refreshMCARequest_profileData object:nil];
     
     
@@ -46,6 +47,9 @@
     picker.showsSelectionIndicator = YES;
     picker.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     
+    advocate_profileObj_Updated = [ADRegistrationModel new];
+    advocate_profileObj_Updated = global_advocate_profileObj;
+    
     arrAdvocatetypes = [NSMutableArray new];
     arrAdvocatetypes = [[NSMutableArray alloc] initWithObjects:@"Student",@"Intern",@"Practicing",@"Mutual Funds", nil];
     
@@ -61,14 +65,75 @@
 
 -(void)refreshProfileData
 {
-    //    MCAProfileMC *ob = [[MCAProfileMC alloc] initWithCopyData: mca_request_profileDetailsDict];
-    //    mca_request_profileDetailsDictUpdated = ob;
     [self assignDataToCell];
 }
 
 -(void) assignDataToCell
 {
+
+    advocAvailabilityTableViewCell.txtOfcAddress1.text = advocate_profileObj_Updated.OffAddline;
+    advocAvailabilityTableViewCell.txtOfcAddress2.text = advocate_profileObj_Updated.OffAddline2;
+    advocAvailabilityTableViewCell.txtOfcPincode.text = advocate_profileObj_Updated.OffPincode;
+
+    [self resetbuttons];
     
+    if ([advocate_profileObj_Updated.mon isEqualToString:@"1"]){
+        for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+            if (btn.tag == 1001){
+                [btn setSelected:true];
+            }
+        }
+    }
+    if ([advocate_profileObj_Updated.tues isEqualToString:@"1"]){
+        for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+            if (btn.tag == 1002){
+                [btn setSelected:true];
+            }
+        }
+    }
+    if ([advocate_profileObj_Updated.wed isEqualToString:@"1"]){
+        for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+            if (btn.tag == 1003){
+                [btn setSelected:true];
+            }
+        }
+    }
+    if ([advocate_profileObj_Updated.thu isEqualToString:@"1"]){
+        for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+            if (btn.tag == 1004){
+                [btn setSelected:true];
+            }
+        }
+    }
+    if ([advocate_profileObj_Updated.fri isEqualToString:@"1"]){
+        for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+            if (btn.tag == 1005){
+                [btn setSelected:true];
+            }
+        }
+    }
+    if ([advocate_profileObj_Updated.sat isEqualToString:@"1"]){
+        for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+            if (btn.tag == 1006){
+                [btn setSelected:true];
+            }
+        }
+    }
+    if ([advocate_profileObj_Updated.sun isEqualToString:@"1"]){
+        for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+            if (btn.tag == 1007){
+                [btn setSelected:true];
+            }
+        }
+    }
+
+}
+
+-(void) resetbuttons{
+ 
+    for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+        [btn setSelected:false];
+    }
 }
 
 -(void)setUpTableView
@@ -154,22 +219,70 @@
     {
         
         
-        //        cell.txtCity.delegate = self;
-        //        cell.txtFundTypes.delegate = self;
-        //        cell.txtContactNu.delegate = self;
-        //        cell.txtEmailId.delegate = self;
-        //        cell.txtLoanAmount.delegate = self;
-        //
-        //        cell.txtLoanAmount.text = @"" ;
-        //        cell.txtCity.text = @"";
-        //        cell.txtEmailId.text = @"";
-        //        cell.txtContactNu.text = @"";
-        //        cell.txtFundTypes.text = @"";
-        //
-        //        cell.txtLoanAmount.keyboardType = UIKeyboardTypeNumberPad;
-        //
-        //        cell.txtFundTypes.inputView = picker;
-        //        [cell.btnCurrentLocation addTarget:self action:@selector(currentLocationTapped) forControlEvents:UIControlEventTouchUpInside];
+        advocAvailabilityTableViewCell.txtOfcAddress1.text = advocate_profileObj_Updated.OffAddline;
+        advocAvailabilityTableViewCell.txtOfcAddress2.text = advocate_profileObj_Updated.OffAddline2;
+        advocAvailabilityTableViewCell.txtOfcPincode.text = advocate_profileObj_Updated.OffPincode;
+        
+        [self resetbuttons];
+        
+        if ([advocate_profileObj_Updated.mon isEqualToString:@"1"]){
+            for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+                if (btn.tag == 1001){
+                    [btn setSelected:true];
+                }
+            }
+        }
+        if ([advocate_profileObj_Updated.tues isEqualToString:@"1"]){
+            for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+                if (btn.tag == 1002){
+                    [btn setSelected:true];
+                }
+            }
+        }
+        if ([advocate_profileObj_Updated.wed isEqualToString:@"1"]){
+            for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+                if (btn.tag == 1003){
+                    [btn setSelected:true];
+                }
+            }
+        }
+        if ([advocate_profileObj_Updated.thu isEqualToString:@"1"]){
+            for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+                if (btn.tag == 1004){
+                    [btn setSelected:true];
+                }
+            }
+        }
+        if ([advocate_profileObj_Updated.fri isEqualToString:@"1"]){
+            for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+                if (btn.tag == 1005){
+                    [btn setSelected:true];
+                }
+            }
+        }
+        if ([advocate_profileObj_Updated.sat isEqualToString:@"1"]){
+            for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+                if (btn.tag == 1006){
+                    [btn setSelected:true];
+                }
+            }
+        }
+        if ([advocate_profileObj_Updated.sun isEqualToString:@"1"]){
+            for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+                if (btn.tag == 1007){
+                    [btn setSelected:true];
+                }
+            }
+        }
+        
+        cell.txtOfcPincode.delegate = self;
+        cell.txtOfcAddress1.delegate = self;
+        cell.txtOfcAddress2.delegate = self;
+
+        for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect){
+            [btn addTarget:self action:@selector(btnDaysSelectedTapped:) forControlEvents:UIControlEventTouchUpInside];
+        }
+        
         //        [cell.btnNext addTarget:self action:@selector(btnNextTapped:) forControlEvents:UIControlEventTouchUpInside];
         //
         //        [cell.txtContactNu addCountryCode];
@@ -190,7 +303,49 @@
         //                         nil];
         //        [toolbar sizeToFit];
         //        cell.txtFundTypes.inputAccessoryView = toolbar;
+        
     }
+}
+
+-(IBAction)btnDaysSelectedTapped:(id)sender
+{
+    UIButton* btn = sender;
+    NSString* state = @"";
+    if (btn.selected == true){
+        btn.selected = false;
+        state = @"0";
+    }
+    else{
+        btn.selected = true;
+        state = @"1";
+    }
+    switch (btn.tag) {
+        case 1001:
+            advocate_profileObj_Updated.mon = state;
+            break;
+        case 1002:
+            advocate_profileObj_Updated.tues = state;
+            break;
+        case 1003:
+            advocate_profileObj_Updated.wed = state;
+            break;
+        case 1004:
+            advocate_profileObj_Updated.thu = state;
+            break;
+        case 1005:
+            advocate_profileObj_Updated.fri = state;
+            break;
+        case 1006:
+            advocate_profileObj_Updated.sat = state;
+            break;
+        case 1007:
+            advocate_profileObj_Updated.sun = state;
+            break;
+
+        default:
+            break;
+    }
+    
 }
 
 //#pragma mark - Picker View Delegates Methods

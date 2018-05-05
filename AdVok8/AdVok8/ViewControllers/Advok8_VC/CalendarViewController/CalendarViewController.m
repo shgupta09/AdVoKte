@@ -10,7 +10,7 @@
 #import "JTCalendarDayView.h"
 #import "CreateTaskVC.h"
 #import "CalenderModel.h"
-
+#import "CasePageVC.h"
 @interface CalendarViewController ()<UIAlertViewDelegate>
 {
     NSMutableArray *_eventsByDate;
@@ -467,13 +467,13 @@
         }else if ([((CalenderModel *)obj).type isEqualToString:Case_List_Data_Calender]){
             CaseList *tempObj = ((CalenderModel *)obj).caseObj;
 
-//                cell.lblTopRight.text = tempObj.CaseTypeName;
-//                cell.lblTopLeft.text = tempObj.CourtName;
-//                cell.lblHeading.text = [NSString stringWithFormat:@"%@ vs %@",tempObj.PetitionerName,tempObj.RespondantName];
-//                cell.lblSubtitle.text = tempObj.BenchName;
-//                cell.lblCourt.text = [NSString stringWithFormat:@"Court: %d",tempObj.CourtNo];
-//                cell.lblItem.text = [NSString stringWithFormat:@"Item: %@",tempObj.CaseSeqNo];
-//                cell.lblType.text = @"C.List" ;
+                cell.lblTopRight.text = tempObj.CaseTypeName;
+                cell.lblTopLeft.text = tempObj.CourtName;
+                cell.lblHeading.text = [NSString stringWithFormat:@"%@ vs %@",tempObj.PetitionerName,tempObj.RespondantName];
+                cell.lblSubtitle.text = tempObj.PetitionerAdvocateName;
+                cell.lblCourt.text = @"";
+                cell.lblItem.text = @"";
+                cell.lblType.text = @"Case" ;
         }
    
     
@@ -486,6 +486,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
    CalenderModel *obj = [arrTableData objectAtIndex:indexPath.row];
     if ([((CalenderModel *)obj).type isEqualToString:Cause_List_Data_Calender]) {
+        CasePageVC *caseOBJ = [[CasePageVC alloc]initWithNibName:@"CasePageVC" bundle:nil];
+        caseOBJ.isFromDailyCauseList = true;
+        caseOBJ.causeListObj = obj.causeObj;
+        [self.navigationController pushViewController:caseOBJ animated:true];
         
     }else if ([((CalenderModel *)obj).type isEqualToString:Event_List_Data_Calender]){
         TaskDetailVC *createTaskObj = [[TaskDetailVC alloc]initWithNibName:@"TaskDetailVC" bundle:nil];
@@ -493,7 +497,12 @@
         createTaskObj.fromViewController = self;
         [self.navigationController pushViewController:createTaskObj animated:true];
     }else if ([((CalenderModel *)obj).type isEqualToString:Case_List_Data_Calender]){
-        
+
+        CasePageVC *caseOBJ = [[CasePageVC alloc]initWithNibName:@"CasePageVC" bundle:nil];
+        CaseList *dataObj  = obj.caseObj;
+        caseOBJ.dataObj = dataObj;
+        caseOBJ.isFromDailyCauseList = false;
+        [self.navigationController pushViewController:caseOBJ animated:true];
     }
 }
 
@@ -565,8 +574,8 @@
             
           
         }else if ([((CalenderModel *)obj).type isEqualToString:Case_List_Data_Calender]){
-            if ([((CaseList *)((CalenderModel *)obj).caseObj).lld isEqualToString:selectedDate]) {
-//                [arrTableData addObject:obj];
+            if ([((CaseList *)((CalenderModel *)obj).caseObj).upcominghearingDate isEqualToString:selectedDate]) {
+                [arrTableData addObject:obj];
             }
         }
     }];

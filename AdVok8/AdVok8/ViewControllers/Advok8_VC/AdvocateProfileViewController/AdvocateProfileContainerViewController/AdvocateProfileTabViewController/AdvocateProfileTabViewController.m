@@ -8,7 +8,7 @@
 
 #import "AdvocateProfileTabViewController.h"
 #import "AdvocProfileTableViewCell.h"
-@interface AdvocateProfileTabViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,UITableViewDelegate,UITableViewDataSource>
+@interface AdvocateProfileTabViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
     UIPickerView * picker;
     NSMutableArray* arrAdvocatetypes;
@@ -22,10 +22,8 @@
 {
     [super viewDidLoad];
     
-
 //        [[NSNotificationCenter defaultCenter] removeObserver:self name:notification_refreshMCARequest_profileData object:nil];
 //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshProfileData) name:notification_refreshMCARequest_profileData object:nil];
-    
     
     [self initialiseView];
     [self initialiseData];
@@ -47,7 +45,8 @@
     arrAdvocatetypes = [NSMutableArray new];
     arrAdvocatetypes = [[NSMutableArray alloc] initWithObjects:@"Student",@"Intern",@"Practicing",@"Mutual Funds", nil];
     
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshProfileData) name:@"Refresh_Profile_Availability_Data" object:nil];
+
     [self setupViewWithData];
 }
 
@@ -66,7 +65,16 @@
 
 -(void) assignDataToCell
 {
-    
+    advocProfileTableViewCell.txtFirstName.text = global_advocate_profileObj.fname;
+    advocProfileTableViewCell.txtLastName.text = global_advocate_profileObj.lname;
+    advocProfileTableViewCell.txtEmailID.text = global_advocate_profileObj.EmailId;
+    advocProfileTableViewCell.txtContactNumber.text = global_advocate_profileObj.mobile;
+    advocProfileTableViewCell.txtGender.text = global_advocate_profileObj.Gender;
+    advocProfileTableViewCell.txtFDOB.text = global_advocate_profileObj.DOB;
+    advocProfileTableViewCell.txtBarcode.text = global_advocate_profileObj.BarCodeId;
+    advocProfileTableViewCell.txtDescription.text = global_advocate_profileObj.PractiseArea;
+    advocProfileTableViewCell.txtConsultancyFees.text = global_advocate_profileObj.ConsultancyFees;
+    advocProfileTableViewCell.txtAdvocateType.text = global_advocate_profileObj.Advocatetype;
 }
 
 -(void)setUpTableView
@@ -151,22 +159,33 @@
     if (indexPath.section == 0)
     {
         
-        
-//        cell.txtCity.delegate = self;
-//        cell.txtFundTypes.delegate = self;
-//        cell.txtContactNu.delegate = self;
-//        cell.txtEmailId.delegate = self;
-//        cell.txtLoanAmount.delegate = self;
+        cell.txtFirstName.text = global_advocate_profileObj.fname;
+        cell.txtLastName.text = global_advocate_profileObj.lname;
+        cell.txtEmailID.text = global_advocate_profileObj.EmailId;
+        cell.txtContactNumber.text = global_advocate_profileObj.mobile;
+        cell.txtGender.text = global_advocate_profileObj.Gender;
+        cell.txtFDOB.text = global_advocate_profileObj.DOB;
+        cell.txtBarcode.text = global_advocate_profileObj.BarCodeId;
+        cell.txtDescription.text = global_advocate_profileObj.PractiseArea;
+        cell.txtConsultancyFees.text = global_advocate_profileObj.ConsultancyFees;
+        cell.txtAdvocateType.text = global_advocate_profileObj.Advocatetype;
+
+        cell.txtFirstName.delegate = self;
+        cell.txtLastName.delegate = self;
+        cell.txtEmailID.delegate = self;
+        cell.txtContactNumber.delegate = self;
+        cell.txtGender.delegate = self;
+        cell.txtFDOB.delegate = self;
+        cell.txtBarcode.delegate = self;
+        cell.txtDescription.delegate = self;
+        cell.txtConsultancyFees.delegate = self;
+        cell.txtAdvocateType.delegate = self;
+
 //
-//        cell.txtLoanAmount.text = @"" ;
-//        cell.txtCity.text = @"";
-//        cell.txtEmailId.text = @"";
-//        cell.txtContactNu.text = @"";
-//        cell.txtFundTypes.text = @"";
+        cell.txtContactNumber.keyboardType = UIKeyboardTypeNumberPad;
+        cell.txtConsultancyFees.keyboardType = UIKeyboardTypeNumberPad;
 //
-//        cell.txtLoanAmount.keyboardType = UIKeyboardTypeNumberPad;
-//
-//        cell.txtFundTypes.inputView = picker;
+        //        cell.txtFundTypes.inputView = picker;
 //        [cell.btnCurrentLocation addTarget:self action:@selector(currentLocationTapped) forControlEvents:UIControlEventTouchUpInside];
 //        [cell.btnNext addTarget:self action:@selector(btnNextTapped:) forControlEvents:UIControlEventTouchUpInside];
 //

@@ -41,10 +41,10 @@
 
 - (IBAction)btnAction_ViewProfile:(id)sender {
     if ([CommonFunction isadvoK8]) {
-        AdvocateProfileContainerViewController *vc = [[UIStoryboard storyboardWithName:@"AdvocateProfileStoryboard" bundle:nil]instantiateViewControllerWithIdentifier:@"AdvocateProfileContainerViewController"];
+        AdvocateProfileViewOnlyViewController *vc = [[AdvocateProfileViewOnlyViewController alloc] initWithNibName:@"AdvocateProfileViewOnlyViewController" bundle:nil];
         
         [self.navigationController pushViewController:vc animated:true];
-        
+
         
     }else{
         User_Profile_VC *profileObj = [[User_Profile_VC alloc]initWithNibName:@"User_Profile_VC" bundle:nil];

@@ -96,6 +96,8 @@
 #import "AdvocateAvailabilityTabViewController.h"
 #import "AdvocateAchievementTabViewController.h"
 #import "AdvocateProfileContainerViewController.h"
+#import "AdvocateProfileViewOnlyViewController.h"
+
 #endif /* PrefixHeader_pch */
 
 

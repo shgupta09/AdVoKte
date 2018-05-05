@@ -9,16 +9,19 @@
 #import <UIKit/UIKit.h>
 
 @interface AdvocProfileTableViewCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtFirstName;
-@property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtLastName;
-@property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtEmailID;
-@property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtContactNumber;
-@property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtGender;
-@property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtFDOB;
-@property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtBarcode;
-@property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtDescription;
-@property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtConsultancyFees;
-@property (weak, nonatomic) IBOutlet TextFieldBaselineWithLeftRight *txtAdvocateType;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtFirstName;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtLastName;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtEmailID;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtContactNumber;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtGender;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtFDOB;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtBarcode;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtDescription;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtConsultancyFees;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txtAdvocateType;
 
 
 @end
+
+
+

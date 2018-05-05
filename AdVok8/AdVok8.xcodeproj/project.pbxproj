@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F12F116209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F12F114209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.m */; };
+		5F12F117209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F12F115209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.xib */; };
 		5F1B9C2D203413F8009503E7 /* DashboardBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C2B203413F8009503E7 /* DashboardBaseViewController.m */; };
 		5F1B9C2E203413F8009503E7 /* DashboardBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F1B9C2C203413F8009503E7 /* DashboardBaseViewController.xib */; };
 		5F1B9C33203415B9009503E7 /* DashboardHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1B9C31203415B9009503E7 /* DashboardHomeCollectionViewCell.m */; };
@@ -222,6 +224,9 @@
 /* Begin PBXFileReference section */
 		451D0C401EC04053B7C1ED21 /* libPods-AdVok8Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdVok8Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DB2464D49DD7471880FD048 /* Pods-AdVok8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8.debug.xcconfig"; sourceTree = "<group>"; };
+		5F12F113209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdvocateProfileViewOnlyViewController.h; sourceTree = "<group>"; };
+		5F12F114209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdvocateProfileViewOnlyViewController.m; sourceTree = "<group>"; };
+		5F12F115209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvocateProfileViewOnlyViewController.xib; sourceTree = "<group>"; };
 		5F1B9C2A203413F8009503E7 /* DashboardBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DashboardBaseViewController.h; sourceTree = "<group>"; };
 		5F1B9C2B203413F8009503E7 /* DashboardBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DashboardBaseViewController.m; sourceTree = "<group>"; };
 		5F1B9C2C203413F8009503E7 /* DashboardBaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardBaseViewController.xib; sourceTree = "<group>"; };
@@ -590,6 +595,16 @@
 				ADD73CAB49F10EB83788EA97 /* Pods-AdVok8Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5F12F112209D5DF20050634B /* AdvocateProfileViewOnlyViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5F12F113209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.h */,
+				5F12F114209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.m */,
+				5F12F115209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.xib */,
+			);
+			path = AdvocateProfileViewOnlyViewController;
 			sourceTree = "<group>";
 		};
 		5F1B9C29203413DD009503E7 /* DashboardBaseViewController */ = {
@@ -1255,6 +1270,7 @@
 		5FBE623C209B7E3800AD2215 /* AdvocateProfileContainerViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5F12F112209D5DF20050634B /* AdvocateProfileViewOnlyViewController */,
 				5FBE6250209B8ECF00AD2215 /* TableviewCells */,
 				5FBE624C209B7EFE00AD2215 /* AdvocateAchievementTabViewController */,
 				5FBE6248209B7EDA00AD2215 /* AdvocateAvailabilityTabViewController */,
@@ -1878,6 +1894,7 @@
 				5F71B6AB204E8E76004229DF /* LawyerListVC.xib in Resources */,
 				5F1B9C4C20343889009503E7 /* FeedViewController.xib in Resources */,
 				5F58FC6B2078A124009C5D9C /* ConfirmAppointmentViewController.xib in Resources */,
+				5F12F117209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.xib in Resources */,
 				D8C3C2B1207022970089A3CC /* TaskDetailVC.xib in Resources */,
 				D804D60D2082855A00766DF3 /* Edit_UserProfile_VC.xib in Resources */,
 				D8C3C29E206FB1D10089A3CC /* CaseListCell2.xib in Resources */,
@@ -2109,6 +2126,7 @@
 				D8C3C2B0207022970089A3CC /* TaskDetailVC.m in Sources */,
 				9CF77D14205FD1EF00366505 /* FeedbackVC.m in Sources */,
 				9C70B276206E32CA00850305 /* CaseListCell.m in Sources */,
+				5F12F116209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.m in Sources */,
 				5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */,
 				9C70B26B206E0F4200850305 /* CaseListVC.m in Sources */,
 				5F96B778207541CC003CD72F /* SearchPostTableViewCell.m in Sources */,
