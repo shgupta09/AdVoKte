@@ -68,7 +68,6 @@
         [cell.img_Profile sd_setImageWithURL:[CommonFunction getProfilePicURLString:tempObj.username] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
         return cell;
     }else{
-        
         LabelCell *cell = [_tblView dequeueReusableCellWithIdentifier:@"LabelCell"];
         if (cell == nil) {
             cell = [[LabelCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"LabelCell"];

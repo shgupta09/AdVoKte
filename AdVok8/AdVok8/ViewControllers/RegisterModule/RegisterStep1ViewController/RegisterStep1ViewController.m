@@ -28,8 +28,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _cons_txtOTP_height.constant = 0;
-    self.navigationController.navigationItem.title = [NSString stringWithFormat:@"%@ Register",_userType];
-    
+    [CommonFunction setNavToController:self title:@"Register" isCrossBusston:false];
     _txtEnterOTP.rightViewMode = UITextFieldViewModeAlways;
     
     lblTimer = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
@@ -329,11 +328,11 @@
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
     
     [dictRequest setValue:_txtMobile.text forKey:@"mobile"];
-    [dictRequest setValue:_txtFirstName.text forKey:@"fname"];
-    [dictRequest setValue:@"" forKey:@"lname"];
-    [dictRequest setValue:_txtPassword.text forKey:@"pass"];
-    [dictRequest setValue:_txtEnterOTP.text forKey:@"BarCodeId"];
-    [dictRequest setValue:_txtEmailAddress.text forKey:@"username"];
+    [dictRequest setValue:_txtFirstName.text forKey:@"FirstName"];
+    [dictRequest setValue:@"" forKey:@"LastName"];
+    [dictRequest setValue:_txtPassword.text forKey:@"password"];
+    [dictRequest setValue:_txtEnterOTP.text forKey:@"ContactNo"];
+    [dictRequest setValue:_txtEmailAddress.text forKey:@"EmailId"];
 
     [parameter setValue:dictRequest forKey:@"_user"];
     
@@ -348,9 +347,9 @@
                 
                 [self removeloder];
                 
-                if ([[json valueForKey:@"ErrMsg"]  isEqual: @""]){
+                if ([[json valueForKey:@"Status"]  isEqual: @"1"]){
 
-                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[json valueForKey:@"ErrMsg"] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Registered Successfully, Please login to continue." preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction* action){
                         [self.navigationController dismissViewControllerAnimated:true completion:nil];
                     }];
@@ -360,7 +359,7 @@
                     
                 }else
                 {
-                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[json valueForKey:@"ErrMsg"] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Registered Unsucessful" preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
                     [alertController addAction:ok];
                     [self presentViewController:alertController animated:YES completion:nil];
