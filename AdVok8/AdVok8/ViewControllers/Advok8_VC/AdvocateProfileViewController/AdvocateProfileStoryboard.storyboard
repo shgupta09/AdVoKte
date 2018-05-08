@@ -128,7 +128,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="804"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m5N-Yx-ajR" id="UzD-5i-wZx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="803.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="804"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tkb-nf-oXJ">
@@ -426,7 +426,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="839"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MMY-GY-tK5" id="awy-gY-xai">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="838.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="839"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lTY-8i-KRn">
@@ -434,6 +434,9 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Office Address 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFY-LK-Uvg">
                                                             <rect key="frame" x="10" y="10" width="106.5" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="hIj-Xd-2qK"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -449,6 +452,9 @@
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Office Address 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3a-Ar-z9d">
                                                             <rect key="frame" x="10" y="71" width="108.5" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="hen-0h-8QT"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -464,6 +470,9 @@
                                                         </textField>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Office Pin Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7N-cf-lcE">
                                                             <rect key="frame" x="10" y="132" width="101.5" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="dBr-eK-SWJ"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -490,6 +499,9 @@
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9p-Mw-vOF">
                                                             <rect key="frame" x="10" y="193" width="91.5" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="17" id="dD4-kq-DjV"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -577,7 +589,6 @@
                                                                 </button>
                                                             </subviews>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="VZo-ma-spZ"/>
                                                                 <constraint firstAttribute="height" constant="40" id="cUs-5Y-VQ7"/>
                                                             </constraints>
                                                         </stackView>
@@ -620,6 +631,9 @@
                                                                                     </state>
                                                                                 </button>
                                                                             </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="50" id="X2X-IJ-tk3"/>
+                                                                            </constraints>
                                                                         </stackView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -875,6 +889,7 @@
                                                         <constraint firstItem="Hmj-na-REN" firstAttribute="leading" secondItem="lTY-8i-KRn" secondAttribute="leading" id="OVR-xI-P7D"/>
                                                         <constraint firstAttribute="trailing" secondItem="Hmj-na-REN" secondAttribute="trailing" id="OsT-dD-fs7"/>
                                                         <constraint firstItem="jjf-G1-nYC" firstAttribute="leading" secondItem="lTY-8i-KRn" secondAttribute="leading" constant="10" id="S1L-ye-rk2"/>
+                                                        <constraint firstItem="Hmj-na-REN" firstAttribute="top" secondItem="EKd-oV-Tbh" secondAttribute="bottom" constant="61.5" id="Yle-5L-H7K"/>
                                                         <constraint firstItem="y7N-cf-lcE" firstAttribute="top" secondItem="4rS-kT-xi9" secondAttribute="bottom" constant="8" id="aG9-35-zWc"/>
                                                         <constraint firstItem="4rS-kT-xi9" firstAttribute="leading" secondItem="jXT-qZ-0DJ" secondAttribute="leading" id="agG-On-Ngq"/>
                                                         <constraint firstItem="y7N-cf-lcE" firstAttribute="leading" secondItem="4rS-kT-xi9" secondAttribute="leading" id="dNE-7L-z6f"/>
@@ -883,7 +898,6 @@
                                                         <constraint firstItem="Kuz-dT-prD" firstAttribute="top" secondItem="jjf-G1-nYC" secondAttribute="bottom" constant="10" id="hMV-1q-ojg"/>
                                                         <constraint firstItem="zGo-vU-SJ0" firstAttribute="leading" secondItem="4rS-kT-xi9" secondAttribute="leading" id="lWM-io-189"/>
                                                         <constraint firstItem="Tg6-fM-87E" firstAttribute="leading" secondItem="lTY-8i-KRn" secondAttribute="leading" constant="10" id="mcL-1y-fOd"/>
-                                                        <constraint firstAttribute="height" constant="818.5" id="r8E-xL-7sR"/>
                                                         <constraint firstItem="EKd-oV-Tbh" firstAttribute="top" secondItem="Kuz-dT-prD" secondAttribute="bottom" constant="8" id="wUF-yz-rv5"/>
                                                         <constraint firstAttribute="trailing" secondItem="EKd-oV-Tbh" secondAttribute="trailing" constant="8" id="wZP-py-GVw"/>
                                                     </constraints>
@@ -909,6 +923,13 @@
                                             <outlet property="txtOfcAddress1" destination="jXT-qZ-0DJ" id="2mF-CM-s52"/>
                                             <outlet property="txtOfcAddress2" destination="4rS-kT-xi9" id="m95-dY-uu0"/>
                                             <outlet property="txtOfcPincode" destination="zGo-vU-SJ0" id="a9c-H9-zMK"/>
+                                            <outlet property="viMonday" destination="bH0-Fn-vKs" id="Zw3-Q4-jHE"/>
+                                            <outlet property="viSaturday" destination="E7w-Yd-hpK" id="vZw-Xz-dOZ"/>
+                                            <outlet property="viSunday" destination="n6Z-nd-wa1" id="Wal-e5-RNG"/>
+                                            <outlet property="vi_friday" destination="uYY-W1-ETQ" id="Eka-cz-tMX"/>
+                                            <outlet property="vi_thurday" destination="40f-Tk-5N6" id="2Zq-fX-sO2"/>
+                                            <outlet property="vi_tuesday" destination="gCb-rB-YWZ" id="vm1-gi-cNp"/>
+                                            <outlet property="vi_wednesday" destination="oOg-SS-bvz" id="CV8-Fs-f6Y"/>
                                             <outletCollection property="btnDaysSelect" destination="r6i-eF-JJb" id="2OF-vc-1No"/>
                                             <outletCollection property="btnDaysSelect" destination="aie-H5-TO4" id="UHU-zj-DY2"/>
                                             <outletCollection property="btnDaysSelect" destination="88d-SH-1ri" id="7pg-Rz-QUP"/>
@@ -974,7 +995,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="828"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Gx-jr-M0r" id="MsH-lu-om8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="827.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="828"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Yx-ty-pJr">

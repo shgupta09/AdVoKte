@@ -15,6 +15,7 @@
     NSMutableArray* arrAdvocatetypes;
     AdvocAvailabilityTableViewCell* advocAvailabilityTableViewCell;
     ADRegistrationModel* advocate_profileObj_Updated;
+    int count;
 }
 
 @end
@@ -192,7 +193,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 2;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    if (indexPath.row==0){
+        return 839-350+(50*count);
+    }
+    else
+    {
+        return 5;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -217,8 +229,6 @@
     
     if (indexPath.section == 0)
     {
-        
-        
         advocAvailabilityTableViewCell.txtOfcAddress1.text = advocate_profileObj_Updated.OffAddline;
         advocAvailabilityTableViewCell.txtOfcAddress2.text = advocate_profileObj_Updated.OffAddline2;
         advocAvailabilityTableViewCell.txtOfcPincode.text = advocate_profileObj_Updated.OffPincode;
@@ -275,6 +285,7 @@
             }
         }
         
+        [self setStackView];
         cell.txtOfcPincode.delegate = self;
         cell.txtOfcAddress1.delegate = self;
         cell.txtOfcAddress2.delegate = self;
@@ -346,6 +357,72 @@
             break;
     }
     
+    [self setStackView];
+    [self.tblView reloadData];
+    [_tblView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:false];
+}
+
+-(void) setStackView{
+    [self resetStackView];
+    count = 0;
+    if ([advocate_profileObj_Updated.mon isEqualToString:@"1"]){
+        advocAvailabilityTableViewCell.cons_mondayView_height.constant = 50;
+        advocAvailabilityTableViewCell.viMonday.hidden = false;
+        count++;
+    }
+    if ([advocate_profileObj_Updated.tues isEqualToString:@"1"]){
+        advocAvailabilityTableViewCell.cons_tuesView_height.constant = 50;
+        advocAvailabilityTableViewCell.vi_tuesday.hidden = false;
+        count++;
+    }
+    if ([advocate_profileObj_Updated.wed isEqualToString:@"1"]){
+        advocAvailabilityTableViewCell.cons_wednesdayView_height.constant = 50;
+        advocAvailabilityTableViewCell.vi_wednesday.hidden = false;
+        count++;
+    }
+    if ([advocate_profileObj_Updated.thu isEqualToString:@"1"]){
+        advocAvailabilityTableViewCell.cons_thursView_height.constant = 50;
+        advocAvailabilityTableViewCell.vi_thurday.hidden = false;
+        count++;
+    }
+    if ([advocate_profileObj_Updated.fri isEqualToString:@"1"]){
+        advocAvailabilityTableViewCell.cons_friView_height.constant = 50;
+        advocAvailabilityTableViewCell.vi_friday.hidden = false;
+        count++;
+    }
+    if ([advocate_profileObj_Updated.sat isEqualToString:@"1"]){
+        advocAvailabilityTableViewCell.cons_satView_height.constant = 50;
+        advocAvailabilityTableViewCell.viSaturday.hidden = false;
+        count++;
+    }
+    if ([advocate_profileObj_Updated.sun isEqualToString:@"1"]){
+        advocAvailabilityTableViewCell.cons_sunView_height.constant = 50;
+        advocAvailabilityTableViewCell.viSunday.hidden = false;
+
+        count++;
+    }
+    
+    advocAvailabilityTableViewCell.cons_stackViewWeekHeight.constant = 50*count;
+}
+
+-(void) resetStackView
+{
+    advocAvailabilityTableViewCell.cons_mondayView_height.constant = 0;
+    advocAvailabilityTableViewCell.cons_tuesView_height.constant = 0;
+    advocAvailabilityTableViewCell.cons_wednesdayView_height.constant = 0;
+    advocAvailabilityTableViewCell.cons_thursView_height.constant = 0;
+    advocAvailabilityTableViewCell.cons_friView_height.constant = 0;
+    advocAvailabilityTableViewCell.cons_satView_height.constant = 0;
+    advocAvailabilityTableViewCell.cons_sunView_height.constant = 0;
+    
+    advocAvailabilityTableViewCell.viMonday.hidden = true;
+    advocAvailabilityTableViewCell.vi_tuesday.hidden = true;
+    advocAvailabilityTableViewCell.vi_wednesday.hidden = true;
+    advocAvailabilityTableViewCell.vi_thurday.hidden = true;
+    advocAvailabilityTableViewCell.vi_friday.hidden = true;
+    advocAvailabilityTableViewCell.viSaturday.hidden = true;
+    advocAvailabilityTableViewCell.viSunday.hidden = true;
+
 }
 
 //#pragma mark - Picker View Delegates Methods

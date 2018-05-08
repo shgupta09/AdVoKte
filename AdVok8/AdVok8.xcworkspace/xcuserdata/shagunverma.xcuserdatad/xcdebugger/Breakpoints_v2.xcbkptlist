@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/RegisterModule/RegisterStep1ViewController/RegisterStep1ViewController.m"
-            timestampString = "547307833.836823"
+            filePath = "AdVok8/ViewControllers/Advok8_VC/AdvocateProfileViewController/AdvocateProfileContainerViewController/AdvocateAvailabilityTabViewController/AdvocateAvailabilityTabViewController.m"
+            timestampString = "547506294.325556"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
-            landmarkName = "-hitApiToSendOTP"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
+            landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/RegisterModule/RegisterStep1ViewController/RegisterStep1ViewController.m"
-            timestampString = "547307833.837319"
+            filePath = "AdVok8/ViewControllers/Advok8_VC/AdvocateProfileViewController/AdvocateProfileContainerViewController/AdvocateAvailabilityTabViewController/AdvocateAvailabilityTabViewController.m"
+            timestampString = "547506294.326533"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "387"
-            endingLineNumber = "387"
-            landmarkName = "-hitApiToFinishRegistration"
+            startingLineNumber = "406"
+            endingLineNumber = "406"
+            landmarkName = "-setStackView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/LegislateBaseViewController/CreatePostViewController/CreatePostViewController.m"
-            timestampString = "547307833.837599"
+            filePath = "AdVok8/ViewControllers/Advok8_VC/AdvocateProfileViewController/AdvocateProfileContainerViewController/AdvocateAvailabilityTabViewController/AdvocateAvailabilityTabViewController.m"
+            timestampString = "547506294.326937"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
-            landmarkName = "-hitApiToPost"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "-tableView:heightForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/LegislateBaseViewController/CreatePostViewController/CreatePostViewController.m"
-            timestampString = "547307833.83768"
+            filePath = "AdVok8/ViewControllers/Advok8_VC/AdvocateProfileViewController/AdvocateProfileContainerViewController/AdvocateAvailabilityTabViewController/AdvocateAvailabilityTabViewController.m"
+            timestampString = "547506294.327243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "371"
-            endingLineNumber = "371"
-            landmarkName = "-hitApiToPost"
+            startingLineNumber = "400"
+            endingLineNumber = "400"
+            landmarkName = "-setStackView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -73,13 +73,125 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/ViewControllers/LegislateBaseViewController/CreatePostViewController/CreatePostViewController.m"
-            timestampString = "547307833.837746"
+            filePath = "AdVok8/ViewControllers/Advok8_VC/AdvocateProfileViewController/AdvocateProfileContainerViewController/AdvocateAvailabilityTabViewController/AdvocateAvailabilityTabViewController.m"
+            timestampString = "547506294.3275141"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
-            landmarkName = "-hitApiToPost"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "-assignDataToCell"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AdvocateAvailabilityTabViewController assignDataToCell]"
+                  moduleName = "AdVok8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shagunverma/Work/My%20Projects/Freelance%20Work/GitHub/AdVoKte/AdVok8/AdVok8/ViewControllers/Advok8_VC/AdvocateProfileViewController/AdvocateProfileContainerViewController/AdvocateAvailabilityTabViewController/AdvocateAvailabilityTabViewController.m"
+                  timestampString = "547506112.325889"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "651">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AdvocateAvailabilityTabViewController assignDataToCell]"
+                  moduleName = "AdVok8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shagunverma/Work/My%20Projects/Freelance%20Work/GitHub/AdVoKte/AdVok8/AdVok8/ViewControllers/Advok8_VC/AdvocateProfileViewController/AdvocateProfileContainerViewController/AdvocateAvailabilityTabViewController/AdvocateAvailabilityTabViewController.m"
+                  timestampString = "547506112.329725"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "666">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdVok8/ViewControllers/Advok8_VC/AdvocateProfileViewController/AdvocateProfileContainerViewController/AdvocateAvailabilityTabViewController/AdvocateAvailabilityTabViewController.m"
+            timestampString = "547506294.327781"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-assignDataToCell"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AdvocateAvailabilityTabViewController assignDataToCell]"
+                  moduleName = "AdVok8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shagunverma/Work/My%20Projects/Freelance%20Work/GitHub/AdVoKte/AdVok8/AdVok8/ViewControllers/Advok8_VC/AdvocateProfileViewController/AdvocateProfileContainerViewController/AdvocateAvailabilityTabViewController/AdvocateAvailabilityTabViewController.m"
+                  timestampString = "547506112.336485"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "1240">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AdvocateAvailabilityTabViewController assignDataToCell]"
+                  moduleName = "AdVok8"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shagunverma/Work/My%20Projects/Freelance%20Work/GitHub/AdVoKte/AdVok8/AdVok8/ViewControllers/Advok8_VC/AdvocateProfileViewController/AdvocateProfileContainerViewController/AdvocateAvailabilityTabViewController/AdvocateAvailabilityTabViewController.m"
+                  timestampString = "547506112.3403209"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "1255">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdVok8/ViewControllers/Advok8_VC/AdvocateProfileViewController/AdvocateProfileContainerViewController/AdvocateAvailabilityTabViewController/AdvocateAvailabilityTabViewController.m"
+            timestampString = "547506294.328038"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "228"
+            endingLineNumber = "228"
+            landmarkName = "-configureCell:indexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdVok8/ViewControllers/Advok8_VC/AdvocateProfileViewController/AdvocateProfileContainerViewController/AdvocateAvailabilityTabViewController/AdvocateAvailabilityTabViewController.m"
+            timestampString = "547506294.328365"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
+            landmarkName = "-setStackView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

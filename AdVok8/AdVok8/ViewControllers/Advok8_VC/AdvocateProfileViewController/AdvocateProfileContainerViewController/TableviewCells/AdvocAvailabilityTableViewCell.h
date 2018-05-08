@@ -24,5 +24,12 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_friView_height;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_satView_height;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_sunView_height;
+@property (weak, nonatomic) IBOutlet UIView *viMonday;
+@property (weak, nonatomic) IBOutlet UIView *vi_tuesday;
+@property (weak, nonatomic) IBOutlet UIView *vi_wednesday;
+@property (weak, nonatomic) IBOutlet UIView *vi_thurday;
+@property (weak, nonatomic) IBOutlet UIView *vi_friday;
+@property (weak, nonatomic) IBOutlet UIView *viSaturday;
+@property (weak, nonatomic) IBOutlet UIView *viSunday;
 
 @end
