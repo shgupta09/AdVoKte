@@ -63,6 +63,8 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
         }else{
             _lblC3.text = [NSString stringWithFormat:@"%@ Vs %@",_dataObj.PetitionerName,_dataObj.rnm];
         }
+        
+        _lblC4.text = [NSString stringWithFormat:@"%@ Vs %@",[CommonFunction getValueFromDefaultWithKey:@"DisplayName"],_dataObj.radvnm];
         [CommonFunction setShadowOpacity:_view_Case];
         [CommonFunction setCornerRadius:_view_Case Radius:5];
         [self hitApiToGetAllCaseList];
@@ -207,7 +209,7 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
     
     NSMutableDictionary* dict = [NSMutableDictionary new];
     [dict setValue:[CommonFunction getValueFromDefaultWithKey:LOGINUSER] forKey:@"UserName"];
-    [dict setValue:[NSString stringWithFormat:@"%d",_dataObj.caseId] forKey:@"CaseId"];
+    [dict setValue:[NSString stringWithFormat:@"%@",_dataObj.mycaseId] forKey:@"CaseId"];
     if ([ CommonFunction reachability]) {
         [self addLoder];
         
@@ -218,13 +220,13 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
                 id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                 
                 [self removeloder];
-                NSNumber* st = [json valueForKey:@"Status"];
+                NSNumber* st = [json valueForKey:@"IsError"];
                 int status = [st intValue];
-                if ( status == 1) {
-//                    NSArray *tempArray = [NSArray new];
+                if ( status == 0) {
+//                    NSDictionary *tempArray = [NSDictionary new];
 //                    NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
 //                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//                    tempArray = [json objectForKey:@"CaseList"];
+//                    tempArray = [json objectForKey:@"Data"];
 //                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 //
 //                        CaseList *dataObj = [CaseList new];
@@ -240,11 +242,11 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
 //                            }
 //                        }];
 //
-//                        [arrData addObject:dataObj];
+////                        [arrData addObject:dataObj];
 //                    }];
-//                    tblArray = arrData;
-//
-//                    [_tblView reloadData];
+////                    tblArray = arrData;
+
+                    [_tblView reloadData];
                 }else
                 {
                     //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];

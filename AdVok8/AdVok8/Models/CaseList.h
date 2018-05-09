@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface CaseList : NSObject
-@property int mycaseId;
-@property int caseId;
-@property int CaseTypeId;
-@property int CourtId;
-@property int appointmentId;
+@property(nonatomic ,strong) NSNumber  *mycaseId;
+@property(nonatomic ,strong) NSNumber  *caseId;
+@property(nonatomic ,strong) NSNumber *CaseTypeId;
+@property(nonatomic ,strong) NSNumber *CourtId;
+@property(nonatomic ,strong) NSNumber *appointmentId;
 @property(nonatomic ,strong) NSString *unm;
 @property(nonatomic ,strong) NSString *advid;
 @property(nonatomic ,strong) NSString *rnm;

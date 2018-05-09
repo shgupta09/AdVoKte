@@ -61,6 +61,7 @@ static NSString* const API_GET_CASELIST = @"getcaseData";
 static NSString* const API_GET_CauseListWithCase = @"GetCauseListWithCase";
 static NSString* const API_Call_Request = @"callrequest";
 static NSString* const API_GET_ADVOCATE_PROFILE = @"get_Advocate";
+static NSString* const API_ADD_NEW_CASE = @"Ins_CaseReg";
 
 
 

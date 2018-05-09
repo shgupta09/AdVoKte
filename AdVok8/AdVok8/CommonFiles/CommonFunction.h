@@ -59,4 +59,6 @@
 + (void) persistObjAsData:(id)encodableObject forKey:(NSString *)key;
 + (id) objectFromDataWithKey:(NSString*)key;
 +(NSDate *)convertStringddMMYYYYToDate:(NSString *)dtrDate;
+
++(NSString*)convertDDMMYYYYtoMMDDYYYY:(NSString*) string;
 @end

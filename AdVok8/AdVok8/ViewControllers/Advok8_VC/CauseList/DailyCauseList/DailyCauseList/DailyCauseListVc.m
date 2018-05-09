@@ -117,12 +117,12 @@
 // Show the date picker
 -(void)showDatePicker{
     [CommonFunction resignFirstResponderOfAView:self.view];
-
+    
     pickerForDate = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 150)];
     pickerForDate.datePickerMode = UIDatePickerModeDate;
-        [pickerForDate setDate:currentDate];
+    [pickerForDate setDate:currentDate];
     
-//    [pickerForDate setMinimumDate: [NSDate date]];
+    //    [pickerForDate setMinimumDate: [NSDate date]];
     [pickerForDate addTarget:self action:@selector(dueDateChanged:)
             forControlEvents:UIControlEventValueChanged];
     viewOverPicker = [[UIView alloc]initWithFrame:self.view.frame];
@@ -139,7 +139,7 @@
                           pickerForDate.frame.size.height-50, self.view.frame.size.width, 50)];
     //    [toolBar setBarTintColor:[UIColor redColor]];
     
-   
+    
     [toolBar setBarStyle:UIBarStyleBlackOpaque];
     NSArray *toolbarItems = [NSArray arrayWithObjects:space,
                              space,doneButton, nil];

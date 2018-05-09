@@ -98,7 +98,7 @@
         cell.lbl3.text = [NSString stringWithFormat:@"%@ Vs %@",dataObj.PetitionerName,dataObj.rnm];
     }
     
-    cell.lbl4.text = [CommonFunction getValueFromDefaultWithKey:LOGINUSER];
+    cell.lbl4.text = [NSString stringWithFormat:@"%@, %@",[CommonFunction getValueFromDefaultWithKey:@"DisplayName"],dataObj.radvnm];
     [CommonFunction setShadowOpacity:cell.view];
     [CommonFunction setCornerRadius:cell.view Radius:5.0];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -120,8 +120,8 @@
     _txt_Search.text = @"";
 }
 - (IBAction)btnAction_Add_Case:(id)sender {
-//    AppAppealVC *createTaskObj = [[AppAppealVC alloc]initWithNibName:@"AppAppealVC" bundle:nil];
-//    [self.navigationController pushViewController:createTaskObj animated:true];
+    AddNewCaseViewController* vc = [[AddNewCaseViewController alloc] initWithNibName:@"AddNewCaseViewController" bundle:nil];
+    [self.navigationController pushViewController:vc animated:true];
 }
 #pragma mark - API related
 
@@ -149,12 +149,12 @@
                     NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
                     id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
                     tempArray = [json objectForKey:@"CaseList"];
-                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull objTEMP, NSUInteger idx, BOOL * _Nonnull stop) {
                         
                         CaseList *dataObj = [CaseList new];
-                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                        [objTEMP enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
                             @try {
-                                [dataObj setValue:[CommonFunction checkForNull:obj] forKey:(NSString *)key];
+                                [dataObj setValue:obj forKey:(NSString *)key];
                                 
                             } @catch (NSException *exception) {
                                 NSLog(exception.description);

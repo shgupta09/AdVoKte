@@ -345,7 +345,7 @@
 }
 
 +(id)checkForNull:(id)tel{
-    if(tel==(id) [NSNull null]  || [tel isEqualToString:@""]){
+    if([tel isKindOfClass:[NSNull class]]  || [tel isEqualToString:@""]){
         return @"";
     }
     else{
@@ -410,6 +410,14 @@
     return dateFromString;
 }
 
++(NSString*)convertDDMMYYYYtoMMDDYYYY:(NSString*) string{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"dd/MM/yyyy"];
+    NSDate *date = [formatter dateFromString:string];
+    [formatter setDateFormat:@"MM/dd/yyyy"];
+    NSString *output = [formatter stringFromDate:date];
+    return output;
+}
 
 +(NSDate *)convertTimeToDate:(NSString *)dtrDate{
     

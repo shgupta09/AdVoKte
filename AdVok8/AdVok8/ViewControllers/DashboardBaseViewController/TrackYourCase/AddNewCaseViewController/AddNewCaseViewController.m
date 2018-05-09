@@ -19,6 +19,7 @@
     LoderView *loderObj;
     NSMutableArray *courtDataArray;
     NSMutableArray *caseTypeArray;
+    NSMutableArray *caseStatusArray;
     UIPickerView *pickerObj;
     NSArray *pickerArray;
     RegCaseCourt *selectedCourt;
@@ -46,6 +47,11 @@
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     pickerObj = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 150)];
     isKeyBoardShown = false;
+    
+    [_btnAdditionalFields setSelected:false];
+    _cons_viContainerAdditionalField.constant = 0;
+    _viContainerAdditionalFields.hidden = true;
+    
     [self setDefaultDate];
     [self hitApiToGetAllCourt];
 }
@@ -96,6 +102,7 @@
 
     }
 }
+
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     NSMutableString * str = [textField.text mutableCopy];
     [str replaceCharactersInRange:range withString:string];
@@ -126,7 +133,7 @@
     NSDictionary *dictForValidation = [self validateData];
     
     if (![[dictForValidation valueForKey:BoolValueKey] isEqualToString:@"0"]){
-        [self hitApiToInsertAppealAlert];
+        [self hitApiToAddNewCase];
     }else{
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[dictForValidation valueForKey:AlertKey]  preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
@@ -135,110 +142,53 @@
     }
 }
 - (IBAction)btnAcion_picker:(id)sender {
-    [self addPickerViewWithTag:((UIButton *)sender).tag];
-}
-#pragma mark- Date Picker
-
-
-//Resign Responder
--(void)resignResponder{
-    [viewOverPicker removeFromSuperview];
-}
-// Set the default date
--(void)setDefaultDate{
+    UIButton* btn = (UIButton*) sender;
     
-    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd/MM/YYYY"];
-    // or @"yyyy-MM-dd hh:mm:ss a" if you prefer the time with AM/PM
-    startDateString = [dateFormatter stringFromDate:[NSDate date]];
-    
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
-    dateToSend = [dateFormatter stringFromDate:[NSDate date]];
-    startDate = [NSDate date];
-    
-    _txt_DateOfJudgement.text = startDateString;
-}
-// Show the date picker
--(void)showDatePicker:(id)sender{
-    [CommonFunction resignFirstResponderOfAView:self.view];
-
-    pickerForDate = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 150)];
-    pickerForDate.tag = ((UIButton *)sender).tag;
-    
-    pickerForDate.datePickerMode = UIDatePickerModeDate;
-    [pickerForDate setDate:startDate];
-    
-    //    [pickerForDate setMinimumDate: [NSDate date]];
-    [pickerForDate addTarget:self action:@selector(dueDateChanged:)
-            forControlEvents:UIControlEventValueChanged];
-    viewOverPicker = [[UIView alloc]initWithFrame:self.view.frame];
-    pickerForDate.backgroundColor = [UIColor lightGrayColor];
-    viewOverPicker.backgroundColor = [UIColor clearColor];
-    [CommonFunction setResignTapGestureToView:viewOverPicker andsender:self];
-    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Done" style:UIBarButtonItemStyleDone
-                                   target:self action:@selector(doneForPicker:)];
-    doneButton.tintColor = [CommonFunction colorWithHexString:@"f7a41e"];
-    UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    toolBar = [[UIToolbar alloc]initWithFrame:
-               CGRectMake(0, self.view.frame.size.height-
-                          pickerForDate.frame.size.height-50, self.view.frame.size.width, 50)];
-    //    [toolBar setBarTintColor:[UIColor redColor]];
-    
-    
-    [toolBar setBarStyle:UIBarStyleBlackOpaque];
-    NSArray *toolbarItems = [NSArray arrayWithObjects:space,
-                             space,doneButton, nil];
-    [toolBar setItems:toolbarItems];
-    [viewOverPicker addSubview:pickerForDate];
-    [viewOverPicker addSubview:toolBar];
-    [self.view addSubview:viewOverPicker];
-    
-    
-}
--(void)doneForPicker:(id)sender{
-    [viewOverPicker removeFromSuperview];
-}
-// value change of the date picker
--(void) dueDateChanged:(UIDatePicker *)sender {
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
-    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-    
-    //self.myLabel.text = [dateFormatter stringFromDate:[dueDatePickerView date]];
-    NSLog(@"Picked the date %@", [dateFormatter stringFromDate:[sender date]]);
-    [dateFormatter setDateFormat:@"dd/MM/YYYY"];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSSZ"];
-    dateToSend = [dateFormatter stringFromDate:[sender date]];
-    if (sender.tag == 102) {
-        
-        startDateString = [dateFormatter stringFromDate:[sender date]];
-        startDate = sender.date;
-        _txt_DateOfJudgement.text = startDateString;
-        
+    if (btn.tag == 200 || btn.tag == 201 || btn.tag == 202 || btn.tag == 203 ){
+        [self showDatePicker:sender];
     }
+    else
+    {
+        [self addPickerViewWithTag:((UIButton *)sender).tag];
+
+    }
+    
 }
 
-
+/*
+ 
+ */
 
 #pragma mark - API related
 
--(void)hitApiToInsertAppealAlert{
+-(void)hitApiToAddNewCase{
     
     NSMutableDictionary *parameter = [NSMutableDictionary new];
     NSMutableDictionary *paraDict = [NSMutableDictionary new];
-    [parameter setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"CreatedBy"];
-    [parameter setValue:_txt_CaseNo.text forKey:@"CaseNo"];
-    [parameter setValue:_txt_CaseYear.text forKey:@"CaseYear"];
+    [parameter setValue:[CommonFunction getValueFromDefaultWithKey:@"DisplayName"] forKey:@"CreatedBy"];
+    [parameter setValue:_txt_CaseNo.text forKey:@"caseId"];
+    [parameter setValue:@"0" forKey:@"mycaseId"];
+    [parameter setValue:[CommonFunction getValueFromDefaultWithKey:@"DisplayName"] forKey:@"PetitionerName"];
+    [parameter setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"advid"];
+    [parameter setValue:_txtRespondentName.text forKey:@"rnm"];
+    [parameter setValue:_txtResponAdvocateName.text forKey:@"radvnm"];
+    [parameter setValue:[CommonFunction convertDDMMYYYYtoMMDDYYYY:_txtDateOfFiling.text] forKey:@"dof"];
+    [parameter setValue:[CommonFunction convertDDMMYYYYtoMMDDYYYY:_txtLastListingDate.text] forKey:@"lld"];
+    [parameter setValue:[CommonFunction convertDDMMYYYYtoMMDDYYYY:_txtUpcomingHearingDate.text] forKey:@"upcominghearingDate"];
+    [parameter setValue:_txtCaseDescription.text forKey:@"dsc"];
+    [parameter setValue:[CommonFunction convertDDMMYYYYtoMMDDYYYY:_txtCaseDisposalDate.text] forKey:@"dod"];
+    [parameter setValue:_txtCaseStatus.text forKey:@"st"];
+    [parameter setValue:_txt_CaseYear.text forKey:@"caseyear"];
+    [parameter setValue:_txtCaseAct.text forKey:@"caseact"];
     [parameter setValue:[NSString stringWithFormat:@"%d",selectedCourt.CourtId] forKey:@"CourtId"];
     [parameter setValue:[NSString stringWithFormat:@"%d",selectedType.CaseTypeId] forKey:@"CaseTypeId"];
-    [parameter setValue:dateToSend forKey:@"JudgementDate"];
-    [paraDict setValue:parameter forKey:@"_objAppealAlert"];
+
+    [paraDict setValue:parameter forKey:@"_case"];
     if ([ CommonFunction reachability]) {
         [self addLoder];
         
         //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_Insert_APPEAL_ALERT]  postResponse:[paraDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_ADD_NEW_CASE]  postResponse:[paraDict mutableCopy] postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
                 id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -247,14 +197,11 @@
                 NSNumber* st = [json valueForKey:@"Status"];
                 int status = [st intValue];
                 if ( status == 1) {
-                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"" message:[json valueForKey:@"ErrorMessage"]  preferredStyle:UIAlertControllerStyleAlert];
-                    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                        [self.navigationController popViewControllerAnimated:true];
-                    }];
-                    [alertController addAction:ok];
-                    [self presentViewController:alertController animated:YES completion:nil];
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+                    [self.navigationController popViewControllerAnimated:true];
                 }else
                 {
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
                     //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
                     [self removeloder];
                     //                    [self removeloder];
@@ -407,12 +354,12 @@
     UIToolbar *toolBarForTitle;
     if (tagForPicker == 100) {
         pickerArray = [courtDataArray mutableCopy];
-    }else{
+    }else if (tagForPicker == 101) {
         pickerArray = [caseTypeArray mutableCopy];
+    }else if (tagForPicker == 204) {
+        caseStatusArray = [[NSMutableArray alloc] initWithObjects:@"Pending",@"Outstanding",@"Closed", nil];
+        pickerArray = [caseStatusArray mutableCopy];
     }
-    
-    
-    
     
     viewOverPicker.backgroundColor = [UIColor clearColor];
     [CommonFunction setResignTapGestureToView:viewOverPicker andsender:self];
@@ -422,7 +369,6 @@
                                    target:self action:@selector(doneForPicker:)];
     doneButton.tintColor = [CommonFunction colorWithHexString:@"f7a41e"];
     UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    
     
     UITextField *txtView=[[UITextField alloc]initWithFrame:CGRectMake(0, 0 , toolBar.frame.size.width-doneButton.width-100, toolBar.frame.size.height)];
     txtView.backgroundColor =[UIColor  clearColor];
@@ -466,9 +412,12 @@ numberOfRowsInComponent:(NSInteger)component{
         selectedCourt = [pickerArray objectAtIndex:row];
         [self hitApiToGetAllCaseType];
         _txt_CourtName.text = selectedCourt.CourtName;
-    }else{
+    }else if (pickerView.tag == 101){
         selectedType = [pickerArray objectAtIndex:row];
         _txt_CaseType.text = selectedType.CaseType;
+    } else if (pickerView.tag == 204){
+        NSString* status = [pickerArray objectAtIndex:row];
+        _txtCaseStatus.text = status;
     }
 }
 
@@ -479,8 +428,10 @@ numberOfRowsInComponent:(NSInteger)component{
         
         return ((RegCaseCourt *)[pickerArray objectAtIndex:row]).CourtName;
         
-    }else{
+    }else if (pickerView.tag == 101){
         return ((RegCaseType *)[pickerArray objectAtIndex:row]).CaseType;
+    }else if (pickerView.tag == 204){
+        return [pickerArray objectAtIndex:row];
     }
     return @"";
     
@@ -534,6 +485,133 @@ numberOfRowsInComponent:(NSInteger)component{
     return validationDict.mutableCopy;
     
 }
+
+
+- (IBAction)btnAdditionalFieldsClicked:(id)sender {
+    if (_btnAdditionalFields.isSelected == true){
+        [_btnAdditionalFields setSelected:false];
+        _cons_viContainerAdditionalField.constant = 0;
+        _viContainerAdditionalFields.hidden = true;
+        
+    }
+    else
+    {
+        [_btnAdditionalFields setSelected:true];
+        _cons_viContainerAdditionalField.constant = 852;
+        _viContainerAdditionalFields.hidden = false;
+
+
+    }
+}
+
+
+#pragma mark- Date Picker
+
+#pragma mark- Date Picker
+
+
+//Resign Responder
+-(void)resignResponder{
+    [viewOverPicker removeFromSuperview];
+}
+// Set the default date
+-(void)setDefaultDate{
+    
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd/MM/YYYY"];
+    // or @"yyyy-MM-dd hh:mm:ss a" if you prefer the time with AM/PM
+}
+// Show the date picker
+-(void)showDatePicker:(UIButton*)sender{
+    [CommonFunction resignFirstResponderOfAView:self.view];
+    
+    pickerForDate = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 150)];
+    pickerForDate.datePickerMode = UIDatePickerModeDate;
+    [pickerForDate setDate:[NSDate date]];
+    
+    pickerForDate.tag = sender.tag;
+    
+    //    [pickerForDate setMinimumDate: [NSDate date]];
+    [pickerForDate addTarget:self action:@selector(dueDateChanged:)
+            forControlEvents:UIControlEventValueChanged];
+    viewOverPicker = [[UIView alloc]initWithFrame:self.view.frame];
+    pickerForDate.backgroundColor = [UIColor lightGrayColor];
+    viewOverPicker.backgroundColor = [UIColor clearColor];
+    [CommonFunction setResignTapGestureToView:viewOverPicker andsender:self];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Done" style:UIBarButtonItemStyleDone
+                                   target:self action:@selector(doneForPicker:)];
+    doneButton.tintColor = [CommonFunction colorWithHexString:@"f7a41e"];
+    UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    toolBar = [[UIToolbar alloc]initWithFrame:
+               CGRectMake(0, self.view.frame.size.height-
+                          pickerForDate.frame.size.height-50, self.view.frame.size.width, 50)];
+    //    [toolBar setBarTintColor:[UIColor redColor]];
+    
+    
+    [toolBar setBarStyle:UIBarStyleBlackOpaque];
+    NSArray *toolbarItems = [NSArray arrayWithObjects:space,
+                             space,doneButton, nil];
+    [toolBar setItems:toolbarItems];
+    [viewOverPicker addSubview:pickerForDate];
+    [viewOverPicker addSubview:toolBar];
+    [self.view addSubview:viewOverPicker];
+    
+    
+}
+-(void)doneForPicker:(id)sender{
+    [viewOverPicker removeFromSuperview];
+}
+// value change of the date picker
+-(void) dueDateChanged:(UIDatePicker *)sender {
+    
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    //self.myLabel.text = [dateFormatter stringFromDate:[dueDatePickerView date]];
+    NSLog(@"Picked the date %@", [dateFormatter stringFromDate:[sender date]]);
+    [dateFormatter setDateFormat:@"dd/MM/YYYY"];
+    
+    NSString* currentDateString = [dateFormatter stringFromDate:[sender date]];
+    
+    switch (sender.tag) {
+        case 200:
+        {
+            _txtDateOfFiling.text = currentDateString;
+        }
+            break;
+            
+        case 201:
+        {
+            _txtLastListingDate.text = currentDateString;
+
+        }
+            break;
+            
+        case 202:
+        {
+            _txtUpcomingHearingDate.text = currentDateString;
+
+        }
+            break;
+            
+        case 203:
+        {
+            _txtCaseDisposalDate.text = currentDateString;
+
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+
+
 
 
 

@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3M-Js-7kg">
-                                <rect key="frame" x="5" y="30" width="251.5" height="21"/>
+                                <rect key="frame" x="5" y="30" width="285" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="yzU-8P-0nV"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wMB-Xz-cIg">
-                                <rect key="frame" x="5" y="56" width="251.5" height="21"/>
+                                <rect key="frame" x="5" y="56" width="285" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="eUm-lx-SRs"/>
                                 </constraints>
@@ -64,13 +64,13 @@
                             <constraint firstItem="DCL-YG-Dlj" firstAttribute="top" secondItem="9jk-kh-7vT" secondAttribute="top" constant="5" id="6XD-bG-dsC"/>
                             <constraint firstItem="wMB-Xz-cIg" firstAttribute="top" secondItem="w3M-Js-7kg" secondAttribute="bottom" constant="5" id="A7g-gQ-yBJ"/>
                             <constraint firstItem="w3M-Js-7kg" firstAttribute="leading" secondItem="DCL-YG-Dlj" secondAttribute="leading" id="CKr-Nc-wLp"/>
+                            <constraint firstAttribute="trailing" secondItem="w3M-Js-7kg" secondAttribute="trailing" constant="10" id="IeL-Uu-0mQ"/>
                             <constraint firstAttribute="bottom" secondItem="wMB-Xz-cIg" secondAttribute="bottom" constant="5" id="Vhr-3k-DSm"/>
                             <constraint firstAttribute="trailing" secondItem="J1o-0P-V9h" secondAttribute="trailing" constant="5" id="XYN-bX-G2r"/>
                             <constraint firstItem="wMB-Xz-cIg" firstAttribute="trailing" secondItem="w3M-Js-7kg" secondAttribute="trailing" id="Zl4-pE-gk8"/>
                             <constraint firstItem="J1o-0P-V9h" firstAttribute="leading" secondItem="DCL-YG-Dlj" secondAttribute="trailing" constant="10" id="a6O-mx-U0f"/>
                             <constraint firstItem="J1o-0P-V9h" firstAttribute="top" secondItem="DCL-YG-Dlj" secondAttribute="top" id="clo-Nj-6kG"/>
                             <constraint firstItem="w3M-Js-7kg" firstAttribute="top" secondItem="DCL-YG-Dlj" secondAttribute="bottom" constant="5" id="d1D-3F-8MN"/>
-                            <constraint firstItem="w3M-Js-7kg" firstAttribute="trailing" secondItem="DCL-YG-Dlj" secondAttribute="trailing" id="r3S-TP-GTO"/>
                             <constraint firstItem="DCL-YG-Dlj" firstAttribute="leading" secondItem="9jk-kh-7vT" secondAttribute="leading" constant="5" id="rmG-Bp-szZ"/>
                             <constraint firstItem="wMB-Xz-cIg" firstAttribute="leading" secondItem="w3M-Js-7kg" secondAttribute="leading" id="vZH-Yh-8tn"/>
                         </constraints>
@@ -88,9 +88,10 @@
                 <outlet property="lbl1" destination="DCL-YG-Dlj" id="tZF-es-Fzb"/>
                 <outlet property="lbl2" destination="J1o-0P-V9h" id="c3d-v2-d6J"/>
                 <outlet property="lbl3" destination="w3M-Js-7kg" id="LfN-Fc-T9V"/>
+                <outlet property="lbl4" destination="wMB-Xz-cIg" id="GhW-af-sFI"/>
                 <outlet property="view" destination="9jk-kh-7vT" id="Dba-J6-1GA"/>
             </connections>
-            <point key="canvasLocation" x="-252" y="-56"/>
+            <point key="canvasLocation" x="-252" y="-56.5"/>
         </tableViewCell>
     </objects>
 </document>
