@@ -37,8 +37,22 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1zU-xa-1TP">
-                    <rect key="frame" x="329" y="617" width="30" height="30"/>
-                    <state key="normal" title="Add"/>
+                    <rect key="frame" x="319" y="607" width="40" height="40"/>
+                    <color key="backgroundColor" red="0.96194308996200562" green="0.56764987196241101" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="HeX-7c-eNd"/>
+                        <constraint firstAttribute="width" constant="40" id="bZC-wC-nTt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="btnAddClicked:" destination="-1" eventType="touchUpInside" id="Rb9-Pe-IRQ"/>
                     </connections>

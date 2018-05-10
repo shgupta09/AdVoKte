@@ -28,28 +28,28 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9f-cV-8uQ">
-                        <rect key="frame" x="265" y="15" width="40" height="40"/>
+                        <rect key="frame" x="275" y="15" width="30" height="30"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="KXh-g3-Tij"/>
-                            <constraint firstAttribute="height" constant="40" id="SoU-QI-kOh"/>
+                            <constraint firstAttribute="width" constant="30" id="KXh-g3-Tij"/>
+                            <constraint firstAttribute="height" constant="30" id="SoU-QI-kOh"/>
                         </constraints>
-                        <state key="normal" image="Divorce-1"/>
+                        <state key="normal" image="trash"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uu-rc-qb0">
-                        <rect key="frame" x="15" y="15" width="240" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="15" y="15" width="250" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTk-si-eFh">
-                        <rect key="frame" x="15" y="61.5" width="168" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="15" y="62.5" width="175" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGi-XZ-b3L">
-                        <rect key="frame" x="188" y="61.5" width="117" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <rect key="frame" x="195" y="62.5" width="110" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -69,6 +69,7 @@
                     <constraint firstItem="MTk-si-eFh" firstAttribute="leading" secondItem="5Uu-rc-qb0" secondAttribute="leading" id="dBS-zb-CHN"/>
                     <constraint firstItem="DGi-XZ-b3L" firstAttribute="leading" secondItem="MTk-si-eFh" secondAttribute="trailing" constant="5" id="eq7-LA-C4U"/>
                     <constraint firstAttribute="trailing" secondItem="e9f-cV-8uQ" secondAttribute="trailing" constant="15" id="fDm-UZ-SNB"/>
+                    <constraint firstItem="MTk-si-eFh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5Uu-rc-qb0" secondAttribute="bottom" constant="10" id="ffl-pc-Pfs"/>
                     <constraint firstAttribute="bottom" secondItem="Q2O-so-GSD" secondAttribute="bottom" constant="10" id="hW2-tj-jSC"/>
                 </constraints>
             </tableViewCellContentView>
@@ -84,6 +85,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Divorce-1" width="106" height="106"/>
+        <image name="trash" width="128" height="128"/>
     </resources>
 </document>

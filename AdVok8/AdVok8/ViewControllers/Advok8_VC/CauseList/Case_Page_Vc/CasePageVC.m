@@ -12,6 +12,7 @@
 #import "CaseListCell2.h"
 #import "DateCaell.h"
 #import "CasePageContainerModel.h"
+#import "DocumentModel.h"
 
 @interface CasePageVC (){
     NSMutableArray *headerDataArray;
@@ -87,13 +88,13 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
         [headerArray addObject:@"Order"];
         [headerDataArray addObject:casePageModelObj.CaseOrderList];
     }
-    else if (casePageModelObj.objCauseListData.count>0)
+    if (casePageModelObj.objCauseListData.count>0)
     {
         [headerArray addObject:@"Listing"];
         tempArray = casePageModelObj.objCauseListData;
         [headerDataArray addObject:tempArray];
     }
-    else if (casePageModelObj.WebLinkList.count>0)
+    if (casePageModelObj.WebLinkList.count>0)
     {
         [headerArray addObject:@"Weblink"];
         tempArray = casePageModelObj.WebLinkList;
@@ -159,10 +160,10 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
         if ([[headerArray objectAtIndex:indexPath.section-1] isEqualToString:@"Order"])
         {
             NSMutableArray* obj = (NSMutableArray*)[headerDataArray objectAtIndex:indexPath.section-1];
-            Case* caseObj = [obj objectAtIndex:indexPath.row];
+            DocumentModel* caseObj = [obj objectAtIndex:indexPath.row];
             DateCaell *cell = [tableView dequeueReusableCellWithIdentifier:@"DateCaell" forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.textLabel.text = [NSString stringWithFormat:@"Date: %@",caseObj.upcominghearingDate];
+            cell.textLabel.text = [NSString stringWithFormat:@"Date: %@",caseObj.Date];
             return cell;
             
         }
@@ -288,15 +289,15 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
                    
                     //CaseOrderList Data
                     json = [json objectForKey:@"Data"];
-                    tempArray = [json objectForKey:@"CaseOrderList"];
+                    NSMutableArray *tempArray1 = [json objectForKey:@"CaseOrderList"];
                     NSMutableArray *tempdataArray = [NSMutableArray new];
                     
-                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    [tempArray1 enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                         
-                        Case *dataObj = [Case new];
-                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                        DocumentModel *dataObj = [DocumentModel new];
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id objtemp, BOOL *stop){
                             @try {
-                                [dataObj setValue:obj forKey:(NSString *)key];
+                                [dataObj setValue:objtemp forKey:(NSString *)key];
                                 
                             } @catch (NSException *exception) {
                                 NSLog(exception.description);
@@ -312,15 +313,15 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
                     
                     
                     //Education Data
-                    tempArray = [json objectForKey:@"objCauseListData"];
-                    tempdataArray = [NSMutableArray new];
+                    NSMutableArray *tempArray2 = [json objectForKey:@"objCauseListData"];
+                    NSMutableArray *tempdataArray2 = [NSMutableArray new];
                     
-                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                    [tempArray2 enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                         
                         CauseListModel *dataObj = [CauseListModel new];
-                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id objtemp, BOOL *stop){
                             @try {
-                                [dataObj setValue:obj forKey:(NSString *)key];
+                                [dataObj setValue:objtemp forKey:(NSString *)key];
                                 
                             } @catch (NSException *exception) {
                                 NSLog(exception.description);
@@ -330,9 +331,9 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
                             }
                         }];
                         
-                        [tempdataArray addObject:dataObj];
+                        [tempdataArray2 addObject:dataObj];
                     }];
-                    casePageModelObj.objCauseListData = tempdataArray;
+                    casePageModelObj.objCauseListData = tempdataArray2;
                     [self setHeaderDataArray];
                     [_tblView reloadData];
                 }else

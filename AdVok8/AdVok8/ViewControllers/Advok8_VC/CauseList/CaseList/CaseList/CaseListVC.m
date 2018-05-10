@@ -117,6 +117,8 @@
 - (IBAction)btnAction_Cross:(id)sender {
     tblArray = arrData;
     [_tblView reloadData];
+    [self.view endEditing:true];
+    [self hideConcelButton:true];
     _txt_Search.text = @"";
 }
 - (IBAction)btnAction_Add_Case:(id)sender {

@@ -22,6 +22,7 @@
 @property(nonatomic ,strong) NSString *DocumentType;// , value-advocatepic/userpic
 @property bool editable;// , value-false
 @property(nonatomic ,strong) NSString *fileSize;//,value- Size of File
+@property(nonatomic ,strong) NSString *Date;//,value- Size of File
 
 @end
 

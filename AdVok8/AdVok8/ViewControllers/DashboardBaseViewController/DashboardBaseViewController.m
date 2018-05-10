@@ -36,8 +36,7 @@
          if ([CommonFunction isadvoK8]){
              arrImages = [[NSArray alloc] initWithObjects:@"cause_list_icon.png",@"matter_icon.png",@"calendar_icon.png",@"task_icon.png",@"Appointment-1.png",@"Me.png",@"task_icon.png",@"display_board_icon.png",@"appeal_alert_icon.png", nil];
              arrOptions = [[NSArray alloc] initWithObjects:@"Cause List",@"Matters",@"Calendar",@"Task",@"Appointment",@"Me",@"My Activity",@"Display Board",@"Appeal Alert", nil];
-             //        arrImages = [[NSArray alloc] initWithObjects:@"CaseTracking.png",@"Appointment-1.png",@"CaseTracking.png",@"CaseTracking.png", nil];
-             //        arrOptions = [[NSArray alloc] initWithObjects:@"Task",@"Appointment",@"My Activity",@"Appeal Alert", nil];
+             
          }
          else
          {
@@ -179,6 +178,10 @@
                 }
                     break;
                 case 7:{
+                    [[FadeAlert getInstance] displayToastWithMessage:@"Coming Soon..!!"];
+                }
+                    break;
+                case 8:{
                     AppealAlertVC *appealObj = [[AppealAlertVC alloc]initWithNibName:@"AppealAlertVC" bundle:nil];
                     UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:appealObj];
                     [self.navigationController presentViewController:navCon animated:true completion:nil];
