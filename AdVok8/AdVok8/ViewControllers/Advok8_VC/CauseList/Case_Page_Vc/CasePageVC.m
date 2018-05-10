@@ -11,12 +11,14 @@
 #import "FZAccordionTableView.h"
 #import "CaseListCell2.h"
 #import "DateCaell.h"
+#import "CasePageContainerModel.h"
+
 @interface CasePageVC (){
     NSMutableArray *headerDataArray;
     NSMutableArray *headerArray;
     NSMutableArray *tempArray;
     LoderView *loderObj;
-
+    CasePageContainerModel* casePageModelObj;
 }
 @end
 static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
@@ -36,6 +38,8 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
     // Dispose of any resources that can be recreated.
 }
 -(void)setUpData{
+    
+    casePageModelObj = [CasePageContainerModel new];
     
     if (_isFromDailyCauseList) {
         _topConstraint.constant = 190;
@@ -76,15 +80,25 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
 }
 
 -(void)setHeaderDataArray{
-    headerArray = [[NSMutableArray alloc]initWithObjects:@"Next Date:",@"Order",@"Listing", nil];
+    headerArray = [[NSMutableArray alloc]init];
     headerDataArray = [NSMutableArray new];
     tempArray = [NSMutableArray new];
-    [headerDataArray addObject:tempArray];
-    tempArray = [[NSMutableArray alloc] initWithObjects:@"Politics",@"What's Hot",@"SA Business", nil];
-    [headerDataArray addObject:tempArray];
-    tempArray = [[NSMutableArray alloc] initWithObjects:@"Politics",@"What's Hot",@"SA Business", nil];
-    [headerDataArray addObject:tempArray];
-    
+    if (casePageModelObj.CaseOrderList.count>0){
+        [headerArray addObject:@"Order"];
+        [headerDataArray addObject:casePageModelObj.CaseOrderList];
+    }
+    else if (casePageModelObj.objCauseListData.count>0)
+    {
+        [headerArray addObject:@"Listing"];
+        tempArray = casePageModelObj.objCauseListData;
+        [headerDataArray addObject:tempArray];
+    }
+    else if (casePageModelObj.WebLinkList.count>0)
+    {
+        [headerArray addObject:@"Weblink"];
+        tempArray = casePageModelObj.WebLinkList;
+        [headerDataArray addObject:tempArray];
+    }
 }
 
 -(void)backTapped{
@@ -107,12 +121,19 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [(NSMutableArray*)[headerDataArray objectAtIndex:section] count];
+    if (section != 0){
+        return [(NSMutableArray*)[headerDataArray objectAtIndex:section-1] count];
+    }
+    else
+    {
+        return 0;
+    }
+   
 //    return 5;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return headerArray.count;
+    return headerArray.count+1;
 //    return 3;
 }
 
@@ -133,22 +154,46 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.section == 0) {
-        CaseListCell2 *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellReuseIdentifier forIndexPath:indexPath];
-        return cell;
-    }else if(indexPath.section == 1){
-        DateCaell *cell = [tableView dequeueReusableCellWithIdentifier:@"DateCaell" forIndexPath:indexPath];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
-    }else if(indexPath.section == 2){
+
+    if (indexPath.section !=0){
+        if ([[headerArray objectAtIndex:indexPath.section-1] isEqualToString:@"Order"])
+        {
+            NSMutableArray* obj = (NSMutableArray*)[headerDataArray objectAtIndex:indexPath.section-1];
+            Case* caseObj = [obj objectAtIndex:indexPath.row];
+            DateCaell *cell = [tableView dequeueReusableCellWithIdentifier:@"DateCaell" forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.textLabel.text = [NSString stringWithFormat:@"Date: %@",caseObj.upcominghearingDate];
+            return cell;
+            
+        }
+        else if ([[headerArray objectAtIndex:indexPath.section-1] isEqualToString:@"Listing"])
+        {
+            NSMutableArray* obj = (NSMutableArray*)[headerDataArray objectAtIndex:indexPath.section-1];
+            CauseListModel* caseObj = [obj objectAtIndex:indexPath.row];
+            CaseListCell2 *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellReuseIdentifier forIndexPath:indexPath];
+            cell.lblTitle.text = @"Cause List:";
+            cell.lblSubtitle.text = caseObj.HearingDate;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }
+        else if ([[headerArray objectAtIndex:indexPath.section-1] isEqualToString:@"Weblink"])
+        {
+            NSMutableArray* obj = (NSMutableArray*)[headerDataArray objectAtIndex:indexPath.section-1];
+            CauseListModel* caseObj = [obj objectAtIndex:indexPath.row];
+            CaseListCell2 *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellReuseIdentifier forIndexPath:indexPath];
+            cell.lblTitle.text = @"Cause List:";
+            cell.lblSubtitle.text = caseObj.HearingDate;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }
+    }
+    else
+    {
         CaseListCell2 *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellReuseIdentifier forIndexPath:indexPath];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         return cell;
     }
-    
-//    cell.lbl_text.text = [[headerDataArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-       CaseListCell2 *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellReuseIdentifier forIndexPath:indexPath];
+    CaseListCell2 *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellReuseIdentifier forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
@@ -156,8 +201,21 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     AccordionHeaderView *accordiamViewObj = (AccordionHeaderView *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:kAccordionHeaderViewReuseIdentifier];
     [CommonFunction setCornerRadius:accordiamViewObj.view Radius:5];
-    accordiamViewObj.lbl_headerTitle.text = [[headerArray objectAtIndex:section] capitalizedString];
-
+    if (section == 0){
+         if (_isFromDailyCauseList) {
+             accordiamViewObj.lbl_headerTitle.text = [NSString stringWithFormat:@"Next Date : %@", self.causeListObj.HearingDate];
+         }
+        else
+        {
+            accordiamViewObj.lbl_headerTitle.text = [NSString stringWithFormat:@"Next Date : %@",self.dataObj.upcominghearingDate];
+        }
+        
+    }
+   else
+   {
+       accordiamViewObj.lbl_headerTitle.text =  [[headerArray objectAtIndex:section-1] capitalizedString];
+   }
+    
     return accordiamViewObj;
 }
 
@@ -223,33 +281,64 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
                 NSNumber* st = [json valueForKey:@"IsError"];
                 int status = [st intValue];
                 if ( status == 0) {
-//                    NSDictionary *tempArray = [NSDictionary new];
-//                    NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
-//                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//                    tempArray = [json objectForKey:@"Data"];
-//                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//
-//                        CaseList *dataObj = [CaseList new];
-//                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
-//                            @try {
-//                                [dataObj setValue:[CommonFunction checkForNull:obj] forKey:(NSString *)key];
-//
-//                            } @catch (NSException *exception) {
-//                                NSLog(exception.description);
-//                                //  Handle an exception thrown in the @try block
-//                            } @finally {
-//                                //  Code that gets executed whether or not an exception is thrown
-//                            }
-//                        }];
-//
-////                        [arrData addObject:dataObj];
-//                    }];
-////                    tblArray = arrData;
-
+                    NSArray *tempArray = [NSArray new];
+                    NSData *data = [[responseObj valueForKey:@"d"]  dataUsingEncoding:NSUTF8StringEncoding];
+                    casePageModelObj = [CasePageContainerModel new];
+                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                   
+                    //CaseOrderList Data
+                    json = [json objectForKey:@"Data"];
+                    tempArray = [json objectForKey:@"CaseOrderList"];
+                    NSMutableArray *tempdataArray = [NSMutableArray new];
+                    
+                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+                        Case *dataObj = [Case new];
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            @try {
+                                [dataObj setValue:obj forKey:(NSString *)key];
+                                
+                            } @catch (NSException *exception) {
+                                NSLog(exception.description);
+                                //  Handle an exception thrown in the @try block
+                            } @finally {
+                                //  Code that gets executed whether or not an exception is thrown
+                            }
+                        }];
+                        
+                        [tempdataArray addObject:dataObj];
+                    }];
+                    casePageModelObj.CaseOrderList = tempdataArray;
+                    
+                    
+                    //Education Data
+                    tempArray = [json objectForKey:@"objCauseListData"];
+                    tempdataArray = [NSMutableArray new];
+                    
+                    [tempArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        
+                        CauseListModel *dataObj = [CauseListModel new];
+                        [obj enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop){
+                            @try {
+                                [dataObj setValue:obj forKey:(NSString *)key];
+                                
+                            } @catch (NSException *exception) {
+                                NSLog(exception.description);
+                                //  Handle an exception thrown in the @try block
+                            } @finally {
+                                //  Code that gets executed whether or not an exception is thrown
+                            }
+                        }];
+                        
+                        [tempdataArray addObject:dataObj];
+                    }];
+                    casePageModelObj.objCauseListData = tempdataArray;
+                    [self setHeaderDataArray];
                     [_tblView reloadData];
                 }else
                 {
-                    //                    [self addAlertWithTitle:AlertKey andMessage:[responseObj valueForKey:@"message"] isTwoButtonNeeded:false firstbuttonTag:100 secondButtonTag:0 firstbuttonTitle:OK_Btn secondButtonTitle:nil image:Warning_Key_For_Image];
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrorMessage"]];
+
                     [self removeloder];
                     //                    [self removeloder];
                 }

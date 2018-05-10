@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CaseListCell2 : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblTitle;
+@property (weak, nonatomic) IBOutlet UILabel *lblSubtitle;
 
 @end

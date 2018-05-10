@@ -107,6 +107,7 @@
 		5F96B78420755A49003CD72F /* AppointmentListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F96B78220755A49003CD72F /* AppointmentListTableViewCell.m */; };
 		5F96B78520755A49003CD72F /* AppointmentListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F96B78320755A49003CD72F /* AppointmentListTableViewCell.xib */; };
 		5F96B78820755E34003CD72F /* Appointment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F96B78720755E34003CD72F /* Appointment.m */; };
+		5FAB361420A4AFC800310504 /* CaseDetailData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FAB361320A4AFC800310504 /* CaseDetailData.m */; };
 		5FBD2B3B20595C4700D9C10B /* FeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBD2B3920595C4700D9C10B /* FeedDetailViewController.m */; };
 		5FBD2B3C20595C4700D9C10B /* FeedDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FBD2B3A20595C4700D9C10B /* FeedDetailViewController.xib */; };
 		5FBE6232209A498800AD2215 /* CalendarListViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE6230209A498800AD2215 /* CalendarListViewCell.m */; };
@@ -390,6 +391,8 @@
 		5F96B78320755A49003CD72F /* AppointmentListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppointmentListTableViewCell.xib; sourceTree = "<group>"; };
 		5F96B78620755E34003CD72F /* Appointment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Appointment.h; sourceTree = "<group>"; };
 		5F96B78720755E34003CD72F /* Appointment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Appointment.m; sourceTree = "<group>"; };
+		5FAB361220A4AFC800310504 /* CaseDetailData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaseDetailData.h; sourceTree = "<group>"; };
+		5FAB361320A4AFC800310504 /* CaseDetailData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseDetailData.m; sourceTree = "<group>"; };
 		5FBD2B3820595C4700D9C10B /* FeedDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedDetailViewController.h; sourceTree = "<group>"; };
 		5FBD2B3920595C4700D9C10B /* FeedDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedDetailViewController.m; sourceTree = "<group>"; };
 		5FBD2B3A20595C4700D9C10B /* FeedDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedDetailViewController.xib; sourceTree = "<group>"; };
@@ -985,6 +988,8 @@
 				9CCD053B209AEBD30031F6F1 /* CauseListModel.m */,
 				5F5B762A20A3920A005A215C /* CasePageContainerModel.h */,
 				5F5B762B20A3920A005A215C /* CasePageContainerModel.m */,
+				5FAB361220A4AFC800310504 /* CaseDetailData.h */,
+				5FAB361320A4AFC800310504 /* CaseDetailData.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2131,6 +2136,7 @@
 				D8C3C2B0207022970089A3CC /* TaskDetailVC.m in Sources */,
 				9CF77D14205FD1EF00366505 /* FeedbackVC.m in Sources */,
 				9C70B276206E32CA00850305 /* CaseListCell.m in Sources */,
+				5FAB361420A4AFC800310504 /* CaseDetailData.m in Sources */,
 				5F12F116209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.m in Sources */,
 				5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */,
 				9C70B26B206E0F4200850305 /* CaseListVC.m in Sources */,
