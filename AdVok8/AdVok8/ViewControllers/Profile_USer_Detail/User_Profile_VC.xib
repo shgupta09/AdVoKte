@@ -22,13 +22,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dependentsuser" translatesAutoresizingMaskIntoConstraints="NO" id="9Yh-pp-6Og">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dependentsuser" translatesAutoresizingMaskIntoConstraints="NO" id="9Yh-pp-6Og">
                     <rect key="frame" x="137" y="84" width="100" height="100"/>
-                    <color key="backgroundColor" red="0.12084255369999999" green="0.22676593070000001" blue="0.57626754049999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="Azw-9Z-kWV"/>
                         <constraint firstAttribute="width" constant="100" id="CKc-iA-2kg"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nb6-2c-wgK" customClass="FZAccordionTableView">
                     <rect key="frame" x="0.0" y="194" width="375" height="473"/>

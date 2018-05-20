@@ -10,7 +10,7 @@
 
 @interface FeedbackVC (){
        LoderView *loderObj;
-    NSString* currentRating;
+    NSNumber* currentRating;
     NSString* ans1;
     NSString* ans2;
     NSString* ans3;
@@ -31,7 +31,7 @@
     _txtView_Feedback.delegate = self;
     _lblName.text =  [NSString stringWithFormat:@"%@ %@",_obj.fname,_obj.lname];
   [_img_Profile sd_setImageWithURL:[CommonFunction getProfilePicURLString:_obj.username] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
-    currentRating = @"0";
+    currentRating = [NSNumber numberWithFloat:0.0];
     ans1 = @"no";
     ans2 = @"no";
     ans3 = @"no";
@@ -99,24 +99,24 @@
     [_btn3 setSelected:false];
     [_btn4 setSelected:false];
     [_btn5 setSelected:false];
-    currentRating = @"0";
+    currentRating = [NSNumber numberWithFloat:0.0];;
     switch (((UIButton *)sender).tag) {
         case 0:
              [_btn1 setSelected:true];
-            currentRating = @"1";
+            currentRating = [NSNumber numberWithFloat:1.0];;
 
             break;
         case 1:
             [_btn1 setSelected:true];
             [_btn2 setSelected:true];
-            currentRating = @"2";
+            currentRating = [NSNumber numberWithFloat:2.0];;
 
             break;
         case 2:
             [_btn1 setSelected:true];
             [_btn2 setSelected:true];
             [_btn3 setSelected:true];
-            currentRating = @"3";
+            currentRating = [NSNumber numberWithFloat:3.0];;
 
             break;
         case 3:
@@ -124,7 +124,7 @@
             [_btn2 setSelected:true];
             [_btn3 setSelected:true];
             [_btn4 setSelected:true];
-            currentRating = @"4";
+            currentRating = [NSNumber numberWithFloat:4.0];;
 
             break;
         case 4:
@@ -133,7 +133,7 @@
             [_btn3 setSelected:true];
             [_btn4 setSelected:true];
             [_btn5 setSelected:true];
-            currentRating = @"5";
+            currentRating = [NSNumber numberWithFloat:5.0];;
 
             break;
         default:
@@ -230,24 +230,44 @@
     NSMutableDictionary* parameter = [NSMutableDictionary new];
 
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
-    [dictRequest setValue:_obj.username forKey:@"RatingId"];
+    [dictRequest setValue:@"0" forKey:@"RatingId"];
     [dictRequest setValue:_obj.username forKey:@"RatingFor"];
     [dictRequest setValue:@"advocate" forKey:@"UserType"];
     [dictRequest setValue:currentRating forKey:@"UserRating"];
-    [dictRequest setValue:@"5" forKey:@"AdminRating"];
+    [dictRequest setValue:@"0" forKey:@"AdminRating"];
     [dictRequest setValue:_txtView_Feedback.text forKey:@"Feedback"];
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"CreatedBy"];
-    [dictRequest setValue:ans1 forKey:@"Ans1"];
-    [dictRequest setValue:ans2 forKey:@"Ans2"];
-    [dictRequest setValue:ans3 forKey:@"Ans3"];
-    [dictRequest setValue:ans4 forKey:@"Ans4"];
-    [dictRequest setValue:ans5 forKey:@"Ans5"];
+    if (_btn6.selected){
+        [dictRequest setValue:@"yes" forKey:@"Ans1"];
+    }
+    else
+    {
+        [dictRequest setValue:@"no" forKey:@"Ans1"];
+    }
+
+    NSString* feedbackhappy = @"";
+    if ([ans1 isEqualToString:@"yes"]){
+       feedbackhappy = [feedbackhappy stringByAppendingString:@"Lawyer friendliness~"];
+    }
+    if ([ans2 isEqualToString:@"yes"]){
+        feedbackhappy = [feedbackhappy stringByAppendingString:@"Value for money~"];
+    }
+    if ([ans3 isEqualToString:@"yes"]){
+        feedbackhappy = [feedbackhappy stringByAppendingString:@"Wait time~"];
+    }
+    if ([ans4 isEqualToString:@"yes"]){
+        feedbackhappy = [feedbackhappy stringByAppendingString:@"Explanation of the issue~"];
+    }
+    if ([ans5 isEqualToString:@"yes"]){
+        feedbackhappy = [feedbackhappy stringByAppendingString:@"Understanding of issue"];
+    }
+    [dictRequest setValue:feedbackhappy forKey:@"Ans3"];
 
     [parameter setObject:dictRequest forKey:@"objRating"];
     
     if ([ CommonFunction reachability]) {
-        //        [self addLoder];
-        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_RATING]  postResponse:dictRequest postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+        [self addLoder];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_RATING]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
                 id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
@@ -255,10 +275,8 @@
                 [self removeloder];
                 NSNumber* st = [json valueForKey:@"Status"];
                 int status = [st intValue];
-                if ( status == 1) {
-                    
-                }
-                
+                [self.navigationController popViewControllerAnimated:true];
+               [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
             }
             else
             {

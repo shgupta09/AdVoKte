@@ -223,7 +223,7 @@
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="phone_icon"/>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="maxCharLimit">
-                                                    <integer key="value" value="14"/>
+                                                    <integer key="value" value="10"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
@@ -343,6 +343,6 @@
         <image name="menu" width="92" height="92"/>
         <image name="name_icon" width="64" height="64"/>
         <image name="phone_icon" width="64" height="64"/>
-        <image name="search" width="129" height="135"/>
+        <image name="search" width="256" height="256"/>
     </resources>
 </document>

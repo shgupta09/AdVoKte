@@ -19,7 +19,16 @@
 @property (weak, nonatomic) IBOutlet TextFieldFooter *txtDescription;
 @property (weak, nonatomic) IBOutlet TextFieldFooter *txtConsultancyFees;
 @property (weak, nonatomic) IBOutlet TextFieldFooter *txtAdvocateType;
+@property (weak, nonatomic) IBOutlet UIView *viContainer_conditional;
 
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txt_year_container;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txt_month_container;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txt_primaryArea_container;
+@property (weak, nonatomic) IBOutlet TextFieldFooter *txt_secondaryArea_container;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_viContainerHeight;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *cons_fullContainerHeight;
+@property (weak, nonatomic) IBOutlet UIImageView *imgProfileView;
+@property (weak, nonatomic) IBOutlet UIButton *btnUpdateProfile;
 
 @end
 

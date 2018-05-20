@@ -9,7 +9,7 @@
 #import "BaseHomeViewController.h"
 #import "SearchPostTableViewCell.h"
 
-@interface BaseHomeViewController ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource>
+@interface BaseHomeViewController ()<UISearchBarDelegate,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
     SWRevealViewController *revealController;
     BOOL isOpen;
@@ -70,9 +70,16 @@
     
     _tblView.delegate = self;
     _tblView.dataSource = self;
+    
+    _txtMobile.delegate = self;
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    _searchBar.hidden = true;
+    _tblView.hidden = true;
+    
+}
 -(void)viewDidLayoutSubviews{
     _popUpView.frame = self.view.frame;
 }
@@ -82,13 +89,25 @@
 }
 
 #pragma mark - Search bar delegate
+- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    
+    //hide keyboard
+    
+    [searchBar resignFirstResponder];
+    
+}
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-    if ([searchText  isEqual: @""]) {
+    if ([searchText  isEqualToString: @""]) {
+        [_searchBar endEditing:true];
+        [self.navigationController.view endEditing:true];
+        [_searchBar resignFirstResponder];
+
         searchBar.hidden = true;
         _tblView.hidden = true;
-        [searchBar resignFirstResponder];
-    }
+        [self viewDidLoad];
+     }
     else
     {
         if ([searchType isEqualToString:@"0"]){
@@ -195,7 +214,7 @@
     [parameter setValue:dictRequest forKey:@"_post"];
     
     if ([ CommonFunction reachability]) {
-        [self addLoder];
+//        [self addLoder];
         
         //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_SEARCH_USERS]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
@@ -262,10 +281,11 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([searchType isEqualToString:@"0" ]) {
-        RearCell *rearCell = [_tblView dequeueReusableCellWithIdentifier:@"RearCell"];
+        SearchPostTableViewCell *rearCell = [_tblView dequeueReusableCellWithIdentifier:@"SearchPostTableViewCell"];
         PostModel* post = [PostModel new];
         post = [arrData objectAtIndex:indexPath.row];
-        rearCell.lbl_title.text = post.UserName;
+        rearCell.lblHeader.text = post.UserName;
+        rearCell.lblSubtitle.text = post.Details;
         [rearCell.imgView sd_setImageWithURL:[CommonFunction getProfilePicURLString:post.UserId] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
         
         rearCell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -287,6 +307,12 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([searchType isEqualToString:@"0"]){
+        PostModel* data = [arrData objectAtIndex:indexPath.row];
+        ProfileVC *profileObj = [[ProfileVC alloc]initWithNibName:@"ProfileVC" bundle:nil];
+        profileObj.isFromMyActivity = true;
+        profileObj.isOther = true;
+        profileObj.userId = data.UserId;
+        [self.navigationController pushViewController:profileObj animated:true];
     }
     else
     {
@@ -383,6 +409,8 @@
         searchType = @"0";
     }
     _searchBar.hidden = false;
+    [searchBar resignFirstResponder];
+
     [_searchBar becomeFirstResponder];
 }
 
@@ -460,5 +488,18 @@
     return validationDict.mutableCopy;
     
 }
+
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
+    
+    TextFieldBaselineWithLeftRight* txtField = (TextFieldBaselineWithLeftRight*)textField;
+    
+    if (txtField.maxCharLimit>=[[NSString stringWithFormat:@"%@%@",textField.text,string] length] ){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
 
 @end

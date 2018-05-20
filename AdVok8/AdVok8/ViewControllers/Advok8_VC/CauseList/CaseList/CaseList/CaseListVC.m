@@ -91,7 +91,7 @@
         cell = [[CaseListCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"CaseListCell"];
     }
     cell.lbl1.text = dataObj.CourtName;
-    cell.lbl2.text = [NSString stringWithFormat:@"%@ %d/%@",dataObj.CaseTypeName,dataObj.caseId,dataObj.caseyear];
+    cell.lbl2.text = [NSString stringWithFormat:@"%@ %@/%@",dataObj.CaseTypeName,dataObj.caseId,dataObj.caseyear];
     if ([dataObj.PetitionerName isEqualToString:@""]||[dataObj.rnm isEqualToString:@""]) {
         cell.lbl3.text = @"";
     }else{

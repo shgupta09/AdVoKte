@@ -59,7 +59,7 @@
     }
     else
     {
-        _lblNAme.text = @"Guest";
+        _lblNAme.text = @"Guest User";
         _imgView.image = [UIImage imageNamed:@"dependentsuser"];
     }
     
@@ -208,7 +208,7 @@
             }
             else
             {
-                _lblNAme.text = @"Guest";
+                _lblNAme.text = @"Guest User";
                 _imgView.image = [UIImage imageNamed:@"dependentsuser"];
             }
             titleArray  = [[NSMutableArray alloc]initWithObjects:@"Logout",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request", nil];
@@ -217,7 +217,7 @@
         }
         else
         {
-            _lblNAme.text = @"Guest";
+            _lblNAme.text = @"Guest User";
             titleArray  = [[NSMutableArray alloc]initWithObjects:@"Login",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request", nil];
             titleImageArray = [[NSMutableArray alloc] initWithObjects:@"Login-1",@"home",@"Notify-1",@"Invite Friend-1",@"rateUs",@"callrequest", nil];
             [_tbl_View reloadData];

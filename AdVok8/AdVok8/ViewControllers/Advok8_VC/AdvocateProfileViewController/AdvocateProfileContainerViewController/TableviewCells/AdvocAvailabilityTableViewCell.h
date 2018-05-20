@@ -31,5 +31,30 @@
 @property (weak, nonatomic) IBOutlet UIView *vi_friday;
 @property (weak, nonatomic) IBOutlet UIView *viSaturday;
 @property (weak, nonatomic) IBOutlet UIView *viSunday;
+@property (weak, nonatomic) IBOutlet UIButton *btnMonStart;
+@property (weak, nonatomic) IBOutlet UIButton *btnMonEnd;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnTueStart;
+@property (weak, nonatomic) IBOutlet UIButton *btnTueEnd;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnWedStart;
+@property (weak, nonatomic) IBOutlet UIButton *btnWedEnd;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnThurStart;
+@property (weak, nonatomic) IBOutlet UIButton *btnThursEnd;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnFriStart;
+@property (weak, nonatomic) IBOutlet UIButton *btnFriEnd;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnSatStart;
+@property (weak, nonatomic) IBOutlet UIButton *btnSatEnd;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnSunStart;
+@property (weak, nonatomic) IBOutlet UIButton *btnSunEnd;
+@property (weak, nonatomic) IBOutlet UIButton *btnUpdate;
+
+@property (weak, nonatomic) IBOutlet UIStackView *stackViewAllSelectedTime;
+@property (weak, nonatomic) IBOutlet UIButton *btnAllStartTime;
+@property (weak, nonatomic) IBOutlet UIButton *btnAllEndTime;
 
 @end

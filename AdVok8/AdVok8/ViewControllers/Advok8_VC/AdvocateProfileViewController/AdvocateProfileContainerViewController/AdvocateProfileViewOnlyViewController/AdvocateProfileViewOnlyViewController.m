@@ -51,7 +51,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (adPublicData){
-        return 9;
+        return 7;
     }
     return 0;
 }
@@ -65,8 +65,7 @@
         }
         cell.lblName.text =  [NSString stringWithFormat:@"%@ %@",tempObj.fname,tempObj.lname];
         cell.lblSepcialization.text = [CommonFunction checkEmptyString:[NSString stringWithFormat:@"%@",tempObj.AOP]];
-        [cell.img_Profile sd_setImageWithURL:[CommonFunction getProfilePicURLString:tempObj.username] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
-        return cell;
+        [cell.img_Profile sd_setImageWithURL:[CommonFunction getProfilePicURLString:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"]] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];        return cell;
     }else{
         LabelCell *cell = [_tblView dequeueReusableCellWithIdentifier:@"LabelCell"];
         if (cell == nil) {
@@ -117,7 +116,31 @@
             }
                 break;
             case 3:{
-                [cell.lbl_first setText:[NSString stringWithFormat:@"Appointment Day\n%@",[CommonFunction checkEmptyString:tempObj.Dsc]]];
+                NSMutableArray* arrString = [NSMutableArray new];
+                
+                if ([tempObj.mon isEqualToString:@"1"]){
+                    [arrString addObject:@"Mon"];
+                }
+                if ([tempObj.tues isEqualToString:@"1"]){
+                    [arrString addObject:@"Tues"];
+                }
+                if ([tempObj.wed isEqualToString:@"1"]){
+                    [arrString addObject:@"Wed"];
+                }
+                if ([tempObj.thu isEqualToString:@"1"]){
+                    [arrString addObject:@"Thurs"];
+                }
+                if ([tempObj.fri isEqualToString:@"1"]){
+                    [arrString addObject:@"Fri"];
+                }
+                if ([tempObj.sat isEqualToString:@"1"]){
+                    [arrString addObject:@"Sat"];
+                }
+                if ([tempObj.sun isEqualToString:@"1"]){
+                    [arrString addObject:@"Sun"];
+                }
+                
+                [cell.lbl_first setText:[NSString stringWithFormat:@"Appointment Day\n%@",[arrString componentsJoinedByString:@" | "]]];
                 UIImage *image1 = [UIImage imageNamed:@"tempApptDay.png"];
                 cell.imgViewFirst.image = image1;
                 cell.imgViewFirst.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
@@ -125,30 +148,20 @@
             }
                 break;
             case 4:{
-                if (![tempObj.DayTime isKindOfClass:[NSNull class]]){
-                    [cell.lbl_first setText:[CommonFunction checkEmptyString:[[tempObj.DayTime componentsSeparatedByString:@"#"] objectAtIndex:0]]];
-                    UIImage *image1 = [UIImage imageNamed:@"tempApptDay.png"];
-                    cell.imgViewFirst.image = image1;
-                    cell.imgViewFirst.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
-                }
-                
-            }
-                break;
-            case 5:{
                 [cell.lbl_first setText:[CommonFunction checkEmptyString:tempObj.Education]];
                 UIImage *image1 = [UIImage imageNamed:@"tempProfile.png"];
                 cell.imgViewFirst.image = image1;
                 cell.imgViewFirst.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
             }
                 break;
-            case 6:{
+            case 5:{
                 [cell.lbl_first setText:[CommonFunction checkEmptyString:tempObj.OffAddline]];
                 UIImage *image1 = [UIImage imageNamed:@"tempHome.png"];
                 cell.imgViewFirst.image = image1;
                 cell.imgViewFirst.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
             }
                 break;
-            case 7:{
+            case 6:{
                 
                 if (![tempObj.SecAOP isKindOfClass:[NSNull class]]){
                     NSString *str = [CommonFunction checkEmptyString:tempObj.SecAOP];
@@ -170,16 +183,7 @@
                 
             }
                 break;
-            case 8:{
-                [cell.lbl_first setText:[NSString stringWithFormat:@"FEEDBACK\n%@",[CommonFunction checkEmptyString:@""]]];
-                UIImage *image1 = [UIImage imageNamed:@"tempServices.png"];
-                cell.imgViewFirst.image = image1;
-                cell.imgViewFirst.tintColor = [CommonFunction colorWithHexString:Primary_Blue];
-                cell.separatorView1.hidden = true;
-            }
-                break;
-                
-            default:
+               default:
                 break;
         }
         
@@ -201,7 +205,7 @@
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
 
     if ([ CommonFunction reachability]) {
-        //        [self addLoder];
+           [self addLoder];
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_ADVOCATE_PUBLICDATA]  postResponse:dictRequest postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];

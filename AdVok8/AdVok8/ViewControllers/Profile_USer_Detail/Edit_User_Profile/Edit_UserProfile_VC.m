@@ -16,6 +16,7 @@
     UIToolbar *toolBar;
     UIPickerView *pickerObj;
     NSArray *pickerArray;
+    LoderView* loderObj;
 }
 
 @end
@@ -26,6 +27,10 @@
     [super viewDidLoad];
     [self setUpData];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,6 +45,8 @@
     self.txt_AlterNumbr.text = _userObj.AlternateContactNo;
     self.txt_email.text = _userObj.EmailId;
     self.txt_gender.text = _userObj.Gender;
+    [_imgProfileUser sd_setImageWithURL:[CommonFunction getProfilePicURLString:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"]] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
+    
     [self setDefaultDate];
 }
 
@@ -50,6 +57,7 @@
 #pragma mark-Btn Action
 
 - (IBAction)btn_Action:(id)sender {
+    [self.view endEditing:true];
     if (((UIButton *)sender).tag == 0) {
         [self addPickerViewWithTag:0];
     }else{
@@ -69,7 +77,7 @@
 -(void)setDefaultDate{
     
     NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd/MM/YYYY"];
+    [dateFormatter setDateFormat:@"MM/dd/YYYY"];
     // or @"yyyy-MM-dd hh:mm:ss a" if you prefer the time with AM/PM
     startDateString = [dateFormatter stringFromDate:[NSDate date]];
     startDate = [NSDate date];
@@ -123,14 +131,13 @@
     
     //self.myLabel.text = [dateFormatter stringFromDate:[dueDatePickerView date]];
     NSLog(@"Picked the date %@", [dateFormatter stringFromDate:[sender date]]);
-    [dateFormatter setDateFormat:@"dd/MM/YYYY"];
-    if (sender.tag == 0) {
-        
+    [dateFormatter setDateFormat:@"MM/dd/YYYY"];
+    
         startDateString = [dateFormatter stringFromDate:[sender date]];
         startDate = sender.date;
         _txt_Date.text = startDateString;
         
-    }
+    
 }
 #pragma mark - Picker View Data source
 // Add picker View
@@ -188,7 +195,6 @@ numberOfRowsInComponent:(NSInteger)component{
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:
 (NSInteger)row inComponent:(NSInteger)component{
     
-    
     _txt_gender.text = [pickerArray objectAtIndex:row];
 }
 
@@ -205,5 +211,75 @@ numberOfRowsInComponent:(NSInteger)component{
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)btnUpdateClicked:(id)sender {
+    [self hitApiToUpdateProfile];
+}
+
+//"AlternateContactNo":"9965923014","ContactNo":"9560409501","DOB":"11/04/1988","EmailId":"","EntityCode":"0","EntityOtherType":"","FirstName":"Mradul","Gender":"Male","LastName":"Singh","type":1,"username":"9560409501"}
+
+-(void)hitApiToUpdateProfile{
+    NSMutableDictionary* parameter = [NSMutableDictionary new];
+    
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"username"];
+    [dictRequest setValue:self.txt_email.text forKey:@"EmailId"];
+    [dictRequest setValue:self.txt_gender.text forKey:@"Gender"];
+    [dictRequest setValue:self.txt_Date.text forKey:@"DOB"];
+    [dictRequest setValue:self.txt_name.text forKey:@"FirstName"];
+    [dictRequest setValue:self.txt_Number.text forKey:@"ContactNo"];
+    [dictRequest setValue:self.txt_AlterNumbr.text forKey:@"AlternateContactNo"];
+    [dictRequest setValue:@"" forKey:@"EntityOtherType"];
+    [dictRequest setValue:@"0" forKey:@"EntityCode"];
+    [dictRequest setValue:@"1" forKey:@"type"];
+
+    
+    [parameter setObject:dictRequest forKey:@"_USRegistration"];
+    
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_UPDATE_USER_PROFILE]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                
+                [self removeloder];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1) {
+                    
+                }
+                [self.navigationController popViewControllerAnimated:true];
+                [[FadeAlert getInstance] displayToastWithMessage: [json valueForKey:@"ErrMsg"]];
+            }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
+        }];
+    } else {
+        [self removeloder];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+    }
+}
+
+
+
+-(void)addLoder{
+    self.view.userInteractionEnabled = NO;
+    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+    loderObj = [[LoderView alloc] initWithFrame:self.view.frame];
+    loderObj.lbl_title.text = @"Please wait...";
+    [self.view addSubview:loderObj];
+}
+
+-(void)removeloder{
+    //loderObj = nil;
+    [loderObj removeFromSuperview];
+    //[loaderView removeFromSuperview];
+    self.view.userInteractionEnabled = YES;
+}
+
 
 @end

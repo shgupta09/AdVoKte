@@ -8,11 +8,24 @@
 
 #import "AdvocateProfileTabViewController.h"
 #import "AdvocProfileTableViewCell.h"
+#import "MultiSelectTableViewCell.h"
+
 @interface AdvocateProfileTabViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
+    UIDatePicker* pickerForDate;
     UIPickerView * picker;
     NSMutableArray* arrAdvocatetypes;
     AdvocProfileTableViewCell* advocProfileTableViewCell;
+    UIPickerView *pickerObj;
+    UIView *viewOverPicker;
+    NSMutableArray *pickerArray;
+    UIToolbar *toolBar;
+    NSMutableArray* selectedItemsSecondary;
+    NSMutableArray* arrPractiseSecondary;
+    MultiSelectTableViewCell* multiSelectTableViewCell;
+    LoderView* loderObj;
+    NSString* startDateString;
+    NSDate *startDate;
 }
 @end
 
@@ -34,8 +47,15 @@
     [self setUpTableView];
 }
 
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.view.frame;
+}
+
 -(void)initialiseData
 {
+    _tblMultiSelect.hidden = true;
+    _btnClose.hidden = true;
+    _viTrans.hidden = true;
     picker = [UIPickerView new];
     picker.delegate = self;
     picker.dataSource = self;
@@ -44,9 +64,11 @@
     
     arrAdvocatetypes = [NSMutableArray new];
     arrAdvocatetypes = [[NSMutableArray alloc] initWithObjects:@"Student",@"Intern",@"Practicing",@"Mutual Funds", nil];
-    
+    pickerArray = [NSMutableArray new];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshProfileData) name:@"Refresh_Profile_Availability_Data" object:nil];
-
+    selectedItemsSecondary  = [NSMutableArray new];
+    arrPractiseSecondary  = [NSMutableArray new];
+    [arrPractiseSecondary addObjectsFromArray:@[ @"Tax Lawyer",@"Criminal Lawyer",@"Civil Lawyer",@"Marriage Lawyer",@"Divorce Lawyer",@"Company Lawyer",@"Constitutional Lawyer",@"Immigration Lawyer",@"Trademark Lawyer",@"Human Rights Lawyer",@"Media and Entertainment Lawyer",@"Sports Lawyer",@"Environment Lawyer",@"Consumer Lawyer",@"Industrial and Labour Lawyer",@"Insurance Lawyer",@"Family Lawyer",@"Arbitration Lawyer",@"Property Lawyer",@"Traffic and Accident Lawyer",@"Document Drafting Lawyer",@"Cheque Bounce"]];
     [self setupViewWithData];
 }
 
@@ -65,6 +87,7 @@
 
 -(void) assignDataToCell
 {
+    
     advocProfileTableViewCell.txtFirstName.text = global_advocate_profileObj.fname;
     advocProfileTableViewCell.txtLastName.text = global_advocate_profileObj.lname;
     advocProfileTableViewCell.txtEmailID.text = global_advocate_profileObj.EmailId;
@@ -75,6 +98,27 @@
     advocProfileTableViewCell.txtDescription.text = global_advocate_profileObj.PractiseArea;
     advocProfileTableViewCell.txtConsultancyFees.text = global_advocate_profileObj.ConsultancyFees;
     advocProfileTableViewCell.txtAdvocateType.text = global_advocate_profileObj.Advocatetype;
+    advocProfileTableViewCell.txt_secondaryArea_container.text = global_advocate_profileObj.SecAOP;
+    selectedItemsSecondary = [[global_advocate_profileObj.SecAOP componentsSeparatedByString:@","] mutableCopy];
+    advocProfileTableViewCell.txt_primaryArea_container.text = global_advocate_profileObj.AOP;
+    advocProfileTableViewCell.txt_year_container.text = global_advocate_profileObj.ExpYear;
+    advocProfileTableViewCell.txt_month_container.text = global_advocate_profileObj.ExpMonth;
+    
+    advocProfileTableViewCell.txtAdvocateType.text = global_advocate_profileObj.Advocatetype;
+    if ([global_advocate_profileObj.Advocatetype isEqualToString:@"Student"]){
+        advocProfileTableViewCell.viContainer_conditional.hidden = true;
+//        advocProfileTableViewCell.cons_viContainerHeight.constant = 0;
+//            advocProfileTableViewCell.cons_fullContainerHeight.constant = 1027.5-238;
+    }
+    else
+    {
+        advocProfileTableViewCell.viContainer_conditional.hidden = false;
+//         advocProfileTableViewCell.cons_viContainerHeight.constant = 238;
+//            advocProfileTableViewCell.cons_fullContainerHeight.constant = 1027.5;
+
+        
+    }
+
 }
 
 -(void)setUpTableView
@@ -98,11 +142,6 @@
 #pragma mark- Textfield delegates methods
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-//    if (textField == mcaProfileFormCell.txtContactNu && textField.text.length > 9 && range.length == 0)
-//    {
-//        return NO;
-//    }
-//
     return YES;
 }
 
@@ -122,6 +161,26 @@
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    
+    if (textField.tag == 400 || textField.tag == 401 || textField.tag == 402 || textField.tag == 403 ){
+        [self addPickerViewWithTag:textField.tag];
+
+        return false;
+    }
+    else if (textField.tag == 300){
+       [self addPickerViewWithTag:textField.tag];
+        return false;
+    }
+    else if (textField.tag == 200){
+        [self showDatePicker];
+        return false;
+    }
+    else if (textField.tag == 404){
+        _tblMultiSelect.hidden = false;
+        _btnClose.hidden = false;
+        _viTrans.hidden = false;
+        return false;
+    }
     return true;
 }
 
@@ -133,11 +192,38 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    if (tableView == _tblMultiSelect){
+        return arrPractiseSecondary.count;
+    }
+    else
+    {
+        return 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (tableView == _tblMultiSelect){
+        static NSString *MyIdentifier = @"MultiSelectTableViewCell";
+        multiSelectTableViewCell = (MultiSelectTableViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier];
+        if (multiSelectTableViewCell == nil)
+        {
+            multiSelectTableViewCell = [[MultiSelectTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
+        }
+        [multiSelectTableViewCell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        
+
+        multiSelectTableViewCell.lblTitle.text = [arrPractiseSecondary objectAtIndex:indexPath.row];
+        if ([selectedItemsSecondary containsObject:[arrPractiseSecondary objectAtIndex:indexPath.row]]){
+            [multiSelectTableViewCell.imgViewStatus setImage:[UIImage imageNamed:@"check_active"]];
+        }
+        else{
+            [multiSelectTableViewCell.imgViewStatus setImage:[UIImage imageNamed:@"check-passive"]];
+        }
+        
+        return multiSelectTableViewCell;
+    }
+    else{
     static NSString *MyIdentifier = @"AdvocProfileTableViewCell";
     advocProfileTableViewCell = (AdvocProfileTableViewCell *)[tableView dequeueReusableCellWithIdentifier:MyIdentifier];
     if (advocProfileTableViewCell == nil)
@@ -149,6 +235,7 @@
     [self configureCell:advocProfileTableViewCell indexPath:indexPath];
     
     return advocProfileTableViewCell;
+    }
 }
 
 -(void)configureCell:(AdvocProfileTableViewCell *)cell indexPath:(NSIndexPath *) indexPath
@@ -158,7 +245,7 @@
     
     if (indexPath.section == 0)
     {
-        
+        [cell.imgProfileView sd_setImageWithURL:[CommonFunction getProfilePicURLString:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"]] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
         cell.txtFirstName.text = global_advocate_profileObj.fname;
         cell.txtLastName.text = global_advocate_profileObj.lname;
         cell.txtEmailID.text = global_advocate_profileObj.EmailId;
@@ -169,7 +256,28 @@
         cell.txtDescription.text = global_advocate_profileObj.PractiseArea;
         cell.txtConsultancyFees.text = global_advocate_profileObj.ConsultancyFees;
         cell.txtAdvocateType.text = global_advocate_profileObj.Advocatetype;
+        cell.txt_secondaryArea_container.text = global_advocate_profileObj.SecAOP;
+        selectedItemsSecondary = [[global_advocate_profileObj.SecAOP componentsSeparatedByString:@","] mutableCopy];
+        cell.txt_primaryArea_container.text = global_advocate_profileObj.AOP;
+        cell.txt_year_container.text = global_advocate_profileObj.ExpYear;
+        cell.txt_month_container.text = global_advocate_profileObj.ExpMonth;
 
+        cell.txtAdvocateType.text = global_advocate_profileObj.Advocatetype;
+        if ([global_advocate_profileObj.Advocatetype isEqualToString:@"Student"]){
+            advocProfileTableViewCell.viContainer_conditional.hidden = true;
+//            advocProfileTableViewCell.cons_viContainerHeight.constant = 0;
+//            advocProfileTableViewCell.cons_fullContainerHeight.constant = 1027.5-238;
+        }
+        else
+        {
+            advocProfileTableViewCell.viContainer_conditional.hidden = false;
+//             advocProfileTableViewCell.cons_viContainerHeight.constant = 238;
+//            advocProfileTableViewCell.cons_fullContainerHeight.constant = 1027.5;
+
+
+            
+        }
+        
         cell.txtFirstName.delegate = self;
         cell.txtLastName.delegate = self;
         cell.txtEmailID.delegate = self;
@@ -181,13 +289,15 @@
         cell.txtConsultancyFees.delegate = self;
         cell.txtAdvocateType.delegate = self;
 
+        
+        
 //
         cell.txtContactNumber.keyboardType = UIKeyboardTypeNumberPad;
         cell.txtConsultancyFees.keyboardType = UIKeyboardTypeNumberPad;
 //
-        //        cell.txtFundTypes.inputView = picker;
-//        [cell.btnCurrentLocation addTarget:self action:@selector(currentLocationTapped) forControlEvents:UIControlEventTouchUpInside];
-//        [cell.btnNext addTarget:self action:@selector(btnNextTapped:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnUpdateProfile addTarget:self action:@selector(hitApiToPutProfileData) forControlEvents:UIControlEventTouchUpInside];
+
+        //        [cell.btnNext addTarget:self action:@selector(btnNextTapped:) forControlEvents:UIControlEventTouchUpInside];
 //
 //        [cell.txtContactNu addCountryCode];
 //
@@ -209,137 +319,188 @@
 //        cell.txtFundTypes.inputAccessoryView = toolbar;
     }
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == _tblMultiSelect){
+        if ([selectedItemsSecondary containsObject:[arrPractiseSecondary objectAtIndex:indexPath.row]]){
+            [selectedItemsSecondary removeObject:[arrPractiseSecondary objectAtIndex:indexPath.row]];
+        }
+        else
+        {
+            [selectedItemsSecondary addObject:[arrPractiseSecondary objectAtIndex:indexPath.row]];
+        }
+        [_tblMultiSelect reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 
-//#pragma mark - Picker View Delegates Methods
-//- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-//    return 1;
-//}
-//
-//- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-//{
-//    return arrFundtypes.count;
-//}
-//
-//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-//{
-//    TGMasterCodeMC *ob = [arrFundtypes objectAtIndex:row];
-//    return ob.defaultDesc;
-//}
-//
-//-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-//{
-//    TGMasterCodeMC *ob = [arrFundtypes objectAtIndex:row];
-//    mcaProfileFormCell.txtFundTypes.text = ob.defaultDesc;
-//}
-//
-//#pragma mark - Api Methods
-//-(void)performSaveNBFCLeadApiForIntegratedMode
-//{
-//    if ([self isInternetAvailable])
-//    {
-//        [self showActivityIndicator];
-//        
-//        AppDelegate *appDelegateOb = [Utility getAppDelegateObject];
-//        NbfcLoan *ob = [appDelegateOb.loanEligibleList objectAtIndex: 0];
-//        
-//        BaseOperationQueue *baseOperationQueue = [BaseOperationQueue getInstance];
-//        NbfcLoanManager *loanManager = [[NbfcLoanManager alloc] init];
-//        loanManager.operationType = oNBFCSaveNbfcLead_integratedMode;
-//        loanManager.nbfcLoanType = kNBFCSaveNbfcLead_integratedMode;
-//        loanManager.delegate = self;
-//        
-//        loanManager.probileOb = mca_request_profileDetailsDictUpdated;
-//        loanManager.integratedWFSTag = @"100";
-//        loanManager.completeRequest = mca_request_completeDataDict;
-//        loanManager.loanEligibilityId = ob.loanEligibilityId;
-//        
-//        [baseOperationQueue addOperation:loanManager];
-//    }
-//    else
-//    {
-//        [[ToastView getInstance] displayToastWithMessage:LOCALIZATION(msg_no_internet_message)];
-//    }
-//}
-//
-//- (void) saveNbfcLeadApiPerformed :(MasterResponse *)masterResponse
-//{
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        
-//        if (masterResponse.status)
-//        {
-//            if ([masterResponse.messageId isEqualToString:mca_errorCode_saveNBFC_refreshExistingLeadData])
-//            {
-//                [self hideActivityIndicator];
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_existingLeadData object:nil];
-//            }
-//            else
-//            {
-//                NSArray *parsedArray = [Utility parseDataForMCA:masterResponse.raw];
-//                mca_request_profileDetailsDict = parsedArray[0];
-//                mca_request_completeDataDict = parsedArray[4];
-//                
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_profileData object:nil];
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_businessData object:nil];
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_individualData object:nil];
-//                
-//                [self hideActivityIndicator];
-//                
-//                [self moveToNextScreen];
-//            }
-//        }
-//        else
-//        {
-//            [self hideActivityIndicator];
-//            [[ToastView getInstance] displayToastWithMessage:masterResponse.message];
-//            
-//            if ([masterResponse.messageId isEqualToString:mca_errorCode_saveNBFC_refreshExistingLeadData])
-//            {
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_existingLeadData object:nil];
-//            }
-//            //            else if ([masterResponse.messageId isEqualToString:mca_errorCode_saveNBFC_refreshGetEligibleLoanData])
-//            //            {
-//            //                // fire notification to refresh NBFC banner and call getEligibleLoanList Api
-//            //                [self.navigationController popToRootViewControllerAnimated:YES];
-//            //            }
-//        }
-//    });
-//}
-//
-//- (void) onErrorOccurred :(NSError *)error inOperationTask :(OperationType)operationType
-//{
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [self hideActivityIndicator];
-//        [[ToastView getInstance] displayToastWithMessage:LOCALIZATION(PT_ERROR_MESSAGE)];
-//    });
-//}
-//
-//#pragma mark - Other Methods
-//-(void)moveToNextScreen
-//{
-//    NSMutableDictionary* userInfo = [[NSMutableDictionary alloc] init];
-//    [userInfo setValue:@"Business" forKey:@"ActiveTab"];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:notification_MCA_update_tabs object:self userInfo:userInfo];
-//    
-//    [userInfo setValue:self forKey:@"ActiveViewController"];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:notification_MCA_Switch_To_Business_Page object:self userInfo:userInfo];
-//    
-//    //[self performSelector:@selector(refreshNextScreen) withObject:nil afterDelay:0.2];
-//}
-//
-//-(void)refreshNextScreen
-//{
-//    [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_businessData object:nil];
-//}
-//
-//#pragma mark - Actions Methods
-//
-//-(void)doneForPicker
-//{
-//    [self.view endEditing:YES];
-//}
-//
-//
-//
+        advocProfileTableViewCell.txt_secondaryArea_container.text = [selectedItemsSecondary componentsJoinedByString:@","];
+    }
+    else
+    {
+        
+    }
+}
+
+//[pickerArray removeAllObjects];
+#pragma mark - Picker View Data source
+// Add picker View
+-(void)addPickerViewWithTag:(NSInteger)tagForPicker{
+    pickerObj = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 150)];
+    pickerObj.delegate = self;
+    pickerObj.dataSource = self;
+    pickerObj.showsSelectionIndicator = YES;
+    pickerObj.backgroundColor = [UIColor lightGrayColor];
+    pickerObj.tag = tagForPicker;
+    viewOverPicker = [[UIView alloc]initWithFrame:self.view.frame];
+    UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:
+                          CGRectMake(0, self.view.frame.size.height-
+                                     pickerObj.frame.size.height-50, self.view.frame.size.width, 50)];
+    [toolBar setBarStyle:UIBarStyleBlackOpaque];
+    UIToolbar *toolBarForTitle;
+    
+    switch (tagForPicker) {
+        case 300:
+        {
+            [pickerArray removeAllObjects];
+            [pickerArray addObjectsFromArray: @[@"Male",@"Female"]];
+        }
+            break;
+        case 400:
+        {
+            [pickerArray removeAllObjects];
+            [pickerArray addObjectsFromArray: arrAdvocatetypes];
+        }
+            break;
+        case 401:
+        {
+            [pickerArray removeAllObjects];
+            for (int i=1;i<51;i++){
+                [pickerArray addObject:[NSString stringWithFormat:@"%d",i]];
+            }
+        }
+            break;
+        case 402:
+        {
+            [pickerArray removeAllObjects];
+            for (int i=1;i<12;i++){
+                [pickerArray addObject:[NSString stringWithFormat:@"%d",i]];
+            }
+        }
+            break;
+ 
+        case 403:
+        {
+            [pickerArray removeAllObjects];
+            [pickerArray addObjectsFromArray:arrPractiseSecondary];
+        }
+            break;
+
+        default:
+            break;
+    }
+    
+    
+    
+    viewOverPicker.backgroundColor = [UIColor clearColor];
+    [CommonFunction setResignTapGestureToView:viewOverPicker andsender:self];
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Done" style:UIBarButtonItemStyleDone
+                                   target:self action:@selector(doneForPicker:)];
+    doneButton.tintColor = [CommonFunction colorWithHexString:@"f7a41e"];
+    UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    NSArray *toolbarItems = [NSArray arrayWithObjects:
+                             space,doneButton, nil];
+    pickerObj.hidden = false;
+    [toolBar setItems:toolbarItems];
+    [viewOverPicker addSubview:toolBar];
+    [viewOverPicker addSubview:pickerObj];
+    [self.view addSubview:viewOverPicker];
+    [pickerObj reloadAllComponents];
+}
+
+
+#pragma mark - Picker View Delegates Methods
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return pickerArray.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    NSString *ob = [pickerArray objectAtIndex:row];
+    return ob;
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    NSString *ob = [pickerArray objectAtIndex:row];
+
+    switch (pickerView.tag) {
+        case 400:
+        {
+            advocProfileTableViewCell.txtAdvocateType.text = ob;
+            if ([ob isEqualToString:@"Student"]){
+                advocProfileTableViewCell.viContainer_conditional.hidden = true;
+//                advocProfileTableViewCell.cons_viContainerHeight.constant = 0;
+//            advocProfileTableViewCell.cons_fullContainerHeight.constant = 1027.5-238;
+            }
+            else
+            {
+                advocProfileTableViewCell.viContainer_conditional.hidden = false;
+// advocProfileTableViewCell.cons_viContainerHeight.constant = 238;
+//            advocProfileTableViewCell.cons_fullContainerHeight.constant = 1027.5;
+
+            }
+        }
+            break;
+            
+        case 401:
+        {
+            advocProfileTableViewCell.txt_year_container.text = ob;
+        }
+            break;
+            
+        case 402:
+        {
+            advocProfileTableViewCell.txt_month_container.text = ob;
+        }
+            break;
+            
+        case 403:
+        {
+            advocProfileTableViewCell.txt_primaryArea_container.text = ob;
+        }
+            break;
+        case 300:
+        {
+            advocProfileTableViewCell.txtGender.text = ob;
+        }
+            break;
+
+       default:
+            break;
+    }
+}
+
+
+#pragma mark - Actions Methods
+
+-(void)doneForPicker:(id)sender{
+    [viewOverPicker removeFromSuperview];
+}
+-(void)resignResponder{
+    [viewOverPicker removeFromSuperview];
+}
+
+-(void)updateProfileTapped{
+    
+}
+
+
+
 //-(BOOL) ifProfileUpdated
 //{
 //    if (mca_request_profileDetailsDictUpdated.loanAmount != mca_request_profileDetailsDict.loanAmount)
@@ -379,5 +540,168 @@
 //        }
 //    }
 //}
+- (IBAction)btnCloseTapped:(id)sender {
+    _tblMultiSelect.hidden = true;
+    _btnClose.hidden = true;
+    _viTrans.hidden = true;
+}
+
+#pragma mark - Api Methods
+
+-(void)hitApiToPutProfileData{
+    
+    NSMutableDictionary* parameter = [NSMutableDictionary new];
+    
+    NSMutableDictionary* dictEdu = [NSMutableDictionary new];
+//{"username":"8896292603","EmailId":"dharm@malinator.com","fname":"Vineet","mobile":"8896292603","lname":"Singh","DOB":"04/11/2018","Dsc":"","AOP":"Criminal Lawyer","PA":"4,6,12,14","BarCodeId":"wwwwwwww","Gender":"Male","FirmName":"","SecAOP":"Civil Lawyer,Marriage Lawyer,Company Lawyer,Property Lawyer,Traffic and Accident Lawyer","ConsultancyFees":"1200.00","Advocatetype":null,"ExpYear":"4","ExpMonth":"1","OtherPractiseArea":""}
+    
+    
+    [dictEdu setObject:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"username"];
+    [dictEdu setObject:advocProfileTableViewCell.txtEmailID.text forKey:@"EmailId"];
+    [dictEdu setObject:advocProfileTableViewCell.txtFirstName.text forKey:@"fname"];
+    [dictEdu setObject:advocProfileTableViewCell.txtContactNumber.text forKey:@"mobile"];
+    [dictEdu setObject:advocProfileTableViewCell.txtLastName.text forKey:@"lname"];
+    [dictEdu setObject:advocProfileTableViewCell.txtFDOB.text forKey:@"DOB"];
+    [dictEdu setObject:advocProfileTableViewCell.txt_primaryArea_container.text forKey:@"AOP"];
+    [dictEdu setObject:global_advocate_profileObj.PA forKey:@"PA"];
+    [dictEdu setObject:advocProfileTableViewCell.txtBarcode.text forKey:@"BarCodeId"];
+    [dictEdu setObject:advocProfileTableViewCell.txtGender.text forKey:@"Gender"];
+    [dictEdu setObject:advocProfileTableViewCell.txtDescription.text forKey:@"FirmName"];
+    [dictEdu setObject:advocProfileTableViewCell.txt_secondaryArea_container.text forKey:@"SecAOP"];
+    [dictEdu setObject:advocProfileTableViewCell.txtConsultancyFees.text forKey:@"ConsultancyFees"];
+    [dictEdu setObject:advocProfileTableViewCell.txtAdvocateType.text forKey:@"Advocatetype"];
+    [dictEdu setObject:advocProfileTableViewCell.txt_year_container.text forKey:@"ExpYear"];
+    [dictEdu setObject:advocProfileTableViewCell.txt_month_container.text forKey:@"ExpMonth"];
+    [dictEdu setObject:@"" forKey:@"OtherPractiseArea"];
+
+    [parameter setValue:dictEdu forKey:@"_UpdAdv"];
+    
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_SAVE_PROFILE]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                
+                [self removeloder];
+                NSMutableArray* arrData = [NSMutableArray new];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1) {
+                    NSArray *tempArray = [NSArray new];
+                    NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                    
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+                    [self.navigationController popViewControllerAnimated:true];
+                }else
+                {
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+                    [self removeloder];
+                    [self.navigationController popViewControllerAnimated:true];
+
+                }
+                [self removeloder];
+                
+            }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
+        }];
+    } else {
+        [self removeloder];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+    }
+}
+
+
+
+-(void)addLoder{
+    self.view.userInteractionEnabled = NO;
+    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+    loderObj = [[LoderView alloc] initWithFrame:self.navigationController.view.frame];
+    loderObj.lbl_title.text = @"Please wait...";
+    [[UIApplication sharedApplication].keyWindow addSubview:loderObj];
+    [[UIApplication sharedApplication].keyWindow bringSubviewToFront:loderObj];
+}
+
+-(void)removeloder{
+    //loderObj = nil;
+    [loderObj removeFromSuperview];
+    //[loaderView removeFromSuperview];
+    self.view.userInteractionEnabled = YES;
+}
+
+
+#pragma mark- Date Picker
+
+// Set the default date
+-(void)setDefaultDate{
+    
+    NSDateFormatter *dateFormatter=[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd/YYYY"];
+    // or @"yyyy-MM-dd hh:mm:ss a" if you prefer the time with AM/PM
+    startDateString = [dateFormatter stringFromDate:[NSDate date]];
+    startDate = [NSDate date];
+    
+    advocProfileTableViewCell.txtFDOB.text = startDateString;
+}
+// Show the date picker
+-(void)showDatePicker{
+    pickerForDate = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 150)];
+    
+    pickerForDate.datePickerMode = UIDatePickerModeDate;
+    [pickerForDate setDate:[NSDate date]];
+    
+    //    [pickerForDate setMinimumDate: [NSDate date]];
+    [pickerForDate addTarget:self action:@selector(dueDateChanged:)
+            forControlEvents:UIControlEventValueChanged];
+    viewOverPicker = [[UIView alloc]initWithFrame:self.view.frame];
+    pickerForDate.backgroundColor = [UIColor lightGrayColor];
+    viewOverPicker.backgroundColor = [UIColor clearColor];
+    [CommonFunction setResignTapGestureToView:viewOverPicker andsender:self];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Done" style:UIBarButtonItemStyleDone
+                                   target:self action:@selector(doneForPicker:)];
+    doneButton.tintColor = [CommonFunction colorWithHexString:@"f7a41e"];
+    UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    toolBar = [[UIToolbar alloc]initWithFrame:
+               CGRectMake(0, self.view.frame.size.height-
+                          pickerForDate.frame.size.height-50, self.view.frame.size.width, 50)];
+    //    [toolBar setBarTintColor:[UIColor redColor]];
+    
+    
+    [toolBar setBarStyle:UIBarStyleBlackOpaque];
+    NSArray *toolbarItems = [NSArray arrayWithObjects:space,
+                             space,doneButton, nil];
+    [toolBar setItems:toolbarItems];
+    [viewOverPicker addSubview:pickerForDate];
+    [viewOverPicker addSubview:toolBar];
+    [self.view addSubview:viewOverPicker];
+    
+    
+}
+
+// value change of the date picker
+-(void) dueDateChanged:(UIDatePicker *)sender {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    //self.myLabel.text = [dateFormatter stringFromDate:[dueDatePickerView date]];
+    NSLog(@"Picked the date %@", [dateFormatter stringFromDate:[sender date]]);
+    [dateFormatter setDateFormat:@"MM/dd/YYYY"];
+    
+    startDateString = [dateFormatter stringFromDate:[sender date]];
+    startDate = sender.date;
+    advocProfileTableViewCell.txtFDOB.text = startDateString;
+    
+    
+}
+
+
 @end
 

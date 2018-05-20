@@ -62,7 +62,7 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
         
         
         _lblC1.text = _dataObj.CourtName;
-        _lblC2.text = [NSString stringWithFormat:@"%@ %d/%@",_dataObj.CaseTypeName,_dataObj.caseId,_dataObj.caseyear];
+        _lblC2.text = [NSString stringWithFormat:@"%@ %@/%@",_dataObj.CaseTypeName,_dataObj.caseId,_dataObj.caseyear];
         if ([_dataObj.PetitionerName isKindOfClass:[NSNull class]] || [_dataObj.PetitionerName isEqualToString:@""] || [_dataObj.rnm isKindOfClass:[NSNull class]] ||[_dataObj.rnm isEqualToString:@""]) {
             _lblC3.text = @"";
         }else{
