@@ -225,14 +225,16 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    [revealController revealToggle:nil];
-//
-//    ArticleVC *articalVC =[[ArticleVC alloc]initWithNibName:@"ArticleVC" bundle:nil];
-//    articalVC.categoryName = [[CommonFunction getNameFromString:[[headerDataArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]] capitalizedString];
-//    articalVC.categoryId = [[CommonFunction getIDFromString:[[headerDataArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row]] capitalizedString];
-//
-//    //webVC.urlPart = [[headerDataArray objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-//    [self.navigationController pushViewController:articalVC animated:true];
+
+    if (indexPath.section !=0){
+        if ([[headerArray objectAtIndex:indexPath.section-1] isEqualToString:@"Order"])
+        {
+            NSMutableArray* obj = (NSMutableArray*)[headerDataArray objectAtIndex:indexPath.section-1];
+            DocumentModel* caseObj = [obj objectAtIndex:indexPath.row];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:caseObj.AttachmentPath]];
+            
+        }
+    }
 }
 
 #pragma mark - <FZAccordionTableViewDelegate> -
@@ -242,15 +244,8 @@ static NSString *const kTableViewCellReuseIdentifier = @"CaseListCell2";
 }
 
 - (void)tableView:(FZAccordionTableView *)tableView didOpenSection:(NSInteger)section withHeader:(UITableViewHeaderFooterView *)header {
-//    ArticleVC *articalVC;
-//    if (section!=1) {
-//        [revealController revealToggle:nil];
-//        articalVC =[[ArticleVC alloc]initWithNibName:@"ArticleVC" bundle:nil];
-//        articalVC.categoryName = [[[CommonFunction getNameFromString:[headerArray objectAtIndex:section]] uppercaseString] capitalizedString];
-//        articalVC.categoryId = [[[CommonFunction getIDFromString:[headerArray objectAtIndex:section]] uppercaseString] capitalizedString];
-//        [self.navigationController pushViewController:articalVC animated:true];
-//    }
-    //    webVC.urlPart = [headerArray objectAtIndex:section];
+
+    
 }
 
 - (void)tableView:(FZAccordionTableView *)tableView willCloseSection:(NSInteger)section withHeader:(UITableViewHeaderFooterView *)header {
