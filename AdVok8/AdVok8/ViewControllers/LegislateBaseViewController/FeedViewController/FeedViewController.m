@@ -351,6 +351,7 @@
     [parameter setValue:dictRequest forKey:@"_post"];
     
     if ([ CommonFunction reachability]) {
+//        [self addLoder];
         
         //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_LIKE_POST]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
@@ -380,13 +381,14 @@
                         [arrData replaceObjectAtIndex:row withObject:dataObj];
                     }];
                     [_tblView reloadRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];;
+                    
                 }else
                 {
 
                     [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
 
                 }
-                
+                [self removeloder];
             }
             else
             {

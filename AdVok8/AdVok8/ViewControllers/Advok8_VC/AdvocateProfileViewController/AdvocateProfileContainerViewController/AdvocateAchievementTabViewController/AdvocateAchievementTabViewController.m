@@ -9,11 +9,15 @@
 #import "AdvocateAchievementTabViewController.h"
 #import "AdvocAchievementTableViewCell.h"
 
-@interface AdvocateAchievementTabViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,UITableViewDelegate,UITableViewDataSource>
+@interface AdvocateAchievementTabViewController ()<UIPickerViewDelegate,UIPickerViewDataSource,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate>
 {
     UIPickerView * picker;
     NSMutableArray* arrAdvocatetypes;
     AdvocAchievementTableViewCell* advocAchievementTableViewCell;
+    LoderView* loderObj;
+    NSMutableArray* arr_global_advocate_Education_data_updated;
+    NSMutableArray* arr_global_advocate_Membership_data_updated;
+    NSMutableArray* arr_global_advocate_WorkingExperience_data_updated;
 }
 
 @end
@@ -25,13 +29,18 @@
     [super viewDidLoad];
     
     
-    //        [[NSNotificationCenter defaultCenter] removeObserver:self name:notification_refreshMCARequest_profileData object:nil];
-    //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshProfileData) name:notification_refreshMCARequest_profileData object:nil];
+            [[NSNotificationCenter defaultCenter] removeObserver:self name:@"notification_refresh_Acheivement_data" object:nil];
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshAcheivementData) name:@"notification_refresh_Acheivement_data" object:nil];
     
     
     [self initialiseView];
     [self initialiseData];
 }
+
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.navigationController.view.frame;
+}
+
 
 -(void)initialiseView
 {
@@ -49,26 +58,53 @@
     arrAdvocatetypes = [NSMutableArray new];
     arrAdvocatetypes = [[NSMutableArray alloc] initWithObjects:@"Student",@"Intern",@"Practicing",@"Mutual Funds", nil];
     
-    
+    arr_global_advocate_Education_data_updated = [NSMutableArray new];
+    arr_global_advocate_WorkingExperience_data_updated = [NSMutableArray new];
+    arr_global_advocate_Membership_data_updated = [NSMutableArray new];
+
     [self setupViewWithData];
 }
 
 -(void) setupViewWithData
 {
-    //    mca_request_profileDetailsDictUpdated = [[MCAProfileMC alloc]initWithBlankMCAProfileDictionary];
+    arr_global_advocate_Education_data_updated = arr_global_advocate_Education_data;
+    arr_global_advocate_Membership_data_updated = arr_global_advocate_Membership_data;
+    arr_global_advocate_WorkingExperience_data_updated = arr_global_advocate_WorkingExperience_data;
+
     [self assignDataToCell];
 }
 
--(void)refreshProfileData
+-(void)refreshAcheivementData
 {
-    //    MCAProfileMC *ob = [[MCAProfileMC alloc] initWithCopyData: mca_request_profileDetailsDict];
-    //    mca_request_profileDetailsDictUpdated = ob;
+    arr_global_advocate_Education_data_updated = arr_global_advocate_Education_data;
+    arr_global_advocate_Membership_data_updated = arr_global_advocate_Membership_data;
+    arr_global_advocate_WorkingExperience_data_updated = arr_global_advocate_WorkingExperience_data;
+
     [self assignDataToCell];
 }
 
 -(void) assignDataToCell
 {
     
+    Education* objEdu = [Education new];
+    objEdu = [arr_global_advocate_Education_data objectAtIndex:0];
+    advocAchievementTableViewCell.txtEduDegreeName.text = objEdu.DegreeName;
+    advocAchievementTableViewCell.txtEduCollege.text = objEdu.College;
+    advocAchievementTableViewCell.txtEduToYear.text = objEdu.ToYear;
+    advocAchievementTableViewCell.txtEduFromYear.text = objEdu.FromYear;
+    
+    Membership* objMem = [Membership new];
+    objMem = [arr_global_advocate_Membership_data objectAtIndex:0];
+    advocAchievementTableViewCell.txtMemMembershipPost.text = objMem.MembershipDesignation;
+    advocAchievementTableViewCell.txtMemDuration.text = objMem.MembershipDuration;
+    advocAchievementTableViewCell.txtMemCompanyName.text = objMem.MembershipCompany;
+    
+    WorkingExperience* objworkingExpe = [WorkingExperience new];
+    objworkingExpe = [arr_global_advocate_WorkingExperience_data objectAtIndex:0];
+    advocAchievementTableViewCell.txtExpDegree.text = objworkingExpe.Designation;
+    advocAchievementTableViewCell.txtExpDuration.text = objworkingExpe.Duration;
+    advocAchievementTableViewCell.txtExpCompanyName.text = objworkingExpe.Company;
+
 }
 
 -(void)setUpTableView
@@ -87,6 +123,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)btnUpdateData:(id)sender{
+    
+    [self getUpdatedData];
+    [self hitApiToPutAcheivementData ];
 }
 
 #pragma mark- Textfield delegates methods
@@ -153,149 +195,141 @@
     if (indexPath.section == 0)
     {
         
+        advocAchievementTableViewCell.txtEduDegreeName.delegate = self;
+        advocAchievementTableViewCell.txtEduCollege.delegate = self;
+        advocAchievementTableViewCell.txtEduToYear.delegate = self;
+        advocAchievementTableViewCell.txtEduFromYear.delegate = self;
         
-        //        cell.txtCity.delegate = self;
-        //        cell.txtFundTypes.delegate = self;
-        //        cell.txtContactNu.delegate = self;
-        //        cell.txtEmailId.delegate = self;
-        //        cell.txtLoanAmount.delegate = self;
-        //
-        //        cell.txtLoanAmount.text = @"" ;
-        //        cell.txtCity.text = @"";
-        //        cell.txtEmailId.text = @"";
-        //        cell.txtContactNu.text = @"";
-        //        cell.txtFundTypes.text = @"";
-        //
-        //        cell.txtLoanAmount.keyboardType = UIKeyboardTypeNumberPad;
-        //
-        //        cell.txtFundTypes.inputView = picker;
-        //        [cell.btnCurrentLocation addTarget:self action:@selector(currentLocationTapped) forControlEvents:UIControlEventTouchUpInside];
-        //        [cell.btnNext addTarget:self action:@selector(btnNextTapped:) forControlEvents:UIControlEventTouchUpInside];
-        //
-        //        [cell.txtContactNu addCountryCode];
-        //
-        //        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
-        //        [button setImage:[UIImage imageNamed:@"down-arrow"] forState:UIControlStateNormal];
-        //        button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-        //        button.tag = indexPath.row;
-        //        cell.txtFundTypes.rightView = button;
-        //        cell.txtFundTypes.rightViewMode = UITextFieldViewModeAlways;
-        //
-        //        UIToolbar* toolbar;
-        //        toolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-        //        toolbar.barStyle = UIBarStyleDefault;
-        //        toolbar.items = [NSArray arrayWithObjects:
-        //                         [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-        //                         [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneForPicker)],
-        //                         nil];
-        //        [toolbar sizeToFit];
-        //        cell.txtFundTypes.inputAccessoryView = toolbar;
+        advocAchievementTableViewCell.txtMemMembershipPost.delegate = self;
+        advocAchievementTableViewCell.txtMemDuration.delegate = self;
+        advocAchievementTableViewCell.txtMemCompanyName.delegate = self;
+        
+        advocAchievementTableViewCell.txtExpDegree.delegate = self;
+        advocAchievementTableViewCell.txtExpDuration.delegate = self;
+        advocAchievementTableViewCell.txtExpCompanyName.delegate = self;
+
+        Education* objEdu = [Education new];
+        objEdu = [arr_global_advocate_Education_data objectAtIndex:0];
+        advocAchievementTableViewCell.txtEduDegreeName.text = objEdu.DegreeName;
+        advocAchievementTableViewCell.txtEduCollege.text = objEdu.College;
+        advocAchievementTableViewCell.txtEduToYear.text = objEdu.ToYear;
+        advocAchievementTableViewCell.txtEduFromYear.text = objEdu.FromYear;
+        
+        Membership* objMem = [Membership new];
+        objMem = [arr_global_advocate_Membership_data objectAtIndex:0];
+        advocAchievementTableViewCell.txtMemMembershipPost.text = objMem.MembershipDesignation;
+        advocAchievementTableViewCell.txtMemDuration.text = objMem.MembershipDuration;
+        advocAchievementTableViewCell.txtMemCompanyName.text = objMem.MembershipCompany;
+        
+        WorkingExperience* objworkingExpe = [WorkingExperience new];
+        objworkingExpe = [arr_global_advocate_WorkingExperience_data objectAtIndex:0];
+        advocAchievementTableViewCell.txtExpDegree.text = objworkingExpe.Designation;
+        advocAchievementTableViewCell.txtExpDuration.text = objworkingExpe.Duration;
+        advocAchievementTableViewCell.txtExpCompanyName.text = objworkingExpe.Company;
+        
+        [advocAchievementTableViewCell.btnUpdate addTarget:self action:@selector(btnUpdateData:) forControlEvents:UIControlEventTouchUpInside];
+
+
     }
 }
 
-//#pragma mark - Picker View Delegates Methods
-//- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-//    return 1;
-//}
-//
-//- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-//{
-//    return arrFundtypes.count;
-//}
-//
-//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-//{
-//    TGMasterCodeMC *ob = [arrFundtypes objectAtIndex:row];
-//    return ob.defaultDesc;
-//}
-//
-//-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-//{
-//    TGMasterCodeMC *ob = [arrFundtypes objectAtIndex:row];
-//    mcaProfileFormCell.txtFundTypes.text = ob.defaultDesc;
-//}
-//
-//#pragma mark - Api Methods
-//-(void)performSaveNBFCLeadApiForIntegratedMode
-//{
-//    if ([self isInternetAvailable])
-//    {
-//        [self showActivityIndicator];
-//
-//        AppDelegate *appDelegateOb = [Utility getAppDelegateObject];
-//        NbfcLoan *ob = [appDelegateOb.loanEligibleList objectAtIndex: 0];
-//
-//        BaseOperationQueue *baseOperationQueue = [BaseOperationQueue getInstance];
-//        NbfcLoanManager *loanManager = [[NbfcLoanManager alloc] init];
-//        loanManager.operationType = oNBFCSaveNbfcLead_integratedMode;
-//        loanManager.nbfcLoanType = kNBFCSaveNbfcLead_integratedMode;
-//        loanManager.delegate = self;
-//
-//        loanManager.probileOb = mca_request_profileDetailsDictUpdated;
-//        loanManager.integratedWFSTag = @"100";
-//        loanManager.completeRequest = mca_request_completeDataDict;
-//        loanManager.loanEligibilityId = ob.loanEligibilityId;
-//
-//        [baseOperationQueue addOperation:loanManager];
-//    }
-//    else
-//    {
-//        [[ToastView getInstance] displayToastWithMessage:LOCALIZATION(msg_no_internet_message)];
-//    }
-//}
-//
-//- (void) saveNbfcLeadApiPerformed :(MasterResponse *)masterResponse
-//{
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//
-//        if (masterResponse.status)
-//        {
-//            if ([masterResponse.messageId isEqualToString:mca_errorCode_saveNBFC_refreshExistingLeadData])
-//            {
-//                [self hideActivityIndicator];
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_existingLeadData object:nil];
-//            }
-//            else
-//            {
-//                NSArray *parsedArray = [Utility parseDataForMCA:masterResponse.raw];
-//                mca_request_profileDetailsDict = parsedArray[0];
-//                mca_request_completeDataDict = parsedArray[4];
-//
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_profileData object:nil];
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_businessData object:nil];
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_individualData object:nil];
-//
-//                [self hideActivityIndicator];
-//
-//                [self moveToNextScreen];
-//            }
-//        }
-//        else
-//        {
-//            [self hideActivityIndicator];
-//            [[ToastView getInstance] displayToastWithMessage:masterResponse.message];
-//
-//            if ([masterResponse.messageId isEqualToString:mca_errorCode_saveNBFC_refreshExistingLeadData])
-//            {
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_existingLeadData object:nil];
-//            }
-//            //            else if ([masterResponse.messageId isEqualToString:mca_errorCode_saveNBFC_refreshGetEligibleLoanData])
-//            //            {
-//            //                // fire notification to refresh NBFC banner and call getEligibleLoanList Api
-//            //                [self.navigationController popToRootViewControllerAnimated:YES];
-//            //            }
-//        }
-//    });
-//}
-//
-//- (void) onErrorOccurred :(NSError *)error inOperationTask :(OperationType)operationType
-//{
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [self hideActivityIndicator];
-//        [[ToastView getInstance] displayToastWithMessage:LOCALIZATION(PT_ERROR_MESSAGE)];
-//    });
-//}
-//
+
+#pragma mark - Api Methods
+
+-(void)hitApiToPutAcheivementData{
+    
+    NSMutableDictionary* parameter = [NSMutableDictionary new];
+    
+    NSMutableDictionary* dictEdu = [NSMutableDictionary new];
+    NSMutableDictionary* dictMem = [NSMutableDictionary new];
+    NSMutableDictionary* dictExp = [NSMutableDictionary new];
+    NSMutableArray* arrEdu = [NSMutableArray new];
+    NSMutableArray* arrMem = [NSMutableArray new];
+    NSMutableArray* arrExp = [NSMutableArray new];
+
+    
+    [dictEdu setObject:advocAchievementTableViewCell.txtEduDegreeName.text forKey:@"DegreeName"];
+    [dictEdu setObject:advocAchievementTableViewCell.txtEduCollege.text forKey:@"College"];
+    [dictEdu setObject:advocAchievementTableViewCell.txtEduToYear.text forKey:@"ToYear"];
+    [dictEdu setObject:advocAchievementTableViewCell.txtEduFromYear.text forKey:@"FromYear"];
+    [arrEdu addObject:dictEdu];
+ 
+    [dictMem setObject:advocAchievementTableViewCell.txtMemMembershipPost.text forKey:@"MembershipDesignation"];
+    [dictMem setObject:advocAchievementTableViewCell.txtMemDuration.text forKey:@"MembershipDuration"];
+    [dictMem setObject:advocAchievementTableViewCell.txtMemCompanyName.text forKey:@"MembershipCompany"];
+    [arrMem addObject:dictMem];
+
+    [dictExp setObject:advocAchievementTableViewCell.txtExpDegree.text forKey:@"Designation"];
+    [dictExp setObject:advocAchievementTableViewCell.txtExpDuration.text forKey:@"Duration"];
+    [dictExp setObject:advocAchievementTableViewCell.txtExpCompanyName.text forKey:@"Company"];
+    [arrExp addObject:dictExp];
+    
+    [parameter setObject:arrEdu forKey:@"objListEducation"];
+    [parameter setObject:arrMem forKey:@"objListMembership"];
+    [parameter setObject:arrExp forKey:@"objListWorkingEx"];
+    [parameter setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
+
+    if ([ CommonFunction reachability]) {
+                [self addLoder];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_PUT_ACHEIVEMENT]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                
+                [self removeloder];
+                NSMutableArray* arrData = [NSMutableArray new];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1) {
+                    NSArray *tempArray = [NSArray new];
+                    NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+                    [self.navigationController popViewControllerAnimated:true];
+                }else
+                {
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[json valueForKey:@"ErrMsg"] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                    [alertController addAction:ok];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                    [self removeloder];
+                }
+                [self removeloder];
+                
+            }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+                
+            }
+        }];
+    } else {
+        [self removeloder];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+    }
+}
+
+
+
+-(void)addLoder{
+    self.view.userInteractionEnabled = NO;
+    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+    loderObj = [[LoderView alloc] initWithFrame:self.navigationController.view.frame];
+    loderObj.lbl_title.text = @"Please wait...";
+    [[UIApplication sharedApplication].keyWindow addSubview:loderObj];
+    [[UIApplication sharedApplication].keyWindow bringSubviewToFront:loderObj];
+}
+
+-(void)removeloder{
+    //loderObj = nil;
+    [loderObj removeFromSuperview];
+    //[loaderView removeFromSuperview];
+    self.view.userInteractionEnabled = YES;
+}
+
+
 //#pragma mark - Other Methods
 //-(void)moveToNextScreen
 //{
@@ -346,22 +380,37 @@
 //    return false;
 //}
 //
-//-(void) getUpdatedData
-//{
-//    mca_request_profileDetailsDictUpdated.loanAmount = [NSNumber numberWithInteger: [mcaProfileFormCell.txtLoanAmount.text integerValue]];
-//    mca_request_profileDetailsDictUpdated.cityName = mcaProfileFormCell.txtCity.text;
-//    mca_request_profileDetailsDictUpdated.emailId = mcaProfileFormCell.txtEmailId.text;
-//    mca_request_profileDetailsDictUpdated.contactNo = mcaProfileFormCell.txtContactNu.text;
-//
-//    NSString *fundTypeDesc = mcaProfileFormCell.txtFundTypes.text.lowercaseString;
-//    for (TGMasterCodeMC *ob in arrFundtypes)
-//    {
-//        if ([ob.defaultDesc.lowercaseString isEqualToString:fundTypeDesc])
-//        {
-//            mca_request_profileDetailsDictUpdated.typeOfFund = ob.codeKey;
-//        }
-//    }
-//}
+-(void) getUpdatedData
+{
+    NSMutableArray* arrEdu = [NSMutableArray new];
+    NSMutableArray* arrExp = [NSMutableArray new];
+    NSMutableArray* arrMem = [NSMutableArray new];
+
+    Education* edu = [Education new];
+    WorkingExperience* workExp = [WorkingExperience new];
+    Membership* mem = [Membership new];
+
+    edu.DegreeName=advocAchievementTableViewCell.txtEduDegreeName.text;
+    edu.College = advocAchievementTableViewCell.txtEduCollege.text;
+    edu.ToYear =advocAchievementTableViewCell.txtEduToYear.text;
+    edu.FromYear =advocAchievementTableViewCell.txtEduFromYear.text;
+    [arrEdu addObject:edu];
+    
+    mem.MembershipDesignation=advocAchievementTableViewCell.txtMemMembershipPost.text;
+    mem.MembershipDuration = advocAchievementTableViewCell.txtMemDuration.text;
+    mem.MembershipCompany =advocAchievementTableViewCell.txtMemCompanyName.text;
+    [arrMem addObject:mem];
+   
+    workExp.Designation=advocAchievementTableViewCell.txtExpDegree.text;
+    workExp.Duration = advocAchievementTableViewCell.txtExpDuration.text;
+    workExp.Company =advocAchievementTableViewCell.txtExpCompanyName.text;
+    [arrExp addObject:workExp];
+    
+    [arr_global_advocate_WorkingExperience_data_updated replaceObjectAtIndex:0 withObject:workExp];
+    [arr_global_advocate_Education_data_updated replaceObjectAtIndex:0 withObject:edu];
+    [arr_global_advocate_Membership_data_updated replaceObjectAtIndex:0 withObject:mem];
+
+}
 
 
 

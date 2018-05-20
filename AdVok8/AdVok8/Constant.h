@@ -62,8 +62,10 @@ static NSString* const API_GET_CauseListWithCase = @"GetCauseListWithCase";
 static NSString* const API_Call_Request = @"callrequest";
 static NSString* const API_GET_ADVOCATE_PROFILE = @"get_Advocate";
 static NSString* const API_ADD_NEW_CASE = @"Ins_CaseReg";
-
-
+static NSString* const API_GET_ACHEIVEMENT = @"getAcievement";
+static NSString* const API_PUT_ACHEIVEMENT = @"putAcheivement";
+static NSString* const API_SAVE_PROFILE = @"PutAdvocateUpdate";
+static NSString* const API_PUT_AVAILABILITY = @"updateAdvocateAvailabilty";
 
 // Dashoboard APIS
 static NSString* const API_GET_ALL_CATEGORIES = @"Get_AllCategory";
@@ -72,6 +74,7 @@ static NSString* const API_GET_SUB_CATEGORY = @"Get_Category";
 static NSString* const API_GET_ALL_ADVOCATES_FOR = @"search_AdvocateWeb";
 static NSString* const API_ADVOCATE_PUBLICDATA = @"GetAdvocatePublicData";
 static NSString* const API_RATING = @"InsertUpdateRating";
+static NSString* const API_UPDATE_USER_PROFILE = @"UpdateUserRegistrationDetail";
 
 static int const like_tag = 1000;
 static int const save_tag = 2000;

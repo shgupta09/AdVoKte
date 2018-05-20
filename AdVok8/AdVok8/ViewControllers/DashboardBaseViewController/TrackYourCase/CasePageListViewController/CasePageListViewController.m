@@ -79,8 +79,8 @@
     cell.lbl_detail1.text = tempObj.CourtName;
     cell.lbl_detail3.text = [NSString stringWithFormat:@"%@, %@",tempObj.PetitionerName,tempObj.RespondantName];
     
-//    [CommonFunction setShadowOpacity:cell.view];
-//    [CommonFunction setCornerRadius:cell.view Radius:5.0];
+    [CommonFunction setShadowOpacity:cell.view];
+    [CommonFunction setCornerRadius:cell.view Radius:5.0];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }

@@ -69,7 +69,7 @@
     cell.lblDate.text = data.date;
     cell.lblTime.text = data.time;
     cell.lblStatus.text = data.Status;
-
+    [cell.imgViewProfilePic sd_setImageWithURL:[CommonFunction getProfilePicURLString:data.userunm] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
 
     return cell;
     

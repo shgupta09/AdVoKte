@@ -125,6 +125,7 @@
 		5FBE6259209B8F3800AD2215 /* AdvocAchievementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE6258209B8F3800AD2215 /* AdvocAchievementTableViewCell.m */; };
 		5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */; };
 		5FC11D022037012A002030BD /* ChooseTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FC11D002037012A002030BD /* ChooseTypeViewController.xib */; };
+		5FCA4D2E20B1363800BC4263 /* MultiSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCA4D2D20B1363800BC4263 /* MultiSelectTableViewCell.m */; };
 		5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCBA0420381ABC002BFD4A /* DesignableButton.m */; };
 		5FCCBA0A2038223B002BFD4A /* RegisterStep1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FCCBA082038223B002BFD4A /* RegisterStep1ViewController.m */; };
 		5FCCBA0B2038223B002BFD4A /* RegisterStep1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FCCBA092038223B002BFD4A /* RegisterStep1ViewController.xib */; };
@@ -422,6 +423,8 @@
 		5FC11CFE2037012A002030BD /* ChooseTypeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChooseTypeViewController.h; sourceTree = "<group>"; };
 		5FC11CFF2037012A002030BD /* ChooseTypeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChooseTypeViewController.m; sourceTree = "<group>"; };
 		5FC11D002037012A002030BD /* ChooseTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChooseTypeViewController.xib; sourceTree = "<group>"; };
+		5FCA4D2C20B1363800BC4263 /* MultiSelectTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiSelectTableViewCell.h; sourceTree = "<group>"; };
+		5FCA4D2D20B1363800BC4263 /* MultiSelectTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiSelectTableViewCell.m; sourceTree = "<group>"; };
 		5FCCBA0320381ABB002BFD4A /* DesignableButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesignableButton.h; sourceTree = "<group>"; };
 		5FCCBA0420381ABC002BFD4A /* DesignableButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesignableButton.m; sourceTree = "<group>"; };
 		5FCCBA072038223B002BFD4A /* RegisterStep1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterStep1ViewController.h; sourceTree = "<group>"; };
@@ -1337,6 +1340,8 @@
 				5FBE6255209B8F1E00AD2215 /* AdvocAvailabilityTableViewCell.m */,
 				5FBE6257209B8F3800AD2215 /* AdvocAchievementTableViewCell.h */,
 				5FBE6258209B8F3800AD2215 /* AdvocAchievementTableViewCell.m */,
+				5FCA4D2C20B1363800BC4263 /* MultiSelectTableViewCell.h */,
+				5FCA4D2D20B1363800BC4263 /* MultiSelectTableViewCell.m */,
 			);
 			path = TableviewCells;
 			sourceTree = "<group>";
@@ -2163,6 +2168,7 @@
 				9CCD053C209AEBD30031F6F1 /* CauseListModel.m in Sources */,
 				5F1B9C33203415B9009503E7 /* DashboardHomeCollectionViewCell.m in Sources */,
 				5F96B71C206FE8D3003CD72F /* CalendarViewController.m in Sources */,
+				5FCA4D2E20B1363800BC4263 /* MultiSelectTableViewCell.m in Sources */,
 				5FBE6247209B7EC100AD2215 /* AdvocateProfileTabViewController.m in Sources */,
 				5FBE6238209B790900AD2215 /* AdvocateProfileViewController.m in Sources */,
 				D8C3C280206F73F90089A3CC /* TaskListCell.m in Sources */,

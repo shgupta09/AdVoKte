@@ -10,5 +10,8 @@
 
 @interface AdvocateProfileTabViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
+@property (weak, nonatomic) IBOutlet UITableView *tblMultiSelect;
+@property (weak, nonatomic) IBOutlet UIButton *btnClose;
+@property (weak, nonatomic) IBOutlet UIView *viTrans;
 
 @end

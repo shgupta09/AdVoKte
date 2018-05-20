@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +24,7 @@
                         <rect key="frame" x="10" y="10" width="300" height="108"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTu-sl-GrI">
-                                <rect key="frame" x="5" y="5" width="251.5" height="20"/>
+                                <rect key="frame" x="5" y="5" width="190" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="lGA-Zu-eab"/>
                                 </constraints>
@@ -50,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSc-3q-Zpe">
-                                <rect key="frame" x="266.5" y="5" width="28.5" height="21"/>
+                                <rect key="frame" x="205" y="5" width="90" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="99v-vR-zus"/>
                                 </constraints>
@@ -73,6 +74,7 @@
                             <constraint firstItem="dG1-xf-ZoV" firstAttribute="leading" secondItem="I3H-Nd-fDk" secondAttribute="leading" id="1of-iR-wy5"/>
                             <constraint firstItem="dG1-xf-ZoV" firstAttribute="top" secondItem="I3H-Nd-fDk" secondAttribute="bottom" constant="5" id="84x-xF-GJU"/>
                             <constraint firstAttribute="bottom" secondItem="enp-jc-odK" secondAttribute="bottom" constant="5" id="8mj-FT-Lo3"/>
+                            <constraint firstItem="LSc-3q-Zpe" firstAttribute="width" secondItem="CxZ-u1-lTG" secondAttribute="width" multiplier="0.3" id="A69-4M-rPg"/>
                             <constraint firstItem="dG1-xf-ZoV" firstAttribute="trailing" secondItem="I3H-Nd-fDk" secondAttribute="trailing" id="DgT-Bp-vqG"/>
                             <constraint firstItem="enp-jc-odK" firstAttribute="leading" secondItem="dG1-xf-ZoV" secondAttribute="leading" id="LkU-IO-cyg"/>
                             <constraint firstItem="I3H-Nd-fDk" firstAttribute="top" secondItem="pTu-sl-GrI" secondAttribute="bottom" constant="5" id="QdN-6f-TJa"/>
@@ -104,7 +106,7 @@
                 <outlet property="lbl5" destination="enp-jc-odK" id="bLp-Ef-3ny"/>
                 <outlet property="view" destination="CxZ-u1-lTG" id="rrt-zw-Pzi"/>
             </connections>
-            <point key="canvasLocation" x="-122" y="-66"/>
+            <point key="canvasLocation" x="-122" y="-66.5"/>
         </tableViewCell>
     </objects>
 </document>

@@ -25,6 +25,8 @@
     [super viewDidLoad];
     [self setUpData];
     
+    [_imgView sd_setImageWithURL:[CommonFunction getProfilePicURLString:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"]] placeholderImage:[UIImage imageNamed:@"dependentsuser"]];
+    
     [self hitApiToGetData];
     
     // Do any additional setup after loading the view from its nib.
@@ -229,7 +231,7 @@
     [parameter setObject:dictRequest forKey:@"objUser"];
     
     if ([ CommonFunction reachability]) {
-        //        [self addLoder];
+        [self addLoder];
         [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_GET_USER_DETAILS]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
             if (error == nil) {
                 NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];

@@ -43,7 +43,7 @@
 
 
 -(void)setUpData{
-    [CommonFunction setNavToController:self title:@"My Activity" isCrossBusston:false];
+    [CommonFunction setNavToController:self title:@"View Profile" isCrossBusston:false];
     [self setUpTableView];
     arrData = [[NSMutableArray alloc ] init];
 

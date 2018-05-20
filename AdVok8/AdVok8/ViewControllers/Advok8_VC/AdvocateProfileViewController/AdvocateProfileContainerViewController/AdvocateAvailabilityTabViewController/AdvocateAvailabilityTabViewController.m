@@ -16,6 +16,28 @@
     AdvocAvailabilityTableViewCell* advocAvailabilityTableViewCell;
     ADRegistrationModel* advocate_profileObj_Updated;
     int count;
+    UIDatePicker* pickerForDate;
+ LoderView* loderObj;
+    UIView *viewOverPicker;
+    UIToolbar *toolBar;
+    
+    NSString* strMonStart;
+    NSString* strMonEnd;
+    NSString* strTueStart;
+    NSString* strTueEnd;
+    NSString* strWedStart;
+    NSString* strWedEnd;
+    NSString* strThursStart;
+    NSString* strThusrEnd;
+    NSString* strFriStart;
+    NSString* strFriEnd;
+    NSString* strSatStart;
+    NSString* strSatEnd;
+    NSString* strSunStart;
+    NSString* strSunEnd;
+    NSString* strAllTimeStart;
+    NSString* strAllTimeEnd;
+
 }
 
 @end
@@ -54,8 +76,25 @@
     arrAdvocatetypes = [NSMutableArray new];
     arrAdvocatetypes = [[NSMutableArray alloc] initWithObjects:@"Student",@"Intern",@"Practicing",@"Mutual Funds", nil];
     
-    
+    strMonStart = @"10:10 AM";
+strMonEnd = @"10:10 AM";
+strTueStart = @"10:10 AM";
+strTueEnd = @"10:10 AM";
+strWedStart = @"10:10 AM";
+strWedEnd = @"10:10 AM";
+strThursStart = @"10:10 AM";
+strThusrEnd = @"10:10 AM";
+strFriStart = @"10:10 AM";
+strFriEnd = @"10:10 AM";
+strSatStart = @"10:10 AM";
+strSatEnd = @"10:10 AM";
+strSunStart = @"10:10 AM";
+strSunEnd = @"10:10 AM";
+
     [self setupViewWithData];
+}
+-(void)viewDidLayoutSubviews{
+    loderObj.frame = self.navigationController.view.frame;
 }
 
 -(void) setupViewWithData
@@ -84,6 +123,10 @@
                 [btn setSelected:true];
             }
         }
+        [advocAvailabilityTableViewCell.btnMonStart setTitle:[[advocate_profileObj_Updated.MonTime componentsSeparatedByString:@"-"] objectAtIndex:0] forState:UIControlStateNormal];
+        [advocAvailabilityTableViewCell.btnMonEnd setTitle:[[advocate_profileObj_Updated.MonTime componentsSeparatedByString:@"-"] objectAtIndex:1] forState:UIControlStateNormal];
+        strMonStart = [[advocate_profileObj_Updated.MonTime componentsSeparatedByString:@"-"] objectAtIndex:0];
+        strMonEnd = [[advocate_profileObj_Updated.MonTime componentsSeparatedByString:@"-"] objectAtIndex:1];
     }
     if ([advocate_profileObj_Updated.tues isEqualToString:@"1"]){
         for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
@@ -91,6 +134,12 @@
                 [btn setSelected:true];
             }
         }
+        [advocAvailabilityTableViewCell.btnTueStart setTitle:[[advocate_profileObj_Updated.TueTime componentsSeparatedByString:@"-"] objectAtIndex:0] forState:UIControlStateNormal];
+        [advocAvailabilityTableViewCell.btnTueEnd setTitle:[[advocate_profileObj_Updated.TueTime componentsSeparatedByString:@"-"] objectAtIndex:1] forState:UIControlStateNormal];
+        strTueStart = [[advocate_profileObj_Updated.TueTime componentsSeparatedByString:@"-"] objectAtIndex:0];
+        strTueEnd = [[advocate_profileObj_Updated.TueTime componentsSeparatedByString:@"-"] objectAtIndex:1];
+
+
     }
     if ([advocate_profileObj_Updated.wed isEqualToString:@"1"]){
         for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
@@ -98,13 +147,23 @@
                 [btn setSelected:true];
             }
         }
-    }
+        [advocAvailabilityTableViewCell.btnWedStart setTitle:[[advocate_profileObj_Updated.WedTime componentsSeparatedByString:@"-"] objectAtIndex:0] forState:UIControlStateNormal];
+        [advocAvailabilityTableViewCell.btnWedEnd setTitle:[[advocate_profileObj_Updated.WedTime componentsSeparatedByString:@"-"] objectAtIndex:1] forState:UIControlStateNormal];
+        
+        strWedStart = [[advocate_profileObj_Updated.WedTime componentsSeparatedByString:@"-"] objectAtIndex:0];
+        strWedEnd = [[advocate_profileObj_Updated.WedTime componentsSeparatedByString:@"-"] objectAtIndex:1];
+     }
+ 
     if ([advocate_profileObj_Updated.thu isEqualToString:@"1"]){
         for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
             if (btn.tag == 1004){
                 [btn setSelected:true];
             }
         }
+        [advocAvailabilityTableViewCell.btnThurStart setTitle:[[advocate_profileObj_Updated.ThuTime componentsSeparatedByString:@"-"] objectAtIndex:0] forState:UIControlStateNormal];
+        [advocAvailabilityTableViewCell.btnThursEnd setTitle:[[advocate_profileObj_Updated.ThuTime componentsSeparatedByString:@"-"] objectAtIndex:1] forState:UIControlStateNormal];
+        strThursStart = [[advocate_profileObj_Updated.ThuTime componentsSeparatedByString:@"-"] objectAtIndex:0];
+        strThusrEnd = [[advocate_profileObj_Updated.ThuTime componentsSeparatedByString:@"-"] objectAtIndex:1];
     }
     if ([advocate_profileObj_Updated.fri isEqualToString:@"1"]){
         for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
@@ -112,6 +171,12 @@
                 [btn setSelected:true];
             }
         }
+        [advocAvailabilityTableViewCell.btnFriStart setTitle:[[advocate_profileObj_Updated.FriTime componentsSeparatedByString:@"-"] objectAtIndex:0] forState:UIControlStateNormal];
+        [advocAvailabilityTableViewCell.btnFriEnd setTitle:[[advocate_profileObj_Updated.FriTime componentsSeparatedByString:@"-"] objectAtIndex:1] forState:UIControlStateNormal];
+
+        strFriStart = [[advocate_profileObj_Updated.FriTime componentsSeparatedByString:@"-"] objectAtIndex:0];
+        strFriEnd = [[advocate_profileObj_Updated.FriTime componentsSeparatedByString:@"-"] objectAtIndex:1];
+
     }
     if ([advocate_profileObj_Updated.sat isEqualToString:@"1"]){
         for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
@@ -119,6 +184,10 @@
                 [btn setSelected:true];
             }
         }
+        [advocAvailabilityTableViewCell.btnSatStart setTitle:[[advocate_profileObj_Updated.SatTime componentsSeparatedByString:@"-"] objectAtIndex:0] forState:UIControlStateNormal];
+        [advocAvailabilityTableViewCell.btnSatEnd setTitle:[[advocate_profileObj_Updated.SatTime componentsSeparatedByString:@"-"] objectAtIndex:1] forState:UIControlStateNormal];
+        strSatStart = [[advocate_profileObj_Updated.SatTime componentsSeparatedByString:@"-"] objectAtIndex:0];
+        strSatEnd = [[advocate_profileObj_Updated.SatTime componentsSeparatedByString:@"-"] objectAtIndex:1];
     }
     if ([advocate_profileObj_Updated.sun isEqualToString:@"1"]){
         for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
@@ -126,7 +195,31 @@
                 [btn setSelected:true];
             }
         }
+        [advocAvailabilityTableViewCell.btnSunStart setTitle:[[advocate_profileObj_Updated.SunTime componentsSeparatedByString:@"-"] objectAtIndex:0] forState:UIControlStateNormal];
+        [advocAvailabilityTableViewCell.btnSunEnd setTitle:[[advocate_profileObj_Updated.SunTime componentsSeparatedByString:@"-"] objectAtIndex:1] forState:UIControlStateNormal];
+        strSunStart = [[advocate_profileObj_Updated.SunTime componentsSeparatedByString:@"-"] objectAtIndex:0];
+        strSunEnd = [[advocate_profileObj_Updated.SunTime componentsSeparatedByString:@"-"] objectAtIndex:1];
+
     }
+    
+    AdvocAvailabilityTableViewCell* cell = [_tblView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    
+    [cell.btnSunStart setTitle:strSunStart forState:UIControlStateNormal];
+    [cell.btnSunEnd setTitle:strSunEnd forState:UIControlStateNormal];
+    [cell.btnMonStart setTitle:strMonStart forState:UIControlStateNormal];
+    [cell.btnMonEnd setTitle:strMonEnd forState:UIControlStateNormal];
+    [cell.btnTueStart setTitle:strTueStart forState:UIControlStateNormal];
+    [cell.btnTueEnd setTitle:strTueEnd forState:UIControlStateNormal];
+    [cell.btnWedStart setTitle:strWedStart forState:UIControlStateNormal];
+    [cell.btnWedEnd setTitle:strWedEnd forState:UIControlStateNormal];
+    [cell.btnThurStart setTitle:strThursStart forState:UIControlStateNormal];
+    [cell.btnThursEnd setTitle:strThusrEnd forState:UIControlStateNormal];
+    [cell.btnFriStart setTitle:strFriStart forState:UIControlStateNormal];
+    [cell.btnFriEnd setTitle:strFriEnd forState:UIControlStateNormal];
+    [cell.btnSatStart setTitle:strSatStart forState:UIControlStateNormal];
+    [cell.btnSatStart setTitle:strSatStart forState:UIControlStateNormal];
+    
+
 
 }
 
@@ -294,28 +387,101 @@
             [btn addTarget:self action:@selector(btnDaysSelectedTapped:) forControlEvents:UIControlEventTouchUpInside];
         }
         
-        //        [cell.btnNext addTarget:self action:@selector(btnNextTapped:) forControlEvents:UIControlEventTouchUpInside];
-        //
-        //        [cell.txtContactNu addCountryCode];
-        //
-        //        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
-        //        [button setImage:[UIImage imageNamed:@"down-arrow"] forState:UIControlStateNormal];
-        //        button.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-        //        button.tag = indexPath.row;
-        //        cell.txtFundTypes.rightView = button;
-        //        cell.txtFundTypes.rightViewMode = UITextFieldViewModeAlways;
-        //
-        //        UIToolbar* toolbar;
-        //        toolbar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 50)];
-        //        toolbar.barStyle = UIBarStyleDefault;
-        //        toolbar.items = [NSArray arrayWithObjects:
-        //                         [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil],
-        //                         [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneForPicker)],
-        //                         nil];
-        //        [toolbar sizeToFit];
-        //        cell.txtFundTypes.inputAccessoryView = toolbar;
+        [cell.btnMonStart addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnTueStart addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnWedStart addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnThurStart addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnFriStart addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnSatStart addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnSunStart addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnMonEnd addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnTueEnd addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnWedEnd addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnThursEnd addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnFriEnd addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnSatEnd addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnSunEnd addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+
+        
+        [cell.btnSunStart setTitle:strSunStart forState:UIControlStateNormal];
+        [cell.btnSunEnd setTitle:strSunEnd forState:UIControlStateNormal];
+        [cell.btnMonStart setTitle:strMonStart forState:UIControlStateNormal];
+        [cell.btnMonEnd setTitle:strMonEnd forState:UIControlStateNormal];
+        [cell.btnTueStart setTitle:strTueStart forState:UIControlStateNormal];
+        [cell.btnTueEnd setTitle:strTueEnd forState:UIControlStateNormal];
+        [cell.btnWedStart setTitle:strWedStart forState:UIControlStateNormal];
+        [cell.btnWedEnd setTitle:strWedEnd forState:UIControlStateNormal];
+        [cell.btnThurStart setTitle:strThursStart forState:UIControlStateNormal];
+        [cell.btnThursEnd setTitle:strThusrEnd forState:UIControlStateNormal];
+        [cell.btnFriStart setTitle:strFriStart forState:UIControlStateNormal];
+        [cell.btnFriEnd setTitle:strFriEnd forState:UIControlStateNormal];
+        [cell.btnSatStart setTitle:strSatStart forState:UIControlStateNormal];
+        [cell.btnSatStart setTitle:strSatStart forState:UIControlStateNormal];
+        
+        [cell.btnUpdate addTarget:self action:@selector(btnUpdateClicked:) forControlEvents:UIControlEventTouchUpInside];
+        
+        if (cell.btnSameForAll.isSelected){
+            cell.stackViewAllSelectedTime.hidden = false;
+        }
+        else
+        {
+            cell.stackViewAllSelectedTime.hidden = true;
+        }
+
+        [cell.btnAllStartTime addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.btnAllEndTime addTarget:self action:@selector(btnSelectTime:) forControlEvents:UIControlEventTouchUpInside];
+
+        [cell.btnSameForAll addTarget:self action:@selector(btnSameForAllClicked:) forControlEvents:UIControlEventTouchUpInside];
+
+    }
+}
+
+-(IBAction)btnUpdateClicked:(id)sender{
+    
+    
+    [self hitApiToPutAvailabilityData];
+    
+    
+}
+
+-(IBAction)btnSameForAllClicked:(id)sender{
+    
+    UIButton* btnPressed = (UIButton*)sender;
+    AdvocAvailabilityTableViewCell* cell = [_tblView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    
+    if (btnPressed.isSelected){
+        [btnPressed setSelected:false];
+        cell.stackViewAllSelectedTime.hidden = true;
         
     }
+    else
+    {
+         [btnPressed setSelected:true];
+        cell.stackViewAllSelectedTime.hidden = false;
+        for (UIButton* btn in cell.btnDaysSelect) {
+            
+                [btn setSelected:false];
+        }
+        advocate_profileObj_Updated.mon = @"0";
+        advocate_profileObj_Updated.tues = @"0";
+        advocate_profileObj_Updated.wed = @"0";
+        advocate_profileObj_Updated.thu = @"0";
+        advocate_profileObj_Updated.fri = @"0";
+        advocate_profileObj_Updated.sat = @"0";
+        advocate_profileObj_Updated.sun = @"0";
+        [self setStackView];
+        [self.tblView reloadData];
+        [_tblView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:false];
+
+    }
+}
+
+-(IBAction)btnSelectTime:(id)sender{
+    
+    UIButton* btnPressed = (UIButton*)sender;
+    [self showDatePicker:sender];
+
+   
 }
 
 -(IBAction)btnDaysSelectedTapped:(id)sender
@@ -424,176 +590,345 @@
     advocAvailabilityTableViewCell.viSunday.hidden = true;
 
 }
+#pragma mark - DatePicker View Methods
 
-//#pragma mark - Picker View Delegates Methods
-//- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-//    return 1;
-//}
-//
-//- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
-//{
-//    return arrFundtypes.count;
-//}
-//
-//- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
-//{
-//    TGMasterCodeMC *ob = [arrFundtypes objectAtIndex:row];
-//    return ob.defaultDesc;
-//}
-//
-//-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
-//{
-//    TGMasterCodeMC *ob = [arrFundtypes objectAtIndex:row];
-//    mcaProfileFormCell.txtFundTypes.text = ob.defaultDesc;
-//}
-//
-//#pragma mark - Api Methods
-//-(void)performSaveNBFCLeadApiForIntegratedMode
-//{
-//    if ([self isInternetAvailable])
-//    {
-//        [self showActivityIndicator];
-//
-//        AppDelegate *appDelegateOb = [Utility getAppDelegateObject];
-//        NbfcLoan *ob = [appDelegateOb.loanEligibleList objectAtIndex: 0];
-//
-//        BaseOperationQueue *baseOperationQueue = [BaseOperationQueue getInstance];
-//        NbfcLoanManager *loanManager = [[NbfcLoanManager alloc] init];
-//        loanManager.operationType = oNBFCSaveNbfcLead_integratedMode;
-//        loanManager.nbfcLoanType = kNBFCSaveNbfcLead_integratedMode;
-//        loanManager.delegate = self;
-//
-//        loanManager.probileOb = mca_request_profileDetailsDictUpdated;
-//        loanManager.integratedWFSTag = @"100";
-//        loanManager.completeRequest = mca_request_completeDataDict;
-//        loanManager.loanEligibilityId = ob.loanEligibilityId;
-//
-//        [baseOperationQueue addOperation:loanManager];
-//    }
-//    else
-//    {
-//        [[ToastView getInstance] displayToastWithMessage:LOCALIZATION(msg_no_internet_message)];
-//    }
-//}
-//
-//- (void) saveNbfcLeadApiPerformed :(MasterResponse *)masterResponse
-//{
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//
-//        if (masterResponse.status)
-//        {
-//            if ([masterResponse.messageId isEqualToString:mca_errorCode_saveNBFC_refreshExistingLeadData])
-//            {
-//                [self hideActivityIndicator];
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_existingLeadData object:nil];
-//            }
-//            else
-//            {
-//                NSArray *parsedArray = [Utility parseDataForMCA:masterResponse.raw];
-//                mca_request_profileDetailsDict = parsedArray[0];
-//                mca_request_completeDataDict = parsedArray[4];
-//
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_profileData object:nil];
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_businessData object:nil];
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_individualData object:nil];
-//
-//                [self hideActivityIndicator];
-//
-//                [self moveToNextScreen];
-//            }
-//        }
-//        else
-//        {
-//            [self hideActivityIndicator];
-//            [[ToastView getInstance] displayToastWithMessage:masterResponse.message];
-//
-//            if ([masterResponse.messageId isEqualToString:mca_errorCode_saveNBFC_refreshExistingLeadData])
-//            {
-//                [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_existingLeadData object:nil];
-//            }
-//            //            else if ([masterResponse.messageId isEqualToString:mca_errorCode_saveNBFC_refreshGetEligibleLoanData])
-//            //            {
-//            //                // fire notification to refresh NBFC banner and call getEligibleLoanList Api
-//            //                [self.navigationController popToRootViewControllerAnimated:YES];
-//            //            }
-//        }
-//    });
-//}
-//
-//- (void) onErrorOccurred :(NSError *)error inOperationTask :(OperationType)operationType
-//{
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [self hideActivityIndicator];
-//        [[ToastView getInstance] displayToastWithMessage:LOCALIZATION(PT_ERROR_MESSAGE)];
-//    });
-//}
-//
-//#pragma mark - Other Methods
-//-(void)moveToNextScreen
-//{
-//    NSMutableDictionary* userInfo = [[NSMutableDictionary alloc] init];
-//    [userInfo setValue:@"Business" forKey:@"ActiveTab"];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:notification_MCA_update_tabs object:self userInfo:userInfo];
-//
-//    [userInfo setValue:self forKey:@"ActiveViewController"];
-//    [[NSNotificationCenter defaultCenter] postNotificationName:notification_MCA_Switch_To_Business_Page object:self userInfo:userInfo];
-//
-//    //[self performSelector:@selector(refreshNextScreen) withObject:nil afterDelay:0.2];
-//}
-//
-//-(void)refreshNextScreen
-//{
-//    [[NSNotificationCenter defaultCenter] postNotificationName:notification_refreshMCARequest_businessData object:nil];
-//}
-//
-//#pragma mark - Actions Methods
-//
-//-(void)doneForPicker
-//{
-//    [self.view endEditing:YES];
-//}
-//
-//
-//
-//-(BOOL) ifProfileUpdated
-//{
-//    if (mca_request_profileDetailsDictUpdated.loanAmount != mca_request_profileDetailsDict.loanAmount)
-//    {
-//        return true;
-//    }
-//    else if (![mca_request_profileDetailsDictUpdated.contactNo isEqualToString:mca_request_profileDetailsDict.contactNo])
-//    {
-//        return true;
-//    }
-//    else if (![mca_request_profileDetailsDictUpdated.cityName isEqualToString:mca_request_profileDetailsDict.cityName]) {
-//        return true;
-//    }
-//    else if (![mca_request_profileDetailsDictUpdated.emailId isEqualToString:mca_request_profileDetailsDict.emailId]) {
-//        return true;
-//    }
-//    else if (![mca_request_profileDetailsDictUpdated.typeOfFund isEqualToString:mca_request_profileDetailsDict.typeOfFund]) {
-//        return true;
-//    }
-//
-//    return false;
-//}
-//
-//-(void) getUpdatedData
-//{
-//    mca_request_profileDetailsDictUpdated.loanAmount = [NSNumber numberWithInteger: [mcaProfileFormCell.txtLoanAmount.text integerValue]];
-//    mca_request_profileDetailsDictUpdated.cityName = mcaProfileFormCell.txtCity.text;
-//    mca_request_profileDetailsDictUpdated.emailId = mcaProfileFormCell.txtEmailId.text;
-//    mca_request_profileDetailsDictUpdated.contactNo = mcaProfileFormCell.txtContactNu.text;
-//
-//    NSString *fundTypeDesc = mcaProfileFormCell.txtFundTypes.text.lowercaseString;
-//    for (TGMasterCodeMC *ob in arrFundtypes)
-//    {
-//        if ([ob.defaultDesc.lowercaseString isEqualToString:fundTypeDesc])
-//        {
-//            mca_request_profileDetailsDictUpdated.typeOfFund = ob.codeKey;
-//        }
-//    }
-//}
+// Show the date picker
+-(void)showDatePicker:(id)sender{
+    pickerForDate = [[UIDatePicker alloc]initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width, 150)];
+    pickerForDate.tag = ((UIButton *)sender).tag;
+    
+    pickerForDate.datePickerMode = UIDatePickerModeTime;
+    [pickerForDate setDate:[NSDate date]];
+    
+    //    [pickerForDate setMinimumDate: [NSDate date]];
+    [pickerForDate addTarget:self action:@selector(dueDateChanged:)
+            forControlEvents:UIControlEventValueChanged];
+    viewOverPicker = [[UIView alloc]initWithFrame:self.view.frame];
+    pickerForDate.backgroundColor = [UIColor lightGrayColor];
+    viewOverPicker.backgroundColor = [UIColor clearColor];
+    [CommonFunction setResignTapGestureToView:viewOverPicker andsender:self];
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Done" style:UIBarButtonItemStyleDone
+                                   target:self action:@selector(doneForPicker:)];
+    doneButton.tintColor = [CommonFunction colorWithHexString:@"f7a41e"];
+    UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    toolBar = [[UIToolbar alloc]initWithFrame:
+               CGRectMake(0, self.view.frame.size.height-
+                          pickerForDate.frame.size.height-50, self.view.frame.size.width, 50)];
+    //    [toolBar setBarTintColor:[UIColor redColor]];
+    
+    
+    [toolBar setBarStyle:UIBarStyleBlackOpaque];
+    NSArray *toolbarItems = [NSArray arrayWithObjects:space,
+                             space,doneButton, nil];
+    [toolBar setItems:toolbarItems];
+    [viewOverPicker addSubview:pickerForDate];
+    [viewOverPicker addSubview:toolBar];
+    [self.view addSubview:viewOverPicker];
+    
+    
+}
+//Resign Responder
+-(void)resignResponder{
+    [viewOverPicker removeFromSuperview];
+}
+
+-(void)doneForPicker:(id)sender{
+    [viewOverPicker removeFromSuperview];
+}
+// value change of the date picker
+-(void) dueDateChanged:(UIDatePicker *)sender {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    //self.myLabel.text = [dateFormatter stringFromDate:[dueDatePickerView date]];
+    NSLog(@"Picked the date %@", [dateFormatter stringFromDate:[sender date]]);
+    [dateFormatter setDateFormat:@"h:mm a"];
+    
+    switch (sender.tag) {
+        case 101:
+        {
+            
+            
+            NSString* startDateString = [dateFormatter stringFromDate:[sender date]];
+            //        startDate = sender.date;
+            
+            strMonStart = startDateString;
+            [advocAvailabilityTableViewCell.btnMonStart setBackgroundColor:[UIColor redColor]];
+            [advocAvailabilityTableViewCell.btnMonStart setTitle:startDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 102:
+        {
+            NSString* endDateString = [dateFormatter stringFromDate:[sender date]];
+            //        startDate = sender.date;
+            strMonEnd = endDateString;
+            [advocAvailabilityTableViewCell.btnMonEnd setTitle:endDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 201:
+        {
+            NSString* startDateString = [dateFormatter stringFromDate:[sender date]];
+            //        startDate = sender.date;
+            strTueStart = startDateString;
+            [advocAvailabilityTableViewCell.btnTueStart setTitle:startDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 202:
+        {
+            NSString* endDateString = [dateFormatter stringFromDate:[sender date]];
+            strTueEnd = endDateString;
+            [advocAvailabilityTableViewCell.btnTueEnd setTitle:endDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 301:
+        {
+            NSString* startDateString = [dateFormatter stringFromDate:[sender date]];
+            strWedStart = startDateString;
+            [advocAvailabilityTableViewCell.btnWedStart setTitle:startDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 302:
+        {
+            NSString* endDateString = [dateFormatter stringFromDate:[sender date]];
+            strWedEnd = endDateString;
+            [advocAvailabilityTableViewCell.btnWedEnd setTitle:endDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 401:
+        {
+            NSString* startDateString = [dateFormatter stringFromDate:[sender date]];
+            strThursStart = startDateString;
+            [advocAvailabilityTableViewCell.btnThurStart setTitle:startDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 402:
+        {
+            NSString* endDateString = [dateFormatter stringFromDate:[sender date]];
+            strThusrEnd = endDateString;
+            [advocAvailabilityTableViewCell.btnThursEnd setTitle:endDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 501:
+        {
+            NSString* startDateString = [dateFormatter stringFromDate:[sender date]];
+            strFriStart = startDateString;
+            [advocAvailabilityTableViewCell.btnFriStart setTitle:startDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 502:
+        {
+            NSString* endDateString = [dateFormatter stringFromDate:[sender date]];
+            strFriEnd = endDateString;
+            [advocAvailabilityTableViewCell.btnFriEnd setTitle:endDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 601:
+        {
+            NSString* startDateString = [dateFormatter stringFromDate:[sender date]];
+            strSatStart = startDateString;
+            [advocAvailabilityTableViewCell.btnSatStart setTitle:startDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 602:
+        {
+            NSString* endDateString = [dateFormatter stringFromDate:[sender date]];
+            strSatEnd = endDateString;
+            [advocAvailabilityTableViewCell.btnSatEnd setTitle:endDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 701:
+        {
+            NSString* startDateString = [dateFormatter stringFromDate:[sender date]];
+            strSunStart = startDateString;
+            [advocAvailabilityTableViewCell.btnSunStart setTitle:startDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 702:
+        {
+            NSString* endDateString = [dateFormatter stringFromDate:[sender date]];
+            strSunEnd = endDateString;
+            [advocAvailabilityTableViewCell.btnSunEnd setTitle:endDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 801:
+        {
+            NSString* startDateString = [dateFormatter stringFromDate:[sender date]];
+            strAllTimeStart = startDateString;
+            [advocAvailabilityTableViewCell.btnAllStartTime setTitle:startDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+        case 802:
+        {
+            NSString* endDateString = [dateFormatter stringFromDate:[sender date]];
+            strAllTimeEnd = endDateString;
+            [advocAvailabilityTableViewCell.btnAllEndTime setTitle:endDateString forState:UIControlStateNormal] ;
+        }
+            break;
+            
+
+        default:
+            break;
+    }
+    
+    AdvocAvailabilityTableViewCell* cell = [_tblView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+    
+    [cell.btnSunStart setTitle:strSunStart forState:UIControlStateNormal];
+    [cell.btnSunEnd setTitle:strSunEnd forState:UIControlStateNormal];
+    [cell.btnMonStart setTitle:strMonStart forState:UIControlStateNormal];
+    [cell.btnMonEnd setTitle:strMonEnd forState:UIControlStateNormal];
+    [cell.btnTueStart setTitle:strTueStart forState:UIControlStateNormal];
+    [cell.btnTueEnd setTitle:strTueEnd forState:UIControlStateNormal];
+    [cell.btnWedStart setTitle:strWedStart forState:UIControlStateNormal];
+    [cell.btnWedEnd setTitle:strWedEnd forState:UIControlStateNormal];
+    [cell.btnThurStart setTitle:strThursStart forState:UIControlStateNormal];
+    [cell.btnThursEnd setTitle:strThusrEnd forState:UIControlStateNormal];
+    [cell.btnFriStart setTitle:strFriStart forState:UIControlStateNormal];
+    [cell.btnFriEnd setTitle:strFriEnd forState:UIControlStateNormal];
+    [cell.btnSatStart setTitle:strSatStart forState:UIControlStateNormal];
+    [cell.btnSatStart setTitle:strSatStart forState:UIControlStateNormal];
+    [cell.btnAllStartTime setTitle:strAllTimeStart forState:UIControlStateNormal];
+    [cell.btnAllEndTime setTitle:strAllTimeEnd forState:UIControlStateNormal];
+
+}
+
+
+
+#pragma mark - Api Methods
+
+-(void)hitApiToPutAvailabilityData{
+    
+    NSMutableDictionary* parameter = [NSMutableDictionary new];
+    
+    NSMutableDictionary* dictEdu = [NSMutableDictionary new];
+    
+    [dictEdu setObject:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"username"];
+    [dictEdu setObject:advocAvailabilityTableViewCell.txtOfcAddress1.text forKey:@"OffAddline"];
+    [dictEdu setObject:advocAvailabilityTableViewCell.txtOfcAddress2.text forKey:@"OffAddline2"];
+    [dictEdu setObject:advocAvailabilityTableViewCell.txtOfcPincode.text forKey:@"OffPincode"];
+    for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+        if (btn.tag == 1001){
+            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"mon"];
+        }
+    }
+    for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+        if (btn.tag == 1002){
+            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"tues"];
+        }
+    }
+    for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+        if (btn.tag == 1003){
+            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"wed"];
+        }
+    }
+    for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+        if (btn.tag == 1004){
+            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"thu"];
+        }
+    }
+    for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+        if (btn.tag == 1005){
+            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"fri"];
+        }
+    }
+    for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+        if (btn.tag == 1006){
+            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"sat"];
+        }
+    }
+    for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
+        if (btn.tag == 1007){
+            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"sun"];
+        }
+    }
+//{"_UpdAdv":{"username":"8896292603","OffAddline":"","OffAddline2":"A-256 Lakhiram Park rohini New Delhi","OffPincode":"110086","mon":1,"tues":1,"wed":1,"thu":1,"fri":1,"sat":0,"sun":0,"MonTime":"11:00 AM-04:30 PM","TueTime":"11:00 AM-04:30 PM","WedTime":"11:00 AM-04:30 PM","ThuTime":"08:30 AM-07:30 PM","FriTime":"07:30 AM-08:30 AM","SatTime":"","SunTime":"","SameAsTime":false,"SameAsTimeValue":"0"}}
+    
+    [dictEdu setObject:[NSString stringWithFormat:@"%@-%@",[advocAvailabilityTableViewCell.btnMonStart currentTitle],[advocAvailabilityTableViewCell.btnMonEnd currentTitle]] forKey:@"MonTime"];
+    [dictEdu setObject:[NSString stringWithFormat:@"%@-%@",[advocAvailabilityTableViewCell.btnTueStart currentTitle],[advocAvailabilityTableViewCell.btnTueEnd currentTitle]] forKey:@"TueTime"];
+    [dictEdu setObject:[NSString stringWithFormat:@"%@-%@",[advocAvailabilityTableViewCell.btnWedStart currentTitle],[advocAvailabilityTableViewCell.btnWedEnd currentTitle]] forKey:@"WedTime"];
+    [dictEdu setObject:[NSString stringWithFormat:@"%@-%@",[advocAvailabilityTableViewCell.btnThurStart currentTitle],[advocAvailabilityTableViewCell.btnThursEnd currentTitle]] forKey:@"ThuTime"];
+    [dictEdu setObject:[NSString stringWithFormat:@"%@-%@",[advocAvailabilityTableViewCell.btnFriStart currentTitle],[advocAvailabilityTableViewCell.btnFriEnd currentTitle]] forKey:@"FriTime"];
+    [dictEdu setObject:[NSString stringWithFormat:@"%@-%@",[advocAvailabilityTableViewCell.btnSatStart currentTitle],[advocAvailabilityTableViewCell.btnSatEnd currentTitle]] forKey:@"SatTime"];
+    [dictEdu setObject:[NSString stringWithFormat:@"%@-%@",[advocAvailabilityTableViewCell.btnSunStart currentTitle],[advocAvailabilityTableViewCell.btnSunEnd currentTitle]] forKey:@"SunTime"];
+    
+    
+    [dictEdu setObject:[NSNumber numberWithBool:advocAvailabilityTableViewCell.btnSameForAll.isSelected]  forKey:@"SameAsTime"];
+    [dictEdu setObject:[NSString stringWithFormat:@"%@-%@",[advocAvailabilityTableViewCell.btnAllStartTime currentTitle],[advocAvailabilityTableViewCell.btnAllEndTime currentTitle]]  forKey:@"SameAsTimeValue"];
+    
+    [parameter setValue:dictEdu forKey:@"_UpdAdv"];
+
+    
+    if ([ CommonFunction reachability]) {
+        [self addLoder];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_PUT_AVAILABILITY]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                
+                [self removeloder];
+                NSMutableArray* arrData = [NSMutableArray new];
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1) {
+                    NSArray *tempArray = [NSArray new];
+                    NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                    id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                    
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+                    [self.navigationController popViewControllerAnimated:true];
+                }else
+                {
+                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
+                    [self.navigationController popViewControllerAnimated:true];
+                }
+                [self removeloder];
+                
+            }
+            else
+            {
+                [self removeloder];
+                [[FadeAlert getInstance] displayToastWithMessage:error.description];
+            }
+        }];
+    } else {
+        [self removeloder];
+        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
+    }
+}
+
+
+
+-(void)addLoder{
+    self.view.userInteractionEnabled = NO;
+    //  loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+    loderObj = [[LoderView alloc] initWithFrame:self.navigationController.view.frame];
+    loderObj.lbl_title.text = @"Please wait...";
+    [[UIApplication sharedApplication].keyWindow addSubview:loderObj];
+    [[UIApplication sharedApplication].keyWindow bringSubviewToFront:loderObj];
+}
+
+-(void)removeloder{
+    //loderObj = nil;
+    [loderObj removeFromSuperview];
+    //[loaderView removeFromSuperview];
+    self.view.userInteractionEnabled = YES;
+}
 
 
 

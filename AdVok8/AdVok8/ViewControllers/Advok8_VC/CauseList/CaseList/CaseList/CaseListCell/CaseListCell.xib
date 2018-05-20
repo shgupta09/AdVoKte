@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +24,7 @@
                         <rect key="frame" x="10" y="10" width="300" height="82"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCL-YG-Dlj">
-                                <rect key="frame" x="5" y="5" width="251.5" height="20"/>
+                                <rect key="frame" x="5" y="5" width="184" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="FQi-gv-wZn"/>
                                 </constraints>
@@ -50,7 +51,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1o-0P-V9h">
-                                <rect key="frame" x="266.5" y="5" width="28.5" height="21"/>
+                                <rect key="frame" x="199" y="5" width="96" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Okb-wr-Diw"/>
                                 </constraints>
@@ -81,6 +82,7 @@
                     <constraint firstAttribute="bottom" secondItem="9jk-kh-7vT" secondAttribute="bottom" constant="10" id="EHi-FF-auc"/>
                     <constraint firstItem="9jk-kh-7vT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="L9q-xK-AkH"/>
                     <constraint firstItem="9jk-kh-7vT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Vjd-fZ-bGG"/>
+                    <constraint firstItem="J1o-0P-V9h" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.3" id="XEv-FL-dSv"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>

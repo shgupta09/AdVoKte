@@ -16,5 +16,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *txt_Number;
 @property (weak, nonatomic) IBOutlet UITextField *txt_name;
 @property (weak, nonatomic) User* userObj;
+@property (weak, nonatomic) IBOutlet UIImageView *imgProfileUser;
 
 @end
