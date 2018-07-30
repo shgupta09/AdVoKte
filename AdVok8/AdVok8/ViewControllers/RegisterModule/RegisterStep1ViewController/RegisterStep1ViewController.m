@@ -347,7 +347,7 @@
                 
                 [self removeloder];
                 
-                if ([[json valueForKey:@"Status"]  isEqual: @"1"]){
+                if ([[[json valueForKey:@"Status"] stringValue] isEqualToString: @"1"]){
 
                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Registered Successfully, Please login to continue." preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction* action){

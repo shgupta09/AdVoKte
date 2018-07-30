@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '540EDC8C13666E2EBCE1DC3AB792A676'
-               BlueprintName = 'FZAccordionTableView'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libFZAccordionTableView.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AA27F5761929FD7C8C9B812EBEBB93DF"
+               BlueprintName = "FZAccordionTableView"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libFZAccordionTableView.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -22,7 +22,7 @@
 #define Case_List_Data_Calender @"caseList"
 
 
-static NSString* const API_BASE_URL = @"http://www.advok8.in/AdvocateAPI.asmx/";
+static NSString* const API_BASE_URL = @"https://www.advok8.in/AdvocateAPI.asmx/";
 static NSString* const API_CONTENTS_BASE_URL = @"http://www.advok8.in";
 
 // Consult APIS
@@ -37,6 +37,7 @@ static NSString* const API_UPLOAD_FILE= @"UploadFile";
 static NSString* const API_GET_OTP = @"generateOTP";
 static NSString* const API_REGISTER_USER = @"postAdvocateDetailsSignUp";
 static NSString* const API_LOGIN = @"GetLogin";
+static NSString* const API_DeleteUser = @"Deluser";
 static NSString* const API_PUT_COMMENT = @"put_Comment";
 static NSString* const API_GET_ALL_NOTIFICATIONS = @"get_NotificationUser";
 static NSString* const API_SEARCH_USERS = @"search_users";

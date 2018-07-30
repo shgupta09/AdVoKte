@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5ACDF6D6F8352C719B6FC1E48982C4F6'
-               BlueprintName = 'TPKeyboardAvoiding'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libTPKeyboardAvoiding.a'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F821D625ACEC0BA585ECF22BA9A8D5A5"
+               BlueprintName = "TPKeyboardAvoiding"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "libTPKeyboardAvoiding.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

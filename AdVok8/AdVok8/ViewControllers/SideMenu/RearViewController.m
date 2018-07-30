@@ -5,7 +5,7 @@
 //  Created by NetprophetsMAC on 10/3/17.
 //  Copyright © 2017 Shagun Verma. All rights reserved.
 //
-
+#import "SubscribeVC.h"
 #import "RearViewController.h"
 @interface RearViewController ()
 {
@@ -44,8 +44,8 @@
     }
     else
     {
-        titleArray  = [[NSMutableArray alloc]initWithObjects:@"Login",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request", nil];
-        titleImageArray = [[NSMutableArray alloc] initWithObjects:@"Login-1",@"home",@"Notify-1",@"Invite Friend-1",@"rateUs",@"callrequest", nil];
+        titleArray  = [[NSMutableArray alloc]initWithObjects:@"Login",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request",@"Subscribe A Plan" ,nil];
+        titleImageArray = [[NSMutableArray alloc] initWithObjects:@"Login-1",@"home",@"Notify-1",@"Invite Friend-1",@"rateUs",@"callrequest", @"Call Request",nil];
     }
     //categoryArray = [AwarenessCategory sharedInstance].myDataArray;
     
@@ -88,7 +88,9 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [revealController revealToggle:nil];
-
+    
+   
+    
     switch (indexPath.row) {
         case 0:
         {
@@ -165,7 +167,12 @@
             break;
         case 6:
         {
+            SubscribeVC* vc ;
             
+            vc = [[SubscribeVC alloc] initWithNibName:@"SubscribeVC" bundle:nil];
+            UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
+            
+            [self.navigationController presentViewController:navCon animated:true completion:nil];
         }
             break;
 

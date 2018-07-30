@@ -499,6 +499,7 @@
 
 +(void)setCornerRadius:(UIView *)view Radius:(CGFloat)radius{
     view.layer.cornerRadius = radius;
+    view.layer.masksToBounds = true;
 }
 
 + (NSUserDefaults *) defaults {

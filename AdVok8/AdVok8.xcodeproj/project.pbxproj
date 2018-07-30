@@ -180,6 +180,16 @@
 		D804D61B2083DC1900766DF3 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC49202B1691007E69A5 /* SplashScreenViewController.xib */; };
 		D804D6202083DF4B00766DF3 /* Update_AppointmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D804D61E2083DF4B00766DF3 /* Update_AppointmentVC.m */; };
 		D804D6212083DF4B00766DF3 /* Update_AppointmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D804D61F2083DF4B00766DF3 /* Update_AppointmentVC.xib */; };
+		D83FF95B210C5EBE0064CAE7 /* SubscribeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D83FF959210C5EBE0064CAE7 /* SubscribeVC.m */; };
+		D83FF95C210C5EBE0064CAE7 /* SubscribeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83FF95A210C5EBE0064CAE7 /* SubscribeVC.xib */; };
+		D83FF961210C64D30064CAE7 /* SubscribeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D83FF95F210C64D30064CAE7 /* SubscribeCell.m */; };
+		D83FF962210C64D30064CAE7 /* SubscribeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83FF960210C64D30064CAE7 /* SubscribeCell.xib */; };
+		D83FF967210C80C40064CAE7 /* ConfirmPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83FF965210C80C40064CAE7 /* ConfirmPlanViewController.m */; };
+		D83FF968210C80C40064CAE7 /* ConfirmPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83FF966210C80C40064CAE7 /* ConfirmPlanViewController.xib */; };
+		D83FF970210D9EA30064CAE7 /* Instamojo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D83FF96F210D9EA30064CAE7 /* Instamojo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D83FF971210D9EDA0064CAE7 /* Instamojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83FF96F210D9EA30064CAE7 /* Instamojo.framework */; };
+		D83FF973210D9F1D0064CAE7 /* InstaMojoiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83FF972210D9F1D0064CAE7 /* InstaMojoiOS.framework */; };
+		D83FF974210D9F1D0064CAE7 /* InstaMojoiOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D83FF972210D9F1D0064CAE7 /* InstaMojoiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D896CF6C209A34DE00443585 /* CaseList.m in Sources */ = {isa = PBXBuildFile; fileRef = D896CF6B209A34DE00443585 /* CaseList.m */; };
 		D8C3C273206F69080089A3CC /* DailyCauseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C271206F69080089A3CC /* DailyCauseListCell.m */; };
 		D8C3C274206F69080089A3CC /* DailyCauseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C3C272206F69080089A3CC /* DailyCauseListCell.xib */; };
@@ -223,6 +233,20 @@
 			remoteInfo = AdVok8;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D83FF96D210D9E010064CAE7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D83FF970210D9EA30064CAE7 /* Instamojo.framework in CopyFiles */,
+				D83FF974210D9F1D0064CAE7 /* InstaMojoiOS.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		451D0C401EC04053B7C1ED21 /* libPods-AdVok8Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdVok8Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -512,6 +536,18 @@
 		D804D61D2083DF4B00766DF3 /* Update_AppointmentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Update_AppointmentVC.h; sourceTree = "<group>"; };
 		D804D61E2083DF4B00766DF3 /* Update_AppointmentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Update_AppointmentVC.m; sourceTree = "<group>"; };
 		D804D61F2083DF4B00766DF3 /* Update_AppointmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Update_AppointmentVC.xib; sourceTree = "<group>"; };
+		D83FF958210C5EBE0064CAE7 /* SubscribeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubscribeVC.h; sourceTree = "<group>"; };
+		D83FF959210C5EBE0064CAE7 /* SubscribeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubscribeVC.m; sourceTree = "<group>"; };
+		D83FF95A210C5EBE0064CAE7 /* SubscribeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribeVC.xib; sourceTree = "<group>"; };
+		D83FF95E210C64D30064CAE7 /* SubscribeCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubscribeCell.h; sourceTree = "<group>"; };
+		D83FF95F210C64D30064CAE7 /* SubscribeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubscribeCell.m; sourceTree = "<group>"; };
+		D83FF960210C64D30064CAE7 /* SubscribeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribeCell.xib; sourceTree = "<group>"; };
+		D83FF964210C80C40064CAE7 /* ConfirmPlanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfirmPlanViewController.h; sourceTree = "<group>"; };
+		D83FF965210C80C40064CAE7 /* ConfirmPlanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfirmPlanViewController.m; sourceTree = "<group>"; };
+		D83FF966210C80C40064CAE7 /* ConfirmPlanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmPlanViewController.xib; sourceTree = "<group>"; };
+		D83FF969210D9D460064CAE7 /* InstaMojoiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InstaMojoiOS.framework; path = "Pods/InstaMojoiOS/InstaMojoiOS-Release-iphoneuniversal/InstaMojoiOS.framework"; sourceTree = "<group>"; };
+		D83FF96F210D9EA30064CAE7 /* Instamojo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Instamojo.framework; path = Pods/Instamojo/Instamojo.framework; sourceTree = "<group>"; };
+		D83FF972210D9F1D0064CAE7 /* InstaMojoiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InstaMojoiOS.framework; path = "Pods/InstaMojoiOS/InstaMojoiOS-Release-iphoneuniversal/InstaMojoiOS.framework"; sourceTree = "<group>"; };
 		D896CF6A209A34DE00443585 /* CaseList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaseList.h; sourceTree = "<group>"; };
 		D896CF6B209A34DE00443585 /* CaseList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseList.m; sourceTree = "<group>"; };
 		D8C3C270206F69080089A3CC /* DailyCauseListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyCauseListCell.h; sourceTree = "<group>"; };
@@ -569,6 +605,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D83FF971210D9EDA0064CAE7 /* Instamojo.framework in Frameworks */,
+				D83FF973210D9F1D0064CAE7 /* InstaMojoiOS.framework in Frameworks */,
 				9CE0102D204FCB0B002A2E81 /* QuartzCore.framework in Frameworks */,
 				CB281165DB24598765D2760E /* libPods-AdVok8.a in Frameworks */,
 			);
@@ -834,6 +872,9 @@
 		5F70ABE6202B1250007E69A5 = {
 			isa = PBXGroup;
 			children = (
+				D83FF972210D9F1D0064CAE7 /* InstaMojoiOS.framework */,
+				D83FF96F210D9EA30064CAE7 /* Instamojo.framework */,
+				D83FF969210D9D460064CAE7 /* InstaMojoiOS.framework */,
 				5F70ABF1202B1250007E69A5 /* AdVok8 */,
 				5F70AC0E202B1250007E69A5 /* AdVok8Tests */,
 				5F70ABF0202B1250007E69A5 /* Products */,
@@ -1035,6 +1076,7 @@
 		5F70AC37202B1688007E69A5 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
+				D83FF957210C5EA80064CAE7 /* Sebcribe  */,
 				5F70AC38202B1688007E69A5 /* ReaeCell */,
 				5F70AC3C202B1688007E69A5 /* RearViewController.h */,
 				5F70AC3D202B1688007E69A5 /* RearViewController.m */,
@@ -1617,6 +1659,38 @@
 			path = "Update Appointment";
 			sourceTree = "<group>";
 		};
+		D83FF957210C5EA80064CAE7 /* Sebcribe  */ = {
+			isa = PBXGroup;
+			children = (
+				D83FF963210C805A0064CAE7 /* Confirm Plan */,
+				D83FF95D210C649B0064CAE7 /* SubscribeCell */,
+				D83FF958210C5EBE0064CAE7 /* SubscribeVC.h */,
+				D83FF959210C5EBE0064CAE7 /* SubscribeVC.m */,
+				D83FF95A210C5EBE0064CAE7 /* SubscribeVC.xib */,
+			);
+			path = "Sebcribe ";
+			sourceTree = "<group>";
+		};
+		D83FF95D210C649B0064CAE7 /* SubscribeCell */ = {
+			isa = PBXGroup;
+			children = (
+				D83FF95E210C64D30064CAE7 /* SubscribeCell.h */,
+				D83FF95F210C64D30064CAE7 /* SubscribeCell.m */,
+				D83FF960210C64D30064CAE7 /* SubscribeCell.xib */,
+			);
+			path = SubscribeCell;
+			sourceTree = "<group>";
+		};
+		D83FF963210C805A0064CAE7 /* Confirm Plan */ = {
+			isa = PBXGroup;
+			children = (
+				D83FF964210C80C40064CAE7 /* ConfirmPlanViewController.h */,
+				D83FF965210C80C40064CAE7 /* ConfirmPlanViewController.m */,
+				D83FF966210C80C40064CAE7 /* ConfirmPlanViewController.xib */,
+			);
+			path = "Confirm Plan";
+			sourceTree = "<group>";
+		};
 		D8C3C26F206F687F0089A3CC /* DailyCauseListCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1824,6 +1898,7 @@
 				5F70ABED202B1250007E69A5 /* Resources */,
 				B29ECFE0913594A20044969F /* [CP] Embed Pods Frameworks */,
 				B3689EFE3CBEE384285FC861 /* [CP] Copy Pods Resources */,
+				D83FF96D210D9E010064CAE7 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -1842,8 +1917,6 @@
 				5F70AC07202B1250007E69A5 /* Sources */,
 				5F70AC08202B1250007E69A5 /* Frameworks */,
 				5F70AC09202B1250007E69A5 /* Resources */,
-				4C9219CF1333A25874B69283 /* [CP] Embed Pods Frameworks */,
-				0981392AC14FEEDB50741665 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1866,7 +1939,7 @@
 				TargetAttributes = {
 					5F70ABEE202B1250007E69A5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = HCF6CL33AL;
+						DevelopmentTeam = T8K8DUMCC9;
 						ProvisioningStyle = Manual;
 					};
 					5F70AC0A202B1250007E69A5 = {
@@ -1905,6 +1978,7 @@
 				5F415752205E3352003D29B4 /* JournalFeedsViewController.xib in Resources */,
 				5F70AC05202B1250007E69A5 /* LaunchScreen.storyboard in Resources */,
 				5FBE623B209B797800AD2215 /* AdvocateProfileStoryboard.storyboard in Resources */,
+				D83FF962210C64D30064CAE7 /* SubscribeCell.xib in Resources */,
 				D804D6132082855A00766DF3 /* User_Profile_VC.xib in Resources */,
 				5F71B6AB204E8E76004229DF /* LawyerListVC.xib in Resources */,
 				5F1B9C4C20343889009503E7 /* FeedViewController.xib in Resources */,
@@ -1943,6 +2017,7 @@
 				5F70AC42202B1688007E69A5 /* RearCell.xib in Resources */,
 				D8FAAF95207157E20084DE28 /* Me_VC.xib in Resources */,
 				5F96B71D206FE8D3003CD72F /* CalendarViewController.xib in Resources */,
+				D83FF95C210C5EBE0064CAE7 /* SubscribeVC.xib in Resources */,
 				D8FAAF83207125900084DE28 /* AppealAlertVC.xib in Resources */,
 				9C31B7B3208E0D340010A062 /* CasePageCell.xib in Resources */,
 				5F71B692204D5E7F004229DF /* CommentViewController.xib in Resources */,
@@ -1974,6 +2049,7 @@
 				5F1B9C2E203413F8009503E7 /* DashboardBaseViewController.xib in Resources */,
 				5F70AC57202B2248007E69A5 /* LegislateBaseViewController.xib in Resources */,
 				5FF9A934208B0D6B00C042C9 /* NoOfLikesTableViewCell.xib in Resources */,
+				D83FF968210C80C40064CAE7 /* ConfirmPlanViewController.xib in Resources */,
 				D8C3C274206F69080089A3CC /* DailyCauseListCell.xib in Resources */,
 				5F58FC4C20769085009C5D9C /* SelectSlotViewController.xib in Resources */,
 				D8C3C28C206FA3B40089A3CC /* AccordionHeaderView.xib in Resources */,
@@ -1992,36 +2068,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0981392AC14FEEDB50741665 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdVok8Tests/Pods-AdVok8Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4C9219CF1333A25874B69283 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdVok8Tests/Pods-AdVok8Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5D13FA79BC924B14079A2070 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2064,9 +2110,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8-frameworks.sh",
+				"${PODS_ROOT}/InstaMojoiOS/InstaMojoiOS-Release-iphoneuniversal/InstaMojoiOS.framework",
+				"${PODS_ROOT}/Instamojo/Instamojo.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstaMojoiOS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instamojo.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2079,9 +2130,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8-resources.sh",
+				"${PODS_ROOT}/Instamojo/JuspaySafeBrowser.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JuspaySafeBrowser.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2105,6 +2159,7 @@
 				5F1B9C5D20344A64009503E7 /* PostMainTableViewCell.m in Sources */,
 				5F415751205E3352003D29B4 /* JournalFeedsViewController.m in Sources */,
 				5F58FC642076A7A1009C5D9C /* AddNewCaseViewController.m in Sources */,
+				D83FF967210C80C40064CAE7 /* ConfirmPlanViewController.m in Sources */,
 				9CF77D01205F866F00366505 /* WorkingExperience.m in Sources */,
 				5F71B6C2204E8EA4004229DF /* LeftImageWithLabel.m in Sources */,
 				5F356EDC207D4ED7001EA9DF /* Case.m in Sources */,
@@ -2150,6 +2205,7 @@
 				9C70B264206E011700850305 /* CauseBaseVC.m in Sources */,
 				5FCCBA0520381ABC002BFD4A /* DesignableButton.m in Sources */,
 				D8FAAF88207127E40084DE28 /* AppealAlertCell.m in Sources */,
+				D83FF95B210C5EBE0064CAE7 /* SubscribeVC.m in Sources */,
 				5F71B6D3204F9934004229DF /* CreatePostViewController.m in Sources */,
 				9CF77D0A205F87B900366505 /* AdvocatePublicData.m in Sources */,
 				5F71B6A8204E8E76004229DF /* LawyersCategoryVC.m in Sources */,
@@ -2160,6 +2216,7 @@
 				5F71B6C8204E91C5004229DF /* Specialization.m in Sources */,
 				5F70AC00202B1250007E69A5 /* AdVok8.xcdatamodeld in Sources */,
 				9CF77D04205F86BC00366505 /* Membership.m in Sources */,
+				D83FF961210C64D30064CAE7 /* SubscribeCell.m in Sources */,
 				5FBE6232209A498800AD2215 /* CalendarListViewCell.m in Sources */,
 				9C70B270206E0F5600850305 /* DailyCauseListVc.m in Sources */,
 				5F71B6AA204E8E76004229DF /* LawyerListVC.m in Sources */,
@@ -2262,6 +2319,7 @@
 		5F70AC12202B1250007E69A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -2309,6 +2367,7 @@
 		5F70AC13202B1250007E69A5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -2351,20 +2410,27 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DB2464D49DD7471880FD048 /* Pods-AdVok8.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = HCF6CL33AL;
+				DEVELOPMENT_TEAM = T8K8DUMCC9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/InstaMojoiOS/InstaMojoiOS-Release-iphoneuniversal",
+					"$(PROJECT_DIR)/Pods/Instamojo",
+				);
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pinelabs.poc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advok8.Advok8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "54af1ca6-58d8-44c0-acc7-868e216dd9ff";
-				PROVISIONING_PROFILE_SPECIFIER = "Pinelabs Generic PP";
+				PROVISIONING_PROFILE = "c9ac53e0-96e0-4ee7-a44a-40bbb68f3740";
+				PROVISIONING_PROFILE_SPECIFIER = advok8DevelopmentShubhamMac;
 			};
 			name = Debug;
 		};
@@ -2372,20 +2438,27 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7CD644F639A1CDED1AD2871C /* Pods-AdVok8.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = HCF6CL33AL;
+				DEVELOPMENT_TEAM = T8K8DUMCC9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/InstaMojoiOS/InstaMojoiOS-Release-iphoneuniversal",
+					"$(PROJECT_DIR)/Pods/Instamojo",
+				);
 				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PREFIX_HEADER = "AdVok8//PrefixHeader.pch";
 				INFOPLIST_FILE = AdVok8/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.pinelabs.poc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advok8.Advok8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "54af1ca6-58d8-44c0-acc7-868e216dd9ff";
-				PROVISIONING_PROFILE_SPECIFIER = "Pinelabs Generic PP";
+				PROVISIONING_PROFILE = "d046537c-a91d-49a0-8a75-e9f439c65bcc";
+				PROVISIONING_PROFILE_SPECIFIER = "shubham'sMacDistribution";
 			};
 			name = Release;
 		};
