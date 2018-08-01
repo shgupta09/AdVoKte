@@ -178,7 +178,12 @@
                 }
                     break;
                 case 7:{
-                    [[FadeAlert getInstance] displayToastWithMessage:@"Coming Soon..!!"];
+//                    [[FadeAlert getInstance] displayToastWithMessage:@"Coming Soon..!!"];
+                    
+                    DBVC *profileObj = [[DBVC alloc]initWithNibName:@"DBVC" bundle:nil];
+//                    profileObj.isFromMyActivity = false;
+                    UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:profileObj];
+                    [self.navigationController presentViewController:navCon animated:true completion:nil];
                 }
                     break;
                 case 8:{

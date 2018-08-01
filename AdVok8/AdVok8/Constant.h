@@ -53,6 +53,7 @@ static NSString* const API_GET_ALL_CaseType = @"getCasetypeMaster";
 static NSString* const API_PUT_SHARE = @"put_Share";
 static NSString* const API_GET_USER_DETAILS = @"GetUserDetail";
 static NSString* const API_GET_TASK_LIST = @"getEvent";
+static NSString* const API_GET_DISPLAYLIST = @"getDisplayBoard";
 static NSString* const API_GET_LIKE_LIST = @"get_IndPostLikes";
 static NSString* const API_BOOK_APPOINTMENT = @"BookAppointment";
 static NSString* const API_DELETE_EVENT = @"DeleteEvent";

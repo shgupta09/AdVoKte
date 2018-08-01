@@ -14,8 +14,8 @@ pod 'SWRevealViewController', '~> 2.3'
 pod 'FZAccordionTableView', '~> 0.2'
 pod 'JTCalendar', '~> 2.0'
 
-pod 'Instamojo', :git => 'https://github.com/Instamojo/ios-sdk.git', :tag => '1.0.12'
-pod 'InstaMojoiOS', '0.0.3'  
+#pod 'Instamojo', :git => 'https://github.com/Instamojo/ios-sdk.git', :tag => '1.0.12'
+#pod 'InstaMojoiOS', '0.0.3'  
   target 'AdVok8Tests' do
     inherit! :search_paths
     # Pods for testing

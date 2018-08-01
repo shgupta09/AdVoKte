@@ -186,11 +186,13 @@
 		D83FF962210C64D30064CAE7 /* SubscribeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83FF960210C64D30064CAE7 /* SubscribeCell.xib */; };
 		D83FF967210C80C40064CAE7 /* ConfirmPlanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D83FF965210C80C40064CAE7 /* ConfirmPlanViewController.m */; };
 		D83FF968210C80C40064CAE7 /* ConfirmPlanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83FF966210C80C40064CAE7 /* ConfirmPlanViewController.xib */; };
-		D83FF970210D9EA30064CAE7 /* Instamojo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D83FF96F210D9EA30064CAE7 /* Instamojo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D83FF971210D9EDA0064CAE7 /* Instamojo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83FF96F210D9EA30064CAE7 /* Instamojo.framework */; };
-		D83FF973210D9F1D0064CAE7 /* InstaMojoiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83FF972210D9F1D0064CAE7 /* InstaMojoiOS.framework */; };
-		D83FF974210D9F1D0064CAE7 /* InstaMojoiOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D83FF972210D9F1D0064CAE7 /* InstaMojoiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D896CF6C209A34DE00443585 /* CaseList.m in Sources */ = {isa = PBXBuildFile; fileRef = D896CF6B209A34DE00443585 /* CaseList.m */; };
+		D89F2930211201DF00936DE6 /* DBVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D89F292E211201DF00936DE6 /* DBVC.m */; };
+		D89F2931211201DF00936DE6 /* DBVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D89F292F211201DF00936DE6 /* DBVC.xib */; };
+		D89F2934211209F800936DE6 /* CourtDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = D89F2933211209F800936DE6 /* CourtDetails.m */; };
+		D89F293721120AB900936DE6 /* CourtBaseDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = D89F293621120AB900936DE6 /* CourtBaseDetail.m */; };
+		D89F294321120F2200936DE6 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D89F294021120F2200936DE6 /* DetailCell.m */; };
+		D89F294421120F2200936DE6 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D89F294121120F2200936DE6 /* DetailCell.xib */; };
 		D8C3C273206F69080089A3CC /* DailyCauseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C271206F69080089A3CC /* DailyCauseListCell.m */; };
 		D8C3C274206F69080089A3CC /* DailyCauseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8C3C272206F69080089A3CC /* DailyCauseListCell.xib */; };
 		D8C3C27A206F73560089A3CC /* TaskListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C3C278206F73560089A3CC /* TaskListVC.m */; };
@@ -241,8 +243,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D83FF970210D9EA30064CAE7 /* Instamojo.framework in CopyFiles */,
-				D83FF974210D9F1D0064CAE7 /* InstaMojoiOS.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,11 +545,18 @@
 		D83FF964210C80C40064CAE7 /* ConfirmPlanViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfirmPlanViewController.h; sourceTree = "<group>"; };
 		D83FF965210C80C40064CAE7 /* ConfirmPlanViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfirmPlanViewController.m; sourceTree = "<group>"; };
 		D83FF966210C80C40064CAE7 /* ConfirmPlanViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmPlanViewController.xib; sourceTree = "<group>"; };
-		D83FF969210D9D460064CAE7 /* InstaMojoiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InstaMojoiOS.framework; path = "Pods/InstaMojoiOS/InstaMojoiOS-Release-iphoneuniversal/InstaMojoiOS.framework"; sourceTree = "<group>"; };
-		D83FF96F210D9EA30064CAE7 /* Instamojo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Instamojo.framework; path = Pods/Instamojo/Instamojo.framework; sourceTree = "<group>"; };
-		D83FF972210D9F1D0064CAE7 /* InstaMojoiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InstaMojoiOS.framework; path = "Pods/InstaMojoiOS/InstaMojoiOS-Release-iphoneuniversal/InstaMojoiOS.framework"; sourceTree = "<group>"; };
 		D896CF6A209A34DE00443585 /* CaseList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaseList.h; sourceTree = "<group>"; };
 		D896CF6B209A34DE00443585 /* CaseList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseList.m; sourceTree = "<group>"; };
+		D89F292D211201DF00936DE6 /* DBVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DBVC.h; sourceTree = "<group>"; };
+		D89F292E211201DF00936DE6 /* DBVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DBVC.m; sourceTree = "<group>"; };
+		D89F292F211201DF00936DE6 /* DBVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DBVC.xib; sourceTree = "<group>"; };
+		D89F2932211209F800936DE6 /* CourtDetails.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourtDetails.h; sourceTree = "<group>"; };
+		D89F2933211209F800936DE6 /* CourtDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourtDetails.m; sourceTree = "<group>"; };
+		D89F293521120AB900936DE6 /* CourtBaseDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourtBaseDetail.h; sourceTree = "<group>"; };
+		D89F293621120AB900936DE6 /* CourtBaseDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourtBaseDetail.m; sourceTree = "<group>"; };
+		D89F294021120F2200936DE6 /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
+		D89F294121120F2200936DE6 /* DetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
+		D89F294221120F2200936DE6 /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
 		D8C3C270206F69080089A3CC /* DailyCauseListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyCauseListCell.h; sourceTree = "<group>"; };
 		D8C3C271206F69080089A3CC /* DailyCauseListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DailyCauseListCell.m; sourceTree = "<group>"; };
 		D8C3C272206F69080089A3CC /* DailyCauseListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyCauseListCell.xib; sourceTree = "<group>"; };
@@ -605,8 +612,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D83FF971210D9EDA0064CAE7 /* Instamojo.framework in Frameworks */,
-				D83FF973210D9F1D0064CAE7 /* InstaMojoiOS.framework in Frameworks */,
 				9CE0102D204FCB0B002A2E81 /* QuartzCore.framework in Frameworks */,
 				CB281165DB24598765D2760E /* libPods-AdVok8.a in Frameworks */,
 			);
@@ -872,9 +877,6 @@
 		5F70ABE6202B1250007E69A5 = {
 			isa = PBXGroup;
 			children = (
-				D83FF972210D9F1D0064CAE7 /* InstaMojoiOS.framework */,
-				D83FF96F210D9EA30064CAE7 /* Instamojo.framework */,
-				D83FF969210D9D460064CAE7 /* InstaMojoiOS.framework */,
 				5F70ABF1202B1250007E69A5 /* AdVok8 */,
 				5F70AC0E202B1250007E69A5 /* AdVok8Tests */,
 				5F70ABF0202B1250007E69A5 /* Products */,
@@ -1034,6 +1036,10 @@
 				5F5B762B20A3920A005A215C /* CasePageContainerModel.m */,
 				5FAB361220A4AFC800310504 /* CaseDetailData.h */,
 				5FAB361320A4AFC800310504 /* CaseDetailData.m */,
+				D89F2932211209F800936DE6 /* CourtDetails.h */,
+				D89F2933211209F800936DE6 /* CourtDetails.m */,
+				D89F293521120AB900936DE6 /* CourtBaseDetail.h */,
+				D89F293621120AB900936DE6 /* CourtBaseDetail.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1481,6 +1487,7 @@
 		9C70B250206E00D700850305 /* Advok8_VC */ = {
 			isa = PBXGroup;
 			children = (
+				D89F292C211201C700936DE6 /* DisplayBoard */,
 				5FBE6234209B78F200AD2215 /* AdvocateProfileViewController */,
 				D8FAAF9620715EC60084DE28 /* Appoinment */,
 				D8FAAF7D2071250B0084DE28 /* Appeal Alert */,
@@ -1691,6 +1698,34 @@
 			path = "Confirm Plan";
 			sourceTree = "<group>";
 		};
+		D89F292C211201C700936DE6 /* DisplayBoard */ = {
+			isa = PBXGroup;
+			children = (
+				D89F293F21120F2200936DE6 /* DetailCell */,
+				D89F292D211201DF00936DE6 /* DBVC.h */,
+				D89F292E211201DF00936DE6 /* DBVC.m */,
+				D89F292F211201DF00936DE6 /* DBVC.xib */,
+			);
+			path = DisplayBoard;
+			sourceTree = "<group>";
+		};
+		D89F293921120ECC00936DE6 /* CourtNameCEll */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CourtNameCEll;
+			sourceTree = "<group>";
+		};
+		D89F293F21120F2200936DE6 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				D89F294021120F2200936DE6 /* DetailCell.m */,
+				D89F294121120F2200936DE6 /* DetailCell.xib */,
+				D89F294221120F2200936DE6 /* DetailCell.h */,
+			);
+			path = DetailCell;
+			sourceTree = "<group>";
+		};
 		D8C3C26F206F687F0089A3CC /* DailyCauseListCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1768,6 +1803,7 @@
 		D8C3C28F206FB0A90089A3CC /* CaseListCell */ = {
 			isa = PBXGroup;
 			children = (
+				D89F293921120ECC00936DE6 /* CourtNameCEll */,
 				D8C3C29A206FB1D10089A3CC /* CaseListCell2.h */,
 				D8C3C29B206FB1D10089A3CC /* CaseListCell2.m */,
 				D8C3C29C206FB1D10089A3CC /* CaseListCell2.xib */,
@@ -1896,8 +1932,6 @@
 				5F70ABEB202B1250007E69A5 /* Sources */,
 				5F70ABEC202B1250007E69A5 /* Frameworks */,
 				5F70ABED202B1250007E69A5 /* Resources */,
-				B29ECFE0913594A20044969F /* [CP] Embed Pods Frameworks */,
-				B3689EFE3CBEE384285FC861 /* [CP] Copy Pods Resources */,
 				D83FF96D210D9E010064CAE7 /* CopyFiles */,
 			);
 			buildRules = (
@@ -1984,6 +2018,7 @@
 				5F1B9C4C20343889009503E7 /* FeedViewController.xib in Resources */,
 				5F58FC6B2078A124009C5D9C /* ConfirmAppointmentViewController.xib in Resources */,
 				5F12F117209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.xib in Resources */,
+				D89F2931211201DF00936DE6 /* DBVC.xib in Resources */,
 				D8C3C2B1207022970089A3CC /* TaskDetailVC.xib in Resources */,
 				D804D60D2082855A00766DF3 /* Edit_UserProfile_VC.xib in Resources */,
 				D8C3C29E206FB1D10089A3CC /* CaseListCell2.xib in Resources */,
@@ -2001,6 +2036,7 @@
 				D8FAAF8F2071414F0084DE28 /* AppAppealVC.xib in Resources */,
 				5F70ABFD202B1250007E69A5 /* Main.storyboard in Resources */,
 				5F70AC44202B1689007E69A5 /* RearViewController.xib in Resources */,
+				D89F294421120F2200936DE6 /* DetailCell.xib in Resources */,
 				5F70AC2E202B14EB007E69A5 /* LoderView.xib in Resources */,
 				5F1B9C582034411C009503E7 /* FeedMainTableViewCell.xib in Resources */,
 				5F58FC52207693B8009C5D9C /* SlotCollectionViewCell.xib in Resources */,
@@ -2104,44 +2140,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B29ECFE0913594A20044969F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8-frameworks.sh",
-				"${PODS_ROOT}/InstaMojoiOS/InstaMojoiOS-Release-iphoneuniversal/InstaMojoiOS.framework",
-				"${PODS_ROOT}/Instamojo/Instamojo.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InstaMojoiOS.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Instamojo.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3689EFE3CBEE384285FC861 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8-resources.sh",
-				"${PODS_ROOT}/Instamojo/JuspaySafeBrowser.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JuspaySafeBrowser.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -2178,12 +2176,14 @@
 				5F70AC56202B2248007E69A5 /* LegislateBaseViewController.m in Sources */,
 				5FF9E2D42061830B00467A0D /* NotificationTableViewCell.m in Sources */,
 				5FC11D012037012A002030BD /* ChooseTypeViewController.m in Sources */,
+				D89F2930211201DF00936DE6 /* DBVC.m in Sources */,
 				5F70AC41202B1688007E69A5 /* RearCell.m in Sources */,
 				5F3645E1205F7EF70041E88C /* DocumentModel.m in Sources */,
 				5F70AC4A202B1691007E69A5 /* SplashScreenViewController.m in Sources */,
 				D8C3C29D206FB1D10089A3CC /* CaseListCell2.m in Sources */,
 				D804D6122082855A00766DF3 /* User_Profile_VC.m in Sources */,
 				5F1B9C2D203413F8009503E7 /* DashboardBaseViewController.m in Sources */,
+				D89F293721120AB900936DE6 /* CourtBaseDetail.m in Sources */,
 				5F58FC4B20769085009C5D9C /* SelectSlotViewController.m in Sources */,
 				5FBE6253209B8EF500AD2215 /* AdvocProfileTableViewCell.m in Sources */,
 				5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */,
@@ -2233,6 +2233,7 @@
 				9CE0102A204FC4C4002A2E81 /* ProfileCell2.m in Sources */,
 				5F71B6AC204E8E76004229DF /* ListCell.m in Sources */,
 				5F1B9C832035A7D1009503E7 /* TextFieldBaselineWithLeftRight.m in Sources */,
+				D89F294321120F2200936DE6 /* DetailCell.m in Sources */,
 				5F5B762C20A3920A005A215C /* CasePageContainerModel.m in Sources */,
 				5F70AC43202B1688007E69A5 /* RearViewController.m in Sources */,
 				5F96B78420755A49003CD72F /* AppointmentListTableViewCell.m in Sources */,
@@ -2272,6 +2273,7 @@
 				5F71B69B204E6C4C004229DF /* CommentLike.m in Sources */,
 				5F1B9C4B20343889009503E7 /* FeedViewController.m in Sources */,
 				D8FAAF94207157E20084DE28 /* Me_VC.m in Sources */,
+				D89F2934211209F800936DE6 /* CourtDetails.m in Sources */,
 				D8C3C2A8206FBEA80089A3CC /* TextFieldFooter.m in Sources */,
 				D8FAAF8E2071414F0084DE28 /* AppAppealVC.m in Sources */,
 				5F1B9C3C203437F8009503E7 /* PostViewController.m in Sources */,

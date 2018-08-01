@@ -1,1 +1,0 @@
-../../../../Instamojo/Instamojo.framework/Headers/Instamojo-Swift.h

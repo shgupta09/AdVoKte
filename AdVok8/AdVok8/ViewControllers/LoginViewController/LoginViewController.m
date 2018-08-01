@@ -20,7 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self hitApiToDeleteUSer];
+//    [self hitApiToDeleteUSer];
   //  _txtUsername.text = @"9643965767";
     //_txtPassword.text = @"Admin@123";
     
