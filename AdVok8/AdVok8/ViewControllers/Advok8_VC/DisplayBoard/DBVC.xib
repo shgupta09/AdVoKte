@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DBVC">
             <connections>
+                <outlet property="LBL_TIMER" destination="eop-f9-Kgz" id="lpg-jJ-nYe"/>
                 <outlet property="tblView" destination="0tN-cE-9Fx" id="ijd-PY-3hI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,22 +23,52 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0tN-cE-9Fx" customClass="FZAccordionTableView">
-                    <rect key="frame" x="0.0" y="94" width="375" height="573"/>
+                    <rect key="frame" x="0.0" y="64" width="375" height="579"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="Nhd-Rh-rrc"/>
                         <outlet property="delegate" destination="-1" id="bEo-DT-H6h"/>
                     </connections>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disclaimer: There may be time gap in internet transmission Exact status be confirmed at the concerned court." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkf-yD-0L2">
+                    <rect key="frame" x="0.0" y="643" width="375" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" red="0.15294117647058825" green="0.19607843137254902" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 sec ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eop-f9-Kgz">
+                    <rect key="frame" x="284.5" y="84" width="70.5" height="20"/>
+                    <color key="backgroundColor" red="0.47843137250000001" green="0.76862745099999996" blue="0.18823529410000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70.5" id="X9h-Wk-iSG"/>
+                        <constraint firstAttribute="height" constant="20" id="dy7-wf-yH0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="0tN-cE-9Fx" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="0Ye-6w-Tav"/>
-                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="0tN-cE-9Fx" secondAttribute="bottom" id="a2T-yy-0wW"/>
+                <constraint firstItem="0tN-cE-9Fx" firstAttribute="top" secondItem="eop-f9-Kgz" secondAttribute="bottom" constant="-40" id="MCv-Wx-fMw"/>
+                <constraint firstItem="zkf-yD-0L2" firstAttribute="top" secondItem="0tN-cE-9Fx" secondAttribute="bottom" id="Mkz-4b-YNR"/>
+                <constraint firstItem="zkf-yD-0L2" firstAttribute="top" secondItem="0tN-cE-9Fx" secondAttribute="bottom" id="O8o-2D-Qbx"/>
+                <constraint firstItem="zkf-yD-0L2" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="UEL-B0-8BK"/>
                 <constraint firstAttribute="trailing" secondItem="0tN-cE-9Fx" secondAttribute="trailing" id="do2-Uu-0KA"/>
-                <constraint firstItem="0tN-cE-9Fx" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="74" id="tiW-xs-Mc8"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="zkf-yD-0L2" secondAttribute="trailing" id="hYn-Om-UHC"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="zkf-yD-0L2" secondAttribute="bottom" id="sAo-5W-4As"/>
+                <constraint firstItem="0tN-cE-9Fx" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="44" id="tiW-xs-Mc8"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="eop-f9-Kgz" secondAttribute="trailing" constant="20" id="z7T-mc-3Wa"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="34.5" y="118.5"/>
         </view>
     </objects>
 </document>

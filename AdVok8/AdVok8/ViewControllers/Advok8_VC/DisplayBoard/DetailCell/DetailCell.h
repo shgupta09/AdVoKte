@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface DetailCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lbl_CourtNUmber;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_ItemNumber;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_MyItem;
 
 @end
