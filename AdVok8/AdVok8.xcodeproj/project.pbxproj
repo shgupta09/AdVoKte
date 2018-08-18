@@ -141,6 +141,7 @@
 		5FF9E2CF2061813500467A0D /* Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E2CE2061813500467A0D /* Notification.m */; };
 		5FF9E2D42061830B00467A0D /* NotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF9E2D22061830B00467A0D /* NotificationTableViewCell.m */; };
 		5FF9E2D52061830B00467A0D /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FF9E2D32061830B00467A0D /* NotificationTableViewCell.xib */; };
+		9C26934421280A78003B6026 /* CheckPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C26934321280A78003B6026 /* CheckPayment.m */; };
 		9C31B7B2208E0D340010A062 /* CasePageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C31B7B0208E0D340010A062 /* CasePageCell.m */; };
 		9C31B7B3208E0D340010A062 /* CasePageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C31B7B1208E0D340010A062 /* CasePageCell.xib */; };
 		9C70B264206E011700850305 /* CauseBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C70B262206E011700850305 /* CauseBaseVC.m */; };
@@ -337,7 +338,6 @@
 		5F70AC11202B1250007E69A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F70AC1B202B14EB007E69A5 /* CommonFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunction.h; sourceTree = "<group>"; };
 		5F70AC1C202B14EB007E69A5 /* CommonFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunction.m; sourceTree = "<group>"; };
-		5F70AC1D202B14EB007E69A5 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		5F70AC1F202B14EB007E69A5 /* LoderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoderView.h; sourceTree = "<group>"; };
 		5F70AC20202B14EB007E69A5 /* LoderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoderView.m; sourceTree = "<group>"; };
 		5F70AC21202B14EB007E69A5 /* LoderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoderView.xib; sourceTree = "<group>"; };
@@ -476,6 +476,8 @@
 		5FF9E2D32061830B00467A0D /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
 		7CD644F639A1CDED1AD2871C /* Pods-AdVok8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdVok8.release.xcconfig"; path = "Pods/Target Support Files/Pods-AdVok8/Pods-AdVok8.release.xcconfig"; sourceTree = "<group>"; };
 		7E476A4A368847FBC004F191 /* libPods-AdVok8.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdVok8.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C26934221280A78003B6026 /* CheckPayment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckPayment.h; sourceTree = "<group>"; };
+		9C26934321280A78003B6026 /* CheckPayment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckPayment.m; sourceTree = "<group>"; };
 		9C31B7AF208E0D340010A062 /* CasePageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CasePageCell.h; sourceTree = "<group>"; };
 		9C31B7B0208E0D340010A062 /* CasePageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CasePageCell.m; sourceTree = "<group>"; };
 		9C31B7B1208E0D340010A062 /* CasePageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CasePageCell.xib; sourceTree = "<group>"; };
@@ -941,7 +943,6 @@
 			children = (
 				5F70AC1B202B14EB007E69A5 /* CommonFunction.h */,
 				5F70AC1C202B14EB007E69A5 /* CommonFunction.m */,
-				5F70AC1D202B14EB007E69A5 /* Constant.h */,
 				5F70AC1E202B14EB007E69A5 /* Loder VIew */,
 				5F70AC22202B14EB007E69A5 /* Reachability */,
 				5F70AC25202B14EB007E69A5 /* WebServicesCall.h */,
@@ -1040,6 +1041,8 @@
 				D89F2933211209F800936DE6 /* CourtDetails.m */,
 				D89F293521120AB900936DE6 /* CourtBaseDetail.h */,
 				D89F293621120AB900936DE6 /* CourtBaseDetail.m */,
+				9C26934221280A78003B6026 /* CheckPayment.h */,
+				9C26934321280A78003B6026 /* CheckPayment.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -2270,6 +2273,7 @@
 				D8C3C273206F69080089A3CC /* DailyCauseListCell.m in Sources */,
 				D8C3C28D206FA3B40089A3CC /* AccordionHeaderView.m in Sources */,
 				5F71B6BA204E8E87004229DF /* LabelCell.m in Sources */,
+				9C26934421280A78003B6026 /* CheckPayment.m in Sources */,
 				5F71B69B204E6C4C004229DF /* CommentLike.m in Sources */,
 				5F1B9C4B20343889009503E7 /* FeedViewController.m in Sources */,
 				D8FAAF94207157E20084DE28 /* Me_VC.m in Sources */,
@@ -2415,7 +2419,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T8K8DUMCC9;

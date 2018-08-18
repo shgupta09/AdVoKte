@@ -26,7 +26,7 @@
     _lblLawyerName.text = [NSString stringWithFormat:@"%@ %@", _obj.fname,_obj.lname];
     _lblSubtitle.text = _obj.AOP;
     
-    User *dataObj = [CommonFunction objectFromDataWithKey:@"userData"];
+    User *dataObj = [CommonFunction getObjectFromDefaultWithKey:USERDATA];
     
     _txtName.text = [NSString stringWithFormat:@"%@ %@", dataObj.FirstName,dataObj.LastName];
     _txtEmail.text = dataObj.EmailId;
