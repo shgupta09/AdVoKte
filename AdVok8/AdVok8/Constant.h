@@ -83,9 +83,6 @@ static int const save_tag = 2000;
 static int const comment_tag = 3000;
 static int const share_tag = 4000;
 
-// define macro
-#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 //Color
 
 #define Primary_Blue @"27328C"

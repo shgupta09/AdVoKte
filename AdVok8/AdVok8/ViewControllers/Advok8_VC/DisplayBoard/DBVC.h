@@ -10,7 +10,6 @@
 #import "FZAccordionTableView.h"
 
 @interface DBVC : UIViewController<UITableViewDataSource,UITableViewDelegate,FZAccordionTableViewDelegate>
-@property (weak, nonatomic) IBOutlet UILabel *LBL_TIMER;
 @property (weak, nonatomic) IBOutlet FZAccordionTableView *tblView;
 
 @end
