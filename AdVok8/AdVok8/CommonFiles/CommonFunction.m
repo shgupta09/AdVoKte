@@ -492,9 +492,9 @@
 
 +(void)setShadowOpacity:(UIView *)view{
     view.layer.shadowColor = [UIColor blackColor].CGColor;
-    view.layer.shadowOffset = CGSizeMake( 0, 0);
-    view.layer.shadowOpacity = 0.4;
-    view.layer.shadowRadius = 4.0;
+    view.layer.shadowOffset = CGSizeMake(2.0, 2.0);
+    view.layer.shadowOpacity = 0.8;
+    view.layer.shadowRadius = 3.0;
 }
 
 +(void)setCornerRadius:(UIView *)view Radius:(CGFloat)radius{
