@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ProfileVC.h"
+@import UserNotifications;
+#import "AGPushNoteView.h"
 @interface AppDelegate ()
 
 @end
@@ -28,7 +30,7 @@
     ((AppDelegate *)[[UIApplication sharedApplication] delegate]).window.rootViewController = nav;
     _window.rootViewController = nav;
     [self.window makeKeyAndVisible];
-    
+    [self registerForNotification];
 
     
     return YES;
@@ -95,7 +97,88 @@
     
     return _persistentContainer;
 }
+#pragma mark - push_Notifiactiom
 
+
+-(void)registerForNotification{
+    if( SYSTEM_VERSION_LESS_THAN( @"10.0" ) )
+{
+    [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeSound |    UIUserNotificationTypeAlert | UIUserNotificationTypeBadge) categories:nil]];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+    
+}
+else
+{
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    center.delegate = self;
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error)
+     {
+         if( !error )
+         {
+             [[UIApplication sharedApplication] registerForRemoteNotifications];  // required to get the app to do anything at all about push notifications
+             NSLog( @"Push registration success." );
+         }
+         else
+         {
+             NSLog( @"Push registration FAILED" );
+             NSLog( @"ERROR: %@ - %@", error.localizedFailureReason, error.localizedDescription );
+             NSLog( @"SUGGESTIONS: %@ - %@", error.localizedRecoveryOptions, error.localizedRecoverySuggestion );
+         }
+     }];
+}}
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    NSString *str = [NSString stringWithFormat:@"%@",deviceToken];
+    str = [str stringByReplacingOccurrencesOfString:@"<" withString:@""];
+    str = [str stringByReplacingOccurrencesOfString:@">" withString:@""];
+    //    [CommonFunction storeValueInDefault:str andKey:DEVICE_ID];
+//    [FIRMessaging messaging].APNSToken = deviceToken;
+    
+    
+    
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max) {
+        UIUserNotificationType allNotificationTypes =
+        (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
+        UIUserNotificationSettings *settings =
+        [UIUserNotificationSettings settingsForTypes:allNotificationTypes categories:nil];
+        [application registerUserNotificationSettings:settings];
+    } else {
+        // iOS 10 or later
+#if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+        // For iOS 10 display notification (sent via APNS)
+        [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+        UNAuthorizationOptions authOptions =
+        UNAuthorizationOptionAlert
+        | UNAuthorizationOptionSound
+        | UNAuthorizationOptionBadge;
+        [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:authOptions completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        }];
+#endif
+    }
+    
+    //    [application registerForRemoteNotifications];
+    
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    NSLog(@"received");
+    
+    NSLog(@"%@", userInfo);
+}
+
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    NSLog(@"received");
+    NSLog(@"%@", userInfo);
+    //    [CommonFunction storeValueInDefault:[userInfo valueForKey:NOTIFICATION_DOCTOR_ID] andKey:NOTIFICATION_DOCTOR_ID];
+    //    [CommonFunction storeValueInDefault:[userInfo valueForKey:NOTIFICATION_DOCTOR_ID] andKey:NOTIFICATION_PATIENT_ID];
+    if (application.applicationState == UIApplicationStateActive)   {
+        [AGPushNoteView showWithNotificationMessage:[[[userInfo objectForKey:@"aps"] objectForKey:@"alert"] objectForKey:@"body"] ];
+        [AGPushNoteView setMessageAction:^(NSString *message) {
+            
+        }];
+    }
+}
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {
@@ -108,5 +191,8 @@
         abort();
     }
 }
+
+
+
 
 @end

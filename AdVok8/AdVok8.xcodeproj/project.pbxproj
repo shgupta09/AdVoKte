@@ -180,6 +180,8 @@
 		D804D61B2083DC1900766DF3 /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F70AC49202B1691007E69A5 /* SplashScreenViewController.xib */; };
 		D804D6202083DF4B00766DF3 /* Update_AppointmentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D804D61E2083DF4B00766DF3 /* Update_AppointmentVC.m */; };
 		D804D6212083DF4B00766DF3 /* Update_AppointmentVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D804D61F2083DF4B00766DF3 /* Update_AppointmentVC.xib */; };
+		D80F9BA1212DB037003230EB /* AGPushNoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80F9B9F212DB037003230EB /* AGPushNoteView.xib */; };
+		D80F9BA2212DB037003230EB /* AGPushNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = D80F9BA0212DB037003230EB /* AGPushNoteView.m */; };
 		D83FF95B210C5EBE0064CAE7 /* SubscribeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D83FF959210C5EBE0064CAE7 /* SubscribeVC.m */; };
 		D83FF95C210C5EBE0064CAE7 /* SubscribeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83FF95A210C5EBE0064CAE7 /* SubscribeVC.xib */; };
 		D83FF961210C64D30064CAE7 /* SubscribeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D83FF95F210C64D30064CAE7 /* SubscribeCell.m */; };
@@ -536,6 +538,10 @@
 		D804D61D2083DF4B00766DF3 /* Update_AppointmentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Update_AppointmentVC.h; sourceTree = "<group>"; };
 		D804D61E2083DF4B00766DF3 /* Update_AppointmentVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Update_AppointmentVC.m; sourceTree = "<group>"; };
 		D804D61F2083DF4B00766DF3 /* Update_AppointmentVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Update_AppointmentVC.xib; sourceTree = "<group>"; };
+		D80F9B9E212DB037003230EB /* AGPushNoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGPushNoteView.h; sourceTree = "<group>"; };
+		D80F9B9F212DB037003230EB /* AGPushNoteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGPushNoteView.xib; sourceTree = "<group>"; };
+		D80F9BA0212DB037003230EB /* AGPushNoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPushNoteView.m; sourceTree = "<group>"; };
+		D80F9BA3212DB080003230EB /* AdVok8.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AdVok8.entitlements; sourceTree = "<group>"; };
 		D83FF958210C5EBE0064CAE7 /* SubscribeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubscribeVC.h; sourceTree = "<group>"; };
 		D83FF959210C5EBE0064CAE7 /* SubscribeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubscribeVC.m; sourceTree = "<group>"; };
 		D83FF95A210C5EBE0064CAE7 /* SubscribeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscribeVC.xib; sourceTree = "<group>"; };
@@ -897,6 +903,7 @@
 		5F70ABF1202B1250007E69A5 /* AdVok8 */ = {
 			isa = PBXGroup;
 			children = (
+				D80F9BA3212DB080003230EB /* AdVok8.entitlements */,
 				5F96B748206FE9F0003CD72F /* Libraries */,
 				D8F44C9F205EA08500B80FCD /* Categories */,
 				5F1B9C5F20344F9F009503E7 /* Designables */,
@@ -1261,6 +1268,7 @@
 		5F96B748206FE9F0003CD72F /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				D80F9B9D212DB037003230EB /* AGPushNote */,
 			);
 			path = Libraries;
 			sourceTree = "<group>";
@@ -1666,6 +1674,16 @@
 			path = "Update Appointment";
 			sourceTree = "<group>";
 		};
+		D80F9B9D212DB037003230EB /* AGPushNote */ = {
+			isa = PBXGroup;
+			children = (
+				D80F9B9E212DB037003230EB /* AGPushNoteView.h */,
+				D80F9B9F212DB037003230EB /* AGPushNoteView.xib */,
+				D80F9BA0212DB037003230EB /* AGPushNoteView.m */,
+			);
+			path = AGPushNote;
+			sourceTree = "<group>";
+		};
 		D83FF957210C5EA80064CAE7 /* Sebcribe  */ = {
 			isa = PBXGroup;
 			children = (
@@ -1975,6 +1993,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = T8K8DUMCC9;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					5F70AC0A202B1250007E69A5 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -2020,6 +2043,7 @@
 				5F12F117209D5E0E0050634B /* AdvocateProfileViewOnlyViewController.xib in Resources */,
 				D89F2931211201DF00936DE6 /* DBVC.xib in Resources */,
 				D8C3C2B1207022970089A3CC /* TaskDetailVC.xib in Resources */,
+				D80F9BA1212DB037003230EB /* AGPushNoteView.xib in Resources */,
 				D804D60D2082855A00766DF3 /* Edit_UserProfile_VC.xib in Resources */,
 				D8C3C29E206FB1D10089A3CC /* CaseListCell2.xib in Resources */,
 				5F71B6AD204E8E76004229DF /* ListCell.xib in Resources */,
@@ -2189,6 +2213,7 @@
 				5F70AC30202B14EB007E69A5 /* WebServicesCall.m in Sources */,
 				5F71B6BC204E8E87004229DF /* ProfileCell.m in Sources */,
 				5F71B6BE204E8E87004229DF /* SelectedLawyerVC.m in Sources */,
+				D80F9BA2212DB037003230EB /* AGPushNoteView.m in Sources */,
 				5FF9E2CB20617FE500467A0D /* NotificationListViewController.m in Sources */,
 				5F1B9C572034411C009503E7 /* FeedMainTableViewCell.m in Sources */,
 				5F58FC6A2078A124009C5D9C /* ConfirmAppointmentViewController.m in Sources */,
@@ -2415,6 +2440,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = AdVok8/AdVok8.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
@@ -2443,6 +2469,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = AdVok8/AdVok8.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
