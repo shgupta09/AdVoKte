@@ -179,21 +179,11 @@
                     break;
                 case 7:{
 //                    [[FadeAlert getInstance] displayToastWithMessage:@"Coming Soon..!!"];
-                    CheckPayment *paymentObj  = [CheckPayment sharedInstance];
-                    if (paymentObj.allowDisplayBoard) {
-                        DBVC *profileObj = [[DBVC alloc]initWithNibName:@"DBVC" bundle:nil];
-                        //                    profileObj.isFromMyActivity = false;
-                        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:profileObj];
-                        [self.navigationController presentViewController:navCon animated:true completion:nil];
-                    }else{
-                        SubscribeVC* vc ;
-                        
-                        vc = [[SubscribeVC alloc] initWithNibName:@"SubscribeVC" bundle:nil];
-                        UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:vc];
-                        
-                        [self.navigationController presentViewController:navCon animated:true completion:nil];
-                    }
-                  
+                    
+                    DBVC *profileObj = [[DBVC alloc]initWithNibName:@"DBVC" bundle:nil];
+//                    profileObj.isFromMyActivity = false;
+                    UINavigationController* navCon = [[UINavigationController alloc ] initWithRootViewController:profileObj];
+                    [self.navigationController presentViewController:navCon animated:true completion:nil];
                 }
                     break;
                 case 8:{

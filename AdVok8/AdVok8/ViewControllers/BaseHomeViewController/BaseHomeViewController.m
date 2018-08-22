@@ -19,7 +19,6 @@
     LoderView *loderObj;
     NSString* searchType;
     NSMutableArray *arrData;
-    CheckPayment *payment;
 
 }
 @end
@@ -33,11 +32,7 @@
     arrData = [NSMutableArray new];
     _searchBar.hidden = true;
     _tblView.hidden = true;
-    payment  = [CheckPayment sharedInstance];
-    payment.IsPaid = 0;
-    payment.allowDisplayBoard = 0;
-    payment.allowAppealAdd = 0;
-    payment.allowCaseAdd = 0;
+    
     _containerViewDashboard.hidden = true;
     _vi_activeDashboard.hidden = true;
 
@@ -77,9 +72,6 @@
     _tblView.dataSource = self;
     
     _txtMobile.delegate = self;
-    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]) {
-        [self hitApiForCheckPaymentStatus];
-    }
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -90,7 +82,6 @@
 }
 -(void)viewDidLayoutSubviews{
     _popUpView.frame = self.view.frame;
-    loderObj.frame = self.view.frame;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -511,57 +502,4 @@
 }
 
 
-#pragma mark- Api Related
-
--(void)hitApiForCheckPaymentStatus{
-    //    {_user:{username:'9891728828',type:'user'}}
-    NSMutableDictionary *parameter = [NSMutableDictionary new];
-    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
-     
-    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:LOGINUSER] forKey:@"username"];
-    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:LOGINUSER_TYPE] forKey:@"type"];
-   
-    [parameter setValue:dictRequest forKey:@"_user"];
-    
-    if ([ CommonFunction reachability]) {
-        [self addLoder];
-        
-        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
-        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_CHECK_PAYMENT]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
-            if (error == nil) {
-                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
-                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-                
-                [self removeloder];
-                NSNumber* st = [json valueForKey:@"Status"];
-                int status = [st intValue];
-                if ( status == 1){
-                    payment.IsPaid = [json valueForKey:@"IsPaid"];
-                    payment.allowAppealAdd = [json valueForKey:@"allowAppealAdd"];
-                    payment.allowCaseAdd = [json valueForKey:@"allowCaseAdd"];
-                    payment.allowDisplayBoard = [json valueForKey:@"allowDisplayBoard"];
-                }else
-                {
-                    [[FadeAlert getInstance] displayToastWithMessage:[json valueForKey:@"ErrMsg"]];
-                    
-                    
-                }
-                
-                [self removeloder];
-                
-            }
-            else
-            {
-                [self removeloder];
-                [[FadeAlert getInstance] displayToastWithMessage:error.description];
-                
-            }
-            
-            
-        }];
-    } else {
-        [self removeloder];
-        [[FadeAlert getInstance] displayToastWithMessage:NO_INTERNET_MESSAGE];
-    }
-}
 @end

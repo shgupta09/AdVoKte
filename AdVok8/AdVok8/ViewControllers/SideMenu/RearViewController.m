@@ -38,7 +38,15 @@
     _tbl_View.estimatedRowHeight = 100;
     _tbl_View.multipleTouchEnabled = NO;
     
-  
+    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
+        titleArray  = [[NSMutableArray alloc]initWithObjects:@"Logout",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request", nil];
+        titleImageArray = [[NSMutableArray alloc] initWithObjects:@"logout",@"home",@"Notify-1",@"Invite Friend-1",@"rateUs",@"callrequest", nil];
+    }
+    else
+    {
+        titleArray  = [[NSMutableArray alloc]initWithObjects:@"Login",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request",@"Subscribe A Plan" ,nil];
+        titleImageArray = [[NSMutableArray alloc] initWithObjects:@"Login-1",@"home",@"Notify-1",@"Invite Friend-1",@"rateUs",@"callrequest", @"Call Request",nil];
+    }
     //categoryArray = [AwarenessCategory sharedInstance].myDataArray;
     
     // Do any additional setup after loading the view from its nib.
@@ -55,15 +63,6 @@
         _imgView.image = [UIImage imageNamed:@"dependentsuser"];
     }
     
-    if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
-        titleArray  = [[NSMutableArray alloc]initWithObjects:@"Logout",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request",@"Subscribe A Plan" , nil];
-        titleImageArray = [[NSMutableArray alloc] initWithObjects:@"logout",@"home",@"Notify-1",@"Invite Friend-1",@"rateUs",@"callrequest", @"Call Request", nil];
-    }
-    else
-    {
-        titleArray  = [[NSMutableArray alloc]initWithObjects:@"Login",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request",nil];
-        titleImageArray = [[NSMutableArray alloc] initWithObjects:@"Login-1",@"home",@"Notify-1",@"Invite Friend-1",@"rateUs",@"callrequest",nil];
-    }
 }
 -(void)viewDidLayoutSubviews{
 }

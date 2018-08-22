@@ -16,7 +16,6 @@
 #define LOGINUSER_UR @"user"
 #define BoolValueKey @"BoolValue"
 #define AlertKey @"Alert"
-#define USERDATA @"userData"
 
 #define Cause_List_Data_Calender @"CauseListData"
 #define Event_List_Data_Calender @"EventList"
@@ -78,10 +77,6 @@ static NSString* const API_GET_ALL_ADVOCATES_FOR = @"search_AdvocateWeb";
 static NSString* const API_ADVOCATE_PUBLICDATA = @"GetAdvocatePublicData";
 static NSString* const API_RATING = @"InsertUpdateRating";
 static NSString* const API_UPDATE_USER_PROFILE = @"UpdateUserRegistrationDetail";
-
-//Changes
-static NSString* const API_CHECK_PAYMENT = @"CheckUserPayment";
-
 
 static int const like_tag = 1000;
 static int const save_tag = 2000;

@@ -86,13 +86,6 @@
 #import "Case.h"
 #import "Appointment.h"
 
-
-#import "CheckPayment.h"
-
-
-
-
-
 #import "FadeAlert.h"
 #import "NoOfLikesTableViewCell.h"
 #import "NoOfLikesViewController.h"
@@ -104,7 +97,7 @@
 #import "AdvocateAchievementTabViewController.h"
 #import "AdvocateProfileContainerViewController.h"
 #import "AdvocateProfileViewOnlyViewController.h"
-#import "SubscribeVC.h"
+
 #endif /* PrefixHeader_pch */
 
 
