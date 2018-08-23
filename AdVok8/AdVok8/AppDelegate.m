@@ -8,7 +8,10 @@
 
 #import "AppDelegate.h"
 #import "ProfileVC.h"
-@interface AppDelegate ()
+#import "AGPushNoteView.h"
+@interface AppDelegate (){
+    
+}
 
 @end
 
@@ -30,7 +33,7 @@
     [self.window makeKeyAndVisible];
     
 
-    
+    [self setUpPushNotification:application];
     return YES;
 }
 
@@ -54,6 +57,7 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    application.applicationIconBadgeNumber = 0;
 }
 
 
@@ -107,6 +111,93 @@
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         abort();
     }
+}
+#pragma mark - push_Notifiactiom
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    NSString *str = [NSString stringWithFormat:@"%@",deviceToken];
+    NSLog(@"Device Token - %@",str);
+    str = [str stringByReplacingOccurrencesOfString:@"<" withString:@""];
+    str = [str stringByReplacingOccurrencesOfString:@">" withString:@""];
+    //    [CommonFunction storeValueInDefault:str andKey:DEVICE_ID];
+  
+    NSLog(@"Device Token - %@",str);
+    
+    
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max) {
+        UIUserNotificationType allNotificationTypes =
+        (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
+        UIUserNotificationSettings *settings =
+        [UIUserNotificationSettings settingsForTypes:allNotificationTypes categories:nil];
+        [application registerUserNotificationSettings:settings];
+    } else {
+        // iOS 10 or later
+#if defined(__IPHONE_10_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+        // For iOS 10 display notification (sent via APNS)
+        
+        UIUserNotificationType allNotificationTypes =
+        (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
+        UIUserNotificationSettings *settings =
+        [UIUserNotificationSettings settingsForTypes:allNotificationTypes categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+        UNAuthorizationOptions authOptions =
+        UNAuthorizationOptionAlert
+        | UNAuthorizationOptionSound
+        | UNAuthorizationOptionBadge;
+        [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:authOptions completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        }];
+#endif
+    }
+    
+    //    [application registerForRemoteNotifications];
+    
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
+    NSLog(@"received");
+    //    if (userInfo[kGCMMessageIDKey]) {
+    //        NSLog(@"Message ID: %@", userInfo[kGCMMessageIDKey]);
+    //    }
+    
+    // Print full message.
+    NSLog(@"%@", userInfo);
+}
+
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    NSLog(@"received");
+    NSLog(@"%@", userInfo);
+    //    [CommonFunction storeValueInDefault:[userInfo valueForKey:NOTIFICATION_DOCTOR_ID] andKey:NOTIFICATION_DOCTOR_ID];
+    //    [CommonFunction storeValueInDefault:[userInfo valueForKey:NOTIFICATION_DOCTOR_ID] andKey:NOTIFICATION_PATIENT_ID];
+    if (application.applicationState == UIApplicationStateActive)   {
+        [AGPushNoteView showWithNotificationMessage:[[[userInfo objectForKey:@"aps"] objectForKey:@"alert"] objectForKey:@"body"] ];
+        [AGPushNoteView setMessageAction:^(NSString *message) {
+            
+        }];
+    }
+    
+    
+}
+
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
+    NSLog(@"User Info : %@",notification.request.content.userInfo);
+    
+    completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
+}
+
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
+    NSLog(@"User Info : %@",response.notification.request.content.userInfo);
+    completionHandler();
+}
+-(void)setUpPushNotification:(UIApplication *)application{
+    UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                    UIUserNotificationTypeBadge |
+                                                    UIUserNotificationTypeSound);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                             categories:nil];
+    [application registerUserNotificationSettings:settings];
+    [application registerForRemoteNotifications];
 }
 
 @end

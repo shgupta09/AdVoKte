@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@import UserNotifications;
+@interface AppDelegate : UIResponder <UIApplicationDelegate,UNUserNotificationCenterDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

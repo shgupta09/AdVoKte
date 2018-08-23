@@ -9,6 +9,10 @@
 #ifndef Constant_h
 #define Constant_h
 
+// define macro
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+
 #define isLoggedIn @"isLoggedIn"
 #define LOGINUSER @"loginUsername"
 #define LOGINUSER_TYPE @"loginUsertype"
