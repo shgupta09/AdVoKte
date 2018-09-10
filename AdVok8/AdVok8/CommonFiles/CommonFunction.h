@@ -61,4 +61,5 @@
 +(NSDate *)convertStringddMMYYYYToDate:(NSString *)dtrDate;
 
 +(NSString*)convertDDMMYYYYtoMMDDYYYY:(NSString*) string;
++(NSString *)getUdid;
 @end

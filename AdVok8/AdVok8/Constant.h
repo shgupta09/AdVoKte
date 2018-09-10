@@ -20,7 +20,7 @@
 #define LOGINUSER_UR @"user"
 #define BoolValueKey @"BoolValue"
 #define AlertKey @"Alert"
-
+#define DEVICE_Token @"DEVICE_Token"
 #define Cause_List_Data_Calender @"CauseListData"
 #define Event_List_Data_Calender @"EventList"
 #define Case_List_Data_Calender @"caseList"
@@ -72,6 +72,8 @@ static NSString* const API_GET_ACHEIVEMENT = @"getAcievement";
 static NSString* const API_PUT_ACHEIVEMENT = @"putAcheivement";
 static NSString* const API_SAVE_PROFILE = @"PutAdvocateUpdate";
 static NSString* const API_PUT_AVAILABILITY = @"updateAdvocateAvailabilty";
+
+static NSString* const API_UPDATE_DEVICE = @"Upd_DeviceDetails";
 
 // Dashoboard APIS
 static NSString* const API_GET_ALL_CATEGORIES = @"Get_AllCategory";

@@ -239,7 +239,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D83FF96D210D9E010064CAE7 /* CopyFiles */ = {
+		9CC3B9362136B17C0064E715 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -493,6 +493,7 @@
 		9C70B273206E32CA00850305 /* CaseListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaseListCell.h; sourceTree = "<group>"; };
 		9C70B274206E32CA00850305 /* CaseListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaseListCell.m; sourceTree = "<group>"; };
 		9C70B275206E32CA00850305 /* CaseListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CaseListCell.xib; sourceTree = "<group>"; };
+		9CC3B9342136B1240064E715 /* InstaMojoiOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InstaMojoiOS.framework; path = "Pods/InstaMojoiOS/InstaMojoiOS-Release-iphoneuniversal/InstaMojoiOS.framework"; sourceTree = "<group>"; };
 		9CCD0537209AE6370031F6F1 /* CalenderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalenderModel.h; sourceTree = "<group>"; };
 		9CCD0538209AE6370031F6F1 /* CalenderModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalenderModel.m; sourceTree = "<group>"; };
 		9CCD053A209AEBD30031F6F1 /* CauseListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CauseListModel.h; sourceTree = "<group>"; };
@@ -637,6 +638,7 @@
 		29F90978DF71D6144854E1E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9CC3B9342136B1240064E715 /* InstaMojoiOS.framework */,
 				9CE0102C204FCB0B002A2E81 /* QuartzCore.framework */,
 				7E476A4A368847FBC004F191 /* libPods-AdVok8.a */,
 				451D0C401EC04053B7C1ED21 /* libPods-AdVok8Tests.a */,
@@ -1950,7 +1952,7 @@
 				5F70ABEB202B1250007E69A5 /* Sources */,
 				5F70ABEC202B1250007E69A5 /* Frameworks */,
 				5F70ABED202B1250007E69A5 /* Resources */,
-				D83FF96D210D9E010064CAE7 /* CopyFiles */,
+				9CC3B9362136B17C0064E715 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -2437,7 +2439,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DB2464D49DD7471880FD048 /* Pods-AdVok8.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = AdVok8/AdVok8.entitlements;
@@ -2467,7 +2468,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7CD644F639A1CDED1AD2871C /* Pods-AdVok8.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = AdVok8/AdVok8.entitlements;

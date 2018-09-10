@@ -7,6 +7,7 @@
 //
 #import "SubscribeVC.h"
 #import "RearViewController.h"
+//#import <InstaMojoiOS/InstaMojoiOS-Swift.h>
 @interface RearViewController ()
 {
     NSMutableArray *titleArray;
@@ -46,6 +47,15 @@
     {
         titleArray  = [[NSMutableArray alloc]initWithObjects:@"Login",@"Home",@"Notification",@"Invite Friends",@"Rate Us",@"Call Request",@"Subscribe A Plan" ,nil];
         titleImageArray = [[NSMutableArray alloc] initWithObjects:@"Login-1",@"home",@"Notify-1",@"Invite Friend-1",@"rateUs",@"callrequest", @"Call Request",nil];
+      
+//        
+//        [[IMConfiguration sharedInstance] setupOrderWithPurpose:@"buying" buyerName:@"Shardul" emailId:@"tester@gmail.com" mobile:@"7875432991" amount:@"20" environment:EnvironmentTest on:nil completion:^(BOOL success, NSString * _Nonnull message) {
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//                UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:nil preferredStyle:UIAlertControllerStyleAlert];
+//                [alert addAction:[UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil]];
+//                [self presentViewController:alert animated:true completion:nil];
+//            });
+//        }];
     }
     //categoryArray = [AwarenessCategory sharedInstance].myDataArray;
     

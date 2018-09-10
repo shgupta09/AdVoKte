@@ -118,11 +118,11 @@
     NSLog(@"Device Token - %@",str);
     str = [str stringByReplacingOccurrencesOfString:@"<" withString:@""];
     str = [str stringByReplacingOccurrencesOfString:@">" withString:@""];
-    //    [CommonFunction storeValueInDefault:str andKey:DEVICE_ID];
-  
-    NSLog(@"Device Token - %@",str);
-    
-    
+    [self hitApiToUpdateDeviceToken];
+    if (![[CommonFunction getValueFromDefaultWithKey:DEVICE_Token] isEqualToString:str]) {
+        [CommonFunction storeValueInDefault:str andKey:DEVICE_Token];
+        NSLog(@"Device Token - %@",str);
+    }
     if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_9_x_Max) {
         UIUserNotificationType allNotificationTypes =
         (UIUserNotificationTypeSound | UIUserNotificationTypeAlert | UIUserNotificationTypeBadge);
@@ -198,6 +198,33 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
                                                                              categories:nil];
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
+}
+-(void)hitApiToUpdateDeviceToken{
+    
+    NSMutableDictionary *parameter = [NSMutableDictionary new];
+    NSMutableDictionary* dictRequest = [NSMutableDictionary new];
+    [dictRequest setValue:[CommonFunction getUdid] forKey:@"IEMI"];
+    [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:DEVICE_Token] forKey:@"deviceId"];
+    [parameter setValue:dictRequest forKey:@"_AD"];
+    
+    if ([ CommonFunction reachability]) {
+       
+        
+        //            loaderView = [CommonFunction loaderViewWithTitle:@"Please wait..."];
+        [WebServicesCall responseWithUrl:[NSString stringWithFormat:@"%@%@",API_BASE_URL,API_UPDATE_DEVICE]  postResponse:parameter postImage:nil requestType:POST tag:nil isRequiredAuthentication:YES header:@"" completetion:^(BOOL status, id responseObj, NSString *tag, NSError * error, NSInteger statusCode, id operation, BOOL deactivated) {
+            if (error == nil) {
+                NSData *data = [[responseObj valueForKey:@"d"] dataUsingEncoding:NSUTF8StringEncoding];
+                id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+                
+               
+                NSNumber* st = [json valueForKey:@"Status"];
+                int status = [st intValue];
+                if ( status == 1){
+                    
+                }
+            }
+        }];
+    }
 }
 
 @end

@@ -100,7 +100,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdVok8/CommonFiles/CommonFunction.m"
-            timestampString = "547037274.686473"
+            timestampString = "557924693.360975"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "349"
@@ -116,7 +116,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdVok8/CommonFiles/CommonFunction.m"
-            timestampString = "547037274.68665"
+            timestampString = "557924693.361293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "352"
@@ -132,7 +132,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdVok8/CommonFiles/CommonFunction.m"
-            timestampString = "547037274.686697"
+            timestampString = "557924693.361402"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "355"
@@ -196,7 +196,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdVok8/AppDelegate.m"
-            timestampString = "556720255.6744"
+            timestampString = "557924693.361588"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
@@ -212,7 +212,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdVok8/AppDelegate.m"
-            timestampString = "556720255.674773"
+            timestampString = "557924693.361819"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "158"
@@ -227,13 +227,45 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AdVok8/AppDelegate.m"
-            timestampString = "556720255.6750031"
+            filePath = "AdVok8/ViewControllers/SideMenu/RearViewController.m"
+            timestampString = "557924693.361909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "-application:didReceiveRemoteNotification:fetchCompletionHandler:"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdVok8/ViewControllers/SideMenu/RearViewController.m"
+            timestampString = "557924693.362512"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "AdVok8/ViewControllers/LoginViewController/LoginViewController.m"
+            timestampString = "558246651.074785"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-hitApiToLogin"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -244,12 +276,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdVok8/AppDelegate.m"
-            timestampString = "556720255.675225"
+            timestampString = "557924693.363001"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "184"
-            endingLineNumber = "184"
-            landmarkName = "-userNotificationCenter:willPresentNotification:withCompletionHandler:"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "-hitApiToUpdateDeviceToken"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -260,12 +292,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdVok8/AppDelegate.m"
-            timestampString = "556720255.675445"
+            timestampString = "557924693.363068"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
-            landmarkName = "-userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:"
+            startingLineNumber = "222"
+            endingLineNumber = "222"
+            landmarkName = "-hitApiToUpdateDeviceToken"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -276,12 +308,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AdVok8/AppDelegate.m"
-            timestampString = "556720255.6756721"
+            timestampString = "557924693.363129"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "-setUpPushNotification:"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "-hitApiToUpdateDeviceToken"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

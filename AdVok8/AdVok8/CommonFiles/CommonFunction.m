@@ -520,6 +520,10 @@
     NSData *data = [self.defaults objectForKey:key];
     return [NSKeyedUnarchiver unarchiveObjectWithData:data];
 }
-
++(NSString *)getUdid{
+    NSUUID *uuid = [NSUUID UUID];
+    NSString *uuidString = uuid.UUIDString;
+    return uuidString;
+}
 
 @end
