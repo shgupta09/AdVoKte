@@ -60,6 +60,7 @@
     
     if ([notification.name  isEqual: @"RefreshViews"]) {
         [self setData];
+        
     }
     
     

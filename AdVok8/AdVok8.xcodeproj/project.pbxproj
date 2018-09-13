@@ -2367,6 +2367,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -2415,6 +2416,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2442,7 +2444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = AdVok8/AdVok8.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = T8K8DUMCC9;
@@ -2458,8 +2460,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.advok8.Advok8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c9ac53e0-96e0-4ee7-a44a-40bbb68f3740";
-				PROVISIONING_PROFILE_SPECIFIER = advok8DevelopmentShubhamMac;
+				PROVISIONING_PROFILE = "aa620336-f264-4c5c-b379-5d0640e7e2b8";
+				PROVISIONING_PROFILE_SPECIFIER = offcDevelopmentAdvok8;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -2487,7 +2489,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.advok8.Advok8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d046537c-a91d-49a0-8a75-e9f439c65bcc";
+				PROVISIONING_PROFILE = "941e9f4a-6905-4b1a-9bab-da51e4ab5ab4";
 				PROVISIONING_PROFILE_SPECIFIER = "shubham'sMacDistribution";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

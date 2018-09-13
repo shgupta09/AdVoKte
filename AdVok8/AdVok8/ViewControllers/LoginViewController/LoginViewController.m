@@ -46,13 +46,13 @@
 
 - (IBAction)decodeButton:(id)sender {
     
-//    if (_sc_userType.selectedSegmentIndex == 0) {
-//        _txtUsername.text = @"9560409501";
-//        _txtPassword.text = @"123456";
-//    } else if(_sc_userType.selectedSegmentIndex == 1) {
-//        _txtUsername.text = @"8896292603";
-//        _txtPassword.text = @"123456";
-//    }
+    if (_sc_userType.selectedSegmentIndex == 0) {
+        _txtUsername.text = @"9560409501";
+        _txtPassword.text = @"123456";
+    } else if(_sc_userType.selectedSegmentIndex == 1) {
+        _txtUsername.text = @"8896292603";
+        _txtPassword.text = @"123456";
+    }
 }
 
 
@@ -153,17 +153,20 @@
                         
                     }
                     
-                    
-                    
-                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[json valueForKey:@"ErrMsg"] preferredStyle:UIAlertControllerStyleAlert];
-                    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction* action){
-                        [self.navigationController dismissViewControllerAnimated:true completion:^{
-                            
-                            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshViews" object:nil];
-                        }];
+                    [self.navigationController dismissViewControllerAnimated:true completion:^{
+                        
+                        [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshViews" object:nil];
                     }];
-                    [alertController addAction:ok];
-                    [self presentViewController:alertController animated:YES completion:nil];
+                    
+//                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Alert" message:[json valueForKey:@"ErrMsg"] preferredStyle:UIAlertControllerStyleAlert];
+//                    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction* action){
+//                        [self.navigationController dismissViewControllerAnimated:true completion:^{
+//
+//                            [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshViews" object:nil];
+//                        }];
+//                    }];
+//                    [alertController addAction:ok];
+//                    [self presentViewController:alertController animated:YES completion:nil];
                     
                     
                     

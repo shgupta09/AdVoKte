@@ -32,7 +32,7 @@
     arrData = [NSMutableArray new];
     _searchBar.hidden = true;
     _tblView.hidden = true;
-    
+    isOpen = false;
     _containerViewDashboard.hidden = true;
     _vi_activeDashboard.hidden = true;
 
@@ -72,6 +72,11 @@
     _tblView.dataSource = self;
     
     _txtMobile.delegate = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveTestNotification:)
+                                                 name:@"ToggleNotification"
+                                               object:nil];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -372,7 +377,7 @@
     else{
         
         [revealController revealToggle:nil];
-        tempView.frame  =CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height);
+        tempView = [[UIView alloc] initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, self.view.frame.size.height)];
         [tempView addGestureRecognizer:singleFingerTap];
         [self.view addSubview:tempView];
         isOpen = true;
@@ -448,9 +453,15 @@
     if ([[notification name] isEqualToString:@"CallREQUEST"]){
         _popUpView.frame = self.view.frame;
         [self.view addSubview:_popUpView];
+    }else  if ([notification.name  isEqual: @"ToggleNotification"]) {
+        isOpen = false;
+        [tempView removeFromSuperview];
+        
     }
     
 }
+
+
 
 -(void)notificationReceived{
    

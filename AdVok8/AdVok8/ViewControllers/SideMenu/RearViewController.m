@@ -104,11 +104,12 @@
     switch (indexPath.row) {
         case 0:
         {
+             [[NSNotificationCenter defaultCenter] postNotificationName:@"ToggleNotification" object:nil];
              if ([CommonFunction getBoolValueFromDefaultWithKey:isLoggedIn]){
              
                  [CommonFunction stroeBoolValueForKey:isLoggedIn withBoolValue:false];
                  [[NSNotificationCenter defaultCenter] postNotificationName:@"RefreshViews" object:nil];
-
+                
              }
             else
             {
@@ -124,7 +125,7 @@
             break;
         case 1:
         {
-            
+             [[NSNotificationCenter defaultCenter] postNotificationName:@"ToggleNotification" object:nil];
         }
             break;
         case 2:

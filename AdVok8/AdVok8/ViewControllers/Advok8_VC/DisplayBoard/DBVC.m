@@ -17,7 +17,7 @@
     LoderView *loderObj;
     NSMutableArray* arrData;
     
-    
+    NSInteger counterPrivateVar;
 }
 
 @end
@@ -28,8 +28,18 @@ static NSString *const kTableViewCellReuseIdentifier = @"DetailCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUpData];
-    // Do any additional setup after loading the view from its nib.
+    [self setUpTableView];
+    
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(setTimeToLabel) userInfo:nil repeats:YES];
+    _LBL_TIMER.hidden = true;
 }
+- (void)setTimeToLabel
+{
+    counterPrivateVar += 1;
+    _LBL_TIMER.text = [NSString stringWithFormat:@"%d Sec Ago", counterPrivateVar];
+}
+    // Do any additional setup after loading the view from its nib.
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -54,23 +64,26 @@ static NSString *const kTableViewCellReuseIdentifier = @"DetailCell";
 -(void)setUpTableView{
     [_tblView registerNib:[UINib nibWithNibName:@"DetailCell" bundle:nil]forCellReuseIdentifier:@"DetailCell"];
 
-    [_tblView registerNib:[UINib nibWithNibName:@"AccordionHeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:kAccordionHeaderViewReuseIdentifier];
-//      [_tblView registerNib:[UINib nibWithNibName:@"AccordionHeaderView" bundle:nil]
-//forHeaderFooterViewReuseIdentifier:kAccordionHeaderViewReuseIdentifier];
+//    [_tblView registerNib:[UINib nibWithNibName:@"AccordionHeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:kAccordionHeaderViewReuseIdentifier];
+      [_tblView registerNib:[UINib nibWithNibName:@"AccordionHeaderView" bundle:nil]
+forHeaderFooterViewReuseIdentifier:kAccordionHeaderViewReuseIdentifier];
     _tblView.rowHeight = UITableViewAutomaticDimension;
     _tblView.estimatedRowHeight = 100;
     _tblView.multipleTouchEnabled = NO;
     _tblView.allowMultipleSectionsOpen = false;
     
     _tblView.keepOneSectionOpen = false;
-    _tblView.initialOpenSections = [NSSet setWithObjects:[NSNumber numberWithInt:0], nil];
+//    _tblView.initialOpenSections = [NSSet setWithObjects:[NSNumber numberWithInt:0], nil];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (arrData.count == 0) {
+        return 0;
+    }else{
+    return ((CourtDetails *)[arrData objectAtIndex:section]).listArray.count + 1;
+    }
+    return 0;
     
-    return ((CourtDetails *)[arrData objectAtIndex:section]).listArray.count;
-
-    //    return 5;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -79,7 +92,7 @@ static NSString *const kTableViewCellReuseIdentifier = @"DetailCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60.0;
+    return 20.0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -96,42 +109,36 @@ static NSString *const kTableViewCellReuseIdentifier = @"DetailCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.section !=0){
+    
         
-            NSMutableArray* obj = (NSMutableArray*)[arrData objectAtIndex:indexPath.section-1];
-            CauseListModel* caseObj = [obj objectAtIndex:indexPath.row];
+            NSMutableArray* obj = (NSMutableArray*)((CourtDetails *)[arrData objectAtIndex:indexPath.section]).listArray;
             DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellReuseIdentifier forIndexPath:indexPath];
-//            cell.lblTitle.text = @"Cause List:";
-//            cell.lblSubtitle.text = caseObj.HearingDate;
+    if (indexPath.row !=0) {
+        CourtBaseDetail* caseObj = [obj objectAtIndex:indexPath.row-1];
+
+        cell.lbl_CourtNUmber.text = caseObj.CourtNo;
+        cell.lbl_ItemNumber.text = caseObj.ItemName;
+        if ([caseObj.ISMine isEqualToString:@"False"]) {
+            cell.lbl_MyItem.text = @"-";
+        }
+        else{
+            cell.lbl_MyItem.text = @"True";
+        }
+    }else{
+        cell.lbl_CourtNUmber.text = @"Court Number";
+        cell.lbl_ItemNumber.text = @"Item Number";
+        cell.lbl_MyItem.text = @"My Item";
+    }
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
        
-    }
-    else
-    {
-        DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellReuseIdentifier forIndexPath:indexPath];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        return cell;
-    }
-    DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellReuseIdentifier forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
+    
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     AccordionHeaderView *accordiamViewObj = (AccordionHeaderView *)[tableView dequeueReusableHeaderFooterViewWithIdentifier:kAccordionHeaderViewReuseIdentifier];
     [CommonFunction setCornerRadius:accordiamViewObj.view Radius:5];
-    if (section == 0){
-       
-            accordiamViewObj.lbl_headerTitle.text = @"qwerty";
-        
-        
-    }
-    else
-    {
-        accordiamViewObj.lbl_headerTitle.text =  @"awef";
-    }
-    
+     accordiamViewObj.lbl_headerTitle.text = ((CourtDetails *)[arrData objectAtIndex:section]).courtName;
     return accordiamViewObj;
 }
 
@@ -217,17 +224,17 @@ static NSString *const kTableViewCellReuseIdentifier = @"DetailCell";
                                     } @finally {
                                         //  Code that gets executed whether or not an exception is thrown
                                     }
-                                    [tempDataArrayForCourtList addObject:basicDetail];
                                 }];
-                                
+                                [tempDataArrayForCourtList addObject:basicDetail];
                             }];
-                       
                         dataObj.listArray = tempDataArrayForCourtList;
                         [arrData addObject:dataObj];
                         }];
                         
                  
                     [_tblView reloadData];
+                    counterPrivateVar = 0;
+                    _LBL_TIMER.hidden = false;
                     [self removeloder];
                     
                 }else
