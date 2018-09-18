@@ -561,7 +561,7 @@
     [dictEdu setObject:advocProfileTableViewCell.txtFirstName.text forKey:@"fname"];
     [dictEdu setObject:advocProfileTableViewCell.txtContactNumber.text forKey:@"mobile"];
     [dictEdu setObject:advocProfileTableViewCell.txtLastName.text forKey:@"lname"];
-    [dictEdu setObject:advocProfileTableViewCell.txtFDOB.text forKey:@"DOB"];
+    [dictEdu setObject:[CommonFunction convertDDMMYYYYtoMMDDYYYY:advocProfileTableViewCell.txtFDOB.text] forKey:@"DOB"];
     [dictEdu setObject:advocProfileTableViewCell.txt_primaryArea_container.text forKey:@"AOP"];
     [dictEdu setObject:global_advocate_profileObj.PA forKey:@"PA"];
     [dictEdu setObject:advocProfileTableViewCell.txtBarcode.text forKey:@"BarCodeId"];
