@@ -173,6 +173,7 @@
             [[NSNotificationCenter defaultCenter]
              postNotificationName:@"CallREQUEST"
              object:self];
+             [[NSNotificationCenter defaultCenter] postNotificationName:@"ToggleNotification" object:nil];
             
         }
             break;

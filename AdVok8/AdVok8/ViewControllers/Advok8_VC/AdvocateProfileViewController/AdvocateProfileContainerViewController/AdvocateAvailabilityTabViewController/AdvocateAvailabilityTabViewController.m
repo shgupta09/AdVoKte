@@ -37,6 +37,7 @@
     NSString* strSunEnd;
     NSString* strAllTimeStart;
     NSString* strAllTimeEnd;
+    
 
 }
 
@@ -47,7 +48,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshProfileData) name:@"Refresh_Profile_Availability_Data" object:nil];
     //        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshProfileData) name:notification_refreshMCARequest_profileData object:nil];
@@ -240,7 +240,7 @@ strSunEnd = @"10:10 AM";
     self.tblView.showsHorizontalScrollIndicator = NO;
     self.tblView.tableFooterView = [UIView new];
     
-    [self.tblView reloadData];
+    [self reloadTbl];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -286,7 +286,7 @@ strSunEnd = @"10:10 AM";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 1;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -309,12 +309,18 @@ strSunEnd = @"10:10 AM";
         advocAvailabilityTableViewCell = [[AdvocAvailabilityTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:MyIdentifier];
     }
     [advocAvailabilityTableViewCell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    
     [self configureCell:advocAvailabilityTableViewCell indexPath:indexPath];
+    
     
     return advocAvailabilityTableViewCell;
 }
 
+-(void)reloadTbl{
+    advocate_profileObj_Updated.OffAddline = advocAvailabilityTableViewCell.txtOfcAddress1.text;
+    advocate_profileObj_Updated.OffAddline2 = advocAvailabilityTableViewCell.txtOfcAddress2.text;
+    advocate_profileObj_Updated.OffPincode = advocAvailabilityTableViewCell.txtOfcPincode.text;
+   [self.tblView reloadData];
+}
 -(void)configureCell:(AdvocAvailabilityTableViewCell *)cell indexPath:(NSIndexPath *) indexPath
 {
     cell.contentView.backgroundColor = [UIColor clearColor];
@@ -322,10 +328,11 @@ strSunEnd = @"10:10 AM";
     
     if (indexPath.section == 0)
     {
-        advocAvailabilityTableViewCell.txtOfcAddress1.text = advocate_profileObj_Updated.OffAddline;
-        advocAvailabilityTableViewCell.txtOfcAddress2.text = advocate_profileObj_Updated.OffAddline2;
-        advocAvailabilityTableViewCell.txtOfcPincode.text = advocate_profileObj_Updated.OffPincode;
-        
+            advocAvailabilityTableViewCell.txtOfcAddress1.text = advocate_profileObj_Updated.OffAddline;
+            advocAvailabilityTableViewCell.txtOfcAddress2.text = advocate_profileObj_Updated.OffAddline2;
+            advocAvailabilityTableViewCell.txtOfcPincode.text = advocate_profileObj_Updated.OffPincode;
+       
+       
         [self resetbuttons];
         
         if ([advocate_profileObj_Updated.mon isEqualToString:@"1"]){
@@ -416,7 +423,7 @@ strSunEnd = @"10:10 AM";
         [cell.btnFriStart setTitle:strFriStart forState:UIControlStateNormal];
         [cell.btnFriEnd setTitle:strFriEnd forState:UIControlStateNormal];
         [cell.btnSatStart setTitle:strSatStart forState:UIControlStateNormal];
-        [cell.btnSatStart setTitle:strSatStart forState:UIControlStateNormal];
+        [cell.btnSatEnd setTitle:strSatEnd forState:UIControlStateNormal];
         
         [cell.btnUpdate addTarget:self action:@selector(btnUpdateClicked:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -470,8 +477,8 @@ strSunEnd = @"10:10 AM";
         advocate_profileObj_Updated.sat = @"0";
         advocate_profileObj_Updated.sun = @"0";
         [self setStackView];
-        [self.tblView reloadData];
-        [_tblView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:false];
+        [self reloadTbl];
+        [_tblView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:false];
 
     }
 }
@@ -524,8 +531,8 @@ strSunEnd = @"10:10 AM";
     }
     
     [self setStackView];
-    [self.tblView reloadData];
-    [_tblView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:false];
+    [self reloadTbl];
+    [_tblView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:false];
 }
 
 -(void) setStackView{
@@ -802,7 +809,7 @@ strSunEnd = @"10:10 AM";
     [cell.btnFriStart setTitle:strFriStart forState:UIControlStateNormal];
     [cell.btnFriEnd setTitle:strFriEnd forState:UIControlStateNormal];
     [cell.btnSatStart setTitle:strSatStart forState:UIControlStateNormal];
-    [cell.btnSatStart setTitle:strSatStart forState:UIControlStateNormal];
+    [cell.btnSatEnd setTitle:strSatEnd forState:UIControlStateNormal];
     [cell.btnAllStartTime setTitle:strAllTimeStart forState:UIControlStateNormal];
     [cell.btnAllEndTime setTitle:strAllTimeEnd forState:UIControlStateNormal];
 
@@ -824,37 +831,37 @@ strSunEnd = @"10:10 AM";
     [dictEdu setObject:advocAvailabilityTableViewCell.txtOfcPincode.text forKey:@"OffPincode"];
     for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
         if (btn.tag == 1001){
-            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"mon"];
+            [dictEdu setValue:[NSString stringWithFormat:@"%@",[NSNumber numberWithBool:btn.isSelected]]  forKey:@"mon"];
         }
     }
     for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
         if (btn.tag == 1002){
-            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"tues"];
+            [dictEdu setValue:[NSString stringWithFormat:@"%@",[NSNumber numberWithBool:btn.isSelected]]  forKey:@"tues"];
         }
     }
     for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
         if (btn.tag == 1003){
-            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"wed"];
+            [dictEdu setValue:[NSString stringWithFormat:@"%@",[NSNumber numberWithBool:btn.isSelected]]  forKey:@"wed"];
         }
     }
     for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
         if (btn.tag == 1004){
-            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"thu"];
+            [dictEdu setValue:[NSString stringWithFormat:@"%@",[NSNumber numberWithBool:btn.isSelected]]  forKey:@"thu"];
         }
     }
     for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
         if (btn.tag == 1005){
-            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"fri"];
+            [dictEdu setValue:[NSString stringWithFormat:@"%@",[NSNumber numberWithBool:btn.isSelected]]  forKey:@"fri"];
         }
     }
     for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
         if (btn.tag == 1006){
-            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"sat"];
+            [dictEdu setValue:[NSString stringWithFormat:@"%@",[NSNumber numberWithBool:btn.isSelected]]  forKey:@"sat"];
         }
     }
     for (UIButton* btn in advocAvailabilityTableViewCell.btnDaysSelect) {
         if (btn.tag == 1007){
-            [dictEdu setObject:[NSNumber numberWithBool:btn.isSelected]  forKey:@"sun"];
+            [dictEdu setValue:[NSString stringWithFormat:@"%@",[NSNumber numberWithBool:btn.isSelected]]  forKey:@"sun"];
         }
     }
 //{"_UpdAdv":{"username":"8896292603","OffAddline":"","OffAddline2":"A-256 Lakhiram Park rohini New Delhi","OffPincode":"110086","mon":1,"tues":1,"wed":1,"thu":1,"fri":1,"sat":0,"sun":0,"MonTime":"11:00 AM-04:30 PM","TueTime":"11:00 AM-04:30 PM","WedTime":"11:00 AM-04:30 PM","ThuTime":"08:30 AM-07:30 PM","FriTime":"07:30 AM-08:30 AM","SatTime":"","SunTime":"","SameAsTime":false,"SameAsTimeValue":"0"}}
@@ -867,8 +874,12 @@ strSunEnd = @"10:10 AM";
     [dictEdu setObject:[NSString stringWithFormat:@"%@-%@",[advocAvailabilityTableViewCell.btnSatStart currentTitle],[advocAvailabilityTableViewCell.btnSatEnd currentTitle]] forKey:@"SatTime"];
     [dictEdu setObject:[NSString stringWithFormat:@"%@-%@",[advocAvailabilityTableViewCell.btnSunStart currentTitle],[advocAvailabilityTableViewCell.btnSunEnd currentTitle]] forKey:@"SunTime"];
     
-    
-    [dictEdu setObject:[NSNumber numberWithBool:advocAvailabilityTableViewCell.btnSameForAll.isSelected]  forKey:@"SameAsTime"];
+    if (advocAvailabilityTableViewCell.btnSameForAll.isSelected) {
+        [dictEdu setObject:@"true"  forKey:@"SameAsTime"];
+    }else{
+        [dictEdu setObject:@"false"  forKey:@"SameAsTime"];
+    }
+   
     [dictEdu setObject:[NSString stringWithFormat:@"%@-%@",[advocAvailabilityTableViewCell.btnAllStartTime currentTitle],[advocAvailabilityTableViewCell.btnAllEndTime currentTitle]]  forKey:@"SameAsTimeValue"];
     
     [parameter setValue:dictEdu forKey:@"_UpdAdv"];

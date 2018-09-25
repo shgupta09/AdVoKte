@@ -102,9 +102,6 @@ NSMutableArray* arr_global_advocate_Membership_data;
 #pragma mark - API related
 
 -(void)hitApiToGetAdvocateData{
-    
-    Rating *ratingObj = [Rating new];
-    
     NSMutableDictionary* dictRequest = [NSMutableDictionary new];
     [dictRequest setValue:[CommonFunction getValueFromDefaultWithKey:@"loginUsername"] forKey:@"UserName"];
     NSMutableDictionary* parameter = [NSMutableDictionary new];

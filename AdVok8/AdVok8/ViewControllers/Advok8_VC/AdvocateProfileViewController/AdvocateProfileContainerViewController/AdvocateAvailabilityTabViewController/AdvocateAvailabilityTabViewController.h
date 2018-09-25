@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AdvocateAvailabilityTabViewController : UIViewController
+@interface AdvocateAvailabilityTabViewController : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tblView;
 
 @end
