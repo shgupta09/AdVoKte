@@ -30,8 +30,12 @@
     _tblView.multipleTouchEnabled = NO;
     
 
-    [self hitApiToGetAdvocateData];
+    
     // Do any additional setup after loading the view from its nib.
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self hitApiToGetAdvocateData];
 }
 -(void)backTapped{
     [self.navigationController popViewControllerAnimated:true];
